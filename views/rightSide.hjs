@@ -1,0 +1,202 @@
+
+  <script>
+    $(function() {
+      $('.carousel').carousel({
+        interval: 7000
+      })
+    })
+  </script>
+
+<div class="panel-default" style="margin-top: 15px;">
+  <div class="panel-heading "><h4><a href="#" ></a>Online Connections 
+  <a id="{{profile._id}}" href="#" class=" pull-right fa fa-users" style="margin-top:3px; font-size:15px; color:#3b9798; " > {{profile.online_connection.length}} </a> 
+  </h4>
+  </div>
+  <div class="list-group" id="listOnlineConnection">
+    {{#profile.online_connection}}
+    <a href="#" class="list-group-item">{{name}} <i class=" fa fa-circle-o-notch fa-spin pull-right" style="margin-top:2px;; color:#3b9798"></i></a>
+
+    {{/profile.online_connection}}
+  </div>
+  <div class="row" style="height:13%">
+  </div>
+</div>
+
+
+
+{{^isReccPostPage}}
+
+ <div class="panel panel-default" style="    margin-top: -6px;">
+<div class="panel-heading text-center">
+<h4> <a href="/recommendedPost">Recommended Posts</a></h4>
+</div>
+
+<div id="myCarousel" class="carousel slide  carousel-fade" data-ride="carousel">
+
+
+    <ol class="carousel-indicators" style="    color: rgb(45, 99, 99);    position: inherit;
+    margin-top: 24px;">
+    {{#rec_topic}}
+      <li data-target="#myCarousel" data-slide-to="{{ui.index}}"></li>
+    {{/rec_topic}}
+    </ol>
+
+    <div class="row">
+      <a class="left carousel-control" href="#myCarousel" style="background:none; margin-top: -63px;
+    margin-left: 10px;" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" style="  position: initial;" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" style="background:none; margin-top: -63px;
+    margin-right: 10px;" role="button" data-slide="next" >
+        <span class="glyphicon glyphicon-chevron-right" style=" position: initial;" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+  <div class="carousel-inner" style="margin-top: -46px;" role="listbox">
+
+    {{#rec_topic}}
+
+      <div class="item {{ui.status}}">
+
+        <div class="row" >
+
+          <div class="col-sm-2" style="    margin-top: -8px; padding-left: 0px;">
+           <div class="panel-heading">
+            <a href="/profile/{{creator.email}}{{^creator.name}}{{profile.email}}{{/creator.name}}"  class="pull-left">   
+              <div class="col-sm-1" style="padding: 0 0 0 0 ; width:50px;height:50px;overflow:hidden; margin: 3px 10px 0px 0px">
+
+                  <img style=" width:50px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/{{creator.email}}{{^creator.name}}{{profile.email}}{{/creator.name}}/profile/{{creator.img_profile_name}}{{^creator.name}}{{profile.img_profile_name}}{{/creator.name}}">
+                </div>
+
+              </a> 
+            </div>
+          </div>
+
+           <div class="col-sm-10" style="margin-top: 8px; padding-left:28px">
+            <div class="row">
+              <div class="col-sm-11" style="padding-left:0px">
+                <a href="/profile/{{creator.email}}"><h5 style="margin-bottom: 0px;" ><b >
+                  {{creator.name}}</b></h5> </a>
+
+                </div>
+                <div class="col-sm-1 " style="margin-top: 0px;padding-right: 0px;padding-left: 27px;">
+
+              
+             </div>
+           </div>
+           <h6  ><a href="/post/{{_id}}" >  <b>{{title}}</b> </a></h6>
+         </div>
+
+        </div> <!-- row -->
+
+         <div class="panel-body" style="padding: 3px 15px 10px 15px">
+           <p style="word-wrap: break-word;    white-space: normal; " >{{content}}</p>
+
+            <div class=" text-center">
+
+              <span class="" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i id="share{{_id}}"  class="fa fa-share">&nbsp; {{share.length}}</i></span>
+              <span class="" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i id="like{{_id}}"  class="fa fa-thumbs-up">&nbsp; {{like.length}} </i></span>
+              <span class="" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i  id="comment{{_id}}" class="fa fa-comments-o">&nbsp; {{comments.length}}</i></span>
+            </div>
+        </div>
+
+      </div>
+
+    {{/rec_topic}}
+  </div>
+</div>
+</div>
+
+{{/isReccPostPage}}
+
+
+{{^isPopularPostPage}}
+ <div class="panel panel-default" style="margin-top: {{^isReccPostPage}}15px{{/isReccPostPage}} {{#isReccPostPage}}-5px{{/isReccPostPage}};">
+<div class="panel-heading text-center">
+<h4><a href="/popularPost">Popular Posts</a></h4>
+</div>
+    
+
+
+<div id="myCarousel2" class="carousel slide carousel-fade" data-ride="carousel">
+
+    <ol class="carousel-indicators" style="    color: rgb(45, 99, 99);    position: inherit;
+    margin-top: 24px;">
+    {{#popular_topic}}
+      <li data-target="#myCarousel2" data-slide-to="{{ui.index}}"></li>
+    {{/popular_topic}}
+    </ol>
+
+    <div class="row">
+      <a class="left carousel-control" href="#myCarousel2" style="background:none; margin-top: -63px;
+    margin-left: 10px;" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" style="  position: initial;" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel2" style="background:none; margin-top: -63px;
+    margin-right: 10px;" role="button" data-slide="next" >
+        <span class="glyphicon glyphicon-chevron-right" style=" position: initial;" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+  <div class="carousel-inner" style="margin-top: -46px;" role="listbox">
+
+    {{#popular_topic}}
+
+      <div class="item {{ui.status}}">
+
+        <div class="row" >
+
+          <div class="col-sm-2" style="    margin-top: -8px; padding-left: 0px;">
+           <div class="panel-heading">
+            <a href="/profile/{{creator.email}}{{^creator.name}}{{profile.email}}{{/creator.name}}"  class="pull-left">   
+              <div class="col-sm-1" style="padding: 0 0 0 0 ; width:50px;height:50px;overflow:hidden; margin: 3px 10px 0px 0px">
+
+                  <img style=" width:50px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/{{creator.email}}{{^creator.name}}{{profile.email}}{{/creator.name}}/profile/{{creator.img_profile_name}}{{^creator.name}}{{profile.img_profile_name}}{{/creator.name}}">
+                </div>
+
+              </a> 
+            </div>
+          </div>
+
+           <div class="col-sm-10" style="margin-top: 8px; padding-left:28px">
+            <div class="row">
+              <div class="col-sm-11" style="padding-left:0px">
+                <a href="/profile/{{creator.email}}"><h5 style="margin-bottom: 0px;" ><b >
+                  {{creator.name}}</b></h5> </a>
+
+                </div>
+                <div class="col-sm-1 " style="margin-top: 0px;padding-right: 0px;padding-left: 27px;">
+
+              
+             </div>
+           </div>
+           <h6  ><a href="/post/{{_id}}" >  <b>{{title}}</b> </a> </h6>
+         </div>
+
+        </div> <!-- row -->
+
+         <div class="panel-body" style="padding: 3px 15px 10px 15px">
+           <p style="word-wrap: break-word;    white-space: normal; " >{{content}}</p>
+
+            <div class=" text-center">
+
+              <span class="" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i id="share{{_id}}"  class="fa fa-share">&nbsp; {{share.length}}</i></span>
+              <span class="" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i id="like{{_id}}"  class="fa fa-thumbs-up">&nbsp; {{like.length}} </i></span>
+              <span class="" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i  id="comment{{_id}}" class="fa fa-comments-o">&nbsp; {{comments.length}}</i></span>
+            </div>
+        </div>
+
+      </div>
+
+    {{/popular_topic}}
+  </div>
+</div>
+    <!-- Left and right controls -->
+</div>
+{{/isPopularPostPage}}
+
+

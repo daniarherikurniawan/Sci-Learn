@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>StudyLounge</title>
+  <meta name="generator" content="Bootply" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="../stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <link href="../stylesheets/styles.css" rel="stylesheet">
+      <link rel="shortcut icon" type="image/png" href="../images/logo.gif"/>
+    </head>
+    <body>
+      <div class="wrapper" >
+        <div class="box" >
+          <div class="row row-offcanvas row-offcanvas-left" >
+            
+            
+            
+            <!-- main right col -->
+            <div class="column col-sm-12 "  id="main" style="background: white">
+              
+              <!-- top nav -->
+              <div class="navbar navbar-blue navbar-static-top">  
+<div class="navbar-header" style="padding-left:50px ; padding-top: 2px;">
+<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+  <span class="sr-only">Toggle</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+<a href="/" class="navbar-brand logo" style="padding-top: 4px;">S</a>
+</div>
+<nav class="collapse navbar-collapse" role="navigation">
+
+
+<script>
+
+function tryToGenerateToken(){
+  var http = new XMLHttpRequest();
+    http.open("POST", "/generateToken", true);
+    http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    http.send();
+    http.onload = function() {
+      if(http.responseText==404){
+        //error
+        alert(http.responseText);
+      }else{ 
+        
+        alert(http.responseText);
+      }
+    }
+}
+
+</script>
+
+            </div>
+                <!-- /top nav -->
+                
+                <div class="padding">
+                  <div class="full col-sm-9">
+                    
+                    <!-- content -->                      
+                    <div class="row">
+
+                     
+                      
+                      <!-- main col left --> 
+                     <div class="col-sm-8"  style=" width: 820px;">
+                      <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 370px;">
+                        <!-- Indicators -->
+
+                        <ol class="carousel-indicators" style="margin-bottom:0px; bottom:-15px">
+                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                          <li data-target="#myCarousel" data-slide-to="3"></li>
+                          <li data-target="#myCarousel" data-slide-to="4"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner " role="listbox"style="
+                            width: 600px;
+                            margin: auto;">
+                          
+                          <div class="item active" >
+                            <div class=" text-center"> 
+                              <img src="../welcomeImage/front9.jpg" alt="Chania"  height="330">
+                            </div>
+                          </div>
+
+
+                          <div class="item" >
+                            <div class=" text-center"> 
+                              <img src="../welcomeImage/front13.jpg" alt="Chania"  height="330">
+                            </div>
+                          </div>
+
+                          <div class="item">
+                            <div class=" text-center"> 
+                              <img src="../welcomeImage/front3.jpg" alt="Chania"  height="330">
+                            </div>
+                          </div>
+
+
+                          <div class="item">
+                            <div class=" text-center"> 
+                              <img src="../welcomeImage/front3.png" alt="Chania"  height="330">
+                            </div>
+                          </div>
+
+                          <div class="item">
+                            <div class=" text-center"> 
+                              <img src="../welcomeImage/front8.png" alt="Chania"  height="330">
+                            </div>
+                          </div>
+                        </div>
+                        
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" style="background:none" role="button" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" style="background:none" role="button" data-slide="next" >
+                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                    
+                    
+                    <!-- main col right -->
+                    <div class="col-sm-3" style="border:none; margin-top: 40px">
+                      
+                      
+
+
+                      <div class="well"> 
+                        <div  class="text-center text-warning">{{Message}}</div>
+                        <p class="logo" style="background-color:inherit; width: auto; font-size:30px"> Admin Control</p>
+                        <br>
+                        <div id="form">
+                         <form class="form" action="/agent/login" method="post">
+                          <input style="margin-bottom:10px" type="email" name="email"class="form-control input-lg" placeholder="Enter your email address" required>
+                          <input style="margin-bottom:20px" type="password" name="password" class="form-control input-lg" placeholder="Enter your password" required>
+                          <div class="text-center">
+                              
+                            <button class=" btn btn-md btn-primary" type="submit">Login</button>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+
+                    
+                  </div>
+
+                  
+
+                </div>
+
+
+              </div><!--/row-->
+              
+              <div class="row"><br></div>
+              <div class="row"><br></div>
+
+              <div class="row"><br></div>
+              <div class="row"><br></div>
+              
+              
+              
+              
+            </div><!-- /col-9 -->
+
+          </div><!-- /padding -->  
+        </div>
+        <!-- /main --> 
+
+
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- script references -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script src="../javascripts/bootstrap.min.js"></script>
+  <script src="../javascripts/scripts.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+  $(document).keydown(function(event) {
+  if (event.ctrlKey==true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109'  || event.which == '187'  || event.which == '189'  ) ) {
+          event.preventDefault();
+       }
+      // 107 Num Key  +
+      // 109 Num Key  -
+      // 173 Min Key  hyphen/underscor Hey
+      // 61 Plus key  +/= key
+  });
+
+  $(window).bind('mousewheel DOMMouseScroll', function (event) {
+         if (event.ctrlKey == true) {
+         event.preventDefault();
+         }
+  });
+
+document.body.style.zoom="100%"
+
+</script>

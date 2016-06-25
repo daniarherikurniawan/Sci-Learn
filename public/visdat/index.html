@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tugas Besar II IF4061 - Visualisasi Data Interaktif</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="outer-container">
+      <h1>Pilpres Indonesia 2014</h1>
+      <div class="subtitle">
+        <img src="img/prabowo-hatta.png" alt="Prabowo-Hatta" class="subtitle-img">
+        <p>Pada Pilpres 2014, terdapat 2 pasangan capres dan cawapres yang diajukan. Prabowo-Hatta diusung oleh Koalisi Merah Putih (KMP) sedangkan Jokowi-JK diusung oleh Koalisi Indonesia Hebat (KIH)</p>
+        <img src="img/jokowi-jk.png" alt="Jokowi-JK" class="subtitle-img">
+      </div>
+
+      <div id="stackedBar"></div>
+      
+      <div id="big-container">
+        <div id="viz-container">
+          <div id="map"></div>
+          <div id="total-container">
+            <div id="container"></div>
+          </div>
+          <div id="tree-container"></div>
+          <div id="bar-container">
+            <div id="bar-jk"></div>
+            <div id="bar-pb"></div>
+          </div>
+          <div class="end-note">
+            Crafted with &hearts; by Andarias, Christ, Daniar, Felicia, Rita. 2016.
+          </div>
+        </div>
+        <div id="legend-container">
+          <div id="grad_bar"></div>
+          <div class="legend-text-container">
+            <div id="pb">Prabowo-Hatta</div>
+            <div id="jk">Jokowi-JK</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Lato:400' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/leaflet.js"></script>
+
+  <!-- <script type="text/javascript" src="IDN_adm1.js"></script> -->
+  <!-- <script type="text/javascript" src="json-data/dataDummyProv.js"></script> -->
+  <script type="text/javascript" src="json-data/data-province.js"></script>
+  <!-- <script type="text/javascript" src="json-data/IDN_adm2.js"></script> -->
+  <!-- <script type="text/javascript" src="json-data/dataDummyKab.js"></script> -->
+  <script type="text/javascript" src="json-data/data-kab.js"></script>
+  <script type="text/javascript" src="json-data/dataDummyKec.js"></script>
+  <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="js/chroma.js"></script>
+  <script type="text/javascript" src="js/highcharts.js"></script>
+  <script type="text/javascript" src="js/exporting.js"></script>
+  <script type="text/javascript" src="js/heatmap.js"></script>
+  <script type="text/javascript" src="js/treemap.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</html>

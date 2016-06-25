@@ -1,0 +1,200 @@
+[
+  {
+    "No":1,
+    "Provinsi":"Aceh",
+    "Prabowo-Hatta":1089290,
+    "Jokowi-JK":913309
+  },
+  {
+    "No":2,
+    "Provinsi":"Sumatera Utara",
+    "Prabowo-Hatta":2831514,
+    "Jokowi-JK":3494835
+  },
+  {
+    "No":3,
+    "Provinsi":"Sumatera Barat",
+    "Prabowo-Hatta":1797505,
+    "Jokowi-JK":539308
+  },
+  {
+    "No":4,
+    "Provinsi":"Riau",
+    "Prabowo-Hatta":1349338,
+    "Jokowi-JK":1342817
+  },
+  {
+    "No":5,
+    "Provinsi":"Jambi",
+    "Prabowo-Hatta":871316,
+    "Jokowi-JK":897787
+  },
+  {
+    "No":6,
+    "Provinsi":"Sumatera Selatan",
+    "Prabowo-Hatta":2132163,
+    "Jokowi-JK":2027049
+  },
+  {
+    "No":7,
+    "Provinsi":"Bengkulu",
+    "Prabowo-Hatta":433173,
+    "Jokowi-JK":523669
+  },
+  {
+    "No":8,
+    "Provinsi":"Lampung",
+    "Prabowo-Hatta":2033924,
+    "Jokowi-JK":2299889
+  },
+  {
+    "No":9,
+    "Provinsi":"Kepulauan Bangka Belitung",
+    "Prabowo-Hatta":200706,
+    "Jokowi-JK":412359
+  },
+  {
+    "No":10,
+    "Provinsi":"Kepulauan Riau",
+    "Prabowo-Hatta":332908,
+    "Jokowi-JK":491819
+  },
+  {
+    "No":11,
+    "Provinsi":"Dki Jakarta",
+    "Prabowo-Hatta":2528064,
+    "Jokowi-JK":2859894
+  },
+  {
+    "No":12,
+    "Provinsi":"Jawa Barat",
+    "Prabowo-Hatta":14167381,
+    "Jokowi-JK":9530315
+  },
+  {
+    "No":13,
+    "Provinsi":"Jawa Tengah",
+    "Prabowo-Hatta":6485720,
+    "Jokowi-JK":12959540
+  },
+  {
+    "No":14,
+    "Provinsi":"Daerah Istimewa Yogyakarta",
+    "Prabowo-Hatta":977342,
+    "Jokowi-JK":1234249
+  },
+  {
+    "No":15,
+    "Provinsi":"Jawa Timur",
+    "Prabowo-Hatta":10277088,
+    "Jokowi-JK":11669313
+  },
+  {
+    "No":16,
+    "Provinsi":"Banten",
+    "Prabowo-Hatta":3192671,
+    "Jokowi-JK":2398631
+  },
+  {
+    "No":17,
+    "Provinsi":"Bali",
+    "Prabowo-Hatta":614241,
+    "Jokowi-JK":1535110
+  },
+  {
+    "No":18,
+    "Provinsi":"Nusa Tenggara Barat",
+    "Prabowo-Hatta":1844178,
+    "Jokowi-JK":701238
+  },
+  {
+    "No":19,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Prabowo-Hatta":769391,
+    "Jokowi-JK":1488076
+  },
+  {
+    "No":20,
+    "Provinsi":"Kalimantan Barat",
+    "Prabowo-Hatta":1032354,
+    "Jokowi-JK":1573046
+  },
+  {
+    "No":21,
+    "Provinsi":"Kalimantan Tengah",
+    "Prabowo-Hatta":468277,
+    "Jokowi-JK":696199
+  },
+  {
+    "No":22,
+    "Provinsi":"Kalimantan Selatan",
+    "Prabowo-Hatta":941809,
+    "Jokowi-JK":939748
+  },
+  {
+    "No":23,
+    "Provinsi":"Kalimantan Timur",
+    "Prabowo-Hatta":687734,
+    "Jokowi-JK":1190156
+  },
+  {
+    "No":24,
+    "Provinsi":"Sulawesi Utara",
+    "Prabowo-Hatta":620095,
+    "Jokowi-JK":724553
+  },
+  {
+    "No":25,
+    "Provinsi":"Sulawesi Tengah",
+    "Prabowo-Hatta":632009,
+    "Jokowi-JK":767151
+  },
+  {
+    "No":26,
+    "Provinsi":"Sulawesi Selatan",
+    "Prabowo-Hatta":1214857,
+    "Jokowi-JK":3037026
+  },
+  {
+    "No":27,
+    "Provinsi":"Sulawesi Tenggara",
+    "Prabowo-Hatta":511134,
+    "Jokowi-JK":622217
+  },
+  {
+    "No":28,
+    "Provinsi":"Gorontalo",
+    "Prabowo-Hatta":378735,
+    "Jokowi-JK":221497
+  },
+  {
+    "No":29,
+    "Provinsi":"Sulawesi Barat",
+    "Prabowo-Hatta":165494,
+    "Jokowi-JK":456021
+  },
+  {
+    "No":30,
+    "Provinsi":"Maluku",
+    "Prabowo-Hatta":433981,
+    "Jokowi-JK":44304
+  },
+  {
+    "No":31,
+    "Provinsi":"Maluku Utara",
+    "Prabowo-Hatta":306792,
+    "Jokowi-JK":256601
+  },
+  {
+    "No":32,
+    "Provinsi":"Papua",
+    "Prabowo-Hatta":769132,
+    "Jokowi-JK":2026735
+  },
+  {
+    "No":33,
+    "Provinsi":"Papua Barat",
+    "Prabowo-Hatta":172528,
+    "Jokowi-JK":360379
+  }
+]

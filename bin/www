@@ -1,0 +1,210 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../app');
+var debug = require('debug')('Studybook:server');
+var http = require('http');
+var session = require('express-session')
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+var port = normalizePort(process.env.PORT || '8000');
+app.set('port', port);
+
+/**
+ * Create HTTP server.
+ */
+
+var server = http.createServer(app);
+
+
+io = require('socket.io').listen(server);
+//socket.io---------
+
+var numUsers = 0;
+var users = {};
+var online = {};
+var onlineMark = {};
+var onlineSocket = {};
+
+io.on('connection', function (socket) {
+
+  
+  socket.on('online', function(data) {
+    if(data._id != undefined){
+        socket.id = data._id;
+      if (!online.hasOwnProperty(data._id) ){
+        online[data._id] = 1;
+        onlineMark[data._id] = 1;
+        onlineSocket[data._id] = socket;
+        // console.log("SOCKET==========="+onlineSocket[data._id]);
+        io.sockets.emit('user online', {id: socket.id});
+      }else{
+        onlineMark[data._id] ++;
+        online[data._id] ++;
+      }
+      console.log(JSON.stringify(online));
+    
+      console.log(JSON.stringify(onlineMark));
+    }
+  });
+
+  socket.on('tellMyNewFriends', function(data){
+    console.log(socket.id+"hereeeeeeeeeeeeeeee "+data._id);
+    param = new Object();
+    param.id = socket.id;
+   // onlineSocket[data._id].emit('user online', param);
+  });
+
+  socket.on('update', function(id){
+    // console.log("hereeeeeeeeeeeeeeee "+id);
+    onlineSocket[id].emit('updateYourOwn', id);
+  });
+
+  socket.on('new user', function(data, callback){
+    if (data in users){
+      callback(false);
+    } else{
+      callback(true);
+      socket.nickname = data;
+      users[socket.nickname] = socket;
+      updateNicknames();
+    }
+  });
+  
+  function updateNicknames(){
+    io.sockets.emit('usernames', Object.keys(users));
+  }
+
+  socket.on('send message', function(data, callback){
+    var msg = data.trim();
+    console.log('after trimming message is: ' + msg);
+    if(msg.substr(0,3) === '/w '){
+      msg = msg.substr(3);
+      var ind = msg.indexOf(' ');
+      if(ind !== -1){
+        var name = msg.substring(0, ind);
+        var msg = msg.substring(ind + 1);
+        if(name in users){
+          users[name].emit('whisper', {msg: msg, nick: socket.nickname});
+          console.log('message sent is: ' + msg);
+          console.log('Whisper!');
+        } else{
+          callback('Error!  Enter a valid user.');
+        }
+      } else{
+        callback('Error!  Please enter a message for your whisper.');
+      }
+    } else{
+      io.sockets.emit('new message', {msg: msg, nick: socket.nickname});
+    }
+  });
+  
+  socket.on('disconnect', function(data){
+    if(online.hasOwnProperty(socket.id)) {   // online[socket.id] --;
+      online[socket.id] -= 1;
+      
+      var delay=2000; //1 seconds
+      setTimeout(function(){
+
+        onlineMark[socket.id] --;
+
+        if(((online[socket.id] == 0) && onlineMark[socket.id]<2) 
+          ||onlineMark[socket.id]==0){
+
+          console.log(online[socket.id] +"__"+onlineMark[socket.id]+" Disconnect ");
+      
+          console.log("="+JSON.stringify(online));
+        
+          console.log("="+JSON.stringify(onlineMark));
+
+          io.sockets.emit('user disconnected', {id: socket.id});
+          delete online[socket.id]
+          delete onlineMark[socket.id]
+        }  
+      }, delay); 
+
+      
+      if(!socket.nickname) return;
+      delete users[socket.nickname];
+      updateNicknames();
+    }
+  });
+
+  
+
+});
+//----------socket.io
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}

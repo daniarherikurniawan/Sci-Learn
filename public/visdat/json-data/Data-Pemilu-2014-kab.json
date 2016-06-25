@@ -1,0 +1,3481 @@
+[
+  {
+    "No":1,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Aceh Selatan",
+    "Prabowo-Hatta":55551,
+    "Jokowi-JK":42182
+  },
+  {
+    "No":2,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Aceh Tenggara",
+    "Prabowo-Hatta":73999,
+    "Jokowi-JK":40413
+  },
+  {
+    "No":3,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Aceh Timur",
+    "Prabowo-Hatta":64601,
+    "Jokowi-JK":63548
+  },
+  {
+    "No":4,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Aceh Tengah",
+    "Prabowo-Hatta":40522,
+    "Jokowi-JK":57882
+  },
+  {
+    "No":5,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Aceh Barat",
+    "Prabowo-Hatta":47335,
+    "Jokowi-JK":40062
+  },
+  {
+    "No":6,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Aceh Besar",
+    "Prabowo-Hatta":9113,
+    "Jokowi-JK":72502
+  },
+  {
+    "No":7,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Pidie",
+    "Prabowo-Hatta":72241,
+    "Jokowi-JK":93308
+  },
+  {
+    "No":8,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Aceh Utara",
+    "Prabowo-Hatta":125359,
+    "Jokowi-JK":82486
+  },
+  {
+    "No":9,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Simeulue",
+    "Prabowo-Hatta":11889,
+    "Jokowi-JK":29538
+  },
+  {
+    "No":10,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Aceh Singkil",
+    "Prabowo-Hatta":27281,
+    "Jokowi-JK":1923
+  },
+  {
+    "No":11,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Bireuen",
+    "Prabowo-Hatta":95777,
+    "Jokowi-JK":60087
+  },
+  {
+    "No":12,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Aceh Barat Daya",
+    "Prabowo-Hatta":28334,
+    "Jokowi-JK":26534
+  },
+  {
+    "No":13,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Gayo Lues",
+    "Prabowo-Hatta":18172,
+    "Jokowi-JK":2564
+  },
+  {
+    "No":14,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Aceh Jaya",
+    "Prabowo-Hatta":22189,
+    "Jokowi-JK":17945
+  },
+  {
+    "No":15,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Nagan Raya",
+    "Prabowo-Hatta":35565,
+    "Jokowi-JK":38848
+  },
+  {
+    "No":16,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Aceh Tamiang",
+    "Prabowo-Hatta":74269,
+    "Jokowi-JK":41143
+  },
+  {
+    "No":17,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Bener Meriah",
+    "Prabowo-Hatta":30389,
+    "Jokowi-JK":41171
+  },
+  {
+    "No":18,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Pidie Jaya",
+    "Prabowo-Hatta":24082,
+    "Jokowi-JK":30338
+  },
+  {
+    "No":19,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Kota Banda Aceh",
+    "Prabowo-Hatta":45823,
+    "Jokowi-JK":36003
+  },
+  {
+    "No":20,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Kota Sabang",
+    "Prabowo-Hatta":7301,
+    "Jokowi-JK":5537
+  },
+  {
+    "No":21,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Kota Lhokseumawe",
+    "Prabowo-Hatta":34616,
+    "Jokowi-JK":19296
+  },
+  {
+    "No":22,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Kota Langsa",
+    "Prabowo-Hatta":42693,
+    "Jokowi-JK":1834
+  },
+  {
+    "No":23,
+    "Provinsi":"Aceh",
+    "Kota/Kabupaten":"Kota Subulussalam",
+    "Prabowo-Hatta":20172,
+    "Jokowi-JK":11276
+  },
+  {
+    "No":24,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Labuhanbatu Selatan",
+    "Prabowo-Hatta":66898,
+    "Jokowi-JK":7358
+  },
+  {
+    "No":25,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Labuhanbatu Utara",
+    "Prabowo-Hatta":73485,
+    "Jokowi-JK":94247
+  },
+  {
+    "No":26,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Nias Utara",
+    "Prabowo-Hatta":7283,
+    "Jokowi-JK":45305
+  },
+  {
+    "No":27,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Nias Barat",
+    "Prabowo-Hatta":6152,
+    "Jokowi-JK":32202
+  },
+  {
+    "No":28,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Kota Gunungsitoli",
+    "Prabowo-Hatta":9585,
+    "Jokowi-JK":48491
+  },
+  {
+    "No":29,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Tapanuli Tengah",
+    "Prabowo-Hatta":37093,
+    "Jokowi-JK":95001
+  },
+  {
+    "No":30,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Tapanuli Utara",
+    "Prabowo-Hatta":11615,
+    "Jokowi-JK":120744
+  },
+  {
+    "No":31,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Tapanuli Selatan",
+    "Prabowo-Hatta":82611,
+    "Jokowi-JK":50633
+  },
+  {
+    "No":32,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Nias",
+    "Prabowo-Hatta":6661,
+    "Jokowi-JK":55301
+  },
+  {
+    "No":33,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Langkat",
+    "Prabowo-Hatta":247482,
+    "Jokowi-JK":228622
+  },
+  {
+    "No":34,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Karo",
+    "Prabowo-Hatta":25462,
+    "Jokowi-JK":143746
+  },
+  {
+    "No":35,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Deli Serdang",
+    "Prabowo-Hatta":424682,
+    "Jokowi-JK":37376
+  },
+  {
+    "No":36,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Simalungun",
+    "Prabowo-Hatta":144362,
+    "Jokowi-JK":276389
+  },
+  {
+    "No":37,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Asahan",
+    "Prabowo-Hatta":154937,
+    "Jokowi-JK":177331
+  },
+  {
+    "No":38,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Labuhanbatu",
+    "Prabowo-Hatta":106571,
+    "Jokowi-JK":91901
+  },
+  {
+    "No":39,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Dairi",
+    "Prabowo-Hatta":22125,
+    "Jokowi-JK":109732
+  },
+  {
+    "No":40,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Toba Samosir",
+    "Prabowo-Hatta":8154,
+    "Jokowi-JK":79525
+  },
+  {
+    "No":41,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Mandailing Natal",
+    "Prabowo-Hatta":150048,
+    "Jokowi-JK":47046
+  },
+  {
+    "No":42,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Nias Selatan",
+    "Prabowo-Hatta":26064,
+    "Jokowi-JK":171401
+  },
+  {
+    "No":43,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Pakpak Bharat",
+    "Prabowo-Hatta":6681,
+    "Jokowi-JK":12075
+  },
+  {
+    "No":44,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Humbang Hasundutan",
+    "Prabowo-Hatta":8284,
+    "Jokowi-JK":77704
+  },
+  {
+    "No":45,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Samosir",
+    "Prabowo-Hatta":3346,
+    "Jokowi-JK":5703
+  },
+  {
+    "No":46,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Serdang Bedagai",
+    "Prabowo-Hatta":150267,
+    "Jokowi-JK":149761
+  },
+  {
+    "No":47,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Batu Bara",
+    "Prabowo-Hatta":81404,
+    "Jokowi-JK":93483
+  },
+  {
+    "No":48,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Kota Medan",
+    "Prabowo-Hatta":530243,
+    "Jokowi-JK":486395
+  },
+  {
+    "No":49,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Kota Pematangsiantar",
+    "Prabowo-Hatta":40124,
+    "Jokowi-JK":83287
+  },
+  {
+    "No":50,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Kota Sibolga",
+    "Prabowo-Hatta":14682,
+    "Jokowi-JK":22573
+  },
+  {
+    "No":51,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Kota Tanjung Balai",
+    "Prabowo-Hatta":34519,
+    "Jokowi-JK":28611
+  },
+  {
+    "No":52,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Kota Binjai",
+    "Prabowo-Hatta":77888,
+    "Jokowi-JK":45463
+  },
+  {
+    "No":53,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Kota Tebing Tinggi",
+    "Prabowo-Hatta":41592,
+    "Jokowi-JK":35498
+  },
+  {
+    "No":54,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Kota Padang Sidimpuan",
+    "Prabowo-Hatta":71847,
+    "Jokowi-JK":23423
+  },
+  {
+    "No":55,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Padang Lawas Utara",
+    "Prabowo-Hatta":82604,
+    "Jokowi-JK":35786
+  },
+  {
+    "No":56,
+    "Provinsi":"Sumatera Utara",
+    "Kota/Kabupaten":"Padang Lawas",
+    "Prabowo-Hatta":76763,
+    "Jokowi-JK":28789
+  },
+  {
+    "No":57,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Pesisir Selatan",
+    "Prabowo-Hatta":14715,
+    "Jokowi-JK":58374
+  },
+  {
+    "No":58,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Solok",
+    "Prabowo-Hatta":141142,
+    "Jokowi-JK":23831
+  },
+  {
+    "No":59,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Sijunjung",
+    "Prabowo-Hatta":74503,
+    "Jokowi-JK":24296
+  },
+  {
+    "No":60,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Tanah Datar",
+    "Prabowo-Hatta":127433,
+    "Jokowi-JK":40187
+  },
+  {
+    "No":61,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Padang Pariaman",
+    "Prabowo-Hatta":140938,
+    "Jokowi-JK":37355
+  },
+  {
+    "No":62,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Agam",
+    "Prabowo-Hatta":175914,
+    "Jokowi-JK":38392
+  },
+  {
+    "No":63,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Lima Puluh Kota",
+    "Prabowo-Hatta":137083,
+    "Jokowi-JK":34699
+  },
+  {
+    "No":64,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Pasaman",
+    "Prabowo-Hatta":94243,
+    "Jokowi-JK":26644
+  },
+  {
+    "No":65,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Kepulauan Mentawai",
+    "Prabowo-Hatta":9071,
+    "Jokowi-JK":3144
+  },
+  {
+    "No":66,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Dharmasraya",
+    "Prabowo-Hatta":70141,
+    "Jokowi-JK":36737
+  },
+  {
+    "No":67,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Solok Selatan",
+    "Prabowo-Hatta":56065,
+    "Jokowi-JK":17103
+  },
+  {
+    "No":68,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Pasaman Barat",
+    "Prabowo-Hatta":1294,
+    "Jokowi-JK":4256
+  },
+  {
+    "No":69,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Kota Padang",
+    "Prabowo-Hatta":30485,
+    "Jokowi-JK":83698
+  },
+  {
+    "No":70,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Kota Solok",
+    "Prabowo-Hatta":25649,
+    "Jokowi-JK":507
+  },
+  {
+    "No":71,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Kota Sawahlunto",
+    "Prabowo-Hatta":23474,
+    "Jokowi-JK":6666
+  },
+  {
+    "No":72,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Kota Padang Panjang",
+    "Prabowo-Hatta":18947,
+    "Jokowi-JK":4402
+  },
+  {
+    "No":73,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Kota Bukittinggi",
+    "Prabowo-Hatta":40392,
+    "Jokowi-JK":9434
+  },
+  {
+    "No":74,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Kota Payakumbuh",
+    "Prabowo-Hatta":47131,
+    "Jokowi-JK":1175
+  },
+  {
+    "No":75,
+    "Provinsi":"Sumatera Barat",
+    "Kota/Kabupaten":"Kota Pariaman",
+    "Prabowo-Hatta":33979,
+    "Jokowi-JK":667
+  },
+  {
+    "No":76,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Kepulauan Meranti",
+    "Prabowo-Hatta":29611,
+    "Jokowi-JK":55289
+  },
+  {
+    "No":77,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Kampar",
+    "Prabowo-Hatta":22468,
+    "Jokowi-JK":138129
+  },
+  {
+    "No":78,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Indragiri Hulu",
+    "Prabowo-Hatta":80054,
+    "Jokowi-JK":9746
+  },
+  {
+    "No":79,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Bengkalis",
+    "Prabowo-Hatta":116661,
+    "Jokowi-JK":140869
+  },
+  {
+    "No":80,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Indragiri Hilir",
+    "Prabowo-Hatta":113645,
+    "Jokowi-JK":168634
+  },
+  {
+    "No":81,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Pelalawan",
+    "Prabowo-Hatta":66943,
+    "Jokowi-JK":85496
+  },
+  {
+    "No":82,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Rokan Hulu",
+    "Prabowo-Hatta":119956,
+    "Jokowi-JK":126012
+  },
+  {
+    "No":83,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Rokan Hilir",
+    "Prabowo-Hatta":114216,
+    "Jokowi-JK":169637
+  },
+  {
+    "No":84,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Siak",
+    "Prabowo-Hatta":89874,
+    "Jokowi-JK":90369
+  },
+  {
+    "No":85,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Kuantan Singingi",
+    "Prabowo-Hatta":74594,
+    "Jokowi-JK":76259
+  },
+  {
+    "No":86,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Kota Pekanbaru",
+    "Prabowo-Hatta":261593,
+    "Jokowi-JK":129179
+  },
+  {
+    "No":87,
+    "Provinsi":"Riau",
+    "Kota/Kabupaten":"Kota Dumai",
+    "Prabowo-Hatta":57511,
+    "Jokowi-JK":65484
+  },
+  {
+    "No":88,
+    "Provinsi":"Jambi",
+    "Kota/Kabupaten":"Kota Sungai Penuh",
+    "Prabowo-Hatta":36381,
+    "Jokowi-JK":10555
+  },
+  {
+    "No":89,
+    "Provinsi":"Jambi",
+    "Kota/Kabupaten":"Kerinci",
+    "Prabowo-Hatta":104649,
+    "Jokowi-JK":3868
+  },
+  {
+    "No":90,
+    "Provinsi":"Jambi",
+    "Kota/Kabupaten":"Merangin",
+    "Prabowo-Hatta":98973,
+    "Jokowi-JK":95407
+  },
+  {
+    "No":91,
+    "Provinsi":"Jambi",
+    "Kota/Kabupaten":"Sarolangun",
+    "Prabowo-Hatta":68598,
+    "Jokowi-JK":76443
+  },
+  {
+    "No":92,
+    "Provinsi":"Jambi",
+    "Kota/Kabupaten":"Batanghari",
+    "Prabowo-Hatta":59741,
+    "Jokowi-JK":72999
+  },
+  {
+    "No":93,
+    "Provinsi":"Jambi",
+    "Kota/Kabupaten":"Muaro Jambi",
+    "Prabowo-Hatta":81395,
+    "Jokowi-JK":114132
+  },
+  {
+    "No":94,
+    "Provinsi":"Jambi",
+    "Kota/Kabupaten":"Tanjung Jabung Barat",
+    "Prabowo-Hatta":63806,
+    "Jokowi-JK":7909
+  },
+  {
+    "No":95,
+    "Provinsi":"Jambi",
+    "Kota/Kabupaten":"Tanjung Jabung Timur",
+    "Prabowo-Hatta":44919,
+    "Jokowi-JK":71431
+  },
+  {
+    "No":96,
+    "Provinsi":"Jambi",
+    "Kota/Kabupaten":"Bungo",
+    "Prabowo-Hatta":91122,
+    "Jokowi-JK":8753
+  },
+  {
+    "No":97,
+    "Provinsi":"Jambi",
+    "Kota/Kabupaten":"Tebo",
+    "Prabowo-Hatta":66172,
+    "Jokowi-JK":108551
+  },
+  {
+    "No":98,
+    "Provinsi":"Jambi",
+    "Kota/Kabupaten":"Kota Jambi",
+    "Prabowo-Hatta":15556,
+    "Jokowi-JK":142969
+  },
+  {
+    "No":99,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Ogan Komering Ulu",
+    "Prabowo-Hatta":108647,
+    "Jokowi-JK":64472
+  },
+  {
+    "No":100,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Ogan Komering Ilir",
+    "Prabowo-Hatta":23065,
+    "Jokowi-JK":191662
+  },
+  {
+    "No":101,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Muara Enim",
+    "Prabowo-Hatta":176547,
+    "Jokowi-JK":217125
+  },
+  {
+    "No":102,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Lahat",
+    "Prabowo-Hatta":124162,
+    "Jokowi-JK":83865
+  },
+  {
+    "No":103,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Musi Rawas",
+    "Prabowo-Hatta":124598,
+    "Jokowi-JK":193367
+  },
+  {
+    "No":104,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Musi Banyuasin",
+    "Prabowo-Hatta":125556,
+    "Jokowi-JK":176549
+  },
+  {
+    "No":105,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Banyuasin",
+    "Prabowo-Hatta":189938,
+    "Jokowi-JK":224109
+  },
+  {
+    "No":106,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Ogan Komering Ulu Timur",
+    "Prabowo-Hatta":225364,
+    "Jokowi-JK":152303
+  },
+  {
+    "No":107,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Ogan Komering Ulu Selatan",
+    "Prabowo-Hatta":110146,
+    "Jokowi-JK":77139
+  },
+  {
+    "No":108,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Ogan Ilir",
+    "Prabowo-Hatta":107659,
+    "Jokowi-JK":96506
+  },
+  {
+    "No":109,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Empat Lawang",
+    "Prabowo-Hatta":60332,
+    "Jokowi-JK":48436
+  },
+  {
+    "No":110,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Kota Palembang",
+    "Prabowo-Hatta":410473,
+    "Jokowi-JK":372168
+  },
+  {
+    "No":111,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Kota Pagar Alam",
+    "Prabowo-Hatta":38006,
+    "Jokowi-JK":33579
+  },
+  {
+    "No":112,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Kota Lubuklinggau",
+    "Prabowo-Hatta":55804,
+    "Jokowi-JK":49873
+  },
+  {
+    "No":113,
+    "Provinsi":"Sumatera Selatan",
+    "Kota/Kabupaten":"Kota Prabumulih",
+    "Prabowo-Hatta":44281,
+    "Jokowi-JK":45896
+  },
+  {
+    "No":114,
+    "Provinsi":"Bengkulu",
+    "Kota/Kabupaten":"Bengkulu Tengah",
+    "Prabowo-Hatta":2604,
+    "Jokowi-JK":33531
+  },
+  {
+    "No":115,
+    "Provinsi":"Bengkulu",
+    "Kota/Kabupaten":"Bengkulu Selatan",
+    "Prabowo-Hatta":31154,
+    "Jokowi-JK":44964
+  },
+  {
+    "No":116,
+    "Provinsi":"Bengkulu",
+    "Kota/Kabupaten":"Rejang Lebong",
+    "Prabowo-Hatta":73479,
+    "Jokowi-JK":59063
+  },
+  {
+    "No":117,
+    "Provinsi":"Bengkulu",
+    "Kota/Kabupaten":"Bengkulu Utara",
+    "Prabowo-Hatta":55425,
+    "Jokowi-JK":95334
+  },
+  {
+    "No":118,
+    "Provinsi":"Bengkulu",
+    "Kota/Kabupaten":"Kaur",
+    "Prabowo-Hatta":26245,
+    "Jokowi-JK":36456
+  },
+  {
+    "No":119,
+    "Provinsi":"Bengkulu",
+    "Kota/Kabupaten":"Seluma",
+    "Prabowo-Hatta":39887,
+    "Jokowi-JK":59531
+  },
+  {
+    "No":120,
+    "Provinsi":"Bengkulu",
+    "Kota/Kabupaten":"Mukomuko",
+    "Prabowo-Hatta":35039,
+    "Jokowi-JK":49631
+  },
+  {
+    "No":121,
+    "Provinsi":"Bengkulu",
+    "Kota/Kabupaten":"Lebong",
+    "Prabowo-Hatta":22935,
+    "Jokowi-JK":29369
+  },
+  {
+    "No":122,
+    "Provinsi":"Bengkulu",
+    "Kota/Kabupaten":"Kepahiang",
+    "Prabowo-Hatta":41837,
+    "Jokowi-JK":32655
+  },
+  {
+    "No":123,
+    "Provinsi":"Bengkulu",
+    "Kota/Kabupaten":"Kota Bengkulu",
+    "Prabowo-Hatta":81132,
+    "Jokowi-JK":83135
+  },
+  {
+    "No":124,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Pringsewu",
+    "Prabowo-Hatta":102677,
+    "Jokowi-JK":109675
+  },
+  {
+    "No":125,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Mesuji",
+    "Prabowo-Hatta":45124,
+    "Jokowi-JK":62581
+  },
+  {
+    "No":126,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Tulang Bawang Barat",
+    "Prabowo-Hatta":69047,
+    "Jokowi-JK":83631
+  },
+  {
+    "No":127,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Lampung Selatan",
+    "Prabowo-Hatta":231365,
+    "Jokowi-JK":287821
+  },
+  {
+    "No":128,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Lampung Tengah",
+    "Prabowo-Hatta":306752,
+    "Jokowi-JK":366977
+  },
+  {
+    "No":129,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Lampung Utara",
+    "Prabowo-Hatta":185801,
+    "Jokowi-JK":138884
+  },
+  {
+    "No":130,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Lampung Barat",
+    "Prabowo-Hatta":97555,
+    "Jokowi-JK":140261
+  },
+  {
+    "No":131,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Tulang Bawang",
+    "Prabowo-Hatta":95164,
+    "Jokowi-JK":112553
+  },
+  {
+    "No":132,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Tanggamus",
+    "Prabowo-Hatta":163155,
+    "Jokowi-JK":145675
+  },
+  {
+    "No":133,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Lampung Timur",
+    "Prabowo-Hatta":230528,
+    "Jokowi-JK":311267
+  },
+  {
+    "No":134,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Way Kanan",
+    "Prabowo-Hatta":107739,
+    "Jokowi-JK":13493
+  },
+  {
+    "No":135,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Kota Bandar Lampung",
+    "Prabowo-Hatta":243525,
+    "Jokowi-JK":240477
+  },
+  {
+    "No":136,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Kota Metro",
+    "Prabowo-Hatta":41932,
+    "Jokowi-JK":41842
+  },
+  {
+    "No":137,
+    "Provinsi":"Lampung",
+    "Kota/Kabupaten":"Pesawaran",
+    "Prabowo-Hatta":11356,
+    "Jokowi-JK":123315
+  },
+  {
+    "No":138,
+    "Provinsi":"Kepulauan Bangka Belitung",
+    "Kota/Kabupaten":"Bangka",
+    "Prabowo-Hatta":48689,
+    "Jokowi-JK":85481
+  },
+  {
+    "No":139,
+    "Provinsi":"Kepulauan Bangka Belitung",
+    "Kota/Kabupaten":"Belitung",
+    "Prabowo-Hatta":28539,
+    "Jokowi-JK":607
+  },
+  {
+    "No":140,
+    "Provinsi":"Kepulauan Bangka Belitung",
+    "Kota/Kabupaten":"Bangka Selatan",
+    "Prabowo-Hatta":24574,
+    "Jokowi-JK":56235
+  },
+  {
+    "No":141,
+    "Provinsi":"Kepulauan Bangka Belitung",
+    "Kota/Kabupaten":"Bangka Tengah",
+    "Prabowo-Hatta":22078,
+    "Jokowi-JK":52707
+  },
+  {
+    "No":142,
+    "Provinsi":"Kepulauan Bangka Belitung",
+    "Kota/Kabupaten":"Bangka Barat",
+    "Prabowo-Hatta":22481,
+    "Jokowi-JK":64716
+  },
+  {
+    "No":143,
+    "Provinsi":"Kepulauan Bangka Belitung",
+    "Kota/Kabupaten":"Belitung Timur",
+    "Prabowo-Hatta":18542,
+    "Jokowi-JK":42817
+  },
+  {
+    "No":144,
+    "Provinsi":"Kepulauan Bangka Belitung",
+    "Kota/Kabupaten":"Kota Pangkalpinang",
+    "Prabowo-Hatta":35803,
+    "Jokowi-JK":49703
+  },
+  {
+    "No":145,
+    "Provinsi":"Kepulauan Riau",
+    "Kota/Kabupaten":"Kota Tanjungpinang",
+    "Prabowo-Hatta":38264,
+    "Jokowi-JK":55021
+  },
+  {
+    "No":146,
+    "Provinsi":"Kepulauan Riau",
+    "Kota/Kabupaten":"Kepulauan Anambas",
+    "Prabowo-Hatta":5468,
+    "Jokowi-JK":15145
+  },
+  {
+    "No":147,
+    "Provinsi":"Kepulauan Riau",
+    "Kota/Kabupaten":"Bintan",
+    "Prabowo-Hatta":27117,
+    "Jokowi-JK":43663
+  },
+  {
+    "No":148,
+    "Provinsi":"Kepulauan Riau",
+    "Kota/Kabupaten":"Karimun",
+    "Prabowo-Hatta":35843,
+    "Jokowi-JK":65509
+  },
+  {
+    "No":149,
+    "Provinsi":"Kepulauan Riau",
+    "Kota/Kabupaten":"Natuna",
+    "Prabowo-Hatta":9952,
+    "Jokowi-JK":22372
+  },
+  {
+    "No":150,
+    "Provinsi":"Kepulauan Riau",
+    "Kota/Kabupaten":"Lingga",
+    "Prabowo-Hatta":14018,
+    "Jokowi-JK":32943
+  },
+  {
+    "No":151,
+    "Provinsi":"Kepulauan Riau",
+    "Kota/Kabupaten":"Kota Batam",
+    "Prabowo-Hatta":202246,
+    "Jokowi-JK":257166
+  },
+  {
+    "No":152,
+    "Provinsi":"DKI Jakarta",
+    "Kota/Kabupaten":"Kepulauan Seribu",
+    "Prabowo-Hatta":6906,
+    "Jokowi-JK":8089
+  },
+  {
+    "No":153,
+    "Provinsi":"DKI Jakarta",
+    "Kota/Kabupaten":"Jakarta Pusat",
+    "Prabowo-Hatta":258376,
+    "Jokowi-JK":308059
+  },
+  {
+    "No":154,
+    "Provinsi":"DKI Jakarta",
+    "Kota/Kabupaten":"Jakarta Utara",
+    "Prabowo-Hatta":342651,
+    "Jokowi-JK":516654
+  },
+  {
+    "No":155,
+    "Provinsi":"DKI Jakarta",
+    "Kota/Kabupaten":"Jakarta Barat",
+    "Prabowo-Hatta":479815,
+    "Jokowi-JK":742103
+  },
+  {
+    "No":156,
+    "Provinsi":"DKI Jakarta",
+    "Kota/Kabupaten":"Jakarta Selatan",
+    "Prabowo-Hatta":612442,
+    "Jokowi-JK":568358
+  },
+  {
+    "No":157,
+    "Provinsi":"DKI Jakarta",
+    "Kota/Kabupaten":"Jakarta Timur",
+    "Prabowo-Hatta":827874,
+    "Jokowi-JK":716631
+  },
+  {
+    "No":158,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Bogor",
+    "Prabowo-Hatta":1636134,
+    "Jokowi-JK":852888
+  },
+  {
+    "No":159,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Sukabumi",
+    "Prabowo-Hatta":829802,
+    "Jokowi-JK":392927
+  },
+  {
+    "No":160,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Cianjur",
+    "Prabowo-Hatta":643722,
+    "Jokowi-JK":442822
+  },
+  {
+    "No":161,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Bandung",
+    "Prabowo-Hatta":1171109,
+    "Jokowi-JK":655044
+  },
+  {
+    "No":162,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Garut",
+    "Prabowo-Hatta":866613,
+    "Jokowi-JK":369199
+  },
+  {
+    "No":163,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Tasikmalaya",
+    "Prabowo-Hatta":647755,
+    "Jokowi-JK":268568
+  },
+  {
+    "No":164,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Ciamis",
+    "Prabowo-Hatta":49289,
+    "Jokowi-JK":418505
+  },
+  {
+    "No":165,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Kuningan",
+    "Prabowo-Hatta":312002,
+    "Jokowi-JK":250156
+  },
+  {
+    "No":166,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Cirebon",
+    "Prabowo-Hatta":415517,
+    "Jokowi-JK":653687
+  },
+  {
+    "No":167,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Majalengka",
+    "Prabowo-Hatta":386707,
+    "Jokowi-JK":338875
+  },
+  {
+    "No":168,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Sumedang",
+    "Prabowo-Hatta":401847,
+    "Jokowi-JK":252193
+  },
+  {
+    "No":169,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Indramayu",
+    "Prabowo-Hatta":371044,
+    "Jokowi-JK":540832
+  },
+  {
+    "No":170,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Subang",
+    "Prabowo-Hatta":413671,
+    "Jokowi-JK":447818
+  },
+  {
+    "No":171,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Purwakarta",
+    "Prabowo-Hatta":347259,
+    "Jokowi-JK":138257
+  },
+  {
+    "No":172,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Karawang",
+    "Prabowo-Hatta":708495,
+    "Jokowi-JK":473557
+  },
+  {
+    "No":173,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Bekasi",
+    "Prabowo-Hatta":906196,
+    "Jokowi-JK":555723
+  },
+  {
+    "No":174,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Bandung Barat",
+    "Prabowo-Hatta":547731,
+    "Jokowi-JK":332085
+  },
+  {
+    "No":175,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Kota Bogor",
+    "Prabowo-Hatta":340286,
+    "Jokowi-JK":210578
+  },
+  {
+    "No":176,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Kota Sukabumi",
+    "Prabowo-Hatta":120118,
+    "Jokowi-JK":5307
+  },
+  {
+    "No":177,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Kota Bandung",
+    "Prabowo-Hatta":778703,
+    "Jokowi-JK":571022
+  },
+  {
+    "No":178,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Kota Cirebon",
+    "Prabowo-Hatta":78359,
+    "Jokowi-JK":91079
+  },
+  {
+    "No":179,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Kota Bekasi",
+    "Prabowo-Hatta":671405,
+    "Jokowi-JK":555525
+  },
+  {
+    "No":180,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Kota Depok",
+    "Prabowo-Hatta":543284,
+    "Jokowi-JK":412695
+  },
+  {
+    "No":181,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Kota Cimahi",
+    "Prabowo-Hatta":198498,
+    "Jokowi-JK":104239
+  },
+  {
+    "No":182,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Kota Tasikmalaya",
+    "Prabowo-Hatta":281665,
+    "Jokowi-JK":99307
+  },
+  {
+    "No":183,
+    "Provinsi":"Jawa Barat",
+    "Kota/Kabupaten":"Kota Banjar",
+    "Prabowo-Hatta":56569,
+    "Jokowi-JK":49664
+  },
+  {
+    "No":184,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Cilacap",
+    "Prabowo-Hatta":381863,
+    "Jokowi-JK":585252
+  },
+  {
+    "No":185,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Banyumas",
+    "Prabowo-Hatta":346345,
+    "Jokowi-JK":613226
+  },
+  {
+    "No":186,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Purbalingga",
+    "Prabowo-Hatta":183873,
+    "Jokowi-JK":320704
+  },
+  {
+    "No":187,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Banjarnegara",
+    "Prabowo-Hatta":196898,
+    "Jokowi-JK":322398
+  },
+  {
+    "No":188,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Kebumen",
+    "Prabowo-Hatta":257306,
+    "Jokowi-JK":422713
+  },
+  {
+    "No":189,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Purworejo",
+    "Prabowo-Hatta":16619,
+    "Jokowi-JK":262246
+  },
+  {
+    "No":190,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Wonosobo",
+    "Prabowo-Hatta":169209,
+    "Jokowi-JK":296386
+  },
+  {
+    "No":191,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Magelang",
+    "Prabowo-Hatta":345405,
+    "Jokowi-JK":407458
+  },
+  {
+    "No":192,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Boyolali",
+    "Prabowo-Hatta":145353,
+    "Jokowi-JK":457914
+  },
+  {
+    "No":193,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Klaten",
+    "Prabowo-Hatta":189035,
+    "Jokowi-JK":562631
+  },
+  {
+    "No":194,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Sukoharjo",
+    "Prabowo-Hatta":105817,
+    "Jokowi-JK":411498
+  },
+  {
+    "No":195,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Wonogiri",
+    "Prabowo-Hatta":139522,
+    "Jokowi-JK":462735
+  },
+  {
+    "No":196,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Karanganyar",
+    "Prabowo-Hatta":145555,
+    "Jokowi-JK":387156
+  },
+  {
+    "No":197,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Sragen",
+    "Prabowo-Hatta":131045,
+    "Jokowi-JK":414425
+  },
+  {
+    "No":198,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Grobogan",
+    "Prabowo-Hatta":192547,
+    "Jokowi-JK":536562
+  },
+  {
+    "No":199,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Blora",
+    "Prabowo-Hatta":164706,
+    "Jokowi-JK":335176
+  },
+  {
+    "No":200,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Rembang",
+    "Prabowo-Hatta":126454,
+    "Jokowi-JK":245393
+  },
+  {
+    "No":201,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Pati",
+    "Prabowo-Hatta":197058,
+    "Jokowi-JK":540504
+  },
+  {
+    "No":202,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Kudus",
+    "Prabowo-Hatta":195171,
+    "Jokowi-JK":260384
+  },
+  {
+    "No":203,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Jepara",
+    "Prabowo-Hatta":180741,
+    "Jokowi-JK":43641
+  },
+  {
+    "No":204,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Demak",
+    "Prabowo-Hatta":224076,
+    "Jokowi-JK":369726
+  },
+  {
+    "No":205,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Semarang",
+    "Prabowo-Hatta":227602,
+    "Jokowi-JK":359428
+  },
+  {
+    "No":206,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Temanggung",
+    "Prabowo-Hatta":167212,
+    "Jokowi-JK":309118
+  },
+  {
+    "No":207,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Kendal",
+    "Prabowo-Hatta":228708,
+    "Jokowi-JK":329481
+  },
+  {
+    "No":208,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Batang",
+    "Prabowo-Hatta":145019,
+    "Jokowi-JK":278706
+  },
+  {
+    "No":209,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Pekalongan",
+    "Prabowo-Hatta":148592,
+    "Jokowi-JK":328245
+  },
+  {
+    "No":210,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Pemalang",
+    "Prabowo-Hatta":232693,
+    "Jokowi-JK":453468
+  },
+  {
+    "No":211,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Tegal",
+    "Prabowo-Hatta":2971,
+    "Jokowi-JK":451294
+  },
+  {
+    "No":212,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Brebes",
+    "Prabowo-Hatta":317975,
+    "Jokowi-JK":601106
+  },
+  {
+    "No":213,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Kota Magelang",
+    "Prabowo-Hatta":32173,
+    "Jokowi-JK":42056
+  },
+  {
+    "No":214,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Kota Surakarta",
+    "Prabowo-Hatta":52703,
+    "Jokowi-JK":284199
+  },
+  {
+    "No":215,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Kota Salatiga",
+    "Prabowo-Hatta":38628,
+    "Jokowi-JK":68664
+  },
+  {
+    "No":216,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Kota Semarang",
+    "Prabowo-Hatta":292496,
+    "Jokowi-JK":624289
+  },
+  {
+    "No":217,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Kota Pekalongan",
+    "Prabowo-Hatta":64738,
+    "Jokowi-JK":99814
+  },
+  {
+    "No":218,
+    "Provinsi":"Jawa Tengah",
+    "Kota/Kabupaten":"Kota Tegal",
+    "Prabowo-Hatta":55912,
+    "Jokowi-JK":78775
+  },
+  {
+    "No":219,
+    "Provinsi":"Daerah Istimewa Yogyakarta",
+    "Kota/Kabupaten":"Kulon Progo",
+    "Prabowo-Hatta":127145,
+    "Jokowi-JK":136881
+  },
+  {
+    "No":220,
+    "Provinsi":"Daerah Istimewa Yogyakarta",
+    "Kota/Kabupaten":"Bantul",
+    "Prabowo-Hatta":271535,
+    "Jokowi-JK":313383
+  },
+  {
+    "No":221,
+    "Provinsi":"Daerah Istimewa Yogyakarta",
+    "Kota/Kabupaten":"Gunungkidul",
+    "Prabowo-Hatta":176801,
+    "Jokowi-JK":28011
+  },
+  {
+    "No":222,
+    "Provinsi":"Daerah Istimewa Yogyakarta",
+    "Kota/Kabupaten":"Sleman",
+    "Prabowo-Hatta":30342,
+    "Jokowi-JK":355975
+  },
+  {
+    "No":223,
+    "Provinsi":"Daerah Istimewa Yogyakarta",
+    "Kota/Kabupaten":"Kota Yogyakarta",
+    "Prabowo-Hatta":98441,
+    "Jokowi-JK":1479
+  },
+  {
+    "No":224,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Pacitan",
+    "Prabowo-Hatta":205365,
+    "Jokowi-JK":112332
+  },
+  {
+    "No":225,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Ponorogo",
+    "Prabowo-Hatta":250385,
+    "Jokowi-JK":280689
+  },
+  {
+    "No":226,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Trenggalek",
+    "Prabowo-Hatta":14098,
+    "Jokowi-JK":267772
+  },
+  {
+    "No":227,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Tulungagung",
+    "Prabowo-Hatta":210972,
+    "Jokowi-JK":401482
+  },
+  {
+    "No":228,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Blitar",
+    "Prabowo-Hatta":194251,
+    "Jokowi-JK":488724
+  },
+  {
+    "No":229,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Kediri",
+    "Prabowo-Hatta":294429,
+    "Jokowi-JK":619456
+  },
+  {
+    "No":230,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Malang",
+    "Prabowo-Hatta":549623,
+    "Jokowi-JK":865641
+  },
+  {
+    "No":231,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Lumajang",
+    "Prabowo-Hatta":256576,
+    "Jokowi-JK":31984
+  },
+  {
+    "No":232,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Jember",
+    "Prabowo-Hatta":507428,
+    "Jokowi-JK":694751
+  },
+  {
+    "No":233,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Banyuwangi",
+    "Prabowo-Hatta":361727,
+    "Jokowi-JK":539652
+  },
+  {
+    "No":234,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Bondowoso",
+    "Prabowo-Hatta":270778,
+    "Jokowi-JK":175467
+  },
+  {
+    "No":235,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Situbondo",
+    "Prabowo-Hatta":220034,
+    "Jokowi-JK":153018
+  },
+  {
+    "No":236,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Probolinggo",
+    "Prabowo-Hatta":280103,
+    "Jokowi-JK":289694
+  },
+  {
+    "No":237,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Pasuruan",
+    "Prabowo-Hatta":474725,
+    "Jokowi-JK":34493
+  },
+  {
+    "No":238,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Sidoarjo",
+    "Prabowo-Hatta":464893,
+    "Jokowi-JK":550726
+  },
+  {
+    "No":239,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Mojokerto",
+    "Prabowo-Hatta":260355,
+    "Jokowi-JK":370265
+  },
+  {
+    "No":240,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Jombang",
+    "Prabowo-Hatta":303115,
+    "Jokowi-JK":411112
+  },
+  {
+    "No":241,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Nganjuk",
+    "Prabowo-Hatta":232506,
+    "Jokowi-JK":376899
+  },
+  {
+    "No":242,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Madiun",
+    "Prabowo-Hatta":177992,
+    "Jokowi-JK":240002
+  },
+  {
+    "No":243,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Magetan",
+    "Prabowo-Hatta":205946,
+    "Jokowi-JK":190962
+  },
+  {
+    "No":244,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Ngawi",
+    "Prabowo-Hatta":200735,
+    "Jokowi-JK":303169
+  },
+  {
+    "No":245,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Bojonegoro",
+    "Prabowo-Hatta":377277,
+    "Jokowi-JK":352307
+  },
+  {
+    "No":246,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Tuban",
+    "Prabowo-Hatta":267898,
+    "Jokowi-JK":373199
+  },
+  {
+    "No":247,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Lamongan",
+    "Prabowo-Hatta":368586,
+    "Jokowi-JK":342249
+  },
+  {
+    "No":248,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Gresik",
+    "Prabowo-Hatta":350955,
+    "Jokowi-JK":312496
+  },
+  {
+    "No":249,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Bangkalan",
+    "Prabowo-Hatta":644608,
+    "Jokowi-JK":149258
+  },
+  {
+    "No":250,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Sampang",
+    "Prabowo-Hatta":474752,
+    "Jokowi-JK":162785
+  },
+  {
+    "No":251,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Pamekasan",
+    "Prabowo-Hatta":378652,
+    "Jokowi-JK":135178
+  },
+  {
+    "No":252,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Sumenep",
+    "Prabowo-Hatta":332956,
+    "Jokowi-JK":24541
+  },
+  {
+    "No":253,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Kota Kediri",
+    "Prabowo-Hatta":59461,
+    "Jokowi-JK":100492
+  },
+  {
+    "No":254,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Kota Blitar",
+    "Prabowo-Hatta":29349,
+    "Jokowi-JK":54599
+  },
+  {
+    "No":255,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Kota Malang",
+    "Prabowo-Hatta":182128,
+    "Jokowi-JK":270971
+  },
+  {
+    "No":256,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Kota Probolinggo",
+    "Prabowo-Hatta":69112,
+    "Jokowi-JK":58149
+  },
+  {
+    "No":257,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Kota Pasuruan",
+    "Prabowo-Hatta":58967,
+    "Jokowi-JK":43896
+  },
+  {
+    "No":258,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Kota Mojokerto",
+    "Prabowo-Hatta":32706,
+    "Jokowi-JK":41504
+  },
+  {
+    "No":259,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Kota Madiun",
+    "Prabowo-Hatta":41048,
+    "Jokowi-JK":65059
+  },
+  {
+    "No":260,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Kota Surabaya",
+    "Prabowo-Hatta":498736,
+    "Jokowi-JK":892123
+  },
+  {
+    "No":261,
+    "Provinsi":"Jawa Timur",
+    "Kota/Kabupaten":"Kota Batu",
+    "Prabowo-Hatta":46979,
+    "Jokowi-JK":73055
+  },
+  {
+    "No":262,
+    "Provinsi":"Banten",
+    "Kota/Kabupaten":"Pandeglang",
+    "Prabowo-Hatta":352187,
+    "Jokowi-JK":245581
+  },
+  {
+    "No":263,
+    "Provinsi":"Banten",
+    "Kota/Kabupaten":"Lebak",
+    "Prabowo-Hatta":3377,
+    "Jokowi-JK":290868
+  },
+  {
+    "No":264,
+    "Provinsi":"Banten",
+    "Kota/Kabupaten":"Tangerang",
+    "Prabowo-Hatta":878685,
+    "Jokowi-JK":606456
+  },
+  {
+    "No":265,
+    "Provinsi":"Banten",
+    "Kota/Kabupaten":"Serang",
+    "Prabowo-Hatta":473545,
+    "Jokowi-JK":266663
+  },
+  {
+    "No":266,
+    "Provinsi":"Banten",
+    "Kota/Kabupaten":"Kota Tangerang",
+    "Prabowo-Hatta":500587,
+    "Jokowi-JK":425345
+  },
+  {
+    "No":267,
+    "Provinsi":"Banten",
+    "Kota/Kabupaten":"Kota Cilegon",
+    "Prabowo-Hatta":13161,
+    "Jokowi-JK":81908
+  },
+  {
+    "No":268,
+    "Provinsi":"Banten",
+    "Kota/Kabupaten":"Kota Serang",
+    "Prabowo-Hatta":182216,
+    "Jokowi-JK":122022
+  },
+  {
+    "No":269,
+    "Provinsi":"Banten",
+    "Kota/Kabupaten":"Kota Tangerang Selatan",
+    "Prabowo-Hatta":336141,
+    "Jokowi-JK":359788
+  },
+  {
+    "No":270,
+    "Provinsi":"Bali",
+    "Kota/Kabupaten":"Jembrana",
+    "Prabowo-Hatta":53278,
+    "Jokowi-JK":104801
+  },
+  {
+    "No":271,
+    "Provinsi":"Bali",
+    "Kota/Kabupaten":"Tabanan",
+    "Prabowo-Hatta":82214,
+    "Jokowi-JK":210896
+  },
+  {
+    "No":272,
+    "Provinsi":"Bali",
+    "Kota/Kabupaten":"Badung",
+    "Prabowo-Hatta":78066,
+    "Jokowi-JK":189217
+  },
+  {
+    "No":273,
+    "Provinsi":"Bali",
+    "Kota/Kabupaten":"Gianyar",
+    "Prabowo-Hatta":63953,
+    "Jokowi-JK":223125
+  },
+  {
+    "No":274,
+    "Provinsi":"Bali",
+    "Kota/Kabupaten":"Klungkung",
+    "Prabowo-Hatta":35921,
+    "Jokowi-JK":70831
+  },
+  {
+    "No":275,
+    "Provinsi":"Bali",
+    "Kota/Kabupaten":"Bangli",
+    "Prabowo-Hatta":37317,
+    "Jokowi-JK":102528
+  },
+  {
+    "No":276,
+    "Provinsi":"Bali",
+    "Kota/Kabupaten":"Karangasem",
+    "Prabowo-Hatta":8076,
+    "Jokowi-JK":159864
+  },
+  {
+    "No":277,
+    "Provinsi":"Bali",
+    "Kota/Kabupaten":"Buleleng",
+    "Prabowo-Hatta":102852,
+    "Jokowi-JK":232228
+  },
+  {
+    "No":278,
+    "Provinsi":"Bali",
+    "Kota/Kabupaten":"Kota Denpasar",
+    "Prabowo-Hatta":7988,
+    "Jokowi-JK":24162
+  },
+  {
+    "No":279,
+    "Provinsi":"Nusa Tenggara Barat",
+    "Kota/Kabupaten":"Lombok Barat",
+    "Prabowo-Hatta":264566,
+    "Jokowi-JK":79129
+  },
+  {
+    "No":280,
+    "Provinsi":"Nusa Tenggara Barat",
+    "Kota/Kabupaten":"Lombok Tengah",
+    "Prabowo-Hatta":362628,
+    "Jokowi-JK":12904
+  },
+  {
+    "No":281,
+    "Provinsi":"Nusa Tenggara Barat",
+    "Kota/Kabupaten":"Lombok Timur",
+    "Prabowo-Hatta":471546,
+    "Jokowi-JK":155595
+  },
+  {
+    "No":282,
+    "Provinsi":"Nusa Tenggara Barat",
+    "Kota/Kabupaten":"Sumbawa",
+    "Prabowo-Hatta":160055,
+    "Jokowi-JK":85539
+  },
+  {
+    "No":283,
+    "Provinsi":"Nusa Tenggara Barat",
+    "Kota/Kabupaten":"Dompu",
+    "Prabowo-Hatta":85635,
+    "Jokowi-JK":36005
+  },
+  {
+    "No":284,
+    "Provinsi":"Nusa Tenggara Barat",
+    "Kota/Kabupaten":"Bima",
+    "Prabowo-Hatta":16884,
+    "Jokowi-JK":67336
+  },
+  {
+    "No":285,
+    "Provinsi":"Nusa Tenggara Barat",
+    "Kota/Kabupaten":"Sumbawa Barat",
+    "Prabowo-Hatta":43934,
+    "Jokowi-JK":22185
+  },
+  {
+    "No":286,
+    "Provinsi":"Nusa Tenggara Barat",
+    "Kota/Kabupaten":"Kota Mataram",
+    "Prabowo-Hatta":143741,
+    "Jokowi-JK":71647
+  },
+  {
+    "No":287,
+    "Provinsi":"Nusa Tenggara Barat",
+    "Kota/Kabupaten":"Kota Bima",
+    "Prabowo-Hatta":59894,
+    "Jokowi-JK":18916
+  },
+  {
+    "No":288,
+    "Provinsi":"Nusa Tenggara Barat",
+    "Kota/Kabupaten":"Lombok Utara",
+    "Prabowo-Hatta":83339,
+    "Jokowi-JK":35846
+  },
+  {
+    "No":289,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Kupang",
+    "Prabowo-Hatta":79103,
+    "Jokowi-JK":71596
+  },
+  {
+    "No":290,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Timor Tengah Selatan",
+    "Prabowo-Hatta":99317,
+    "Jokowi-JK":102401
+  },
+  {
+    "No":291,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Timor Tengah Utara",
+    "Prabowo-Hatta":44956,
+    "Jokowi-JK":6339
+  },
+  {
+    "No":292,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Belu",
+    "Prabowo-Hatta":66568,
+    "Jokowi-JK":82988
+  },
+  {
+    "No":293,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Alor",
+    "Prabowo-Hatta":47494,
+    "Jokowi-JK":51958
+  },
+  {
+    "No":294,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Flores Timur",
+    "Prabowo-Hatta":27117,
+    "Jokowi-JK":8645
+  },
+  {
+    "No":295,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Sikka",
+    "Prabowo-Hatta":30377,
+    "Jokowi-JK":108911
+  },
+  {
+    "No":296,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Ende",
+    "Prabowo-Hatta":37979,
+    "Jokowi-JK":93411
+  },
+  {
+    "No":297,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Ngada",
+    "Prabowo-Hatta":20343,
+    "Jokowi-JK":4556
+  },
+  {
+    "No":298,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Manggarai",
+    "Prabowo-Hatta":34028,
+    "Jokowi-JK":97352
+  },
+  {
+    "No":299,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Sumba Timur",
+    "Prabowo-Hatta":29815,
+    "Jokowi-JK":74902
+  },
+  {
+    "No":300,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Sumba Barat",
+    "Prabowo-Hatta":13591,
+    "Jokowi-JK":32124
+  },
+  {
+    "No":301,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Lembata",
+    "Prabowo-Hatta":15357,
+    "Jokowi-JK":39459
+  },
+  {
+    "No":302,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Rote Ndao",
+    "Prabowo-Hatta":11862,
+    "Jokowi-JK":44482
+  },
+  {
+    "No":303,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Manggarai Barat",
+    "Prabowo-Hatta":3108,
+    "Jokowi-JK":81816
+  },
+  {
+    "No":304,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Nagekeo",
+    "Prabowo-Hatta":8628,
+    "Jokowi-JK":56426
+  },
+  {
+    "No":305,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Sumba Tengah",
+    "Prabowo-Hatta":795,
+    "Jokowi-JK":21568
+  },
+  {
+    "No":306,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Sumba Barat Daya",
+    "Prabowo-Hatta":50596,
+    "Jokowi-JK":119178
+  },
+  {
+    "No":307,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Kota Kupang",
+    "Prabowo-Hatta":72361,
+    "Jokowi-JK":107274
+  },
+  {
+    "No":308,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Manggarai Timur",
+    "Prabowo-Hatta":29706,
+    "Jokowi-JK":82233
+  },
+  {
+    "No":309,
+    "Provinsi":"Nusa Tenggara Timur",
+    "Kota/Kabupaten":"Sabu Raijua",
+    "Prabowo-Hatta":11163,
+    "Jokowi-JK":24597
+  },
+  {
+    "No":310,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Sambas",
+    "Prabowo-Hatta":112819,
+    "Jokowi-JK":155003
+  },
+  {
+    "No":311,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Pontianak",
+    "Prabowo-Hatta":73495,
+    "Jokowi-JK":49847
+  },
+  {
+    "No":312,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Sanggau",
+    "Prabowo-Hatta":67672,
+    "Jokowi-JK":19122
+  },
+  {
+    "No":313,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Ketapang",
+    "Prabowo-Hatta":9189,
+    "Jokowi-JK":150144
+  },
+  {
+    "No":314,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Sintang",
+    "Prabowo-Hatta":70855,
+    "Jokowi-JK":170639
+  },
+  {
+    "No":315,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Kapuas Hulu",
+    "Prabowo-Hatta":45342,
+    "Jokowi-JK":88208
+  },
+  {
+    "No":316,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Bengkayang",
+    "Prabowo-Hatta":30726,
+    "Jokowi-JK":91426
+  },
+  {
+    "No":317,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Landak",
+    "Prabowo-Hatta":37623,
+    "Jokowi-JK":19561
+  },
+  {
+    "No":318,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Sekadau",
+    "Prabowo-Hatta":30996,
+    "Jokowi-JK":84313
+  },
+  {
+    "No":319,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Melawi",
+    "Prabowo-Hatta":59353,
+    "Jokowi-JK":81234
+  },
+  {
+    "No":320,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Kayong Utara",
+    "Prabowo-Hatta":26303,
+    "Jokowi-JK":20669
+  },
+  {
+    "No":321,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Kota Pontianak",
+    "Prabowo-Hatta":182652,
+    "Jokowi-JK":126277
+  },
+  {
+    "No":322,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Kota Singkawang",
+    "Prabowo-Hatta":39205,
+    "Jokowi-JK":5559
+  },
+  {
+    "No":323,
+    "Provinsi":"Kalimantan Barat",
+    "Kota/Kabupaten":"Kubu Raya",
+    "Prabowo-Hatta":163423,
+    "Jokowi-JK":112866
+  },
+  {
+    "No":324,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Kotawaringin Barat",
+    "Prabowo-Hatta":61293,
+    "Jokowi-JK":65241
+  },
+  {
+    "No":325,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Kotawaringin Timur",
+    "Prabowo-Hatta":79206,
+    "Jokowi-JK":127678
+  },
+  {
+    "No":326,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Kapuas",
+    "Prabowo-Hatta":78155,
+    "Jokowi-JK":83402
+  },
+  {
+    "No":327,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Barito Selatan",
+    "Prabowo-Hatta":25836,
+    "Jokowi-JK":37677
+  },
+  {
+    "No":328,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Barito Utara",
+    "Prabowo-Hatta":22121,
+    "Jokowi-JK":40394
+  },
+  {
+    "No":329,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Katingan",
+    "Prabowo-Hatta":22595,
+    "Jokowi-JK":48245
+  },
+  {
+    "No":330,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Seruyan",
+    "Prabowo-Hatta":28589,
+    "Jokowi-JK":5166
+  },
+  {
+    "No":331,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Sukamara",
+    "Prabowo-Hatta":8435,
+    "Jokowi-JK":14199
+  },
+  {
+    "No":332,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Lamandau",
+    "Prabowo-Hatta":11739,
+    "Jokowi-JK":23889
+  },
+  {
+    "No":333,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Gunung Mas",
+    "Prabowo-Hatta":11787,
+    "Jokowi-JK":41452
+  },
+  {
+    "No":334,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Pulang Pisau",
+    "Prabowo-Hatta":23195,
+    "Jokowi-JK":36991
+  },
+  {
+    "No":335,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Murung Raya",
+    "Prabowo-Hatta":20732,
+    "Jokowi-JK":25468
+  },
+  {
+    "No":336,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Barito Timur",
+    "Prabowo-Hatta":19907,
+    "Jokowi-JK":36052
+  },
+  {
+    "No":337,
+    "Provinsi":"Kalimantan Tengah",
+    "Kota/Kabupaten":"Kota Palangkaraya",
+    "Prabowo-Hatta":54687,
+    "Jokowi-JK":63851
+  },
+  {
+    "No":338,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Tanah Laut",
+    "Prabowo-Hatta":72095,
+    "Jokowi-JK":81892
+  },
+  {
+    "No":339,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Kotabaru",
+    "Prabowo-Hatta":57932,
+    "Jokowi-JK":88379
+  },
+  {
+    "No":340,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Banjar",
+    "Prabowo-Hatta":131493,
+    "Jokowi-JK":125116
+  },
+  {
+    "No":341,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Barito Kuala",
+    "Prabowo-Hatta":7089,
+    "Jokowi-JK":71968
+  },
+  {
+    "No":342,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Tapin",
+    "Prabowo-Hatta":58181,
+    "Jokowi-JK":3774
+  },
+  {
+    "No":343,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Hulu Sungai Selatan",
+    "Prabowo-Hatta":53777,
+    "Jokowi-JK":52765
+  },
+  {
+    "No":344,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Hulu Sungai Tengah",
+    "Prabowo-Hatta":79784,
+    "Jokowi-JK":52007
+  },
+  {
+    "No":345,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Hulu Sungai Utara",
+    "Prabowo-Hatta":60178,
+    "Jokowi-JK":43068
+  },
+  {
+    "No":346,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Tabalong",
+    "Prabowo-Hatta":68841,
+    "Jokowi-JK":50403
+  },
+  {
+    "No":347,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Tanah Bumbu",
+    "Prabowo-Hatta":51812,
+    "Jokowi-JK":93242
+  },
+  {
+    "No":348,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Balangan",
+    "Prabowo-Hatta":29306,
+    "Jokowi-JK":32915
+  },
+  {
+    "No":349,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Kota Banjarmasin",
+    "Prabowo-Hatta":153822,
+    "Jokowi-JK":157062
+  },
+  {
+    "No":350,
+    "Provinsi":"Kalimantan Selatan",
+    "Kota/Kabupaten":"Kota Banjarbaru",
+    "Prabowo-Hatta":53698,
+    "Jokowi-JK":53191
+  },
+  {
+    "No":351,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Paser",
+    "Prabowo-Hatta":50382,
+    "Jokowi-JK":65438
+  },
+  {
+    "No":352,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Kutai Kartanegara",
+    "Prabowo-Hatta":117811,
+    "Jokowi-JK":207503
+  },
+  {
+    "No":353,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Berau",
+    "Prabowo-Hatta":29777,
+    "Jokowi-JK":66443
+  },
+  {
+    "No":354,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Bulungan",
+    "Prabowo-Hatta":17884,
+    "Jokowi-JK":3641
+  },
+  {
+    "No":355,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Nunukan",
+    "Prabowo-Hatta":16802,
+    "Jokowi-JK":60395
+  },
+  {
+    "No":356,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Malinau",
+    "Prabowo-Hatta":7966,
+    "Jokowi-JK":26753
+  },
+  {
+    "No":357,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Kutai Barat",
+    "Prabowo-Hatta":21161,
+    "Jokowi-JK":75625
+  },
+  {
+    "No":358,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Kutai Timur",
+    "Prabowo-Hatta":46159,
+    "Jokowi-JK":100346
+  },
+  {
+    "No":359,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Penajam Paser Utara",
+    "Prabowo-Hatta":31374,
+    "Jokowi-JK":42383
+  },
+  {
+    "No":360,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Kota Balikpapan",
+    "Prabowo-Hatta":123073,
+    "Jokowi-JK":177102
+  },
+  {
+    "No":361,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Kota Samarinda",
+    "Prabowo-Hatta":155316,
+    "Jokowi-JK":21632
+  },
+  {
+    "No":362,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Kota Tarakan",
+    "Prabowo-Hatta":36465,
+    "Jokowi-JK":57213
+  },
+  {
+    "No":363,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Kota Bontang",
+    "Prabowo-Hatta":30757,
+    "Jokowi-JK":52112
+  },
+  {
+    "No":364,
+    "Provinsi":"Kalimantan Timur",
+    "Kota/Kabupaten":"Tana Tidung",
+    "Prabowo-Hatta":2807,
+    "Jokowi-JK":6113
+  },
+  {
+    "No":365,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Bolaang Mongondow Timur",
+    "Prabowo-Hatta":22923,
+    "Jokowi-JK":13864
+  },
+  {
+    "No":366,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Bolaang Mongondow Selatan",
+    "Prabowo-Hatta":19624,
+    "Jokowi-JK":14495
+  },
+  {
+    "No":367,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Bolaang Mongondow",
+    "Prabowo-Hatta":73276,
+    "Jokowi-JK":4437
+  },
+  {
+    "No":368,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Minahasa",
+    "Prabowo-Hatta":85418,
+    "Jokowi-JK":113149
+  },
+  {
+    "No":369,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Kepulauan Sangihe",
+    "Prabowo-Hatta":28218,
+    "Jokowi-JK":46905
+  },
+  {
+    "No":370,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Kepulauan Talaud",
+    "Prabowo-Hatta":11232,
+    "Jokowi-JK":39962
+  },
+  {
+    "No":371,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Minahasa Selatan",
+    "Prabowo-Hatta":53606,
+    "Jokowi-JK":67508
+  },
+  {
+    "No":372,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Minahasa Utara",
+    "Prabowo-Hatta":5536,
+    "Jokowi-JK":6062
+  },
+  {
+    "No":373,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Minahasa Tenggara",
+    "Prabowo-Hatta":3287,
+    "Jokowi-JK":31437
+  },
+  {
+    "No":374,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Bolaang Mongondow Utara",
+    "Prabowo-Hatta":22172,
+    "Jokowi-JK":18012
+  },
+  {
+    "No":375,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Kep. Siau Tagulandang Biaro",
+    "Prabowo-Hatta":12814,
+    "Jokowi-JK":29077
+  },
+  {
+    "No":376,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Kota Manado",
+    "Prabowo-Hatta":94408,
+    "Jokowi-JK":134572
+  },
+  {
+    "No":377,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Kota Bitung",
+    "Prabowo-Hatta":41634,
+    "Jokowi-JK":60822
+  },
+  {
+    "No":378,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Kota Tomohon",
+    "Prabowo-Hatta":26137,
+    "Jokowi-JK":31401
+  },
+  {
+    "No":379,
+    "Provinsi":"Sulawesi Utara",
+    "Kota/Kabupaten":"Kota Kotamobagu",
+    "Prabowo-Hatta":40403,
+    "Jokowi-JK":18359
+  },
+  {
+    "No":380,
+    "Provinsi":"Sulawesi Tengah",
+    "Kota/Kabupaten":"Sigi",
+    "Prabowo-Hatta":73805,
+    "Jokowi-JK":50563
+  },
+  {
+    "No":381,
+    "Provinsi":"Sulawesi Tengah",
+    "Kota/Kabupaten":"Banggai",
+    "Prabowo-Hatta":74882,
+    "Jokowi-JK":103276
+  },
+  {
+    "No":382,
+    "Provinsi":"Sulawesi Tengah",
+    "Kota/Kabupaten":"Poso",
+    "Prabowo-Hatta":53151,
+    "Jokowi-JK":63963
+  },
+  {
+    "No":383,
+    "Provinsi":"Sulawesi Tengah",
+    "Kota/Kabupaten":"Donggala",
+    "Prabowo-Hatta":59129,
+    "Jokowi-JK":79621
+  },
+  {
+    "No":384,
+    "Provinsi":"Sulawesi Tengah",
+    "Kota/Kabupaten":"Tolitoli",
+    "Prabowo-Hatta":35776,
+    "Jokowi-JK":68959
+  },
+  {
+    "No":385,
+    "Provinsi":"Sulawesi Tengah",
+    "Kota/Kabupaten":"Buol",
+    "Prabowo-Hatta":32202,
+    "Jokowi-JK":35339
+  },
+  {
+    "No":386,
+    "Provinsi":"Sulawesi Tengah",
+    "Kota/Kabupaten":"Morowali",
+    "Prabowo-Hatta":4161,
+    "Jokowi-JK":73276
+  },
+  {
+    "No":387,
+    "Provinsi":"Sulawesi Tengah",
+    "Kota/Kabupaten":"Banggai Kepulauan",
+    "Prabowo-Hatta":40463,
+    "Jokowi-JK":54019
+  },
+  {
+    "No":388,
+    "Provinsi":"Sulawesi Tengah",
+    "Kota/Kabupaten":"Parigi Moutong",
+    "Prabowo-Hatta":93518,
+    "Jokowi-JK":11833
+  },
+  {
+    "No":389,
+    "Provinsi":"Sulawesi Tengah",
+    "Kota/Kabupaten":"Tojo Una-Una",
+    "Prabowo-Hatta":36729,
+    "Jokowi-JK":38044
+  },
+  {
+    "No":390,
+    "Provinsi":"Sulawesi Tengah",
+    "Kota/Kabupaten":"Kota Palu",
+    "Prabowo-Hatta":90744,
+    "Jokowi-JK":81761
+  },
+  {
+    "No":391,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Toraja Utara",
+    "Prabowo-Hatta":3899,
+    "Jokowi-JK":83471
+  },
+  {
+    "No":392,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Kepulauan Selayar",
+    "Prabowo-Hatta":2734,
+    "Jokowi-JK":37543
+  },
+  {
+    "No":393,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Bulukumba",
+    "Prabowo-Hatta":5297,
+    "Jokowi-JK":147572
+  },
+  {
+    "No":394,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Bantaeng",
+    "Prabowo-Hatta":36403,
+    "Jokowi-JK":49655
+  },
+  {
+    "No":395,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Jeneponto",
+    "Prabowo-Hatta":85822,
+    "Jokowi-JK":85031
+  },
+  {
+    "No":396,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Takalar",
+    "Prabowo-Hatta":51298,
+    "Jokowi-JK":98476
+  },
+  {
+    "No":397,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Gowa",
+    "Prabowo-Hatta":131623,
+    "Jokowi-JK":241625
+  },
+  {
+    "No":398,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Sinjai",
+    "Prabowo-Hatta":42042,
+    "Jokowi-JK":74275
+  },
+  {
+    "No":399,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Bone",
+    "Prabowo-Hatta":53813,
+    "Jokowi-JK":339766
+  },
+  {
+    "No":400,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Maros",
+    "Prabowo-Hatta":47191,
+    "Jokowi-JK":126719
+  },
+  {
+    "No":401,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Pangkajene Dan Kepulauan",
+    "Prabowo-Hatta":47468,
+    "Jokowi-JK":116198
+  },
+  {
+    "No":402,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Barru",
+    "Prabowo-Hatta":1379,
+    "Jokowi-JK":79091
+  },
+  {
+    "No":403,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Soppeng",
+    "Prabowo-Hatta":19645,
+    "Jokowi-JK":109559
+  },
+  {
+    "No":404,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Wajo",
+    "Prabowo-Hatta":34889,
+    "Jokowi-JK":174843
+  },
+  {
+    "No":405,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Sidenreng Rappang",
+    "Prabowo-Hatta":30953,
+    "Jokowi-JK":12654
+  },
+  {
+    "No":406,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Pinrang",
+    "Prabowo-Hatta":43482,
+    "Jokowi-JK":143482
+  },
+  {
+    "No":407,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Enrekang",
+    "Prabowo-Hatta":3981,
+    "Jokowi-JK":6241
+  },
+  {
+    "No":408,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Luwu",
+    "Prabowo-Hatta":61083,
+    "Jokowi-JK":131777
+  },
+  {
+    "No":409,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Tana Toraja",
+    "Prabowo-Hatta":31216,
+    "Jokowi-JK":76632
+  },
+  {
+    "No":410,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Luwu Utara",
+    "Prabowo-Hatta":51038,
+    "Jokowi-JK":101463
+  },
+  {
+    "No":411,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Luwu Timur",
+    "Prabowo-Hatta":43329,
+    "Jokowi-JK":83832
+  },
+  {
+    "No":412,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Kota Makassar",
+    "Prabowo-Hatta":186893,
+    "Jokowi-JK":447353
+  },
+  {
+    "No":413,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Kota Pare Pare",
+    "Prabowo-Hatta":1808,
+    "Jokowi-JK":51211
+  },
+  {
+    "No":414,
+    "Provinsi":"Sulawesi Selatan",
+    "Kota/Kabupaten":"Kota Palopo",
+    "Prabowo-Hatta":25689,
+    "Jokowi-JK":48502
+  },
+  {
+    "No":415,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Kolaka",
+    "Prabowo-Hatta":64694,
+    "Jokowi-JK":92586
+  },
+  {
+    "No":416,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Konawe",
+    "Prabowo-Hatta":795,
+    "Jokowi-JK":57538
+  },
+  {
+    "No":417,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Muna",
+    "Prabowo-Hatta":67604,
+    "Jokowi-JK":4843
+  },
+  {
+    "No":418,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Buton",
+    "Prabowo-Hatta":54793,
+    "Jokowi-JK":69167
+  },
+  {
+    "No":419,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Konawe Selatan",
+    "Prabowo-Hatta":62741,
+    "Jokowi-JK":74151
+  },
+  {
+    "No":420,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Bombana",
+    "Prabowo-Hatta":25165,
+    "Jokowi-JK":41326
+  },
+  {
+    "No":421,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Wakatobi",
+    "Prabowo-Hatta":14824,
+    "Jokowi-JK":31229
+  },
+  {
+    "No":422,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Kolaka Utara",
+    "Prabowo-Hatta":15394,
+    "Jokowi-JK":54028
+  },
+  {
+    "No":423,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Konawe Utara",
+    "Prabowo-Hatta":14245,
+    "Jokowi-JK":18278
+  },
+  {
+    "No":424,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Buton Utara",
+    "Prabowo-Hatta":11008,
+    "Jokowi-JK":17139
+  },
+  {
+    "No":425,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Kota Kendari",
+    "Prabowo-Hatta":72705,
+    "Jokowi-JK":80645
+  },
+  {
+    "No":426,
+    "Provinsi":"Sulawesi Tenggara",
+    "Kota/Kabupaten":"Kota Bau Bau",
+    "Prabowo-Hatta":28461,
+    "Jokowi-JK":377
+  },
+  {
+    "No":427,
+    "Provinsi":"Gorontalo",
+    "Kota/Kabupaten":"Gorontalo",
+    "Prabowo-Hatta":140134,
+    "Jokowi-JK":67189
+  },
+  {
+    "No":428,
+    "Provinsi":"Gorontalo",
+    "Kota/Kabupaten":"Boalemo",
+    "Prabowo-Hatta":43129,
+    "Jokowi-JK":33179
+  },
+  {
+    "No":429,
+    "Provinsi":"Gorontalo",
+    "Kota/Kabupaten":"Bone Bolango",
+    "Prabowo-Hatta":54995,
+    "Jokowi-JK":30674
+  },
+  {
+    "No":430,
+    "Provinsi":"Gorontalo",
+    "Kota/Kabupaten":"Pahuwato",
+    "Prabowo-Hatta":37943,
+    "Jokowi-JK":32126
+  },
+  {
+    "No":431,
+    "Provinsi":"Gorontalo",
+    "Kota/Kabupaten":"Gorontalo Utara",
+    "Prabowo-Hatta":40269,
+    "Jokowi-JK":20161
+  },
+  {
+    "No":432,
+    "Provinsi":"Gorontalo",
+    "Kota/Kabupaten":"Kota Gorontalo",
+    "Prabowo-Hatta":62265,
+    "Jokowi-JK":38168
+  },
+  {
+    "No":433,
+    "Provinsi":"Sulawesi Barat",
+    "Kota/Kabupaten":"Mamuju Utara",
+    "Prabowo-Hatta":16909,
+    "Jokowi-JK":50833
+  },
+  {
+    "No":434,
+    "Provinsi":"Sulawesi Barat",
+    "Kota/Kabupaten":"Mamuju",
+    "Prabowo-Hatta":42327,
+    "Jokowi-JK":13825
+  },
+  {
+    "No":435,
+    "Provinsi":"Sulawesi Barat",
+    "Kota/Kabupaten":"Mamasa",
+    "Prabowo-Hatta":1971,
+    "Jokowi-JK":67656
+  },
+  {
+    "No":436,
+    "Provinsi":"Sulawesi Barat",
+    "Kota/Kabupaten":"Polewali Mandar",
+    "Prabowo-Hatta":67377,
+    "Jokowi-JK":136429
+  },
+  {
+    "No":437,
+    "Provinsi":"Sulawesi Barat",
+    "Kota/Kabupaten":"Majene",
+    "Prabowo-Hatta":19171,
+    "Jokowi-JK":62853
+  },
+  {
+    "No":438,
+    "Provinsi":"Maluku",
+    "Kota/Kabupaten":"Maluku Barat Daya",
+    "Prabowo-Hatta":11339,
+    "Jokowi-JK":2472
+  },
+  {
+    "No":439,
+    "Provinsi":"Maluku",
+    "Kota/Kabupaten":"Buru Selatan",
+    "Prabowo-Hatta":22733,
+    "Jokowi-JK":22952
+  },
+  {
+    "No":440,
+    "Provinsi":"Maluku",
+    "Kota/Kabupaten":"Maluku Tengah",
+    "Prabowo-Hatta":115572,
+    "Jokowi-JK":88144
+  },
+  {
+    "No":441,
+    "Provinsi":"Maluku",
+    "Kota/Kabupaten":"Maluku Tenggara",
+    "Prabowo-Hatta":17944,
+    "Jokowi-JK":33929
+  },
+  {
+    "No":442,
+    "Provinsi":"Maluku",
+    "Kota/Kabupaten":"Maluku Tenggara Barat",
+    "Prabowo-Hatta":11415,
+    "Jokowi-JK":36029
+  },
+  {
+    "No":443,
+    "Provinsi":"Maluku",
+    "Kota/Kabupaten":"Buru",
+    "Prabowo-Hatta":44878,
+    "Jokowi-JK":23164
+  },
+  {
+    "No":444,
+    "Provinsi":"Maluku",
+    "Kota/Kabupaten":"Seram Bagian Timur",
+    "Prabowo-Hatta":46986,
+    "Jokowi-JK":27943
+  },
+  {
+    "No":445,
+    "Provinsi":"Maluku",
+    "Kota/Kabupaten":"Seram Bagian Barat",
+    "Prabowo-Hatta":55436,
+    "Jokowi-JK":43068
+  },
+  {
+    "No":446,
+    "Provinsi":"Maluku",
+    "Kota/Kabupaten":"Kepulauan Aru",
+    "Prabowo-Hatta":1147,
+    "Jokowi-JK":29898
+  },
+  {
+    "No":447,
+    "Provinsi":"Maluku",
+    "Kota/Kabupaten":"Kota Ambon",
+    "Prabowo-Hatta":76136,
+    "Jokowi-JK":100744
+  },
+  {
+    "No":448,
+    "Provinsi":"Maluku",
+    "Kota/Kabupaten":"Kota Tual",
+    "Prabowo-Hatta":20072,
+    "Jokowi-JK":12449
+  },
+  {
+    "No":449,
+    "Provinsi":"Maluku Utara",
+    "Kota/Kabupaten":"Pulau Morotai",
+    "Prabowo-Hatta":24702,
+    "Jokowi-JK":11403
+  },
+  {
+    "No":450,
+    "Provinsi":"Maluku Utara",
+    "Kota/Kabupaten":"Halmahera Barat",
+    "Prabowo-Hatta":26309,
+    "Jokowi-JK":2879
+  },
+  {
+    "No":451,
+    "Provinsi":"Maluku Utara",
+    "Kota/Kabupaten":"Halmahera Tengah",
+    "Prabowo-Hatta":12507,
+    "Jokowi-JK":13141
+  },
+  {
+    "No":452,
+    "Provinsi":"Maluku Utara",
+    "Kota/Kabupaten":"Halmahera Utara",
+    "Prabowo-Hatta":37923,
+    "Jokowi-JK":49188
+  },
+  {
+    "No":453,
+    "Provinsi":"Maluku Utara",
+    "Kota/Kabupaten":"Halmahera Selatan",
+    "Prabowo-Hatta":64072,
+    "Jokowi-JK":48196
+  },
+  {
+    "No":454,
+    "Provinsi":"Maluku Utara",
+    "Kota/Kabupaten":"Kepulauan Sula",
+    "Prabowo-Hatta":37701,
+    "Jokowi-JK":31778
+  },
+  {
+    "No":455,
+    "Provinsi":"Maluku Utara",
+    "Kota/Kabupaten":"Halmahera Timur",
+    "Prabowo-Hatta":21864,
+    "Jokowi-JK":20152
+  },
+  {
+    "No":456,
+    "Provinsi":"Maluku Utara",
+    "Kota/Kabupaten":"Kota Ternate",
+    "Prabowo-Hatta":54043,
+    "Jokowi-JK":30113
+  },
+  {
+    "No":457,
+    "Provinsi":"Maluku Utara",
+    "Kota/Kabupaten":"Kota Tidore Kepulauan",
+    "Prabowo-Hatta":27671,
+    "Jokowi-JK":2384
+  },
+  {
+    "No":458,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Intan Jaya",
+    "Prabowo-Hatta":13765,
+    "Jokowi-JK":56184
+  },
+  {
+    "No":459,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Deiyai",
+    "Prabowo-Hatta":5628,
+    "Jokowi-JK":4197
+  },
+  {
+    "No":460,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Tolikara",
+    "Prabowo-Hatta":42579,
+    "Jokowi-JK":1348
+  },
+  {
+    "No":461,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Waropen",
+    "Prabowo-Hatta":3233,
+    "Jokowi-JK":18302
+  },
+  {
+    "No":462,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Boven Digoel",
+    "Prabowo-Hatta":7017,
+    "Jokowi-JK":22322
+  },
+  {
+    "No":463,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Mappi",
+    "Prabowo-Hatta":8192,
+    "Jokowi-JK":35546
+  },
+  {
+    "No":464,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Asmat",
+    "Prabowo-Hatta":13288,
+    "Jokowi-JK":52957
+  },
+  {
+    "No":465,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Supiori",
+    "Prabowo-Hatta":869,
+    "Jokowi-JK":9421
+  },
+  {
+    "No":466,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Mamberamo Raya",
+    "Prabowo-Hatta":1115,
+    "Jokowi-JK":19089
+  },
+  {
+    "No":467,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Kota Jayapura",
+    "Prabowo-Hatta":6922,
+    "Jokowi-JK":9678
+  },
+  {
+    "No":468,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Mamberamo Tengah",
+    "Prabowo-Hatta":24116,
+    "Jokowi-JK":5539
+  },
+  {
+    "No":469,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Yalimo",
+    "Prabowo-Hatta":17812,
+    "Jokowi-JK":5005
+  },
+  {
+    "No":470,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Lanny Jaya",
+    "Prabowo-Hatta":82841,
+    "Jokowi-JK":62609
+  },
+  {
+    "No":471,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Nduga",
+    "Prabowo-Hatta":40,
+    "Jokowi-JK":106784
+  },
+  {
+    "No":472,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Puncak",
+    "Prabowo-Hatta":8071,
+    "Jokowi-JK":149096
+  },
+  {
+    "No":473,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Dogiyai",
+    "Prabowo-Hatta":0,
+    "Jokowi-JK":89536
+  },
+  {
+    "No":474,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Merauke",
+    "Prabowo-Hatta":47584,
+    "Jokowi-JK":49784
+  },
+  {
+    "No":475,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Jayawijaya",
+    "Prabowo-Hatta":33262,
+    "Jokowi-JK":177483
+  },
+  {
+    "No":476,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Jayapura",
+    "Prabowo-Hatta":33076,
+    "Jokowi-JK":6134
+  },
+  {
+    "No":477,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Nabire",
+    "Prabowo-Hatta":41061,
+    "Jokowi-JK":90541
+  },
+  {
+    "No":478,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Kepulauan Yapen",
+    "Prabowo-Hatta":11612,
+    "Jokowi-JK":65312
+  },
+  {
+    "No":479,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Biak Numfor",
+    "Prabowo-Hatta":93,
+    "Jokowi-JK":47371
+  },
+  {
+    "No":480,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Puncak Jaya",
+    "Prabowo-Hatta":78797,
+    "Jokowi-JK":87122
+  },
+  {
+    "No":481,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Paniai",
+    "Prabowo-Hatta":7662,
+    "Jokowi-JK":8297
+  },
+  {
+    "No":482,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Mimika",
+    "Prabowo-Hatta":57937,
+    "Jokowi-JK":124583
+  },
+  {
+    "No":483,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Sarmi",
+    "Prabowo-Hatta":4586,
+    "Jokowi-JK":13095
+  },
+  {
+    "No":484,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Keerom",
+    "Prabowo-Hatta":1471,
+    "Jokowi-JK":16684
+  },
+  {
+    "No":485,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Pegunungan Bintang",
+    "Prabowo-Hatta":5502,
+    "Jokowi-JK":84149
+  },
+  {
+    "No":486,
+    "Provinsi":"Papua",
+    "Kota/Kabupaten":"Yahukimo",
+    "Prabowo-Hatta":86297,
+    "Jokowi-JK":175316
+  },
+  {
+    "No":487,
+    "Provinsi":"Papua Barat",
+    "Kota/Kabupaten":"Maybrat",
+    "Prabowo-Hatta":7966,
+    "Jokowi-JK":20882
+  },
+  {
+    "No":488,
+    "Provinsi":"Papua Barat",
+    "Kota/Kabupaten":"Tambrauw",
+    "Prabowo-Hatta":4559,
+    "Jokowi-JK":15274
+  },
+  {
+    "No":489,
+    "Provinsi":"Papua Barat",
+    "Kota/Kabupaten":"Sorong",
+    "Prabowo-Hatta":24307,
+    "Jokowi-JK":33514
+  },
+  {
+    "No":490,
+    "Provinsi":"Papua Barat",
+    "Kota/Kabupaten":"Manokwari",
+    "Prabowo-Hatta":42328,
+    "Jokowi-JK":101375
+  },
+  {
+    "No":491,
+    "Provinsi":"Papua Barat",
+    "Kota/Kabupaten":"Fakfak",
+    "Prabowo-Hatta":15055,
+    "Jokowi-JK":21129
+  },
+  {
+    "No":492,
+    "Provinsi":"Papua Barat",
+    "Kota/Kabupaten":"Sorong Selatan",
+    "Prabowo-Hatta":8939,
+    "Jokowi-JK":2559
+  },
+  {
+    "No":493,
+    "Provinsi":"Papua Barat",
+    "Kota/Kabupaten":"Raja Ampat",
+    "Prabowo-Hatta":792,
+    "Jokowi-JK":19626
+  },
+  {
+    "No":494,
+    "Provinsi":"Papua Barat",
+    "Kota/Kabupaten":"Teluk Bintuni",
+    "Prabowo-Hatta":12314,
+    "Jokowi-JK":28499
+  },
+  {
+    "No":495,
+    "Provinsi":"Papua Barat",
+    "Kota/Kabupaten":"Teluk Wondama",
+    "Prabowo-Hatta":3291,
+    "Jokowi-JK":14104
+  },
+  {
+    "No":496,
+    "Provinsi":"Papua Barat",
+    "Kota/Kabupaten":"Kaimana",
+    "Prabowo-Hatta":6766,
+    "Jokowi-JK":15227
+  },
+  {
+    "No":497,
+    "Provinsi":"Papua Barat",
+    "Kota/Kabupaten":"Kota Sorong",
+    "Prabowo-Hatta":39083,
+    "Jokowi-JK":65159
+  }
+]

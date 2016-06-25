@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Sci-Learn</title>
+  <meta name="generator" content="Bootply" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <link href="stylesheets/styles.css" rel="stylesheet">
+      <link rel="shortcut icon" type="image/png" href="images/logo.jpg"/>
+    </head>
+        </head>
+    <body>
+
+      <div class="wrapper">
+        <div class="box">
+          <div class="row row-offcanvas row-offcanvas-left">
+            
+            
+            
+            <!-- main right col -->
+            <div class="column col-sm-12 col-xs-11" id="main" style="width: 100%; background: white;">
+              
+              <!-- top nav -->
+              <div class="navbar navbar-blue navbar-static-top">  
+                <div class="navbar-header" style="padding-left:50px ; padding-top: 2px;">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand logo" style="padding-top: 4px;">S</a>
+                </div>
+                <nav class="collapse navbar-collapse" role="navigation">
+
+
+
+                      
+                   <ul class="nav navbar-nav navbar-right" style="padding-right:60px">
+                    <li class="dropdown" style="margin-right: 0px; ">
+                      <a href="#" style="padding: 15px 16px 10px 20px;    margin-bottom: 0px;" class="dropdown-toggle" data-toggle="dropdown">
+                      
+                      <i class="glyphicon glyphicon-menu-hamburger" style="font-size:17px;"></i>
+                      
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a type="" onclick="signUpForm()">SignUp</a></li>
+                        <li><a href="https://www.linkedin.com/in/daniar-heri-kurniawan-98b6158b" >About The Founder</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+
+
+                </div>
+                <!-- /top nav -->
+                
+                <div class="padding" style="margin-top:30px;     background: white;">
+                  <div class="full col-sm-9">
+                    
+                    <!-- content -->                      
+                    <div class="row" style="margin-left: auto;
+    margin-right: auto;
+    width: 1140px;">
+
+                     
+                      
+                     <!-- main col left --> 
+                     <div class="col-sm-8"  style=" width: 820px;">
+                      <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 370px;">
+                        <!-- Indicators -->
+
+                        <ol class="carousel-indicators" style="margin-bottom:0px; bottom:-15px">
+                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                          <li data-target="#myCarousel" data-slide-to="1"></li>
+                          <li data-target="#myCarousel" data-slide-to="2"></li>
+                          <li data-target="#myCarousel" data-slide-to="3"></li>
+                          <li data-target="#myCarousel" data-slide-to="4"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner " role="listbox"style="
+                            width: 600px;
+                            margin: auto;">
+                          
+                          <div class="item active" >
+                            <div class=" text-center"> 
+                              <img src="welcomeImage/front9.jpg" alt="Chania"  height="330">
+                            </div>
+                          </div>
+
+
+                          <div class="item" >
+                            <div class=" text-center"> 
+                              <img src="welcomeImage/front13.jpg" alt="Chania"  height="330">
+                            </div>
+                          </div>
+
+                          <div class="item">
+                            <div class=" text-center"> 
+                              <img src="welcomeImage/front3.jpg" alt="Chania"  height="330">
+                            </div>
+                          </div>
+
+
+                          <div class="item">
+                            <div class=" text-center"> 
+                              <img src="welcomeImage/front3.png" alt="Chania"  height="330">
+                            </div>
+                          </div>
+
+                          <div class="item">
+                            <div class=" text-center"> 
+                              <img src="welcomeImage/front8.png" alt="Chania"  height="330">
+                            </div>
+                          </div>
+                        </div>
+                        
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" style="background:none" role="button" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" style="background:none" role="button" data-slide="next" >
+                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <!-- main col right -->
+                    <div class="col-sm-3" style="border:none; margin-top: 40px">
+
+                    <div id="form-login" style="width:320px; margin-bottom: 20px">
+
+                      <form class="form" action="/login" method="post">
+                        <div class="well" style="background: #3b9798; border-radius: 12px;"> 
+                          <div  class="text-center text-warning" style="color:white">{{Message}}</div>
+                          <span class="logo" style="background-color:inherit; width: auto;     color: white; font-size:30px"> Sci-Learn</span>
+                          <br>
+                            <input style="margin-bottom:10px" type="email" name="email"class="form-control input-lg" placeholder="Enter your email address" required>
+                            <input style="margin-bottom:20px" type="password" name="password" class="form-control input-lg" placeholder="Enter your password" maxlength="16" minlength="8" required>
+                            
+                          </div>
+                          <div class="text-center">
+                            <a onclick="signUpForm()" class="btn btn-md btn-default" type="">Signup
+                            </a>    
+                            <button class=" btn btn-md btn-primary" type="submit">Login</button>
+                          </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                    <script>
+                          // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '161306487604464',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.6' // use version 2.2
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+
+
+                      </script>
+                    <!--   <div class="text-center row" style="margin: auto; margin-bottom: 10px">
+                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                        </fb:login-button>
+                      </div>
+
+                      <div
+                        class="fb-like"
+                        data-share="true"
+                        data-width="450"
+                        data-show-faces="true">
+                      </div>
+                      <div id="status"></div> -->
+                    </div>
+                  </div><!-- main cil right -->
+
+
+                </div>
+              
+                  
+              <h4 class="text-center" style="    text-align: -webkit-center; position: relative; top: 60px; width: 100%;">
+                About the founder:<a href="https://www.linkedin.com/in/daniar-heri-kurniawan-98b6158b" target="ext" >
+                 <b>Daniar Heri Kurniawan</b></a>
+              </h4>
+
+              <h4 class="text-center" style="    text-align: -webkit-center; position: relative; top: 60px; width: 100%;">
+                This platform is deployed for testing [research] purpose. The functionality is 30% done.
+              </h4>
+
+              <h4 class="text-center" style="    text-align: -webkit-center; position: relative; top: 60px; width: 100%;">
+              <p><b>[Available only for desktop]</b></p>
+              </h4>
+
+              <h4 class="text-center" style="    text-align: -webkit-center; position: relative; top: 65px; width: 100%;">
+                <a href="http://www.sci-learn.com" target="ext" >
+                Copyrights © 2016 Sci-Learn All rights reserved.</a>
+              </h4>
+
+                  
+              </div><!--/row-->
+              
+              
+              
+            </div><!-- /col-9 -->
+
+          </div><!-- /padding -->  
+        </div>
+        <!-- /main --> 
+
+
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- script references -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+  <script src="javascripts/scripts.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+  function loginForm(){
+    var loginForm = " <form class=\"form\" action=\"/login\" method=\"post\"><div class=\"well\" style=\"border-radius: 12px; background: #3b9798\"><div  class=\"text-center text-warning\"style=\"color:white;\">{{Message}}</div><span class=\"logo\" style=\"background-color:inherit; width: auto;     color: white; font-size:30px\"> Sci-Learn<\/span><br> <input required style=\"margin-bottom:10px\" type=\"email\" name=\"email\"class=\"form-control input-lg\" placeholder=\"Enter your email address\"> <input required style=\"margin-bottom:20px\" type=\"password\" name=\"password\" class=\"form-control input-lg\" placeholder=\"Enter your password\" maxlength=\"16\" minlength=\"8\" > </div><div class=\"text-center\"> <a onclick=\"signUpForm()\" class=\"btn btn-md btn-default\" >Signup </a> <button class=\"btn btn-md btn-primary\" type=\"submit\">Login<\/button><\/div><\/form>"
+
+    document.getElementById("form-login").innerHTML = loginForm;
+  };
+</script>
+<script type="text/javascript">
+  function signUpForm(){
+
+    var signUpForm = "<form class=\"form\" action=\"/signup\" method=\"post\"><div class=\"well\" style=\"border-radius: 12px;background: #3b9798\"><div  class=\"text-center text-warning\" style=\"color:white;\">{{Message}}</div><span class=\"logo\" style=\"background-color:inherit; width: auto;     color: white; font-size:30px\"> Sci-Learn<\/span><br><input required style=\"margin-bottom:10px\" type=\"name\" name=\"name\"class=\"form-control input-lg\" placeholder=\"Enter your name\"><input required style=\"margin-bottom:10px\" type=\"email\" name=\"email\"class=\"form-control input-lg\" placeholder=\"Enter your email address\"><input required style=\"margin-bottom:10px\" type=\"password\" name=\"password\" class=\"form-control input-lg\" placeholder=\"Enter your password\" maxlength=\"16\" minlength=\"8\" ><input required style=\"margin-bottom:20px\" type=\"password\" name=\"confirmed_password\" class=\"form-control input-lg\" placeholder=\"Confirm your password\" maxlength=\"16\" minlength=\"8\" ></div> <div class=\"text-center\"> <a onclick=\"loginForm()\" class=\"btn btn-md btn-default\">Login <\/a> <button class=\" btn btn-md btn-primary\" type=\"submit\">Signup<\/button><\/div> <\/form>"
+
+    document.getElementById("form-login").innerHTML = signUpForm;
+  }
+
+
+// $(document).keydown(function(event) {
+// if (event.ctrlKey==true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109'  || event.which == '187'  || event.which == '189'  ) ) {
+//         event.preventDefault();
+//      }
+// });
+
+// $(window).bind('mousewheel DOMMouseScroll', function (event) {
+//        if (event.ctrlKey == true) {
+//        event.preventDefault();
+//        }
+// });
+
+// document.body.style.zoom="100%"
+
+</script>

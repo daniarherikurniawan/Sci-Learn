@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden;">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Sci-Learn</title>
+  <meta name="generator" content="Bootply" />
+  <link href="../../stylesheets/bootstrap.min.css" rel="stylesheet"> 
+  <link href="../../stylesheets/font-awesome.min.css" rel="stylesheet"> 
+<!-- asli: #68a813
+#4d3182
+#523d79
+Top header : #3b9798 FIX
+Status field:#e1eaea
+
+warna background abu : #f4f4f4
+rgba(225, 234, 234, 0.32)
+rgba(59, 151, 152, 0.14) -->
+      <script src="../../javascripts/jquery.min.js"></script>
+      <script src="../../javascripts/socket.io.js"></script>
+      <script src="../../javascripts/chat.js"></script>
+
+
+      <link href="../../stylesheets/styles.css" rel="stylesheet">
+      <link rel="shortcut icon" type="image/png" href="../../images/logo.jpg"/>
+      <script src="../../javascripts/jquery.min.js"></script>
+      <script src="../../javascripts/socket.io.js"></script>
+    </head>
+    <body onload="updateOnlinePanel('{{profile._id}}')">
+      <div class="wrapper">
+        <div class="box">
+          <div class="row row-offcanvas row-offcanvas-left">
+
+
+            <!-- main right col -->
+            <div class="column col-sm-12 col-xs-11" id="main" style="margin-top: 50px; width: 100%; height:95%">
+
+              <!-- top nav -->
+              <div class="navbar navbar-blue navbar-static-top">  
+                {{> topNavigation}}
+              </div>
+              <!-- /top nav -->
+
+              <div class="padding" style="    padding-top: 15px;">
+
+              <div class="row" style="
+                  align-content: center;
+                  margin-left: auto;
+                  margin-right: auto;
+                  width: 1310px;">
+
+                <div class="full col-sm-9" style="padding-top:0px">
+                  <!-- content -->                      
+                  <div class="row">
+
+                   <!-- main col left --> 
+                   <div class="col-sm-3">
+
+                     {{> leftSide}}
+                     
+
+                   </div>
+                   <!-- main col left --> 
+
+
+                   <!-- main col right -->
+                   <div class="col-sm-6" style="padding-left:0px; padding-right:0px;">
+
+                     <!-- <div class="well" style="padding: 15px; margin-bottom: 15px;">  -->
+                     <div class="panel panel-default">
+                      <div  class="panel-heading">
+                        <b id="messageStatus" >   </b>
+                      </div>
+                     </div>
+                      {{# results }}
+
+                        <div id="{{_id}}" class=" panel panel-default">
+                        <div class="row">
+
+                          <div class="col-sm-2" style="    padding-left: 0px;">
+                           <div class="panel-heading">
+                            <a href="/profile/{{email}}" class="pull-left">    
+                              <div class="col-sm-1" style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
+                               <img style=" width:90px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%); -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/{{email}}/profile/{{img_profile_name}}">
+                              </div>
+                            </a> 
+                          </div>
+                          </div>
+
+                          <div class="col-sm-10" style="    margin-top: 7px;">
+                            <h4> <a href="/profile/{{email}}"> <b>{{name}}</b></a>  ({{occupation}})</h4>
+                            <h4>{{email}}</h4>
+                            <hr style="margin:5px 0px 5px 0px">
+                             Institution: <a href="#">{{education}}</a>
+                          </div>
+
+                        </div> <!-- row -->
+                         
+
+                         <div class="panel-body" style="padding:10px 15px 15px 15px">                         
+                            <div class="input-group" >
+                              <div class="input-group-btn">
+                                <p class="btn btn-default" style="margin-right: 2px;color:rgb(45, 99, 99)">{{activeness}} Pts.</p>
+                              </div>
+                              <input type="text" class="form-control" style="width:80%" placeholder="I would like to connect with you.."></input>
+                              <button class="btn btn-primary" onclick="tryToConnect('{{_id}}','{{name}}')"><i style="color:white" class="glyphicon glyphicon-plus"></i>&nbspConnect</button>
+                            </div>  
+                          </div>
+                        </div>
+                      {{/ results }}
+
+              <div class="text-center">
+                
+                <div class="row" >
+                  <ul class="pagination" id="pagination">
+                  </ul>
+                </div>
+                <div id="statePage">
+                  No Result!
+                </div>
+                <!-- <hr> -->
+              </div>
+
+            </div>
+
+<style type="text/css">
+  #rightSideBar::-webkit-scrollbar { 
+    display: none; 
+}
+
+</style>
+
+        
+            <div id="rightSideBar" class="col-sm-3 rightside ">
+               {{> rightSide}} 
+            </div>
+
+          </div><!--/row
+
+
+              <!-- <hr> -->
+
+              <h4 class="text-center">
+                <!-- <a href="" target="ext">©Copyright 2015</a> -->
+              </h4>
+
+              <!-- <hr> -->
+
+
+            </div><!-- /col-9 -->
+          </div><!-- /padding -->
+        </div>
+        <!-- /main -->
+
+      </div>
+    </div>
+  </div>
+
+
+  <!--post modal-->
+  <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4> Update Status </h4>
+        </div>
+        <div class="modal-body">
+          <form class="form center-block">
+            <div class="form-group">
+              <textarea class="form-control input-lg" autofocus="" placeholder="What do you want to share?"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <div>
+            <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
+            <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+          </div>	
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--photo modal-->
+  <div id="photoModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width:70%; left:15%">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4> Edit Photo Profile</h4>
+        </div>
+        <div class="modal-body">
+          <div class="panel panel-default">
+            <div class="panel-thumbnail">
+
+              <a href="#photoModal" role="button" data-toggle="modal"><img src="/images/{{profile.email}}/profile/{{profile.img_profile_name}}" width="100%" class="img-responsive" ></a>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="modal-footer" style="padding-left: 25px; padding-right: 20px; padding-bottom: 0px;">
+          <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true" > <span class="glyphicon glyphicon-trash" ></span>&nbsp;&nbspDelete</button>
+          <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true" onClick="triggermyNewProfilePicture()" > <span class="glyphicon glyphicon-folder-open " ></span>&nbsp;&nbspUpload</button>
+          
+          <ul class="pull-left list-inline" ><li>
+            <a href=""><i class="glyphicon glyphicon-thumbs-up" style="color:rgb(45, 99, 99); font-size: 25px;"></i></a></li><li>
+            <a href=""><i class="glyphicon glyphicon-comment" style="color:rgb(45, 99, 99); font-size: 25px;"></i></a></li><li>
+          </ul>
+          <ul class="pull-right list-inline"><li>
+
+            <form name="upload" id="submitPicture" method="post" action="/upload_img_profile"  enctype="multipart/form-data" style="width:0px" >
+              <input style="visibility:hidden"  onchange="submitForm()" name= "img_profile" type="file" id="myNewProfilePicture">
+            </form>
+
+          </ul>       
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- script references -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script src="../../javascripts/bootstrap.min.js"></script>
+  <script src="../../javascripts/scripts.js"></script>
+</body>
+</html>
+
+<script>
+// alert({{showByQuery}}==true)
+// alert({{showByQuery}}==true)
+ str = "";
+  var numOfLastPage = {{numOfLastPage}}+0;
+  var numOfCurrPage = {{numOfCurrPage}}+1;
+
+      // alert({{numOfLastPage}}+"  "+{{numOfCurrPage}})
+  if({{showByQuery}} && numOfCurrPage <= numOfLastPage){
+      limitIndexPage = 10;
+      if(numOfLastPage < 10)
+        limitIndexPage = numOfLastPage-1;
+
+      firstIndexPage = 1; //numOfLastPage
+      if(numOfCurrPage > 5)
+        if( numOfCurrPage+5 <= numOfLastPage)
+          firstIndexPage = numOfCurrPage-5;
+        else 
+          firstIndexPage = numOfLastPage - limitIndexPage;
+
+      //add first page
+      str +=  "<li";
+      if(1 == numOfCurrPage)
+          str += " class=\"active\"";
+      str += "><a href=\"/search/"+0+"/{{limitPerPage}}\">"+'First'+"</a></li>";
+
+
+      //add first intermediate page
+      if(numOfLastPage > 11 && 2 < firstIndexPage+1){
+        intermediateIndex = Math.ceil(firstIndexPage/2);
+        str +=  "<li><a href=\"/search/"+(intermediateIndex)+"/{{limitPerPage}}\">"+"..."+"</a></li>";
+      }
+
+      lastIndexPage = firstIndexPage + limitIndexPage - 1;
+
+      for (var i = firstIndexPage+1; i <= lastIndexPage; i++) {
+        str +=  "<li";
+        if(i == numOfCurrPage)
+          str += " class=\"active\"";
+        str += "><a href=\"/search/"+(i-1)+"/{{limitPerPage}}\">"+(i)+"</a></li>";
+      };  
+
+      //add last intermediate page
+      if(numOfLastPage > 11 && (numOfLastPage-1) > lastIndexPage){
+        intermediateIndex = Math.floor(lastIndexPage+((numOfLastPage - lastIndexPage) /2)-1);
+        str +=  "<li><a href=\"/search/"+(intermediateIndex)+"/{{limitPerPage}}\">"+"..."+"</a></li>";
+      }
+
+       //add last page
+      if(numOfLastPage > 1){
+        str +=  "<li";
+        if(numOfLastPage == numOfCurrPage)
+            str += " class=\"active\"";
+        str += "><a href=\"/search/"+(numOfLastPage-1)+"/{{limitPerPage}}\">"+'Last'+"</a></li>";
+      }
+    
+
+      lastResult = 0;
+      if(numOfCurrPage==numOfLastPage){
+        lastResult = '{{numOfPeople}}';
+      }
+      else
+        lastResult = (numOfCurrPage*({{limitPerPage}}+0));
+      document.getElementById("pagination").innerHTML = str;
+      document.getElementById("messageStatus").innerHTML = "Showing "+(((parseInt(numOfCurrPage)-1)*parseInt({{limitPerPage}}))+1)+" - "+lastResult+" results";
+      document.getElementById("statePage").innerHTML = "<b>Page "+numOfCurrPage+" of "+numOfLastPage+"<b>"
+  }else{
+      document.getElementById("messageStatus").innerHTML = "Showing {{numOfPeople}} results";
+      document.getElementById("statePage").innerHTML = ""
+
+}
+
+
+
+  function triggermyNewProfilePicture() {
+    document.getElementById("myNewProfilePicture").click();
+
+  }
+
+  function submitForm(){
+  var delay=2000; //1 seconds
+  setTimeout(function(){
+    document.getElementById("submitPicture").submit();
+   // window.alert("Photo profile is successfully updated!");
+  }, delay); 
+}
+
+function tryToConnect(id, name) {
+    
+    var http = new XMLHttpRequest();
+    http.open("POST", "/addContact", true);
+    http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    var params = "id=" + id+""; // probably use document.getElementById(...).value
+    http.send(params);
+    http.onload = function() {
+      if(http.responseText==404){
+        //error
+        alert(http.responseText);
+      }else{ 
+          $('#messageStatus').text("Congratulations! \r\ Now you're connected with "+name+" !");
+        var id="#"+http.responseText;
+        $(id).remove();
+        iAmOnline(http.responseText);
+      }
+    }
+}
+
+</script>

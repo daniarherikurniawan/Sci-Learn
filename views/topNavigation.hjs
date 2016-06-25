@@ -1,0 +1,99 @@
+
+<div class="row" style="
+    width: 1230px;
+    margin: auto;">
+<div class="navbar-header" style="padding-left:50px ; padding-top: 2px;">
+<button class="navbar-toggle" style="float: none;" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+  <span class="sr-only">Toggle</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+<a href="/" class="navbar-brand logo" style="padding-top: 4px;">S</a>
+</div>
+<nav class="collapse navbar-collapse" role="navigation">
+
+<form action="/search" method="get" class="navbar-form navbar-left" style="padding-top: 2px; margin-right:-30px;">
+  <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
+    <input type="text" class="form-control" value="{{search_term}}" placeholder="Find a new connection.." name="search_term" id="srch-term">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form>
+
+<ul class=" nav navbar-nav">
+
+  <li>
+    <a href="/" style="padding: 16px 10px 13px 10px; font-size:17px;"><i class="glyphicon glyphicon-home"></i> Home</a>
+  </li>
+  <li>
+    <a href="/friends/{{profile._id}}" style="padding: 16px 15px 13px 15px; font-size:17px;" ><i class="fa fa-users" style=""></i> Connections</a>
+  </li>
+  <li>
+    <a href="/chat" style="padding: 13px 20px 11px 20px"><i class="glyphicon glyphicon-comment" style="font-size:20px;"></i></a>
+  </li>
+  <li>
+    <a href="#" style="padding: 13px 20px 11px 20px"><i class="glyphicon glyphicon-globe" style="font-size:20px;"></i></a>
+  </li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right" style="padding-right:60px">
+  
+
+
+  <a href="/profile/{{profile.email}}" style="padding: 5px 16px 0px 20px;    margin-bottom: 0px;" >
+    <img style="width:45px; 
+    margin-left: -87px;  position: relative; left: 10px; top: 25px; 
+     -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/{{profile.email}}/profile/{{profile.img_profile_name}}">
+  </a>
+
+  <li class="dropdown" style="margin-right: 0px; ">
+    <a href="#" style="padding: 17px 9px 10px 9px;    margin-bottom: 0px;" class="dropdown-toggle" data-toggle="dropdown">
+    <i class="glyphicon glyphicon-menu-hamburger" style="font-size:17px;"></i>
+    
+    </a>
+    <ul class="dropdown-menu" style="    left: -45px;">
+      <li><a href="" onclick="tryToGenerateToken()">Generate Token</a></li>
+      <li><a onclick="iAmOffline()" href="/logout">Logout</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+<script>
+
+function tryToGenerateToken(){
+  var http = new XMLHttpRequest();
+    http.open("POST", "/generateToken", true);
+    http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    http.send();
+    http.onload = function() {
+      if(http.responseText==404){
+        //error
+        alert(http.responseText);
+      }else{ 
+        
+        alert(http.responseText);
+      }
+    }
+}
+
+// $(document).keydown(function(event) {
+// if (event.ctrlKey==true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109'  || event.which == '187'  || event.which == '189'  ) ) {
+//         event.preventDefault();
+//      }
+//     // 107 Num Key  +
+//     // 109 Num Key  -
+//     // 173 Min Key  hyphen/underscor Hey
+//     // 61 Plus key  +/= key
+// });
+
+// $(window).bind('mousewheel DOMMouseScroll', function (event) {
+//        if (event.ctrlKey == true) {
+//        event.preventDefault();
+//        }
+// });
+
+// document.body.style.zoom="100%"
+
+</script>

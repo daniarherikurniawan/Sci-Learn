@@ -1,0 +1,6 @@
+/public/images//*
+public/files/userToken.txt
+
+logs
+*.log
+npm-debug.log*

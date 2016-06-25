@@ -1,0 +1,43 @@
+Get: /API/signUp 
+<br>
+<br>
+<br>
+<br>
+<br>
+Get: /API/getReccPost
+<br>
+<br>
+<br>
+<br>
+<br>
+Get: /API/getTimeLine
+<br>
+<br>
+<br>
+<br>
+<br>
+Get: /API/addFriend
+<br>
+<br>
+<br>
+<br>
+<br>
+Get: /API/createPost
+<br>
+<br>
+<br>
+<br>
+<br>
+Get: /API/sharePost
+<br>
+<br>
+<br>
+<br>
+<br>
+Get: /API/commentPost
+<br>
+<br>
+<br>
+<br>
+<br>
+Get: /API/likePost
