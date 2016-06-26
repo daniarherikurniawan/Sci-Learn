@@ -27,6 +27,9 @@ var api_cont = require('../controller/api_cont');
 
 /* Post getToken page. */
 router.get('/', function(req, res, next) {
+	
+	var app = new Application.model({username: "daniarheri", password: "daniarheri"});
+	app.save();
 	api_cont.isApplicationRegistered("daniarheri", "daniarheri", function(result){
 		res.send(result);
 	});
