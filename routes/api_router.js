@@ -22,7 +22,7 @@ var tutorial_cont = require('../controller/tutorial_cont');
 var user_cont = require('../controller/user_cont');
 var api_cont = require('../controller/api_cont');
 
-
+var Application = require('../dbhelper/application_model');
 /* GET home page. */
 
 /* Post getToken page. */
