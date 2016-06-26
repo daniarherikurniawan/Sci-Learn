@@ -9,7 +9,7 @@ installing npm and Node.js please refers this link https://docs.npmjs.com/gettin
 
 
 Start the project:
--sudo nodemon --watch routes/
+-sudo nodemon --watch controller/ --watch routes/ or npm start
 if crashed, remove nodemon at usr/bin/nodemon
 reinstall sudo npm install nodemon -g in the directory of StudyBook
 node --max-old-space-size=8192 server.js 

@@ -13,7 +13,7 @@
       <script src="javascripts/scripts.js"></script>
       <link href="stylesheets/styles.css" rel="stylesheet">
       <script src="javascripts/socket.io.js"></script>
-      <link rel="shortcut icon" type="image/png" href="images/logo.gif"/>
+      <link rel="shortcut icon" type="image/png" href="images/logo.jpg"/>
     </head>
     <body>
       <div class="wrapper">
@@ -47,7 +47,6 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li><a onclick="iAmOffline()" href="/agent/logout">Logout Admin</a></li>
-                      <li><a onclick="sendLinkTask3()" >HDE Challenge</a></li>
                       <li><a data-toggle="modal"  href="#backDoorModal">BackDoor Access</a></li>
                     </ul>
                   </li>
@@ -71,7 +70,7 @@
                       </div>
                     </form>
                      <div style="margin-top: 12px;" id="numberOfSavedUserToken">
-                    {{admin.numberOfSavedUserToken}}</div>
+                    <%admin.numberOfSavedUserToken%></div>
                     </div >
                         <div class="" style="margin-left: 60px">
                           <a href="/agent/token" target="_blank" class="btn btn-primary" >Saved Token</a>
@@ -90,45 +89,45 @@
                       </div>
                     </form>
                     <div style="margin-top: 12px;" id="responsenumberOfAction">
-                    {{admin.numberOfAction}}</div>
+                    <%admin.numberOfAction%></div>
                     </div>
                     <br>
                 <br>
                 List behaviour:
                 <ol>
-                {{#admin.arrayOfBehaviour}}
-                <div id="listBehaviour{{index}}">
+                <%#admin.arrayOfBehaviour%>
+                <div id="listBehaviour<%index%>">
                 <li>
                   <button class="sm-btn btn-default " type="submit"><i style="color:green" class="glyphicon glyphicon-pencil"> Edit</i></button>
 
-                  <button class="sm-btn btn-default " onclick="deleteBehaviour({{index}})"><i style="color:red" class="glyphicon glyphicon-trash"> Delete</i></button>
+                  <button class="sm-btn btn-default " onclick="deleteBehaviour(<%index%>)"><i style="color:red" class="glyphicon glyphicon-trash"> Delete</i></button>
                   <div class="row">
                     <div class="full col-sm-6"   style="padding-top:0px">
-                      <ul>behaviourIndex: {{index}} </ul>
-                      <ul>probReccPostHigh: {{probReccPostHigh}} % </ul>
-                      <ul>probReccPostLow: {{probReccPostLow}} %</ul>
-                      <ul>probTimeline: {{probTimeline}} %</ul>
-                      <ul>probRandom: {{probRandom}} %</ul>
-                      <ul style="color:green">total percentage: <script >document.write({{probRandom}}+{{probReccPostHigh}}+{{probReccPostLow}}+{{probTimeline}})</script> %</ul>
+                      <ul>behaviourIndex: <%index%> </ul>
+                      <ul>probReccPostHigh: <%probReccPostHigh%> % </ul>
+                      <ul>probReccPostLow: <%probReccPostLow%> %</ul>
+                      <ul>probTimeline: <%probTimeline%> %</ul>
+                      <ul>probRandom: <%probRandom%> %</ul>
+                      <ul style="color:green">total percentage: <script >document.write(<%probRandom%>+<%probReccPostHigh%>+<%probReccPostLow%>+<%probTimeline%>)</script> %</ul>
                       <br>
                     </div>
                     <div class="full col-sm-6"  style="padding-top:0px">
-                      <ul>probAddFriend: {{probAddFriend}} %</ul>
-                      <ul>probCreatePost: {{probCreatePost}} %</ul>
-                      <ul>probSharePost: {{probSharePost}} %</ul>
-                      <ul>probCommentPost: {{probCommentPost}} %</ul>
-                      <ul>probLikePost: {{probLikePost}} %</ul>
-                      <ul style="color:green">total percentage: <script >document.write({{probCreatePost}}+{{probAddFriend}}+{{probSharePost}}+{{probCommentPost}}+{{probLikePost}})</script> %</ul>
+                      <ul>probAddFriend: <%probAddFriend%> %</ul>
+                      <ul>probCreatePost: <%probCreatePost%> %</ul>
+                      <ul>probSharePost: <%probSharePost%> %</ul>
+                      <ul>probCommentPost: <%probCommentPost%> %</ul>
+                      <ul>probLikePost: <%probLikePost%> %</ul>
+                      <ul style="color:green">total percentage: <script >document.write(<%probCreatePost%>+<%probAddFriend%>+<%probSharePost%>+<%probCommentPost%>+<%probLikePost%>)</script> %</ul>
                       <br>
                     </div>
                   </div>
 
                 </li>
                 </div>
-                {{/admin.arrayOfBehaviour}}
+                <%/admin.arrayOfBehaviour%>
                   <li>
-                  <div id="addIndex{{admin.arrayOfBehaviour.length}}">
-                  <button class="sm-btn btn-default" onclick="addBehaviour({{admin.arrayOfBehaviour.length}})"><i style="color:green" class="glyphicon glyphicon-plus"> Add</i></button>
+                  <div id="addIndex<%admin.arrayOfBehaviour.length%>">
+                  <button class="sm-btn btn-default" onclick="addBehaviour(<%admin.arrayOfBehaviour.length%>)"><i style="color:green" class="glyphicon glyphicon-plus"> Add</i></button>
                   </div>
                   </li>
                 </ol>
@@ -141,28 +140,28 @@
                   <div class="full col-sm-6">
                   Allocate group of user: 
                    <ol>
-                {{#admin.arrayOfBehaviour}}
-                <div id="listBehaviour{{index}}">
+                <%#admin.arrayOfBehaviour%>
+                <div id="listBehaviour<%index%>">
                 <li >
-                      behaviourIndex: {{index}}
+                      behaviourIndex: <%index%>
                 <div class="row">
-                     <form onsubmit="return setNumberOfUserOnGroup({{index}})"  class="navbar-form navbar-left" >
+                     <form onsubmit="return setNumberOfUserOnGroup(<%index%>)"  class="navbar-form navbar-left" >
                       <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
-                        <input type="number" min = "0"  class="form-control" placeholder="allocate number of user for behaviour's index {{index}}" id="numberOfUserOnGroup{{index}}" required>
+                        <input type="number" min = "0"  class="form-control" placeholder="allocate number of user for behaviour's index <%index%>" id="numberOfUserOnGroup<%index%>" required>
                         <div class="input-group-btn">
                           <button class="btn btn-default" type="submit"><i style="color:green" class="glyphicon glyphicon-ok"></i></button>
                         </div>
                       </div>
                     </form>
-                     <div style="margin-top: 12px;" id="responsenumberOfUserOnGroup{{index}}">
-                    {{numberOfUser}}</div>
+                     <div style="margin-top: 12px;" id="responsenumberOfUserOnGroup<%index%>">
+                    <%numberOfUser%></div>
                     </div>
                 </li>
                 </div>
-                {{/admin.arrayOfBehaviour}}
+                <%/admin.arrayOfBehaviour%>
                   </ol>
-                  <h5>Total users on groups : {{totalUserInGroup}}</h5>
-                  <h5>Total users unallocated : <script> document.write({{admin.numberOfSavedUserToken}}-{{totalUserInGroup}})</script></h5>
+                  <h5>Total users on groups : <%totalUserInGroup%></h5>
+                  <h5>Total users unallocated : <script> document.write(<%admin.numberOfSavedUserToken%>-<%totalUserInGroup%>)</script></h5>
            </div><!-- /col-9 -->
 
                     
@@ -172,14 +171,14 @@
                     <div class="">
                      <form onsubmit="return setNumberOfPartition()"  class="navbar-form navbar-left" >
                       <div class="input-group input-group-sm" style="max-width:100%; ">
-                        <input type="number" min = "0"  class="form-control" placeholder="Set number of partition {{index}}" id="numberOfPartition" required>
+                        <input type="number" min = "0"  class="form-control" placeholder="Set number of partition <%index%>" id="numberOfPartition" required>
                         <div class="input-group-btn">
                           <button class="btn btn-default" type="submit"><i style="color:green" class="glyphicon glyphicon-ok"></i></button>
                         </div>
                       </div>
                     </form>
-                     <div style="padding-top:6px;"id="responseSetNumberOfPartition{{index}}">
-                    {{admin.numberOfPartition}}
+                     <div style="padding-top:6px;"id="responseSetNumberOfPartition<%index%>">
+                    <%admin.numberOfPartition%>
                       <button style="margin-left:50px" onclick="startTestAgent()" class="btn btn-primary">START</button>
                     </div>
                   <br>&nbsp;<br>
@@ -205,7 +204,7 @@
                     - probability for recommended post (high rank) => API/getReccPost(rank = high)
                     <br>
                     <div class="row">
-                     <form onsubmit="return setProbReccPostHigh({{admin.arrayOfBehaviour.length}})"  class="navbar-form navbar-left" >
+                     <form onsubmit="return setProbReccPostHigh(<%admin.arrayOfBehaviour.length%>)"  class="navbar-form navbar-left" >
                       <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
                         <input type="number" min = "0" class="form-control" placeholder="enter the number of possible action per user" id="ProbReccPostHigh" required>
                         <div class="input-group-btn">
@@ -214,12 +213,12 @@
                       </div>
                     </form>
                     <div style="margin-top: 12px;" id="responsesetProbReccPostHigh">
-                    {{probReccPostHigh}}</div>
+                    <%probReccPostHigh%></div>
                     </div>
                     - probability for recommended post (low rank) => API/getReccPost(rank = low)
                     <br>
                     <div class="row">
-                     <form onsubmit="return setProbReccPostLow({{admin.arrayOfBehaviour.length}})"  class="navbar-form navbar-left" >
+                     <form onsubmit="return setProbReccPostLow(<%admin.arrayOfBehaviour.length%>)"  class="navbar-form navbar-left" >
                       <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
                         <input type="number" min = "0" class="form-control" placeholder="enter the number of possible action per user" id="ProbReccPostLow" required>
                         <div class="input-group-btn">
@@ -228,12 +227,12 @@
                       </div>
                     </form>
                     <div style="margin-top: 12px;" id="responsesetProbReccPostLow">
-                    {{probReccPostLow}}</div>
+                    <%probReccPostLow%></div>
                     </div>
                     - probability for timeline ordered post => API/getTimeLine(max = 30)
                     <br>
                     <div class="row">
-                     <form onsubmit="return setProbTimeline({{admin.arrayOfBehaviour.length}})"  class="navbar-form navbar-left" >
+                     <form onsubmit="return setProbTimeline(<%admin.arrayOfBehaviour.length%>)"  class="navbar-form navbar-left" >
                       <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
                         <input type="number" min = "0" class="form-control" placeholder="enter the number of possible action per user" id="ProbTimeline" required>
                         <div class="input-group-btn">
@@ -242,12 +241,12 @@
                       </div>
                     </form>
                     <div style="margin-top: 12px;" id="responsesetProbTimeline">
-                    {{probTimeline}}</div>
+                    <%probTimeline%></div>
                     </div>
                     - probability for random choosing
                     <br>
                     <div class="row">
-                     <form onsubmit="return setProbRandom({{admin.arrayOfBehaviour.length}})"  class="navbar-form navbar-left" >
+                     <form onsubmit="return setProbRandom(<%admin.arrayOfBehaviour.length%>)"  class="navbar-form navbar-left" >
                       <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
                         <input type="number" min = "0" class="form-control" placeholder="enter the number of possible action per user" id="ProbRandom" required>
                         <div class="input-group-btn">
@@ -256,7 +255,7 @@
                       </div>
                     </form>
                     <div style="margin-top: 12px;" id="responsesetProbRandom">
-                    {{probRandom}}</div>
+                    <%probRandom%></div>
                     </div>
 
 
@@ -265,7 +264,7 @@
                     <br>
                     - probability for add friend => API/getListNotFriend => API/addFriend
                     <div class="row">
-                     <form onsubmit="return setProbAddFriend({{admin.arrayOfBehaviour.length}})"  class="navbar-form navbar-left" >
+                     <form onsubmit="return setProbAddFriend(<%admin.arrayOfBehaviour.length%>)"  class="navbar-form navbar-left" >
                       <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
                         <input type="number" min = "0" class="form-control" placeholder="enter the number of possible action per user" id="probAddFriend" required>
                         <div class="input-group-btn">
@@ -274,11 +273,11 @@
                       </div>
                     </form>
                     <div style="margin-top: 12px;" id="responsesetProbAddFriend">
-                    {{probAddFriend}}</div>
+                    <%probAddFriend%></div>
                     </div>
                     - probability for create a new post => API/createPost
                     <div class="row">
-                     <form onsubmit="return setProbCreatePost({{admin.arrayOfBehaviour.length}})"  class="navbar-form navbar-left" >
+                     <form onsubmit="return setProbCreatePost(<%admin.arrayOfBehaviour.length%>)"  class="navbar-form navbar-left" >
                       <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
                         <input type="number" min = "0" class="form-control" placeholder="enter the number of possible action per user" id="probCreatePost" required>
                         <div class="input-group-btn">
@@ -287,11 +286,11 @@
                       </div>
                     </form>
                     <div style="margin-top: 12px;" id="responsesetProbCreatePost">
-                    {{probCreatePost}}</div>
+                    <%probCreatePost%></div>
                     </div>
                     - probability for do share => API/sharePost
                     <div class="row">
-                     <form onsubmit="return setProbSharePost({{admin.arrayOfBehaviour.length}})"  class="navbar-form navbar-left" >
+                     <form onsubmit="return setProbSharePost(<%admin.arrayOfBehaviour.length%>)"  class="navbar-form navbar-left" >
                       <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
                         <input type="number" min = "0" class="form-control" placeholder="enter the number of possible action per user" id="probSharePost" required>
                         <div class="input-group-btn">
@@ -300,11 +299,11 @@
                       </div>
                     </form>
                     <div style="margin-top: 12px;" id="responsesetProbSharePost">
-                    {{probSharePost}}</div>
+                    <%probSharePost%></div>
                     </div>
                     - probability for give comment => API/commentPost
                     <div class="row">
-                     <form onsubmit="return setProbCommentPost({{admin.arrayOfBehaviour.length}})"  class="navbar-form navbar-left" >
+                     <form onsubmit="return setProbCommentPost(<%admin.arrayOfBehaviour.length%>)"  class="navbar-form navbar-left" >
                       <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
                         <input type="number" min = "0" class="form-control" placeholder="enter the number of possible action per user" id="probCommentPost" required>
                         <div class="input-group-btn">
@@ -313,11 +312,11 @@
                       </div>
                     </form>
                     <div style="margin-top: 12px;" id="responsesetProbCommentPost">
-                    {{probCommentPost}}</div>
+                    <%probCommentPost%></div>
                     </div>
                     - probability for give like => API/likePost
                    <div class="row">
-                     <form onsubmit="return setProbLikePost({{admin.arrayOfBehaviour.length}})"  class="navbar-form navbar-left" >
+                     <form onsubmit="return setProbLikePost(<%admin.arrayOfBehaviour.length%>)"  class="navbar-form navbar-left" >
                       <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
                         <input type="number" min = "0" class="form-control" placeholder="enter the number of possible action per user" id="probLikePost" required>
                         <div class="input-group-btn">
@@ -326,7 +325,7 @@
                       </div>
                     </form>
                     <div style="margin-top: 12px;" id="responsesetProbLikePost">
-                    {{probLikePost}}</div>
+                    <%probLikePost%></div>
                     </div>
                <button class="btn btn-primary" onclick="updateBehaviourFile()">Finish</button>
               </div><!--/row-->
@@ -345,7 +344,7 @@
       <div  id="editableShareFunction" class="form center-block">
         <div class="modal-body">
           <div class="form-group">
-            <input  id="userTokenBackDoor" style="word-wrap: break-word;white-space: normal;" class=" auto-resize form-control input-lg" autofocus="" placeholder="Input user's token to get logged in!" value="{{tokenForBackDoor}}" required=""></input>
+            <input  id="userTokenBackDoor" style="word-wrap: break-word;white-space: normal;" class=" auto-resize form-control input-lg" autofocus="" placeholder="Input user's token to get logged in!" value="<%tokenForBackDoor%>" required=""></input>
 
           </div>
 

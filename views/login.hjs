@@ -140,7 +140,7 @@
 
                       <form class="form" action="/login" method="post">
                         <div class="well" style="background: #3b9798; border-radius: 12px;"> 
-                          <div  class="text-center text-warning" style="color:white">{{Message}}</div>
+                          <div  class="text-center text-warning" style="color:white"><%Message%></div>
                           <span class="logo" style="background-color:inherit; width: auto;     color: white; font-size:30px"> Sci-Learn</span>
                           <br>
                             <input style="margin-bottom:10px" type="email" name="email"class="form-control input-lg" placeholder="Enter your email address" required>
@@ -237,18 +237,7 @@
 
 
                       </script>
-                    <!--   <div class="text-center row" style="margin: auto; margin-bottom: 10px">
-                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                        </fb:login-button>
-                      </div>
-
-                      <div
-                        class="fb-like"
-                        data-share="true"
-                        data-width="450"
-                        data-show-faces="true">
-                      </div>
-                      <div id="status"></div> -->
+                      
                     </div>
                   </div><!-- main cil right -->
 
@@ -256,39 +245,30 @@
                 </div>
               
                   
-              <h4 class="text-center" style="    text-align: -webkit-center; position: relative; top: 60px; width: 100%;">
+              <h5 class="text-center" style="    text-align: -webkit-center; position: relative; top: 60px; width: 100%;">
                 About the founder:<a href="https://www.linkedin.com/in/daniar-heri-kurniawan-98b6158b" target="ext" >
                  <b>Daniar Heri Kurniawan</b></a>
-              </h4>
+              </h5>
 
-              <h4 class="text-center" style="    text-align: -webkit-center; position: relative; top: 60px; width: 100%;">
+              <h5 class="text-center" style="    text-align: -webkit-center; position: relative; top: 60px; width: 100%;">
                 This platform is deployed for testing [research] purpose. The functionality is 30% done.
-              </h4>
+              </h5>
 
-              <h4 class="text-center" style="    text-align: -webkit-center; position: relative; top: 60px; width: 100%;">
+              <h5 class="text-center" style="    text-align: -webkit-center; position: relative; top: 60px; width: 100%;">
               <p><b>[Available only for desktop]</b></p>
-              </h4>
+              </h5>
 
-              <h4 class="text-center" style="    text-align: -webkit-center; position: relative; top: 65px; width: 100%;">
+              <h5 class="text-center" style="    text-align: -webkit-center; position: relative; top: 65px; width: 100%;">
                 <a href="http://www.sci-learn.com" target="ext" >
                 Copyrights © 2016 Sci-Learn All rights reserved.</a>
-              </h4>
-
-                  
-              </div><!--/row-->
-              
-              
-              
+              </h5>
+              </div><!--/row-->              
             </div><!-- /col-9 -->
-
           </div><!-- /padding -->  
         </div>
         <!-- /main --> 
-
-
       </div>
-    </div>
-    
+    </div>    
   </div>
 
   <!-- script references -->
@@ -300,7 +280,7 @@
 
 <script type="text/javascript">
   function loginForm(){
-    var loginForm = " <form class=\"form\" action=\"/login\" method=\"post\"><div class=\"well\" style=\"border-radius: 12px; background: #3b9798\"><div  class=\"text-center text-warning\"style=\"color:white;\">{{Message}}</div><span class=\"logo\" style=\"background-color:inherit; width: auto;     color: white; font-size:30px\"> Sci-Learn<\/span><br> <input required style=\"margin-bottom:10px\" type=\"email\" name=\"email\"class=\"form-control input-lg\" placeholder=\"Enter your email address\"> <input required style=\"margin-bottom:20px\" type=\"password\" name=\"password\" class=\"form-control input-lg\" placeholder=\"Enter your password\" maxlength=\"16\" minlength=\"8\" > </div><div class=\"text-center\"> <a onclick=\"signUpForm()\" class=\"btn btn-md btn-default\" >Signup </a> <button class=\"btn btn-md btn-primary\" type=\"submit\">Login<\/button><\/div><\/form>"
+    var loginForm = " <form class=\"form\" action=\"/login\" method=\"post\"><div class=\"well\" style=\"border-radius: 12px; background: #3b9798\"><div  class=\"text-center text-warning\"style=\"color:white;\"><%Message%></div><span class=\"logo\" style=\"background-color:inherit; width: auto;     color: white; font-size:30px\"> Sci-Learn<\/span><br> <input required style=\"margin-bottom:10px\" type=\"email\" name=\"email\"class=\"form-control input-lg\" placeholder=\"Enter your email address\"> <input required style=\"margin-bottom:20px\" type=\"password\" name=\"password\" class=\"form-control input-lg\" placeholder=\"Enter your password\" maxlength=\"16\" minlength=\"8\" > </div><div class=\"text-center\"> <a onclick=\"signUpForm()\" class=\"btn btn-md btn-default\" >Signup </a> <button class=\"btn btn-md btn-primary\" type=\"submit\">Login<\/button><\/div><\/form>"
 
     document.getElementById("form-login").innerHTML = loginForm;
   };
@@ -308,24 +288,10 @@
 <script type="text/javascript">
   function signUpForm(){
 
-    var signUpForm = "<form class=\"form\" action=\"/signup\" method=\"post\"><div class=\"well\" style=\"border-radius: 12px;background: #3b9798\"><div  class=\"text-center text-warning\" style=\"color:white;\">{{Message}}</div><span class=\"logo\" style=\"background-color:inherit; width: auto;     color: white; font-size:30px\"> Sci-Learn<\/span><br><input required style=\"margin-bottom:10px\" type=\"name\" name=\"name\"class=\"form-control input-lg\" placeholder=\"Enter your name\"><input required style=\"margin-bottom:10px\" type=\"email\" name=\"email\"class=\"form-control input-lg\" placeholder=\"Enter your email address\"><input required style=\"margin-bottom:10px\" type=\"password\" name=\"password\" class=\"form-control input-lg\" placeholder=\"Enter your password\" maxlength=\"16\" minlength=\"8\" ><input required style=\"margin-bottom:20px\" type=\"password\" name=\"confirmed_password\" class=\"form-control input-lg\" placeholder=\"Confirm your password\" maxlength=\"16\" minlength=\"8\" ></div> <div class=\"text-center\"> <a onclick=\"loginForm()\" class=\"btn btn-md btn-default\">Login <\/a> <button class=\" btn btn-md btn-primary\" type=\"submit\">Signup<\/button><\/div> <\/form>"
+    var signUpForm = "<form class=\"form\" action=\"/signup\" method=\"post\"><div class=\"well\" style=\"border-radius: 12px;background: #3b9798\"><div  class=\"text-center text-warning\" style=\"color:white;\"><%Message%></div><span class=\"logo\" style=\"background-color:inherit; width: auto;     color: white; font-size:30px\"> Sci-Learn<\/span><br><input required style=\"margin-bottom:10px\" type=\"name\" name=\"name\"class=\"form-control input-lg\" placeholder=\"Enter your name\"><input required style=\"margin-bottom:10px\" type=\"email\" name=\"email\"class=\"form-control input-lg\" placeholder=\"Enter your email address\"><input required style=\"margin-bottom:10px\" type=\"password\" name=\"password\" class=\"form-control input-lg\" placeholder=\"Enter your password\" maxlength=\"16\" minlength=\"8\" ><input required style=\"margin-bottom:20px\" type=\"password\" name=\"confirmed_password\" class=\"form-control input-lg\" placeholder=\"Confirm your password\" maxlength=\"16\" minlength=\"8\" ></div> <div class=\"text-center\"> <a onclick=\"loginForm()\" class=\"btn btn-md btn-default\">Login <\/a> <button class=\" btn btn-md btn-primary\" type=\"submit\">Signup<\/button><\/div> <\/form>"
 
     document.getElementById("form-login").innerHTML = signUpForm;
   }
 
-
-// $(document).keydown(function(event) {
-// if (event.ctrlKey==true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109'  || event.which == '187'  || event.which == '189'  ) ) {
-//         event.preventDefault();
-//      }
-// });
-
-// $(window).bind('mousewheel DOMMouseScroll', function (event) {
-//        if (event.ctrlKey == true) {
-//        event.preventDefault();
-//        }
-// });
-
-// document.body.style.zoom="100%"
 
 </script>

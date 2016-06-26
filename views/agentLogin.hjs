@@ -11,7 +11,7 @@
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
       <link href="../stylesheets/styles.css" rel="stylesheet">
-      <link rel="shortcut icon" type="image/png" href="../images/logo.gif"/>
+      <link rel="shortcut icon" type="image/png" href="../images/logo.jpg"/>
     </head>
     <body>
       <div class="wrapper" >
@@ -140,8 +140,8 @@ function tryToGenerateToken(){
 
 
                       <div class="well"> 
-                        <div  class="text-center text-warning">{{Message}}</div>
-                        <p class="logo" style="background-color:inherit; width: auto; font-size:30px"> Admin Control</p>
+                        <div  class="text-center text-warning"><%Message%></div>
+                        <p class="logo" style="background-color:#e0eced; width: auto; font-size:30px"> Admin Control</p>
                         <br>
                         <div id="form">
                          <form class="form" action="/agent/login" method="post">

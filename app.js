@@ -7,28 +7,23 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session')
 var fs = require('fs');
-var routes = require('./routes/index');
-var agent = require('./routes/agent');
-var profile = require('./routes/profile');
-var api = require('./routes/api');  
-var user = require('./routes/user');  
 var lwip = require('lwip');
-var friends = require('./routes/friends');
 
-var url = 'mongodb://localhost:27017/studybook';
+/*databases connection*/
+var mongo = require('./dbconfig/mongo_config');
+mongo.connect();
+
 var app = express();
 
-
-// view engine setup
+// App setup
 app.set('views', path.join(__dirname, 'views'));
+app.locals.delimiters = '<% %>';
 app.set('view engine', 'hjs');
 app.set('trust proxy', 1) // trust first proxy 
-// uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(session({
@@ -37,12 +32,20 @@ app.use(session({
   saveUninitialized: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
 
-app.use('/', routes);
+// Router declaration
+var index = require('./routes/index_router');
+var agent = require('./routes/agent_router');
+var profile = require('./routes/profile_router');
+var api = require('./routes/api_router');  
+var user = require('./routes/user_router');  
+var connection = require('./routes/connection_router');
+app.use('/', index);
 app.use('/agent', agent);
 app.use('/API', api);
 app.use('/profile', profile);
-app.use('/friends', friends);
+app.use('/connections', connection);
 app.use('/user', user);
 
 // catch 404 and forward to error handler
@@ -71,8 +74,6 @@ if (app.get('env') === 'development') {
   });
 }
 
-mongoose.connect(url);
-
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
@@ -83,102 +84,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-
-
-var dummyAbout = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-
-app.locals.PostSchema = new mongoose.Schema({
-  creator:  { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  date_created: { type: Date, default: Date.now},
-  content: String,
-  title: String,
-  keywords: String,
-
-  liked: { type: Boolean, default: false},
-  shared: { type: Boolean, default: false},
-  ui: { index: {type:Number, default: 1}, 
-    status : { type: String, default: "active"}},
-
-  like: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-  share: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-  comments: [{ content: String, 
-    date_created: { type: Date, default: Date.now},
-    like: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-    liked : { type: Boolean, default: false},
-    creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' } }],
-  id_unique_users: [{ 
-      id: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},             
-      num: {type: Number, default: 1}                                      // 60 posts unique -> ambil 10 yg post_index paling tinggi (default) ->    300 id user unique-> ternyata 250 orang sudah berteman-> tinggal 50-> orang" yg melakukan action terhadap 60 post tsb -> dapat list id user misal 200 user -> ( di sort berdasarkan user activeness) ambil default merekomendasikann 20 orang 
-    }],
-    
-  post_shared: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' },
-  original_creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  post_index: {type:Number, default: 0}
-});
-
-
-app.locals.UserSchema = new mongoose.Schema({
-  token : String,
-  name: String,
-  date_created: { type: Date, default: Date.now},
-  email: String,
-  online_connection: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-  password: String,
-  education:  { type: String, default: "Institut Teknologi Bandung"},
-  about : { type: String, default: dummyAbout},
-  occupation: { type: String, default: "Student"},
-  date_created: { type: Date, default: Date.now},
-  social_networks:[{
-      name: { type: String, default: "facebook"}, 
-      url: { type: String, default: "https://www.facebook.com/daniar.h.kurniawan" }
-    }],
-  connections:{type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], default: []},
-  groups:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'Group' }],
-  img_profile_name: {type: String, default: "profile.jpg"},
-  img_cover_name: {type: String, default: "cover.jpg"},
-  chat:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Chat' }],
-  id_user_posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }],
-
-  id_liked_posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }], 
-  id_share_posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }], 
-  id_commented_posts: [{ 
-      id: {type: mongoose.Schema.Types.ObjectId, ref: 'Post'},             
-      num: {type: Number, default: 1}                                      // 60 posts unique -> ambil 10 yg post_index paling tinggi (default) ->    300 id user unique-> ternyata 250 orang sudah berteman-> tinggal 50-> orang" yg melakukan action terhadap 60 post tsb -> dapat list id user misal 200 user -> ( di sort berdasarkan user activeness) ambil default merekomendasikann 20 orang 
-    }],
-  id_unique_posts: [{ 
-      id: {type: mongoose.Schema.Types.ObjectId, ref: 'Post'},             
-      num: {type: Number, default: 1}                                      // 60 posts unique -> ambil 10 yg post_index paling tinggi (default) ->    300 id user unique-> ternyata 250 orang sudah berteman-> tinggal 50-> orang" yg melakukan action terhadap 60 post tsb -> dapat list id user misal 200 user -> ( di sort berdasarkan user activeness) ambil default merekomendasikann 20 orang 
-    }], // according to shared / liked / commented posts
-  
-  activeness: {type: Number, default: 1}
-});     
-
-
-app.locals.ChatSchema = new mongoose.Schema({
-  userA:  { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  userB:  { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  date_updated: { type: Date, default: Date.now},
-  content: [{text: String, creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }}]
-});
-
-app.locals.GroupSchema = new mongoose.Schema({
-  name: String,
-  group_posts: [{
-    content: String, 
-    title: String,
-    keywords: String,
-    creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, 
-    like:[{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], 
-    share: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], 
-    post_index: {type:Number, default: 1},
-    date_created: { type: Date, default: Date.now}
-  }]
-});
-
-mongoose.model('User',app.locals.UserSchema);
-mongoose.model('Post',app.locals.PostSchema);
-mongoose.model('Group',app.locals.GroupSchema);
-mongoose.model('Chat',app.locals.ChatSchema);
 
 app.locals.getProfile = function(userToken, callback){
     mongoose.model('User').findOne({token: userToken}, function(err, user){
@@ -574,11 +479,11 @@ app.locals.removeComment = function (idUser, idPost, idComment){
   });
 }
 
-app.locals.addContact = function(idUser, idPeople){
+app.locals.addContact = function(idUser, idPeople, callback){
   mongoose.model('User').findById(idPeople, function(err, userA){
     if(err){
       console.log(err);
-      return ("404");
+      callback ("404"); 
     }else{
       mongoose.model('User').findById( idUser, function(err, userB){
         index = userA.connections.indexOf(userB._id);
@@ -593,13 +498,14 @@ app.locals.addContact = function(idUser, idPeople){
             userB.id_liked_posts.length, userB.id_commented_posts.length, userB.connections.length);
           userB.save();
           console.log("success");
-          return("success");
+          callback("success");
         }else{
           console.log("already friend");
-          return("already friend");
+          callback("already friend");
         }
       });
     }
+    return;
   });
 }
 

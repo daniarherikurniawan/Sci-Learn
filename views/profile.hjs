@@ -5,20 +5,20 @@
     <meta charset="utf-8">
     <title>Sci-Learn</title>
     <meta name="generator" content="Bootply" />
-    <link href="../../../{{#page}}../{{/page}}stylesheets/bootstrap.min.css" rel="stylesheet"> 
-    <link href="../../../{{#page}}../{{/page}}stylesheets/font-awesome.min.css" rel="stylesheet"> 
+    <link href="../../../<%#page%>../<%/page%>stylesheets/bootstrap.min.css" rel="stylesheet"> 
+    <link href="../../../<%#page%>../<%/page%>stylesheets/font-awesome.min.css" rel="stylesheet"> 
 
 
-        <script src="../../../{{#page}}../{{/page}}javascripts/jquery.min.js"></script>
-        <script src="../../../{{#page}}../{{/page}}javascripts/socket.io.js"></script>
-        <script src="../../../{{#page}}../{{/page}}javascripts/chat.js"></script>
+        <script src="../../../<%#page%>../<%/page%>javascripts/jquery.min.js"></script>
+        <script src="../../../<%#page%>../<%/page%>javascripts/socket.io.js"></script>
+        <script src="../../../<%#page%>../<%/page%>javascripts/chat.js"></script>
 
-        <link href="../../../{{#page}}../{{/page}}stylesheets/styles.css" rel="stylesheet">
-        <link rel="shortcut icon" type="image/png" href="../../../{{#page}}../{{/page}}images/logo.jpg"/>
-        <script src="../../../{{#page}}../{{/page}}javascripts/jquery.min.js"></script>
-        <script src="../../../{{#page}}../{{/page}}javascripts/socket.io.js"></script>
+        <link href="../../../<%#page%>../<%/page%>stylesheets/styles.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="../../../<%#page%>../<%/page%>images/logo.jpg"/>
+        <script src="../../../<%#page%>../<%/page%>javascripts/jquery.min.js"></script>
+        <script src="../../../<%#page%>../<%/page%>javascripts/socket.io.js"></script>
       </head>
-      <body onload="updateOnlinePanel('{{profile._id}}')">
+      <body onload="updateOnlinePanel('<%profile._id%>')">
         <div class="wrapper">
           <div class="box">
             <div class="row row-offcanvas row-offcanvas-left">
@@ -28,7 +28,7 @@
               <div class="column col-sm-12 col-xs-11" id="main" style="margin-top: 50px; width: 100%; height:95%">
                 <!-- top nav -->
                 <div class="navbar navbar-blue navbar-static-top">  
-                  {{> topNavigation}}
+                  <%> topNavigation%>
                 </div>
                 <!-- /top nav -->
 
@@ -49,7 +49,7 @@
                         <div class="panel panel-default">
                           <div class="panel-heading text-center"><h4>About me!</h4></div>
                           <div class="panel-body">
-                           {{friendProfile.about}}{{^friendProfile.name}}{{profile.about}}{{/friendProfile.name}}</div>
+                           <%friendProfile.about%><%^friendProfile.name%><%profile.about%><%/friendProfile.name%></div>
                          </div>
                        
 
@@ -116,10 +116,10 @@
                             
                           <div class="col-sm-12" style="left: 1px; padding: 0 0 0 0 ; ;height:287px;overflow:hidden">
                              <img style=" top:125px   ; max-width:100%; max-height:100%;  position: absolute; left: 49.7%;
-                             -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/{{friendProfile.email}}{{^friendProfile.name}}{{profile.email}}{{/friendProfile.name}}/cover/{{friendProfile.img_cover_name}}{{^friendProfile.name}}{{profile.img_cover_name}}{{/friendProfile.name}}">
+                             -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>/cover/<%friendProfile.img_cover_name%><%^friendProfile.name%><%profile.img_cover_name%><%/friendProfile.name%>">
 
                               <div class="col-sm-1" style=" top: 155px;left: 18px; padding: 0 0 0 0 ; width:120px;height:120px;overflow:hidden"> <a  href="#photoModal" role="button" data-toggle="modal" > <img style="width:120px;  position: relative; left: 50%; top: 50%; 
-                             -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/{{friendProfile.email}}{{^friendProfile.name}}{{profile.email}}{{/friendProfile.name}}/profile/{{friendProfile.img_profile_name}}{{^friendProfile.name}}{{profile.img_profile_name}}{{/friendProfile.name}}">
+                             -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>/profile/<%friendProfile.img_profile_name%><%^friendProfile.name%><%profile.img_profile_name%><%/friendProfile.name%>">
                              </a>
                              </div>
                               
@@ -128,28 +128,28 @@
                                   
                                   <h3 style="margin: 0px 0px 0px 0px; ">
 
-                                  <a href="/profile/{{friendProfile.email}}{{^friendProfile.name}}{{profile.email}}{{/friendProfile.name}}" > 
-                                  <b>{{friendProfile.name}}{{^friendProfile}}{{profile.name}}{{/friendProfile}}</b></a>'s  
-                                  {{#showFriends}} connections{{/showFriends}}
-                                  {{^showFriends}}{{^showPerActivity}} posts{{/showPerActivity}}
-                                  {{#showPerActivity}} activities{{/showPerActivity}}{{/showFriends}}
+                                  <a href="/profile/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>" > 
+                                  <b><%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%></b></a>'s  
+                                  <%#showFriends%> connections<%/showFriends%>
+                                  <%^showFriends%><%^showPerActivity%> posts<%/showPerActivity%>
+                                  <%#showPerActivity%> activities<%/showPerActivity%><%/showFriends%>
 
-                                  <a id="{{profile._id}}" href="/friends/{{friendProfile._id}}{{^friendProfile.name}}{{profile._id}}{{/friendProfile.name}}" class=" pull-right fa fa-users" style="font-size:15px; margin-top: 6px; {{#showFriends}} color:rgb(45, 99, 99); {{/showFriends}}" > {{ friendProfile.connections.length }} {{^friendProfile}}{{profile.connections.length}}{{/friendProfile}} </a> 
+                                  <a id="<%profile._id%>" href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" class=" pull-right fa fa-users" style="font-size:15px; margin-top: 6px; <%#showFriends%> color:rgb(45, 99, 99); <%/showFriends%>" > <% friendProfile.connections.length %> <%^friendProfile%><%profile.connections.length%><%/friendProfile%> </a> 
                                   </h3>
                                 </div>
                              </div>
 
 
-                            {{^myFriend}}
+                            <%^myFriend%>
 
-                              <div id="{{friendProfile._id}}" class="col-sm-1" style=" top: 146px;left: 34px; padding: 0 0 0 0 ; width:100px;height:35px;overflow:hidden">
-                                <button   class="btn btn-primary" onclick="tryToConnect('{{friendProfile._id}}','{{friendProfile.name}}')"><i style="color:white" class="glyphicon glyphicon-plus"></i>&nbspConnect</button>
+                              <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: 146px;left: 34px; padding: 0 0 0 0 ; width:100px;height:35px;overflow:hidden">
+                                <button   class="btn btn-primary" onclick="tryToConnect('<%friendProfile._id%>','<%friendProfile.name%>')"><i style="color:white" class="glyphicon glyphicon-plus"></i>&nbspConnect</button>
                              </div>
-                             {{/myFriend}}
+                             <%/myFriend%>
 
-                             {{#myFriend}}
-                                {{#friendProfile}}
-                                <div id="{{friendProfile._id}}" class="col-sm-1" style=" top: 98px;left: 7px; padding: 0 0 0 0 ; width:209px;height:86px;overflow:hidden">
+                             <%#myFriend%>
+                                <%#friendProfile%>
+                                <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: 98px;left: 7px; padding: 0 0 0 0 ; width:209px;height:86px;overflow:hidden">
 
                                   <div class="col-sm-1 " style="margin-top: 0px;padding-right: 0px;padding-left: 27px;">
 
@@ -157,18 +157,18 @@
                                     <a href="" data-toggle="dropdown"><i class="btn btn-primary glyphicon glyphicon-cog" style=""></i></a>
                                     <ul class="dropdown-menu" style="left:46px; top:-2px;    min-width: 120px; ">
 
-                                      <li><a class="btn " type="button"><i class="glyphicon glyphicon-eye-close "></i>&nbsp; Unfollow</a></li>
-                                      <li><a class="btn"  href="/unFriend/{{_id}}/{{email}}" type="button" href=""><i class="glyphicon glyphicon-remove "></i>&nbsp; Unfriend</a></li>
+                                      <li><a class="btn "  style="text-align: left" type="button"><i class="glyphicon glyphicon-eye-close "></i>&nbsp; Unfollow</a></li>
+                                      <li><a class="btn" style="text-align: left" href="/Unconnect/<%_id%>/<%email%>" type="button" href=""><i class="glyphicon glyphicon-remove "></i>&nbsp; Unconnect</a></li>
                                      </ul>
                                    </li>
                                  </div>
                                </div>
-                               {{/friendProfile}}
-                             {{/myFriend}}
+                               <%/friendProfile%>
+                             <%/myFriend%>
 
 
-                              {{^friendProfile}}
-                                <div id="{{friendProfile._id}}" class="col-sm-1" style=" top: 98px;left: 7px; padding: 0 0 0 0 ; width:285px;height:96px;overflow:hidden">
+                              <%^friendProfile%>
+                                <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: 98px;left: 7px; padding: 0 0 0 0 ; width:285px;height:96px;overflow:hidden">
 
                                   <div class="col-sm-1 " style="margin-top: 0px;padding-right: 0px;padding-left: 27px;">
 
@@ -176,14 +176,14 @@
                                     <a href="" data-toggle="dropdown"><i class="btn btn-primary glyphicon glyphicon-user" style=""></i></a>
                                     <ul class="dropdown-menu" style="left:46px; top:-2px;    min-width: 120px; ">
 
-                                      <li><a style="text-align: left;" class="btn " type="button" onclick="editPostt('{{_id}}','{{profile._id}}')"><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit profile</a></li>
+                                      <li><a style="text-align: left;" class="btn " type="button" onclick="editPostt('<%_id%>','<%profile._id%>')"><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit profile</a></li>
                                       <li><a style="text-align: left;" class="btn" type="button" href=""><i class="glyphicon glyphicon-remove "></i>&nbsp; Delete account</a></li>
                                       <li ><a style="text-align: left;" class="btn" onclick="tryToGetToken()"  type="button"><i class="fa fa-shield " style="   margin: 0px 2px 0 2px;"></i>&nbsp; Get Token</a></li>
                                      </ul>
                                    </li>
                                  </div>
                                </div>
-                               {{/friendProfile}}
+                               <%/friendProfile%>
 
                            </div>
 
@@ -191,21 +191,21 @@
                         </div>
                             
 
-              {{friends.name}}
-                  <div class="panel panel-default" id="{{_id}}" >
+              <%friends.name%>
+                  <div class="panel panel-default" id="<%_id%>" >
                        <div class="row">
-                     {{# showFriends }}
+                     <%# showFriends %>
                       <div style="margin: 0px 0px 0px 0px">
                       &nbsp;</div>
-                     {{/ showFriends }}
-                     {{^ showFriends }}
+                     <%/ showFriends %>
+                     <%^ showFriends %>
                         <div class="col-md-7">
                           <div class="row " style="margin-bottom: 3px;">
                             <div class="col-sm-1" style="padding: 11px 0px 11px 0px; margin-top: 10px; left: 20px; ">
                                 Institution
                             </div>
                             <div class="col-sm-9" style="padding: 0px 0px 0px 0px;margin-top: 10px; left: 85px;">
-                                <p   class="list-group-item">{{friendProfile.education}}{{^friendProfile.name}}{{profile.education}}{{/friendProfile.name}}</p>
+                                <p   class="list-group-item"><%friendProfile.education%><%^friendProfile.name%><%profile.education%><%/friendProfile.name%></p>
                             </div>
                           </div>
 
@@ -214,7 +214,7 @@
                                 Occupation
                             </div>
                             <div class="col-sm-9" style="padding: 0px 0px 0px 0px;left: 85px;">
-                                <p   class="list-group-item">{{friendProfile.occupation}}{{^friendProfile.name}}{{profile.occupation}}{{/friendProfile.name}}</p>
+                                <p   class="list-group-item"><%friendProfile.occupation%><%^friendProfile.name%><%profile.occupation%><%/friendProfile.name%></p>
                             </div>
                           </div>
 
@@ -223,7 +223,7 @@
                                 Contact
                             </div>
                             <div class="col-sm-9" style="padding: 0px 0px 0px 0px;left: 85px;">
-                               <p   class="list-group-item">{{friendProfile.email}}{{^friendProfile.name}}{{profile.email}}{{/friendProfile.name}}</p>
+                               <p   class="list-group-item"><%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%></p>
                             </div>
                           </div>
 
@@ -238,43 +238,43 @@
                          <div class="row" >
                             <div class="col-sm-12" style="padding: 0px 0px 0px 0px; margin-bottom:5px">
                                <p style="height: 89px; padding: 5px;"  class="text-center list-group-item">
-                               <b><span  style = "font-size:30px">{{friendProfile.activeness}}{{^friendProfile.name}}{{profile.activeness}}{{/friendProfile.name}}</span></b>
+                               <b><span  style = "font-size:30px"><%friendProfile.activeness%><%^friendProfile.name%><%profile.activeness%><%/friendProfile.name%></span></b>
                                <br>
-                                  <a id="{{profile._id}}"  style="font-size:14px; margin-top: 6px; color:rgb(59, 151, 152);{{#showPost}} color:#2d6363; {{/showPost}}; padding: 12px 5px 4px 5px; " href="/user/post" class="fa fa-newspaper-o" >&nbsp; {{friendProfile.id_user_posts.length}}{{^friendProfile.name}}{{profile.id_user_posts.length}}{{/friendProfile.name}} &nbsp; </a> 
-                                  <a id="{{profile._id}}" href="/user/share" class="fa fa-share" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); {{#showShare}} color:#2d6363; {{/showShare}}" >&nbsp; {{friendProfile.id_share_posts.length}}{{^friendProfile.name}}{{profile.id_share_posts.length}}{{/friendProfile.name}} &nbsp; </a> 
-                                  <a id="{{profile._id}}" href="/user/like" class="fa fa-thumbs-up" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); {{#showLike}} color:#2d6363; {{/showLike}}" >&nbsp; {{friendProfile.id_liked_posts.length}}{{^friendProfile.name}}{{profile.id_liked_posts.length}}{{/friendProfile.name}} &nbsp; </a> 
-                                  <a id="{{profile._id}}" href="/user/comment" class="fa fa-comments-o" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); {{#showComment}} color:#2d6363; {{/showComment}}" >&nbsp; {{friendProfile.id_commented_posts.length}}{{^friendProfile.name}}{{profile.id_commented_posts.length}}{{/friendProfile.name}} </a> 
+                                  <a id="<%profile._id%>"  style="font-size:14px; margin-top: 6px; color:rgb(59, 151, 152);<%#showPost%> color:#2d6363; <%/showPost%>; padding: 12px 5px 4px 5px; " href="/user/post" class="fa fa-newspaper-o" >&nbsp; <%friendProfile.id_user_posts.length%><%^friendProfile.name%><%profile.id_user_posts.length%><%/friendProfile.name%> &nbsp; </a> 
+                                  <a id="<%profile._id%>" href="/user/share" class="fa fa-share" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); <%#showShare%> color:#2d6363; <%/showShare%>" >&nbsp; <%friendProfile.id_share_posts.length%><%^friendProfile.name%><%profile.id_share_posts.length%><%/friendProfile.name%> &nbsp; </a> 
+                                  <a id="<%profile._id%>" href="/user/like" class="fa fa-thumbs-up" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); <%#showLike%> color:#2d6363; <%/showLike%>" >&nbsp; <%friendProfile.id_liked_posts.length%><%^friendProfile.name%><%profile.id_liked_posts.length%><%/friendProfile.name%> &nbsp; </a> 
+                                  <a id="<%profile._id%>" href="/user/comment" class="fa fa-comments-o" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); <%#showComment%> color:#2d6363; <%/showComment%>" >&nbsp; <%friendProfile.id_commented_posts.length%><%^friendProfile.name%><%profile.id_commented_posts.length%><%/friendProfile.name%> </a> 
                               </p>
                             </div>
                         </div>
                           
                         </div>
 
-                     {{/ showFriends }}
+                     <%/ showFriends %>
 
-                          <div class="text-center" style="{{# showFriends }}margin-top:-13px; {{/ showFriends }} {{^ showFriends }}margin-top:5px; {{/ showFriends }}margin-bottom:1px">
+                          <div class="text-center" style="<%# showFriends %>margin-top:-13px; <%/ showFriends %> <%^ showFriends %>margin-top:5px; <%/ showFriends %>margin-bottom:1px">
                             <a href="#" class="glyphicon glyphicon-option-horizontal" style="font-size:15px "></a>
                           </div>
                           </div>
             </div>
 
-                    {{# posts }}
+                    <%# posts %>
 
-                    <div class="panel panel-default" style="" id="{{_id}}" >
-                      <div class="row" id="{{_id}}row">
+                    <div class="panel panel-default" style="" id="<%_id%>" >
+                      <div class="row" id="<%_id%>row">
 
                         <div class="col-sm-2" style=" padding-left: 0px;">
-                         <div class="panel-heading" id="{{_id}}theImage">
+                         <div class="panel-heading" id="<%_id%>theImage">
                           <a href=""  class="pull-left">   
-                            {{#creator.name}}
-                            <div class="col-sm-1"  id="{{creator._id}}editableImage" style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
-                              {{/creator.name}}
+                            <%#creator.name%>
+                            <div class="col-sm-1"  id="<%creator._id%>editableImage" style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
+                              <%/creator.name%>
 
-                            {{^creator.name}}
-                            <div class="col-sm-1"  id="{{_id}}editableImage" style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
-                                {{/creator.name}}
+                            <%^creator.name%>
+                            <div class="col-sm-1"  id="<%_id%>editableImage" style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
+                                <%/creator.name%>
 
-                                <img style=" width:90px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%); -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/{{creator.email}}{{^creator.name}}{{profile.email}}{{/creator.name}}/profile/{{creator.img_profile_name}}{{^creator.name}}{{#myFriend}}{{profile.img_profile_name}}{{/myFriend}}{{^myFriend}}{{friendProfile.img_profile_name}}{{/myFriend}}{{/creator.name}}">
+                                <img style=" width:90px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%); -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/<%creator.email%><%^creator.name%><%profile.email%><%/creator.name%>/profile/<%creator.img_profile_name%><%^creator.name%><%#myFriend%><%profile.img_profile_name%><%/myFriend%><%^myFriend%><%friendProfile.img_profile_name%><%/myFriend%><%/creator.name%>">
                               </div>
 
                             </a> 
@@ -284,21 +284,21 @@
                         <div class="col-sm-10" style="margin-top: 10px;">
                           <div class="row">
                             <div class="col-sm-11" style="padding-left:0px">
-                              {{#creator.name}}
-                              <a href="/profile/{{creator.email}}"><h4 style="margin-bottom: 0px;" id="{{creator._id}}editableName"><b >
-                                {{creator.name}}
-                                {{/creator.name}}
+                              <%#creator.name%>
+                              <a href="/profile/<%creator.email%>"><h4 style="margin-bottom: 0px;" id="<%creator._id%>editableName"><b >
+                                <%creator.name%>
+                                <%/creator.name%>
 
-                                {{^creator.name}}
-                                {{#myFriend}}
-                                <a href="/profile/{{profile.email}}"><h4 style="margin-bottom: 0px;" id="{{_id}}editableName"><b> 
-                                  {{profile.name}}
-                                {{/myFriend}}
-                                {{^myFriend}}
-                                <a href="/profile/{{friendProfile.email}}"><h4 style="margin-bottom: 0px;" id="{{_id}}editableName"><b> 
-                                  {{friendProfile.name}}
-                                {{/myFriend}}
-                                  {{/creator.name}}
+                                <%^creator.name%>
+                                <%#myFriend%>
+                                <a href="/profile/<%profile.email%>"><h4 style="margin-bottom: 0px;" id="<%_id%>editableName"><b> 
+                                  <%profile.name%>
+                                <%/myFriend%>
+                                <%^myFriend%>
+                                <a href="/profile/<%friendProfile.email%>"><h4 style="margin-bottom: 0px;" id="<%_id%>editableName"><b> 
+                                  <%friendProfile.name%>
+                                <%/myFriend%>
+                                  <%/creator.name%>
                                 </b></h4> </a>
 
                               </div>
@@ -310,44 +310,44 @@
                                   <a href="" data-toggle="dropdown"><i class="glyphicon glyphicon-chevron-down" style="top:-3px"></i></a>
                                   <ul class="dropdown-menu" style="left:-101px; top:13px;    min-width: 120px; ">
 
-                                    {{^creator.name}}
-                                    <li><a class="btn " style="text-align: left;" type="button" onclick="editPost('{{_id}}','{{profile._id}}')"><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit</a></li>
-                                    {{/creator.name}}
+                                    <%^creator.name%>
+                                    <li><a class="btn " style="text-align: left;" type="button" onclick="editPost('<%_id%>','<%profile._id%>')"><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit</a></li>
+                                    <%/creator.name%>
                                     <li><a class="btn" style="text-align: left;" type="button" href=""><i class="glyphicon glyphicon-bookmark "></i>&nbsp; Keep</a></li>
-                                    {{#creator.name}}
+                                    <%#creator.name%>
                                     <li><a class="btn" style="text-align: left;" type="button" href=""><i class="fa fa-share "></i>&nbsp; Share</a></li>
-                                    {{/creator.name}}
+                                    <%/creator.name%>
 
-                                    {{^creator.name}}
+                                    <%^creator.name%>
                                     <li>
-                                     <a class="btn" style="text-align: left;" type="button" onclick="tryToDelete('{{_id}}','{{profile._id}}')"><i class="glyphicon glyphicon-remove "></i>&nbsp; Delete</a></li>
-                                     {{/creator.name}}
+                                     <a class="btn" style="text-align: left;" type="button" onclick="tryToDelete('<%_id%>','<%profile._id%>')"><i class="glyphicon glyphicon-remove "></i>&nbsp; Delete</a></li>
+                                     <%/creator.name%>
                                    </ul>
                                  </li>
                                </div>
                              </div>
-                             {{#title}}
-                             <h5  >Title: <a href="/post/{{_id}}" id = "{{_id}}editableTitle">  <b>{{title}}</b> </a> </h5>
-                             {{#keywords}}
+                             <%#title%>
+                             <h5  >Title: <a href="/post/<%_id%>" id = "<%_id%>editableTitle">  <b><%title%></b> </a> </h5>
+                             <%#keywords%>
                              <hr style="margin:5px 0px 5px 0px">
-                             Keywords: <a href="#"  id = "{{_id}}editableKeywords">{{keywords}}</a>
-                             {{/keywords}}
-                             {{/title}}
+                             Keywords: <a href="#"  id = "<%_id%>editableKeywords"><%keywords%></a>
+                             <%/keywords%>
+                             <%/title%>
 
-                             {{^title}}
-                             <h5 style="" > shared <a href="/profile/{{original_creator.email}}{{^original_creator.name}}{{profile.email}}{{/original_creator.name}}"><b >
-                                {{original_creator.name}}{{^original_creator.name}}{{profile.name}}{{/original_creator.name}}
+                             <%^title%>
+                             <h5 style="" > shared <a href="/profile/<%original_creator.email%><%^original_creator.name%><%profile.email%><%/original_creator.name%>"><b >
+                                <%original_creator.name%><%^original_creator.name%><%profile.name%><%/original_creator.name%>
                                 </b></a>'s post
                                 </h5> 
                              <hr style="margin:5px 0px 5px 0px">
-                             Keywords: <a href="#"  >{{post_shared.keywords}}</a>
-                             {{/title}}
+                             Keywords: <a href="#"  ><%post_shared.keywords%></a>
+                             <%/title%>
                            </div>
 
                          </div> <!-- row -->
 
                          <div class="panel-body" style="padding:10px 15px 15px 15px">
-                           <p style="word-wrap: break-word;    white-space: normal; " id = "{{_id}}editableContent">{{content}}</p>
+                           <p style="word-wrap: break-word;    white-space: normal; " id = "<%_id%>editableContent"><%content%></p>
 
 
 
@@ -355,22 +355,22 @@
 
 
 
-                {{^title}}
+                <%^title%>
 
 
                     <div class="panel panel-default" style="margin-bottom:10px; background-color:rgb(246, 249, 245); "  >
 
-                    {{^post_shared}}
+                    <%^post_shared%>
                       <b>Post has been deleted.</b>
-                    {{/post_shared}}
-                    {{#post_shared}}
+                    <%/post_shared%>
+                    <%#post_shared%>
                       <div class="row">
 
                         <div class="col-sm-1" style=" padding-left: 0px; margin-right:10px">
                          <div class="panel-heading" >
-                          <a href="/profile/{{original_creator.email}}{{^original_creator.name}}{{profile.email}}{{/original_creator.name}}"  class="pull-left">   
+                          <a href="/profile/<%original_creator.email%><%^original_creator.name%><%profile.email%><%/original_creator.name%>"  class="pull-left">   
                             <div class="col-sm-1"  style="padding: 0 0 0 0 ; width:50px;height:50px;overflow:hidden; margin: 0px 10px 0px 0px">
-                                <img style=" width:50px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/{{original_creator.email}}{{^original_creator.name}}{{profile.email}}{{/original_creator.name}}/profile/{{original_creator.img_profile_name}}{{^original_creator.name}}{{profile.img_profile_name}}{{/original_creator.name}}">
+                                <img style=" width:50px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/<%original_creator.email%><%^original_creator.name%><%profile.email%><%/original_creator.name%>/profile/<%original_creator.img_profile_name%><%^original_creator.name%><%profile.img_profile_name%><%/original_creator.name%>">
                               </div>
 
                             </a> 
@@ -378,22 +378,22 @@
                         </div>
                         <div class="col-sm-10" style="margin-top: 5px;">
                           <div class="row">
-                             <h5 >Title: <a href="/post/{{post_shared._id}}"><b>{{post_shared.title}}</b></a></h5>
+                             <h5 >Title: <a href="/post/<%post_shared._id%>"><b><%post_shared.title%></b></a></h5>
                             </div>
 
 
                             <div class="input-group" style="margin-right:-42px; margin-top: -9px;">
                             <div class="input-group-btn" style="font-size:10px">
-                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 0px;   background-color: rgb(246, 249, 245); font-size: 12px;  border-color: transparent;"><i    class="fa fa-share">&nbsp; {{post_shared.share.length}}</i></a>
-                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 5px;   background-color: rgb(246, 249, 245); font-size: 12px;  border-color: transparent;"><i class="fa fa-thumbs-up">&nbsp; {{post_shared.like.length}} </i></a>
-                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 5px;   background-color: rgb(246, 249, 245); font-size: 12px;  border-color: transparent;"><i  class="fa fa-comments-o">&nbsp; {{post_shared.comments.length}}</i></a>
+                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 0px;   background-color: rgb(246, 249, 245); font-size: 12px;  border-color: transparent;"><i    class="fa fa-share">&nbsp; <%post_shared.share.length%></i></a>
+                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 5px;   background-color: rgb(246, 249, 245); font-size: 12px;  border-color: transparent;"><i class="fa fa-thumbs-up">&nbsp; <%post_shared.like.length%> </i></a>
+                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 5px;   background-color: rgb(246, 249, 245); font-size: 12px;  border-color: transparent;"><i  class="fa fa-comments-o">&nbsp; <%post_shared.comments.length%></i></a>
                             </div>
                             <div class="pull-right" style="width: 100%">       
-                              {{#creator.name}}
-                              {{#original_creator}}
-                              <a type="button" onclick="{{^post_shared.shared}}initiateSharedThought('{{post_shared._id}}','{{original_creator._id}}'); init('additionalThought',200);{{/post_shared.shared}}"  data-toggle="modal" class="btn btn-default" href="{{^post_shared.shared}}#shareModal{{/post_shared.shared}}"  style="float: right;"><i id="iconShare{{_id}}"  style="{{#post_shared.shared}}color:rgb(45, 99, 99){{/post_shared.shared}}"  class="fa fa-share"></i></a>
-                              {{/original_creator}}
-                              {{/creator.name}}
+                              <%#creator.name%>
+                              <%#original_creator%>
+                              <a type="button" onclick="<%^post_shared.shared%>initiateSharedThought('<%post_shared._id%>','<%original_creator._id%>'); init('additionalThought',200);<%/post_shared.shared%>"  data-toggle="modal" class="btn btn-default" href="<%^post_shared.shared%>#shareModal<%/post_shared.shared%>"  style="float: right;"><i id="iconShare<%_id%>"  style="<%#post_shared.shared%>color:rgb(45, 99, 99)<%/post_shared.shared%>"  class="fa fa-share"></i></a>
+                              <%/original_creator%>
+                              <%/creator.name%>
                             </div>
                           </div>
 
@@ -402,15 +402,15 @@
                          </div> <!-- row -->
 
                          <div class="panel-body" style="padding:0px 15px 5px 15px">
-                           <span style="word-wrap: break-word;    white-space: normal; " >{{post_shared.content}}</span>
+                           <span style="word-wrap: break-word;    white-space: normal; " ><%post_shared.content%></span>
 
                         
                         </div>
-                        {{/post_shared}}
+                        <%/post_shared%>
                 </div>
 
 
-                {{/title}}
+                <%/title%>
 
 
 
@@ -418,52 +418,52 @@
 
                            <div class="input-group">
                             <div class="input-group-btn">
-                            {{#title}}
-                              <a type="button" id="buttonShare{{_id}}" onclick="showShares('{{_id}}')" class="btn btn-default" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i id="share{{_id}}"  class="fa fa-share">&nbsp; {{share.length}}</i></a>
-                            {{/title}}
-                              <a type="button" id="buttonLike{{_id}}" onclick="showLikes('{{_id}}')" class="btn btn-default" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i id="like{{_id}}"  class="fa fa-thumbs-up">&nbsp; {{like.length}} </i></a>
-                              <a type="button" id="button{{_id}}" onclick="showComments('{{_id}}')" class="btn btn-default" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i  id="comment{{_id}}" class="fa fa-comments-o">&nbsp; {{comments.length}}</i></a>
+                            <%#title%>
+                              <a type="button" id="buttonShare<%_id%>" onclick="showShares('<%_id%>')" class="btn btn-default" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i id="share<%_id%>"  class="fa fa-share">&nbsp; <%share.length%></i></a>
+                            <%/title%>
+                              <a type="button" id="buttonLike<%_id%>" onclick="showLikes('<%_id%>')" class="btn btn-default" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i id="like<%_id%>"  class="fa fa-thumbs-up">&nbsp; <%like.length%> </i></a>
+                              <a type="button" id="button<%_id%>" onclick="showComments('<%_id%>')" class="btn btn-default" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i  id="comment<%_id%>" class="fa fa-comments-o">&nbsp; <%comments.length%></i></a>
                             </div>
 
                             <div class="pull-right" style="width: 100%">
-                              <input onclick ="init('baby')" type="text" name="{{_id}}" id="comment" style="float: right;margin-left:0px;width: 80%;"  class="form-control comment" placeholder="Give a quick comment.. (Press 'enter' when finished)">
+                              <input onclick ="init('baby')" type="text" name="<%_id%>" id="comment" style="float: right;margin-left:0px;width: 80%;"  class="form-control comment" placeholder="Give a quick comment.. (Press 'enter' when finished)">
 
-                              <a type="button" class="btn btn-default" onclick="sendLike('{{_id}}')" style="float: right; " ><i id ="iconLike{{_id}}" style="{{#liked}}color:rgb(45, 99, 99){{/liked}}" class="fa fa-thumbs-up"></i></a>
-                              <!-- onclick="sendShare('{{_id}}')" -->
-                              {{#creator.name}}      
-                              {{#title}}            
-                              <a type="button" onclick="{{^shared}}initiateSharedThought('{{_id}}','{{creator._id}}'); init('additionalThought',200);{{/shared}}"  data-toggle="modal" class="btn btn-default" href="{{^shared}}#shareModal{{/shared}}"  style="float: right;"><i id="iconShare{{_id}}"  style="{{#shared}}color:rgb(45, 99, 99){{/shared}}"  class="fa fa-share"></i></a>
-                              {{/title}}
-                              {{/creator.name}}
+                              <a type="button" class="btn btn-default" onclick="sendLike('<%_id%>')" style="float: right; " ><i id ="iconLike<%_id%>" style="<%#liked%>color:rgb(45, 99, 99)<%/liked%>" class="fa fa-thumbs-up"></i></a>
+                              <!-- onclick="sendShare('<%_id%>')" -->
+                              <%#creator.name%>      
+                              <%#title%>            
+                              <a type="button" onclick="<%^shared%>initiateSharedThought('<%_id%>','<%creator._id%>'); init('additionalThought',200);<%/shared%>"  data-toggle="modal" class="btn btn-default" href="<%^shared%>#shareModal<%/shared%>"  style="float: right;"><i id="iconShare<%_id%>"  style="<%#shared%>color:rgb(45, 99, 99)<%/shared%>"  class="fa fa-share"></i></a>
+                              <%/title%>
+                              <%/creator.name%>
                             </div>
 
                           </div>
                         </div>
-                        <div id="showComment{{_id}}">
+                        <div id="showComment<%_id%>">
                   </div>
                 </div>
 
-                {{/ posts }}
-                 {{# friends }}
+                <%/ posts %>
+                 <%# friends %>
 
-                      <div id="{{_id}}" class=" panel panel-default">
+                      <div id="<%_id%>" class=" panel panel-default">
                       <div class="row">
 
                         <div class="col-sm-2" style="    padding-left: 0px;">
                          <div class="panel-heading">
-                          <a href="/profile/{{email}}" class="pull-left">    
+                          <a href="/profile/<%email%>" class="pull-left">    
                             <div class="col-sm-1" style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
-                             <img style=" width:90px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/{{email}}/profile/{{img_profile_name}}">
+                             <img style=" width:90px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/<%email%>/profile/<%img_profile_name%>">
                             </div>
                           </a> 
                         </div>
                         </div>
 
                         <div class="col-sm-10" style="    margin-top: 7px;">
-                          <h4> <a href="/profile/{{email}}"> <b>{{name}}</b></a>  ({{occupation}})</h4>
-                          <h4>{{email}}</h4>
+                          <h4> <a href="/profile/<%email%>"> <b><%name%></b></a>  (<%occupation%>)</h4>
+                          <h4><%email%></h4>
                           <hr style="margin:5px 0px 5px 0px">
-                           Institution: <a href="#">{{education}}</a>
+                           Institution: <a href="#"><%education%></a>
                         </div>
 
                       </div> <!-- row -->
@@ -472,18 +472,18 @@
                        <div class="panel-body" style="padding:10px 15px 15px 15px">                         
                           <div class="input-group" >
                             <div class="input-group-btn">
-                              <p class="btn btn-default" style="margin-right: 2px;color:rgb(45, 99, 99)">{{activeness}} Pts.</p>
+                              <p class="btn btn-default" style="margin-right: 2px;color:rgb(45, 99, 99)"><%activeness%> Pts.</p>
                             </div>
                             <input type="text" class="form-control" style="width:84%" placeholder="Send message ..">
-                            <button class="btn btn-primary" onclick="tryToConnect('{{_id}}','{{name}}')"><i style="color:white" class="glyphicon glyphicon-ok"></i>&nbspSend</button>
+                            <button class="btn btn-primary" onclick="tryToConnect('<%_id%>','<%name%>')"><i style="color:white" class="glyphicon glyphicon-ok"></i>&nbspSend</button>
                           </div>  
                         </div>
 
                       </div>
-                  {{/ friends }}
+                  <%/ friends %>
 
 
-                  {{^friendProfile}}    
+                  <%^friendProfile%>    
                     <div class="text-center">
                       
                       <div class="row" >
@@ -491,20 +491,20 @@
                         </ul>
                       </div>
                       <div id="statePage">
-                        {{#showFriends}} 
+                        <%#showFriends%> 
                           Let's   <a href="/search"> <button class=" btn btn-md btn-primary" >Find</button> </a> a new connections !
-                        {{/showFriends}}
+                        <%/showFriends%>
                         
-                        {{^showFriends}}
-                          {{^showPerActivity}}Create your <a href="/"> <button class=" btn btn-md btn-primary" > New Post</button> </a> !{{/showPerActivity}}
+                        <%^showFriends%>
+                          <%^showPerActivity%>Create your <a href="/"> <button class=" btn btn-md btn-primary" > New Post</button> </a> !<%/showPerActivity%>
                           
-                          {{#showPerActivity}} Do some activities in your  <a href="/"> <button class=" btn btn-md btn-primary" >Home</button> </a>!
-                          {{/showPerActivity}}
-                        {{/showFriends}}
+                          <%#showPerActivity%> Do some activities in your  <a href="/"> <button class=" btn btn-md btn-primary" >Home</button> </a>!
+                          <%/showPerActivity%>
+                        <%/showFriends%>
                       </div>
                       <!-- <hr> -->
                     </div>
-                  {{/friendProfile}}    
+                  <%/friendProfile%>    
          
               </div>
 
@@ -516,7 +516,7 @@
 
 
               <div id="rightSideBar" class="col-sm-3 rightside" >
-                 {{> rightSide}} 
+                 <%> rightSide%> 
               </div>
 
               </div><!--/row-->
@@ -535,12 +535,12 @@
   </div>
   </div>
   <script>
-  // alert('{{showFriends}}{{^showFriends}}{{showFriends}}{{/showFriends}}'== 'true' )
+  // alert('<%showFriends%><%^showFriends%><%showFriends%><%/showFriends%>'== 'true' )
     str = "";
-    var numOfLastPage = {{numOfLastPage}};
-    var numOfCurrPage = {{numOfCurrPage}}+1;
+    var numOfLastPage = <%numOfLastPage%>;
+    var numOfCurrPage = <%numOfCurrPage%>+1;
 
-        // alert({{showFriends}})
+        // alert(<%showFriends%>)
     if(numOfCurrPage <= numOfLastPage){
       limitIndexPage = 10;
       if(numOfLastPage < 10)
@@ -553,19 +553,19 @@
         else 
           firstIndexPage = numOfLastPage - limitIndexPage;
 
-      if('{{showFriends}}{{^showFriends}}{{showFriends}}{{/showFriends}}'== 'true' ){
+      if('<%showFriends%><%^showFriends%><%showFriends%><%/showFriends%>'== 'true' ){
         // show friends
         //add first page
         str +=  "<li";
         if(1 == numOfCurrPage)
             str += " class=\"active\"";
-        str += "><a href=\"/friends/{{friendProfile._id}}{{^friendProfile._id}}{{profile._id}}{{/friendProfile._id}}/"+0+"/{{limitPerPage}}\">"+'First'+"</a></li>";
+        str += "><a href=\"/connections/<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>/"+0+"/<%limitPerPage%>\">"+'First'+"</a></li>";
 
 
         //add first intermediate page
         if(numOfLastPage > 11 && 2 < firstIndexPage+1){
           intermediateIndex = Math.ceil(firstIndexPage/2);
-          str +=  "<li><a href=\"/friends/{{friendProfile._id}}{{^friendProfile._id}}{{profile._id}}{{/friendProfile._id}}/"+(intermediateIndex)+"/{{limitPerPage}}\">"+"..."+"</a></li>";
+          str +=  "<li><a href=\"/connections/<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
         }
 
         lastIndexPage = firstIndexPage + limitIndexPage - 1;
@@ -575,13 +575,13 @@
           str +=  "<li";
           if(i == numOfCurrPage)
             str += " class=\"active\"";
-          str += "><a href=\"/friends/{{friendProfile._id}}{{^friendProfile._id}}{{profile._id}}{{/friendProfile._id}}/"+(i-1)+"/{{limitPerPage}}\">"+(i)+"</a></li>";
+          str += "><a href=\"/connections/<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>/"+(i-1)+"/<%limitPerPage%>\">"+(i)+"</a></li>";
         };
 
         //add last intermediate page
         if(numOfLastPage > 11 && (numOfLastPage-1) > lastIndexPage){
           intermediateIndex = Math.floor(lastIndexPage+((numOfLastPage - lastIndexPage) /2)-1);
-          str +=  "<li><a href=\"/friends/{{friendProfile._id}}{{^friendProfile._id}}{{profile._id}}{{/friendProfile._id}}/"+(intermediateIndex)+"/{{limitPerPage}}\">"+"..."+"</a></li>";
+          str +=  "<li><a href=\"/connections/<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
         }
 
          //add last page
@@ -589,20 +589,20 @@
           str +=  "<li";
           if(numOfLastPage == numOfCurrPage)
               str += " class=\"active\"";
-          str += "><a href=\"/friends/{{friendProfile._id}}{{^friendProfile._id}}{{profile._id}}{{/friendProfile._id}}/"+(numOfLastPage-1)+"/{{limitPerPage}}\">"+'Last'+"</a></li>";
+          str += "><a href=\"/connections/<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>/"+(numOfLastPage-1)+"/<%limitPerPage%>\">"+'Last'+"</a></li>";
         }
-      }else if('{{showPerActivity}}{{^showPerActivity}}{{showPerActivity}}{{/showPerActivity}}'== 'true' ){
+      }else if('<%showPerActivity%><%^showPerActivity%><%showPerActivity%><%/showPerActivity%>'== 'true' ){
         //show activity
         //add first page
         str +=  "<li";
         if(1 == numOfCurrPage)
             str += " class=\"active\"";
-        str += "><a href=\"/{{urlActivity}}/"+0+"/{{limitPerPage}}\">"+'First'+"</a></li>";
+        str += "><a href=\"/<%urlActivity%>/"+0+"/<%limitPerPage%>\">"+'First'+"</a></li>";
 
         //add first intermediate page
         if(numOfLastPage > 11 && 2 < firstIndexPage+1){
           intermediateIndex = Math.ceil(firstIndexPage/2);
-          str +=  "<li><a href=\"/{{urlActivity}}/"+(intermediateIndex)+"/{{limitPerPage}}\">"+"..."+"</a></li>";
+          str +=  "<li><a href=\"/<%urlActivity%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
         }
 
         lastIndexPage = firstIndexPage + limitIndexPage - 1;
@@ -612,13 +612,13 @@
           str +=  "<li";
           if(i == numOfCurrPage)
             str += " class=\"active\"";
-          str += "><a href=\"/{{urlActivity}}/"+(i-1)+"/{{limitPerPage}}\">"+(i)+"</a></li>";
+          str += "><a href=\"/<%urlActivity%>/"+(i-1)+"/<%limitPerPage%>\">"+(i)+"</a></li>";
         };  
         
         //add last intermediate page
         if(numOfLastPage > 11 && (numOfLastPage-1) > lastIndexPage){
           intermediateIndex = Math.floor(lastIndexPage+((numOfLastPage - lastIndexPage) /2)-1);
-          str +=  "<li><a href=\"/{{urlActivity}}/"+(intermediateIndex)+"/{{limitPerPage}}\">"+"..."+"</a></li>";
+          str +=  "<li><a href=\"/<%urlActivity%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
         }
         
          //add last page
@@ -626,7 +626,7 @@
           str +=  "<li";
           if(numOfLastPage == numOfCurrPage)
               str += " class=\"active\"";
-          str += "><a href=\"/{{urlActivity}}/"+(numOfLastPage-1)+"/{{limitPerPage}}\">"+'Last'+"</a></li>";
+          str += "><a href=\"/<%urlActivity%>/"+(numOfLastPage-1)+"/<%limitPerPage%>\">"+'Last'+"</a></li>";
         }
         // alert("hhhhh")
       }else{
@@ -635,12 +635,12 @@
         str +=  "<li";
         if(1 == numOfCurrPage)
             str += " class=\"active\"";
-        str += "><a href=\"/profile/{{friendProfile.email}}{{^friendProfile._id}}{{profile.email}}{{/friendProfile._id}}/"+0+"/{{limitPerPage}}\">"+'First'+"</a></li>";
+        str += "><a href=\"/profile/<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>/"+0+"/<%limitPerPage%>\">"+'First'+"</a></li>";
 
         //add first intermediate page
         if(numOfLastPage > 11 && 2 < firstIndexPage+1){
           intermediateIndex = Math.ceil(firstIndexPage/2);
-          str +=  "<li><a href=\"/profile/{{friendProfile.email}}{{^friendProfile._id}}{{profile.email}}{{/friendProfile._id}}/"+(intermediateIndex)+"/{{limitPerPage}}\">"+"..."+"</a></li>";
+          str +=  "<li><a href=\"/profile/<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
         }
 
         lastIndexPage = firstIndexPage + limitIndexPage - 1;
@@ -650,13 +650,13 @@
           str +=  "<li";
           if(i == numOfCurrPage)
             str += " class=\"active\"";
-          str += "><a href=\"/profile/{{friendProfile.email}}{{^friendProfile._id}}{{profile.email}}{{/friendProfile._id}}/"+(i-1)+"/{{limitPerPage}}\">"+(i)+"</a></li>";
+          str += "><a href=\"/profile/<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>/"+(i-1)+"/<%limitPerPage%>\">"+(i)+"</a></li>";
         };  
         
         //add last intermediate page
         if(numOfLastPage > 11 && (numOfLastPage-1) > lastIndexPage){
           intermediateIndex = Math.floor(lastIndexPage+((numOfLastPage - lastIndexPage) /2)-1);
-          str +=  "<li><a href=\"/profile/{{friendProfile.email}}{{^friendProfile._id}}{{profile.email}}{{/friendProfile._id}}/"+(intermediateIndex)+"/{{limitPerPage}}\">"+"..."+"</a></li>";
+          str +=  "<li><a href=\"/profile/<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
         }
         
          //add last page
@@ -664,19 +664,19 @@
           str +=  "<li";
           if(numOfLastPage == numOfCurrPage)
               str += " class=\"active\"";
-          str += "><a href=\"/profile/{{friendProfile.email}}{{^friendProfile._id}}{{profile.email}}{{/friendProfile._id}}/"+(numOfLastPage-1)+"/{{limitPerPage}}\">"+'Last'+"</a></li>";
+          str += "><a href=\"/profile/<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>/"+(numOfLastPage-1)+"/<%limitPerPage%>\">"+'Last'+"</a></li>";
         }
       }
 
         lastResult = 0;
         if(numOfCurrPage==numOfLastPage){
-          lastResult = '{{numOfPost}}{{numOfFriend}}';
+          lastResult = '<%numOfPost%><%numOfFriend%>';
         }
         else
-          lastResult = (numOfCurrPage*{{limitPerPage}});
+          lastResult = (numOfCurrPage*<%limitPerPage%>);
 
         document.getElementById("pagination").innerHTML = str;
-        document.getElementById("statePage").innerHTML = "Showing "+({{numOfCurrPage}}*{{limitPerPage}}+1)+" - "+lastResult+" results<p><b>Page "+numOfCurrPage+" of "+numOfLastPage+"<b></p>";
+        document.getElementById("statePage").innerHTML = "Showing "+(<%numOfCurrPage%>*<%limitPerPage%>+1)+" - "+lastResult+" results<p><b>Page "+numOfCurrPage+" of "+numOfLastPage+"<b></p>";
     }
   </script>
 
@@ -724,7 +724,7 @@
 
                 <h4  id = "sharedTitle">salah  </h4>
                 <hr style="margin:5px 0px 5px 0px">
-                Keywords: <a href="#"  id = "sharedKeywords">{{keywords}}</a>
+                Keywords: <a href="#"  id = "sharedKeywords"><%keywords%></a>
               </div>
 
             </div> <!-- row -->
@@ -825,18 +825,18 @@
       <div class="modal-content" style="width:70%; left:15%">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <b><h4> {{friendProfile.name}}{{^friendProfile.name}}{{profile.name}}{{/friendProfile.name}}</h4></b>
+          <b><h4> <%friendProfile.name%><%^friendProfile.name%><%profile.name%><%/friendProfile.name%></h4></b>
         </div>
         <div class="modal-body">
           <div class="panel panel-default" style="margin-bottom:0px">
             <div class="panel-thumbnail">
 
-              <a href="#photoModal" role="button" data-toggle="modal"><img src="/images/{{friendProfile.email}}{{^friendProfile.name}}{{profile.email}}{{/friendProfile.name}}/profile/{{friendProfile.img_profile_name}}{{^friendProfile.name}}{{profile.img_profile_name}}{{/friendProfile.name}}"width="100%" class="img-responsive" ></a>
+              <a href="#photoModal" role="button" data-toggle="modal"><img src="/images/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>/profile/<%friendProfile.img_profile_name%><%^friendProfile.name%><%profile.img_profile_name%><%/friendProfile.name%>"width="100%" class="img-responsive" ></a>
             </div>
           </div>
         </div>
 
-        {{^ friendProfile.name}}
+        <%^ friendProfile.name%>
         <div class="modal-footer" style="padding-left: 25px; padding-right: 20px; padding-bottom: 0px;">
           <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true" > <span class="glyphicon glyphicon-trash" ></span>&nbsp;&nbspDelete</button>
           <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true" onClick="triggermyNewProfilePicture()" > <span class="glyphicon glyphicon-folder-open " ></span>&nbsp;&nbspUpload</button>
@@ -855,7 +855,7 @@
 
         </div>
 
-        {{/ friendProfile.name}}
+        <%/ friendProfile.name%>
 
 
       </div>
@@ -865,8 +865,8 @@
 
   <!-- script references -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-  <script src="../../../{{#page}}../{{/page}}javascripts/bootstrap.min.js"></script>
-  <script src="../../../{{#page}}../{{/page}}javascripts/scripts.js"></script>
+  <script src="../../../<%#page%>../<%/page%>javascripts/bootstrap.min.js"></script>
+  <script src="../../../<%#page%>../<%/page%>javascripts/scripts.js"></script>
   </body>
   </html>
 
@@ -877,7 +877,7 @@
   function tryToConnect(id, name) {
       // alert(id+"  "+name);
       var http = new XMLHttpRequest();
-      http.open("POST", "/addContact", true);
+      http.open("POST", "/addConnection", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
       var params = "id=" + id+""; // probably use document.getElementById(...).value
       http.send(params);
@@ -888,7 +888,7 @@
 
           window.location = window.location.href;
           iAmOnline(http.responseText);
-          // $(location).attr('href','/friends/'+id);
+          // $(location).attr('href','/connections/'+id);
         }
       }
       return true;
@@ -913,7 +913,7 @@
 
   function openNewPage(){
     var http = new XMLHttpRequest();
-      http.open("POST", "/friends/56a869e0bb201b72319646f7", true);
+      http.open("POST", "/connections/56a869e0bb201b72319646f7", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
       var params = "page=" + 1; // probably use document.getElementById(...).value
       http.send((params));
@@ -1078,7 +1078,7 @@
   // give comment
   // I should filter whether is it a tag inthe string or not
   // var id_creator= <%-profile._id %>;
-  var id_creator = '{{profile._id}}';
+  var id_creator = '<%profile._id%>';
   $(function() {
     $('input#comment').on('keyup', function(e) {
       if (e.which == 13 && ! e.shiftKey) {
@@ -1123,7 +1123,7 @@
    document.getElementById(iddNew).innerHTML ="";
   }
 
-  var myEmail = '{{profile.email}}'
+  var myEmail = '<%profile.email%>'
 
   function showComments(id3){
       

@@ -28,7 +28,7 @@
     <a href="/" style="padding: 16px 10px 13px 10px; font-size:17px;"><i class="glyphicon glyphicon-home"></i> Home</a>
   </li>
   <li>
-    <a href="/friends/{{profile._id}}" style="padding: 16px 15px 13px 15px; font-size:17px;" ><i class="fa fa-users" style=""></i> Connections</a>
+    <a href="/connections/{{profile._id}}" style="padding: 16px 15px 13px 15px; font-size:17px;" ><i class="fa fa-users" style=""></i> Connections</a>
   </li>
   <li>
     <a href="/chat" style="padding: 13px 20px 11px 20px"><i class="glyphicon glyphicon-comment" style="font-size:20px;"></i></a>
