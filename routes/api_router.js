@@ -20,12 +20,26 @@ var group_cont = require('../controller/group_cont');
 var post_cont = require('../controller/post_cont');
 var tutorial_cont = require('../controller/tutorial_cont');
 var user_cont = require('../controller/user_cont');
+var api_cont = require('../controller/api_cont');
+
 
 /* GET home page. */
 
 /* Post getToken page. */
 router.get('/', function(req, res, next) {
-	res.render("apiDescription");
+	api_cont.isApplicationRegistered("daniarheri", "daniarheri", function(result){
+		res.send(result);
+	});
+});
+
+router.post('/test/:username', function(req, res, next) {
+	api_cont.isApplicationRegistered(req.params.username, req.body.password, function(result){
+		res.send(result);
+	});
+});
+
+router.get('/test', function(req, res, next) {
+	res.render('testAngular');
 });
 
 /* Post getToken page. */
