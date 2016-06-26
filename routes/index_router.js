@@ -6,13 +6,8 @@ var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 
 /*Controller*/
-var agent_cont = require('../controller/agent_cont');
-var api_cont = require('../controller/api_cont');
-var chat_cont = require('../controller/chat_cont');
 var connection_cont = require('../controller/connection_cont');
-var group_cont = require('../controller/group_cont');
 var post_cont = require('../controller/post_cont');
-var tutorial_cont = require('../controller/tutorial_cont');
 var user_cont = require('../controller/user_cont');
 var page_home_cont = require('../controller/page_home_cont');
 var page_recommended_post_cont = require('../controller/page_recommended_post_cont');
