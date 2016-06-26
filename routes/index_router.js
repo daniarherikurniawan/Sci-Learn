@@ -29,7 +29,7 @@ router.get('/login', function(req, res, next) {
 	if(req.session.profile!=null){
     	res.redirect('/');
 	}else{
-		res.render('login', { Message: '' });
+		res.render('login', { Message: '', version: "[v.0.4]" });
 	}
 });
 
