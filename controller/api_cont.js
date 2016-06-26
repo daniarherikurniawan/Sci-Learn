@@ -8,6 +8,9 @@ module.exports = {
 		.find({username: username, password: password}, 
 			function(err, result){
 				if (!err){
+					// var Application = require('../dbhelper/application_model');
+					// var app = new Application.model({username: "daniarheri", password: "daniarheri"});
+					// app.save();
 					// console.log(result)
 					if(result.length != 0){
 						callback("find it!"); return;
