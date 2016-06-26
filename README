@@ -31,3 +31,19 @@ for Daniar:
 - admin page: http://www.sci-learn.com/agent/login
 - server : pm2 status
 			pm2 www restart
+
+If error:
+
+pm2 restart www
+pm2 show www
+pm2 logs www
+
+ss -nlp | grep 8000
+sudo kill -9 27252
+
+
+finally:
+pm2 start bin/www 
+
+
+migrate database using dumb instead

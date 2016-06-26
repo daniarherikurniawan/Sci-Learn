@@ -7,8 +7,9 @@ var rimraf = require('rimraf');
 
 var Post = require('../dbhelper/post_model');
 var User = require('../dbhelper/user_model');
+var HostServer = require('../private_data/agent_files/hostServer');
 
-var host = "http://www.sci-learn.com";
+var host = HostServer.name;
 // var host = "http://localhost:8000";
 
 function validateEmail(email) {
