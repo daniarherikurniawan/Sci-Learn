@@ -29,7 +29,7 @@ router.get('/login', function(req, res, next) {
 	if(req.session.profile!=null){
     	res.redirect('/');
 	}else{
-		res.render('login', { Message: '', version: "[v.0.4]" });
+		res.render('login', { Message: '', version: req.app.version});
 	}
 });
 
@@ -39,7 +39,7 @@ router.post('/login', function(req, res, next) {
 		if (feedback.status == "exist"){
         	res.redirect('/');
 		}else{
-			res.render('login', { Message: feedback.message });
+			res.render('login', { Message: feedback.message , version: req.app.version});
 		}
 	});
 });
