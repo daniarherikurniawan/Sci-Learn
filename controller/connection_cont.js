@@ -123,7 +123,64 @@ module.exports = {
 				res.send(req.body.id);
 			});	
 		});
-	}
+	},
 
+	showConnectionsPage: function(req, res, userId, page, limit, isLimitedByParameter ){
+		User.model.findById(userId)
+		.exec(function(err, user){
+			if(err){
+				console.log(err);
+				res.send("404");
+			}else{
+				//res.send(user);
+				limit = parseInt(limit);
+				req.session.dataCurrentProfile = user;
+				User.model
+				.find({_id: {$in : req.session.dataCurrentProfile.connections}})
+				.skip(limit*page)
+				.limit(limit)
+				.exec(function(err, friends){
+					console.log(err);
+					
+					limitPerPage = limit;
+					if(	(req.session.profile._id != userId) ){
+						numOfFriend = req.session.dataCurrentProfile.connections.length;
+						numOfLastPage = Math.ceil(numOfFriend/limit);
+						
+						if(req.session.profile.connections.indexOf(userId) == -1){
+					// console.log("===========");
+							// not my friend
+							 res.render('profile', {profile: req.session.profile, 
+							 	friendProfile: req.session.dataCurrentProfile, numOfCurrPage : page, 
+							 	numOfLastPage : numOfLastPage, limitPerPage : limitPerPage,
+						 		popular_topic: req.session.popular_topic,
+							 	posts: null,  rec_topic : req.session.rec_topic, page:isLimitedByParameter,
+							 	 friends : friends, myFriend:false, showFriends:true, numOfFriend : numOfFriend,
+							 	partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});
+					 	}else{
+					// console.log("2");
+							 res.render('profile', {profile: req.session.profile, page:isLimitedByParameter,
+							 	friendProfile: req.session.dataCurrentProfile,   numOfLastPage : numOfLastPage,
+							 	rec_topic : req.session.rec_topic,  numOfCurrPage : page,
+							 	limitPerPage : limitPerPage, numOfFriend : numOfFriend,
+						 		popular_topic: req.session.popular_topic,
+							 	posts: null, friends : friends, myFriend:true,  showFriends:true,
+							 	partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});
+					 	}
+					}else{
+					// this is my profile
+					numOfFriend = req.session.profile.connections.length;
+					numOfLastPage = Math.ceil(req.session.profile.connections.length/limit);
+					 res.render('profile', {profile: req.session.profile, page:isLimitedByParameter,
+					 	myFriend:true, showFriends:true,  numOfCurrPage : page, numOfLastPage : numOfLastPage,
+					 	friendProfile: null, posts: null, limitPerPage : limitPerPage,
+						popular_topic: req.session.popular_topic,
+					 	friends : friends, rec_topic : req.session.rec_topic, numOfFriend : numOfFriend,
+					 	partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});	
+					}
+				});
+			}
+		});
+	}
 
 }
