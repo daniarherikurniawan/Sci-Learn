@@ -104,7 +104,7 @@
  		padding-left: 9% !important;
 	 	width:37%;
  	}}
- @media (min-width:1305px){
+ @media (min-width:1300px){
  	.rightside{
 	 	width:23%;
 	 	display: block !important;
@@ -114,15 +114,15 @@
 	 	/* margin-left: 12px; */
 	 	height: 92%;
 	 	/* overflow: auto; */
-	 	padding-left: 15px;
+	 	padding-left: 20px;
 	 	/* float: left; */
  	}
  	.middle_display{
-	 	width:26%;
+	 	width:50%;
  	}
  	.leftside{
- 		padding-left: 25% !important;
-	 	width:37%;
+ 		padding-left: 3% !important;
+	 	width:28%;
  	}
  }
  @media (min-width:1328px){
@@ -168,10 +168,10 @@
  	}
  	.leftside{
  		padding-left: 2% !important;
-	 	width:26%;
+	 	width:25%;
  	}
  	.custom_navbar_left{
- 		padding-left: 8% !important;
+ 		padding-left: 7% !important;
  	}
  	.custom_navbar_right{
  		margin-right: 4% !important;
@@ -255,7 +255,14 @@
  	.leftside{
  		padding-left: 15% !important;
 	 	width:32%;
- 	}}
+ 	}
+ 	.custom_navbar_left{
+ 		padding-left: 17% !important;
+ 	}
+ 	.custom_navbar_right{
+ 		margin-right: 18% !important;
+ 	}
+ }
  @media (min-width:2100px){.rightside{
  	width:320px;
  	left: 64.6%;
@@ -342,10 +349,31 @@
  		padding-left: 28% !important;
  	}
  	.custom_navbar_right{
- 		margin-right: 31% !important;
+ 		margin-right: 27% !important;
  	}
  }
+@media (min-width:3000px){.rightside{
+ 	width:320px;
+ 	left: 60.7%;
+ 	margin-top: -15px;
+ 	position: fixed;
+ 	height: 92%;
+ 	padding-left: 0px;}
 
+ 	.middle_display{
+	 	width:23%;
+ 	}
+ 	.leftside{
+ 		padding-left: 27% !important;
+	 	width:38%;
+ 	}
+ 	.custom_navbar_left{
+ 		padding-left: 28% !important;
+ 	}
+ 	.custom_navbar_right{
+ 		margin-right: 30% !important;
+ 	}
+ }
  @media (min-width:3800px){.rightside{
  	width:320px;
  	left: 57.9%;
