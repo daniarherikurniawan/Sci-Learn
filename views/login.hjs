@@ -60,7 +60,9 @@
                 <!-- /top nav -->
                 
                 <div class="padding" style=" background: white;">
-                  <div class="full col-sm-9">
+                  <div class="full col-sm-2">
+                  </div>
+                  <div class="full col-sm-8">
                     
                     <!-- content -->                      
                     <div class="row" style="margin-left: auto;
@@ -70,7 +72,9 @@
                      
                       
                      <!-- main col left --> 
-                     <div class="home_carousel col-sm-8 " >
+                     <div class="col-sm-1"></div>
+                     <div class=" col-sm-7 home_carousel" style="padding-left: 0px !important; 
+                     padding-right: 0px !important" ">
                       <div id="myCarousel" class="carousel slide " data-ride="carousel">
                         <!-- Indicators -->
 
