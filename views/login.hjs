@@ -87,39 +87,40 @@
                         </ol>
 
                         <!-- Wrapper for slides -->
-                        <div class="carousel-inner " role="listbox"style="
+                        <div class="carousel-inner "  role="listbox" style="
                             width: 70%;
-                            margin: auto;">
+                            margin: auto;
+                            margin-top: 35px">
                           
                           <div class="item active" >
                             <div class=" text-center"> 
-                              <img src="welcomeImage/front9.jpg" alt="Chania"  height="230">
+                              <img src="welcomeImage/front9.jpg" alt="Chania"  height="210">
                             </div>
                           </div>
 
 
                           <div class="item" >
                             <div class=" text-center"> 
-                              <img src="welcomeImage/front13.jpg" alt="Chania"  height="230">
+                              <img src="welcomeImage/front13.jpg" alt="Chania"  height="210">
                             </div>
                           </div>
 
                           <div class="item">
                             <div class=" text-center"> 
-                              <img src="welcomeImage/front3.jpg" alt="Chania"  height="230">
+                              <img src="welcomeImage/front3.jpg" alt="Chania"  height="210">
                             </div>
                           </div>
 
 
                           <div class="item">
                             <div class=" text-center"> 
-                              <img src="welcomeImage/front3.png" alt="Chania"  height="230">
+                              <img src="welcomeImage/front3.png" alt="Chania"  height="210">
                             </div>
                           </div>
 
                           <div class="item">
                             <div class=" text-center"> 
-                              <img src="welcomeImage/front8.png" alt="Chania"  height="230">
+                              <img src="welcomeImage/front8.png" alt="Chania"  height="210">
                             </div>
                           </div>
                         </div>
