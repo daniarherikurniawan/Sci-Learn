@@ -358,7 +358,7 @@
                 <%^title%>
 
 
-                    <div class="panel panel-default" style="margin-bottom:10px; background-color:rgb(246, 249, 245); "  >
+                    <div class="panel panel-default" style="margin-bottom:10px; background-color:rgb(243, 249, 249); "  >
 
                     <%^post_shared%>
                       <b>Post has been deleted.</b>
@@ -384,9 +384,9 @@
 
                             <div class="input-group" style="margin-right:-42px; margin-top: -9px;">
                             <div class="input-group-btn" style="font-size:10px">
-                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 0px;   background-color: rgb(246, 249, 245); font-size: 12px;  border-color: transparent;"><i    class="fa fa-share">&nbsp; <%post_shared.share.length%></i></a>
-                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 5px;   background-color: rgb(246, 249, 245); font-size: 12px;  border-color: transparent;"><i class="fa fa-thumbs-up">&nbsp; <%post_shared.like.length%> </i></a>
-                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 5px;   background-color: rgb(246, 249, 245); font-size: 12px;  border-color: transparent;"><i  class="fa fa-comments-o">&nbsp; <%post_shared.comments.length%></i></a>
+                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 0px;   background-color: rgb(243, 249, 249); font-size: 12px;  border-color: transparent;"><i    class="fa fa-share">&nbsp; <%post_shared.share.length%></i></a>
+                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 5px;   background-color: rgb(243, 249, 249); font-size: 12px;  border-color: transparent;"><i class="fa fa-thumbs-up">&nbsp; <%post_shared.like.length%> </i></a>
+                              <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 5px;   background-color: rgb(243, 249, 249); font-size: 12px;  border-color: transparent;"><i  class="fa fa-comments-o">&nbsp; <%post_shared.comments.length%></i></a>
                             </div>
                             <div class="pull-right" style="width: 100%">       
                               <%#creator.name%>
