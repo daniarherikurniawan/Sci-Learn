@@ -515,7 +515,7 @@
               </style>
 
 
-              <div id="rightSideBar" class="col-sm-3 rightside" >
+              <div id="rightSideBar" class="col-sm-3 rightside" style="overflow:auto" >
                  <%> rightSide%> 
               </div>
 

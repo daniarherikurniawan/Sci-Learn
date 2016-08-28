@@ -131,7 +131,7 @@ rgba(59, 151, 152, 0.14) -->
 </style>
 
         
-            <div id="rightSideBar" class="col-sm-3 rightside ">
+            <div id="rightSideBar" class="col-sm-3 rightside " style="overflow:auto">
                <%> rightSide%> 
             </div>
 
