@@ -134,14 +134,15 @@
                     </div>
                     
                     <!-- main col right -->
-                    <div class="col-sm-3" style="border:none; margin-top: 40px; width: inherit;">
+                    <div class="col-sm-3" style="border:none; margin-top: 10px;">
 
+                          <span class="logo" style="background-color:inherit; width: auto; olor: #3b9798; font-size:17px"><%version%> </span> 
                     <div id="form-login" style=" margin-bottom: 10px">
 
                       <form class="form" action="/login" method="post">
                         <div class="well" style="background: #3b9798; border-radius: 8px; padding: 12px"> 
                           <div  class="text-center text-warning" style="color:white"><%Message%></div>
-                          <span class="logo" style="background-color:inherit; width: auto;     color: white; font-size:24px">Sci-Learn <%version%> </span> 
+                          <span class="logo" style="background-color:inherit; width: auto;     color: white; font-size:24px">Sci-Learn</span> 
                           <br>
                             <input style="margin-bottom:10px" type="email" name="email"class="form-control input-lg" placeholder="Enter your email address" required>
                             <input style="margin-bottom:5px" type="password" name="password" class="form-control input-lg" placeholder="Enter your password" maxlength="16" minlength="8" required>
