@@ -35,11 +35,17 @@
 	 	display: none;
  	}
  	.login_form{
- 		padding: 0px 30% 0px 30%;
+ 		padding: 0px 15% 0px 15%;
  		width: 100%;
  	}
  }
 
+ @media (min-width:535px){
+ 	.login_form{
+ 		padding: 0px 30% 0px 30%;
+ 		width: 100%;
+ 	}
+ }
 
  @media (min-width:935px){
  	.home_carousel{
