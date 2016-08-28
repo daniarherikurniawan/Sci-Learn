@@ -358,7 +358,7 @@
                 <%^title%>
 
 
-                    <div class="panel panel-default" style="margin-bottom:10px; background-color:rgb(246, 249, 245); "  >
+                    <div class="panel panel-default" style="margin-bottom:10px; background-color:rgb(59, 151, 152); "  >
 
                     <%^post_shared%>
                       <b>Post has been deleted.</b>
