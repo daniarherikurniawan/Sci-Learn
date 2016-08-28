@@ -98,7 +98,6 @@
                             </div>
                           </div>
 
-
                           <div class="item" >
                             <div class=" text-center"> 
                               <img src="welcomeImage/front13.jpg" alt="Chania"  height="210">
@@ -121,6 +120,12 @@
                           <div class="item">
                             <div class=" text-center"> 
                               <img src="welcomeImage/front8.png" alt="Chania"  height="210">
+                            </div>
+                          </div>
+
+                          <div style="display:none" >
+                            <div class=" text-center"> 
+                              <img src="images/logo.jpg" alt="Chania"  height="100">
                             </div>
                           </div>
                         </div>
