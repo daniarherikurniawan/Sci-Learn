@@ -48,7 +48,7 @@
                   <div class="row">
 
                    <!-- main col left --> 
-                   <div class="col-sm-3">
+                   <div class="col-sm-3 leftside">
 
                      <%> leftSide%>
                      
@@ -58,7 +58,7 @@
 
 
                    <!-- main col right -->
-                   <div class="col-sm-6" style="padding-left:0px; padding-right:0px;">
+                   <div class="col-sm-6 middle_display" style="padding-left:0px; padding-right:0px;">
 
                      <div class="well" style="padding: 15px; margin-bottom: 15px;"> 
                      <%#isReccPostPage%>

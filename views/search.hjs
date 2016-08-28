@@ -47,14 +47,14 @@ rgba(59, 151, 152, 0.14) -->
                   align-content: center;
                   margin-left: auto;
                   margin-right: auto;
-                  width: 1310px;">
+                  ">
 
                 <div class="full col-sm-9" style="padding-top:0px">
                   <!-- content -->                      
                   <div class="row">
 
                    <!-- main col left --> 
-                   <div class="col-sm-3">
+                   <div class="col-sm-3 leftside">
 
                      <%> leftSide%>
                      
@@ -64,7 +64,7 @@ rgba(59, 151, 152, 0.14) -->
 
 
                    <!-- main col right -->
-                   <div class="col-sm-6" style="padding-left:0px; padding-right:0px;">
+                   <div class="col-sm-6 middle_display" style="padding-left:0px; padding-right:0px;">
 
                      <!-- <div class="well" style="padding: 15px; margin-bottom: 15px;">  -->
                      <div class="panel panel-default">

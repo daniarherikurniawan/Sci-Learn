@@ -38,14 +38,14 @@
                     align-content: center;
                     margin-left: auto;
                     margin-right: auto;
-                    width: 1310px;">
-                  <div class="full col-sm-9" style="padding-top:0px; width: 1310px;">
+                    ">
+                  <div class="full col-sm-9" style="padding-top:0px;">
 
                     <!-- content -->                      
                     <div class="row">
 
                      <!-- main col left --> 
-                     <div class="col-sm-3">
+                     <div class="col-sm-3 leftside">
                         <div class="panel panel-default">
                           <div class="panel-heading text-center"><h4>About me!</h4></div>
                           <div class="panel-body">
@@ -111,11 +111,11 @@
                        
 
                        <!-- main col right -->
-                       <div class="col-sm-6" style="padding-left:0px; padding-right:0px;">
+                       <div class="col-sm-6 middle_display" style="padding-left:0px; padding-right:0px;">
                        <div class="row" style="margin-bottom:-140px; background-size:100%;">
                             
                           <div class="col-sm-12" style="left: 1px; padding: 0 0 0 0 ; ;height:287px;overflow:hidden">
-                             <img style=" top:125px   ; max-width:100%; max-height:100%;  position: absolute; left: 49.7%;
+                             <img style=" top:115px   ; max-width:100%; max-height:100%;  position: absolute; left: 49.7%;
                              -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>/cover/<%friendProfile.img_cover_name%><%^friendProfile.name%><%profile.img_cover_name%><%/friendProfile.name%>">
 
                               <div class="col-sm-1" style=" top: 155px;left: 18px; padding: 0 0 0 0 ; width:120px;height:120px;overflow:hidden"> <a  href="#photoModal" role="button" data-toggle="modal" > <img style="width:120px;  position: relative; left: 50%; top: 50%; 

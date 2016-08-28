@@ -37,7 +37,7 @@
   </li>
 </ul>
 
-<ul class="nav navbar-nav navbar-right" style="padding-right:60px; width:100px; height:50px;margin-right: 25px; ">
+<ul class="nav navbar-nav navbar-right custom_navbar_right" style="padding-right:60px; width:100px; height:50px;margin-right: 25px; ">
   
 
 
@@ -56,7 +56,7 @@
     <i class="glyphicon glyphicon-menu-hamburger" style="font-size:17px;"></i>
     
     </a>
-    <ul class="dropdown-menu" style="    left: -45px;">
+    <ul class="dropdown-menu" style="    left: -125px;">
       <li><a href="" onclick="tryToGenerateToken()">Generate Token</a></li>
       <li><a onclick="iAmOffline()" href="/logout">Logout</a></li>
     </ul>
