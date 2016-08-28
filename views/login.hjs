@@ -134,7 +134,7 @@
                     </div>
                     
                     <!-- main col right -->
-                    <div class="col-sm-3" style="border:none; margin-top: 40px">
+                    <div class="col-sm-3" style="border:none; margin-top: 40px; width: inherit;">
 
                     <div id="form-login" style=" margin-bottom: 10px">
 
