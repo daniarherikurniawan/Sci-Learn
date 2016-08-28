@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Sci-Learn</title>
   <meta name="generator" content="Bootply" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width">
   <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -70,11 +70,11 @@
                      
                       
                      <!-- main col left --> 
-                     <div class="col-sm-7" >
-                      <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 370px;">
+                     <div class="col-sm-8" >
+                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
 
-                        <ol class="carousel-indicators" style="margin-bottom:0px; bottom:-15px">
+                        <ol class="carousel-indicators" style="margin-bottom:0px; bottom:-51px">
                           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                           <li data-target="#myCarousel" data-slide-to="1"></li>
                           <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -84,38 +84,38 @@
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner " role="listbox"style="
-                            width: 600px;
+                            width: 70%;
                             margin: auto;">
                           
                           <div class="item active" >
                             <div class=" text-center"> 
-                              <img src="welcomeImage/front9.jpg" alt="Chania"  height="330">
+                              <img src="welcomeImage/front9.jpg" alt="Chania"  height="230">
                             </div>
                           </div>
 
 
                           <div class="item" >
                             <div class=" text-center"> 
-                              <img src="welcomeImage/front13.jpg" alt="Chania"  height="330">
+                              <img src="welcomeImage/front13.jpg" alt="Chania"  height="230">
                             </div>
                           </div>
 
                           <div class="item">
                             <div class=" text-center"> 
-                              <img src="welcomeImage/front3.jpg" alt="Chania"  height="330">
+                              <img src="welcomeImage/front3.jpg" alt="Chania"  height="230">
                             </div>
                           </div>
 
 
                           <div class="item">
                             <div class=" text-center"> 
-                              <img src="welcomeImage/front3.png" alt="Chania"  height="330">
+                              <img src="welcomeImage/front3.png" alt="Chania"  height="230">
                             </div>
                           </div>
 
                           <div class="item">
                             <div class=" text-center"> 
-                              <img src="welcomeImage/front8.png" alt="Chania"  height="330">
+                              <img src="welcomeImage/front8.png" alt="Chania"  height="230">
                             </div>
                           </div>
                         </div>
@@ -134,17 +134,17 @@
                     </div>
                     
                     <!-- main col right -->
-                    <div class="col-sm-4" style="border:none; margin-top: 40px">
+                    <div class="col-sm-3" style="border:none; margin-top: 40px">
 
-                    <div id="form-login" style=" margin-bottom: 20px">
+                    <div id="form-login" style=" margin-bottom: 10px">
 
                       <form class="form" action="/login" method="post">
-                        <div class="well" style="background: #3b9798; border-radius: 12px;"> 
+                        <div class="well" style="background: #3b9798; border-radius: 8px; padding: 12px"> 
                           <div  class="text-center text-warning" style="color:white"><%Message%></div>
-                          <span class="logo" style="background-color:inherit; width: auto;     color: white; font-size:28px"> Sci-Learn <%version%></span>
+                          <span class="logo" style="background-color:inherit; width: auto;     color: white; font-size:24px">Sci-Learn <%version%> </span> 
                           <br>
                             <input style="margin-bottom:10px" type="email" name="email"class="form-control input-lg" placeholder="Enter your email address" required>
-                            <input style="margin-bottom:20px" type="password" name="password" class="form-control input-lg" placeholder="Enter your password" maxlength="16" minlength="8" required>
+                            <input style="margin-bottom:5px" type="password" name="password" class="form-control input-lg" placeholder="Enter your password" maxlength="16" minlength="8" required>
                             
                           </div>
                           <div class="text-center">
