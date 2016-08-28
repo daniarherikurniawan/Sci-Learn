@@ -64,13 +64,13 @@
                     
                     <!-- content -->                      
                     <div class="row" style="margin-left: auto;
-    margin-right: auto;
-    width: 1140px;">
+                    margin-right: auto;
+                    width: 1140px;">
 
                      
                       
                      <!-- main col left --> 
-                     <div class="col-sm-8"  style=" width: 820px;">
+                     <div class="col-sm-7" >
                       <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 370px;">
                         <!-- Indicators -->
 
@@ -134,9 +134,9 @@
                     </div>
                     
                     <!-- main col right -->
-                    <div class="col-sm-3" style="border:none; margin-top: 40px">
+                    <div class="col-sm-4" style="border:none; margin-top: 40px">
 
-                    <div id="form-login" style="width:320px; margin-bottom: 20px">
+                    <div id="form-login" style=" margin-bottom: 20px">
 
                       <form class="form" action="/login" method="post">
                         <div class="well" style="background: #3b9798; border-radius: 12px;"> 
