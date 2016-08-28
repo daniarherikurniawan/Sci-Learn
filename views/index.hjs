@@ -19,7 +19,7 @@
       <script src="../../javascripts/jquery.min.js"></script>
       <script src="../../javascripts/socket.io.js"></script>
     </head>
-    <body onload="{init('texta',0)}">
+    <body >
       <div class="wrapper">
         <div class="box">
           <div class="row row-offcanvas row-offcanvas-left">
@@ -107,7 +107,7 @@
                        <div id="" class="sss form-group" style="padding:4px 15px 4px 14px;; margin-bottom:5px ">
 
 
-                        <textarea name="content" class="form-control auto-resize" placeholder="Share your knowledge" required rows="2" style="height:1em;" id="texta"></textarea>
+                        <textarea name="content" class="form-control auto-resize" placeholder="Share your knowledge" required rows="2" style="height:60px;" id="texta"></textarea>
 
                       </div>
 
