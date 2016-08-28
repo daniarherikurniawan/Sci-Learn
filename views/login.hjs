@@ -84,7 +84,7 @@
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner " role="listbox"style="
-                            
+                            width: 600px;
                             margin: auto;">
                           
                           <div class="item active" >
