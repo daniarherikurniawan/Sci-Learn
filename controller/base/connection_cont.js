@@ -1,5 +1,7 @@
-var User = require('../dbhelper/user_model');
-var Post = require('../dbhelper/post_model');
+var User = require('../../dbhelper/user_model');
+var Post = require('../../dbhelper/post_model');
+
+var connection_func = require('../../controller/common/connection_func');
 
 module.exports = { 
 	updateOnlineConnection: function(req, res){
@@ -115,7 +117,7 @@ module.exports = {
 	},
 
 	addConnection: function( req, res){
-		req.app.locals.addContact(req.session.profile._id, req.body.id, 
+		connection_func.addConnection(req.session.profile._id, req.body.id, 
 		function(feedback){
 			User.model.findById(req.session.profile._id)
 			.exec(function(err, user){

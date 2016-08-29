@@ -1,5 +1,5 @@
-var Post = require('../dbhelper/post_model');
-var User = require('../dbhelper/user_model');
+var Post = require('../../../dbhelper/post_model');
+var User = require('../../../dbhelper/user_model');
 
 module.exports = { 
 	showPostsSection: function (req, res, userEmail, page, limit, isLimitedByParameter ){

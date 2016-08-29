@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /*Controller*/
-var connection_cont = require('../controller/connection_cont');
+var connection_cont = require('../controller/base/connection_cont');
 
 /* GET friends page. */
 router.get('/:id', function(req, res, next) {

@@ -1,4 +1,4 @@
-var User = require('../dbhelper/user_model');
+var User = require('../../../dbhelper/user_model');
 
 module.exports = { 
 	showSearchPage: function(req, res, limit, numOfCurrPage){

@@ -6,14 +6,14 @@ var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 
 /*Controller*/
-var connection_cont = require('../controller/connection_cont');
-var post_cont = require('../controller/post_cont');
-var user_cont = require('../controller/user_cont');
-var page_home_cont = require('../controller/page_home_cont');
-var page_recommended_post_cont = require('../controller/page_recommended_post_cont');
-var page_popular_post_cont = require('../controller/page_popular_post_cont');
-var page_post_cont = require('../controller/page_post_cont');
-var page_search_cont = require('../controller/page_search_cont');
+var connection_cont = require('../controller/base/connection_cont');
+var post_cont = require('../controller/base/post_cont');
+var user_cont = require('../controller/base/user_cont');
+var page_home_cont = require('../controller/base/paging/page_home_cont');
+var page_recommended_post_cont = require('../controller/base/paging/page_recommended_post_cont');
+var page_popular_post_cont = require('../controller/base/paging/page_popular_post_cont');
+var page_post_cont = require('../controller/base/paging/page_post_cont');
+var page_search_cont = require('../controller/base/paging/page_search_cont');
 
 // /* GET home page. */     sdsdc
 router.get('/', function(req, res, next) {

@@ -1,5 +1,8 @@
-var Post = require('../dbhelper/post_model');
-var User = require('../dbhelper/user_model');
+var Post = require('../../../dbhelper/post_model');
+var User = require('../../../dbhelper/user_model');
+
+var post_func = require('../../../controller/common/post_func');
+var page_home_func = require('../../../controller/common/paging/page_home_func');
 
 module.exports = { 
 	showHomePage: function(req, res, numOfCurrPage, limit){
@@ -7,7 +10,7 @@ module.exports = {
 		var idForHome = req.session.profile.connections.slice();;
 		idForHome.push(req.session.profile._id);
 
-		req.app.locals.getPostIdForHome(idForHome, limit, numOfCurrPage, true, function(arrayPostId, numOfPost){
+		page_home_func.getPostIdForHome(idForHome, limit, numOfCurrPage, true, function(arrayPostId, numOfPost){
 			Post.model
 				.find({'_id': {$in : arrayPostId}})
 				.sort({date_created: 'desc'})
@@ -51,7 +54,8 @@ module.exports = {
 						numOfLastPage = Math.ceil(numOfPost/limit);
 						
 						if (req.session.profile.connections != null){
-							req.app.locals.getReccPost(req.session.profile.connections,
+
+					 		post_func.getReccPost(req.session.profile.connections,
 								'asc', true, function(rec_topic){
 									// console.log("@@@@@@@@@@@@@@@@@@@@@@@@"+rec_topic.length)
 								if(rec_topic!="no_recc_topic"){
@@ -66,7 +70,7 @@ module.exports = {
 								}
 
 								//popular post
-								req.app.locals.getReccPost(req.session.profile.connections,
+								post_func.getReccPost(req.session.profile.connections,
 									'desc', true, function(popular_topic){
 										// console.log("@@@@@@@@@@@@@@@@@@@@@@@@"+popular_topic.length)
 									if(popular_topic!="no_recc_topic"){

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /*Controller*/
-var page_profile_cont = require('../controller/page_profile_cont');
+var page_profile_cont = require('../controller/base/paging/page_profile_cont');
 
 /* GET home page. */
 router.get('/:email', function(req, res, next) {

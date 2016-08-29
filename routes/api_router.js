@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /*Controller*/
-var api_cont = require('../controller/api_cont');
+var api_cont = require('../controller/base/api_cont');
 
 /* Post getToken page. */
 router.get('/', function(req, res, next) {

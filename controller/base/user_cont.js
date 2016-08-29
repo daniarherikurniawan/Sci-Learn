@@ -1,8 +1,10 @@
 var fs = require('fs');
 var im = require('imagemagick');
 
-var User = require('../dbhelper/user_model');
-var hash = require("../public/javascripts/sha256.js");
+var general_func = require('../../controller/common/general_func');
+
+var User = require('../../dbhelper/user_model');
+var hash = require("../../public/javascripts/sha256.js");
 
 module.exports = { 
 	isAccountExist: function(req, callback){
@@ -31,7 +33,7 @@ module.exports = {
 		var name = req.body.name;
 		var password = req.body.password;
 		var confirmed_password = req.body.confirmed_password;
-		var token = req.app.locals.createToken();
+		var token = general_func.createToken();
 	  	if (confirmed_password === password){
 	  		User.object
 	  			.findOne({email: email}, function(err, data){
@@ -145,7 +147,7 @@ module.exports = {
 
 	generateToken: function(req, res){
 		User.model.findById(req.session.profile._id, function(err, user){
-			user.token = req.app.locals.createToken();
+			user.token = general_func.createToken();
 			user.save();
 			req.session.profile = user;
 			res.send("Token has been generated!")

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /*Controller*/
-var agent_cont = require('../controller/agent_cont');
+var agent_cont = require('../controller/base/agent_cont');
 
 /* Post getToken page. */
 router.get('/', function(req, res, next) {

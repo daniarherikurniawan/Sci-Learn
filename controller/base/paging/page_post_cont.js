@@ -1,4 +1,4 @@
-var Post = require('../dbhelper/post_model');
+var Post = require('../../../dbhelper/post_model');
 
 module.exports = { 
 	showPostPage: function(req, res){

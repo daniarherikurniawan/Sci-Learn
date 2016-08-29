@@ -5,9 +5,12 @@ var requestify = require('requestify');
 var client = new Client();
 var rimraf = require('rimraf');
 
-var Post = require('../dbhelper/post_model');
-var User = require('../dbhelper/user_model');
-var HostServer = require('../private_data/agent_files/hostServer');
+var Post = require('../../dbhelper/post_model');
+var User = require('../../dbhelper/user_model');
+
+var general_func = require('../../controller/common/general_func');
+
+var HostServer = require('../../private_data/agent_files/hostServer');
 
 var host = HostServer.name;
 
@@ -117,7 +120,7 @@ function asyncExecuteOneAction(iteration, req, userProfile, indexAction, action,
 			       		callbackFunc();
 						return;
 			        }else{
-				        selectedPeople = people[req.app.locals.randomIntFromInterval(0, people.length-1)];
+				        selectedPeople = people[general_func.randomIntFromInterval(0, people.length-1)];
 						requestify.get(host+'/API/addFriend/'+
 							userProfile._id+"/"+selectedPeople._id).then(function(response) {
 						    // console.log(response.getBody());
@@ -143,9 +146,9 @@ function asyncExecuteOneAction(iteration, req, userProfile, indexAction, action,
 	        // console.log("	CreatePost");
 	        requestify.post(host+'/API/createPost', {
 		        idUser: userProfile._id,
-				content: randomChars(req.app.locals.randomIntFromInterval(100,500)),
-				title: randomChars(req.app.locals.randomIntFromInterval(15,33)),
-				keywords: randomChars(req.app.locals.randomIntFromInterval(10,25))
+				content: general_func.randomChars(general_func.randomIntFromInterval(100,500)),
+				title: general_func.randomChars(general_func.randomIntFromInterval(15,33)),
+				keywords: general_func.randomChars(general_func.randomIntFromInterval(10,25))
 		    })
 		    .then(function(response) {
 		     		// console.log(response.getBody());
@@ -178,7 +181,7 @@ function asyncExecuteOneAction(iteration, req, userProfile, indexAction, action,
 					        idUser: userProfile._id,
 							idPost: post._id,
 							idOriginalCreator: post.creator,
-							content: (randomChars(req.app.locals.randomIntFromInterval(100,300)))  
+							content: (general_func.randomChars(general_func.randomIntFromInterval(100,300)))  
 					    })
 					    .then(function(response) {
 					     		// console.log(response.getBody());
@@ -210,7 +213,7 @@ function asyncExecuteOneAction(iteration, req, userProfile, indexAction, action,
 	        	requestify.post(host+'/API/commentPost', {
 			        idUser: userProfile._id,
 					idPost: post._id,
-					content: randomChars(req.app.locals.randomIntFromInterval(50,300))
+					content: general_func.randomChars(general_func.randomIntFromInterval(50,300))
 			    })
 			    .then(function(response) {
 			     		// console.log(response.getBody());
@@ -278,18 +281,6 @@ function asyncExecuteOneAction(iteration, req, userProfile, indexAction, action,
 	}
 }
 
-
-function randomChars(num)
-{
-    var chars = "";
-    var possible = "ABCD EFGH IJKLMNO PQRS  TUVWXY ?Zabcde fghij, klmnop .qrstuv wxyz012 3456789 .";
-
-    for( var i=0; i < num; i++ )
-        chars += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return chars;
-}
-
 function asyncChoosePost(req, choosePost, userProfile, callbackFuncPost){
 	switch(choosePost){
 	    case '0':
@@ -303,7 +294,7 @@ function asyncChoosePost(req, choosePost, userProfile, callbackFuncPost){
 			    	posts = response.getBody()
 
 			    	if(posts != "no_recc_topic"){
-						selectedId = req.app.locals.randomIntFromInterval(0, posts.length-1)
+						selectedId = general_func.randomIntFromInterval(0, posts.length-1)
 			     		// console.log(posts.length+"choose timeline's post "+selectedId+" ___ "+posts[selectedId]);
 			     		callbackFuncPost(posts[selectedId]);
 					}else{
@@ -322,7 +313,7 @@ function asyncChoosePost(req, choosePost, userProfile, callbackFuncPost){
 			    .then(function(response) {
 			    	posts = response.getBody()
 			    	if(posts != "no_recc_topic"){
-						selectedId = req.app.locals.randomIntFromInterval(0, posts.length-1)
+						selectedId = general_func.randomIntFromInterval(0, posts.length-1)
 			     		// console.log(posts.length+"choose timeline's post "+selectedId+"  "+posts[selectedId]);
 			     		callbackFuncPost(posts[selectedId]);
 					}else{
@@ -374,7 +365,7 @@ function getRandomIndexOfTimeline(req, length){
 	// console.log(arrayProbability)
 	//shuffle the array
 	arrayProbability = shuffleArray(arrayProbability);
-	index = req.app.locals.randomIntFromInterval(0, length-1);
+	index = general_func.randomIntFromInterval(0, length-1);
 	return arrayProbability[index];
 }
 
@@ -500,7 +491,6 @@ function getChoosingPostRepresentation(probReccPostHigh, probReccPostLow, probTi
     // console.log("post :"+strAction);
     return strAction;
 }
-
 
 function reccursiveSignUp(token, arrayUser, num, callback){
 	if(num == -1){
@@ -634,7 +624,7 @@ module.exports = {
 		for (var i = req.params.numberOfUser; i >= 1; i--) {
 			index = Math.floor(Math.random() * (max - min + 1)) + min;
 			console.log("index  "+index) 
-			email = generatedUser[index].email+req.app.locals.randomChars(5)+".com";
+			email = generatedUser[index].email+general_func.general_func.randomChars(5)+".com";
 			name = generatedUser[index].name;
 			user = new Object();
 			user.email = email;

@@ -33,5 +33,8 @@ mongoose.model('Post',PostSchema);
 
 module.exports = { 
   model : mongoose.model('Post', PostSchema),
-  object: mongoose.model('Post')
+  object: mongoose.model('Post'),
+  test: function(){
+    return "db";
+  }
 }
