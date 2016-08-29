@@ -179,8 +179,8 @@
 
                            <script type="text/javascript">
                             start = new Date("<%date_created%>");
-                            diff_time = diff(start);
-                            function diff(startDate) {
+                            diff_time = calculateDiff(start);
+                            function calculateDiff(startDate) {
                                 endDate = new Date();
                                 var diff = endDate.getTime() - startDate.getTime();
                                 // console.log(diff)
@@ -808,7 +808,7 @@ function showComments(id3){
           for ( i = 0;i <=  comments.length - 1; i++) {
 
             newComments += 
-            "<div class=\"well\" style=\"padding:10px 15px 10px 15px; margin-bottom:0px\"> "+
+            "<div class=\"well background_comment_color\" style=\"padding:10px 15px 10px 15px; margin-bottom:0px\"> "+
             "<div class=\"row\">"+
             "<div class=\"col-sm-1 pull-left\" style=\"padding: 0 0 0 0 ; "+
             "width:40px;height:40px;overflow:hidden\">"+
@@ -838,7 +838,7 @@ function showComments(id3){
 
             newComments += "<div class=\"col-sm-11 pull-left posting_time\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
             "margin: 0 0 0 10px\">"+
-            diff(new Date(comments[i].date_created))+"</div>"
+            calculateDiff(new Date(comments[i].date_created))+"</div>"
 
             newComments += "<div class=\"col-sm-11 pull-left\" style=\"padding: 5px 0 0px 0px; overflow-wrap: break-word; "+
             "margin: 0 0 0 0px\">"+

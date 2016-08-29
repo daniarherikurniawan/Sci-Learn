@@ -323,3 +323,7 @@ small.text-muted {
 .shared_post_insight{
   color: #618b8b;
 }
+
+.background_comment_color{
+  background-color: rgb(214, 231, 232);
+}
