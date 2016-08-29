@@ -49,3 +49,6 @@ pm2 start bin/www
 
 
 migrate database using dumb instead
+
+###Coloring
+time: #618b8b

@@ -85,13 +85,13 @@
                                   <h4>What's New?</h4>
                                 </div>
                                 <div class="col-sm-8" style="padding-right: 0px; padding-left: 0px;">
-                                  <textarea class="form-control" name="title" style="height: 35px"placeholder="Title" required></textarea>
+                                  <textarea class="form-control" name="title" maxlength="40" style="height: 35px"placeholder="Title" required></textarea>
                                 </div>
                               </div>
 
                               <div class="row" >
                                 <div  class="col-sm-12" style=" padding-right: 0px;">
-                                  <textarea class="form-control pull-left" name="keywords" style="height: 35px; margin left: -15px; "placeholder="Keywords" required></textarea>
+                                  <textarea class="form-control pull-left" name="keywords" style="height: 35px; margin left: -15px; "placeholder="Keywords" maxlength="55" required></textarea>
                                 </div>
                               </div>
 
@@ -141,7 +141,7 @@
                         </div>
                       </div>
 
-                      <div class="col-sm-10" style="margin-top: 10px;">
+                      <div class="col-sm-10" style=" margin-top: 5px;">
                         <div class="row">
                           <div class="col-sm-11" style="padding-left:0px">
                             <%#creator.name%>
@@ -176,20 +176,52 @@
                                </li>
                              </div>
                            </div>
+
+                           <script type="text/javascript">
+                            start = new Date("<%date_created%>");
+                            end = new Date();
+                            diff_time = diff(start,end);
+                            function diff(startDate, endDate) {
+                                var diff = endDate.getTime() - startDate.getTime();
+                                console.log(diff)
+                                var days = Math.floor(diff / 1000 / 60 / 60 / 24);
+                                diff -= days * 1000 * 60 * 60 * 24;
+                                var hours = Math.floor(diff / 1000 / 60 / 60);
+                                diff -= hours * 1000 * 60 * 60;
+                                var minutes = Math.floor(diff / 1000 / 60);
+                                diff -= minutes * 1000 * 60;
+                                diff = Math.floor(diff / 1000);
+                                seconds = diff;
+                                if (days > 0)
+                                  return  (days + " days ago");
+                                else if (hours > 0)
+                                  return  (hours + " hours ago");
+                                else if (minutes > 0)
+                                  return  (minutes + " minutes ago");
+                                else if (seconds < 15)
+                                  return  (" just now");
+                                else 
+                                  return  (seconds + " seconds ago");
+                                
+                            }
+
+                           </script>
+
+                           <p><small class="posting_time"><script>document.write(diff_time)</script></small></p>
                            <%#title%>
-                           <h5  >Title: <a href="/post/<%_id%>" id = "<%_id%>editableTitle">  <b><%title%></b> </a> </h5>
+                           <h5 style="margin-bottom: 5px;" >Title: <a href="/post/<%_id%>" id = "<%_id%>editableTitle">  <b><%title%></b> </a> </h5>
                            <%#keywords%>
-                           <hr style="margin:5px 0px 5px 0px">
+                           <hr style="margin:5px 0px 0px 0px">
                            Keywords: <a href="#"  id = "<%_id%>editableKeywords"><%keywords%></a>
                            <%/keywords%>
                            <%/title%>
 
                            <%^title%>
-                           <h5 style="" > shared <a href="/profile/<%original_creator.email%><%^original_creator.name%><%profile.email%><%/original_creator.name%>"><b >
+                           <h5 style="margin-bottom: 5px;" > shared <a href="/profile/<%original_creator.email%><%^original_creator.name%><%profile.email%><%/original_creator.name%>"><b >
                               <%original_creator.name%><%^original_creator.name%><%profile.name%><%/original_creator.name%>
                               </b></a>'s post
                               </h5> 
-                           <hr style="margin:5px 0px 5px 0px">
+                           <hr style="margin:5px 0px 0px 0px">
                            Keywords: <a href="#"  ><%post_shared.keywords%></a>
                            <%/title%>
                          </div>
@@ -497,8 +529,8 @@
 
     <h4 style="margin-bottom: 0px;" id = "editableName" ><b>
       Paijo  </b></h4> 
-      <textarea id = "editableTitle" class="form-control" name="title" style="height: 35px; margin: 3px 0px 3px 0px;"placeholder="Title" required>title</textarea>
-      <textarea id = "editableKeywords" class="form-control pull-left" name="keywords" style="height: 35px; margin left: -15px; "placeholder="Keywords" required>Keywords</textarea>
+      <textarea id = "editableTitle" class="form-control" name="title" maxlength="40" style="height: 35px; margin: 3px 0px 3px 0px;"placeholder="Title" required>title</textarea>
+      <textarea id = "editableKeywords" class="form-control pull-left" name="keywords" style="height: 35px; margin left: -15px; "placeholder="Keywords" maxlength="55" required>Keywords</textarea>
     </div>
   </div> <!-- row -->
   <div class="panel-body" style="padding:3px 15px 15px 15px">
