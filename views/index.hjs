@@ -816,7 +816,7 @@ function showComments(id3){
             "-webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;\"src=\"/images/"+
             comments[i].creator.email+"/profile/"+comments[i].creator.img_profile_name+"\">"+
             "</div>"+
-            "<div class=\"row col-sm-11\"> <div class=\"col-sm-11 pull-left\" style=\"padding: 0 0 0px 0px; margin: 0 0 0px -4px\">"+
+            "<div class=\"row col-sm-11\"  style=\"padding: 0 0 0px 0px; float:right\" > <div class=\"col-sm-11 pull-left\" style=\"padding: 0 0 0px 0px; margin: 0 0 0px 0px\">"+
             "<a href=\"/profile/"+
             comments[i].creator.email+"\"><b>"+
             comments[i].creator.name+"</b></a>"+
@@ -840,7 +840,7 @@ function showComments(id3){
             "margin: 0 0 0 10px\">"+
             calculateDiff(new Date(comments[i].date_created))+"</div>"
 
-            newComments += "<div class=\"col-sm-11 pull-left\" style=\"padding: 5px 0 0px 0px; overflow-wrap: break-word; "+
+            newComments += "<div class=\"col-sm-12 pull-left\" style=\"padding: 5px 0 0px 0px; overflow-wrap: break-word; "+
             "margin: 0 0 0 0px\">"+
             comments[i].content+"</div>"+
             "</div>"+
@@ -926,9 +926,9 @@ function showLikes(id3){
             likes[i].name+"</b></a>"+
             "</div>";
 
-            newLike += "<div class=\"col-sm-11 pull-left\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
+            newLike += "<div class=\"col-sm-5 pull-left posting_time\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
             "margin: 0 0 0 10px\">"+
-            likes[i].occupation+"</div>"+
+             calculateDiff(new Date(likes[i].date_created))+"</div>"+
             "</div>"+
             "</div>"+
             "</div>";
@@ -1003,9 +1003,9 @@ function showShares(id3){
             likes[i].name+"</b></a>"+
             "</div>";
 
-            newLike += "<div class=\"col-sm-11 pull-left\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
+            newLike += "<div class=\"col-sm-5 pull-left posting_time\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
             "margin: 0 0 0 10px\">"+
-            likes[i].occupation+"</div>"+
+            calculateDiff(new Date(likes[i].date_created))+"</div>"+
             "</div>"+
             "</div>"+
             "</div>";
