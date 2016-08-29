@@ -179,11 +179,11 @@
 
                            <script type="text/javascript">
                             start = new Date("<%date_created%>");
-                            end = new Date();
-                            diff_time = diff(start,end);
-                            function diff(startDate, endDate) {
+                            diff_time = diff(start);
+                            function diff(startDate) {
+                                endDate = new Date();
                                 var diff = endDate.getTime() - startDate.getTime();
-                                console.log(diff)
+                                // console.log(diff)
                                 var days = Math.floor(diff / 1000 / 60 / 60 / 24);
                                 diff -= days * 1000 * 60 * 60 * 24;
                                 var hours = Math.floor(diff / 1000 / 60 / 60);
@@ -199,7 +199,7 @@
                                 else if (minutes > 0)
                                   return  (minutes + " minutes ago");
                                 else if (seconds < 15)
-                                  return  (" just now");
+                                  return  ("Just now");
                                 else 
                                   return  (seconds + " seconds ago");
                                 
@@ -233,10 +233,6 @@
 
 
 
-
-
-
-
               <%^title%>
 
                   <div class="panel panel-default" style="margin-bottom:10px; background-color: rgb(243, 249, 249);"  >
@@ -263,11 +259,11 @@
                           </div>
 
 
-                          <div class="input-group" style="margin-right:-42px; margin-top: -9px;">
-                          <div class="input-group-btn" style="font-size:10px">
-                            <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 0px;   background-color: rgb(243, 249, 249); font-size: 12px;  border-color: transparent;"><i    class="fa fa-share">&nbsp; <%post_shared.share.length%></i></a>
-                            <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 5px;   background-color: rgb(243, 249, 249); font-size: 12px;  border-color: transparent;"><i class="fa fa-thumbs-up">&nbsp; <%post_shared.like.length%> </i></a>
-                            <a type="button" class="btn btn-default" style="padding: 4px 5px 4px 5px;   background-color: rgb(243, 249, 249); font-size: 12px;  border-color: transparent;"><i  class="fa fa-comments-o">&nbsp; <%post_shared.comments.length%></i></a>
+                          <div class="input-group" style="margin-right:-42px; margin-top: -5px;">
+                          <div class="input-group-btn shared_post_insight" style="font-size:10px">
+                            <span style="padding: 4px 0px 4px 0px;   background-color: rgb(243, 249, 249); font-size: 12px;  border-color: transparent;"> <%post_shared.share.length%> shares,</span>
+                            <span style="padding: 4px 0px 4px 0px;   background-color: rgb(243, 249, 249); font-size: 12px;  border-color: transparent;"> <%post_shared.like.length%> likes, and </span>
+                            <span style="padding: 4px 0px 4px 0px;   background-color: rgb(243, 249, 249); font-size: 12px;  border-color: transparent;"><%post_shared.comments.length%> comments</span>
                           </div>
                           <div class="pull-right" style="width: 100%">       
                             <%#creator.name%>
@@ -840,9 +836,12 @@ function showComments(id3){
               "</div>";
             }
 
-
-            newComments += "<div class=\"col-sm-11 pull-left\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
+            newComments += "<div class=\"col-sm-11 pull-left posting_time\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
             "margin: 0 0 0 10px\">"+
+            diff(new Date(comments[i].date_created))+"</div>"
+
+            newComments += "<div class=\"col-sm-11 pull-left\" style=\"padding: 5px 0 0px 0px; overflow-wrap: break-word; "+
+            "margin: 0 0 0 0px\">"+
             comments[i].content+"</div>"+
             "</div>"+
             "</div>";
