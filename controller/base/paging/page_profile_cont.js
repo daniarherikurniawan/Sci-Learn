@@ -165,26 +165,33 @@ module.exports = {
 							idForProfile.push(req.session.profile._id);
 							numOfPost = (page*limit)+posts.length;
 							numOfLastPage = Math.ceil(arrayPostId.length/limit);
-
-							if (idForProfile.indexOf(""+req.session.dataCurrentProfile._id) != -1){
-						 	res.render('profile', {profile: req.session.profile,
-						 		 rec_topic : req.session.rec_topic, showPost : showPost,  urlActivity: urlActivity,
-						 		 showComment : showComment, showLike : showLike, showShare : showShare,
+							if(req.session.dataCurrentProfile.email == req.session.profile.email){
+							//this is my profile
+						 		res.render('profile', {profile: req.session.profile,
+						 		rec_topic : req.session.rec_topic, showPost : showPost,  urlActivity: urlActivity,
+						 		showComment : showComment, showLike : showLike, showShare : showShare,
+						 		friendProfile: false, numOfPost:numOfPost,
+						 		posts: posts, myFriend : true, numOfCurrPage : page, page : true,
+						 		popular_topic: req.session.popular_topic, showPerActivity : true,
+						 		numOfLastPage : numOfLastPage, limitPerPage:limit,
+						 		partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});		
+							}else if (idForProfile.indexOf(""+req.session.dataCurrentProfile._id) != -1){
+						 		res.render('profile', {profile: req.session.profile,
+						 		rec_topic : req.session.rec_topic, showPost : showPost,  urlActivity: urlActivity,
+						 		showComment : showComment, showLike : showLike, showShare : showShare,
 						 		friendProfile: req.session.dataCurrentProfile, numOfPost:numOfPost,
 						 		posts: posts, myFriend : true, numOfCurrPage : page, page : true,
 						 		popular_topic: req.session.popular_topic, showPerActivity : true,
 						 		numOfLastPage : numOfLastPage, limitPerPage:limit,
-						 	partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});	
-
+						 		partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});	
 							}else{
-						 	res.render('profile', {profile: req.session.profile, numOfCurrPage : page, showPost : showPost, 
+						 		res.render('profile', {profile: req.session.profile, numOfCurrPage : page, showPost : showPost, 
 								showLike : showLike, showShare : showShare, showComment : showComment,
 						 		numOfLastPage : numOfLastPage,  limitPerPage:limit,  numOfPost:numOfPost,
 						 		friendProfile: req.session.dataCurrentProfile, page : true, urlActivity: urlActivity,
 						 		popular_topic: req.session.popular_topic, showPerActivity : true,
 						 		posts: posts, myFriend :  false,  rec_topic : req.session.rec_topic,
-						 	partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});	
-
+						 		partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});	
 							}
 						
 					});
