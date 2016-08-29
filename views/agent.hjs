@@ -21,7 +21,7 @@
           <div class="row row-offcanvas row-offcanvas-left">
             
             <!-- main right col -->
-            <div class="column col-sm-12 row" id="main">
+            <div class="column col-sm-12 row "  id="main">
               
               <!-- top nav -->
               <div class="navbar navbar-blue navbar-static-top">  
@@ -54,7 +54,7 @@
                 </nav>
               </div>
 
-              <div class="row">
+              <div class="row" style="margin-top:30px">
                 
                 <div class="padding">
                   <div class="full col-sm-6">

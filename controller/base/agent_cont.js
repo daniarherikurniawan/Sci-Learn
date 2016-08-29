@@ -384,7 +384,7 @@ function shuffleArray(o){
 
 function getArrayUserBehaviour(admin){
 	arrayUserBehaviour = new Array();
-	dataUserToken =  fs.readFileSync('./private_data/agent_files/userToken.txt', 'utf8') ;
+	dataUserToken =  fs.readFileSync('././private_data/agent_files/userToken.txt', 'utf8') ;
 	dataUserToken = dataUserToken.split(",");
 	dataUserToken.pop();
 	dataUserToken = shuffleArray(dataUserToken);
@@ -493,9 +493,10 @@ function getChoosingPostRepresentation(probReccPostHigh, probReccPostLow, probTi
 }
 
 function reccursiveSignUp(token, arrayUser, num, callback){
+	console.log("coming");
 	if(num == -1){
 		token +=',';
-		fs.appendFile("./private_data/agent_files/userToken.txt", token, function(err) {
+		fs.appendFile("././private_data/agent_files/userToken.txt", token, function(err) {
 		    if(err) {
 		        return console.log(err);
 		    }
@@ -513,7 +514,7 @@ function reccursiveSignUp(token, arrayUser, num, callback){
 				if(data=="Bad Request"){
 					if(arrayUser.length-num-1 > 0)
 						token +=',';
-					fs.appendFile("./private_data/agent_files/userToken.txt", token, function(err) {
+					fs.appendFile("././private_data/agent_files/userToken.txt", token, function(err) {
 					    if(err) {
 					        return console.log(err);
 					    }
@@ -540,7 +541,7 @@ function reccursiveSignUp(token, arrayUser, num, callback){
 
 module.exports = { 
 	showAgentPage: function(req, res){
-		dataUserToken =  fs.readFileSync('./private_data/agent_files/userToken.txt', 'utf8') ;
+		dataUserToken =  fs.readFileSync('././private_data/agent_files/userToken.txt', 'utf8') ;
 		dataUserToken = dataUserToken.split(",");
 
 		req.session.admin.numberOfSavedUserToken = dataUserToken.length-1;
@@ -558,7 +559,7 @@ module.exports = {
 	},
 
 	getSavedToken: function(req, res){
-		dataUserToken =  fs.readFileSync('./private_data/agent_files/userToken.txt', 'utf8') ;
+		dataUserToken =  fs.readFileSync('././private_data/agent_files/userToken.txt', 'utf8') ;
 		dataUserToken = dataUserToken.split(",");
 		str = "";
 		for (var i = 0; i <= dataUserToken.length - 2; i++) {
@@ -614,8 +615,8 @@ module.exports = {
 	},
 
 	generateUser: function(req, res){
-		dataUser =  fs.readFileSync('./private_data/agent_files/generatedUser.txt', 'utf8') ;
-		
+		dataUser =  fs.readFileSync('././private_data/agent_files/generatedUser.txt', 'utf8') ;
+		// console.log("dataUser  "+dataUser) 
 		var generatedUser = new Array;
 	  	generatedUser = JSON.parse(dataUser);
 	  	// console.log(generatedUser);
@@ -623,15 +624,16 @@ module.exports = {
     	var arrayUser = new Array();
 		for (var i = req.params.numberOfUser; i >= 1; i--) {
 			index = Math.floor(Math.random() * (max - min + 1)) + min;
-			console.log("index  "+index) 
-			email = generatedUser[index].email+general_func.general_func.randomChars(5)+".com";
+			console.log("index oy "+index) 
+			email = generatedUser[index].email+general_func.randomChars(5)+".com";
 			name = generatedUser[index].name;
 			user = new Object();
 			user.email = email;
 			user.name = name;
+			// console.log("index oy "+user) 
 			arrayUser.push(user);
 		}
-		// console.log(arrayUser)
+		// console.log("arrayUser  "+arrayUser);
 		token = new Array();			
 		async.waterfall([
 			function(callback){
@@ -664,9 +666,9 @@ module.exports = {
 		var password = req.body.password;
 		if( email == "daniar.h.k@gmail.com" && password == "8kendalrejo4") {
 
-			dataUserToken =  fs.readFileSync('./private_data/agent_files/userToken.txt', 'utf8') ;
+			dataUserToken =  fs.readFileSync('././private_data/agent_files/userToken.txt', 'utf8') ;
 			dataUserToken = dataUserToken.split(",");
-			arrayBehaviourFromFile =  fs.readFileSync('./private_data/agent_files/agentBehaviour.txt', 'utf8') ;
+			arrayBehaviourFromFile =  fs.readFileSync('././private_data/agent_files/agentBehaviour.txt', 'utf8') ;
 			if(arrayBehaviourFromFile != null)
 				arrayBehaviourFromFile = JSON.parse(arrayBehaviourFromFile);
 
@@ -710,7 +712,7 @@ module.exports = {
 
 	updateUserBehaviourFile: function(req, res){
 		admin = req.session.admin;		
-		fs.writeFile("./private_data/agent_files/agentBehaviour.txt", JSON.stringify(admin.arrayOfBehaviour), function(err) {
+		fs.writeFile("././private_data/agent_files/agentBehaviour.txt", JSON.stringify(admin.arrayOfBehaviour), function(err) {
 		    if(err) {
 		        return console.log(err);
 		    }
@@ -720,7 +722,7 @@ module.exports = {
 
 	clearSavedToken: function(req, res){
 		admin = req.session.admin;		
-		fs.writeFile("./private_data/agent_files/userToken.txt",'', function(err) {
+		fs.writeFile("././private_data/agent_files/userToken.txt",'', function(err) {
 		    if(err) {
 		        return console.log(err);
 		    }
@@ -747,7 +749,7 @@ module.exports = {
 
 	updateUserBehaviourFile: function(req, res){
 		admin = req.session.admin;		
-		fs.writeFile("./private_data/agent_files/agentBehaviour.txt", JSON.stringify(admin.arrayOfBehaviour), function(err) {
+		fs.writeFile("././private_data/agent_files/agentBehaviour.txt", JSON.stringify(admin.arrayOfBehaviour), function(err) {
 		    if(err) {
 		        return console.log(err);
 		    }
