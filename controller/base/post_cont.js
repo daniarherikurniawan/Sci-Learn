@@ -2,6 +2,7 @@ var Post = require('../../dbhelper/post_model');
 var User = require('../../dbhelper/user_model');
 
 var post_func = require('../../controller/common/post_func');
+var general_func = require('../../controller/common/general_func');
 
 module.exports = { 
 	getPost: function(req, res){
@@ -141,15 +142,15 @@ module.exports = {
 		      post.comments.splice(index, 1);
 		      post.post_index = post_func.calculatePostIndex( post.share.length,  
 		        post.like.length, post.comments.length );
-		      post.id_unique_users = post_func.removeUniqueObj(idUser, post.id_unique_users);
+		      post.id_unique_users = general_func.removeUniqueObj(idUser, post.id_unique_users);
 		      post.save();
 
 		      User.object.findById(idUser)
 		        .exec(function(err, user){          
-		          user.id_commented_posts = post_func.removeUniqueObj(idPost,user.id_commented_posts)
+		          user.id_commented_posts = general_func.removeUniqueObj(idPost,user.id_commented_posts)
 		          user.activeness = post_func.calculateUserActiveness(user.id_user_posts.length, user.id_share_posts.length, 
 		            user.id_liked_posts.length, user.id_commented_posts.length, user.connections.length);
-		          user.id_unique_posts = post_func.removeUniqueObj(idPost, user.id_unique_posts);
+		          user.id_unique_posts = general_func.removeUniqueObj(idPost, user.id_unique_posts);
 		          user.save();              
 		    }); 
 		});
@@ -198,7 +199,7 @@ module.exports = {
 		                // post not yet deleted 
 		                index = sharedPost.share.indexOf(idUser);
 		                sharedPost.share.splice(index,1);
-		                sharedPost.id_unique_users = post_func.removeUniqueObj(""+idUser, sharedPost.id_unique_users);
+		                sharedPost.id_unique_users = general_func.removeUniqueObj(""+idUser, sharedPost.id_unique_users);
 		                sharedPost.post_index = post_func.calculatePostIndex( sharedPost.share.length,  
 		                  sharedPost.like.length, sharedPost.comments.length );
 		                
