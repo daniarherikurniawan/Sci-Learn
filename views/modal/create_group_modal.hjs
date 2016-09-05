@@ -1,0 +1,22 @@
+<script type="text/javascript">
+	// alert("loli")
+</script>
+<div id="create_group_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      	<div class="row">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+	        style="
+		    font-size: 38px;
+		    padding: 2px 11px 0px 0px;">×</button>
+	        <h3 style=" color: #3b9798;     text-align: center;
+   			margin: 5px 0px 0px;">Create New Group </h3>
+        </div>
+      </div>
+      <form onsubmit="return tryToShare()" id="xsxsxsx" class="form center-block">
+      
+  </form>
+</div>
+</div>
+</div>
