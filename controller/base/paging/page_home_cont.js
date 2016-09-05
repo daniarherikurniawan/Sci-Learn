@@ -89,8 +89,9 @@ module.exports = {
 									res.render('index', {profile: req.session.profile, numOfPost : numOfPost,
 										posts: posts, popular_topic: popular_topic, rec_topic: rec_topic, numOfLastPage : numOfLastPage,
 										numOfCurrPage : numOfCurrPage,limitPerPage : limit,
-									partials: {leftSide:'leftSide', 
-									rightSide:'rightSide', topNavigation:'topNavigation'}});	
+									partials: {leftSide:'partial/leftSide', list_group:'partial/list_group', share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal',
+									post_partial: 'partial/post_partial',
+									rightSide:'partial/rightSide', topNavigation:'partial/topNavigation'}});	
 								});
 							});
 						}else{
@@ -98,8 +99,9 @@ module.exports = {
 							res.render('index', {profile: req.session.profile, numOfPost : numOfPost,
 								posts: posts, rec_topic: null, numOfLastPage : numOfLastPage,
 								numOfCurrPage : numOfCurrPage, limitPerPage : limit,
-							partials: {leftSide:'leftSide', 
-							rightSide:'rightSide', topNavigation:'topNavigation'}});
+							partials: {leftSide:'partial/leftSide', share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal',
+							post_partial: 'partial/post_partial', list_group:'partial/list_group',
+							rightSide:'partial/rightSide', topNavigation:'partial/topNavigation'}});
 						}
 						// console.log("ini "+user.online_connection);
 					}

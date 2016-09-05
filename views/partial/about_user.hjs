@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+  <div class="panel-heading text-center"><h4>About me!</h4></div>
+  <div class="panel-body">
+   {{friendProfile.about}}{{^friendProfile.name}}{{profile.about}}{{/friendProfile.name}}</div>
+ </div>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-body" style="padding-top:10px">
+    <p class="lead text-center" style="margin-bottom:0px; ">Social Connections</p>
+
+  </div>
+
+  <center>
+
+    <p style="    margin-top: -10px;">
+      <a href="#"> <span class="fa-stack fa-lg" style="color:#55ACEE">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x"></i>
+      </span></a>
+      <a href="#"><span class="fa-stack fa-lg" style="color:#DD4B39">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-google fa-stack-1x"></i>
+      </span></a>
+      <a href="#"><span class="fa-stack fa-lg" style="color:#3F729B">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-instagram fa-stack-1x"></i>
+      </span></a>
+      <a href="#"><span class="fa-stack fa-lg" style="color:#3B5998">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-facebook fa-stack-1x"></i>
+      </span></a>
+      <a href="#"><span class="fa-stack fa-lg" style="color:#007BB6">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-linkedin fa-stack-1x"></i>
+      </span></a>
+      <a href="#"><span class="fa-stack fa-lg" style="color:#CB2027">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-tumblr fa-stack-1x"></i>
+      </span></a>
+      
+    </p>
+  </center>
+</div>

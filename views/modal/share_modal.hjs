@@ -1,0 +1,68 @@
+<div id="shareModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4> Share a Post </h4>
+      </div>
+      <form onsubmit="return tryToShare()" id="editableShareFunction" class="form center-block">
+        <div class="modal-body">
+          <div class="form-group">
+            <textarea  id="additionalThought" style="word-wrap: break-word;white-space: normal;" class=" auto-resize form-control input-lg" autofocus="" placeholder="What is your thought about this post?" required=""></textarea>
+
+          </div>
+
+          <!-- shared post -->
+          <div class="panel panel-default" style="margin-bottom:0px" id="sss" >
+            <div class="row" id="row">
+
+              <div class="col-sm-2" style=" padding-left: 0px;">
+               <div class="panel-heading" >
+
+                   <a id="linkSharedImage" href="sapai"  class="pull-left">   
+                  <div class="col-sm-1"  style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
+
+                      <img id="sourceSharedImage" style=" width:90px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%)  ; -moz-transform: translateY(-50%) translateX(-50%) ;"src="">
+                    </div>
+                  </a> 
+
+               </div>
+             </div>
+
+             <div class="col-sm-10" style="margin-top: 7px;">
+              <div class="row">
+                <div class="col-sm-11" style="padding-left:0px">
+                  <h4 style="margin-bottom: 0px;" id="sharedName"><b >fnkernfek
+                  </b></h4>
+
+                </div>
+              </div>
+
+              <h4  id = "sharedTitle">salah  </h4>
+              <hr style="margin:5px 0px 5px 0px">
+              Keywords: <a href="#"  id = "sharedKeywords"><%keywords%></a>
+            </div>
+
+          </div> <!-- row -->
+
+          <div class="auto-resize panel-body" style="word-wrap: break-word;    white-space: normal;padding:10px 15px 0px 15px">
+           <p id = "sharedContent">salah</p>
+
+
+         </div>
+       </div>
+       <!-- shared post -->
+
+
+     </div>
+     <div class="modal-footer">
+      <div>
+       <button class=" btn btn-md btn-primary" type="submit">Share</button>
+
+        <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+      </div>	
+    </div>
+  </form>
+</div>
+</div>
+</div>

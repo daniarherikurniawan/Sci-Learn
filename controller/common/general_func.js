@@ -42,6 +42,17 @@ module.exports = {
 	  return arrayUniqueObj;
 	},
 
+	isExistAtUniqueObj: function(idObj, arrayUniqueObj){
+	  index = -1;
+	  for (var i = arrayUniqueObj.length - 1; index == -1 && i >= 0; i--) {
+	    if(idObj == arrayUniqueObj[i].id){
+	      return true;
+	    }
+	  };
+	  
+	  return false;
+	},
+
 	randomIntFromInterval : function(min,max){
 	    return randomIntFromIntervalFunc(min,max);
 	},

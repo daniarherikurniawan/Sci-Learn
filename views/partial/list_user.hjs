@@ -1,0 +1,37 @@
+{{# list_user }}
+
+    <div id="{{_id}}" class=" panel panel-default">
+    <div class="row">
+
+      <div class="col-sm-2" style="    padding-left: 0px;">
+       <div class="panel-heading">
+        <a href="/profile/{{email}}" class="pull-left">    
+          <div class="col-sm-1" style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
+           <img style=" width:90px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/{{email}}/profile/{{img_profile_name}}">
+          </div>
+        </a> 
+      </div>
+      </div>
+
+      <div class="col-sm-10" style="    margin-top: 7px;">
+        <h4> <a href="/profile/{{email}}"> <b>{{name}}</b></a>  ({{occupation}})</h4>
+        <h4>{{email}}</h4>
+        <hr style="margin:5px 0px 5px 0px">
+         Institution: <a href="#">{{education}}</a>
+      </div>
+
+    </div> <!-- row -->
+     
+
+     <div class="panel-body" style="padding:10px 15px 15px 15px">                         
+        <div class="input-group" >
+          <div class="input-group-btn">
+            <p class="btn btn-default" style="margin-right: 2px;color:rgb(45, 99, 99)">{{activeness}} Pts.</p>
+          </div>
+          <input type="text" class="form-control" style="width:84%" placeholder="Send message ..">
+          <button class="btn btn-primary" onclick="tryToConnect('{{_id}}','{{name}}')"><i style="color:white" class="glyphicon glyphicon-ok"></i>&nbspSend</button>
+        </div>  
+      </div>
+
+    </div>
+{{/ list_user }}

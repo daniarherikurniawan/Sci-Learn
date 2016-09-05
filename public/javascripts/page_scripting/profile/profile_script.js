@@ -148,6 +148,25 @@
       }
     }
     //567d12d5e5e456ea33c7fb94
+    function editSharePost(id,id_creator){
+        if (genuine == null){
+          var newValue = "cancelEditPost('"+id+"')";
+          $('#targetIdShare').attr('onclick',newValue);
+          var newAction = "/updateSharePost/"+id+"/"+id_creator;
+          //window.alert(newAction);
+          $('#needActionShare').attr('action',newAction);
+          document.getElementById('editableNameShare').innerHTML = document.getElementById(""+id+'editableName').textContent;
+          document.getElementById('editableImageShare').innerHTML = document.getElementById(""+id+'editableImage').innerHTML;
+          document.getElementById('editable_shared_post').innerHTML = document.getElementById(""+id+'_shared_post').innerHTML;
+          document.getElementById('editableContentShare').innerHTML =   document.getElementById(""+id+'editableContent').textContent;
+          genuine = document.getElementById(id).innerHTML;
+          var template = document.getElementById('templateEditShare').innerHTML;
+          document.getElementById(id).innerHTML = template;
+          init("editableContentShare",0);
+        }else{
+          window.alert("You should finish your current editing before edit another one! ")
+        }
+      }
 
     function cancelEditPost(id){
       document.getElementById(id).innerHTML = genuine  ;

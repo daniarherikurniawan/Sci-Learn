@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><!-- <a style=" margin-top: 10px;" href="#" class="pull-right"></a>  -->
+  <h4 style="text-align: center;"> 
+
+  <a href="/profile/{{creator.email}}{{^creator.name}}{{profile.email}}{{/creator.name}}" >
+  <b>{{profile.name}}</b>
+  </a>
+
+  </h4></div>
+  <div class="panel-body">
+    <div class="list-group">
+      <a href="http://bootply.com/tagged/modal" class="list-group-item">Contact</a>
+      <a href="http://bootply.com/tagged/datetime" class="list-group-item">Education</a>
+      <a href="http://bootply.com/tagged/datatable" class="list-group-item">Experience</a>
+    </div>
+  </div>
+</div>

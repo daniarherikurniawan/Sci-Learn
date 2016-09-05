@@ -91,6 +91,27 @@ function submitForm(){
       window.alert("You should finish your current editing before edit another one! ")
     }
   }
+
+  function editSharePost(id,id_creator){
+    if (genuine == null){
+      var newValue = "cancelEditPost('"+id+"')";
+      $('#targetIdShare').attr('onclick',newValue);
+      var newAction = "/updateSharePost/"+id+"/"+id_creator;
+      //window.alert(newAction);
+      $('#needActionShare').attr('action',newAction);
+      document.getElementById('editableNameShare').innerHTML = document.getElementById(""+id+'editableName').textContent;
+      document.getElementById('editableImageShare').innerHTML = document.getElementById(""+id+'editableImage').innerHTML;
+      document.getElementById('editable_shared_post').innerHTML = document.getElementById(""+id+'_shared_post').innerHTML;
+      document.getElementById('editableContentShare').innerHTML =   document.getElementById(""+id+'editableContent').textContent;
+      genuine = document.getElementById(id).innerHTML;
+      var template = document.getElementById('templateEditShare').innerHTML;
+      document.getElementById(id).innerHTML = template;
+      init("editableContentShare",0);
+    }else{
+      window.alert("You should finish your current editing before edit another one! ")
+    }
+  }
+
   //567d12d5e5e456ea33c7fb94
 
   function cancelEditPost(id){
@@ -143,7 +164,6 @@ function submitForm(){
 
 // give comment
 // I should filter whether is it a tag inthe string or not
-// var id_creator= <%-profile._id %>;
 
 $(function() {
   $('input#comment').on('keyup', function(e) {
@@ -506,3 +526,67 @@ function showShares(id3){
 }
 
 init("texta",0);
+
+  str = "";
+
+  if(numOfCurrPage <= numOfLastPage){
+      limitIndexPage = 10;
+      if(numOfLastPage < 10)
+        limitIndexPage = numOfLastPage-1;
+
+      firstIndexPage = 1; //numOfLastPage
+      if(numOfCurrPage > 5)
+        if( numOfCurrPage+5 <= numOfLastPage)
+          firstIndexPage = numOfCurrPage-5;
+        else 
+          firstIndexPage = numOfLastPage - limitIndexPage;
+
+
+      //add first page
+      str +=  "<li";
+      if(1 == numOfCurrPage)
+          str += " class=\"active\"";
+      str += "><a href=\"/home/"+0+"/"+limitPerPage+"\">"+'First'+"</a></li>";
+
+      //add first intermediate page
+      if(numOfLastPage > 11 && 2 < firstIndexPage+1){
+        intermediateIndex = Math.ceil(firstIndexPage/2);
+        str +=  "<li><a href=\"/home/"+(intermediateIndex)+"/"+limitPerPage+"\">"+"..."+"</a></li>";
+      }
+
+      lastIndexPage = firstIndexPage + limitIndexPage - 1;
+      for (var i = firstIndexPage + 1; i <= lastIndexPage; i++) {
+        str +=  "<li";
+        if(i == numOfCurrPage)
+          str += " class=\"active\"";
+        str += "><a href=\"/home/"+(i-1)+"/"+limitPerPage+"\">"+(i)+"</a></li>";
+      };
+
+      //add last intermediate page
+      if(numOfLastPage > 11 && (numOfLastPage-1) > lastIndexPage){
+        intermediateIndex = Math.floor(lastIndexPage+((numOfLastPage - lastIndexPage) /2)-1);
+        str +=  "<li><a href=\"/home/"+(intermediateIndex)+"/"+limitPerPage+"\">"+"..."+"</a></li>";
+      }
+
+       //add last page
+      if(numOfLastPage > 1){
+        str +=  "<li";
+        if(numOfLastPage == numOfCurrPage)
+            str += " class=\"active\"";
+        str += "><a href=\"/home/"+(numOfLastPage-1)+"/"+limitPerPage+"\">"+'Last'+"</a></li>";
+      }
+
+      
+      if(statePageCondition){
+        // alert("dd")
+        $("#pagination").remove();
+        if(lastResult != 0)
+          document.getElementById("statePage").innerHTML = "Showing "+(numOfCurrPage*limitPerPage+1)+" - "+lastResult+" results<p>";
+        else
+          document.getElementById("statePage").innerHTML = "There is no posts at this time!";
+
+       }else {
+          document.getElementById("pagination").innerHTML = str;
+          document.getElementById("statePage").innerHTML = "Showing "+(numOfCurrPage*limitPerPage+1)+" - "+lastResult+" results<p><b>Page "+numOfCurrPage+" of "+numOfLastPage+"<b></p>";
+        }
+  }

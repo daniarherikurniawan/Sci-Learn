@@ -36,8 +36,10 @@ module.exports = {
 				res.render('index', {profile: req.session.profile, numOfPost : numOfPost,
 					popular_topic: popular_topic, numOfLastPage : 0,  isPopularPostPage: false,
 					numOfCurrPage : -1, limitPerPage : 0, isReccPostPage: true,
-					posts: rec_topic, partials: {leftSide:'leftSide', 
-				rightSide:'rightSide', topNavigation:'topNavigation'}});		
+					posts: rec_topic, 
+				partials: {leftSide:'partial/leftSide', share_modal: 'modal/share_modal', 
+				post_partial: 'partial/post_partial', list_group:'partial/list_group', 
+				rightSide:'partial/rightSide', topNavigation:'partial/topNavigation'}});		
 			});
 		});
 	}

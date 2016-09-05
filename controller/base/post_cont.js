@@ -169,7 +169,7 @@ module.exports = {
 		User.model.findById(req.session.profile._id)
 		.exec(function(err, user){
 			req.session.profile = user;
-			res.redirect('/');
+	  		res.redirect('back');
 		});	
 	},
 
@@ -177,8 +177,8 @@ module.exports = {
 		post_func.givePost(req.session.profile._id, req.body.content, req.body.title, req.body.keywords);
 		
 		User.model.findById(req.session.profile._id, function(err, user){
-			req.session.profile = user;	  			
-			res.redirect('/');
+			req.session.profile = user;	 
+		  	res.redirect('back');
 	  	});
 	},
 
@@ -290,7 +290,8 @@ module.exports = {
 	},
 
 	updatePost: function(req, res){
-		if(req.params.creator == req.session.profile._id){
+		if(req.params.creator == req.session.profile._id && 
+			general_func.isExistAtUniqueObj(req.params.id, req.session.profile.id_unique_posts)){
 			var title = req.body.title;
 			var keywords = req.body.keywords;
 			var content = req.body.content;
@@ -298,7 +299,21 @@ module.exports = {
 				{title: title , keywords:keywords , content: content}, 
 				{upsert:true}, function(err, post){
 				if(err) console.log(err);
-		  		res.redirect('/');
+		  		res.redirect('back');
+		  	});
+		}else{
+		 	res.send('/');
+		}
+	},
+	updateSharePost: function(req, res){
+		if(req.params.creator == req.session.profile._id && 
+			general_func.isExistAtUniqueObj(req.params.id, req.session.profile.id_unique_posts)){
+			var content = req.body.content;
+			Post.model.findOneAndUpdate({_id: req.params.id},
+				{content: content}, 
+				{upsert:true}, function(err, post){
+				if(err) console.log(err);
+		  		res.redirect('back');
 		  	});
 		}else{
 		 	res.send('/');

@@ -22,10 +22,11 @@ module.exports = {
 					.skip(limit*numOfCurrPage)
 					.exec(
 					function(err, results){
-					res.render('search', {profile: req.session.profile, results: results, numOfPeople: results.length,
+					res.render('search', {profile: req.session.profile, list_user: results, numOfPeople: results.length,
 						rec_topic : req.session.rec_topic, search_term: search_term, showByQuery : false, 
 						popular_topic: req.session.popular_topic, limitPerPage : results.length,
-						partials: {leftSide:'leftSide', rightSide:'rightSide', topNavigation:'topNavigation'}});	
+						partials: {leftSide:'partial/leftSide', rightSide:'partial/rightSide', list_user:'partial/list_user',
+						list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});	
 				});
 			}else{
 				var idForSearch = req.session.profile.connections.slice();
@@ -45,12 +46,13 @@ module.exports = {
 						count = count -1 -req.session.profile.connections.length;
 						numOfLastPage = Math.ceil(count/limit);
 						numOfCurrPage =  numOfCurrPage	
-						res.render('search', {profile: req.session.profile, results: results, numOfPeople : count,
+						res.render('search', {profile: req.session.profile, list_user: results, numOfPeople : count,
 							rec_topic : req.session.rec_topic, limitPerPage : limit,  search_term: null,
 						numOfLastPage: numOfLastPage, numOfCurrPage: numOfCurrPage, showByQuery : true, 
 					
 						popular_topic: req.session.popular_topic,
-						partials: {leftSide:'leftSide', rightSide:'rightSide', topNavigation:'topNavigation'}});	
+						partials: {leftSide:'partial/leftSide', rightSide:'partial/rightSide', list_user:'partial/list_user',
+						list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});	
 					});
 					
 				});

@@ -304,6 +304,15 @@ router.post('/updatePost/:id/:creator', function(req, res) {
 	}
 });
 
+/* POST update post page. */
+router.post('/updateSharePost/:id/:creator', function(req, res) {
+	if(req.session.profile != null){
+		post_cont.updateSharePost(req, res);
+	}else{
+		res.send('Sorry, you cannot connect update the post!');
+	}
+});
+
 /* POST upload_img_profile page. */
 router.post('/upload_img_profile', multipartMiddleware, function(req, res) {
 	if(req.session.profile != null){

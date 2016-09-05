@@ -30,7 +30,9 @@ module.exports = {
 
 					res.render('post', {profile: req.session.profile, posts: dataPost, 
 						rec_topic : req.session.rec_topic, myPost : myPost,
-					partials: {leftSide:'leftSide', rightSide:'rightSide', topNavigation:'topNavigation'}});	
+					partials: { topNavigation:'topNavigation',
+						share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+					}});	
 				}else{
 					console.log(err);
 					res.send("404");

@@ -54,8 +54,12 @@ module.exports = {
 						 	numOfLastPage : numOfLastPage,  limitPerPage:limit,  numOfPost:numOfPost,
 						  	friendProfile: null, rec_topic : req.session.rec_topic, 
 						 	popular_topic: req.session.popular_topic,
-						  	posts: posts, myFriend : true, page:isLimitedByParameter,
-						 	partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});	
+						  	posts: posts, myFriend : true, page:isLimitedByParameter, 
+						 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
+						 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+					 			list_group:'partial/list_group', 
+						 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+						 }});	
 						}else{
 							numOfPost = req.session.dataCurrentProfile.id_share_posts.length+req.session.dataCurrentProfile.id_user_posts.length;
 						 	numOfLastPage = Math.ceil(numOfPost/limit);
@@ -70,7 +74,11 @@ module.exports = {
 						 		posts: posts, myFriend : true,numOfCurrPage : page, 
 						 		popular_topic: req.session.popular_topic,
 						 		numOfLastPage : numOfLastPage, limitPerPage:limit,
-						 	partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});	
+						 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
+						 		post_partial: 'partial/post_partial',about_user: 'partial/about_user',	
+					 			list_group:'partial/list_group', 
+						 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+						 	}});	
 
 							}else{
 						 	res.render('profile', {profile: req.session.profile, numOfCurrPage : page, 
@@ -78,7 +86,11 @@ module.exports = {
 						 		friendProfile: req.session.dataCurrentProfile, page:isLimitedByParameter,
 						 		popular_topic: req.session.popular_topic, 
 						 		posts: posts, myFriend :  false,  rec_topic : req.session.rec_topic,
-						 	partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});	
+						 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
+						 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+					 			list_group:'partial/list_group', 
+						 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+						 	}});	
 
 							}
 						}
@@ -174,7 +186,11 @@ module.exports = {
 						 		posts: posts, myFriend : true, numOfCurrPage : page, page : true,
 						 		popular_topic: req.session.popular_topic, showPerActivity : true,
 						 		numOfLastPage : numOfLastPage, limitPerPage:limit,
-						 		partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});		
+						 		partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
+						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+					 				list_group:'partial/list_group', 
+							 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+							 	}});		
 							}else if (idForProfile.indexOf(""+req.session.dataCurrentProfile._id) != -1){
 						 		res.render('profile', {profile: req.session.profile,
 						 		rec_topic : req.session.rec_topic, showPost : showPost,  urlActivity: urlActivity,
@@ -183,7 +199,11 @@ module.exports = {
 						 		posts: posts, myFriend : true, numOfCurrPage : page, page : true,
 						 		popular_topic: req.session.popular_topic, showPerActivity : true,
 						 		numOfLastPage : numOfLastPage, limitPerPage:limit,
-						 		partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});	
+						 		partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
+						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+					 				list_group:'partial/list_group', 
+							 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+							 	}});		
 							}else{
 						 		res.render('profile', {profile: req.session.profile, numOfCurrPage : page, showPost : showPost, 
 								showLike : showLike, showShare : showShare, showComment : showComment,
@@ -191,7 +211,11 @@ module.exports = {
 						 		friendProfile: req.session.dataCurrentProfile, page : true, urlActivity: urlActivity,
 						 		popular_topic: req.session.popular_topic, showPerActivity : true,
 						 		posts: posts, myFriend :  false,  rec_topic : req.session.rec_topic,
-						 		partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});	
+						 		partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
+						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+					 				list_group:'partial/list_group', 
+							 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+							 	}});			
 							}
 						
 					});

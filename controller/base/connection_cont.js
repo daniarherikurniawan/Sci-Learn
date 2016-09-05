@@ -157,8 +157,10 @@ module.exports = {
 							 	numOfLastPage : numOfLastPage, limitPerPage : limitPerPage,
 						 		popular_topic: req.session.popular_topic,
 							 	posts: null,  rec_topic : req.session.rec_topic, page:isLimitedByParameter,
-							 	 friends : friends, myFriend:false, showFriends:true, numOfFriend : numOfFriend,
-							 	partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});
+							 	list_user : friends, myFriend:false, showFriends:true, numOfFriend : numOfFriend,
+							 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+							 	about_user: 'partial/about_user',
+							 	list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});
 					 	}else{
 					// console.log("2");
 							 res.render('profile', {profile: req.session.profile, page:isLimitedByParameter,
@@ -166,8 +168,10 @@ module.exports = {
 							 	rec_topic : req.session.rec_topic,  numOfCurrPage : page,
 							 	limitPerPage : limitPerPage, numOfFriend : numOfFriend,
 						 		popular_topic: req.session.popular_topic,
-							 	posts: null, friends : friends, myFriend:true,  showFriends:true,
-							 	partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});
+							 	posts: null, list_user : friends, myFriend:true,  showFriends:true,
+							 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+							 	about_user: 'partial/about_user',
+							 	list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});
 					 	}
 					}else{
 					// this is my profile
@@ -177,8 +181,10 @@ module.exports = {
 					 	myFriend:true, showFriends:true,  numOfCurrPage : page, numOfLastPage : numOfLastPage,
 					 	friendProfile: null, posts: null, limitPerPage : limitPerPage,
 						popular_topic: req.session.popular_topic,
-					 	friends : friends, rec_topic : req.session.rec_topic, numOfFriend : numOfFriend,
-					 	partials: { rightSide:'rightSide', topNavigation:'topNavigation'}});	
+					 	list_user : friends, rec_topic : req.session.rec_topic, numOfFriend : numOfFriend,
+					 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+						about_user: 'partial/about_user',	
+					 	list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});	
 					}
 				});
 			}
