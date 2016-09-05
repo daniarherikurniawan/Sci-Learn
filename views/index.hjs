@@ -127,8 +127,8 @@
 </div>
 <!--share modal-->
 <%> share_modal%>
-<!--edit_post_modal-->
-<%> edit_post_modal%>
+<!--edit_post_template-->
+<%> edit_post_template%>
 </body>
 </html>
 

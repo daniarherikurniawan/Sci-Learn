@@ -240,9 +240,9 @@ h1,h2,h3 {
 }
 
 .modal-header, .modal-footer {
-	background-color: rgb(214, 231, 232);
+	background-color: #d6e7e8;
 	font-weight:800;
-	font-size:12px;
+	font-size: 12px;
 }
 
 .modal-footer i, .well i {

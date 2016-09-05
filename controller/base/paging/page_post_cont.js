@@ -29,7 +29,7 @@ module.exports = {
 					res.render('post', {profile: req.session.profile, posts: dataPost, 
 						rec_topic : req.session.rec_topic, 
 					partials: { topNavigation:'partial/topNavigation', post_partial: 'partial/post_partial',
-						share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+						share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 					}});	
 				}else{
 					console.log(err);

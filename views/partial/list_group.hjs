@@ -1,5 +1,9 @@
  <div class="panel panel-default">
-  <div class="panel-heading"><a style=" margin-top: 10px;" href="#" class="pull-right">Details</a> <h4>Groups</h4></div>
+  <div class="panel-heading">
+  	<a style=" margin-top: 10px;" class="pull-right" type="button" 
+     onclick=""  data-toggle="modal" href="#create_group_modal" 
+    > <small><span class="glyphicon glyphicon-plus"></span></small> New</a> <h4>Groups</h4>
+  </div>
   <div class="panel-body">
     <div class="list-group">
       <a href="http://bootply.com/tagged/modal" class="list-group-item">Distributed Computing</a>
@@ -8,3 +12,5 @@
     </div>
   </div>
 </div>
+
+{{>create_group_modal}}

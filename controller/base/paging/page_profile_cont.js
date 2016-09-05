@@ -58,7 +58,7 @@ module.exports = {
 						 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
 						 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
 					 			list_group:'partial/list_group', 
-						 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+						 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 						 }});	
 						}else{
 							numOfPost = req.session.dataCurrentProfile.id_share_posts.length+req.session.dataCurrentProfile.id_user_posts.length;
@@ -77,7 +77,7 @@ module.exports = {
 						 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
 						 		post_partial: 'partial/post_partial',about_user: 'partial/about_user',	
 					 			list_group:'partial/list_group', 
-						 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+						 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 						 	}});	
 
 							}else{
@@ -89,7 +89,7 @@ module.exports = {
 						 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
 						 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
 					 			list_group:'partial/list_group', 
-						 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+						 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 						 	}});	
 
 							}
@@ -189,7 +189,7 @@ module.exports = {
 						 		partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
 						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
 					 				list_group:'partial/list_group', 
-							 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});		
 							}else if (idForProfile.indexOf(""+req.session.dataCurrentProfile._id) != -1){
 						 		res.render('profile', {profile: req.session.profile,
@@ -202,7 +202,7 @@ module.exports = {
 						 		partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
 						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
 					 				list_group:'partial/list_group', 
-							 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});		
 							}else{
 						 		res.render('profile', {profile: req.session.profile, numOfCurrPage : page, showPost : showPost, 
@@ -214,7 +214,7 @@ module.exports = {
 						 		partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
 						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
 					 				list_group:'partial/list_group', 
-							 		share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
+							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});			
 							}
 						

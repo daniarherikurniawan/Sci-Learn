@@ -405,8 +405,8 @@
 
 <!--share modal-->
 <%> share_modal%>
-<!--edit_post_modal-->
-<%> edit_post_modal%>
+<!--edit_post_template-->
+<%> edit_post_template%>
 
   <!--photo modal-->
   <div id="photoModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
