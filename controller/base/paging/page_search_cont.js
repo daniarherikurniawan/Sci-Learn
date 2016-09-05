@@ -6,7 +6,6 @@ module.exports = {
 			search_term = req.query.search_term;
 		else
 			search_term = '';
-			// console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 		limit = parseInt(limit);
 		numOfCurrPage = parseInt(numOfCurrPage);
 		if(req.session.profile!=null){
@@ -25,7 +24,7 @@ module.exports = {
 					function(err, results){
 					res.render('search', {profile: req.session.profile, results: results, numOfPeople: results.length,
 						rec_topic : req.session.rec_topic, search_term: search_term, showByQuery : false, 
-						popular_topic: req.session.popular_topic,
+						popular_topic: req.session.popular_topic, limitPerPage : results.length,
 						partials: {leftSide:'leftSide', rightSide:'rightSide', topNavigation:'topNavigation'}});	
 				});
 			}else{
@@ -41,6 +40,7 @@ module.exports = {
 					function(err, results){
 					if(err)
 						console.log(err)
+
 					User.model.count({}, function( err, count){
 						count = count -1 -req.session.profile.connections.length;
 						numOfLastPage = Math.ceil(count/limit);
@@ -48,6 +48,7 @@ module.exports = {
 						res.render('search', {profile: req.session.profile, results: results, numOfPeople : count,
 							rec_topic : req.session.rec_topic, limitPerPage : limit,  search_term: null,
 						numOfLastPage: numOfLastPage, numOfCurrPage: numOfCurrPage, showByQuery : true, 
+					
 						popular_topic: req.session.popular_topic,
 						partials: {leftSide:'leftSide', rightSide:'rightSide', topNavigation:'topNavigation'}});	
 					});

@@ -9,7 +9,7 @@
 
 <div class="panel-default" style="margin-top: 15px;">
   <div class="panel-heading "><h4><a href="#" ></a>Online Connections 
-  <a id="{{profile._id}}" href="#" class=" pull-right fa fa-users" style="margin-top:3px; font-size:15px; color:#3b9798; " > {{profile.online_connection.length}} </a> 
+  <a id="numberOnlineUser" href="#" class=" pull-right fa fa-users" style="margin-top:3px; font-size:15px; color:#3b9798; " > {{profile.online_connection.length}} </a> 
   </h4>
   </div>
   <div class="list-group" id="listOnlineConnection">

@@ -38,6 +38,7 @@ router.get('/signUp/:email/:name', function(req, res, next) {
 
 /* Post getToken page. */
 router.get('/getProfile/:userToken', function(req, res, next) {
+	console.log("hotaaaondvnkdfv")
 	api_cont.isApplicationRegistered("daniarheri", "daniarheri", function(isRegistered){
 		if (isRegistered){
 			api_cont.getProfileByToken(req, res);

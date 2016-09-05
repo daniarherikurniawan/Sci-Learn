@@ -4,7 +4,7 @@ var im = require('imagemagick');
 var general_func = require('../../controller/common/general_func');
 
 var User = require('../../dbhelper/user_model');
-var hash = require("../../public/javascripts/sha256.js");
+var hash = require("../../public/javascripts/others/sha256.js");
 
 module.exports = { 
 	isAccountExist: function(req, callback){

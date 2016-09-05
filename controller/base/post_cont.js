@@ -117,6 +117,7 @@ module.exports = {
 	},
 
 	addComment: function(req, res){
+        console.log("req.body.creator : "+req.body.creator);
 		post_func.giveComment(req.body.creator, req.body.id, req.body.content);
 
 		User.model.findById(req.body.creator)

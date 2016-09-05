@@ -15,7 +15,7 @@
 
 
 <div class="panel panel-default">
-  <div class="panel-heading"><!-- <a style=" margin-top: 10px;" href="#" class="pull-right">Details</a>  -->
+  <div class="panel-heading"><!-- <a style=" margin-top: 10px;" href="#" class="pull-right"></a>  -->
   <h4 style="text-align: center;"> 
 
   <a href="/profile/{{creator.email}}{{^creator.name}}{{profile.email}}{{/creator.name}}" >
@@ -34,7 +34,7 @@
 
 
 <div class="panel panel-default">
-  <div class="panel-heading"><a style=" margin-top: 10px;" href="#" class="pull-right">Details</a> <h4>Groups</h4></div>
+  <div class="panel-heading"><a style=" margin-top: 10px;" href="#" class="pull-right">+ Create</a> <h4>Groups</h4></div>
   <div class="panel-body">
     <div class="list-group">
       <a href="http://bootply.com/tagged/modal" class="list-group-item">Distributed Computing</a>

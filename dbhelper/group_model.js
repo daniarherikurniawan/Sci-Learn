@@ -2,7 +2,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var GroupSchema = new mongoose.Schema({
-  name: String,
+  group_name: String,
+  group_info: String,
+  group_members: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   group_posts: [{
     content: String, 
     title: String,

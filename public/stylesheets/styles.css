@@ -327,3 +327,14 @@ small.text-muted {
 .background_comment_color{
   background-color: rgb(214, 231, 232);
 }
+
+
+  textarea.auto-resize {
+    overflow: hidden;
+    padding: 10px;
+    outline: none;
+    resize: none;
+  }
+   #rightSideBar::-webkit-scrollbar { 
+    display: none; 
+  }

@@ -26,14 +26,20 @@ function asyncProcessPer100User(req, arrayUserBehaviour, randomOrder,
 	    
 		async.waterfall([
 			function(callback){
-				// console.log("\n"+index + ': ' + currentOrder)
+				console.log("URL : "+host+"/API/getProfile/"+arrayUserBehaviour[currentOrder].userToken)
+				console.log("\n"+index + ': ' + currentOrder+"   token: "+arrayUserBehaviour[currentOrder].userToken)
 	        	client.get(host+"/API/getProfile/"+arrayUserBehaviour[currentOrder].userToken,
 	        		function(userProfile){
-	        			console.log(userProfile.email)
-	        			asyncExecuteUserAction(req, userProfile, arrayUserBehaviour[currentOrder], function(){
-						// console.log(index + '=== ' + currentOrder)
-			    			callback(null, firstIndex);
-					});
+	        			if (userProfile != 'Bad Request'){
+		        			console.log("sebelum ini "+userProfile)
+		        			asyncExecuteUserAction(req, userProfile, arrayUserBehaviour[currentOrder], function(){
+								// console.log(index + '=== ' + currentOrder)
+					    			callback(null, firstIndex);
+
+							});
+						}else{
+							callback(null, firstIndex);
+						}
 	    		});		    	
 			}
 			],
@@ -78,7 +84,7 @@ function asyncExecuteUserAction(req, userProfile, userBehaviour, callbackFunc){
 	// execute user's actions
 	action = userBehaviour.determineAction;
 	choosePost = userBehaviour.choosePost;
-
+	console.log("hmmmm  "+userProfile)
 	async.forEachOf(action, function(currentAction, indexAction, cbAction) {
 
 	        asyncExecuteOneAction(0, req, userProfile, indexAction, currentAction,
@@ -575,9 +581,12 @@ module.exports = {
 		else{
 			client.get(host+"/API/getProfile/"+req.params.userToken,
         		function(userProfile){
-        			// console.log(userProfile.email)
-        			req.session.profile = userProfile;
-        			res.redirect('/');
+    				if (userProfile != 'Bad Request'){
+	        			req.session.profile = userProfile;
+	        			res.redirect('/');
+					}else{
+						res.send("Sorry, your email address is not valid!")
+					}
 				});
 		}
 	},
@@ -586,9 +595,12 @@ module.exports = {
 		if(validateEmail(req.params.email)){
 			client.get(host+"/API/getProfile/email/"+req.params.email,
 			function(userProfile){
-				// console.log(userProfile.email)
-				req.session.profile = userProfile;
-				res.redirect('/');
+    			if (userProfile != 'Bad Request'){
+					req.session.profile = userProfile;
+					res.redirect('/');
+				}else{
+					res.send("Sorry, your email address is not valid!")
+				}
 			});
 		}else{
 			res.send("Sorry, your email address is not valid!")
@@ -602,7 +614,6 @@ module.exports = {
 		req.session.idPeopleDoingAddFriend = null;
 		req.session.arrayPeopleDoingLike = new Array();
 		req.session.arrayPeopleDoingShare = new Array();
-
 		numberOfPartition = parseInt(req.session.admin.numberOfPartition);
 		asyncProcessPer100User(req, arrayUserBehaviour, randomOrder, 
 			numberOfPartition, 0, function(status){

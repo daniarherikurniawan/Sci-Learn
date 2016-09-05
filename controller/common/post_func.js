@@ -76,6 +76,7 @@ module.exports = {
 		      post.id_unique_users = general_func.addUniqueObj(idUser, post.id_unique_users);
 		      post.save();
 
+	          // console.log("idUser : "+idUser);
 		      User.object.findById(idUser)
 		        .exec(function(err, user){
 		          	user.id_commented_posts = general_func.addUniqueObj(idPost,user.id_commented_posts)
