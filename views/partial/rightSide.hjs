@@ -18,11 +18,11 @@
       Appear Online
     </label>
     <label style="margin-bottom: 7px">
-      <input type="checkbox" data-toggle="toggle" >
+      <input type="checkbox" checked data-toggle="toggle" >
       Recommended Posts
     </label>
     <label style="margin-bottom: 0px">
-      <input type="checkbox" data-toggle="toggle" >
+      <input type="checkbox" checked data-toggle="toggle" >
       Popular Posts
     </label>
   </div>

@@ -8,15 +8,55 @@
       	<div class="row">
 	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
 	        style="
-		    font-size: 38px;
+		    font-size: 28px;
 		    padding: 2px 11px 0px 0px;">×</button>
-	        <h3 style=" color: #3b9798;     text-align: center;
-   			margin: 5px 0px 0px;">Create New Group </h3>
+	        <h4 style=" color: white;     text-align: center;
+   			margin: 5px 0px 0px;">Create New Group </h4>
         </div>
       </div>
-      <form onsubmit="return tryToShare()" id="xsxsxsx" class="form center-block">
       
-  </form>
-</div>
+                     <div class="well" style="padding: 15px; margin-bottom: 15px;"> 
+
+
+                       <form action="/addPost" method="post" class="form-horizontal" role="form">
+                         <div class="row">
+                          <div class="col-sm-11" style="margin-right:-15px; padding-left: 0px; margin-left: -15px;">
+                            <div class="row" style=" margin-top: 0px;">
+
+                              <div class="row" style="margin-bottom: 0px;" >
+                                <div class="col-sm-4" style="text-align: center; padding-left: 30px">
+                                  <h4>What's New?</h4>
+                                </div>
+                                <div class="col-sm-8" style="padding-right: 0px; padding-left: 0px;">
+                                  <textarea class="form-control" name="title" maxlength="40" style="height: 35px"placeholder="Title" required></textarea>
+                                </div>
+                              </div>
+
+                              <div class="row" >
+                                <div  class="col-sm-12" style=" padding-right: 0px;">
+                                  <textarea class="form-control pull-left" name="keywords" style="height: 35px; margin left: -15px; "placeholder="Keywords" maxlength="55" required></textarea>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+
+                          <div class="col-sm-1 pull-right" style="padding: 0 0 0 0 ; width:67px;height:67px;overflow:hidden">
+                          
+                         </div>
+
+                       </div>
+                       <div id="" class="sss form-group" style="padding:4px 15px 4px 14px;; margin-bottom:5px ">
+
+                        <textarea name="content" class="form-control auto-resize" placeholder="Share your knowledge" required rows="2" style="height:60px;" id="texta"></textarea>
+
+                      </div>
+
+                      <input class="btn btn-primary pull-right" type="submit" value="Post"><ul style="margin-bottom: -5px;" class="list-inline"><li style=" padding-top: 11px;"><a href=""><i class="glyphicon glyphicon-paperclip"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+                    </form>
+
+                  </div>
+                  
+	</div>
 </div>
 </div>

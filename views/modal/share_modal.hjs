@@ -6,22 +6,22 @@
         <div class="row">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
           style="
-        font-size: 38px;
+        font-size: 28px;
         padding: 2px 11px 0px 0px;">×</button>
-          <h3 style=" color: #3b9798;     text-align: center;
-        margin: 5px 0px 0px;">Share a Post </h3>
+          <h4 style=" color: white;     text-align: center;
+        margin: 5px 0px 0px;">Share a Post </h4>
         </div>
       </div>
       
       <form onsubmit="return tryToShare()" id="editableShareFunction" class="form center-block">
         <div class="modal-body">
-          <div class="form-group">
+          <div class="form-group" style="margin-bottom: 0px;  padding: 5px 10px 0px;">
             <textarea  id="additionalThought" style="word-wrap: break-word;white-space: normal;" class=" auto-resize form-control input-lg" autofocus="" placeholder="What is your thought about this post?" required=""></textarea>
 
           </div>
 
           <!-- shared post -->
-          <div class="panel panel-default" style="margin-bottom:0px" id="sss" >
+          <div class="panel panel-default" style="margin-bottom:0px;     border-color: transparent;" id="sss" >
             <div class="row" id="row">
 
               <div class="col-sm-2" style=" padding-left: 0px;">
@@ -53,22 +53,19 @@
 
           </div> <!-- row -->
 
-          <div class="auto-resize panel-body" style="word-wrap: break-word;    white-space: normal;padding:10px 15px 0px 15px">
+          <!-- <div class="auto-resize panel-body" style="word-wrap: break-word;    white-space: normal;padding:10px 15px 0px 15px">
            <p id = "sharedContent">salah</p>
-
-
-         </div>
+         </div> -->
        </div>
        <!-- shared post -->
 
 
      </div>
-     <div class="modal-footer">
-      <div>
-       <button class=" btn btn-md btn-primary" type="submit">Share</button>
+     <div class="row" style="    margin: 10px 15px 15px;">
+       <input class="btn btn-primary pull-right" type="submit" value="Share">
+       <input class="btn btn-default pull-right" type="submit" value="Cancel" style="margin-right:5px">
+       <!-- <button class=" btn btn-md btn-primary" type="submit">Share</button> -->
 
-        <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
-      </div>	
     </div>
   </form>
 </div>

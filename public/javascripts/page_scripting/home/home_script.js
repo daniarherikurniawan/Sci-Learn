@@ -35,7 +35,7 @@
         // console.log(post);
         // alert("dcdcdc");
         document.getElementById('sharedName').innerHTML = post.creator.name ; 
-        document.getElementById('sharedContent').innerHTML = post.content;
+        // document.getElementById('sharedContent').innerHTML = post.content;
         document.getElementById('sharedKeywords').innerHTML = post.keywords;
         document.getElementById('sharedTitle').innerHTML = post.title; 
         $('#linkSharedImage').attr('href',"/profile/"+post.creator.email);
