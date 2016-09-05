@@ -2,12 +2,6 @@
 <div class="row" style="
     margin: auto;">
 <div class="navbar-header custom_navbar_left" style="padding-left:50px ; padding-top: 2px;">
-<button class="navbar-toggle" style="float: none;" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-  <span class="sr-only">Toggle</span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-  <span class="icon-bar"></span>
-</button>
 <a href="/" class="navbar-brand logo" style="padding-top: 4px;">S</a>
 </div>
 <nav class="collapse navbar-collapse" role="navigation">

@@ -1,5 +1,3 @@
-
-
   function tryToConnect(id, name) {
       // alert(id+"  "+name);
       var http = new XMLHttpRequest();

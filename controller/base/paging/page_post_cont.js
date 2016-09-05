@@ -24,13 +24,11 @@ module.exports = {
 						dataPost.post_shared.shared = true;
 					}
 					if(dataPost.creator._id == req.session.profile._id)
-						myPost = true;
-					else
-						myPost = false;
+						dataPost.creator = null;
 
 					res.render('post', {profile: req.session.profile, posts: dataPost, 
-						rec_topic : req.session.rec_topic, myPost : myPost,
-					partials: { topNavigation:'topNavigation',
+						rec_topic : req.session.rec_topic, 
+					partials: { topNavigation:'partial/topNavigation', post_partial: 'partial/post_partial',
 						share_modal: 'modal/share_modal', edit_post_modal: 'modal/edit_post_modal'
 					}});	
 				}else{
