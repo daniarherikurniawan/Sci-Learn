@@ -338,3 +338,10 @@ small.text-muted {
    #rightSideBar::-webkit-scrollbar { 
     display: none; 
   }
+
+::selection {
+  background: rgb(214, 231, 232); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: rgb(214, 231, 232); /* Gecko Browsers */
+}

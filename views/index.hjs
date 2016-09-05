@@ -330,6 +330,11 @@
 
             </div>
 
+              <style type="text/css">
+                /*#rightSideBar::-webkit-scrollbar { */
+                  /*display: none; */
+              };
+              </style>
             <div id="rightSideBar" class=" col-sm-3 rightside" style="overflow:auto" >
                <%> rightSide%> 
 
