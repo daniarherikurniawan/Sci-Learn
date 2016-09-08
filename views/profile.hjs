@@ -259,8 +259,9 @@
     str = "";
     var numOfLastPage = <%numOfLastPage%>;
     var numOfCurrPage = <%numOfCurrPage%>+1;
-
+    // alert("numOfLastPage: "+numOfLastPage)
         // alert(<%showFriends%>)
+    // just base condition 
     if(numOfCurrPage <= numOfLastPage){
       limitIndexPage = 10;
       if(numOfLastPage < 10)
@@ -394,10 +395,10 @@
         if(numOfCurrPage==numOfLastPage){
           lastResult = '<%numOfPost%><%numOfFriend%>';
         }
-        else
+        else{
           lastResult = (numOfCurrPage*<%limitPerPage%>);
+        }
 
-        
         document.getElementById("statePage").innerHTML = "Showing "+(<%numOfCurrPage%>*<%limitPerPage%>+1)+" - "+lastResult+" results<p><b>Page "+numOfCurrPage+" of "+numOfLastPage+"<b></p>";
     }
   </script>
