@@ -31,7 +31,7 @@
         str +=  "<li";
         if(i == numOfCurrPage)
           str += " class=\"active\"";
-        str += "><a href=\"/search/"+(i-1)+"/+"limitPerPage+"\">"+(i)+"</a></li>";
+        str += "><a href=\"/search/"+(i-1)+"/"+limitPerPage+"\">"+(i)+"</a></li>";
       };  
 
       //add last intermediate page
