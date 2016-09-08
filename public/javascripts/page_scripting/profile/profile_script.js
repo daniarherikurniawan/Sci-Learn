@@ -87,9 +87,10 @@
         }else{
           post = JSON.parse(http.responseText);
           // console.log(post);
-          // alert(post._id);
+          // alert(JSON.stringify(post));
+          // alert(post.content)
           document.getElementById('sharedName').innerHTML = post.creator.name ; 
-          document.getElementById('sharedContent').innerHTML = post.content;
+          // document.getElementById('sharedContent').innerHTML = post.content;
           document.getElementById('sharedKeywords').innerHTML = post.keywords;
           document.getElementById('sharedTitle').innerHTML = post.title; 
           $('#linkSharedImage').attr('href',"/profile/"+post.creator.email);
