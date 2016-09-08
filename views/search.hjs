@@ -91,6 +91,8 @@
 </html>
 
 <script type="text/javascript">
+  // if (<%search_page%>)
+  //   alert("ahoy");
   var numOfLastPage = <%numOfLastPage%>+0;
   var numOfCurrPage = <%numOfCurrPage%>+1;
   var showByQuery = <%showByQuery%>;

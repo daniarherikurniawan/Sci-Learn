@@ -24,7 +24,7 @@ module.exports = {
 					function(err, results){
 					res.render('search', {profile: req.session.profile, list_user: results, numOfPeople: results.length,
 						rec_topic : req.session.rec_topic, search_term: search_term, showByQuery : false, 
-						popular_topic: req.session.popular_topic, limitPerPage : results.length,
+						popular_topic: req.session.popular_topic, limitPerPage : results.length, search_page :true,
 						partials: {leftSide:'partial/leftSide', rightSide:'partial/rightSide', list_user:'partial/list_user',
 						list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});	
 				});
@@ -49,7 +49,7 @@ module.exports = {
 						res.render('search', {profile: req.session.profile, list_user: results, numOfPeople : count,
 							rec_topic : req.session.rec_topic, limitPerPage : limit,  search_term: null,
 						numOfLastPage: numOfLastPage, numOfCurrPage: numOfCurrPage, showByQuery : true, 
-					
+						 search_page :true,
 						popular_topic: req.session.popular_topic,
 						partials: {leftSide:'partial/leftSide', rightSide:'partial/rightSide', list_user:'partial/list_user',
 						list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});	

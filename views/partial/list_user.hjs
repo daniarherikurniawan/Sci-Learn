@@ -1,5 +1,10 @@
+
+
 {{# list_user }}
 
+<script type="text/javascript">
+  // alert({{search_page}})
+</script>
     <div id="{{_id}}" class=" panel panel-default">
     <div class="row">
 
@@ -22,14 +27,15 @@
 
     </div> <!-- row -->
      
-
      <div class="panel-body" style="padding:10px 15px 15px 15px">                         
         <div class="input-group" >
           <div class="input-group-btn">
             <p class="btn btn-default" style="margin-right: 2px;color:rgb(45, 99, 99)">{{activeness}} Pts.</p>
           </div>
-          <input type="text" class="form-control" style="width:84%" placeholder="Send message ..">
-          <button class="btn btn-primary" onclick="tryToConnect('{{_id}}','{{name}}')"><i style="color:white" class="glyphicon glyphicon-ok"></i>&nbspSend</button>
+          {{#search_page}}<button class="btn btn-primary pull-right" onclick="tryToConnect('{{_id}}','{{name}}')"><i style="color:white" class="glyphicon glyphicon-plus "></i>&nbspConnect</button> {{/search_page}}
+          {{^search_page}}
+          <input type="text" class="form-control" style="width:84%" placeholder="Send message .. ">
+          <button class="btn btn-primary" onclick=""><i style="color:white" class="glyphicon glyphicon-ok"></i>&nbspSend</button> {{/search_page}}
         </div>  
       </div>
 

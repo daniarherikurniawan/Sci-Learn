@@ -313,13 +313,13 @@
           str += "><a href=\"/connections/<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>/"+(numOfLastPage-1)+"/<%limitPerPage%>\">"+'Last'+"</a></li>";
         }
       }else if('<%showPerActivity%><%^showPerActivity%><%showPerActivity%><%/showPerActivity%>'== 'true' ){
+        
         //show activity
         //add first page
         str +=  "<li";
         if(1 == numOfCurrPage)
             str += " class=\"active\"";
         str += "><a href=\"/<%urlActivity%>/"+0+"/<%limitPerPage%>\">"+'First'+"</a></li>";
-
         //add first intermediate page
         if(numOfLastPage > 11 && 2 < firstIndexPage+1){
           intermediateIndex = Math.ceil(firstIndexPage/2);
@@ -388,8 +388,8 @@
           str += "><a href=\"/profile/<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>/"+(numOfLastPage-1)+"/<%limitPerPage%>\">"+'Last'+"</a></li>";
         }
 
-        document.getElementById("pagination").innerHTML = str;
       }
+        document.getElementById("pagination").innerHTML = str;
 
         lastResult = 0;
         if(numOfCurrPage==numOfLastPage){
