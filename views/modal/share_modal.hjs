@@ -13,18 +13,26 @@
         </div>
       </div>
       
-      <form onsubmit="return tryToShare()" id="editableShareFunction" class="form center-block">
-        <div class="modal-body">
-          <div class="form-group" style="margin-bottom: 0px;  padding: 5px 10px 0px;">
-            <textarea  id="additionalThought" style="word-wrap: break-word;white-space: normal;" class=" auto-resize form-control input-lg" autofocus="" placeholder="What is your thought about this post?" required=""></textarea>
 
-          </div>
+   <div class="well" style="padding: 15px; margin-bottom: 0px;"> 
+
+
+
+
+      <form onsubmit="return tryToShare()" id="editableShareFunction" class="form center-block">
+
+
+        <textarea  class="form-control auto-resize" placeholder="What is your thought about this post?" required rows="2" style="height:60px;" id="additionalThought"></textarea>
+
+
+
 
           <!-- shared post -->
-          <div class="panel panel-default" style="margin-bottom:0px;     border-color: transparent;" id="sss" >
-            <div class="row" id="row">
+          <div class="row form-control" style="margin-bottom:0px;     margin-top: 10px;
+    padding: 0;  background-color: white; border-color: white;" id="sss" >
+            <div class="row" id="row" style="padding-bottom: 12px;">
 
-              <div class="col-sm-2" style=" padding-left: 0px;">
+              <div class="col-sm-3" style=" padding-left: 0px;     margin-right: -30px;">
                <div class="panel-heading" >
 
                    <a id="linkSharedImage" href="sapai"  class="pull-left">   
@@ -37,7 +45,7 @@
                </div>
              </div>
 
-             <div class="col-sm-10" style="margin-top: 7px;">
+             <div class="col-sm-9" style="margin-top: 7px;">
               <div class="row">
                 <div class="col-sm-11" style="padding-left:0px">
                   <h4 style="margin-bottom: 0px;" id="sharedName"><b >fnkernfek
@@ -46,28 +54,24 @@
                 </div>
               </div>
 
-              <h4  id = "sharedTitle">salah  </h4>
+              <h5  id = "sharedTitle">salah  </h5>
               <hr style="margin:5px 0px 5px 0px">
-              Keywords: <a href="#"  id = "sharedKeywords"><%keywords%></a>
+              <a href="#"  id = "sharedKeywords"><%keywords%></a>
             </div>
 
           </div> <!-- row -->
 
-          <!-- <div class="auto-resize panel-body" style="word-wrap: break-word;    white-space: normal;padding:10px 15px 0px 15px">
-           <p id = "sharedContent">salah</p>
-         </div> -->
-       </div>
-       <!-- shared post -->
-
 
      </div>
-     <div class="row" style="    margin: 10px 15px 15px;">
+     <div class="row" style="    margin: 10px 0px 0px 0px">
        <input class="btn btn-primary pull-right" type="submit" value="Share">
-       <input class="btn btn-default pull-right" type="submit" value="Cancel" style="margin-right:5px">
+       <input class="btn btn-default pull-right" data-dismiss="modal" style="background-color: white; width: 70px;
+       margin-right:5px" value="Cancel" >
        <!-- <button class=" btn btn-md btn-primary" type="submit">Share</button> -->
 
     </div>
   </form>
+  </div>
 </div>
 </div>
 </div>

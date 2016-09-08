@@ -18,7 +18,7 @@
                      <div class="well" style="padding: 15px; margin-bottom: 15px;"> 
 
 
-                       <form action="/addPost" method="post" class="form-horizontal" role="form">
+                       <form action="/" method="" class="form-horizontal" role="form">
                          <div class="row">
                           <div class="col-sm-11" style="margin-right:-15px; padding-left: 0px; margin-left: -15px;">
                             <div class="row" style=" margin-top: 0px;">
