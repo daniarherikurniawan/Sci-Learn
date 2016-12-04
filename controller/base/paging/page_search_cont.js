@@ -26,6 +26,7 @@ module.exports = {
 						rec_topic : req.session.rec_topic, search_term: search_term, showByQuery : false, 
 						popular_topic: req.session.popular_topic, limitPerPage : results.length, search_page :true,
 						partials: {leftSide:'partial/leftSide', rightSide:'partial/rightSide', list_user:'partial/list_user',
+						create_group_modal: 'modal/create_group_modal',
 						list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});	
 				});
 			}else{
@@ -52,6 +53,7 @@ module.exports = {
 						 search_page :true,
 						popular_topic: req.session.popular_topic,
 						partials: {leftSide:'partial/leftSide', rightSide:'partial/rightSide', list_user:'partial/list_user',
+						create_group_modal: 'modal/create_group_modal',
 						list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});	
 					});
 					

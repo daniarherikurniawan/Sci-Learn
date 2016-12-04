@@ -222,10 +222,7 @@ function showComments(id3){
           //error
           alert(http.responseText);
         }else{
-
-
          comments = JSON.parse(http.responseText);
-
           //build the comments div
           newComments = "";
           for ( i = 0;i <=  comments.length - 1; i++) {

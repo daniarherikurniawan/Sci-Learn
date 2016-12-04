@@ -143,8 +143,9 @@
   if(numOfCurrPage==numOfLastPage){
     lastResult = '<%numOfPost%><%numOfFriend%>';
   }
-  else
+  else{
     lastResult = (numOfCurrPage*<%limitPerPage%>);
+  }
 </script>
 <!-- script references -->
 <script src="../../javascripts/page_scripting/home/home_script.js"></script>

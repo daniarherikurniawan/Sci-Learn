@@ -38,13 +38,19 @@ var agent = require('./routes/agent_router');
 var profile = require('./routes/profile_router');
 var api = require('./routes/api_router');  
 var user = require('./routes/user_router');  
+var group = require('./routes/group_router');  
 var connection = require('./routes/connection_router');
 app.use('/', index);
 app.use('/agent', agent);
+app.use('/group', group);
 app.use('/API', api);
 app.use('/profile', profile);
 app.use('/connections', connection);
 app.use('/user', user);
+
+// GLOBAL VARIABLE
+global.response = require('./controller/base/response_cont');
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

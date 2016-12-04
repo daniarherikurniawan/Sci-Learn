@@ -50,30 +50,9 @@
     <i class="glyphicon glyphicon-menu-hamburger" style="font-size:17px;"></i>
     
     </a>
-    <ul class="dropdown-menu" style="    left: -125px;">
-      <li><a href="" onclick="tryToGenerateToken()">Generate Token</a></li>
-      <li><a onclick="iAmOffline()" href="/logout">Logout</a></li>
-    </ul>
   </li>
 </ul>
 </div>
 <script>
-
-function tryToGenerateToken(){
-  var http = new XMLHttpRequest();
-    http.open("POST", "/generateToken", true);
-    http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    http.send();
-    http.onload = function() {
-      if(http.responseText==404){
-        //error
-        alert(http.responseText);
-      }else{ 
-        
-        alert(http.responseText);
-      }
-    }
-}
-
 
 </script>

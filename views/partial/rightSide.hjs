@@ -1,12 +1,5 @@
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-  <script>
-    $(function() {
-      $('.carousel').carousel({
-        interval: 7000
-      })
-    })
-  </script>
+<link href="../stylesheets/bootstrap-toggle.min.css" rel="stylesheet">  
+<script src="../../javascripts/bootstrap/bootstrap-toggle.min.js"></script>
 
 <div class="panel panel-default" style="margin-top: 15px;">
   <div class="panel-heading "><a style=" margin-top: 10px;" href="#" class="pull-right">Details</a> <h4>Setting </h4>

@@ -14,3 +14,44 @@
 </div>
 
 {{>create_group_modal}}
+
+<script src="../javascripts/jquery/jquery.min.js"></script>
+<script src="../javascripts/angular/angular.min.js"></script>
+<script src="../javascripts/angular/angular_directive.js"></script>
+<script src="../javascripts/angular/angular-ui-router.js"></script>
+<script src="../javascripts/bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="../javascripts/angular/angular-animate.js"></script>
+
+<script>
+  $app.controller("modalGroupController", function($scope, $http, $templateRequest, $sce, $compile, $window){
+
+      $scope.test = function(){
+        // alert("lala "+$scope.group_members)
+        $http({
+            url: '/group/create/',
+            data: {
+              group_name : $scope.group_name,
+              group_info : $scope.group_info,
+              group_members : ["576db2b63133b7155bd5cf77"]
+            },
+            method: "POST"
+        })
+        .then(function(response) {
+          alert(response.data.message)
+          initiateValue();
+        }, 
+        function(response) { // optional
+            alert("failed: "+response.data);
+        }
+        );
+    }
+
+    initiateValue = function(){
+      $scope.group_name = "";
+      $scope.group_info = "";
+      $scope.group_members = "";
+    }
+
+  });
+
+</script>

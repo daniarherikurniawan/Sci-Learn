@@ -5,7 +5,7 @@ var GroupSchema = new mongoose.Schema({
   group_name: String,
   group_info: String,
   group_members: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-  group_posts: [{
+  group_posts: { type: [{
     content: String, 
     title: String,
     keywords: String,
@@ -14,7 +14,7 @@ var GroupSchema = new mongoose.Schema({
     share: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], 
     post_index: {type:Number, default: 1},
     date_created: { type: Date, default: Date.now}
-  }]
+  }], default: []}
 });
 mongoose.model('Group',GroupSchema);
 

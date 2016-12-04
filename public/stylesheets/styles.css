@@ -328,6 +328,22 @@ small.text-muted {
   background-color: rgb(214, 231, 232);
 }
 
+.cancel-button{
+  background-color:#d6e7e8;
+  color:black;
+  width: 80px;
+  margin-right:10px;
+  border-color: #d6e7e8;
+}
+
+.modal-button:hover{
+  background-color:#2d6363;
+  color:white;
+  border-color: #d6e7e8;
+}
+.background_modal{
+  padding: 10px 15px; background-color: #f3f9f9; margin-bottom: 0px;
+}
 
   textarea.auto-resize {
     overflow: hidden;

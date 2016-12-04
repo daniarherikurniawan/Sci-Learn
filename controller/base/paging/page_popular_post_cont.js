@@ -41,6 +41,7 @@ module.exports = {
 					posts: popular_topic, 
 				partials: {leftSide:'partial/leftSide', share_modal: 'modal/share_modal', 
 				post_partial: 'partial/post_partial', list_group:'partial/list_group', 
+				create_group_modal: 'modal/create_group_modal',
 				rightSide:'partial/rightSide', topNavigation:'partial/topNavigation'}});	
 			});
 		});

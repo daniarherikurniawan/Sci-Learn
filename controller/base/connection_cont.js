@@ -160,7 +160,8 @@ module.exports = {
 							 	list_user : friends, myFriend:false, showFriends:true, numOfFriend : numOfFriend,
 							 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
 							 	about_user: 'partial/about_user',
-							 	list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});
+							 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
+							 	topNavigation:'partial/topNavigation'}});
 					 	}else{
 					// console.log("2");
 							 res.render('profile', {profile: req.session.profile, page:isLimitedByParameter,
@@ -171,7 +172,8 @@ module.exports = {
 							 	posts: null, list_user : friends, myFriend:true,  showFriends:true,
 							 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
 							 	about_user: 'partial/about_user',
-							 	list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});
+							 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
+							 	topNavigation:'partial/topNavigation'}});
 					 	}
 					}else{
 					// this is my profile
@@ -184,7 +186,8 @@ module.exports = {
 					 	list_user : friends, rec_topic : req.session.rec_topic, numOfFriend : numOfFriend,
 					 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
 						about_user: 'partial/about_user',	
-					 	list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});	
+					 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
+					 	topNavigation:'partial/topNavigation'}});	
 					}
 				});
 			}

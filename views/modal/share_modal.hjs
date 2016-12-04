@@ -14,19 +14,9 @@
       </div>
       
 
-   <div class="well" style="padding: 15px; margin-bottom: 0px;"> 
-
-
-
-
+   <div class="well background_modal" style="padding: 15px; margin-bottom: 0px;"> 
       <form onsubmit="return tryToShare()" id="editableShareFunction" class="form center-block">
-
-
         <textarea  class="form-control auto-resize" placeholder="What is your thought about this post?" required rows="2" style="height:60px;" id="additionalThought"></textarea>
-
-
-
-
           <!-- shared post -->
           <div class="row form-control" style="margin-bottom:0px;     margin-top: 10px;
     padding: 0;  background-color: white; border-color: white;" id="sss" >
@@ -64,9 +54,8 @@
 
      </div>
      <div class="row" style="    margin: 10px 0px 0px 0px">
-       <input class="btn btn-primary pull-right" type="submit" value="Share">
-       <input class="btn btn-default pull-right" data-dismiss="modal" style="background-color: white; width: 70px;
-       margin-right:5px" value="Cancel" >
+       <input class="btn btn-primary pull-right modal-button" type="submit" value="Share">
+       <input class="btn btn-default pull-right modal-button cancel-button" data-dismiss="modal"  value="Cancel" >
        <!-- <button class=" btn btn-md btn-primary" type="submit">Share</button> -->
 
     </div>
