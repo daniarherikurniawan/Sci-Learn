@@ -141,11 +141,17 @@
                             
                           </div>
                           <div class="text-center">
-                            <a onclick="signUpForm()" class="btn btn-md btn-default" type="">Sign Up for Free
+                            <a onclick="signUpForm()" class="btn btn-md btn-default" style="border-color:rgb(59, 151, 152)">Sign Up for Free
                             </a>    
                             <button class=" btn btn-md btn-primary" type="submit">Login</button>
                           </div>
                         </form>
+                          <hr>
+                          <div class="text-center">
+                            <a href="demoLogin"><button class=" btn btn-md btn-primary" >Demo Login!</button>
+                            </a>
+                          </div>
+                          <hr>
                     </div>
                     <div class="row">
                       

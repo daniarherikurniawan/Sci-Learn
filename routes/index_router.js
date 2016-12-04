@@ -44,8 +44,27 @@ router.post('/login', function(req, res, next) {
 	});
 });
 
+
+// /* GET demo login. */     
+router.get('/demoLogin', function(req, res, next) {
+	var d = new Date();
+	req.body.name = "Demo Dummy "+ d.getSeconds()+d.getMinutes();
+	req.body.email = d.getTime()+"@sci-learn.com";
+	req.body.password = "pass_"+d.getTime();
+	req.body.confirmed_password = "pass_"+d.getTime();
+	// res.send(req.body)
+	user_cont.registerNewUser(req, function(feedback){
+		if (feedback.status == "success"){
+        	res.redirect('/');
+		}else{
+			res.render('login', { Message: feedback.message });
+		}
+	});
+});
+
 /* POST signup. */
 router.post('/signup', function(req, res, next) {
+	// res.send(req.body);
 	user_cont.registerNewUser(req, function(feedback){
 		if (feedback.status == "success"){
         	res.redirect('/');

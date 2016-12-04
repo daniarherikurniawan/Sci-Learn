@@ -109,6 +109,8 @@
                   </ul>
                 </div>
                 <div id="statePage">
+                  <h4><b>Hi! <%profile.name%></b></h4>
+                  <br>
                    Let's   <a href="/search"> <button class=" btn btn-md btn-primary" >Find</button> </a> a new connections !
                 </div>
                 <!-- <hr> -->
