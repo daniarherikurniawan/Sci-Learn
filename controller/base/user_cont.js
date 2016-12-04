@@ -41,7 +41,7 @@ module.exports = {
 	  			if( data != null ) {
 					callback({
 						status : "failed",
-						message : 'Email '+email+' is already registered!'
+						message : 'SignUp failed! Email '+email+' is already registered!'
 					}); return;
 		        } else {
 		        	var path =  "./public/images/"+email+"/"
