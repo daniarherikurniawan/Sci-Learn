@@ -50,9 +50,10 @@
     <i class="glyphicon glyphicon-menu-hamburger" style="font-size:17px;"></i>
     
     </a>
+    <ul class="dropdown-menu" style="    left: -125px;">
+      <li><a onclick="" href="">Setting</a></li>
+      <li><a onclick="iAmOffline()" href="/logout">Logout</a></li>
+    </ul>
   </li>
 </ul>
 </div>
-<script>
-
-</script>

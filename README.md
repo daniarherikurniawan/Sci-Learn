@@ -29,7 +29,7 @@ update server:
 
 
 for Daniar:
-- server directory : cd /usr/share/sci-Learn/
+- server directory : cd /usr/share/Sci-Learn/
 - admin page: http://www.sci-learn.com/agent/login
 - server : pm2 status
 			pm2 www restart
