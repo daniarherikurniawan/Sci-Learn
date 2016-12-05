@@ -32,24 +32,15 @@
         alert(http.responseText);
       }else{
         post = JSON.parse(http.responseText);
-        // console.log(post);
-        // alert("dcdcdc");
         document.getElementById('sharedName').innerHTML = post.creator.name ; 
-        // document.getElementById('sharedContent').innerHTML = post.content;
         document.getElementById('sharedKeywords').innerHTML = post.keywords;
         document.getElementById('sharedTitle').innerHTML = post.title; 
         $('#linkSharedImage').attr('href',"/profile/"+post.creator.email);
-        // alert($('#sourceSharedImage').attr('src'));
         $('#sourceSharedImage').attr('src',"/images/"+post.creator.email+"/profile/"+post.creator.img_profile_name);
-        // alert($('#sourceSharedImage').attr('src'));
         $('#editableShareFunction').attr("onsubmit", "return tryToShare('"+id+"','"+id_creator+"')");
         $('#additionalThought').val("");
       }
     }
-  // alert("ini "+$('#editableShareFunction').attr("onsubmit"));
-
-  
-  // alert("ini "+$('#editableShareFunction').attr("onsubmit"));
 }
 
 function test(str){
@@ -76,7 +67,6 @@ function submitForm(){
       var newValue = "cancelEditPost('"+id+"')";
       $('#targetId').attr('onclick',newValue);
       var newAction = "/updatePost/"+id+"/"+id_creator;
-      //window.alert(newAction);
       $('#needAction').attr('action',newAction);
       document.getElementById('editableTitle').innerHTML = document.getElementById(""+id+'editableTitle').textContent;
       document.getElementById('editableName').innerHTML = document.getElementById(""+id+'editableName').textContent;
@@ -181,10 +171,8 @@ $(function() {
           //error
           alert(http.responseText);
         }else{
-          //alert(http.responseText);
           var commentNumber = document.getElementById('comment'+id)
           .innerHTML.replace('&nbsp; ','').replace(' ','');
-          // alert  ;
           document.getElementById('comment'+id).innerHTML = "&nbsp; "+((+commentNumber)+1);
           var name = "input[name="+id+"]";
           $(name).attr("placeholder", "Your comment has been added ..");
@@ -267,7 +255,6 @@ function showComments(id3){
             "</div>";
 
           };
-          // alert(newComments);
           //put generated html to the div
           buttonOnClick = "#button"+id3;
           newOnClick = "hideComments('"+id3+"')";
@@ -283,35 +270,29 @@ function showComments(id3){
     }
 
 function hideLike(id2){
-  // alert("lalal");
  iddNew="showComment"+id2;
  newOnClick2 = "showLikes('"+id2+"')";
  buttonOnClick = "#buttonLike"+id2;
  $(buttonOnClick).css("color", "#3b9798");
  $(buttonOnClick).attr("onClick", newOnClick2);
  document.getElementById(iddNew).innerHTML ="";
- // alert( $(buttonOnClick).attr("onClick"));
 }
 
 
 
 function hideShare(id2){
-  // alert("lalal");
  iddNew="showComment"+id2;
  newOnClick2 = "showShares('"+id2+"')";
  buttonOnClick = "#buttonShare"+id2;
  $(buttonOnClick).css("color", "#3b9798");
  $(buttonOnClick).attr("onClick", newOnClick2);
  document.getElementById(iddNew).innerHTML ="";
- // alert( $(buttonOnClick).attr("onClick"));
 }
 
 
 function showLikes(id3){
     
     normalizeButton(id3);
-    //getElementById("showComment"+id).innerHTML = "lalala";
-    // alert("lalala");
     post_id = id3;
     var http = new XMLHttpRequest();
     http.open("POST", "/getLike", true);
@@ -328,7 +309,6 @@ function showLikes(id3){
 
           //build the comments div
           newLike = "";
-          // alert("dd  "+likes.length)
           for ( i = 0;i <=likes.length - 1; i++) {
 
             newLike += 
@@ -354,7 +334,6 @@ function showLikes(id3){
             "</div>";
 
           };
-          // alert(newLike);
           //put generated html to the div
           buttonOnClick = "#buttonLike"+id3;
           newOnClick = "hideLike('"+id3+"')";
@@ -378,17 +357,12 @@ function normalizeButton(id3){
     $('#buttonShare'+id3).attr('onClick',"showShares('"+id3+"')");
    $('#button'+id3).css('color','#3b9798');
     $('#button'+id3).attr('onClick',"showComments('"+id3+"')");
-    // alert("hhhho");
 }
 
 
 function showShares(id3){
     
     normalizeButton(id3);
-
-    // alert('lala');
-    //getElementById("showComment"+id).innerHTML = "lalala";
-    // alert("lalala");
     post_id = id3;
     var http = new XMLHttpRequest();
     http.open("POST", "/getShare", true);
@@ -405,7 +379,6 @@ function showShares(id3){
 
           //build the comments div
           newLike = "";
-          // alert("dd  "+likes.length)
           for ( i = 0;i <=likes.length - 1; i++) {
 
             newLike += 
@@ -431,7 +404,6 @@ function showShares(id3){
             "</div>";
 
           };
-          // alert(newLike);
           //put generated html to the div
           buttonOnClick = "#buttonShare"+id3;
           newOnClick = "hideShare('"+id3+"')";
@@ -578,12 +550,12 @@ init("texta",0);
         // alert("dd")
         $("#pagination").remove();
         if(lastResult != 0)
-          document.getElementById("statePage").innerHTML = "Showing "+(numOfCurrPage*limitPerPage+1)+" - "+lastResult+" results<p>";
+          document.getElementById("statePage").innerHTML = "Showing "+((numOfCurrPage-1)*limitPerPage+1)+" - "+lastResult+" posts<p>";
         else
           document.getElementById("statePage").innerHTML = "There is no posts at this time!";
 
        }else {
           document.getElementById("pagination").innerHTML = str;
-          document.getElementById("statePage").innerHTML = "Showing "+(numOfCurrPage*limitPerPage+1)+" - "+lastResult+" results<p><b>Page "+numOfCurrPage+" of "+numOfLastPage+"<b></p>";
+          document.getElementById("statePage").innerHTML = "Showing "+((numOfCurrPage-1)*limitPerPage+1)+" - "+lastResult+" posts<p><b>Page "+numOfCurrPage+" of "+numOfLastPage+"<b></p>";
         }
   }

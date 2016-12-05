@@ -140,12 +140,12 @@
   var numOfLastPage = <%numOfLastPage%>;
   var numOfCurrPage = <%numOfCurrPage%>+1;
   var limitPerPage = <%limitPerPage%>;
+  var numOfPost = <%numOfPost%>;
   var statePageCondition = '<%isPopularPostPage%><%^isPopularPostPage%>'=='false<%/isPopularPostPage%>';
   lastResult = 0;
   if(numOfCurrPage==numOfLastPage){
     lastResult = '<%numOfPost%><%numOfFriend%>';
-  }
-  else{
+  }else{
     lastResult = (numOfCurrPage*<%limitPerPage%>);
   }
 </script>

@@ -2,7 +2,7 @@ var post_func = require('../../../controller/common/post_func');
 
 module.exports = { 
 	showRecommendedPost: function(req, res){
-		var numOfPost = 99;
+		var numOfPost = 0;
 		post_func.getReccPost(req.session.profile.connections,
 			'asc', true, function(rec_topic){
 			if(rec_topic!="no_recc_topic"){

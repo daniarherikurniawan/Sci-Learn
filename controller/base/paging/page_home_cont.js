@@ -53,8 +53,9 @@ module.exports = {
 
 						numOfLastPage = Math.ceil(numOfPost/limit);
 						
-						if (req.session.profile.connections != null){
+						if (req.session.profile.connections != null && req.session.profile.connections.length != 0){
 
+							console.log("has friends")
 					 		post_func.getReccPost(req.session.profile.connections,
 								'asc', true, function(rec_topic){
 									// console.log("@@@@@@@@@@@@@@@@@@@@@@@@"+rec_topic.length)
@@ -96,9 +97,9 @@ module.exports = {
 								});
 							});
 						}else{
-							req.session.rec_topic = null;
+							console.log("no friends")
 							res.render('index', {profile: req.session.profile, numOfPost : numOfPost,
-								posts: posts, rec_topic: null, numOfLastPage : numOfLastPage,
+								posts: posts, numOfLastPage : numOfLastPage,
 								numOfCurrPage : numOfCurrPage, limitPerPage : limit,
 							partials: {leftSide:'partial/leftSide', share_modal: 'modal/share_modal', 
 							edit_post_template: 'template/edit_post_template', create_group_modal: 'modal/create_group_modal',
