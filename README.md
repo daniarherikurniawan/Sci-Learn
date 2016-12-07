@@ -52,3 +52,19 @@ migrate database using dumb instead
 
 ###Coloring
 time: #618b8b
+
+#### advanced query
+User.model.findById( profile_id)
+	.populate({
+		path:'connections',
+		select:'name email date_created',
+		match: {'name': new RegExp(search_term, "i")},
+		options: {
+			sort: {'date_created': 'desc'},
+	    	limit: 8
+	    }
+	})
+	.exec(
+	function(err, results){
+		callback(results.connections)
+	});

@@ -233,10 +233,15 @@ module.exports = {
 			idForSearch.push(req.session.profile._id);
 
 			User.model.findById( profile_id)
-				.select('name email connections')
-				.populate('connections', null, {'name': new RegExp(search_term, "i")})
-				.sort({date_created: 'desc'})
-				.limit(limit)
+				.populate({
+					path:'connections',
+					select:'name email date_created',
+					match: {'name': new RegExp(search_term, "i")},
+					options: {
+						sort: {'date_created': 'desc'},
+				    	limit: 8
+				    }
+				})
 				.exec(
 				function(err, results){
 					callback(results.connections)
