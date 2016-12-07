@@ -12,7 +12,7 @@
       <script src="../../../javascripts/socket.io/update_socket.js"></script>
       <script src="../../../javascripts/bootstrap/bootstrap.min.js"></script>
       <link href="../../../stylesheets/styles.css" rel="stylesheet">
-      <link rel="shortcut icon" type="image/png" href="../../images/logo.jpg"/>
+      <link rel="shortcut icon" type="image/png" href="../../../images/logo.jpg"/>
     </head>
     <body onload="updateOnlinePanel('<%profile._id%>')">
       <div class="wrapper">
