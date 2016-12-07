@@ -2,8 +2,8 @@
   // alert("loli")
 </script>
 <div id="create_group_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-  <div ng-app="myApp" class="modal-dialog">
-    <div ng-app="myApp" class="modal-content">
+  <div  class="modal-dialog">
+    <div  class="modal-content">
       <div class="modal-header">
         <div class="row">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
@@ -13,9 +13,9 @@
         </div>
       </div>
       
-       <div ng-controller="modalGroupController" class="well row background_modal"> 
+       <div  class="well row background_modal"> 
 
-         <form  ng-submit="test()" method="" class="form-horizontal" role="form">
+         <form   method="" class="form-horizontal" role="form">
           
             <div class="row col-sm-12" style="padding:0px 0px">
               <div class="row" style=" margin-top: 0px;">

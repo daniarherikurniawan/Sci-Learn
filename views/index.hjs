@@ -6,13 +6,13 @@
   <title>Sci-Learn</title>
   <meta name="generator" content="Bootply" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link href="../../stylesheets/bootstrap.min.css" rel="stylesheet"> 
-  <link href="../../stylesheets/font-awesome.min.css" rel="stylesheet"> 
-      <script src="../../javascripts/jquery/jquery.min.js"></script>
-      <script src="../../javascripts/bootstrap/bootstrap.min.js"></script>
-      <script src="../../javascripts/socket.io/socket.io.js"></script>
-      <script src="../../javascripts/common/common.js"></script>
-      <link href="../../stylesheets/styles.css" rel="stylesheet">
+  <link href="../../../stylesheets/bootstrap.min.css" rel="stylesheet"> 
+  <link href="../../../stylesheets/font-awesome.min.css" rel="stylesheet"> 
+      <script src="../../../javascripts/jquery/jquery.min.js"></script>
+      <script src="../../../javascripts/bootstrap/bootstrap.min.js"></script>
+      <script src="../../../javascripts/socket.io/socket.io.js"></script>
+      <script src="../../../javascripts/common/common.js"></script>
+      <link href="../../../stylesheets/styles.css" rel="stylesheet">
       <link rel="shortcut icon" type="image/png" href="../../images/logo.jpg"/>
     </head>
     <body >

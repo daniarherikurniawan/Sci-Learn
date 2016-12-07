@@ -272,7 +272,16 @@ router.post('/addConnection', function(req, res, next) {
 /* POST search page. */
 router.get('/search/:page/:limit', function(req, res, next) {
 	if(req.session.profile != null){
-		page_search_cont.showSearchPage(req, res, req.params.limit, req.params.page);
+		page_search_cont.showSearchPage(req, res,'', req.params.limit, req.params.page);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+/* POST search page. */
+router.get('/search/:search_term/:page/:limit', function(req, res, next) {
+	if(req.session.profile != null){
+		page_search_cont.showSearchPage(req, res,req.params.search_term, req.params.limit, req.params.page);
 	}else{
 		res.redirect('/login');
 	}
@@ -281,7 +290,7 @@ router.get('/search/:page/:limit', function(req, res, next) {
 /* POST search page. */
 router.get('/search/:page', function(req, res, next) {
 	if(req.session.profile != null){
-		page_search_cont.showSearchPage(req, res, 15, req.params.page);
+		page_search_cont.showSearchPage(req, res,'', 15, req.params.page);
 	}else{
 		res.redirect('/login');
 	}
@@ -290,7 +299,7 @@ router.get('/search/:page', function(req, res, next) {
 /* POST search page. */
 router.get('/search', function(req, res, next) {
 	if(req.session.profile != null){
-		page_search_cont.showSearchPage(req, res, 15, 0);
+		page_search_cont.showSearchPage(req, res,req.query.search_term, 15, 0);
 	}else{
 		res.redirect('/login');
 	}
