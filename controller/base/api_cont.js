@@ -223,5 +223,7 @@ module.exports = {
 		idPost = req.body.idPost;
 		post_func.giveLike(idUser, idPost);		
 		res.send("likePost success");
-	}
+	},
+
+
 }

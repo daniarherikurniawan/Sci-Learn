@@ -32,5 +32,15 @@ router.get('/:id/:page/:limit', function(req, res, next) {
 		res.redirect('/login');
 	}
 });
+	
+router.post('/searchNewConnection', function(req, res, next) {
+	if(req.session.profile!=null){
+		connection_cont.searchNewConnection(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
 
 module.exports = router;

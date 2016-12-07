@@ -20,6 +20,7 @@ module.exports = {
 						]
 					}).sort({date_created: 'desc'})
 					.skip(limit*numOfCurrPage)
+					.limit(15)
 					.exec(
 					function(err, results){
 					res.render('search', {profile: req.session.profile, list_user: results, numOfPeople: results.length,

@@ -192,6 +192,31 @@ module.exports = {
 				});
 			}
 		});
-	}
+	},
 
+	searchNewConnection: function(req, callback){
+		search_term = req.body.search_term;
+		// callback(search_term)
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			limit = 8;
+			var idForSearch = req.session.profile.connections.slice();
+			idForSearch.push(req.session.profile._id);
+
+			User.model.find({
+					$and: [
+						{ name: new RegExp(search_term, "i")},
+						{_id: {$nin : idForSearch}}
+					]
+				})
+				.select('name email')
+				.sort({date_created: 'desc'})
+				.limit(limit)
+				.exec(
+				function(err, results){
+					callback(results)
+				});
+		}
+	}
 }
