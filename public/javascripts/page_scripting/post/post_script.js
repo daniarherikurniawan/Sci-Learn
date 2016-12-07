@@ -18,40 +18,35 @@
     }
   }
 
-
-  function initiateSharedThought(id,id_creator){
-  // alert(id+"  "+id_creator);
-  var http = new XMLHttpRequest();
-    http.open("POST", "/dataPost", true);
-    http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    var params = "id=" + window.encodeURIComponent(id);
-    http.send((params));
-    http.onload = function() {
-      if(http.responseText=="404"){
-        //error
-        alert(http.responseText);
-      }else{
-        post = JSON.parse(http.responseText);
-        // console.log(post);
-        // alert(JSON.stringify(post));
-        document.getElementById('sharedName').innerHTML = post.creator.name ; 
-        // alert("content :"+post.title)
-        document.getElementById('sharedContent').innerHTML = post.content;
-        document.getElementById('sharedKeywords').innerHTML = post.keywords;
-        document.getElementById('sharedTitle').innerHTML = post.title; 
-        $('#linkSharedImage').attr('href',"/profile/"+post.creator.email);
-        // alert($('#sourceSharedImage').attr('src'));
-        $('#sourceSharedImage').attr('src',"/images/"+post.creator.email+"/profile/"+post.creator.img_profile_name);
-        // alert($('#sourceSharedImage').attr('src'));
-        $('#editableShareFunction').attr("onsubmit", "return tryToShare('"+id+"','"+id_creator+"')");
-        $('#additionalThought').val("");
+    function initiateSharedThought(id,id_creator){
+    // alert(id);
+    var http = new XMLHttpRequest();
+      http.open("POST", "/dataPost", true);
+      http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      var params = "id=" + window.encodeURIComponent(id);
+      http.send((params));
+      http.onload = function() {
+        if(http.responseText=="404"){
+          //error
+          alert(http.responseText);
+        }else{
+          post = JSON.parse(http.responseText);
+          // console.log(post);
+          // alert(JSON.stringify(post));
+          // alert(post.content)
+          document.getElementById('sharedName').innerHTML = post.creator.name ; 
+          // document.getElementById('sharedContent').innerHTML = post.content;
+          document.getElementById('sharedKeywords').innerHTML = post.keywords;
+          document.getElementById('sharedTitle').innerHTML = post.title; 
+          $('#linkSharedImage').attr('href',"/profile/"+post.creator.email);
+          // alert($('#sourceSharedImage').attr('src'));
+          $('#sourceSharedImage').attr('src',"/images/"+post.creator.email+"/profile/"+post.creator.img_profile_name);
+          // alert($('#sourceSharedImage').attr('src'));
+          $('#editableShareFunction').attr("onsubmit", "return tryToShare('"+id+"','"+id_creator+"')");
+          $('#additionalThought').val("");
+        }
       }
-    }
-  // alert("ini "+$('#editableShareFunction').attr("onsubmit"));
-
-  
-  // alert("ini "+$('#editableShareFunction').attr("onsubmit"));
-}
+  }
 
 function test(str){
   alert(str);
@@ -93,6 +88,26 @@ function submitForm(){
     }
   }
   //567d12d5e5e456ea33c7fb94
+
+  function editSharePost(id,id_creator){
+    if (genuine == null){
+      var newValue = "cancelEditPost('"+id+"')";
+      $('#targetIdShare').attr('onclick',newValue);
+      var newAction = "/updateSharePost/"+id+"/"+id_creator;
+      //window.alert(newAction);
+      $('#needActionShare').attr('action',newAction);
+      document.getElementById('editableNameShare').innerHTML = document.getElementById(""+id+'editableName').textContent;
+      document.getElementById('editableImageShare').innerHTML = document.getElementById(""+id+'editableImage').innerHTML;
+      document.getElementById('editable_shared_post').innerHTML = document.getElementById(""+id+'_shared_post').innerHTML;
+      document.getElementById('editableContentShare').innerHTML =   document.getElementById(""+id+'editableContent').textContent;
+      genuine = document.getElementById(id).innerHTML;
+      var template = document.getElementById('templateEditShare').innerHTML;
+      document.getElementById(id).innerHTML = template;
+      init("editableContentShare",0);
+    }else{
+      window.alert("You should finish your current editing before edit another one! ")
+    }
+  }
 
   function cancelEditPost(id){
     document.getElementById(id).innerHTML = genuine  ;
@@ -419,13 +434,21 @@ function showShares(id3){
           $(buttonOnClick).css("color", "rgb(45, 99, 99)");
           idd="showComment"+id3;
           document.getElementById(idd).innerHTML =newLike;
-        }
-
-        
+        }        
       }
-
     }
 
+
+    function sendShare(id){
+      var http = new XMLHttpRequest();
+      http.open("POST", "/addShare", true);
+      http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      var params = "id=" + window.encodeURIComponent(id);        
+      http.send((params));
+      http.onload = function() {
+        alert(http.responseText);
+      }
+    }
 
 
 

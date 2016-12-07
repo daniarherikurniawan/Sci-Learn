@@ -333,3 +333,4 @@
 </script>
 
 <script src="../../../<%#page%>../<%/page%>javascripts/page_scripting/profile/profile_script.js"></script>
+<script src="../../../<%#page%>../<%/page%>javascripts/page_scripting/post/post_script.js"></script>
