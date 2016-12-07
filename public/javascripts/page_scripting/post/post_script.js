@@ -162,31 +162,31 @@ $(function() {
     if (e.which == 13 && ! e.shiftKey) {
       var id = this.name;
       var content = $(this).val();
+      if (content.length > 0){
+        var http = new XMLHttpRequest();
+        http.open("POST", "/addComment", true);
+        http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        var params = "id=" + window.encodeURIComponent(id)+ "&creator="+window.encodeURIComponent(id_creator)
+           +"&content="+window.encodeURIComponent(content); // probably use document.getElementById(...).value
 
-      var http = new XMLHttpRequest();
-      http.open("POST", "/addComment", true);
-      http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-      var params = "id=" + window.encodeURIComponent(id)+ "&creator="+window.encodeURIComponent(id_creator)
-         +"&content="+window.encodeURIComponent(content); // probably use document.getElementById(...).value
-
-         http.send((params));
-         http.onload = function() {
-          if(http.responseText=="404"){
-          //error
-          alert(http.responseText);
-        }else{
-          //alert(http.responseText);
-          var commentNumber = document.getElementById('comment'+id)
-          .innerHTML.replace('&nbsp; ','').replace(' ','');
-          // alert  ;
-          document.getElementById('comment'+id).innerHTML = "&nbsp; "+((+commentNumber)+1);
-          var name = "input[name="+id+"]";
-          $(name).attr("placeholder", "Your comment has been added ..");
-          $(name).val("");
-          showComments(id);
-        }
+           http.send((params));
+           http.onload = function() {
+            if(http.responseText=="404"){
+            //error
+            alert(http.responseText);
+          }else{
+            //alert(http.responseText);
+            var commentNumber = document.getElementById('comment'+id)
+            .innerHTML.replace('&nbsp; ','').replace(' ','');
+            // alert  ;
+            document.getElementById('comment'+id).innerHTML = "&nbsp; "+((+commentNumber)+1);
+            var name = "input[name="+id+"]";
+            $(name).attr("placeholder", "Your comment has been added ..");
+            $(name).val("");
+            showComments(id);
+          }
+         }
       }
-
     }
   });
 
