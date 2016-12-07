@@ -238,7 +238,6 @@ module.exports = {
 					select:'name email date_created',
 					match: {'name': new RegExp(search_term, "i")},
 					options: {
-						sort: {'date_created': 'desc'},
 				    	limit: 8
 				    }
 				})
