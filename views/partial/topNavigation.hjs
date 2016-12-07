@@ -8,7 +8,7 @@
 <form action="/search" method="get" class="navbar-form navbar-left" style="padding-top: 2px; margin-right:-30px;">
   <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
     <div>
-      <input id="search-connection" type="text" autocomplete="off" style="width: 100%" class="form-control" value="{{search_term}}" placeholder="Find a new connection.." name="search_term" id="srch-term">
+      <input id="search-connection" type="text" autocomplete="off" style="width: 100% ;     height: 30px;" class="form-control" value="{{search_term}}" placeholder="Find a new connection.." name="search_term" id="srch-term">
       <div id="search-connection" class="">
         <ul id="search-connection-result" class="dropdown-menu" style="left: 2px; min-width: 335px; top: 35px;">
         </ul>

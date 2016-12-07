@@ -218,5 +218,110 @@ module.exports = {
 					callback(results)
 				});
 		}
-	}
+	},
+
+	quickSearchWithinConnection: function(req, callback){
+		search_term = req.body.search_term;
+		profile_id = req.body.profile_id;
+		console.log('profile_id '+profile_id)
+		// callback(search_term)
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			limit = 8;
+			var idForSearch = req.session.profile.connections.slice();
+			idForSearch.push(req.session.profile._id);
+
+			User.model.findById( profile_id)
+				.select('name email connections')
+				.populate('connections', null, {'name': new RegExp(search_term, "i")})
+				.sort({date_created: 'desc'})
+				.limit(limit)
+				.exec(
+				function(err, results){
+					callback(results.connections)
+				});
+		}
+	},
+
+	fullSearchWithinConnection: function(req, res, userId, search_term, page, limit, isLimitedByParameter ){
+		User.model.findById(userId)
+		.exec(function(err, user){
+			if(err){
+				console.log(err);
+				res.send("404");
+			}else{
+				//res.send(user);
+				limit = parseInt(limit);
+				req.session.dataCurrentProfile = user;
+				User.model
+				.find({
+					$and: [
+						{ name: new RegExp(search_term, "i")},
+						{_id: {$in : req.session.dataCurrentProfile.connections}}
+					]
+				})
+				.skip(limit*page)
+				.limit(limit)
+				.exec(function(err, friends){
+					console.log(err);
+					User.model.find({
+							$and: [
+								{ name: new RegExp(search_term, "i")},
+								{_id: {$in : req.session.dataCurrentProfile.connections}}
+							]
+						}).count(function(err, count){
+							console.log("count!!! "+count)
+							limitPerPage = limit;
+							if(	(req.session.profile._id != userId) ){
+								numOfFriend = count;
+								numOfLastPage = Math.ceil(numOfFriend/limit);
+								
+								if(req.session.profile.connections.indexOf(userId) == -1){
+							// console.log("===========");
+									// not my friend
+									 res.render('profile', {profile: req.session.profile, 
+									 	friendProfile: req.session.dataCurrentProfile, numOfCurrPage : page, 
+									 	numOfLastPage : numOfLastPage, limitPerPage : limitPerPage,
+								 		popular_topic: req.session.popular_topic,
+									 	posts: null,  rec_topic : req.session.rec_topic, page:isLimitedByParameter,
+									 	list_user : friends, myFriend:false, showFriends:true, numOfFriend : numOfFriend,
+									 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+									 	about_user: 'partial/about_user',
+									 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
+									 	topNavigation:'partial/topNavigation'}});
+							 	}else{
+							// console.log("2");
+									 res.render('profile', {profile: req.session.profile, page:isLimitedByParameter,
+									 	friendProfile: req.session.dataCurrentProfile,   numOfLastPage : numOfLastPage,
+									 	rec_topic : req.session.rec_topic,  numOfCurrPage : page,
+									 	limitPerPage : limitPerPage, numOfFriend : numOfFriend,
+								 		popular_topic: req.session.popular_topic,
+									 	posts: null, list_user : friends, myFriend:true,  showFriends:true,
+									 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+									 	about_user: 'partial/about_user',
+									 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
+									 	topNavigation:'partial/topNavigation'}});
+							 	}
+							}else{
+							// this is my profile
+							numOfFriend = count;
+							numOfLastPage = Math.ceil(numOfFriend/limit);
+							 res.render('profile', {profile: req.session.profile, page:isLimitedByParameter,
+							 	myFriend:true, showFriends:true,  numOfCurrPage : page, numOfLastPage : numOfLastPage,
+							 	friendProfile: null, posts: null, limitPerPage : limitPerPage,
+								popular_topic: req.session.popular_topic,
+							 	list_user : friends, rec_topic : req.session.rec_topic, numOfFriend : numOfFriend,
+							 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+								about_user: 'partial/about_user',	
+							 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
+							 	topNavigation:'partial/topNavigation'}});	
+							}
+						}
+					);
+				});
+			}
+		});
+	},
+
 }

@@ -33,9 +33,29 @@ router.get('/:id/:page/:limit', function(req, res, next) {
 	}
 });
 	
+/* GET friends page. */
+router.get('/:id/:search_term/:page/:limit', function(req, res, next) {
+	if(req.session.profile!=null){
+		// console.log("limiiiit")
+		connection_cont.fullSearchWithinConnection(req, res, req.params.id, req.params.search_term, req.params.page, req.params.limit, true);
+	}else{
+		res.redirect('/login');
+	}
+});
+
 router.post('/searchNewConnection', function(req, res, next) {
 	if(req.session.profile!=null){
 		connection_cont.searchNewConnection(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+	
+router.post('/quickSearchWithinConnection', function(req, res, next) {
+	if(req.session.profile!=null){
+		connection_cont.quickSearchWithinConnection(req, function(result){
 			res.send(result);
 		});
 	}else{

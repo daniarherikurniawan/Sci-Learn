@@ -1,7 +1,7 @@
 $('input#search-connection').on('focusout', function(e) {
-	var delay=1000; //1 second
+	var delay=200; //1 second
 	setTimeout(function() {
-		// $('div#search-connection').removeClass('dropdown open');
+		$('div#search-connection').removeClass('dropdown open');
 	}, delay);
 });
 $('input#search-connection').on('keyup', function(e) {
@@ -18,9 +18,11 @@ $('input#search-connection').on('keyup', function(e) {
     	}else{
 			$('div#search-connection').addClass('dropdown open');
 	    	html_search_result = '';
-	    	for ( i = 0;i <=search_result.length - 2; i++) {
-	    		html_search_result += 
+	    	for ( i = 0;i <=search_result.length - 1 ; i++) {
+	    		if (i != 7){
+		    		html_search_result += 
 	    			"<li><a  href=\"/profile/"+search_result[i].email+"\">"+search_result[i].name+"</a></li>"
+	          	}
 	          };
 	          if(search_result.length == 8){
 	          	html_search_result += 

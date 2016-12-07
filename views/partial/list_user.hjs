@@ -1,10 +1,20 @@
-
+{{^search_page}}
+<div class="row">
+  <div class="col-md-11">
+    <input id="search-within-connection" type="text" autocomplete="off" style="width: 100%; border-color: #d6e7e8; margin: -6px 0 8px 2px;" class="form-control" value="{{search_term}}" placeholder="Find within connections.." name="search_term" id="srch-term" autofocus>
+    <div id="search-within-connection" class="">
+      <ul id="search-within-connection-result" class="dropdown-menu" style="width: 100%; top: -7px;">
+      </ul>
+    </div>
+  </div>
+  <div class=" input-group-btn">
+      <button id="search-within-connection" class="btn btn-default" style=" border-color: #d6e7e8;   margin: -6px;" ><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+</div>
+{{/search_page}}
 
 {{# list_user }}
 
-<script type="text/javascript">
-  // alert({{search_page}})
-</script>
     <div id="{{_id}}" class=" panel panel-default">
     <div class="row">
 
@@ -41,3 +51,4 @@
 
     </div>
 {{/ list_user }}
+<script src="../../../../../javascripts/page_scripting/find_connection/find_within_connection.js"></script>
