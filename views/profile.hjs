@@ -330,6 +330,12 @@
     show_activity = true;
   var profile_email = '<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>';
   var profile_id = '<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>'
+
+  var search_term = '<%search_term%>';
+  var search_term_url = '<%search_term%>';
+  if('<%search_term%>' != '')
+    search_term_url += '/'
+  // alert(search_term)
 </script>
 
 <script src="../../../<%#page%>../<%/page%>javascripts/page_scripting/profile/profile_script.js"></script>

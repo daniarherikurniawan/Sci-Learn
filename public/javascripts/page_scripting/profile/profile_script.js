@@ -67,18 +67,18 @@
           firstIndexPage = numOfLastPage - limitIndexPage;
 
       if(show_friends){
-        // show friends
+        // show friends / connections
         //add first page
         str +=  "<li";
         if(1 == numOfCurrPage)
             str += " class=\"active\"";
-        str += "><a href=\"/connections/"+profile_id+"/"+0+"/"+limitPerPage+"\">"+'First'+"</a></li>";
+        str += "><a href=\"/connections/"+profile_id+"/"+search_term_url+0+"/"+limitPerPage+"\">"+'First'+"</a></li>";
 
 
         //add first intermediate page
         if(numOfLastPage > 11 && 2 < firstIndexPage+1){
           intermediateIndex = Math.ceil(firstIndexPage/2);
-          str +=  "<li><a href=\"/connections/"+profile_id+"/"+(intermediateIndex)+"/"+limitPerPage+"\">"+"..."+"</a></li>";
+          str +=  "<li><a href=\"/connections/"+profile_id+"/"+search_term_url+(intermediateIndex)+"/"+limitPerPage+"\">"+"..."+"</a></li>";
         }
 
         lastIndexPage = firstIndexPage + limitIndexPage - 1;
@@ -88,13 +88,13 @@
           str +=  "<li";
           if(i == numOfCurrPage)
             str += " class=\"active\"";
-          str += "><a href=\"/connections/"+profile_id+"/"+(i-1)+"/"+limitPerPage+"\">"+(i)+"</a></li>";
+          str += "><a href=\"/connections/"+profile_id+"/"+search_term_url+(i-1)+"/"+limitPerPage+"\">"+(i)+"</a></li>";
         };
 
         //add last intermediate page
         if(numOfLastPage > 11 && (numOfLastPage-1) > lastIndexPage){
           intermediateIndex = Math.floor(lastIndexPage+((numOfLastPage - lastIndexPage) /2)-1);
-          str +=  "<li><a href=\"/connections/"+profile_id+"/"+(intermediateIndex)+"/"+limitPerPage+"\">"+"..."+"</a></li>";
+          str +=  "<li><a href=\"/connections/"+profile_id+"/"+search_term_url+(intermediateIndex)+"/"+limitPerPage+"\">"+"..."+"</a></li>";
         }
 
          //add last page
@@ -102,7 +102,7 @@
           str +=  "<li";
           if(numOfLastPage == numOfCurrPage)
               str += " class=\"active\"";
-          str += "><a href=\"/connections/"+profile_id+"/"+(numOfLastPage-1)+"/"+limitPerPage+"\">"+'Last'+"</a></li>";
+          str += "><a href=\"/connections/"+profile_id+"/"+search_term_url+(numOfLastPage-1)+"/"+limitPerPage+"\">"+'Last'+"</a></li>";
         }
       }else if(show_activity ){
         
