@@ -1,5 +1,8 @@
 $('input#search-connection').on('focusout', function(e) {
-	$('div#search-connection').removeClass('dropdown open');
+	var delay=1000; //1 second
+	setTimeout(function() {
+		$('div#search-connection').removeClass('dropdown open');
+	}, delay);
 });
 $('input#search-connection').on('keyup', function(e) {
     var http = new XMLHttpRequest();
