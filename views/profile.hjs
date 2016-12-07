@@ -11,7 +11,7 @@
         <script src="../../../<%#page%>../<%/page%>javascripts/socket.io/socket.io.js"></script>
         <script src="../../../<%#page%>../<%/page%>javascripts/socket.io/update_socket.js"></script>
         <script src="../../../<%#page%>../<%/page%>javascripts/bootstrap/bootstrap.min.js"></script>
-        <script src="../../javascripts/common/common.js"></script>
+        <script src="../../../javascripts/common/common.js"></script>
         <link href="../../../<%#page%>../<%/page%>stylesheets/styles.css" rel="stylesheet">
         <link rel="shortcut icon" type="image/png" href="../../../<%#page%>../<%/page%>images/logo.jpg"/>
       </head>
@@ -254,155 +254,6 @@
     </div>
   </div>
   </div>
-  <script>
-  // alert('<%showFriends%><%^showFriends%><%showFriends%><%/showFriends%>'== 'true' )
-    str = "";
-    var numOfLastPage = <%numOfLastPage%>;
-    var numOfCurrPage = <%numOfCurrPage%>+1;
-    // alert("numOfLastPage: "+numOfLastPage)
-        // alert(<%showFriends%>)
-    // just base condition 
-    if(numOfCurrPage <= numOfLastPage){
-      limitIndexPage = 10;
-      if(numOfLastPage < 10)
-        limitIndexPage = numOfLastPage-1;
-
-      firstIndexPage = 1; //numOfLastPage
-      if(numOfCurrPage > 5)
-        if( numOfCurrPage+5 <= numOfLastPage)
-          firstIndexPage = numOfCurrPage-5;
-        else 
-          firstIndexPage = numOfLastPage - limitIndexPage;
-
-      if('<%showFriends%><%^showFriends%><%showFriends%><%/showFriends%>'== 'true' ){
-        // show friends
-        //add first page
-        str +=  "<li";
-        if(1 == numOfCurrPage)
-            str += " class=\"active\"";
-        str += "><a href=\"/connections/<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>/"+0+"/<%limitPerPage%>\">"+'First'+"</a></li>";
-
-
-        //add first intermediate page
-        if(numOfLastPage > 11 && 2 < firstIndexPage+1){
-          intermediateIndex = Math.ceil(firstIndexPage/2);
-          str +=  "<li><a href=\"/connections/<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
-        }
-
-        lastIndexPage = firstIndexPage + limitIndexPage - 1;
-
-
-        for (var i = firstIndexPage + 1; i <= lastIndexPage; i++) {
-          str +=  "<li";
-          if(i == numOfCurrPage)
-            str += " class=\"active\"";
-          str += "><a href=\"/connections/<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>/"+(i-1)+"/<%limitPerPage%>\">"+(i)+"</a></li>";
-        };
-
-        //add last intermediate page
-        if(numOfLastPage > 11 && (numOfLastPage-1) > lastIndexPage){
-          intermediateIndex = Math.floor(lastIndexPage+((numOfLastPage - lastIndexPage) /2)-1);
-          str +=  "<li><a href=\"/connections/<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
-        }
-
-         //add last page
-        if(numOfLastPage > 1){
-          str +=  "<li";
-          if(numOfLastPage == numOfCurrPage)
-              str += " class=\"active\"";
-          str += "><a href=\"/connections/<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>/"+(numOfLastPage-1)+"/<%limitPerPage%>\">"+'Last'+"</a></li>";
-        }
-      }else if('<%showPerActivity%><%^showPerActivity%><%showPerActivity%><%/showPerActivity%>'== 'true' ){
-        
-        //show activity
-        //add first page
-        str +=  "<li";
-        if(1 == numOfCurrPage)
-            str += " class=\"active\"";
-        str += "><a href=\"/<%urlActivity%>/"+0+"/<%limitPerPage%>\">"+'First'+"</a></li>";
-        //add first intermediate page
-        if(numOfLastPage > 11 && 2 < firstIndexPage+1){
-          intermediateIndex = Math.ceil(firstIndexPage/2);
-          str +=  "<li><a href=\"/<%urlActivity%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
-        }
-
-        lastIndexPage = firstIndexPage + limitIndexPage - 1;
-
-
-        for (var i = firstIndexPage+1; i <= lastIndexPage ; i++) {
-          str +=  "<li";
-          if(i == numOfCurrPage)
-            str += " class=\"active\"";
-          str += "><a href=\"/<%urlActivity%>/"+(i-1)+"/<%limitPerPage%>\">"+(i)+"</a></li>";
-        };  
-        
-        //add last intermediate page
-        if(numOfLastPage > 11 && (numOfLastPage-1) > lastIndexPage){
-          intermediateIndex = Math.floor(lastIndexPage+((numOfLastPage - lastIndexPage) /2)-1);
-          str +=  "<li><a href=\"/<%urlActivity%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
-        }
-        
-         //add last page
-        if(numOfLastPage > 1){
-          str +=  "<li";
-          if(numOfLastPage == numOfCurrPage)
-              str += " class=\"active\"";
-          str += "><a href=\"/<%urlActivity%>/"+(numOfLastPage-1)+"/<%limitPerPage%>\">"+'Last'+"</a></li>";
-        }
-        // alert("hhhhh")
-      }else{
-        // show profile
-        //add first page
-        str +=  "<li";
-        if(1 == numOfCurrPage)
-            str += " class=\"active\"";
-        str += "><a href=\"/profile/<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>/"+0+"/<%limitPerPage%>\">"+'First'+"</a></li>";
-
-        //add first intermediate page
-        if(numOfLastPage > 11 && 2 < firstIndexPage+1){
-          intermediateIndex = Math.ceil(firstIndexPage/2);
-          str +=  "<li><a href=\"/profile/<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
-        }
-
-        lastIndexPage = firstIndexPage + limitIndexPage - 1;
-
-
-        for (var i = firstIndexPage+1; i <= lastIndexPage ; i++) {
-          str +=  "<li";
-          if(i == numOfCurrPage)
-            str += " class=\"active\"";
-          str += "><a href=\"/profile/<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>/"+(i-1)+"/<%limitPerPage%>\">"+(i)+"</a></li>";
-        };  
-        
-        //add last intermediate page
-        if(numOfLastPage > 11 && (numOfLastPage-1) > lastIndexPage){
-          intermediateIndex = Math.floor(lastIndexPage+((numOfLastPage - lastIndexPage) /2)-1);
-          str +=  "<li><a href=\"/profile/<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>/"+(intermediateIndex)+"/<%limitPerPage%>\">"+"..."+"</a></li>";
-        }
-        
-         //add last page
-        if(numOfLastPage > 1){
-          str +=  "<li";
-          if(numOfLastPage == numOfCurrPage)
-              str += " class=\"active\"";
-          str += "><a href=\"/profile/<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>/"+(numOfLastPage-1)+"/<%limitPerPage%>\">"+'Last'+"</a></li>";
-        }
-
-      }
-        document.getElementById("pagination").innerHTML = str;
-
-        lastResult = 0;
-        if(numOfCurrPage==numOfLastPage){
-          lastResult = '<%numOfPost%><%numOfFriend%>';
-        }
-        else{
-          lastResult = (numOfCurrPage*<%limitPerPage%>);
-        }
-
-        document.getElementById("statePage").innerHTML = "Showing "+(<%numOfCurrPage%>*<%limitPerPage%>+1)+" - "+lastResult+" results<p><b>Page "+numOfCurrPage+" of "+numOfLastPage+"<b></p>";
-    }
-  </script>
-
 
 <!--share modal-->
 <%> share_modal%>
@@ -456,9 +307,29 @@
   </body>
   </html>
 <!-- script references -->
-<script src="../../../<%#page%>../<%/page%>javascripts/page_scripting/profile/profile_script.js"></script>
 <script type="text/javascript">
   var myEmail = '<%profile.email%>'
   var id_creator = '<%profile._id%>';
+  var numOfLastPage = <%numOfLastPage%>;
+  var numOfCurrPage = <%numOfCurrPage%>+1;
+  var limitPerPage = <%limitPerPage%>;
+  lastResult = 0;
+
+  var urlActivity = '<%urlActivity%>' 
+  if(numOfCurrPage==numOfLastPage){
+    lastResult = '<%numOfPost%><%numOfFriend%>';
+  }
+  else{
+    lastResult = (numOfCurrPage*<%limitPerPage%>);
+  }
+  var show_friends = false;
+  var show_activity = false;
+  if('<%showFriends%><%^showFriends%><%showFriends%><%/showFriends%>'== 'true' )
+    show_friends = true;
+  if('<%showPerActivity%><%^showPerActivity%><%showPerActivity%><%/showPerActivity%>'== 'true')
+    show_activity = true;
+  var profile_email = '<%friendProfile.email%><%^friendProfile._id%><%profile.email%><%/friendProfile._id%>';
+  var profile_id = '<%friendProfile._id%><%^friendProfile._id%><%profile._id%><%/friendProfile._id%>'
 </script>
 
+<script src="../../../<%#page%>../<%/page%>javascripts/page_scripting/profile/profile_script.js"></script>

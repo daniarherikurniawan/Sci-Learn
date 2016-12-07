@@ -56,7 +56,7 @@
         lastResult = (numOfCurrPage*(limitPerPage+0));
       document.getElementById("pagination").innerHTML = str;
       document.getElementById("messageStatus").innerHTML = "Showing "+(((parseInt(numOfCurrPage)-1)*parseInt(limitPerPage))+1)+" - "+lastResult+" results";
-      document.getElementById("statePage").innerHTML = "<b>Page "+numOfCurrPage+" of "+numOfLastPage+"<b>"
+      document.getElementById("statePage").innerHTML = "<b>Page "+numOfCurrPage+" out of "+numOfLastPage+"<b>"
   }else{
       document.getElementById("messageStatus").innerHTML = "Showing "+numOfPeople+" results";
       document.getElementById("statePage").innerHTML = ""

@@ -556,6 +556,6 @@ init("texta",0);
 
        }else {
           document.getElementById("pagination").innerHTML = str;
-          document.getElementById("statePage").innerHTML = "Showing "+((numOfCurrPage-1)*limitPerPage+1)+" - "+lastResult+" posts<p><b>Page "+numOfCurrPage+" of "+numOfLastPage+"<b></p>";
+          document.getElementById("statePage").innerHTML = "Showing "+((numOfCurrPage-1)*limitPerPage+1)+" - "+lastResult+" posts<p><b>Page "+numOfCurrPage+" out of "+numOfLastPage+"<b></p>";
         }
   }
