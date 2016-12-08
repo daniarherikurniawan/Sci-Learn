@@ -1,7 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading"><!-- <a style=" margin-top: 10px;" href="#" class="pull-right"></a>  -->
   <h4 style="text-align: center;"> 
-
   <a href="/profile/{{creator.email}}{{^creator.name}}{{profile.email}}{{/creator.name}}" >
   <b>{{profile.name}}</b>
   </a>
