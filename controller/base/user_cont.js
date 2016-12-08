@@ -6,6 +6,17 @@ var general_func = require('../../controller/common/general_func');
 var User = require('../../dbhelper/user_model');
 var hash = require("../../public/javascripts/others/sha256.js");
 
+
+function initiateSession(req){
+  	// Setting
+  	req.session.setting = {
+  		show_online_chat: false,
+  		show_popular_post: true,
+  		show_recc_post: true
+  		};
+}
+
+
 module.exports = { 
 	isAccountExist: function(req, callback){
 		var email = req.body.email;
@@ -20,6 +31,7 @@ module.exports = {
 				}); return;
 	        } else {
         		req.session.profile = data;
+        		initiateSession(req);
 				callback({
 					status : "exist",
 					message : "null"
@@ -71,6 +83,7 @@ module.exports = {
 		        	var userObj = new User.model({token: token, name: name, email: email, password: password});
 		        	userObj.save();
 		        	req.session.profile = userObj;
+        			initiateSession(req);
 					callback({
 						status : "success",
 						message : null

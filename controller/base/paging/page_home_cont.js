@@ -4,6 +4,7 @@ var User = require('../../../dbhelper/user_model');
 var post_func = require('../../../controller/common/post_func');
 var page_home_func = require('../../../controller/common/paging/page_home_func');
 
+
 module.exports = { 
 	showHomePage: function(req, res, numOfCurrPage, limit){
 		
@@ -50,7 +51,7 @@ module.exports = {
 						res.send("404");
 					}else{
 						req.session.profile = user;
-
+						console.log('req.session.setting '+JSON.stringify(req.session.setting))
 						numOfLastPage = Math.ceil(numOfPost/limit);
 						
 						if (req.session.profile.connections != null && req.session.profile.connections.length != 0){
@@ -89,7 +90,7 @@ module.exports = {
 									req.session.rec_topic = rec_topic;
 									res.render('index', {profile: req.session.profile, numOfPost : numOfPost,
 										posts: posts, popular_topic: popular_topic, rec_topic: rec_topic, numOfLastPage : numOfLastPage,
-										numOfCurrPage : numOfCurrPage,limitPerPage : limit,
+										numOfCurrPage : numOfCurrPage,limitPerPage : limit,  setting: req.session.setting,
 									partials: {leftSide:'partial/leftSide', list_group:'partial/list_group', 
 									share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template',
 									post_partial: 'partial/post_partial', create_group_modal: 'modal/create_group_modal',
@@ -100,7 +101,7 @@ module.exports = {
 							console.log("no friends")
 							res.render('index', {profile: req.session.profile, numOfPost : numOfPost,
 								posts: posts, numOfLastPage : numOfLastPage,
-								numOfCurrPage : numOfCurrPage, limitPerPage : limit,
+								numOfCurrPage : numOfCurrPage, limitPerPage : limit, setting: req.session.setting,
 							partials: {leftSide:'partial/leftSide', share_modal: 'modal/share_modal', 
 							edit_post_template: 'template/edit_post_template', create_group_modal: 'modal/create_group_modal',
 							post_partial: 'partial/post_partial', list_group:'partial/list_group',

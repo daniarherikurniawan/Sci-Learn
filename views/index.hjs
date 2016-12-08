@@ -133,7 +133,6 @@
 <%> edit_post_template%>
 </body>
 </html>
-
 <script type="text/javascript">
   var id_creator = '<%profile._id%>';
   var myEmail = '<%profile.email%>'

@@ -40,6 +40,7 @@ var api = require('./routes/api_router');
 var user = require('./routes/user_router');  
 var group = require('./routes/group_router');  
 var connection = require('./routes/connection_router');
+var setting = require('./routes/setting_router');
 app.use('/', index);
 app.use('/agent', agent);
 app.use('/group', group);
@@ -47,6 +48,7 @@ app.use('/API', api);
 app.use('/profile', profile);
 app.use('/connections', connection);
 app.use('/user', user);
+app.use('/setting', setting);
 
 // GLOBAL VARIABLE
 global.response = require('./controller/base/response_cont');

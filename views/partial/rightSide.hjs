@@ -7,15 +7,17 @@
   <div class="list-group" style="padding: 0px 10px;" >
     <div class="checkbox">
     <label style="margin-bottom: 7px">
-      <input type="checkbox" data-toggle="toggle" >
+      
+      <input id='set-appearance-online-chat' type="checkbox"    data-toggle="toggle" >
       Appear Online
     </label>
     <label style="margin-bottom: 7px">
-      <input type="checkbox" checked data-toggle="toggle" >
+    
+      <input id='set-appearance-recc-post' type="checkbox"  data-toggle="toggle" >
       Recommended Posts
     </label>
-    <label style="margin-bottom: 0px">
-      <input type="checkbox" checked data-toggle="toggle" >
+    <label  style="margin-bottom: 0px">
+      <input id="set-appearance-popular-post" type="checkbox"  data-toggle="toggle" >
       Popular Posts
     </label>
   </div>
@@ -25,13 +27,13 @@
   </div>
 </div>
 
-
+<div id='appearance-online-chat'>
 <div class="panel-default" style="margin-top: 0px;">
   <div class="panel-heading "><h4><a href="#" ></a>Online Connections 
   <a id="numberOnlineUser" href="#" class=" pull-right fa fa-users" style="margin-top:3px; font-size:15px; color:#3b9798; " > {{profile.online_connection.length}} </a> 
   </h4>
   </div>
-  <div class="list-group" id="listOnlineConnection">
+  <div class="list-group" id="listOnlineConnection" style="    margin-bottom: 15px;">
     {{#profile.online_connection}}
     <a href="#" class="list-group-item">{{name}} <i class=" fa fa-circle-o-notch fa-spin pull-right" style="margin-top:2px;; color:#3b9798"></i></a>
 
@@ -40,12 +42,13 @@
   <div class="row" style="height:13%">
   </div>
 </div>
+</div>
 
 
-
+<div id='appearance-recc-post'>
 {{^isReccPostPage}}
 
- <div class="panel panel-default" style="    margin-top: -6px;">
+ <div class="panel panel-default" style="">
 <div class="panel-heading text-center">
 <h4> <a href="/recommendedPost">Recommended Posts</a></h4>
 </div>
@@ -129,10 +132,14 @@
 </div>
 
 {{/isReccPostPage}}
+</div>
 
-
+<div id="appearance-popular-post">
+<!-- showed up on other page exect Popular post page -->
 {{^isPopularPostPage}}
- <div class="panel panel-default" style="margin-top: {{^isReccPostPage}}15px{{/isReccPostPage}} {{#isReccPostPage}}-5px{{/isReccPostPage}};">
+
+<div class="panel panel-default" style="margin-top: {{^isReccPostPage}}15px{{/isReccPostPage}} {{#isReccPostPage}}-5px{{/isReccPostPage}};">
+
 <div class="panel-heading text-center">
 <h4><a href="/popularPost">Popular Posts</a></h4>
 </div>
@@ -161,7 +168,7 @@
       </a>
     </div>
 
-  <div class="carousel-inner" style="margin-top: -46px;" role="listbox">
+  <div  class="carousel-inner" style="margin-top: -46px;" role="listbox">
 
     {{#popular_topic}}
 
@@ -186,6 +193,7 @@
               <div class="col-sm-11" style="padding-left:0px">
                 <a href="/profile/{{creator.email}}"><h5 style="margin-bottom: 0px;" ><b >
                   {{creator.name}}</b></h5> </a>
+
 
                 </div>
                 <div class="col-sm-1 " style="margin-top: 0px;padding-right: 0px;padding-left: 27px;">
@@ -217,5 +225,67 @@
     <!-- Left and right controls -->
 </div>
 {{/isPopularPostPage}}
+</div>  
 
 
+<script type="text/javascript">
+  
+  
+  if({{setting.show_online_chat}}){
+    $('input#set-appearance-online-chat').click()
+  }else{
+    $('div#appearance-online-chat').hide()
+  }
+
+  if({{setting.show_recc_post }}){
+    $('input#set-appearance-recc-post').click();
+  } else{
+    $('div#appearance-recc-post').hide()
+  }
+
+  if({{setting.show_popular_post }}){
+    $('input#set-appearance-popular-post').click();
+  } else{
+    $('div#appearance-popular-post').hide()
+  }
+
+$('input#set-appearance-recc-post').on('change', function(e){
+    if($('input#set-appearance-recc-post').prop('checked'))
+      $('div#appearance-recc-post').show()
+    else
+      $('div#appearance-recc-post').hide()
+
+      var http = new XMLHttpRequest();
+      http.open("POST", "/setting/setAppearanceReccPost", true);
+      http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      http.send();
+      http.onload = function() {
+        var result = JSON.parse(http.responseText);
+        // alert(result.show_popular_post)
+      }
+  })
+$('input#set-appearance-popular-post').on('change', function(e){
+    if($('input#set-appearance-popular-post').prop('checked'))
+      $('div#appearance-popular-post').show()
+    else
+      $('div#appearance-popular-post').hide()
+
+      var http = new XMLHttpRequest();
+      http.open("POST", "/setting/setAppearancePopularPost", true);
+      http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      http.send();
+      http.onload = function() {
+        var result = JSON.parse(http.responseText);
+        // alert(result.show_popular_post)
+      }
+  })
+// not implemented yet
+  $('div#appearance-online-chat').hide()
+
+  $('input#set-appearance-online-chat').on('change', function(e){
+    if($('input#set-appearance-online-chat').prop('checked'))
+      $('div#appearance-online-chat').show()
+    else
+      $('div#appearance-online-chat').hide()
+  })
+</script>
