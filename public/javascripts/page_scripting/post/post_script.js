@@ -234,7 +234,7 @@ function showComments(id3){
             "-webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;\"src=\"/images/"+
             comments[i].creator.email+"/profile/"+comments[i].creator.img_profile_name+"\">"+
             "</div>"+
-            "<div class=\"col-sm-10 pull-left\" style=\"padding: 0 0 0px 0px; margin: 0 0 0px 10px\">"+
+            "<div class=\"col-sm-10 pull-left\" style=\"padding: 0 0 0px 0px; margin: 0 0 0px 10px; width: 82%;\">"+
             "<a href=\"/profile/"+
             comments[i].creator.email+"\"><b>"+
             comments[i].creator.name+"</b></a>"+
@@ -242,7 +242,7 @@ function showComments(id3){
 
             if(comments[i].creator.email == myEmail){
 
-              newComments += "<div class=\"col-sm-1 \" style=\"margin-top: 0px;padding-right: 0px;padding-top: 0px; padding-left: 30px;\">"+
+              newComments += "<div class=\"col-sm-1 \" style=\"margin-top: 0px;padding-right: 0px;padding-top: 0px; float: left;\">"+
               " <li class=\"dropdown\" style=\"list-style-type: none;  text-align: right;\">"+
               "<a href=\"\" data-toggle=\"dropdown\"><i class=\"glyphicon glyphicon-chevron-down\" style=\""+"top:1px; font-size: 12px;\"></i></a>"+
               "<ul class=\"dropdown-menu\" style=\"left:-75px; top:16px;    min-width: 103px; \">"+
@@ -255,7 +255,7 @@ function showComments(id3){
             }
 
 
-            newComments += "<div class=\"col-sm-11 pull-left\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
+            newComments += "<div class=\"col-sm-10 pull-left\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
             "margin: 0 0 0 10px\">"+
             comments[i].content+"</div>"+
             "</div>"+
@@ -341,7 +341,7 @@ function showLikes(id3){
             likes[i].name+"</b></a>"+
             "</div>";
 
-            newLike += "<div class=\"col-sm-11 pull-left\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
+            newLike += "<div class=\"col-sm-10 pull-left\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
             "margin: 0 0 0 10px\">"+
             likes[i].occupation+"</div>"+
             "</div>"+
@@ -418,7 +418,7 @@ function showShares(id3){
             likes[i].name+"</b></a>"+
             "</div>";
 
-            newLike += "<div class=\"col-sm-11 pull-left\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
+            newLike += "<div class=\"col-sm-10 pull-left\" style=\"padding: 0 0 0px 0px; overflow-wrap: break-word; "+
             "margin: 0 0 0 10px\">"+
             likes[i].occupation+"</div>"+
             "</div>"+
