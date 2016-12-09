@@ -362,6 +362,12 @@ small.text-muted {
   background: rgb(199, 229, 231); /* Gecko Browsers */
 }
 
-
+#close{
+    display:block;
+    float:right;
+    width:30px;
+    height:29px;
+    background:url(../images/close_icon.png) no-repeat center center;
+}
 
 /*Style for search result*/

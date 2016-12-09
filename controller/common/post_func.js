@@ -110,7 +110,7 @@ module.exports = {
 		    }); 
 		});
 	},
-
+	
 	givePost: function(idUser, content, title, keywords){
 		var postObj = new Post.model({creator: idUser, content: content, title: title, keywords: keywords});
 	  	postObj.save();

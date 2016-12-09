@@ -134,8 +134,9 @@
 </body>
 </html>
 <script type="text/javascript">
+  // alert('<%profile._id%>')
   var id_creator = '<%profile._id%>';
-  var myEmail = '<%profile.email%>'
+  var myEmail = '<%profile.email%>';
   var numOfLastPage = <%numOfLastPage%>;
   var numOfCurrPage = <%numOfCurrPage%>+1;
   var limitPerPage = <%limitPerPage%>;

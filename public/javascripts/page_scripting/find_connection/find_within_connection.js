@@ -5,6 +5,7 @@ $('input#search-within-connection').on('focusout', function(e) {
     $('div#search-within-connection').removeClass('dropdown open');
   }, delay);
 });
+
 $('input#search-within-connection').on('keyup', function(e) {
     search_term = $('input#search-within-connection').val();
     if (e.which == 13 && ! e.shiftKey) {

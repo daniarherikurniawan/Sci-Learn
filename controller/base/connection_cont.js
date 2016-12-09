@@ -251,6 +251,34 @@ module.exports = {
 		}
 	},
 
+	quickSearchNewMemberGroup: function(req, callback){
+		search_term = req.body.search_term;
+		profile_id = req.body.profile_id;
+		console.log('profile_id '+profile_id)
+		// callback(search_term)
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			limit = 8;
+			var idForSearch = req.session.profile.connections.slice();
+			idForSearch.push(req.session.profile._id);
+
+			User.model.findById( profile_id)
+				.populate({
+					path:'connections',
+					select:'name email date_created img_profile_name',
+					match: {'name': new RegExp(search_term, "i")},
+					options: {
+				    	limit: 8
+				    }
+				})
+				.exec(
+				function(err, results){
+					callback(results.connections)
+				});
+		}
+	},
+
 	fullSearchWithinConnection: function(req, res, userId, search_term, page, limit, isLimitedByParameter ){
 		User.model.findById(userId)
 		.exec(function(err, user){

@@ -13,7 +13,6 @@
         //error
         alert(http.responseText);
       }else{
-      
       }
     }
   }

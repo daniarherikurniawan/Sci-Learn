@@ -63,4 +63,13 @@ router.post('/quickSearchWithinConnection', function(req, res, next) {
 	}
 });
 
+router.post('/quickSearchNewMemberGroup', function(req, res, next) {
+	if(req.session.profile!=null){
+		connection_cont.quickSearchNewMemberGroup(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
 module.exports = router;
