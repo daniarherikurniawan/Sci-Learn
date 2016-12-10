@@ -2,7 +2,7 @@
   function tryToShare(id_post, original_creator){
     // alert("ahooy");
     var content =  $('#additionalThought').val();
-
+    console.log("tryToshare wooy")
     var http = new XMLHttpRequest();
     http.open("POST", "/addShare", true);
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -496,25 +496,25 @@ function showShares(id3){
       };
     }
     function init(id_str, delay) {
-  var delay=(+delay); //1 seconds
-  setTimeout(function(){ var text = document.getElementById(id_str);
-    function resize () {
-      text.style.height = 'auto';
-      text.style.height = text.scrollHeight+'px';
-    }
-    /* 0-timeout to get the already changed text */
-    function delayedResize () {
-      window.setTimeout(resize, 0);
-    }
-    observe(text, 'change',  resize);
-    observe(text, 'cut',     delayedResize);
-    observe(text, 'paste',   delayedResize);
-    observe(text, 'drop',    delayedResize);
-    observe(text, 'keydown', delayedResize);
+      var delay=(+delay); //1 seconds
+      setTimeout(function(){ var text = document.getElementById(id_str);
+        function resize () {
+          text.style.height = 'auto';
+          text.style.height = text.scrollHeight+'px';
+        }
+        /* 0-timeout to get the already changed text */
+        function delayedResize () {
+          window.setTimeout(resize, 0);
+        }
+        observe(text, 'change',  resize);
+        observe(text, 'cut',     delayedResize);
+        observe(text, 'paste',   delayedResize);
+        observe(text, 'drop',    delayedResize);
+        observe(text, 'keydown', delayedResize);
 
-    text.focus();
-    text.select();
-    resize();
-  }, delay); 
+        text.focus();
+        text.select();
+        resize();
+      }, delay); 
 
 }
