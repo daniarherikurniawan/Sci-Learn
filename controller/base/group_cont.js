@@ -20,9 +20,10 @@ module.exports = {
 		})
 	},
 
-    get_all: function(res){
+    get_all_list: function(user_id, res){
         Group.object
             .find()
+            .select('group_name')
             .exec(function(err, all_Group){
 				if (err) {
 					response.setFailedResponse(res, err);

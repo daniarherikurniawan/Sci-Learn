@@ -4,13 +4,11 @@
      onclick=""  data-toggle="modal" href="#create_group_modal" 
     > <small><span class="glyphicon glyphicon-plus"></span></small> New</a> <h4>Groups</h4>
   </div>
-  <div class="panel-body">
-    <div class="list-group">
-      <a href="http://bootply.com/tagged/modal" class="list-group-item">Distributed Computing</a>
-      <a href="http://bootply.com/tagged/datetime" class="list-group-item">Machine Learning</a>
-      <a href="http://bootply.com/tagged/datatable" class="list-group-item">Artificial Intelligent</a>
+  <div  class="panel-body">
+    <div id="group_list" class="list-group" style="margin-bottom: 0px;">
     </div>
   </div>
 </div>
 
 {{>create_group_modal}}
+<script src="../../../javascripts/page_scripting/group/group_list.js"></script>

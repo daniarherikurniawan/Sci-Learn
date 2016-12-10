@@ -3,10 +3,19 @@ var router = express.Router();
 
 var group_cont = require('../controller/base/group_cont');
 
-/* GET home page. */
+/* POST home page. */
 router.post('/create', function(req, res, next) {
 	if(req.session.profile!=null){	
 		group_cont.createGroup(req.body, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+/* POST home page. */
+router.post('/getList', function(req, res, next) {
+	if(req.session.profile!=null){	
+		group_cont.get_all_list(req.body, res);
 	}else{
 		res.redirect('/login');
 	}
