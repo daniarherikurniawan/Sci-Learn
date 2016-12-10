@@ -36,7 +36,7 @@
           $('#linkSharedImage').attr('href',"/profile/"+post.creator.email);
           // alert($('#sourceSharedImage').attr('src'));
           $('#sourceSharedImage').attr('src',"/images/"+post.creator.email+"/profile/"+post.creator.img_profile_name);
-          // alert($('#sourceSharedImage').attr('src'));
+          
           $('input#editableShareFunction').attr("onclick", "return tryToShare('"+id+"','"+id_creator+"')");
           $('#additionalThought').val("");
           $('#additionalThought').first().focus();
