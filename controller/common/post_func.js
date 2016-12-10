@@ -123,6 +123,47 @@ module.exports = {
 	    });
 	},
 
+	giveShareWithCallback: function(idUser, idPost, idOriginalCreator, content, callback){
+		Post.object.findById(idPost,
+		    function(err, post){
+		    post.share.push(idUser);
+		    post.post_index = calculatePostIndexFunc( post.share.length,  
+		      post.like.length, post.comments.length );
+		    post.id_unique_users = general_func.addUniqueObj(idUser, post.id_unique_users);
+		    post.save();
+
+		    var postObj = new Post.model({creator: idUser, 
+		      content: content, post_shared: idPost, original_creator:idOriginalCreator});
+		    postObj.save();
+		    User.object.findById(idUser)
+		    .exec(function(err, user){
+		     	 user.id_share_posts.push(postObj._id);
+		      	user.id_unique_posts = general_func.addUniqueObj(postObj._id, user.id_unique_posts);
+		      	user.activeness = calculateUserActivenessFunc(user.id_user_posts.length, user.id_share_posts.length, 
+		        user.id_liked_posts.length, user.id_commented_posts.length, user.connections.length);
+		      	user.save(function (err, p) {
+			          callback("success");
+			    		return;
+		          });
+		    }); 
+		});
+	},
+	
+	givePostWithCallback: function(idUser, content, title, keywords, callback){
+		var postObj = new Post.model({creator: idUser, content: content, title: title, keywords: keywords});
+	  	postObj.save();
+	  	User.object.findById(idUser, function(err, user){
+		    user.id_user_posts.push(postObj._id);
+		    user.activeness = calculateUserActivenessFunc(user.id_user_posts.length, user.id_share_posts.length, 
+		      user.id_liked_posts.length, user.id_commented_posts.length, user.connections.length);
+		    user.id_unique_posts = general_func.addUniqueObj(postObj._id, user.id_unique_posts);
+		    user.save(function (err, p) {
+			          callback("success");
+			    		return;
+		          });
+	    });
+	},
+
 	getReccPost: function(connections, sorting_type, isCreatorPopulated, callback){
 		page_home_func.getPostIdForHome(connections, 0, 0, false, 
 		    function(arrayPostId, numOfPost){

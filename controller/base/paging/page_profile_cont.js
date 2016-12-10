@@ -66,31 +66,34 @@ module.exports = {
 							
 							var idForProfile = req.session.profile.connections.slice();;
 							idForProfile.push(req.session.profile._id);
-
+							console.log('req.session.dataCurrentProfile._id : '+req.session.dataCurrentProfile._id)
+							console.log('idForProfile : '+idForProfile)
 							if (idForProfile.indexOf(""+req.session.dataCurrentProfile._id) != -1){
-						 	res.render('profile', {profile: req.session.profile,
-						 		 rec_topic : req.session.rec_topic, page:isLimitedByParameter,
-						 		friendProfile: req.session.dataCurrentProfile, numOfPost:numOfPost,
-						 		posts: posts, myFriend : true,numOfCurrPage : page, 
-						 		popular_topic: req.session.popular_topic, setting: req.session.setting,
-						 		numOfLastPage : numOfLastPage, limitPerPage:limit,
-						 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
-						 		post_partial: 'partial/post_partial',about_user: 'partial/about_user',	
-					 			list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
-						 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
-						 	}});	
+								console.log("MY FRIEND!!!")
+							 	res.render('profile', {profile: req.session.profile,
+							 		 rec_topic : req.session.rec_topic, page:isLimitedByParameter,
+							 		friendProfile: req.session.dataCurrentProfile, numOfPost:numOfPost,
+							 		posts: posts, myFriend : true,numOfCurrPage : page, 
+							 		popular_topic: req.session.popular_topic, setting: req.session.setting,
+							 		numOfLastPage : numOfLastPage, limitPerPage:limit,
+							 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
+							 		post_partial: 'partial/post_partial',about_user: 'partial/about_user',	
+						 			list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
+							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
+							 	}});	
 
 							}else{
-						 	res.render('profile', {profile: req.session.profile, numOfCurrPage : page, 
-						 		numOfLastPage : numOfLastPage,  limitPerPage:limit,  numOfPost:numOfPost,
-						 		friendProfile: req.session.dataCurrentProfile, page:isLimitedByParameter,
-						 		popular_topic: req.session.popular_topic, setting: req.session.setting,
-						 		posts: posts, myFriend :  false,  rec_topic : req.session.rec_topic,
-						 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
-						 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
-					 			list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
-						 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
-						 	}});	
+								console.log("NOT MY FRIEND!!!")
+							 	res.render('profile', {profile: req.session.profile, numOfCurrPage : page, 
+							 		numOfLastPage : numOfLastPage,  limitPerPage:limit,  numOfPost:numOfPost,
+							 		friendProfile: req.session.dataCurrentProfile, page:isLimitedByParameter,
+							 		popular_topic: req.session.popular_topic, setting: req.session.setting,
+							 		posts: posts, myFriend :  false,  rec_topic : req.session.rec_topic,
+							 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
+							 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+						 			list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
+							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
+							 	}});	
 
 							}
 						}

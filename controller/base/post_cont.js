@@ -6,7 +6,7 @@ var general_func = require('../../controller/common/general_func');
 
 module.exports = { 
 	getPost: function(req, res){
-		Post.model
+		Post.object
 			.findById(req.body.id)
 			.populate({
 				  path: 'creator',
@@ -41,9 +41,9 @@ module.exports = {
 	},
 
 	getComment: function(req, res){
-		Post.model
+		Post.object
 			.findById(req.body.id, function(err, post){
-			Post.model
+			Post.object
 				.populate(post.comments, {path: 'creator' }, 
 					function (err,comments){
 				if(err){
@@ -57,9 +57,9 @@ module.exports = {
 	},
 
 	getLike: function(req, res){
-		Post.model.
+		Post.object.
 			findById(req.body.id, function(err, post){
-				Post.model
+				Post.object
 					.populate(post, {path: 'like' }, 
 					function (err,post){
 					if(err){
@@ -73,9 +73,9 @@ module.exports = {
 	},
 
 	getShare: function(req, res){
-		Post.model
+		Post.object
 			.findById(req.body.id, function(err, post){
-			Post.model
+			Post.object
 				.populate(post, {path: 'share' }, function (err,post){
 				if(err){
 					console.log(err);
@@ -88,7 +88,7 @@ module.exports = {
 	},
 
 	addLike: function(req, res){
-		Post.model.findById(req.body.id,
+		Post.object.findById(req.body.id,
 				function(err, post){
 			if(err){
 				console.log(err);
@@ -98,7 +98,7 @@ module.exports = {
 				if(index != -1){
 					post_func.removeLike(req.session.profile._id, req.body.id);
 
-					User.model.findById(req.session.profile._id)
+					User.object.findById(req.session.profile._id)
 					.exec(function(err, user){
 						req.session.profile = user;
 						res.send("dislike");
@@ -106,7 +106,7 @@ module.exports = {
 				}else{
 					post_func.giveLike(req.session.profile._id, req.body.id);
 					
-					User.model.findById(req.session.profile._id)
+					User.object.findById(req.session.profile._id)
 					.exec(function(err, user){
 						req.session.profile = user;
 						res.send("like");
@@ -120,7 +120,7 @@ module.exports = {
         console.log("req.body.creator : "+req.body.creator);
 		post_func.giveComment(req.body.creator, req.body.id, req.body.content);
 
-		User.model.findById(req.body.creator)
+		User.object.findById(req.body.creator)
 		.exec(function(err, user){
 			req.session.profile = user;
 			res.send("success!");
@@ -156,7 +156,7 @@ module.exports = {
 		    }); 
 		});
 
-		User.model.findById(req.session.profile._id)
+		User.object.findById(req.session.profile._id)
 		.exec(function(err, user){
 			req.session.profile = user;
 			res.send("success");
@@ -164,22 +164,22 @@ module.exports = {
 	},
 
 	addShare: function(req, res){
-		post_func.giveShare(req.session.profile._id, req.body.id_post, req.body.original_creator, req.body.content);
-
-		User.model.findById(req.session.profile._id)
-		.exec(function(err, user){
-			req.session.profile = user;
-	  		res.redirect('back');
-		});	
+		post_func.giveShareWithCallback(req.session.profile._id, req.body.id_post, req.body.original_creator, req.body.content, function(){
+			User.object.findById(req.session.profile._id)
+			.exec(function(err, user){
+				req.session.profile = user;
+		  		res.redirect('back');
+			});	
+		});
 	},
 
 	addPost: function(req, res){
-		post_func.givePost(req.session.profile._id, req.body.content, req.body.title, req.body.keywords);
-		
-		User.model.findById(req.session.profile._id, function(err, user){
-			req.session.profile = user;	 
-		  	res.redirect('back');
-	  	});
+		post_func.givePostWithCallback(req.session.profile._id, req.body.content, req.body.title, req.body.keywords, function(){
+			User.object.findById(req.session.profile._id, function(err, user){
+				req.session.profile = user;	 
+			  	res.redirect('back');
+		  	});
+		});
 	},
 
 	deletePost: function(req, res){
@@ -283,7 +283,7 @@ module.exports = {
 		});
 		
 
-		User.model.findById(req.session.profile._id, function(err, user){
+		User.object.findById(req.session.profile._id, function(err, user){
 			req.session.profile = user;	  			
 			res.send(req.body.id);
 	  	});
@@ -295,7 +295,7 @@ module.exports = {
 			var title = req.body.title;
 			var keywords = req.body.keywords;
 			var content = req.body.content;
-			Post.model.findOneAndUpdate({_id: req.params.id},
+			Post.object.findOneAndUpdate({_id: req.params.id},
 				{title: title , keywords:keywords , content: content}, 
 				{upsert:true}, function(err, post){
 				if(err) console.log(err);
@@ -309,7 +309,7 @@ module.exports = {
 		if(req.params.creator == req.session.profile._id && 
 			general_func.isExistAtUniqueObj(req.params.id, req.session.profile.id_unique_posts)){
 			var content = req.body.content;
-			Post.model.findOneAndUpdate({_id: req.params.id},
+			Post.object.findOneAndUpdate({_id: req.params.id},
 				{content: content}, 
 				{upsert:true}, function(err, post){
 				if(err) console.log(err);

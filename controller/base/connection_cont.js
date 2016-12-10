@@ -5,7 +5,7 @@ var connection_func = require('../../controller/common/connection_func');
 
 module.exports = { 
 	updateOnlineConnection: function(req, res){
-		User.model
+		User.object
 			.find({_id : {$in : [req.session.profile._id, req.body.id] } }, 
 				function(err, user){
 		if(err){
@@ -56,7 +56,7 @@ module.exports = {
 					}
 				}
 			}
-			User.model
+			User.object
 				.populate(user, {path: 'online_connection' }, 
 					function (err,user){	
 					if(err){
@@ -75,7 +75,7 @@ module.exports = {
 
 	removeConnection: function(req, res){
 		id = req.params.id;
-		User.model
+		User.object
 			.findById(req.session.profile._id, function(err, user){
 				if(err){
 					console.log(err);
@@ -84,7 +84,7 @@ module.exports = {
 					index = user.connections.indexOf(id);
 					if(index != -1){
 						user.connections.splice(index,1);
-						User.model
+						User.object
 							.findById(id, function(err, userx){
 							index = userx.connections.indexOf(req.session.profile._id);
 							if(index != -1)
@@ -104,7 +104,7 @@ module.exports = {
 
 					var idForHome = req.session.profile.connections.slice();;
 					idForHome.push(req.session.profile._id);
-					Post.model
+					Post.object
 						.findOne({$and: [{original_creator: null}, {creator: {$in : idForHome}}]})
 						.sort({post_index: 'desc'})
 						.populate('creator')
@@ -119,16 +119,17 @@ module.exports = {
 	addConnection: function( req, res){
 		connection_func.addConnection(req.session.profile._id, req.body.id, 
 		function(feedback){
-			User.model.findById(req.session.profile._id)
+			User.object.findById(req.session.profile._id)
 			.exec(function(err, user){
 				req.session.profile = user;
+				console.log("session connections : "+user.connections)
 				res.send(req.body.id);
 			});	
 		});
 	},
 
 	showConnectionsPage: function(req, res, userId, page, limit, isLimitedByParameter ){
-		User.model.findById(userId)
+		User.object.findById(userId)
 		.exec(function(err, user){
 			if(err){
 				console.log(err);
@@ -137,7 +138,7 @@ module.exports = {
 				//res.send(user);
 				limit = parseInt(limit);
 				req.session.dataCurrentProfile = user;
-				User.model
+				User.object
 				.find({_id: {$in : req.session.dataCurrentProfile.connections}})
 				.skip(limit*page)
 				.limit(limit)
@@ -207,7 +208,7 @@ module.exports = {
 			var idForSearch = req.session.profile.connections.slice();
 			idForSearch.push(req.session.profile._id);
 
-			User.model.find({
+			User.object.find({
 					$and: [
 						{ name: new RegExp(search_term, "i")},
 						{_id: {$nin : idForSearch}}
@@ -231,11 +232,7 @@ module.exports = {
 		if(search_term == null || search_term == '')
 			callback([]);
 		else{
-			limit = 8;
-			var idForSearch = req.session.profile.connections.slice();
-			idForSearch.push(req.session.profile._id);
-
-			User.model.findById( profile_id)
+			User.object.findById( profile_id)
 				.populate({
 					path:'connections',
 					select:'name email date_created',
@@ -259,11 +256,7 @@ module.exports = {
 		if(search_term == null || search_term == '')
 			callback([]);
 		else{
-			limit = 8;
-			var idForSearch = req.session.profile.connections.slice();
-			idForSearch.push(req.session.profile._id);
-
-			User.model.findById( profile_id)
+			User.object.findById( profile_id)
 				.populate({
 					path:'connections',
 					select:'name email date_created img_profile_name',
@@ -280,7 +273,7 @@ module.exports = {
 	},
 
 	fullSearchWithinConnection: function(req, res, userId, search_term, page, limit, isLimitedByParameter ){
-		User.model.findById(userId)
+		User.object.findById(userId)
 		.exec(function(err, user){
 			if(err){
 				console.log(err);
@@ -289,7 +282,7 @@ module.exports = {
 				//res.send(user);
 				limit = parseInt(limit);
 				req.session.dataCurrentProfile = user;
-				User.model
+				User.object
 				.find({
 					$and: [
 						{ name: new RegExp(search_term, "i")},
@@ -300,7 +293,7 @@ module.exports = {
 				.limit(limit)
 				.exec(function(err, friends){
 					console.log(err);
-					User.model.find({
+					User.object.find({
 							$and: [
 								{ name: new RegExp(search_term, "i")},
 								{_id: {$in : req.session.dataCurrentProfile.connections}}

@@ -77,6 +77,10 @@ function updateListProfPic(){
   document.getElementById('member_list').innerHTML = list_profpic;
 }
 
+function createNewGroup(){
+  $('input#close-modal-create-new-group').click();
+}
+
 // check if an element exists in array using a comparer function
 // comparer : function(currentElement)
 Array.prototype.inArray = function(comparer) { 

@@ -1,5 +1,5 @@
 // var Post = require('../../dbhelper/post_model');
-// var User = require('../../dbhelper/user_model');
+var User = require('../../dbhelper/user_model');
 var Group = require('../../dbhelper/group_model');
 // var Chat = require('../../dbhelper/chat_model');
 // var async = require("async");
@@ -21,6 +21,27 @@ module.exports = {
 	},
 
     get_all_list: function(user_id, res){
+					console.log(user_id)
+        User.object.findById(user_id)
+            .select('groups')
+            .populate({
+					path:'groups',
+					select:'group_name'
+					// options: {
+				 //    	limit: 8
+				 //    }
+				})
+            .exec(function(err, user_data){
+				if (err) {
+					response.setFailedResponse(res, "failed");
+				} else {
+					response.setSucceededResponse(res, user_data.groups);
+				}
+                return ;
+            })
+    },
+
+    get_group_by_id: function(user_id, res){
         Group.object
             .find()
             .select('group_name')
@@ -58,7 +79,7 @@ module.exports = {
 	},
 
 	update: function(req, res){
-		Group.model.findOneAndUpdate({_id: req.id},
+		Group.object.findOneAndUpdate({_id: req.id},
 			req,
 			{upsert:true}, 
 			function(err){

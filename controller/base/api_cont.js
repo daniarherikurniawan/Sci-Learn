@@ -13,7 +13,7 @@ var page_home_func = require('../../controller/common/paging/page_home_func');
 
 module.exports = { 
 	isApplicationRegistered: function(username, password, callback){
-		Application.model
+		Application.object
 		.find({username: username, password: password}, 
 			function(err, result){
 				if (!err){
@@ -140,7 +140,7 @@ module.exports = {
 		page_home_func.getPostIdForHome(req.body.connections, 0, 0, true,
 			function(arrayPostId, numOfPost){
 			if(numOfPost != 0){
-				Post.model
+				Post.object
 				.find({'_id': {$in : arrayPostId}})
 				.sort({date_created: 'desc'})
 				.limit(req.body.numOfPost)
@@ -156,9 +156,9 @@ module.exports = {
 	},
 
 	getRandomPost: function(req, res){
-		Post.model.count().exec(function(err, count){
+		Post.object.count().exec(function(err, count){
 		  var random = Math.floor(Math.random() * count);
-		  Post.model.findOne().skip(random).exec(
+		  Post.object.findOne().skip(random).exec(
 		    function (err, result) {
 		    	if(result.length != 0)
 					res.send(result);
@@ -179,9 +179,9 @@ module.exports = {
 	},
 
 	getListPeople: function(req, res ){
-		User.model.count().exec(function(err, count){
+		User.object.count().exec(function(err, count){
 		  var random = Math.floor(Math.random() * count);
-		  User.model.find({_id: {$nin : req.body.idForSearch} })
+		  User.object.find({_id: {$nin : req.body.idForSearch} })
 			.skip(random)
 			.limit(req.body.limit)
 			.exec(

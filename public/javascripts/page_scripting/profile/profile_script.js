@@ -7,12 +7,8 @@
       http.send(params);
      http.onreadystatechange = function() {
         if (http.readyState == 4 && http.status == 200) {
-          // alert(http.responseText)
-            // $('#messageStatus').text("Congratulations! \r\ Now you're connected with "+name+" !");
-
-          window.location = window.location.href;
+          location.reload();
           iAmOnline(http.responseText);
-          // $(location).attr('href','/connections/'+id);
         }
       }
       return true;

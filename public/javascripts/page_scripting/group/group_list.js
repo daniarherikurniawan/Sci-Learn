@@ -6,10 +6,10 @@
     var params = "user_id=" + window.encodeURIComponent(profile_id);
     http.send((params));
     http.onload = function() {
-      if(http.responseText=="404"){
-        alert(http.responseText);
+      result = JSON.parse(http.responseText);
+      if(http.responseText=="404" || result.status == 0){
+        // alert(http.responseText);
       }else{
-        result = JSON.parse(http.responseText);
         result = result.message;
         group_list_name = ''
         for (var i = result.length - 1; i >= 0; i--) {

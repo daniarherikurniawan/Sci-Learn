@@ -99,7 +99,7 @@ module.exports = {
 	},
 
 	getUser: function(req, res){
-		User.model
+		User.object
 			.findById(req.body.id, function(err, user){
 			if(err){
 				console.log(err);
@@ -132,7 +132,7 @@ module.exports = {
 			fs.writeFile(path, data, function(error){
 				if (error) console.log(error);
 
-				User.model
+				User.object
 					.findOneAndUpdate({_id: req.session.profile._id}, 
 						{img_profile_name:img.originalFilename}, 
 						{upsert:true}, function(err, data){
@@ -159,7 +159,7 @@ module.exports = {
 	},
 
 	generateToken: function(req, res){
-		User.model.findById(req.session.profile._id, function(err, user){
+		User.object.findById(req.session.profile._id, function(err, user){
 			user.token = general_func.createToken();
 			user.save();
 			req.session.profile = user;
