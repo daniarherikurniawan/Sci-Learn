@@ -18,9 +18,9 @@
     }
   }
 
-    function initiateSharedThought(id,id_creator){
-    // alert(id);
-    var http = new XMLHttpRequest();
+  function initiateSharedThought(id,id_creator){
+    console.log("initiateSharedThought wooy")
+     var http = new XMLHttpRequest();
       http.open("POST", "/dataPost", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
       var params = "id=" + window.encodeURIComponent(id);
