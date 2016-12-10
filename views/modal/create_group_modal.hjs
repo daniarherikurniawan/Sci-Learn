@@ -25,7 +25,7 @@
                     <h5>Group Name</h5>
                   </div>
                   <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
-                    <textarea class="form-control" ng-model="group_name" maxlength="40" style="height: 35px"placeholder="" required></textarea>
+                    <textarea class="form-control" id="group_name" maxlength="40" style="height: 35px"placeholder="" required></textarea>
                   </div>
                 </div>
                 
@@ -34,7 +34,7 @@
                     <h5>Group Info</h5>
                   </div>
                   <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
-                    <textarea class="form-control" ng-model="group_info" maxlength="300" style="height: 105px"placeholder="" required></textarea>
+                    <textarea class="form-control" id="group_info" maxlength="300" style="height: 105px"placeholder="" required></textarea>
                   </div>
                 </div>
 
@@ -49,12 +49,15 @@
                   <div class="row">
                     <div class="col-sm-3" >
                     </div>
-                    <div class="col-md-9" style="padding-right: 0px; padding-left: 0px;">
+                    <div class="col-md-7" style="padding-left: 8px; width: 329px;">
                       <input id="search-new-member-group" type="text" autocomplete="off" style=" border-color: #d6e7e8; " class="form-control" value="{{search_term}}" placeholder="Find within connections.." name="search_term" id="srch-term" autofocus>
                       <div id="search-new-member-group" class="">
                         <ul id="search-new-member-group-result" class="dropdown-menu" style="width: 100%; top: 2px;     background: rgb(243, 249, 249);">
                         </ul>
                       </div>
+                    </div>
+                    <div class="col-md-2">
+                      <button class="btn btn-primary pull-right modal-button cancel-button" onclick="clearSearchTerm()">Clear</button>
                     </div>
                   </div>  
                 </div>
@@ -63,7 +66,7 @@
 
              <div class="row col-sm-12" style="padding:0px 0px">
               <input onclick="createNewGroup()" class="btn btn-primary pull-right modal-button" type="submit" value="Create">
-              <input class="btn btn-primary pull-right modal-button cancel-button"  data-dismiss="modal"  value="Cancel">
+              <button id="close-modal-create-new-group" class="btn btn-primary pull-right modal-button cancel-button"  data-dismiss="modal" >Cancel</button>
              </div>
       </div>
 
@@ -82,3 +85,4 @@
 // }
 </script>
 <script src="../../../javascripts/page_scripting/find_connection/add_member_group.js"></script>
+<script src="../../../javascripts/page_scripting/group/create_new_group.js"></script>

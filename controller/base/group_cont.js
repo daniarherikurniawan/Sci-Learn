@@ -66,13 +66,22 @@ module.exports = {
 	},
 
 	createGroup: function(req, res){
+		group_members  = req.group_members.split(",");
+		req.group_members = group_members;
+		// console.log(group_members)
 		var GroupObj = new Group.model(req);
-	 	// res.send("lcdcdc "+GroupObj)
 	    GroupObj.save(function(err){
 			if (err) {
 				response.setFailedResponse(res, err);
 			} else {
-				response.setSucceededResponse(res, "Group has been created");
+				User.object.find({_id : {$in : group_members }})
+					.exec(function (err,group_members){
+						for (var i = group_members.length - 1; i >= 0; i--) {
+							group_members[i].groups.push(GroupObj._id);
+							group_members[i].save();
+						}
+						response.setSucceededResponse(res, {'group_id':GroupObj._id});
+					});
 			}
 			return ;
 		});

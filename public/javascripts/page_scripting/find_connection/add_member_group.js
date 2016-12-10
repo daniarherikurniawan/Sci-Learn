@@ -25,8 +25,10 @@ $('input#search-new-member-group').on('keyup', function(e) {
           html_search_result = '';
           for ( i = 0;i <=search_result.length - 1; i++) {
               html_search_result += 
-                "<li><button class=\"btn btn-primary pull-left\" onclick=\"addMemberToTheList('"+search_result[i].email+
-                "','"+search_result[i].img_profile_name+"','"+search_result[i].name+"')\" style=\"margin: 3px\"><small><span class=\"glyphicon glyphicon-plus\"></span></small>&nbsp;&nbsp;&nbsp;&nbsp;"+search_result[i].name+"</button></li>"
+                "<li><button class=\"btn btn-primary pull-left\" onclick=\"addMemberToTheList('"+
+                search_result[i]._id+"','"+search_result[i].email+
+                "','"+search_result[i].img_profile_name+"','"+
+                search_result[i].name+"')\" style=\"margin: 3px\"><small><span class=\"glyphicon glyphicon-plus\"></span></small>&nbsp;&nbsp;&nbsp;&nbsp;"+search_result[i].name+"</button></li>"
                 };
             document.getElementById('search-new-member-group-result').innerHTML =html_search_result;
         }
@@ -37,17 +39,21 @@ $('input#search-new-member-group').on('keyup', function(e) {
 var list_new_member=[];
 
 //initialization 
-list_new_member.push({'name': profile_name,
-                        'email': profile_email,
-                        'img_profile_name': profile_img_profile_name
-                        });
+list_new_member.push({
+  '_id' : profile_id,
+  'name': profile_name,
+  'email': profile_email,
+  'img_profile_name': profile_img_profile_name
+  });
 updateListProfPic();
 
-function addMemberToTheList(email, img_profile_name, name){
-  list_new_member.pushIfNotExist({'name': name,
-                        'email': email,
-                        'img_profile_name': img_profile_name
-                        },function(e) {  
+function addMemberToTheList(_id, email, img_profile_name, name){
+  list_new_member.pushIfNotExist({
+    '_id' : _id,
+    'name': name,
+    'email': email,
+    'img_profile_name': img_profile_name
+    },function(e) {  
     return e.name === name && e.email === email; 
   });
   updateListProfPic();
@@ -77,9 +83,6 @@ function updateListProfPic(){
   document.getElementById('member_list').innerHTML = list_profpic;
 }
 
-function createNewGroup(){
-  $('input#close-modal-create-new-group').click();
-}
 
 // check if an element exists in array using a comparer function
 // comparer : function(currentElement)
@@ -97,3 +100,9 @@ Array.prototype.pushIfNotExist = function(element, comparer) {
         this.push(element);
     }
 }; 
+
+function clearSearchTerm(){
+  $('input#search-new-member-group').val('');
+  $('div#search-new-member-group').removeClass('dropdown open');
+  $('input#search-new-member-group').focus();
+}

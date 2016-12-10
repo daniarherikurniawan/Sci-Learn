@@ -4,7 +4,9 @@ var Schema = mongoose.Schema;
 var GroupSchema = new mongoose.Schema({
   group_name: String,
   group_info: String,
+  group_admin: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   group_members: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+  course_id: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' , default: []}],
   group_posts: { type: [{
     content: String, 
     title: String,
