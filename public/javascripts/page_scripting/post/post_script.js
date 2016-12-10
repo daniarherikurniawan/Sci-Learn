@@ -19,7 +19,6 @@
   }
 
   function initiateSharedThought(id,id_creator){
-    console.log("initiateSharedThought wooy")
      var http = new XMLHttpRequest();
       http.open("POST", "/dataPost", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -31,18 +30,14 @@
           alert(http.responseText);
         }else{
           post = JSON.parse(http.responseText);
-          // console.log(post);
-          // alert(JSON.stringify(post));
-          // alert(post.content)
           document.getElementById('sharedName').innerHTML = post.creator.name ; 
-          // document.getElementById('sharedContent').innerHTML = post.content;
           document.getElementById('sharedKeywords').innerHTML = post.keywords;
           document.getElementById('sharedTitle').innerHTML = post.title; 
           $('#linkSharedImage').attr('href',"/profile/"+post.creator.email);
           // alert($('#sourceSharedImage').attr('src'));
           $('#sourceSharedImage').attr('src',"/images/"+post.creator.email+"/profile/"+post.creator.img_profile_name);
           // alert($('#sourceSharedImage').attr('src'));
-          $('#editableShareFunction').attr("onclick", "return tryToShare('"+id+"','"+id_creator+"')");
+          $('input#editableShareFunction').attr("onclick", "return tryToShare('"+id+"','"+id_creator+"')");
           $('#additionalThought').val("");
           $('#additionalThought').first().focus();
         }
