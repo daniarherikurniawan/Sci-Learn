@@ -164,7 +164,7 @@ module.exports = {
 	    });
 	},
 
-	getReccPost: function(connections, sorting_type, isCreatorPopulated, callback){
+	getReccPost: function(profile_id, connections, sorting_type, isCreatorPopulated, callback){
 		page_home_func.getPostIdForHome(connections, 0, 0, false, 
 		    function(arrayPostId, numOfPost){
 		    //asc = increasing
@@ -184,8 +184,24 @@ module.exports = {
 		          console.log("No recommended post!")
 		          callback("no_recc_topic");  
 		        }else{
-		          callback(rec_topic); 
+		        	id = profile_id;
+					for (var i = rec_topic.length - 1;  i >= 0; i--) {
+						if(rec_topic[i].creator._id == id){
+							 rec_topic[i].creator = null;
+						}
+						if(rec_topic[i].like.indexOf(id) != -1){
+							 rec_topic[i].liked = true;
+						}
+						if(rec_topic[i].share.indexOf(id) != -1){
+							rec_topic[i].shared = true;
+						} 
+						if((rec_topic[i].creator == null) && (rec_topic[i].post_shared != null)  && 
+							(rec_topic[i].post_shared.share.indexOf(id) != -1)){
+							rec_topic[i].post_shared.shared = true;
+						}
+					}
 
+		         	callback(rec_topic); 
 		        }
 		        return;
 		      });
@@ -197,13 +213,28 @@ module.exports = {
 		      .exec(function(err,rec_topic){
 		        if(err)
 		          console.log(err)
-		        console.log(typeof(rec_topic)+"^^^^^^^^^^^^^^^^rec_topic  : "+rec_topic.length)
 		        if(typeof(rec_topic) == "undefined" || rec_topic.length == 0){
 		          console.log("no_recc_topic app.js!")
 		          callback("no_recc_topic");  
 		        }else{
-		          // console.log("Yes recommended post!")
-		          callback(rec_topic); 
+
+		        	id = profile_id;
+					for (var i = rec_topic.length - 1;  i >= 0; i--) {
+						if(rec_topic[i].creator._id == id){
+							 rec_topic[i].creator = null;
+						}
+						if(rec_topic[i].like.indexOf(id) != -1){
+							 rec_topic[i].liked = true;
+						}
+						if(rec_topic[i].share.indexOf(id) != -1){
+							rec_topic[i].shared = true;
+						} 
+						if((rec_topic[i].creator == null) && (rec_topic[i].post_shared != null)  && 
+							(rec_topic[i].post_shared.share.indexOf(id) != -1)){
+							rec_topic[i].post_shared.shared = true;
+						}
+					}
+		          	callback(rec_topic); 
 
 		        }
 		        return;

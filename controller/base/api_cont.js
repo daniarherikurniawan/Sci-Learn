@@ -130,7 +130,7 @@ module.exports = {
 		connections = req.body.connections;
 		sorting_type = req.body.sorting_type;
 	  	isCreatorPopulated = req.body.isCreatorPopulated;
- 		post_func.getReccPost(connections, sorting_type, isCreatorPopulated, function(result){
+ 		post_func.getReccPost(req.session.profile._id, connections, sorting_type, isCreatorPopulated, function(result){
  			res.send(result);
  		})
 		

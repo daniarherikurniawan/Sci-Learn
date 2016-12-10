@@ -57,7 +57,7 @@ module.exports = {
 						if (req.session.profile.connections != null && req.session.profile.connections.length != 0){
 
 							console.log("has friends")
-					 		post_func.getReccPost(req.session.profile.connections,
+					 		post_func.getReccPost(req.session.profile._id, req.session.profile.connections,
 								'asc', true, function(rec_topic){
 									// console.log("@@@@@@@@@@@@@@@@@@@@@@@@"+rec_topic.length)
 								if(rec_topic!="no_recc_topic"){
@@ -72,7 +72,7 @@ module.exports = {
 								}
 
 								//popular post
-								post_func.getReccPost(req.session.profile.connections,
+								post_func.getReccPost(req.session.profile._id, req.session.profile.connections,
 									'desc', true, function(popular_topic){
 										// console.log("@@@@@@@@@@@@@@@@@@@@@@@@"+popular_topic.length)
 									if(popular_topic!="no_recc_topic"){

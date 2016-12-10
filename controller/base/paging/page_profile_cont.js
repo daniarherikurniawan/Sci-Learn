@@ -66,8 +66,6 @@ module.exports = {
 							
 							var idForProfile = req.session.profile.connections.slice();;
 							idForProfile.push(req.session.profile._id);
-							console.log('req.session.dataCurrentProfile._id : '+req.session.dataCurrentProfile._id)
-							console.log('idForProfile : '+idForProfile)
 							if (idForProfile.indexOf(""+req.session.dataCurrentProfile._id) != -1){
 								console.log("MY FRIEND!!!")
 							 	res.render('profile', {profile: req.session.profile,

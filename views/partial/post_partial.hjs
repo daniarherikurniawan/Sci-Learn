@@ -143,23 +143,22 @@
           {{/post_shared}}
   </div>
       {{/title}}
-             <div class="input-group">
-              <div class="input-group-btn">
+             <div class="row input-group" style="width: 100%;">
+              <div class="col-md-3 input-group-btn" style="width: 25%; padding: 0px">
               {{#title}}
-                <a type="button" id="buttonShare{{_id}}" onclick="showShares('{{_id}}')" class="btn btn-default" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i id="share{{_id}}"  class="fa fa-share">&nbsp; {{share.length}}</i></a>
+                <a type="button" id="buttonShare{{_id}}" onclick="showShares('{{_id}}')" class="btn btn-default" style="  width: 33%; padding: 8px 0px 2px 0px;     border-color: transparent;"><i id="share{{_id}}"  class="fa fa-share">&nbsp; {{share.length}}</i></a>
               {{/title}}
-                <a type="button" id="buttonLike{{_id}}" onclick="showLikes('{{_id}}')" class="btn btn-default" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i id="like{{_id}}"  class="fa fa-thumbs-up">&nbsp; {{like.length}} </i></a>
-                <a type="button" id="button{{_id}}" onclick="showComments('{{_id}}')" class="btn btn-default" style="padding: 4px 5px 4px 5px;     border-color: transparent;"><i  id="comment{{_id}}" class="fa fa-comments-o">&nbsp; {{comments.length}}</i></a>
+                <a type="button" id="buttonLike{{_id}}" onclick="showLikes('{{_id}}')" class="btn btn-default" style=" width: 33%; padding: 8px 0px 2px 0px;     border-color: transparent;"><i id="like{{_id}}"  class="fa fa-thumbs-up">&nbsp; {{like.length}} </i></a>
+                <a type="button" id="button{{_id}}" onclick="showComments('{{_id}}')" class="btn btn-default" style=" width: 33%; padding: 8px 0px 2px 0px;     border-color: transparent;"><i  id="comment{{_id}}" class="fa fa-comments-o">&nbsp; {{comments.length}}</i></a>
               </div>
 
-              <div class="pull-right" style="width: 100%">
-                <input type="text" name="{{_id}}" id="comment" style="float: right;margin-left:0px;width: 345px;"  class="form-control comment" placeholder="Give a quick comment.. (Press 'enter' when finished)">
+              <div class="col-md-9 pull-right" style="width: 75%; padding: 0px">
+                <input type="text" name="{{_id}}" id="comment" style=" width: 80%;   margin: 1px 0px 0px 2px; float: right;margin-left:0px;"  class="form-control comment" placeholder="Give a quick comment.. (Press 'enter' when finished)">
 
-                <a type="button" class="btn btn-default" onclick="sendLike('{{_id}}')" style="float: right; " ><i id ="iconLike{{_id}}" style="{{#liked}}color:rgb(45, 99, 99){{/liked}}" class="fa fa-thumbs-up"></i></a>
-                <!-- onclick="sendShare('{{_id}}')" -->
+                <a type="button" id ="iconLike{{_id}}" class="btn btn-default" onclick="sendLike('{{_id}}')" style="    margin: 1px 3px 1px 1px;float: right;  {{#liked}}background-color: #d6e7e8; border-color: #d6e7e8; {{/liked}}" ><i  style="" class="fa fa-thumbs-up"></i></a>
                 {{#creator.name}}      
                 {{#title}}            
-                <a type="button" onclick="{{^shared}}initiateSharedThought('{{_id}}','{{creator._id}}'); init('additionalThought',200);{{/shared}}"  data-toggle="modal" class="btn btn-default" href="{{^shared}}#shareModal{{/shared}}"  style="float: right;"><i id="iconShare{{_id}}"  style="{{#shared}}color:rgb(45, 99, 99){{/shared}}"  class="fa fa-share"></i></a>
+                <a type="button" id="iconShare{{_id}}"  onclick="{{^shared}}initiateSharedThought('{{_id}}','{{creator._id}}'); init('additionalThought',200);{{/shared}}"  data-toggle="modal" class="btn btn-default" href="{{^shared}}#shareModal{{/shared}}"  style="     margin: 1px; float: right; {{#shared}}background-color: #d6e7e8; border-color: #d6e7e8; {{/shared}}"><i  style=""  class="fa fa-share"></i></a>
                 {{/title}}
                 {{/creator.name}}
               </div>

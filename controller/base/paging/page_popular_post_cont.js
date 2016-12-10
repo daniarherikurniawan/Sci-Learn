@@ -3,9 +3,8 @@ var post_func = require('../../../controller/common/post_func');
 module.exports = { 
 	showPopularPost: function(req, res){
 		numOfPost = 0;
-		post_func.getReccPost(req.session.profile.connections,
+		post_func.getReccPost(req.session.profile._id, req.session.profile.connections,
 			'asc', true, function(rec_topic){
-				// console.log("@@@@@@@@@@@@@@@@@@@@@@@@"+rec_topic.length)
 			if(rec_topic!="no_recc_topic"){
 				for (var i = rec_topic.length - 1; i > 0; i--) {
 					rec_topic[i].ui.index = i;
@@ -18,9 +17,8 @@ module.exports = {
 			}
 
 			//popular post
-			post_func.getReccPost(req.session.profile.connections,
+			post_func.getReccPost(req.session.profile._id, req.session.profile.connections,
 				'desc', true, function(popular_topic){
-					// console.log("@@@@@@@@@@@@@@@@@@@@@@@@"+popular_topic.length)
 				if(popular_topic!="no_recc_topic"){
 					for (var i = popular_topic.length - 1; i > 0; i--) {
 						popular_topic[i].ui.index = i;

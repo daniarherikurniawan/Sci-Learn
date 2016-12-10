@@ -122,7 +122,6 @@ module.exports = {
 			User.object.findById(req.session.profile._id)
 			.exec(function(err, user){
 				req.session.profile = user;
-				console.log("session connections : "+user.connections)
 				res.send(req.body.id);
 			});	
 		});

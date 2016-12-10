@@ -23,7 +23,6 @@ module.exports = {
 		          userB.activeness = post_func.calculateUserActiveness(userB.id_user_posts.length, userB.id_share_posts.length, 
 		            userB.id_liked_posts.length, userB.id_commented_posts.length, userB.connections.length);
 		          userB.save(function (err, p) {
-			          console.log(idUser+" success "+idPeople);
 			          callback("success");
 			    		return;
 		          });

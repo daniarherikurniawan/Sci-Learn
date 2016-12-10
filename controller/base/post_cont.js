@@ -185,6 +185,7 @@ module.exports = {
 	deletePost: function(req, res){
 		idUser = req.session.profile._id;
 		idPost = req.body.id;
+		shared_post = false;
 
 		Post.object.findById(idPost,
 		    function(err, post){
@@ -194,6 +195,7 @@ module.exports = {
 		      id_user_give_comment = new Array();
 
 		      if(post.title == null){//delete share handle shared_post
+		      	shared_post = true;
 		        Post.object.findById(post.post_shared,
 		            function(err, sharedPost){
 		              if(sharedPost!=null){
@@ -284,8 +286,11 @@ module.exports = {
 		
 
 		User.object.findById(req.session.profile._id, function(err, user){
-			req.session.profile = user;	  			
-			res.send(req.body.id);
+			req.session.profile = user;	
+			if(shared_post)
+				res.send("shared_post");
+			else
+				res.send(req.body.id);
 	  	});
 	},
 
