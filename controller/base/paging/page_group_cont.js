@@ -11,7 +11,7 @@ module.exports = {
 			res.render('group', {profile: req.session.profile, numOfPost : 0,
 				posts: [], numOfLastPage : 0,
 				numOfCurrPage : 0, limitPerPage : limit, setting: req.session.setting,
-			partials: {leftSide:'partial/leftSide', share_modal: 'modal/share_modal', 
+			partials: {leftSide:'partial/leftSide', share_modal: 'modal/share_modal', rightSide:'partial/rightSide',
 			edit_post_template: 'template/edit_post_template', create_group_modal: 'modal/create_group_modal',
 			post_partial: 'partial/post_partial', list_group:'partial/list_group',
 			 topNavigation:'partial/topNavigation'}});

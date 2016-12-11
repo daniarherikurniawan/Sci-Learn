@@ -1,4 +1,18 @@
-  function tryToConnect(id, name) {
+
+$(function(){
+  if(!$('div#main').hasScrollBar()){
+    $('div#middle-display').attr('style', 'padding-right: 11px; padding-left:0px;');
+  }
+});
+
+(function($) {
+    $.fn.hasScrollBar = function() {
+        return this.get(0).scrollHeight > this.height();
+    }
+})(jQuery);
+
+
+ function tryToConnect(id, name) {
       // alert(id+"  "+name);
       var http = new XMLHttpRequest();
       http.open("POST", "/addConnection", true);

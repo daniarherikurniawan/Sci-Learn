@@ -19,8 +19,6 @@
         <div class="wrapper">
           <div class="box">
             <div class="row row-offcanvas row-offcanvas-left">
-
-
               <!-- main right col -->
               <div class="column col-sm-12 col-xs-11" id="main" style="margin-top: 50px; width: 100%; height:95%">
                 <!-- top nav -->
@@ -28,29 +26,23 @@
                   <%> topNavigation%>
                 </div>
                 <!-- /top nav -->
-
                 <div class="padding" style="  padding-top: 15px;">
-
                 <div class="row" style="
                     align-content: center;
                     margin-left: auto;
                     margin-right: auto;
                     ">
-                  <div class="full col-sm-9" style="padding-top:0px;">
-
+                  <div  class="full col-sm-9" style="padding-top:0px;">
                     <!-- content -->                      
                     <div class="row">
-
                      <!-- main col left --> 
                      <div class="col-sm-3 leftside">
                         <%> about_user %>
                         <%> list_group %> 
                        </div>
                        <!-- main col left --> 
-                       
-
                        <!-- main col right -->
-                       <div class="col-sm-6 middle_display" style="padding-left:0px; padding-right:0px;">
+                       <div id="middle-display" class="col-sm-6 middle_display" style="padding-left:0px; padding-right:0px;">
                        <div class="row" style="margin-bottom:-140px; background-size:100%;">
                             
                           <div class="col-sm-12" style="left: 1px; padding: 0 0 0 0 ; ;height:287px;overflow:hidden">
@@ -123,11 +115,8 @@
                                  </div>
                                </div>
                                <%/friendProfile%>
-
                            </div>
-
-
-                        </div>
+                        </div>  <!-- cover image -->
                             
 
               <%friends.name%>

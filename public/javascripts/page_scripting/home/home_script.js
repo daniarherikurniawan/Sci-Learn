@@ -1,5 +1,17 @@
   str = "";
 
+$(function(){
+  if(!$('div#main').hasScrollBar()){
+    $('div#middle-display').attr('style', 'padding-right: 11px; padding-left:0px;');
+  }
+});
+
+(function($) {
+    $.fn.hasScrollBar = function() {
+        return this.get(0).scrollHeight > this.height();
+    }
+})(jQuery);
+
   if(numOfCurrPage <= numOfLastPage){
       limitIndexPage = 10;
       if(numOfLastPage < 10)
