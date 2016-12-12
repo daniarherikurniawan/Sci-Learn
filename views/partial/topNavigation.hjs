@@ -10,7 +10,7 @@
     <div>
 
                                   
-      <input id="search-connection" type="text" autocomplete="off" style="width: 100% ;     height: 30px;" class="form-control" value="{{^showFriends}} {{search_term}}{{/showFriends}}" placeholder="Find a new connection.." name="search_term" id="srch-term">
+      <input id="search-connection" type="text" autocomplete="off" style="width: 100% ;     height: 30px;" class="form-control" value="" placeholder="Find a new connection.." name="search_term" id="srch-term">
       <div id="search-connection" class="">
         <ul id="search-connection-result" class="dropdown-menu" style="left: 2px; min-width: 335px; top: 35px;">
         </ul>
