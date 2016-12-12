@@ -7,12 +7,11 @@ var page_home_func = require('../../../controller/common/paging/page_home_func')
 
 module.exports = { 
 	showHomePage: function(req, res, numOfCurrPage, limit){
-		
 		var idForHome = req.session.profile.connections.slice();;
 		idForHome.push(req.session.profile._id);
 
 		page_home_func.getPostIdForHome(idForHome, limit, numOfCurrPage, true, function(arrayPostId, numOfPost){
-			Post.model
+			Post.object
 				.find({'_id': {$in : arrayPostId}})
 				.sort({date_created: 'desc'})
 				.populate({
@@ -42,7 +41,7 @@ module.exports = {
 							}
 						};
 				// console
-				User.model
+				User.object
 					.findById(req.session.profile._id)
 					.populate ('online_connection' )
 					.exec (function (err,user){

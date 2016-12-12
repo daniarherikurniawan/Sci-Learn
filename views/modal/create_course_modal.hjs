@@ -1,7 +1,7 @@
 <script type="text/javascript">
   // alert("loli")
 </script>
-<div id="create_group_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="create_course_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
   <div  class="modal-dialog">
     <div  class="modal-content">
       <div class="modal-header">
@@ -9,7 +9,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
           style=" font-size: 28px; padding: 2px 11px 0px 0px;">×</button>
           <h4 style=" color: white; text-align: center;
-        margin: 5px 0px 0px;">Create New Group </h4>
+        margin: 5px 0px 0px;">Open New Course </h4>
         </div>
       </div>
       
@@ -93,9 +93,4 @@
   var profile_name = '{{profile.name}}';
   var profile_email = '{{profile.email}}';
   var profile_img_profile_name = '{{profile.img_profile_name}}';
-// function test() {
-  // alert('cdsncdskn:'+'<br>{{profile._id}} <br>'+profile_id)
-// }
 </script>
-<script src="../../../javascripts/page_scripting/find_connection/add_member_group.js"></script>
-<script src="../../../javascripts/page_scripting/group/create_new_group.js"></script>

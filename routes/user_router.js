@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var page_profile_cont = require('../controller/base/paging/page_profile_cont');
+var user_cont = require('../controller/base/user_cont');
 
 /* GET home page. */
 router.get('/post', function(req, res, next) {
@@ -100,5 +101,15 @@ router.get('/comment/:page/:limit', function(req, res, next) {
 		res.redirect('/login');
 	}
 });
+
+router.post('/getDataUserProfilePicture', function(req, res, next) {
+	if(req.session.profile!=null){	// res.send("post")
+		user_cont.getDataUserProfilePicture(req, res)
+	}else{
+		res.redirect('/login');
+	}
+});
+
+
 
 module.exports = router;

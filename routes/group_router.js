@@ -8,7 +8,7 @@ var page_group_cont = require('../controller/base/paging/page_group_cont');
 router.post('/createNewGroup', function(req, res, next) {
 	if(req.session.profile!=null){	
 		// console.log(req.body)
-		group_cont.createGroup(req.body, res);
+		group_cont.createGroup(req, res);
 	}else{
 		res.redirect('/login');
 	}
@@ -17,7 +17,7 @@ router.post('/createNewGroup', function(req, res, next) {
 /* POST home page. */
 router.post('/getList', function(req, res, next) {
 	if(req.session.profile!=null){	
-		group_cont.get_all_list(req.body.user_id, res);
+		group_cont.get_list_group(req.body.user_id, res);
 	}else{
 		res.redirect('/login');
 	}
@@ -27,11 +27,20 @@ router.post('/getList', function(req, res, next) {
 router.get('/:group_id', function(req, res, next) {
 	// limitPerPage == 0, as indicator that we do not need pagination
 	if(req.session.profile!=null){
-		page_group_cont.showGroupPage(req, res, 0, 15);
+		page_group_cont.showGroupPage(req.params.group_id, req, res, 0, 15);
 	}else{
 		res.redirect('/login');
 	}
 });
 
+
+/* POST delete group. */
+router.post('/deleteGroup', function(req, res, next) {
+	if(req.session.profile!=null){	
+		group_cont.deleteGroup(req.body.group_id, req.session.profile._id, req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
 
 module.exports = router;

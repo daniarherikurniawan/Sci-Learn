@@ -1,4 +1,5 @@
   initiateListGroup(profile_id);
+
   function initiateListGroup(profile_id){
     var http = new XMLHttpRequest();
     http.open("POST", "/group/getList", true);
@@ -13,9 +14,28 @@
         result = result.message;
         group_list_name = ''
         for (var i = result.length - 1; i >= 0; i--) {
-        	group_list_name += "<a href=\"/group/"+result[i]._id+"\" class=\"list-group-item\">"+result[i].group_name+"</a> ";
+        	if(i < 7)
+	        	group_list_name += "<a href=\"/group/"+result[i]._id+"\" class=\"list-group-item\">"+result[i].group_name+"</a> ";
         }
+        // alert()
+        if(result.length  == 8)
+   			document.getElementById('show-all-groups').innerHTML = "<a href='/groups/"+profile_id+"'>See all groups</a>"     	
         document.getElementById('group_list').innerHTML = group_list_name;
+
+
+		$(function(){
+		  if(!$('div#main').hasScrollBar()){
+		    $('div#middle-display').attr('style', 'padding-right: 11px; padding-left:0px;');
+		  }
+		});
+
       }
     }
   }
+
+
+(function($) {
+    $.fn.hasScrollBar = function() {
+        return this.get(0).scrollHeight > this.height();
+    }
+})(jQuery);

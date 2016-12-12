@@ -4,19 +4,12 @@ var Schema = mongoose.Schema;
 var GroupSchema = new mongoose.Schema({
   group_name: String,
   group_info: String,
+  group_accessibility: String,
   group_admin: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   group_members: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-  course_id: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' , default: []}],
-  group_posts: { type: [{
-    content: String, 
-    title: String,
-    keywords: String,
-    creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, 
-    like:[{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], 
-    share: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], 
-    post_index: {type:Number, default: 1},
-    date_created: { type: Date, default: Date.now}
-  }], default: []}
+  courses_id: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' , default: []}],
+  img_cover_name: {type: String, default: "group_cover.jpg"},
+  group_posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post', default: [] }],
 });
 mongoose.model('Group',GroupSchema);
 

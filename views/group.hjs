@@ -27,7 +27,7 @@
               </div>
               <!-- /top nav -->
               <div class="padding" style="    padding-top: 15px;">
-               <div class="row" style="
+               <div id="test-id" class="row" style="
                   align-content: center;
                   margin-left: auto;
                   margin-right: auto;
@@ -36,156 +36,105 @@
                   <!-- content -->                      
                   <div class="row">
                       <!-- main col left --> 
+
                      <div class="col-sm-3 leftside">
-                       <%> leftSide%>
+                       <%> group_info%>
                        <%> list_group %>
                      </div>
                      <!-- main col left --> 
                      <!-- main col right -->
-                     <div class="col-sm-6 middle_display" style="padding-left:0px; padding-right:0px;">
+                     <div class="col-sm-6 middle_display" id="middle-display"  style="padding-left:0px; padding-right:0px;">
 
                       <div class="row" style="margin-bottom:-140px; background-size:100%;"> <!-- cover image -->
                             
                           <div class="col-sm-12" style="left: 1px; padding: 0 0 0 0 ; ;height:287px;overflow:hidden">
                              <img style=" top:115px;    width: inherit   ; max-width:100%; max-height:100%;  position: absolute; left: 49.7%;
-                             -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>/cover/<%friendProfile.img_cover_name%><%^friendProfile.name%><%profile.img_cover_name%><%/friendProfile.name%>">
+                             -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/groups/<%group._id%>/about/<%group.img_cover_name%>">
 
-                              <div class="col-sm-1" style=" top: 155px;left: 18px; padding: 0 0 0 0 ; width:120px;height:120px;overflow:hidden"> <a  href="#photoModal" role="button" data-toggle="modal" > <img style="width:120px;  position: relative; left: 50%; top: 50%; 
-                             -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>/profile/<%friendProfile.img_profile_name%><%^friendProfile.name%><%profile.img_profile_name%><%/friendProfile.name%>">
-                             </a>
-                             </div>
                               
-                               <div class="col-sm-9" style="padding-right:0px; margin-bottom:9px; left:3px;top: 251px;">
-                                  <div class="panel-heading" style="; padding-right:0px">
+                               <div class="col-sm-9" style="width: 100%; margin-bottom:9px; left:3px;top: 251px;">
+                                  <div class="panel-heading" style="; padding-right:11px;">
                                   
                                   <h3 style="margin: 0px 0px 0px 0px; ">
+                                  <span id="show-group-accessibility"></span>
+                                  <a href="/group/<%group._id%>">
+                                  <b><%group.group_name%></b></a>
+                                  <div class="btn pull-right " style=" padding-left: 3px;   margin-top: -8px;font-size: 15px;" ><% group.group_members.length%></div>
+                                  <a id="<%profile._id%>" href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" class=" btn pull-right fa fa-users" style="font-size:17px; padding-right: 0px; margin-top: -7px;" title="Group Members" > </a>  
 
-                                  <a href="/profile/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>" > 
-                                  <b><%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%></b></a>'s  
-                                  <%#showFriends%> connections<%/showFriends%>
-                                  <%^showFriends%><%^showPerActivity%> posts<%/showPerActivity%>
-                                  <%#showPerActivity%> activities<%/showPerActivity%><%/showFriends%>
 
-                                  <a id="<%profile._id%>" href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" class=" pull-right fa fa-users" style="font-size:15px; margin-top: 6px; <%#showFriends%> color:rgb(45, 99, 99); <%/showFriends%>" > <% friendProfile.connections.length %> <%^friendProfile%><%profile.connections.length%><%/friendProfile%> </a> 
+
+                                  <div class="btn pull-right " style=" padding-left: 3px;   margin-top: -8px; font-size: 15px;" ><% group.courses_id.length%></div>
+                                  <a id="<%profile._id%>" href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" class=" btn pull-right glyphicon glyphicon-blackboard" style="padding-right: 0px;font-size:20px; margin-top: -12px;" title="Online Courses" ></a> 
+
                                   </h3>
                                 </div>
                              </div>
 
 
-                            <%^myFriend%>
-
-                              <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: 99px;left: 34px; padding: 0 0 0 0 ; width:100px;height:35px;overflow:hidden">
-                                <button   class="btn btn-primary" onclick="tryToConnect('<%friendProfile._id%>','<%friendProfile.name%>')"><i style="color:white" class="glyphicon glyphicon-plus"></i>&nbspConnect</button>
-                             </div>
-                             <%/myFriend%>
-
-                             <%#myFriend%>
-                                <%#friendProfile%>
-                                <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: 98px;left: 7px; padding: 0 0 0 0 ; width:209px;height:86px;overflow:hidden">
-
-                                  <div class="col-sm-1 " style="margin-top: 0px;padding-right: 0px;padding-left: 27px;">
-
+                                <div class="pull-right" style="margin-top: -37px; margin-right: 22px;">
                                   <li class="dropdown" style="list-style-type: none;">
-                                    <a href="" data-toggle="dropdown"><i class="btn btn-primary glyphicon glyphicon-cog" style=""></i></a>
-                                    <ul class="dropdown-menu" style="left:46px; top:-2px;    min-width: 120px; ">
+                                    <a href="" data-toggle="dropdown"><i class="btn btn-primary fa fa-cog  fa-1x " style=""></i></a>
+                                    <ul class="dropdown-menu" style="left:-165px; top:-11px;    min-width: 120px; ">
 
-                                      <li><a class="btn "  style="text-align: left" type="button"><i class="glyphicon glyphicon-eye-close "></i>&nbsp; Unfollow</a></li>
-                                      <li><a class="btn" style="text-align: left" href="/Unconnect/<%_id%>/<%email%>" type="button" href=""><i class="glyphicon glyphicon-remove "></i>&nbsp; Unconnect</a></li>
+                                      <li><a style="text-align: left;" class="btn " type="button" onclick=""><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit Group Info</a></li>
+                                      <li><a style="text-align: left;" class="btn" type="button" onclick="deleteGroup('<%group._id%>')"><i class="glyphicon glyphicon-remove "></i>&nbsp; Delete Group</a></li>
+                                      <li ><a style="text-align: left;" class="btn" onclick=""  type="button"><i class="glyphicon glyphicon-plus " style="   margin: 0px 2px 0 2px;"></i>&nbsp; Add Member</a></li>
                                      </ul>
                                    </li>
-                                 </div>
-                               </div>
-                               <%/friendProfile%>
-                             <%/myFriend%>
-
-
-                              <%^friendProfile%>
-                                <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: 98px;left: 7px; padding: 0 0 0 0 ; width:285px;height:96px;overflow:hidden">
-
-                                  <div class="col-sm-1 " style="margin-top: 0px;padding-right: 0px;padding-left: 27px;">
-
-                                  <li class="dropdown" style="list-style-type: none;">
-                                    <a href="" data-toggle="dropdown"><i class="btn btn-primary glyphicon glyphicon-user" style=""></i></a>
-                                    <ul class="dropdown-menu" style="left:46px; top:-2px;    min-width: 120px; ">
-
-                                      <li><a style="text-align: left;" class="btn " type="button" onclick="editPostt('<%_id%>','<%profile._id%>')"><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit profile</a></li>
-                                      <li><a style="text-align: left;" class="btn" type="button" href=""><i class="glyphicon glyphicon-remove "></i>&nbsp; Delete account</a></li>
-                                      <li ><a style="text-align: left;" class="btn" onclick="tryToGetToken()"  type="button"><i class="fa fa-shield " style="   margin: 0px 2px 0 2px;"></i>&nbsp; Get Token</a></li>
-                                     </ul>
-                                   </li>
-                                 </div>
-                               </div>
-                               <%/friendProfile%>
-
+                                </div>
                            </div>
                         </div> <!-- cover image -->
 
-            <%friends.name%>
-                  <div class="panel panel-default" id="<%_id%>" >
-                       <div class="row">
-                     <%# showFriends %>
-                      <div style="margin: 0px 0px 0px 0px">
-                      &nbsp;</div>
-                     <%/ showFriends %>
-                     <%^ showFriends %>
-                        <div class="col-md-7">
-                          <div class="row " style="margin-bottom: 3px;">
-                            <div class="col-sm-1" style="padding: 11px 0px 11px 0px; margin-top: 10px; left: 20px; ">
-                                Institution
-                            </div>
-                            <div class="col-sm-9" style="padding: 0px 0px 0px 0px;margin-top: 10px; left: 85px;">
-                                <p   class="list-group-item"><%friendProfile.education%><%^friendProfile.name%><%profile.education%><%/friendProfile.name%></p>
-                            </div>
-                          </div>
-
-                          <div class="row " style="margin-bottom: 3px;">
-                            <div class="col-sm-1" style="padding: 11px 0px 11px 0px;  left: 20px; ">
-                                Occupation
-                            </div>
-                            <div class="col-sm-9" style="padding: 0px 0px 0px 0px;left: 85px;">
-                                <p   class="list-group-item"><%friendProfile.occupation%><%^friendProfile.name%><%profile.occupation%><%/friendProfile.name%></p>
-                            </div>
-                          </div>
-
-                          <div class="row " style="margin-bottom: 3px;">
-                            <div class="col-sm-1" style="padding: 11px 0px 11px 0px;  left: 20px; ">
-                                Contact
-                            </div>
-                            <div class="col-sm-9" style="padding: 0px 0px 0px 0px;left: 85px;">
-                               <p   class="list-group-item"><%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%></p>
-                            </div>
-                          </div>
-
-                        </div>
-
-                        <div class="col-md-5" style="margin: 10px 0 0 0 ;padding-left: 20px;">
-                          <div class="panel panel-default" style="margin-bottom: 0px">
-                          <div  class="text-center panel-heading">
-                            <b id="messageStatus" > ACTIVENESS </b>
-                          </div>
-                         </div>
-                         <div class="row" >
-                            <div class="col-sm-12" style="padding: 0px 0px 0px 0px; margin-bottom:5px">
-                               <p style="height: 89px; padding: 5px;"  class="text-center list-group-item">
-                               <b><span  style = "font-size:30px"><%friendProfile.activeness%><%^friendProfile.name%><%profile.activeness%><%/friendProfile.name%></span></b>
-                               <br>
-                                  <a id="<%profile._id%>"  style="font-size:14px; margin-top: 6px; color:rgb(59, 151, 152);<%#showPost%> color:#2d6363; <%/showPost%>; padding: 12px 5px 4px 5px; " href="/user/post" class="fa fa-newspaper-o" >&nbsp; <%friendProfile.id_user_posts.length%><%^friendProfile.name%><%profile.id_user_posts.length%><%/friendProfile.name%> &nbsp; </a> 
-                                  <a id="<%profile._id%>" href="/user/share" class="fa fa-share" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); <%#showShare%> color:#2d6363; <%/showShare%>" >&nbsp; <%friendProfile.id_share_posts.length%><%^friendProfile.name%><%profile.id_share_posts.length%><%/friendProfile.name%> &nbsp; </a> 
-                                  <a id="<%profile._id%>" href="/user/like" class="fa fa-thumbs-up" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); <%#showLike%> color:#2d6363; <%/showLike%>" >&nbsp; <%friendProfile.id_liked_posts.length%><%^friendProfile.name%><%profile.id_liked_posts.length%><%/friendProfile.name%> &nbsp; </a> 
-                                  <a id="<%profile._id%>" href="/user/comment" class="fa fa-comments-o" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); <%#showComment%> color:#2d6363; <%/showComment%>" >&nbsp; <%friendProfile.id_commented_posts.length%><%^friendProfile.name%><%profile.id_commented_posts.length%><%/friendProfile.name%> </a> 
-                              </p>
-                            </div>
-                        </div>
-                          
-                        </div>
-
-                     <%/ showFriends %>
-
+                       <div class="panel panel-default" id="<%_id%>" > <!-- show more -->
+                          <div class="row">
                           <div class="text-center" style="<%# showFriends %>margin-top:-13px; <%/ showFriends %> <%^ showFriends %>margin-top:5px; <%/ showFriends %>margin-bottom:1px">
                             <a href="#" class="glyphicon glyphicon-option-horizontal" style="font-size:15px "></a>
                           </div>
                           </div>
-            </div>
+                        </div><!-- show more -->
+
+                          <!-- Create Post -->
+                        <div class="well" style="padding: 15px; margin-bottom: 15px;"> 
+                          <form action="/addPost" method="post" class="form-horizontal" role="form">
+                           <div class="row">
+                            <div class="col-sm-11" style="margin-right:-15px; padding-left: 0px; margin-left: -15px;">
+                              <div class="row" style=" margin-top: 0px;">
+
+                                <div class="row" style="margin-bottom: 0px;" >
+                                  <div class="col-sm-4" style="text-align: center; padding-left: 30px">
+                                    <h4>Discussion</h4>
+                                  </div>
+                                  <div class="col-sm-8" style="padding-right: 0px; padding-left: 0px;">
+                                    <textarea class="form-control" name="title" maxlength="40" style="height: 35px"placeholder="Title" required></textarea>
+                                  </div>
+                                </div>
+
+                                <div class="row" >
+                                  <div  class="col-sm-12" style=" padding-right: 0px;">
+                                    <textarea class="form-control pull-left" name="keywords" style="height: 35px; margin left: -15px; "placeholder="Keywords" maxlength="55" required></textarea>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+
+                              <div class="col-sm-1 pull-right" style="padding: 0 0 0 0 ; width:67px;height:67px;overflow:hidden">
+                               <img style="width:67px;  position: absolute; left: 50%; top: 50%; 
+                               -webkit-transform: translateY(-50%) translateX(-50%); -moz-transform: translateY(-50%) translateX(-50%) "src="/images/<%profile.email%>/profile/<%profile.img_profile_name%>">
+                             </div>
+
+                           </div>
+                           <div id="" class="sss form-group" style="padding:4px 15px 4px 14px;; margin-bottom:5px ">
+
+                            <textarea name="content" class="form-control auto-resize" placeholder="Share your knowledge" required rows="2" style="height:60px;" id="texta"></textarea>
+
+                          </div>
+
+                          <input class="btn btn-primary pull-right" type="submit" value="Post"><ul style="margin-bottom: -5px;" class="list-inline"><li style=" padding-top: 11px;"><a href=""><i class="glyphicon glyphicon-paperclip"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+                        </form>
+                      </div>
+                      <!-- Create Post -->
 
 
 
@@ -199,19 +148,15 @@
                             <br>
                              Let's   <a href="/search"> <button class=" btn btn-md btn-primary" >Find</button> </a> a new connections !
                           </div>
-                        </div>
-                      </div> <!-- middle display -->
+                        </div>  <!-- pagination -->
+                  </div> <!-- middle display -->                    
 
-              <style type="text/css">
-                #rightSideBar::-webkit-scrollbar { 
-                  display: none; 
-              };
-              </style>
-
-
-              <div id="rightSideBar" class="col-sm-3 rightside" style="overflow:auto" >
-                 <%> rightSide%> 
+              <div id="rightSideBar" class="col-sm-3 rightside" style="overflow:auto; margin-top: 0px" >
+                 <%> list_course_in_group%> 
+                 <%> group_member%> 
               </div>
+
+             
 
               </div><!--/row-->
 
@@ -224,19 +169,20 @@
         </div><!-- /padding -->
       </div>
       <!-- /main -->
-
     </div>
   </div>
   </div>
-
 <!--share modal-->
 <%> share_modal%>
 <!--edit_post_template-->
 <%> edit_post_template%>
-</body>
+<!-- create course -->
+<%> create_course_modal%>
+</body> 
 </html>
 <script type="text/javascript">
-  // alert('<%numOfPost%>')
+// var txt = $('#show-group-accessibility').text();
+// alert(txt);
   var id_creator = '<%profile._id%>';
   var myEmail = '<%profile.email%>';
   var numOfLastPage = <%numOfLastPage%>;
@@ -250,7 +196,10 @@
   }else{
     lastResult = (numOfCurrPage*<%limitPerPage%>);
   }
+  /*group variable*/
+  group_accessibility = '<%group.group_accessibility%>';
+  courses_id = '<%group.courses_id%>'.split(',');
 </script>
 <!-- script references -->
-<script src="../../javascripts/page_scripting/home/home_script.js"></script>
+<script src="../../javascripts/page_scripting/group/group_script.js"></script>
 <script src="../../javascripts/page_scripting/post/post_script.js"></script>

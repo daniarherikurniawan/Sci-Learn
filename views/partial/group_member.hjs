@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div class="panel-heading text-center"><h4>Group Members</h4></div>
+  <div id="show-group-member-list" class="panel-body" style="    text-align: center;">
+   </div>
+ </div>
+<script type="text/javascript">
+	group_members = '{{group.group_members}}';
+</script>
+
+<script type="text/javascript">
+	// alert('{{group.group_admin}}')
+	group_admin = '{{group.group_admin}}'.split(',');
+</script>
+
+<script src="../../javascripts/page_scripting/group/group_member_list.js"></script>

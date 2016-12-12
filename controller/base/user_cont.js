@@ -174,6 +174,20 @@ module.exports = {
 	logout: function(req, res){
 		req.session.destroy();
 		res.redirect('/login');
+	},
+
+	getDataUserProfilePicture: function(req, res){
+		var idUsers = req.body.idUsers.split(',');
+		User.object.find({_id: {$in: idUsers}})
+			.select(' name email img_profile_name')
+			.limit(20)
+			.exec(function(err, users){
+				if (err) {
+					response.setFailedResponse(res, err);
+				} else {
+					response.setSucceededResponse(res, users);
+				}
+			})
 	}
 }
 

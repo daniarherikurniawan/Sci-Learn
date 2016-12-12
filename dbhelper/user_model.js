@@ -13,7 +13,6 @@ var UserSchema = new mongoose.Schema({
   education:  { type: String, default: "Institut Teknologi Bandung"},
   about : { type: String, default: dummyAbout},
   occupation: { type: String, default: "Student"},
-  date_created: { type: Date, default: Date.now},
   social_networks:[{
       name: { type: String, default: "facebook"}, 
       url: { type: String, default: "https://www.facebook.com/daniar.h.kurniawan" }
