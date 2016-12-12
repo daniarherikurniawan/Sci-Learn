@@ -36,7 +36,6 @@ router.get('/:id/:page/:limit', function(req, res, next) {
 /* GET friends page. */
 router.get('/:id/:search_term/:page/:limit', function(req, res, next) {
 	if(req.session.profile!=null){
-		console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 		connection_cont.fullSearchWithinConnection(req, res, req.params.id, req.params.search_term, req.params.page, req.params.limit, true);
 	}else{
 		res.redirect('/login');

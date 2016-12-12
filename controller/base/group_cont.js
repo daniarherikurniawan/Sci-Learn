@@ -52,7 +52,7 @@ module.exports = {
 					select:'group_name group_accessibility',
 					match: match,
 					options: {
-				    	// limit: 8
+				    	limit: 8
 				    }
 				})
             .exec(function(err, user_data){

@@ -59,14 +59,13 @@
                                   <span id="show-group-accessibility"></span>
                                   <a href="/group/<%group._id%>">
                                   <b><%group.group_name%></b></a>
-                                  <div class="btn pull-right " style=" padding-left: 3px;   margin-top: -8px;font-size: 15px;" ><% group.group_members.length%></div>
-                                  <a id="<%profile._id%>" href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" class=" btn pull-right fa fa-users" style="font-size:17px; padding-right: 0px; margin-top: -7px;" title="Group Members" > </a>  
+                                  <div  style="margin-top: -25px">
+                                    <div class="btn pull-right " style=" padding-left: 3px;   margin-top: -8px;font-size: 15px;" ><% group.group_members.length%></div>
+                                    <a id="<%profile._id%>" href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" class=" btn pull-right fa fa-users" style="font-size:17px; padding-right: 0px; margin-top: -7px;" title="Group Members" > </a>  
 
-
-
-                                  <div class="btn pull-right " style=" padding-left: 3px;   margin-top: -8px; font-size: 15px;" ><% group.courses_id.length%></div>
-                                  <a id="<%profile._id%>" href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" class=" btn pull-right glyphicon glyphicon-blackboard" style="padding-right: 0px;font-size:20px; margin-top: -12px;" title="Online Courses" ></a> 
-
+                                    <div class="btn pull-right " style=" padding-left: 3px;   margin-top: -8px; font-size: 15px;" ><% group.courses_id.length%></div>
+                                    <a id="<%profile._id%>" href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" class=" btn pull-right glyphicon glyphicon-blackboard" style="padding-right: 0px;font-size:21px; margin-top: -13px;" title="Online Courses" ></a> 
+                                  </div>
                                   </h3>
                                 </div>
                              </div>

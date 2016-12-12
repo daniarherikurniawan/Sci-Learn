@@ -22,7 +22,8 @@ module.exports = {
 								myFriend = (req.session.profile.connections.slice().indexOf(""+req.session.dataCurrentProfile._id) != -1);
 								friendProfile = req.session.dataCurrentProfile
 
-								if ((req.session.dataCurrentProfile.email == req.session.profile.email)){
+								// my profile
+								if ((user_id == req.session.profile._id)){
 									friendProfile = null;
 									myFriend = true;
 								}

@@ -21,6 +21,7 @@ isMyOwnGroup = profile_id == current_profile_id;
         // alert(http.responseText);
       }else{
         result = result.message;
+      	// alert(result.length)
         group_list_name = ''
         for (var i = 0; i <= result.length - 1 && i < 8; i++) {
         	if(i < 7){
@@ -48,7 +49,9 @@ isMyOwnGroup = profile_id == current_profile_id;
 
 
 		$(function(){
+ 			 // alert($('div#main').hasScrollBar())
 		  if(!$('div#main').hasScrollBar()){
+
 		    $('div#middle-display').attr('style', 'padding-right: 11px; padding-left:0px;');
 		  }
 		});
@@ -63,3 +66,4 @@ isMyOwnGroup = profile_id == current_profile_id;
         return this.get(0).scrollHeight > this.height();
     }
 })(jQuery);
+

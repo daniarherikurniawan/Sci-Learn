@@ -5,6 +5,25 @@ $('input#search-new-member-group').on('focusout', function(e) {
     // $('div#search-new-member-group').removeClass('dropdown open');
   }, delay);
 });
+var search_result = [];
+var html_search_result =""
+function updateListSearch(){
+  html_search_result = "";
+  for (var i = search_result.length - 1; i >= 0; i--) {
+    if(isIdInArray(search_result[i]._id, list_new_member)){
+      search_result.splice(i, 1);
+    }
+  }
+  for ( i = 0;i <= search_result.length - 1; i++) {
+      html_search_result += "<li><button class=\"btn btn-primary pull-left\" onclick=\"addMemberToTheList('"+
+        search_result[i]._id+"','"+search_result[i].email+
+        "','"+search_result[i].img_profile_name+"','"+
+        search_result[i].name+"')\" style=\"margin: 3px\"><small><span class=\"glyphicon glyphicon-plus\"></span></small>&nbsp;&nbsp;&nbsp;&nbsp;"+search_result[i].name+"</button></li>"
+    }
+  document.getElementById('search-new-member-group-result').innerHTML =html_search_result;
+  if(search_result.length == 0)
+    $('div#search-new-member-group').removeClass('dropdown open');
+}
 
 $('input#search-new-member-group').on('keyup', function(e) {
     search_term = $('input#search-new-member-group').val();
@@ -17,20 +36,12 @@ $('input#search-new-member-group').on('keyup', function(e) {
       var params = "search_term=" + search_term+"&profile_id=" + profile_id;
       http.send((params));
       http.onload = function() {
-        var search_result = JSON.parse(http.responseText);
+        search_result = JSON.parse(http.responseText);
         if(search_result.length == 0){
         $('div#search-new-member-group').removeClass('dropdown open');
         }else{
         $('div#search-new-member-group').addClass('dropdown open');
-          html_search_result = '';
-          for ( i = 0;i <=search_result.length - 1; i++) {
-              html_search_result += 
-                "<li><button class=\"btn btn-primary pull-left\" onclick=\"addMemberToTheList('"+
-                search_result[i]._id+"','"+search_result[i].email+
-                "','"+search_result[i].img_profile_name+"','"+
-                search_result[i].name+"')\" style=\"margin: 3px\"><small><span class=\"glyphicon glyphicon-plus\"></span></small>&nbsp;&nbsp;&nbsp;&nbsp;"+search_result[i].name+"</button></li>"
-                };
-            document.getElementById('search-new-member-group-result').innerHTML =html_search_result;
+          updateListSearch()
         }
       }
     }
@@ -47,6 +58,14 @@ list_new_member.push({
   });
 updateListProfPic();
 
+function isIdInArray(id, array){
+  for (var i = array.length - 1; i >= 0; i--) {
+    if(array[i]._id == id)
+      return true
+  }
+  return false;
+}
+
 function addMemberToTheList(_id, email, img_profile_name, name){
   list_new_member.pushIfNotExist({
     '_id' : _id,
@@ -57,11 +76,13 @@ function addMemberToTheList(_id, email, img_profile_name, name){
     return e.name === name && e.email === email; 
   });
   updateListProfPic();
+  updateListSearch();
 }
 
 function removeMemberFromList(index){
   list_new_member.splice(index, 1);
   updateListProfPic();
+  updateListSearch();
 }
 
 function updateListProfPic(){
@@ -81,6 +102,7 @@ function updateListProfPic(){
     }
   }
   document.getElementById('member_list').innerHTML = list_profpic;
+
 }
 
 

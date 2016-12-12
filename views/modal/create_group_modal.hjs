@@ -50,7 +50,7 @@
                     <div class="col-sm-3" >
                     </div>
                     <div class="col-md-6" style="padding-left: 8px; width: 294px;     margin-right: -12px;">
-                      <input id="search-new-member-group" type="text" autocomplete="off" style=" border-color: #d6e7e8; " class="form-control" value="{{search_term}}" placeholder="Find within connections.." name="search_term" id="srch-term" autofocus>
+                      <input id="search-new-member-group" type="text" autocomplete="off" style=" border-color: #d6e7e8; " class="form-control" value="" placeholder="Find within connections.." autofocus>
                       <div id="search-new-member-group" class="">
                         <ul id="search-new-member-group-result" class="dropdown-menu" style="width: 100%; top: 2px;     background: rgb(243, 249, 249);">
                         </ul>
