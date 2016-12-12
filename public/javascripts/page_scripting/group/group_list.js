@@ -18,8 +18,15 @@
 	        	group_list_name += "<a href=\"/group/"+result[i]._id+"\" class=\"list-group-item\">"+result[i].group_name+"</a> ";
         }
         // alert()
-        if(result.length  == 8)
+        if(result.length  == 8){
    			document.getElementById('show-all-groups').innerHTML = "<a href='/groups/"+profile_id+"'>See all groups</a>"     	
+        }else{
+        	$('#show-all-groups').attr('style', '')
+        	
+        	if(result.length == 0){
+   				document.getElementById('show-all-groups').innerHTML = "You haven't joined to any group!"  
+        	}
+        }
         document.getElementById('group_list').innerHTML = group_list_name;
 
 
