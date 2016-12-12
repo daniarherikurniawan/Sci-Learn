@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-  <div class="panel-heading text-center"><h4>About me!</h4></div>
+  <div class="panel-heading text-center"><h4>{{friendProfile.name}}{{^friendProfile.name}}{{profile.name}}{{/friendProfile.name}}</h4></div>
   <div class="panel-body">
    {{friendProfile.about}}{{^friendProfile.name}}{{profile.about}}{{/friendProfile.name}}</div>
  </div>

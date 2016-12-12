@@ -17,7 +17,7 @@ router.post('/createNewGroup', function(req, res, next) {
 /* POST home page. */
 router.post('/getList', function(req, res, next) {
 	if(req.session.profile!=null){	
-		group_cont.get_list_group(req.body.user_id, res);
+		group_cont.get_list_group(req.body.user_id, req.body.user_id == req.session.profile._id, res);
 	}else{
 		res.redirect('/login');
 	}

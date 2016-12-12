@@ -37,7 +37,10 @@
                     <div class="row">
                      <!-- main col left --> 
                      <div class="col-sm-3 leftside">
-                        <%> about_user %>
+                                  <%#showFriends%> <%> leftSide %> <%/showFriends%>
+                                  <%^showFriends%><%^showPerActivity%>  <%> about_user %> <%/showPerActivity%>
+                                  <%#showPerActivity%><%> about_user %>  <%/showPerActivity%><%/showFriends%>
+
                         <%> list_group %> 
                        </div>
                        <!-- main col left --> 
@@ -65,10 +68,22 @@
                                   <%^showFriends%><%^showPerActivity%> posts<%/showPerActivity%>
                                   <%#showPerActivity%> activities<%/showPerActivity%><%/showFriends%>
 
-                                  <a id="<%profile._id%>" href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" class=" pull-right fa fa-users" style="font-size:15px; margin-top: 6px; <%#showFriends%> color:rgb(45, 99, 99); <%/showFriends%>" > <% friendProfile.connections.length %> <%^friendProfile%><%profile.connections.length%><%/friendProfile%> </a> 
+                                <a type="button"  id="<%profile._id%>"
+                                 href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" 
+                                 class="btn btn-default-blue pull-right " 
+                                  title="<%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>'s connections" 
+                                  style=" margin-top: -8px;    <%#showFriends%> background-color: #d6e7e8; <%/showFriends%>" ><i  style="" class="fa fa-users">
+                                    <% friendProfile.connections.length %> <%^friendProfile%><%profile.connections.length%><%/friendProfile%> 
+                                  </i>
+                                 </a>
+
                                   </h3>
                                 </div>
                              </div>
+
+
+
+
 
 
                             <%^myFriend%>
@@ -104,7 +119,7 @@
                                   <div class="col-sm-1 " style="margin-top: 0px;padding-right: 0px;padding-left: 27px;">
 
                                   <li class="dropdown" style="list-style-type: none;">
-                                    <a href="" data-toggle="dropdown"><i class="btn btn-primary glyphicon glyphicon-user" style=""></i></a>
+                                    <a href="" data-toggle="dropdown"><i class="btn btn-default-blue btn-primary glyphicon glyphicon-user" style=""></i></a>
                                     <ul class="dropdown-menu" style="left:46px; top:-2px;    min-width: 120px; ">
 
                                       <li><a style="text-align: left;" class="btn " type="button" onclick="editPostt('<%_id%>','<%profile._id%>')"><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit profile</a></li>
@@ -159,8 +174,8 @@
 
                         <div class="col-md-5" style="margin: 10px 0 0 0 ;padding-left: 20px;">
                           <div class="panel panel-default" style="margin-bottom: 0px">
-                          <div  class="text-center panel-heading">
-                            <b id="messageStatus" > ACTIVENESS </b>
+                          <div  class=" text-center panel-heading" style=" cursor: default;" title="Based on <%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>'s activities">
+                            <b  id="messageStatus" > Points </b>
                           </div>
                          </div>
                          <div class="row" >
@@ -168,10 +183,43 @@
                                <p style="height: 89px; padding: 5px;"  class="text-center list-group-item">
                                <b><span  style = "font-size:30px"><%friendProfile.activeness%><%^friendProfile.name%><%profile.activeness%><%/friendProfile.name%></span></b>
                                <br>
-                                  <a id="<%profile._id%>"  style="font-size:14px; margin-top: 6px; color:rgb(59, 151, 152);<%#showPost%> color:#2d6363; <%/showPost%>; padding: 12px 5px 4px 5px; " href="/user/post" class="fa fa-newspaper-o" >&nbsp; <%friendProfile.id_user_posts.length%><%^friendProfile.name%><%profile.id_user_posts.length%><%/friendProfile.name%> &nbsp; </a> 
-                                  <a id="<%profile._id%>" href="/user/share" class="fa fa-share" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); <%#showShare%> color:#2d6363; <%/showShare%>" >&nbsp; <%friendProfile.id_share_posts.length%><%^friendProfile.name%><%profile.id_share_posts.length%><%/friendProfile.name%> &nbsp; </a> 
-                                  <a id="<%profile._id%>" href="/user/like" class="fa fa-thumbs-up" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); <%#showLike%> color:#2d6363; <%/showLike%>" >&nbsp; <%friendProfile.id_liked_posts.length%><%^friendProfile.name%><%profile.id_liked_posts.length%><%/friendProfile.name%> &nbsp; </a> 
-                                  <a id="<%profile._id%>" href="/user/comment" class="fa fa-comments-o" style="font-size:14px; margin-top: 6px;color: rgb(59, 151, 152); <%#showComment%> color:#2d6363; <%/showComment%>" >&nbsp; <%friendProfile.id_commented_posts.length%><%^friendProfile.name%><%profile.id_commented_posts.length%><%/friendProfile.name%> </a> 
+
+                                 <a type="button"  id="<%profile._id%>"
+                                href="/user/comment" 
+                                 class="btn btn-default-grey-border pull-right " 
+                                  title="Posts commented by <%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>" 
+                                  style="  <%#showComment%> background-color: #d6e7e8; <%/showComment%>" ><i  style="" class="fa fa-comments-o">
+                                   <%friendProfile.id_commented_posts.length%><%^friendProfile.name%><%profile.id_commented_posts.length%><%/friendProfile.name%>  
+                                  </i>
+                                 </a>
+
+                                 <a type="button"  id="<%profile._id%>"
+                                href="/user/like" 
+                                 class="btn btn-default-grey-border pull-right " 
+                                 title="Posts liked by <%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>" 
+                                  style="  <%#showLike%> background-color: #d6e7e8; <%/showLike%>" ><i  style="" class="fa fa-thumbs-up">
+                                   <%friendProfile.id_liked_posts.length%><%^friendProfile.name%><%profile.id_liked_posts.length%><%/friendProfile.name%>
+                                  </i>
+                                 </a>
+
+                                <a type="button"  id="<%profile._id%>"
+                                href="/user/share" 
+                                 class="btn btn-default-grey-border pull-right " 
+                                  title="Posts shared by <%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>" 
+                                  style="  <%#showShare%> background-color: #d6e7e8; <%/showShare%>" ><i  style="" class="fa fa-share">
+                                   <%friendProfile.id_share_posts.length%><%^friendProfile.name%><%profile.id_share_posts.length%><%/friendProfile.name%>
+                                  </i>
+                                 </a>
+
+                                 <a type="button"  id="<%profile._id%>"
+                                 href="/user/post"
+                                 class="btn btn-default-grey-border pull-right " 
+                                  title="<%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>'s original posts" 
+                                  style="   <%#showPost%> background-color: #d6e7e8; <%/showPost%>" ><i  style="" class="fa fa-newspaper-o">
+                                    <%friendProfile.id_user_posts.length%><%^friendProfile.name%><%profile.id_user_posts.length%><%/friendProfile.name%> 
+                                  </i>
+                                 </a>
+
                               </p>
                             </div>
                         </div>
@@ -325,6 +373,8 @@
   if('<%search_term%>' != '')
     search_term_url += '/'
   // alert(search_term)
+
+  // alert('current_profile_id '+current_profile_id)
 </script>
 
 <script src="../../../<%#page%>../<%/page%>javascripts/page_scripting/profile/profile_script.js"></script>

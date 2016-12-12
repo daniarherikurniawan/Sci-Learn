@@ -369,3 +369,23 @@ small.text-muted {
     height:29px;
     background:url(../images/close_icon.png) no-repeat center center;
 }
+
+.btn-default-blue:hover {
+    color: white !important;
+    background-color: #3b9798 !important;
+    border-color: #2d6363;
+}
+
+.btn-default-blue {
+    border-color: #d6e7e8;  background-color: white ; color: #3b9798;
+}
+
+.btn-default-grey-border {
+  margin: 0px 2px 0px 2px; border-color: #d6e7e8; padding: 6px 0px 6px 0px; width: 23%; 
+}
+
+.btn-default-grey-border:hover {
+    color: white !important;
+    background-color: #3b9798 !important;
+    border-color: #2d6363;
+}

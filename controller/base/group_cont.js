@@ -38,15 +38,21 @@ module.exports = {
 		})
 	},
 
-    get_list_group: function(user_id, res){
+    get_list_group: function(user_id, isMyGroups, res){
 					console.log(user_id)
+		if(!isMyGroups)
+			match = {'group_accessibility':'Public Group'}
+		else
+			match = {'group_accessibility':{$in: ['Public Group', 'Private Group']}}
+
         User.object.findById(user_id)
             .select('groups')
             .populate({
 					path:'groups',
-					select:'group_name',
+					select:'group_name group_accessibility',
+					match: match,
 					options: {
-				    	limit: 8
+				    	// limit: 8
 				    }
 				})
             .exec(function(err, user_data){

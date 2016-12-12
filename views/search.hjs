@@ -40,7 +40,7 @@
 
                    <!-- main col left --> 
                    <div class="col-sm-3 leftside">
-                     <%> leftSide%>
+                     <%> list_course_enrolled%>
                      <%> list_group%>
                    </div>
                    <!-- main col left --> 

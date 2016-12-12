@@ -14,6 +14,7 @@ var page_recommended_post_cont = require('../controller/base/paging/page_recomme
 var page_popular_post_cont = require('../controller/base/paging/page_popular_post_cont');
 var page_post_cont = require('../controller/base/paging/page_post_cont');
 var page_search_cont = require('../controller/base/paging/page_search_cont');
+var page_list_groups_cont = require('../controller/base/paging/page_list_groups_cont');
 
 // /* GET home page. */     sdsdc
 router.get('/', function(req, res, next) {
@@ -372,6 +373,15 @@ router.get('/getToken', function(req, res, next) {
 router.get('/logout', function(req, res, next) {
 	if(req.session.profile != null){
 		user_cont.logout(req, res);
+	}else{
+		res.redirect('/login');
+  	}
+});
+
+/* GET list groups page. */
+router.get('/groups/:user_id', function(req, res, next) {
+	if(req.session.profile != null){
+		page_list_groups_cont.showListGroupsPage(req.params.user_id, req, res);
 	}else{
 		res.redirect('/login');
   	}

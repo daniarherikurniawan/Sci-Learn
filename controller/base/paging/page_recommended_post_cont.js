@@ -39,7 +39,7 @@ module.exports = {
 					posts: rec_topic, setting: req.session.setting,
 				partials: {leftSide:'partial/leftSide', share_modal: 'modal/share_modal', 
 				post_partial: 'partial/post_partial', list_group:'partial/list_group', 
-				create_group_modal: 'modal/create_group_modal',
+				create_group_modal: 'modal/create_group_modal', list_course_enrolled:'partial/list_course_enrolled', 
 				rightSide:'partial/rightSide', topNavigation:'partial/topNavigation'}});		
 			});
 		});

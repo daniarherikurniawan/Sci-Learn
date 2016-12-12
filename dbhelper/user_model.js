@@ -19,6 +19,7 @@ var UserSchema = new mongoose.Schema({
     }],
   connections:{type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], default: []},
   groups:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'Group' }],
+  courses:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }],
   img_profile_name: {type: String, default: "profile.jpg"},
   img_cover_name: {type: String, default: "cover.jpg"},
   chat:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Chat' }],

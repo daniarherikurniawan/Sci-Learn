@@ -56,8 +56,9 @@ module.exports = {
 						 	popular_topic: req.session.popular_topic, setting: req.session.setting,
 						  	posts: posts, myFriend : true, page:isLimitedByParameter, 
 						 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
-						 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+						 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	leftSide:'partial/leftSide',
 					 			list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
+					 			list_course_enrolled:'partial/list_course_enrolled',
 						 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 						 }});	
 						}else{
@@ -75,8 +76,9 @@ module.exports = {
 							 		popular_topic: req.session.popular_topic, setting: req.session.setting,
 							 		numOfLastPage : numOfLastPage, limitPerPage:limit,
 							 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
-							 		post_partial: 'partial/post_partial',about_user: 'partial/about_user',	
+							 		post_partial: 'partial/post_partial',about_user: 'partial/about_user',	leftSide:'partial/leftSide',
 						 			list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
+						 			list_course_enrolled:'partial/list_course_enrolled',
 							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});	
 
@@ -88,8 +90,9 @@ module.exports = {
 							 		popular_topic: req.session.popular_topic, setting: req.session.setting,
 							 		posts: posts, myFriend :  false,  rec_topic : req.session.rec_topic,
 							 	partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
-							 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+							 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	leftSide:'partial/leftSide',
 						 			list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
+						 			list_course_enrolled:'partial/list_course_enrolled',
 							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});	
 
@@ -188,8 +191,9 @@ module.exports = {
 						 		popular_topic: req.session.popular_topic, showPerActivity : true,
 						 		numOfLastPage : numOfLastPage, limitPerPage:limit,
 						 		partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
-						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	leftSide:'partial/leftSide',
 					 				list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
+					 				list_course_enrolled:'partial/list_course_enrolled',
 							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});		
 							}else if (idForProfile.indexOf(""+req.session.dataCurrentProfile._id) != -1){
@@ -201,8 +205,9 @@ module.exports = {
 						 		popular_topic: req.session.popular_topic, showPerActivity : true,
 						 		numOfLastPage : numOfLastPage, limitPerPage:limit, setting: req.session.setting,
 						 		partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
-						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	leftSide:'partial/leftSide',
 					 				list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
+					 				list_course_enrolled:'partial/list_course_enrolled',
 							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});		
 							}else{
@@ -213,8 +218,9 @@ module.exports = {
 						 		popular_topic: req.session.popular_topic, showPerActivity : true, setting: req.session.setting,
 						 		posts: posts, myFriend :  false,  rec_topic : req.session.rec_topic,
 						 		partials: { rightSide:'partial/rightSide', topNavigation:'partial/topNavigation',
-						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	leftSide:'partial/leftSide',
 					 				list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
+					 				list_course_enrolled:'partial/list_course_enrolled',
 							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});			
 							}

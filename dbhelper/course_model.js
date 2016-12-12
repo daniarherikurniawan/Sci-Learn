@@ -15,7 +15,7 @@ var CourseSchema = new mongoose.Schema({
     share: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], 
     post_index: {type:Number, default: 1},
     date_created: { type: Date, default: Date.now}
-  }], default: []}
+  }], default: []},
 
   course_tasks: { type: [{
     content: String, 

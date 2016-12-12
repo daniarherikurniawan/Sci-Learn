@@ -74,7 +74,7 @@
 
                                 <div class="pull-right" style="margin-top: -37px; margin-right: 22px;">
                                   <li class="dropdown" style="list-style-type: none;">
-                                    <a href="" data-toggle="dropdown"><i class="btn btn-primary fa fa-cog  fa-1x " style=""></i></a>
+                                    <a href="" class="btn btn-default-blue" data-toggle="dropdown"><i class=" fa fa-cog  fa-1x " style="font-size: 18px;     margin-top: 4px;"></i></a>
                                     <ul class="dropdown-menu" style="left:-165px; top:-11px;    min-width: 120px; ">
 
                                       <li><a style="text-align: left;" class="btn " type="button" onclick=""><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit Group Info</a></li>

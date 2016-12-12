@@ -1,8 +1,8 @@
  <div class="panel panel-default">
-  <div class="panel-heading">
-  	<a style=" margin-top: 10px;" class="pull-right" type="button" 
+  <div  class="panel-heading">
+  	<a id="create-new-group" style=" margin-top: 10px;" class="pull-right" type="button" 
      onclick=""  data-toggle="modal" href="#create_group_modal" 
-    > <small><span class="glyphicon glyphicon-plus"></span></small> New</a> <h4>My Groups</h4>
+    > <small><span class="glyphicon glyphicon-plus"></span></small> New</a> <a href="/groups/{{friendProfile._id}}{{^friendProfile}}{{profile._id}}{{/friendProfile}}"><h4 id="list-group-title" style="">My Groups</h4></a>
   </div>
   <div  class="panel-body">
     <div id="group_list" class="list-group" style="margin-bottom: 0px;">
@@ -13,6 +13,8 @@
 
 <script type="text/javascript">
 	profile_id = '{{profile._id}}';
+  var current_profile_id = '{{friendProfile._id}}{{^friendProfile}}{{profile._id}}{{/friendProfile}}';
+  var current_profile_name = '{{friendProfile.name}}{{^friendProfile}}{{profile.name}}{{/friendProfile}}';
 </script>
 {{>create_group_modal}}
 <script src="../../../javascripts/page_scripting/group/group_list.js"></script>

@@ -160,7 +160,7 @@ module.exports = {
 							 	posts: null,  rec_topic : req.session.rec_topic, page:isLimitedByParameter,
 							 	list_user : friends, myFriend:false, showFriends:true, numOfFriend : numOfFriend,
 							 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
-							 	about_user: 'partial/about_user',
+							 	about_user: 'partial/about_user',leftSide:'partial/leftSide',
 							 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
 							 	topNavigation:'partial/topNavigation'}});
 					 	}else{
@@ -173,7 +173,7 @@ module.exports = {
 						 		setting: req.session.setting,
 							 	posts: null, list_user : friends, myFriend:true,  showFriends:true,
 							 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
-							 	about_user: 'partial/about_user',
+							 	about_user: 'partial/about_user',leftSide:'partial/leftSide',
 							 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
 							 	topNavigation:'partial/topNavigation'}});
 					 	}
@@ -188,7 +188,7 @@ module.exports = {
 						setting: req.session.setting,
 					 	list_user : friends, rec_topic : req.session.rec_topic, numOfFriend : numOfFriend,
 					 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
-						about_user: 'partial/about_user',	
+						about_user: 'partial/about_user',	leftSide:'partial/leftSide',
 					 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
 					 	topNavigation:'partial/topNavigation'}});	
 					}

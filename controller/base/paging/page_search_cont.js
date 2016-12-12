@@ -35,7 +35,7 @@ module.exports = {
 						numOfLastPage: numOfLastPage, numOfCurrPage: numOfCurrPage, showByQuery : true, 
 						 search_page :true, setting: req.session.setting,
 						popular_topic: req.session.popular_topic,
-						partials: {leftSide:'partial/leftSide', rightSide:'partial/rightSide', list_user:'partial/list_user',
+						partials: {list_course_enrolled:'partial/list_course_enrolled', rightSide:'partial/rightSide', list_user:'partial/list_user',
 						create_group_modal: 'modal/create_group_modal',
 						list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});	
 					});
@@ -64,7 +64,7 @@ module.exports = {
 						numOfLastPage: numOfLastPage, numOfCurrPage: numOfCurrPage, showByQuery : true, 
 						 search_page :true, setting: req.session.setting,
 						popular_topic: req.session.popular_topic,
-						partials: {leftSide:'partial/leftSide', rightSide:'partial/rightSide', list_user:'partial/list_user',
+						partials: {list_course_enrolled:'partial/list_course_enrolled', rightSide:'partial/rightSide', list_user:'partial/list_user',
 						create_group_modal: 'modal/create_group_modal',
 						list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});	
 					});
