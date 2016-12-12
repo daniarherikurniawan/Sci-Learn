@@ -1,4 +1,5 @@
 /public/images//*
+/public/groups/*
 private_data/agent_files/userToken.txt
 private_data/agent_files/agentBehaviour.txt
 private_data/agent_files/generatedUser.txt
