@@ -65,7 +65,7 @@ module.exports = {
 							numOfPost = req.session.dataCurrentProfile.id_share_posts.length+req.session.dataCurrentProfile.id_user_posts.length;
 						 	numOfLastPage = Math.ceil(numOfPost/limit);
 							
-							var idForProfile = req.session.profile.connections.slice();;
+							var idForProfile = req.session.profile.connections.slice();
 							idForProfile.push(req.session.profile._id);
 							if (idForProfile.indexOf(""+req.session.dataCurrentProfile._id) != -1){
 								console.log("MY FRIEND!!!")

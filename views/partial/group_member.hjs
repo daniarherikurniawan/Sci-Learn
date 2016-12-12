@@ -12,4 +12,4 @@
 	group_admin = '{{group.group_admin}}'.split(',');
 </script>
 
-<script src="../../javascripts/page_scripting/group/group_member_list.js"></script>
+<script src="/javascripts/page_scripting/group/group_member_list.js"></script>

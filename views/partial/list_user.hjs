@@ -51,4 +51,4 @@
 
     </div>
 {{/ list_user }}
-<script src="../../../../../javascripts/page_scripting/find_connection/find_within_connection.js"></script>
+<script src="/javascripts/page_scripting/find_connection/find_within_connection.js"></script>

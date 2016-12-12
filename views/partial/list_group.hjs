@@ -17,4 +17,4 @@
   var current_profile_name = '{{friendProfile.name}}{{^friendProfile}}{{profile.name}}{{/friendProfile}}';
 </script>
 {{>create_group_modal}}
-<script src="../../../javascripts/page_scripting/group/group_list.js"></script>
+<script src="/javascripts/page_scripting/group/group_list.js"></script>

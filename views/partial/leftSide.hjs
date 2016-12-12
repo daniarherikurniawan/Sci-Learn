@@ -4,7 +4,6 @@
   <a href="/profile/{{friendProfile.email}}{{^friendProfile.name}}{{profile.email}}{{/friendProfile.name}}" >
   <b>{{friendProfile.name}}{{^friendProfile}}{{profile.name}}{{/friendProfile}}</b>
   </a>
-
   </h4></div>
   <div class="panel-body">
     <div class="list-group">

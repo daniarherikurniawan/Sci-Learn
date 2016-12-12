@@ -97,5 +97,5 @@
   // alert('cdsncdskn:'+'<br>{{profile._id}} <br>'+profile_id)
 // }
 </script>
-<script src="../../../javascripts/page_scripting/find_connection/add_member_group.js"></script>
-<script src="../../../javascripts/page_scripting/group/create_new_group.js"></script>
+<script src="/javascripts/page_scripting/find_connection/add_member_group.js"></script>
+<script src="/javascripts/page_scripting/group/create_new_group.js"></script>

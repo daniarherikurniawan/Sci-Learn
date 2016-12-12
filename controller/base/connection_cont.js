@@ -128,6 +128,7 @@ module.exports = {
 	},
 
 	showConnectionsPage: function(req, res, userId, page, limit, isLimitedByParameter ){
+
 		User.object.findById(userId)
 		.exec(function(err, user){
 			if(err){
@@ -142,8 +143,8 @@ module.exports = {
 				.skip(limit*page)
 				.limit(limit)
 				.exec(function(err, friends){
-					console.log(err);
-					
+					if(err)
+						console.log(err);
 					limitPerPage = limit;
 					if(	(req.session.profile._id != userId) ){
 						numOfFriend = req.session.dataCurrentProfile.connections.length;
@@ -278,27 +279,28 @@ module.exports = {
 				console.log(err);
 				res.send("404");
 			}else{
-				//res.send(user);
 				limit = parseInt(limit);
 				req.session.dataCurrentProfile = user;
 				User.object
-				.find({
-					$and: [
-						{ name: new RegExp(search_term, "i")},
-						{_id: {$in : req.session.dataCurrentProfile.connections}}
-					]
-				})
-				.skip(limit*page)
-				.limit(limit)
-				.exec(function(err, friends){
-					console.log(err);
+					.find({
+						$and: [
+							{ name: new RegExp(search_term, "i")},
+							{_id: {$in : req.session.dataCurrentProfile.connections}}
+						]
+					})
+					.skip(limit*page)
+					.select('name email img_profile_name occupation education activeness')
+					.limit(limit)
+					.exec(function(err, friends){
+					if(err)	
+						console.log(err);
+	
 					User.object.find({
 							$and: [
 								{ name: new RegExp(search_term, "i")},
 								{_id: {$in : req.session.dataCurrentProfile.connections}}
 							]
 						}).count(function(err, count){
-							console.log("count!!! "+count)
 							limitPerPage = limit;
 							if(	(req.session.profile._id != userId) ){
 								numOfFriend = count;
@@ -310,25 +312,27 @@ module.exports = {
 									 res.render('profile', {profile: req.session.profile, 
 									 	friendProfile: req.session.dataCurrentProfile, numOfCurrPage : page, 
 									 	numOfLastPage : numOfLastPage, limitPerPage : limitPerPage,
+										setting: req.session.setting,
 								 		popular_topic: req.session.popular_topic, search_term:search_term,
 									 	posts: null,  rec_topic : req.session.rec_topic, page:isLimitedByParameter,
 									 	list_user : friends, myFriend:false, showFriends:true, numOfFriend : numOfFriend,
 									 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
-									 	about_user: 'partial/about_user',
-									 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
-									 	topNavigation:'partial/topNavigation'}});
+										 	about_user: 'partial/about_user', leftSide:'partial/leftSide',
+										 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
+										 	topNavigation:'partial/topNavigation'}});
 							 	}else{
 							// console.log("2");
 									 res.render('profile', {profile: req.session.profile, page:isLimitedByParameter,
 									 	friendProfile: req.session.dataCurrentProfile,   numOfLastPage : numOfLastPage,
 									 	rec_topic : req.session.rec_topic,  numOfCurrPage : page,
 									 	limitPerPage : limitPerPage, numOfFriend : numOfFriend,
+										setting: req.session.setting,
 								 		popular_topic: req.session.popular_topic,search_term:search_term,
 									 	posts: null, list_user : friends, myFriend:true,  showFriends:true,
 									 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
-									 	about_user: 'partial/about_user',
-									 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
-									 	topNavigation:'partial/topNavigation'}});
+										 	about_user: 'partial/about_user', leftSide:'partial/leftSide',
+										 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
+										 	topNavigation:'partial/topNavigation'}});
 							 	}
 							}else{
 							// this is my profile
@@ -337,13 +341,15 @@ module.exports = {
 							 res.render('profile', {profile: req.session.profile, page:isLimitedByParameter,
 							 	myFriend:true, showFriends:true,  numOfCurrPage : page, numOfLastPage : numOfLastPage,
 							 	friendProfile: null, posts: null, limitPerPage : limitPerPage,
+										setting: req.session.setting,
 								popular_topic: req.session.popular_topic,search_term:search_term,
 							 	list_user : friends, rec_topic : req.session.rec_topic, numOfFriend : numOfFriend,
 							 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
-								about_user: 'partial/about_user',	
-							 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
-							 	topNavigation:'partial/topNavigation'}});	
+									about_user: 'partial/about_user',	 leftSide:'partial/leftSide',
+								 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
+								 	topNavigation:'partial/topNavigation'}});	
 							}
+
 						}
 					);
 				});
