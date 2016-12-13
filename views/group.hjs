@@ -200,4 +200,3 @@
 <!-- script references -->
 <script src="/javascripts/page_scripting/group/group_script.js"></script>
 <script src="/javascripts/page_scripting/post/group_post_script.js"></script>
-<script src="/javascripts/page_scripting/post/post_script.js"></script>

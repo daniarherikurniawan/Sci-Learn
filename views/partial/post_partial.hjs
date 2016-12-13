@@ -189,3 +189,5 @@
   </div>
 
   {{/ posts }}
+  
+<script src="/javascripts/page_scripting/post/post_script.js"></script>

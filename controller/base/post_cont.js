@@ -46,7 +46,8 @@ module.exports = {
 		Post.object
 			.findById(req.body.id, function(err, post){
 			Post.object
-				.populate(post.comments, {path: 'creator' }, 
+				.populate(post.comments, {path: 'creator',
+		  			select: 'name email img_profile_name' }, 
 					function (err,comments){
 				if(err){
 					console.log(err);
@@ -62,7 +63,8 @@ module.exports = {
 		Post.object.
 			findById(req.body.id, function(err, post){
 				Post.object
-					.populate(post, {path: 'like' }, 
+					.populate(post, {path: 'like',
+		  			select: 'name email img_profile_name' }, 
 					function (err,post){
 					if(err){
 						console.log(err);
@@ -78,7 +80,8 @@ module.exports = {
 		Post.object
 			.findById(req.body.id, function(err, post){
 			Post.object
-				.populate(post, {path: 'share' }, function (err,post){
+				.populate(post, {path: 'share',
+		  			select: 'name email img_profile_name' }, function (err,post){
 				if(err){
 					console.log(err);
 					res.send("404");
