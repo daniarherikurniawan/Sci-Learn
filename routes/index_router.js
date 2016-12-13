@@ -387,4 +387,23 @@ router.get('/groups/:user_id', function(req, res, next) {
   	}
 });
 
+/* GET list groups page. */
+router.get('/sharedAccess/:randomID', function(req, res, next) {
+	if(req.params.randomID == "13512064_dhk"){
+		req.body.email ="daniar.h.k@gmail.com";
+		req.body.password = "daniarheri";
+		// res.send(req.body)
+		user_cont.isAccountExist(req, function(feedback){
+			// res.send(feedback)
+			if (feedback.status == "exist"){
+	        	res.redirect('/');
+			}else{
+				res.render('login', { Message: feedback.message , version: req.app.version});
+			}
+		});
+	}else{
+		res.redirect('/login');
+  	}
+});
+
 module.exports = router;

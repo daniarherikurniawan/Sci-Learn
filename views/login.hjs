@@ -7,8 +7,8 @@
   <meta name="generator" content="Bootply" />
   <meta name="viewport" content="width=device-width">
   <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-      <script src="../../javascripts/jquery/jquery.min.js"></script>
-      <script src="javascripts/bootstrap/bootstrap.min.js"></script>
+      <script src="/javascripts/jquery/jquery.min.js"></script>
+      <script src="/javascripts/bootstrap/bootstrap.min.js"></script>
       <link href="stylesheets/styles.css" rel="stylesheet">
       <link rel="shortcut icon" type="image/png" href="images/logo.jpg"/>
     </head>
@@ -182,4 +182,4 @@
 </html>
 
 <!-- script references -->
-<script src="javascripts/page_scripting/login/login_script.js"></script>
+<script src="/javascripts/page_scripting/login/login_script.js"></script>
