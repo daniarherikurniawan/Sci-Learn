@@ -68,3 +68,24 @@ User.model.findById( profile_id)
 	function(err, results){
 		callback(results.connections)
 	});
+	
+		Disaster.object
+			.find({ $and:[
+						{'_id' : { $in : data.array_id}},{
+
+						$or:[{
+							$and: [
+									{ 'date_start': {'$gte': certain_date}},
+									{ 'date_end': { '$lt': next_date}},
+									]},{
+							$and: [
+								{ 'date_start': {'$lt': next_date}},
+								{ $or:[ 
+									{'date_end': { '$gte': certain_date}},
+									{'date_end': null }]
+							}]}]
+						}
+				]
+				})
+			.select({id_victims : 1, type : 1, _id: 1})
+			.exec(function(err, disaster){

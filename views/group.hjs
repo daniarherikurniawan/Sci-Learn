@@ -97,7 +97,7 @@
 
                           <!-- Create Post -->
                         <div class="well" style="padding: 15px; margin-bottom: 15px;"> 
-                          <form action="/addPost" method="post" class="form-horizontal" role="form">
+                          <form action="/group/addPost" method="post" class="form-horizontal" role="form">
                            <div class="row">
                             <div class="col-sm-11" style="margin-right:-15px; padding-left: 0px; margin-left: -15px;">
                               <div class="row" style=" margin-top: 0px;">
@@ -131,13 +131,16 @@
                             <textarea name="content" class="form-control auto-resize" placeholder="Share your knowledge" required rows="2" style="height:60px;" id="texta"></textarea>
 
                           </div>
+                          
+                          <!-- hidden input -->
+                          <input type="hidden" name="group_id" value="<%group._id%>">
 
                           <input class="btn btn-primary pull-right" type="submit" value="Post"><ul style="margin-bottom: -5px;" class="list-inline"><li style=" padding-top: 11px;"><a href=""><i class="glyphicon glyphicon-paperclip"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
                         </form>
                       </div>
                       <!-- Create Post -->
 
-
+                       <%> post_partial %>
 
                         <div class="text-center"> <!-- pagination -->
                           <div class="row" >
@@ -157,16 +160,9 @@
                  <%> group_member%> 
               </div>
 
-             
-
               </div><!--/row-->
-
             </div>
-
-
           </div><!-- /col-9 -->
-
-
         </div><!-- /padding -->
       </div>
       <!-- /main -->
@@ -202,5 +198,6 @@
   courses_id = '<%group.courses_id%>'.split(',');
 </script>
 <!-- script references -->
-<script src="../../javascripts/page_scripting/group/group_script.js"></script>
-<script src="../../javascripts/page_scripting/post/post_script.js"></script>
+<script src="/javascripts/page_scripting/group/group_script.js"></script>
+<script src="/javascripts/page_scripting/post/group_post_script.js"></script>
+<script src="/javascripts/page_scripting/post/post_script.js"></script>

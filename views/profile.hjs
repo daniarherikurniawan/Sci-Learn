@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <title>Sci-Learn</title>
     <meta name="generator" content="Bootply" />
-    <link href="../../../../../<%#page%>../<%/page%>stylesheets/bootstrap.min.css" rel="stylesheet"> 
-    <link href="../../../../../<%#page%>../<%/page%>stylesheets/font-awesome.min.css" rel="stylesheet"> 
-        <script src="../../../../../<%#page%>../<%/page%>javascripts/jquery/jquery.min.js"></script>
-        <script src="../../../../../<%#page%>../<%/page%>javascripts/socket.io/socket.io.js"></script>
-        <script src="../../../../../<%#page%>../<%/page%>javascripts/socket.io/update_socket.js"></script>
-        <script src="../../../../../<%#page%>../<%/page%>javascripts/bootstrap/bootstrap.min.js"></script>
-        <script src="../../../../../javascripts/common/common.js"></script>
-        <link href="../../../../../<%#page%>../<%/page%>stylesheets/styles.css" rel="stylesheet">
-        <link rel="shortcut icon" type="image/png" href="../../../<%#page%>../<%/page%>images/logo.jpg"/>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet"> 
+    <link href="/stylesheets/font-awesome.min.css" rel="stylesheet"> 
+        <script src="/javascripts/jquery/jquery.min.js"></script>
+        <script src="/javascripts/socket.io/socket.io.js"></script>
+        <script src="/javascripts/socket.io/update_socket.js"></script>
+        <script src="/javascripts/bootstrap/bootstrap.min.js"></script>
+        <script src="/javascripts/common/common.js"></script>
+        <link href="/stylesheets/styles.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="/images/logo.jpg"/>
       </head>
       <body onload="updateOnlinePanel('<%profile._id%>')">
         <div class="wrapper">
@@ -394,5 +394,5 @@
   // alert('current_profile_id '+current_profile_id)
 </script>
 
-<script src="../../../../../../../../javascripts/page_scripting/profile/profile_script.js"></script>
-<script src="../../../../../../../../javascripts/page_scripting/post/post_script.js"></script>
+<script src="/javascripts/page_scripting/profile/profile_script.js"></script>
+<script src="/javascripts/page_scripting/post/post_script.js"></script>

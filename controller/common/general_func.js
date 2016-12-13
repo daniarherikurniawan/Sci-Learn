@@ -3,6 +3,10 @@ function randomIntFromIntervalFunc(min,max){
 	}
 
 module.exports = { 
+	isInArray: function(value, array) {
+		  return array.indexOf(value) > -1;
+	},
+
 	addUniqueObj: function(idObj, arrayUniqueObj){
 	  index = -1;
 	  for (var i = arrayUniqueObj.length - 1; index == -1 && i >= 0; i--) {
@@ -29,15 +33,15 @@ module.exports = {
 	      index = i;
 	    }
 	  };
-	  
+	  // console.log('index '+index)
 	  if(index == -1){
 	    console.log(idObj+" ERORRRRRRRRRRRRRRRRRRRRRRRR!!!!! "+index+" ====================== "+arrayUniqueObj);
 	  }else{
-	    arrayUniqueObj[index].num--;
-	  }
+	    	arrayUniqueObj[index].num--;
+		  	if(arrayUniqueObj[index].num == 0)
+		    	arrayUniqueObj.splice(index, 1);
 
-	  if(arrayUniqueObj[index].num == 0)
-	    arrayUniqueObj.splice(index, 1);
+	  }
 
 	  return arrayUniqueObj;
 	},

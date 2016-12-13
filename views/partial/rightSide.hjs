@@ -1,5 +1,5 @@
-<link href="../../../../stylesheets/bootstrap-toggle.min.css" rel="stylesheet">  
-<script src="../../../../javascripts/bootstrap/bootstrap-toggle.min.js"></script>
+<link href="/stylesheets/bootstrap-toggle.min.css" rel="stylesheet">  
+<script src="/javascripts/bootstrap/bootstrap-toggle.min.js"></script>
 
 <div class="panel panel-default" style="margin-top: 15px;">
   <div class="panel-heading "><a style=" margin-top: 10px;" href="#" class="pull-right">Details</a> <h4>Setting </h4>

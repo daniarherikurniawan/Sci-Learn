@@ -6,12 +6,12 @@
   <title>StudyLounge</title>
   <meta name="generator" content="Bootply" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link href="../stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
       <![endif]-->
-      <link href="../stylesheets/styles.css" rel="stylesheet">
-      <link rel="shortcut icon" type="image/png" href="../images/logo.jpg"/>
+      <link href="/stylesheets/styles.css" rel="stylesheet">
+      <link rel="shortcut icon" type="image/png" href="/images/logo.jpg"/>
     </head>
     <body>
       <div class="wrapper" >
@@ -88,33 +88,33 @@ function tryToGenerateToken(){
                           
                           <div class="item active" >
                             <div class=" text-center"> 
-                              <img src="../welcomeImage/front9.jpg" alt="Chania"  height="330">
+                              <img src="/welcomeImage/front9.jpg" alt="Chania"  height="330">
                             </div>
                           </div>
 
 
                           <div class="item" >
                             <div class=" text-center"> 
-                              <img src="../welcomeImage/front13.jpg" alt="Chania"  height="330">
+                              <img src="/welcomeImage/front13.jpg" alt="Chania"  height="330">
                             </div>
                           </div>
 
                           <div class="item">
                             <div class=" text-center"> 
-                              <img src="../welcomeImage/front3.jpg" alt="Chania"  height="330">
+                              <img src="/welcomeImage/front3.jpg" alt="Chania"  height="330">
                             </div>
                           </div>
 
 
                           <div class="item">
                             <div class=" text-center"> 
-                              <img src="../welcomeImage/front3.png" alt="Chania"  height="330">
+                              <img src="/welcomeImage/front3.png" alt="Chania"  height="330">
                             </div>
                           </div>
 
                           <div class="item">
                             <div class=" text-center"> 
-                              <img src="../welcomeImage/front8.png" alt="Chania"  height="330">
+                              <img src="/welcomeImage/front8.png" alt="Chania"  height="330">
                             </div>
                           </div>
                         </div>
@@ -189,8 +189,8 @@ function tryToGenerateToken(){
 
   <!-- script references -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-  <script src="../javascripts/bootstrap.min.js"></script>
-  <script src="../javascripts/scripts.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <script src="/javascripts/scripts.js"></script>
 </body>
 </html>
 

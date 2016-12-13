@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <title>Sci-Learn</title>
   <meta name="generator" content="Bootply" />
-  <link href="../../../stylesheets/bootstrap.min.css" rel="stylesheet"> 
-  <link href="../../../stylesheets/font-awesome.min.css" rel="stylesheet"> 
-      <script src="../../../javascripts/jquery/jquery.min.js"></script>
-      <script src="../../../javascripts/socket.io/socket.io.js"></script>
-      <script src="../../../javascripts/socket.io/update_socket.js"></script>
-      <script src="../../../javascripts/bootstrap/bootstrap.min.js"></script>
-      <link href="../../../stylesheets/styles.css" rel="stylesheet">
-      <link rel="shortcut icon" type="image/png" href="../../../images/logo.jpg"/>
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet"> 
+  <link href="/stylesheets/font-awesome.min.css" rel="stylesheet"> 
+      <script src="/javascripts/jquery/jquery.min.js"></script>
+      <script src="/javascripts/socket.io/socket.io.js"></script>
+      <script src="/javascripts/socket.io/update_socket.js"></script>
+      <script src="/javascripts/bootstrap/bootstrap.min.js"></script>
+      <link href="/stylesheets/styles.css" rel="stylesheet">
+      <link rel="shortcut icon" type="image/png" href="/images/logo.jpg"/>
     </head>
     <body onload="updateOnlinePanel('<%profile._id%>')">
       <div class="wrapper">
@@ -106,4 +106,4 @@
   //   search_term = ''
 </script>
 <!-- script references -->
-<script src="../../../javascripts/page_scripting/find_connection/find_connection.js"></script>
+<script src="/javascripts/page_scripting/find_connection/find_connection.js"></script>

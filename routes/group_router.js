@@ -3,6 +3,7 @@ var router = express.Router();
 
 var group_cont = require('../controller/base/group_cont');
 var page_group_cont = require('../controller/base/paging/page_group_cont');
+var group_post_cont = require('../controller/base/group_post_cont');
 
 /* POST home page. */
 router.post('/createNewGroup', function(req, res, next) {
@@ -43,4 +44,12 @@ router.post('/deleteGroup', function(req, res, next) {
 	}
 });
 
+/* POST saving post. */
+router.post('/addPost', function(req, res) {
+	if(req.session.profile != null){
+		group_post_cont.addPost(req, res);
+	}else{
+		res.send('Sorry, you cannot create a new post!');
+	}
+});
 module.exports = router;

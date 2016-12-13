@@ -14,4 +14,4 @@
 <script type="text/javascript">
   profile_id = '{{profile._id}}';
 </script>
-<script src="../../../javascripts/page_scripting/group/enrolled_course_list.js"></script>
+<script src="/javascripts/page_scripting/group/enrolled_course_list.js"></script>

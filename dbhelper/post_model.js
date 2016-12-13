@@ -7,11 +7,14 @@ var PostSchema = new mongoose.Schema({
   content: String,
   title: String,
   keywords: String,
-
+  type:  { 
+    is_group_post: {type: String, default: false},
+    group_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Group' }
+  },
   liked: { type: Boolean, default: false},
   shared: { type: Boolean, default: false},
   ui: { index: {type:Number, default: 1}, 
-    status : { type: String, default: "active"}},
+  status : { type: String, default: "active"}},
 
   like: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   share: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],

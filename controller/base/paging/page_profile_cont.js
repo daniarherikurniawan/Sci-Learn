@@ -21,10 +21,12 @@ module.exports = {
 						.limit(limit)
 						.sort({date_created: 'desc'})
 						.populate({
-							  path: 'creator',
+							  	path: 'creator',
+					  			select: 'name email img_profile_name'
 							})
 						.populate({
-							  path: 'original_creator',
+							  	path: 'original_creator',
+					  			select: 'name email img_profile_name'
 							})
 						.populate('post_shared')
 						.exec(function (err,posts){
@@ -152,10 +154,12 @@ module.exports = {
 						.limit(limit)
 						.sort({date_created: 'desc'})
 						.populate({
-							  path: 'creator',
+							 	path: 'creator',
+					  			select: 'name email img_profile_name'
 							})
 						.populate({
-							  path: 'original_creator',
+							  	path: 'original_creator',
+					  			select: 'name email img_profile_name'
 							})
 						.populate('post_shared')
 						.exec(function (err,posts){

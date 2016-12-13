@@ -9,10 +9,12 @@ module.exports = {
 		Post.object
 			.findById(req.body.id)
 			.populate({
-				  path: 'creator',
+				  	path: 'creator',
+		  			select: 'name email img_profile_name'
 				})
 			.populate({
 				  path: 'original_creator',
+				  select: 'name email img_profile_name'
 				})
 			.populate('post_shared')
 			.exec(function (err,dataPost){

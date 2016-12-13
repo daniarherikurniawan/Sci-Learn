@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>DIMAS</title>
-	<link href="../../stylesheets/bootstrap.min.css" rel="stylesheet">
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<div ng-app="myApp">
@@ -20,13 +20,13 @@
 	</div>
 </body>
 </html>
-<script src="../../javascripts/jquery.min.js"></script>
-<script src="../../javascripts/angular.min.js"></script>
-<script src="../../javascripts/angular_directive.js"></script>
-<script src="../../javascripts/angular-ui-router.js"></script>
-<script src="../../javascripts/ui-bootstrap-tpls.min.js"></script>
-<script src="../../javascripts//angular-animate.js"></script>
-<link href="../../stylesheets/bootstrap.min.css" rel="stylesheet">
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/angular.min.js"></script>
+<script src="/javascripts/angular_directive.js"></script>
+<script src="/javascripts/angular-ui-router.js"></script>
+<script src="/javascripts/ui-bootstrap-tpls.min.js"></script>
+<script src="/javascripts//angular-animate.js"></script>
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
 
 <script>
 	$app.controller("testController", function($scope, $http, $templateRequest, $sce, $compile, $window){
