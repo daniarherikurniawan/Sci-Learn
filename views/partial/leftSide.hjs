@@ -6,7 +6,7 @@
   </a>
   </h4></div>
   <div class="panel-body">
-    <div class="list-group">
+    <div class="list-group" style="    margin-bottom: 0px;">
       <a href="http://bootply.com/tagged/modal" class="list-group-item">Contact</a>
       <a href="http://bootply.com/tagged/datetime" class="list-group-item">Education</a>
       <a href="http://bootply.com/tagged/datatable" class="list-group-item">Experience</a>

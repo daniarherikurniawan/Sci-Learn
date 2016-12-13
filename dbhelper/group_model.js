@@ -5,6 +5,7 @@ var GroupSchema = new mongoose.Schema({
   group_name: String,
   group_info: String,
   group_accessibility: String,
+  date_created: { type: Date, default: Date.now},
   group_admin: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   group_members: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   courses_id: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' , default: []}],

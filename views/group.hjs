@@ -47,7 +47,7 @@
 
                       <div class="row" style="margin-bottom:-140px; background-size:100%;"> <!-- cover image -->
                             
-                          <div class="col-sm-12" style="left: 1px; padding: 0 0 0 0 ; ;height:287px;overflow:hidden">
+                          <div class="col-sm-12" style="left: 1px; padding: 0 0 0 0 ; ;height:300px;overflow:hidden">
                              <img style=" top:115px;    width: inherit   ; max-width:100%; max-height:100%;  position: absolute; left: 49.7%;
                              -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/groups/<%group._id%>/about/<%group.img_cover_name%>">
 
@@ -55,16 +55,18 @@
                                <div class="col-sm-9" style="width: 100%; margin-bottom:9px; left:3px;top: 251px;">
                                   <div class="panel-heading" style="; padding-right:11px;">
                                   
-                                  <h3 style="margin: 0px 0px 0px 0px; ">
+                                  <h3 style="margin: 7px 0px 0px 0px; ">
                                   <span id="show-group-accessibility"></span>
                                   <a href="/group/<%group._id%>">
                                   <b><%group.group_name%></b></a>
-                                  <div  style="margin-top: -25px">
-                                    <div class="btn pull-right " style=" padding-left: 3px;   margin-top: -8px;font-size: 15px;" ><% group.group_members.length%></div>
-                                    <a id="<%profile._id%>" href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" class=" btn pull-right fa fa-users" style="font-size:17px; padding-right: 0px; margin-top: -7px;" title="Group Members" > </a>  
+                                  <div  style="margin-top: -31px">
+                                     <a href="/group/members/<%group._id%>" class="btn pull-right btn-default-blue" 
+                                     style="margin: 0px 3px 0px 3px;      padding: 6px 5px;   height: 34px;"
+                                     title="Group Members" ><i class=" fa fa-users  fa-1x " style="font-size: 18px; margin-top: 2px;"> &nbsp<%group.group_members.length%></i></a>
 
-                                    <div class="btn pull-right " style=" padding-left: 3px;   margin-top: -8px; font-size: 15px;" ><% group.courses_id.length%></div>
-                                    <a id="<%profile._id%>" href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" class=" btn pull-right glyphicon glyphicon-blackboard" style="padding-right: 0px;font-size:21px; margin-top: -13px;" title="Online Courses" ></a> 
+                                     <a href="/group/Courses/<%group._id%>" class="btn pull-right btn-default-blue" 
+                                     style="margin: 0px 3px 0px 3px;      padding: 6px 5px;   height: 34px;"
+                                     title="Online Courses" ><i class=" glyphicon glyphicon-blackboard fa-3x" style="font-size: 18px;     margin-top: -1px;">&nbsp<%group.courses_id.length%></i></a>
                                   </div>
                                   </h3>
                                 </div>
