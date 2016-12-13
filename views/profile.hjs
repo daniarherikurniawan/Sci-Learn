@@ -76,6 +76,9 @@
 
                                   <%#showGroups%> groups<%/showGroups%> 
 
+
+                               <%^ showFriends %> 
+                               <%^ showGroups %>
                                 <a type="button"  id="<%profile._id%>"
                                  href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" 
                                  class="btn btn-default-blue pull-right " 
@@ -84,6 +87,8 @@
                                     <% friendProfile.connections.length %> <%^friendProfile%><%profile.connections.length%><%/friendProfile%> 
                                   </i>
                                  </a>
+                                <%/ showGroups %>
+                                <%/showFriends%>
 
                                   </h3>
                                 </div>
