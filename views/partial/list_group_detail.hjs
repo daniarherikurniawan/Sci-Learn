@@ -34,7 +34,16 @@
 
       <div class="col-sm-6" style="height: 120px; padding-left: 0px;">
        <div class="panel-heading" style="    width: 128%;">
-        <h4> <a href="/group/{{_id}}"> <b>{{group_name}}</b></a> 
+        <h4> <a href="/group/{{_id}}"> <b>
+        <script type="text/javascript">
+          if('{{group_name}}'.length >= 21){
+              document.write('{{group_name}}'.substring(0, 20)+"...");
+            // document.write("cdsc")
+          }else{
+              document.write('{{group_name}}');
+          }
+        </script>
+        </b></a> 
           <div style="margin-top: -24px">
             <a href="/group/members/{{_id}}" class="btn pull-right btn-default-blue" 
              style="margin: 0px 3px 0px 3px;      padding: 6px 5px;   height: 34px;"

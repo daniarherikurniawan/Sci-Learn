@@ -25,7 +25,7 @@
                     <h5>Group Name</h5>
                   </div>
                   <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
-                    <textarea class="form-control" id="group_name" maxlength="40" style="height: 35px"placeholder="" required></textarea>
+                    <textarea maxlength="25" class="form-control" id="group_name" style="height: 35px"placeholder="" required></textarea>
                   </div>
                 </div>
                 
