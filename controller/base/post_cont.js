@@ -64,7 +64,7 @@ module.exports = {
 			findById(req.body.id, function(err, post){
 				Post.object
 					.populate(post, {path: 'like',
-		  			select: 'name email img_profile_name' }, 
+		  			select: 'name email img_profile_name occupation' }, 
 					function (err,post){
 					if(err){
 						console.log(err);
@@ -81,7 +81,7 @@ module.exports = {
 			.findById(req.body.id, function(err, post){
 			Post.object
 				.populate(post, {path: 'share',
-		  			select: 'name email img_profile_name' }, function (err,post){
+		  			select: 'name email img_profile_name occupation' }, function (err,post){
 				if(err){
 					console.log(err);
 					res.send("404");
