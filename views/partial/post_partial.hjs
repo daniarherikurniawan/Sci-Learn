@@ -189,5 +189,8 @@
   </div>
 
   {{/ posts }}
-  
+<script type="text/javascript">
+  /*whether the post is in the group or not*/
+  showGroupPost = ('{{showGroupPost}}'!='')
+</script>
 <script src="/javascripts/page_scripting/post/post_script.js"></script>

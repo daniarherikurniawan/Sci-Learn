@@ -4,7 +4,11 @@
     var content =  $('#additionalThought').val();
     console.log("tryToshare wooy")
     var http = new XMLHttpRequest();
-    http.open("POST", "/addShare", true);
+    if(showGroupPost)
+      http.open("POST", "/group/addShare", true);
+    else
+      http.open("POST", "/addShare", true);
+
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     var params = "id_post=" + window.encodeURIComponent(id_post)+ "&content="+window.encodeURIComponent(content)+ "&original_creator="+window.encodeURIComponent(original_creator); // probably use document.getElementById(...).value
     http.send((params));
@@ -113,7 +117,11 @@ function submitForm(){
 
   function tryToDelete(id, id_creator) {
     var http = new XMLHttpRequest();
-    http.open("POST", "/deletePost", true);
+    if(showGroupPost)
+      http.open("POST", "/group/deletePost", true);
+    else
+      http.open("POST", "/deletePost", true);
+
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     var params = "id=" + window.encodeURIComponent(id)+ "&creator="+window.encodeURIComponent(id_creator); // probably use document.getElementById(...).value
     http.send((params));
@@ -134,7 +142,11 @@ function submitForm(){
 
   function tryToDeleteComment(id, post_id) {
     var http = new XMLHttpRequest();
-    http.open("POST", "/deleteComment", true);
+    if(showGroupPost)
+      http.open("POST", "/group/deleteComment", true);
+    else
+      http.open("POST", "/deleteComment", true);
+
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     var params = "id=" + window.encodeURIComponent(id)+ "&post_id="+window.encodeURIComponent(post_id); // probably use document.getElementById(...).value
     http.send((params));
@@ -162,7 +174,10 @@ $(function() {
       var content = $(this).val();
       if (content.length > 0){
         var http = new XMLHttpRequest();
-        http.open("POST", "/addComment", true);
+        if(showGroupPost)
+          http.open("POST", "/group/addComment", true);
+        else
+          http.open("POST", "/addComment", true);
         http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         var params = "id=" + window.encodeURIComponent(id)+ "&creator="+window.encodeURIComponent(id_creator)
            +"&content="+window.encodeURIComponent(content); // probably use document.getElementById(...).value
@@ -374,7 +389,6 @@ function normalizeButton(id3){
     // alert("hhhho");
 }
 
-
 function showShares(id3){
     
     normalizeButton(id3);
@@ -439,7 +453,10 @@ function showShares(id3){
 
     function sendShare(id){
       var http = new XMLHttpRequest();
-      http.open("POST", "/addShare", true);
+      if(showGroupPost)
+        http.open("POST", "/group/addShare", true);
+      else
+        http.open("POST", "/addShare", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
       var params = "id=" + window.encodeURIComponent(id);        
       http.send((params));
@@ -452,7 +469,11 @@ function showShares(id3){
 
     function sendLike(id){
       var http = new XMLHttpRequest();
-      http.open("POST", "/addLike", true);
+      if(showGroupPost)
+        http.open("POST", "/group/addLike", true);
+      else
+        http.open("POST", "/addLike", true);
+
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
       var params = "id=" + window.encodeURIComponent(id);        
       http.send((params));

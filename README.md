@@ -89,3 +89,7 @@ User.model.findById( profile_id)
 				})
 			.select({id_victims : 1, type : 1, _id: 1})
 			.exec(function(err, disaster){
+
+
+to know showGroupPost is false or true 
+'{{showGroupPost}}'!=''
