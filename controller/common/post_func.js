@@ -175,7 +175,10 @@ module.exports = {
 		      .find({'_id': {$in : arrayPostId}})
 		      .sort({post_index: sorting_type})
 		      .limit(5)
-		      .populate('creator')
+		      .populate({
+				  	path: 'creator',
+		  			select: 'name email img_profile_name'
+				})
 		      .exec(function(err,rec_topic){
 		        if(err)
 		          console.log(err)
