@@ -410,7 +410,7 @@ router.get('/sharedAccess/:randomID', function(req, res, next) {
 				res.render('login', { Message: feedback.message , version: req.app.version});
 			}
 		});
-	}else if(req.params.randomID == "just_today"){
+	}else if(req.params.randomID == "ka_set"){
 		req.body.email ="daniar.h.k@gmail.com";
 		req.body.password = "daniarheri";
 		// res.send(req.body)
