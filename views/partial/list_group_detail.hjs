@@ -1,14 +1,14 @@
 <div class="row">
   <div class="col-md-11">
-    <input id="search-within-joined-groups" type="text" autocomplete="off" style="width: 100%; border-color: #d6e7e8; margin: -6px 0 8px 2px;" class="form-control" value="{{search_term}}" placeholder="Find group by name.." name="search_term_for_joined_group" id="search_term_for_joined_group" autofocus>
-    <div id="search-within-joined-groups" class="">
-      <ul id="search-within-joined-groups-result" class="dropdown-menu" style="width: 100%; top: -7px;">
+    <input id="search-within-own-group" type="text" autocomplete="off" style="width: 100%; border-color: #d6e7e8; margin: -6px 0 8px 2px;" class="form-control" value="{{search_term_for_group}}" placeholder="Find group by name.." name="search_term_for_joined_group" id="search_term_for_joined_group" autofocus>
+    <div id="search-within-own-group" class="">
+      <ul id="search-within-own-group-result" class="dropdown-menu" style="width: 100%; top: -7px;">
       </ul>
     </div>
   </div>
   <div class=" input-group-btn">
-      <button id="search-within-joined-groups" class="btn btn-default" style=" border-color: #d6e7e8;   margin: -6px;" ><i class="glyphicon glyphicon-search"></i></button>
-    </div>
+    <button id="search-within-own-group" class="btn btn-default" style=" border-color: #d6e7e8;   margin: -6px;" ><i class="glyphicon glyphicon-search"></i></button>
+  </div>
 </div>
 
 {{# list_group_detail }}
@@ -94,3 +94,4 @@
     </div>
 {{/ list_group_detail }}
 <script src="/javascripts/page_scripting/group/list_group_detail.js"></script>
+<script src="/javascripts/page_scripting/group/find_within_own_group.js"></script>

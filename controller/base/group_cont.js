@@ -183,6 +183,65 @@ module.exports = {
 					}
 				}
 			});
-	}
+	},
+
+	quickSearchWithinOwnGroup: function(req, callback){
+		search_term = req.body.search_term;
+		profile_id = req.body.profile_id;
+		// console.log('profile_id '+profile_id)
+
+		/*Is it my group?*/
+		if(profile_id == req.session.profile._id)
+			group_accessibility = {$in: ["Private Group", "Public Group"]}
+		else
+			group_accessibility = "Public Group"
+
+		// callback(search_term)
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			User.object.findById( profile_id)
+				.populate({
+					path:'groups',
+					select:'group_name group_accessibility',
+					match: { $and:[
+						{'group_name': new RegExp(search_term, "i")},
+						{'group_accessibility' : group_accessibility}
+					]},
+					options: {
+				    	limit: 8
+				    }
+				})
+				.exec(
+				function(err, results){
+					// console.log(group_accessibility+" "+search_term)
+					callback(results.groups)
+				});
+		}
+	},
+
+	quickSearchWithinGroupMember: function(req, callback){
+		search_term = req.body.search_term;
+		group_id = req.body.group_id;
+		console.log('group_id '+group_id+ " "+search_term)
+		// callback(search_term)
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			Group.object.findById(group_id)
+				.populate({
+					path:'group_members',
+					select:'name email',
+					match: {'name': new RegExp(search_term, "i")},
+					options: {
+				    	limit: 8
+				    }
+				})
+				.exec(
+				function(err, results){
+					callback(results.group_members)
+				});
+		}
+	},
 }
 

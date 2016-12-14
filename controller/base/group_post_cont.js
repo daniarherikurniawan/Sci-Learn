@@ -67,22 +67,27 @@ module.exports = {
 
 		Post.object.findById(idPost,
 		    function(err, post){
-		      	Group.object.findById(post.type.group_id)
-		      	.exec(function (err, group){
-		      		if (err)
-		      			console.log(err)
+		    	if(err || post==null){
+		    		console.log(err)
+					res.send("404");
+		    	}else{
+			      	Group.object.findById(post.type.group_id)
+			      	.exec(function (err, group){
+			      		if (err)
+			      			console.log(err)
 
-				    index = group.group_posts.indexOf(post._id);
-				    group.group_posts.splice(index,1);
-		        	group.save();
+					    index = group.group_posts.indexOf(post._id);
+					    group.group_posts.splice(index,1);
+			        	group.save();
 
-		        	post.remove();
+			        	post.remove();
 
-					User.object.findById(req.session.profile._id, function(err, user){
-						req.session.profile = user;	
-							res.send(req.body.id);
-				  	});
-		      	})
+						User.object.findById(req.session.profile._id, function(err, user){
+							req.session.profile = user;	
+								res.send(req.body.id);
+					  	});
+			      	})
+			     }
 		});
 	},
 

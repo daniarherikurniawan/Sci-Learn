@@ -46,7 +46,6 @@
                         {{#title}}editPost('{{_id}}','{{profile._id}}') {{/title}}
                         {{^title}}editSharePost('{{_id}}','{{profile._id}}') {{/title}}
                         "
-
                         ><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit</a></li>
                       {{/creator.name}}
                       <li><a class="btn" style="text-align: left;" type="button" href=""><i class="glyphicon glyphicon-bookmark "></i>&nbsp; Keep</a></li>

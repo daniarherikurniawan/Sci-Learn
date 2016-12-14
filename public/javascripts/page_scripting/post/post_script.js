@@ -258,7 +258,7 @@ function showComments(id3){
               newComments += "<div class=\"col-sm-1 \" style=\"margin-top: 0px;padding-right: 0px;padding-top: 0px; float: left;\">"+
               " <li class=\"dropdown\" style=\"list-style-type: none;  text-align: right;\">"+
               "<a href=\"\" data-toggle=\"dropdown\"><i class=\"glyphicon glyphicon-chevron-down\" style=\""+"top:1px; font-size: 12px;\"></i></a>"+
-              "<ul class=\"dropdown-menu\" style=\"left:-75px; top:16px;    min-width: 103px; \">"+
+              "<ul class=\"dropdown-menu\" style=\"left:-65px; top:16px;    min-width: 103px; \">"+
               "<li><a class=\"btn \" type=\"button\" style=\"text-align: left;\" onclick=\"editComment('"+comments[i]._id+"','"+post_id+"')\"><i "+"class=\"glyphicon glyphicon-pencil\" style=\"font-size:12px; color:black\"  ></i>&nbsp; Edit</a></li>"+
               "<li>"+
               " <a class=\"btn\" style=\"text-align: left;\"  type=\"button\" onclick=\"tryToDeleteComment('"+comments[i]._id+"','"+post_id+"')\"><i "+"class=\"glyphicon glyphicon-remove \"  style=\"font-size:12px; color:black\"></i>&nbsp; "+"Delete</a></li>"+

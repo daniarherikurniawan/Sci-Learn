@@ -1,0 +1,90 @@
+<div class="row">
+  <div class="col-md-11">
+    <input id="search-within-group-members" type="text" autocomplete="off" style="width: 100%; border-color: #d6e7e8; margin: -6px 0 8px 2px;" class="form-control" value="{{search_term}}" placeholder="Find member by name.." name="search_term_for_joined_group" id="search_term_for_joined_group" autofocus>
+    <div id="search-within-group-members" class="">
+      <ul id="search-within-group-members-result" class="dropdown-menu" style="width: 100%; top: -7px;">
+      </ul>
+    </div>
+  </div>
+  <div class=" input-group-btn">
+      <button id="search-within-group-members" class="btn btn-default" style=" border-color: #d6e7e8;   margin: -6px;" ><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+</div>
+
+<div class="panel panel-default">
+  <div  class="panel-heading">
+    {{#isGroupAdmin}}
+    <li class="dropdown pull-right" style="list-style-type: none;">
+    <a title="Edit Group Admin" href="" data-toggle="dropdown" type="button">
+	    <small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit</a>
+
+    <ul class="dropdown-menu" style="left:-121px; top:18px;    min-width: 167px; ">
+      <li><a class="btn "  style="text-align: left" data-toggle="modal" href="#add_group_admin_modal"  type="button"><i class="glyphicon glyphicon-plus "></i>&nbsp; Add Admin</a></li>
+      <li><a class="btn" style="text-align: left" data-toggle="modal" href="#remove_group_admin_modal" type="button" ><i class="glyphicon glyphicon-remove "></i>&nbsp; Remove Admin</a></li>
+     </ul>
+   </li>
+    {{/isGroupAdmin}}
+
+   <h4 id="list-group-title" style="    margin: 0px;">Group Admin</h4>
+  </div>
+
+  <div id="show-group-member-list" class="panel-body" style=" padding-right: 0px;   text-align: center;">
+
+{{# group.group_admin }}
+    {{> per_group_member_detail}}
+{{/ group.group_admin }}
+   </div>
+</div>
+
+
+<div class="panel panel-default">
+   <div  class="panel-heading">
+  	
+    {{#isGroupAdmin}}
+    <li class="dropdown pull-right" style="list-style-type: none;">
+    <a title="Edit Group Membership" href="" data-toggle="dropdown" type="button">
+	    <small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit</a>
+
+    <ul class="dropdown-menu" style="left:-121px; top:18px;    min-width: 167px; ">
+      <li><a class="btn "  style="text-align: left" data-toggle="modal" href="#add_group_member_modal"  type="button"><i class="glyphicon glyphicon-plus "></i>&nbsp; Add Member</a></li>
+      <li><a class="btn" style="text-align: left" data-toggle="modal" href="#remove_group_member_modal" type="button" ><i class="glyphicon glyphicon-remove "></i>&nbsp; Remove Member</a></li>
+     </ul>
+   </li>
+    {{/isGroupAdmin}}
+
+     <h4 id="list-group-title" style="    margin: 0px;">All Members</h4>
+  
+  </div>
+
+  <div id="show-group-member-list" class="panel-body" style="  padding-right: 0px;  text-align: center;">
+
+
+{{# group.group_members }}
+    {{> per_group_member_detail}}
+{{/ group.group_members }}
+
+   </div>
+</div>
+
+<!-- Modals -->
+{{> add_group_admin_modal}}
+{{> remove_group_admin_modal}}
+{{> add_group_member_modal}}
+{{> remove_group_member_modal}}
+
+<!-- Modals end -->
+<script type="text/javascript">
+	var group_id = '{{group._id}}'
+  	var profile_id = '{{profile._id}}';
+  	var profile_name = '{{profile.name}}';
+  	var profile_email = '{{profile.email}}';
+  	var profile_img_profile_name = '{{profile.img_profile_name}}';
+  	// alert(profile_email)
+</script>
+
+<script src="/javascripts/page_scripting/group/add_group_member_by_admin.js"></script>
+<script src="/javascripts/page_scripting/group/remove_group_member_by_admin.js"></script>
+<script src="/javascripts/page_scripting/group/add_group_admin.js"></script>
+<script src="/javascripts/page_scripting/group/remove_group_admin.js"></script>
+<script src="/javascripts/page_scripting/group/group_member_list_detail.js"></script>
+<script src="/javascripts/page_scripting/group/find_within_group_members.js"></script>

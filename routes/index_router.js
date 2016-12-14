@@ -388,6 +388,15 @@ router.get('/groups/:user_id', function(req, res, next) {
 });
 
 /* GET list groups page. */
+router.get('/groups/:user_id/:search_term', function(req, res, next) {
+	if(req.session.profile != null){
+		page_list_groups_cont.showListGroupsSearchingResult(req.params.user_id, req.params.search_term, req, res);
+	}else{
+		res.redirect('/login');
+  	}
+});
+
+/* GET list groups page. */
 router.get('/sharedAccess/:randomID', function(req, res, next) {
 	if(req.params.randomID == "13512064_dhk"){
 		req.body.email ="daniar.h.k@gmail.com";

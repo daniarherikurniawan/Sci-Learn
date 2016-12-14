@@ -119,4 +119,59 @@ router.post('/deleteComment', function(req, res) {
 		res.send('Sorry, you cannot delete the comment of the post!');
 	}
 });
+
+	
+router.post('/quickSearchWithinOwnGroup', function(req, res, next) {
+	if(req.session.profile!=null){
+		group_cont.quickSearchWithinOwnGroup(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+
+	
+router.post('/quickSearchWithinGroupMember', function(req, res, next) {
+	if(req.session.profile!=null){
+		group_cont.quickSearchWithinGroupMember(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+
+	
+router.post('/quickSearchWithinGroupCourse', function(req, res, next) {
+	if(req.session.profile!=null){
+		group_cont.quickSearchWithinGroupCourse(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+
+// /* GET home page. */     
+router.get('/members/:group_id/:search_term', function(req, res, next) {
+	// limitPerPage == 0, as indicator that we do not need pagination
+	if(req.session.profile!=null){
+		group_cont.fullSearchWithinGroupMember(req.params.group_id, req.params.search_term, req, res, 0, 15);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+// /* GET home page. */     
+router.get('/courses/:group_id/:search_term', function(req, res, next) {
+	// limitPerPage == 0, as indicator that we do not need pagination
+	if(req.session.profile!=null){
+		group_cont.fullSearchWithinGroupCourse(req.params.group_id, req.params.search_term, req, res, 0, 15);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+
 module.exports = router;

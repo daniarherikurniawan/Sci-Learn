@@ -1,0 +1,60 @@
+<script type="text/javascript">
+  // alert("loli")
+</script>
+<div id="add_group_member_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div  class="modal-dialog">
+    <div  class="modal-content">
+      <div class="modal-header">
+        <div class="row">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+          style=" font-size: 28px; padding: 2px 11px 0px 0px;">×</button>
+          <h4 style=" color: white; text-align: center;
+        margin: 5px 0px 0px;">Add Group Member</h4>
+        </div>
+      </div>
+      
+       <div  class="well row background_modal"> 
+
+         <div   method="" class="form-horizontal" role="form">
+          
+            <div class="row col-sm-12" style="padding:0px 0px">
+              <div class="row" style=" margin-top: 0px;">
+
+                <div class="row" style="margin-bottom: 10px;" >
+                  <div class="row">
+                    <div class="col-sm-3" >
+                      <h5>Members</h5>
+                    </div>
+                    <div class="col-sm-9" id="member_list" style=" padding:0px 0px 0px 7px; margin-top: 5px;"> 
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-3" >
+                    </div>
+                    <div class="col-md-6" style="padding-left: 8px; width: 294px;     margin-right: -12px;">
+                      <input id="search-new-member-group" type="text" autocomplete="off" style=" border-color: #d6e7e8; " class="form-control" value="" placeholder="Find within connections.." autofocus>
+                      <div id="search-new-member-group" class="">
+                        <ul id="search-new-member-group-result" class="dropdown-menu" style="width: 100%; top: 2px;     background: rgb(243, 249, 249);">
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <button class="btn btn-primary pull-right modal-button cancel-button" style="width: 107px;" onclick="clearSearchTerm()">Clear Search</button>
+                    </div>
+                  </div>  
+                </div>
+
+              </div>
+            </div>
+
+             <div class="row col-sm-12" style="padding:0px 0px">
+              <input onclick="createNewGroup()" class="btn btn-primary pull-right modal-button" type="submit" value="Create">
+              <button id="close-modal-create-new-group" class="btn btn-primary pull-right modal-button cancel-button"  data-dismiss="modal" >Cancel</button>
+             </div>
+      </div>
+
+    </div>
+                  
+  </div>
+</div>
+</div>

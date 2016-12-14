@@ -96,15 +96,14 @@
 
 
                             <%^myFriend%>
-
-                              <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: 99px;left: 34px; padding: 0 0 0 0 ; width:100px;height:35px;overflow:hidden">
+                              <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: -143px;left: 149px; padding: 0 0 0 0 ; width:100px;height:35px;overflow:hidden">
                                 <button   class="btn btn-primary" onclick="tryToConnect('<%friendProfile._id%>','<%friendProfile.name%>')"><i style="color:white" class="glyphicon glyphicon-plus"></i>&nbspConnect</button>
                              </div>
                              <%/myFriend%>
 
                              <%#myFriend%>
                                 <%#friendProfile%>
-                                <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: 98px;left: 7px; padding: 0 0 0 0 ; width:209px;height:86px;overflow:hidden">
+                                <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: -144px;left: 121px; padding: 0 0 0 0 ; width:209px;height:86px;overflow:hidden">
 
                                   <div class="col-sm-1 " style="margin-top: 0px;padding-right: 0px;padding-left: 27px;">
 
@@ -123,7 +122,7 @@
 
 
                               <%^friendProfile%>
-                                <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: 98px;left: 7px; padding: 0 0 0 0 ; width:285px;height:96px;overflow:hidden">
+                                <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: -144px;left: 121px; padding: 0 0 0 0 ; width:285px;height:96px;overflow:hidden">
 
                                   <div class="col-sm-1 " style="margin-top: 0px;padding-right: 0px;padding-left: 27px;">
 

@@ -1,8 +1,13 @@
 <div class="panel panel-default">
-  <div class="panel-heading text-center"><h4>Group Members</h4></div>
+  <div  class="panel-heading">
+  	<a id="create-new-group" style=" margin-top: 10px;" class="pull-right" type="button" 
+     onclick=""  data-toggle="modal" href="#create_group_modal" 
+    > <small><span class="glyphicon glyphicon-plus"></span></small> Add</a> <a href="/group/members/{{group._id}}"><h4 id="list-group-title" style="">Group Members</h4></a>
+  </div>
+
   <div id="show-group-member-list" class="panel-body" style="    text-align: center;">
    </div>
- </div>
+</div>
 <script type="text/javascript">
 	group_members = '{{group.group_members}}';
 </script>

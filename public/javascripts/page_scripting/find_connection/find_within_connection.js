@@ -42,8 +42,8 @@ $('input#search-within-connection').on('keyup', function(e) {
 $('button#search-within-connection').on('click', function(e){
     search_term = $('input#search-within-connection').val();
     link = "/connections/"+profile_id+"/"+search_term+"/0/15";
-    console.log(link)
-    // window.location.href= link;
+    // console.log(link)
+    window.location.href= link;
     
 })
 
