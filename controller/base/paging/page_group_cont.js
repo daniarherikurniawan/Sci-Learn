@@ -155,7 +155,7 @@ module.exports = {
 								res.render('group', {group: group_data, showGroupCourse:true,
 									profile: req.session.profile, 
 									numOfPost : 0,
-									courses: courses, numOfLastPage : 0,
+									courses: [], numOfLastPage : 0,
 									numOfCurrPage : 0, limitPerPage : limit, setting: req.session.setting,
 								partials: {group_info:'partial/group_info', share_modal: 'modal/share_modal', group_member:'partial/group_member',
 									edit_post_template: 'template/edit_post_template', create_group_modal: 'modal/create_group_modal',
