@@ -7,7 +7,9 @@ module.exports = {
     firstIndex = limit*numOfCurrPage;
     if(limit != 0){ // for home page
       User.object.find({ '_id' : {$in :idForPostCreator}})
-        .populate ('online_connection' )
+        .populate ({
+            path: 'online_connection',
+            select: 'id_user_posts id_share_posts'} )
         .exec (function (err,users){
           if(err)
             console.log(err)
@@ -37,7 +39,9 @@ module.exports = {
       });
     }else{// for choosing recc topic
       User.object.find({ '_id' : {$in :idForPostCreator}})
-        .populate ('online_connection' )
+        .populate ({
+            path: 'online_connection',
+            select: 'id_user_posts id_share_posts'} )
         .exec (function (err,users){
           console.log("users.length : "+users.length)
           if(err)
