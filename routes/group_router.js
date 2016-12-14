@@ -34,6 +34,27 @@ router.get('/:group_id', function(req, res, next) {
 	}
 });
 
+// /* GET home page. */     
+router.get('/members/:group_id', function(req, res, next) {
+	// limitPerPage == 0, as indicator that we do not need pagination
+	if(req.session.profile!=null){
+		page_group_cont.showGroupMembersPage(req.params.group_id, req, res, 0, 15);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+// /* GET home page. */     
+router.get('/courses/:group_id', function(req, res, next) {
+	// limitPerPage == 0, as indicator that we do not need pagination
+	if(req.session.profile!=null){
+		page_group_cont.showGroupCoursesPage(req.params.group_id, req, res, 0, 15);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+
 
 /* POST delete group. */
 router.post('/deleteGroup', function(req, res, next) {
