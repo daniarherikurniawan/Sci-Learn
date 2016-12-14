@@ -14,9 +14,9 @@ module.exports = {
 				}else{
 					req.session.dataCurrentProfile = user;
 					limit = parseInt(limit);
-					//res.send(req.session.dataCurrentProfile);
+					arrayPostId = user.id_user_posts.concat(user.id_share_posts)
 					Post.model
-						.find({creator:req.session.dataCurrentProfile._id})
+						.find({_id: {$in: arrayPostId}})
 						.skip(limit*page)
 						.limit(limit)
 						.sort({date_created: 'desc'})
