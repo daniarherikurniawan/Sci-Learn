@@ -147,7 +147,10 @@ module.exports = {
 				.exec(function(err,timeline_posts){
 					if (err)
 						console.log(err)
-					res.send(timeline_posts);
+					else if(timeline_posts == null)
+						res.send([])
+					else
+						res.send(timeline_posts);
 				});
 			}else{
 				res.send("no_timeline_post");
@@ -160,7 +163,7 @@ module.exports = {
 		  var random = Math.floor(Math.random() * count);
 		  Post.object.findOne().skip(random).exec(
 		    function (err, result) {
-		    	if(result.length != 0)
+		    	if(result!= null && result.length != 0)
 					res.send(result);
 				else
 					res.send("no_result")

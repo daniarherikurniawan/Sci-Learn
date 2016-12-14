@@ -39,7 +39,7 @@ module.exports = {
 				if (err) {
 					response.setFailedResponse(res, "failed");
 				} else {
-					if (user_data.groups == undefined)
+					if (user_data == null || user_data.groups == undefined)
 						response.setSucceededResponse(res, []);
 					else						
 						response.setSucceededResponse(res, user_data.groups);

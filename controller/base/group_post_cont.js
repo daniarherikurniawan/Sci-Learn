@@ -86,7 +86,30 @@ module.exports = {
 		});
 	},
 
+	deleteComment: function(req, res){
+		idUser = req.session.profile._id; 
+		idPost = req.body.post_id; 
+		idComment = req.body.id;
 
+		Post.object.findById(idPost,
+		    function(err, post){
+		      index = -1;
+		        for(var i = 0; i < post.comments.length && index== -1; i++) {
+		         if(post.comments[i]._id == idComment) {
+		           index =  i;
+		         }
+		      }
+		      post.comments.splice(index, 1);
+		      post.save();
+
+		});
+
+		User.object.findById(req.session.profile._id)
+		.exec(function(err, user){
+			req.session.profile = user;
+			res.send("success");
+		});	
+	},
 }
 
 

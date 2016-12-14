@@ -12,7 +12,7 @@ module.exports = {
 
  		User.object.findById(user_id)
  			.exec(function(err, data_user){
-				if(err){
+				if(err || data_user==null){
 					console.log(err);
 					res.send("404");
 				}else{

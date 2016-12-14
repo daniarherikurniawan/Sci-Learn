@@ -29,7 +29,7 @@ module.exports = {
 		Group.object
 			.findById(id)
 			.exec(function(err, Group){
-				if (err) {
+				if (err || Group == null) {
 					response.setFailedResponse(res, err);
 				} else {
 					response.setSucceededResponse(res, Group);
@@ -56,7 +56,7 @@ module.exports = {
 				    }
 				})
             .exec(function(err, user_data){
-				if (err) {
+				if (err || user_data == null) {
 					response.setFailedResponse(res, "failed");
 				} else {
 					response.setSucceededResponse(res, user_data.groups);
@@ -70,7 +70,7 @@ module.exports = {
             .find()
             .select('group_name')
             .exec(function(err, all_Group){
-				if (err) {
+				if (err || all_Group == null) {
 					response.setFailedResponse(res, err);
 				} else {
 					response.setSucceededResponse(res, all_Group);

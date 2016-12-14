@@ -8,7 +8,7 @@ module.exports = {
 	    
 		if(re.test(userEmail) && req.session.profile!=null){
 			User.model.findOne({email:userEmail}, function(err, user){
-				if(err){
+				if(err|| user == null){
 					console.log(err);
 					res.sendStatus('404');
 				}else{

@@ -89,4 +89,13 @@ router.post('/deletePost', function(req, res) {
 		res.send('Sorry, you cannot delete the post!');
 	}
 });
+
+/* POST delete post group. */
+router.post('/deleteComment', function(req, res) {
+	if(req.session.profile != null){
+		group_post_cont.deleteComment(req, res);
+	}else{
+		res.send('Sorry, you cannot delete the comment of the post!');
+	}
+});
 module.exports = router;

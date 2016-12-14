@@ -18,7 +18,7 @@ module.exports = {
 		}else{
 			Group.object.findById(group_id)
 				.exec( function(err, group_data){
-					if(err){
+					if(err || group_data == null){
 						console.log(err);
 						res.send("404");
 					}else{

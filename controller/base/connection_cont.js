@@ -121,7 +121,12 @@ module.exports = {
 		function(feedback){
 			User.object.findById(req.session.profile._id)
 			.exec(function(err, user){
-				req.session.profile = user;
+				if(err){
+					console.log(err);
+					res.send("404");
+				}else if(user != null){
+					req.session.profile = user;
+				}
 				res.send(req.body.id);
 			});	
 		});
@@ -131,7 +136,7 @@ module.exports = {
 
 		User.object.findById(userId)
 		.exec(function(err, user){
-			if(err){
+			if(err || user== null){
 				console.log(err);
 				res.send("404");
 			}else{
