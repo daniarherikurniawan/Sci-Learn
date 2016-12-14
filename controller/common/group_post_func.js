@@ -39,5 +39,36 @@ module.exports = {
 		    	return;
 				});
       	});
+	},
+
+	removeLike: function(idUser, idPost){
+		Post.object.findById(idPost,
+		    function(err, post){
+		    index = post.like.indexOf(idUser);
+		    post.like.splice(index,1);
+		    post.save();
+	        return "dislike";
+		    
+		});
+	},
+
+	giveLike: function(idUser, idPost){
+		Post.object.findById(idPost,
+		    function(err, post){
+		    post.like.push(idUser);
+		    post.save();
+		});
+	},
+
+
+	giveComment: function(idUser, idPost, content){
+		Post.object.findById(idPost,
+		    function(err, post){
+		      objComment = new Object();
+		        objComment.content = content;
+		        objComment.creator = idUser;
+		      post.comments.push(objComment);
+		      post.save();
+		});
 	}
 }

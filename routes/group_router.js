@@ -52,4 +52,41 @@ router.post('/addPost', function(req, res) {
 		res.send('Sorry, you cannot create a new post!');
 	}
 });
+
+
+/* POST like. */
+router.post('/addLike', function(req, res, next) {
+	if(req.session.profile != null){
+		group_post_cont.addLike(req, res);
+	}else{
+		res.send('Sorry, you cannot give like to the post!');
+	}
+});
+
+/* POST contact. */
+router.post('/addComment', function(req, res, next) {
+	if(req.session.profile != null){
+		group_post_cont.addComment(req, res);
+	}else{
+		res.send('Sorry, you cannot give comment to the post!');
+	}
+});
+
+/* POST like. */
+router.post('/addShare', function(req, res, next) {
+	if(req.session.profile != null){
+		group_post_cont.addShare(req, res);
+	}else{
+		res.send('Sorry, you cannot share the post!');
+	}
+});
+
+/* POST delete post page. */
+router.post('/deletePost', function(req, res) {
+	if(req.session.profile != null){
+		group_post_cont.deletePost(req, res);
+	}else{
+		res.send('Sorry, you cannot delete the post!');
+	}
+});
 module.exports = router;
