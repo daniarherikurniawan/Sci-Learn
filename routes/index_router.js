@@ -398,7 +398,7 @@ router.get('/groups/:user_id/:search_term', function(req, res, next) {
 
 /* GET list groups page. */
 router.get('/sharedAccess/:randomID', function(req, res, next) {
-	if(req.params.randomID == "13512064_dhk"){
+	if(req.params.randomID == "13512064_dhkx"){
 		req.body.email ="daniar.h.k@gmail.com";
 		req.body.password = "daniarheri";
 		// res.send(req.body)
@@ -410,7 +410,7 @@ router.get('/sharedAccess/:randomID', function(req, res, next) {
 				res.render('login', { Message: feedback.message , version: req.app.version});
 			}
 		});
-	}else if(req.params.randomID == "ka_set"){
+	}else if(req.params.randomID == "ka_setx"){
 		req.body.email ="daniar.h.k@gmail.com";
 		req.body.password = "daniarheri";
 		// res.send(req.body)
