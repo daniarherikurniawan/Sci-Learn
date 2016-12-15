@@ -1,11 +1,11 @@
 html_input = "";
 admin = "";
 normal_member = "";
-
+// if(group_members.length >)
 var http = new XMLHttpRequest();
 http.open("POST", "/user/getDataUserProfilePicture", true);
 http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-var params = "idUsers=" + group_members;
+var params = "idUsers=" + member_to_display;
 http.send((params));
 http.onload = function() {
 	var data_members = JSON.parse(http.responseText);
@@ -31,7 +31,13 @@ http.onload = function() {
 			      "</a>";
 			}
 		}
- 		 document.getElementById('show-group-member-list').innerHTML = admin +"<hr style= 'margin: 5px 3px 8px 0px;'>"+ normal_member;
+
+		string_html = admin +"<hr style= 'margin: 5px 3px 8px 0px;'>"+ normal_member;
+ 		 if(number_of_members > 10)
+ 		 	string_html +="<br><div style='margin-top:8px'><a style=\"text-align:center;  padding-left: 17px; \" href=\"/group/members/"+
+ 		 group_id+"\">See all members</a> <div>"
+
+ 		 document.getElementById('show-group-member-list').innerHTML = string_html
 	}
 }
 
