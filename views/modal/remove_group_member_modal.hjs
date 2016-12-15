@@ -1,0 +1,69 @@
+<script type="text/javascript">
+  // alert("loli")
+</script>
+<div id="remove_group_member_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div  class="modal-dialog">
+    <div  class="modal-content">
+      <div class="modal-header">
+        <div class="row">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+          style=" font-size: 28px; padding: 2px 11px 0px 0px;">×</button>
+          <h4 style=" color: white; text-align: center;
+        margin: 5px 0px 0px;">Remove Group Member</h4>
+        </div>
+      </div>
+      
+       <div  class="well row background_modal"> 
+
+         <div   method="" class="form-horizontal" role="form">
+          
+            <div class="row col-sm-12" style="padding:0px 0px">
+              <div class="row" style=" margin-top: 0px;">
+
+                <div class="row" style="margin-bottom: 10px;" >
+                  <div class="row">
+                    <div class="col-sm-3" >
+                    </div>
+                    <div class="" class="col-sm-9" id="list_member_group_to_be_removed" 
+                    title="List users to be removed" 
+                    style="padding: 5px;
+                        margin: 5px;
+                        background: white;
+                        min-height: 57px;
+                        border: #d6e7e8 1px solid;"> 
+                    </div>
+                  </div>  
+                </div>
+
+              </div>
+            </div>
+            <div class="col-md-6" style="padding-left: 8px;  width: 41%; margin-right: -12px;">
+              <input id="search-member-to-remove-by-admin" type="text" autocomplete="off" style=" border-color: #d6e7e8; " class="form-control" value="" placeholder="Find within group members.." autofocus>
+              <div id="search-member-to-remove-by-admin" class="">
+                <ul id="search-member-to-remove-by-admin-result" class="dropdown-menu" style="width: 100%; top: 2px;     background: rgb(243, 249, 249);">
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-2" style="    width: 24%;">
+              <button class="btn btn-primary pull-right modal-button cancel-button" style="width: 107px;" onclick="clearSearchTermRemoveModal()">Clear Search</button>
+            </div>
+             <div class="col-md-2" style="padding:0px 0px; width: 13%;">
+              <button id="close-modal-create-new-group" class="btn btn-primary pull-right modal-button cancel-button"  data-dismiss="modal" >Cancel</button>
+             </div>
+             <div class="col-md-2" style="padding:0px 0px; width: 23%;">
+              <input onclick="removeGroupMember()" class="btn btn-primary pull-right modal-button" type="submit" value="Remove Member">
+             </div>
+      </div>
+
+    </div>
+                  
+  </div>
+</div>
+</div>
+
+<script type="text/javascript">
+  group_id = '{{group._id}}'
+  user_id = '{{profile._id}}'
+</script>
+
+<script src="/javascripts/page_scripting/group/remove_group_member_by_admin.js"></script>

@@ -4,7 +4,7 @@ module.exports = {
             "status": 1,
             "message": data
         };
-
+        console.log('response '+response)
         response.status(201).send(body);
     },
 
@@ -17,3 +17,13 @@ module.exports = {
         response.status(500).send(body);
     }
 }
+
+
+/*error like*/
+// /home/daniar/documents/Sci-Learn/controller/base/response_cont.js:8
+//         response.status(201).send(body);
+//                  ^
+/*because the res is not object*/
+// response function (result){
+//             res.send(result);
+//         }

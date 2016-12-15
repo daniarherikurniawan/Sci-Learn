@@ -175,9 +175,7 @@ router.get('/courses/:group_id/:search_term', function(req, res, next) {
 
 router.post('/membership/addMember', function(req, res, next) {
 	if(req.session.profile!=null){
-		group_cont.addMember(req, function(result){
-			res.send(result);
-		});
+		group_cont.addMember(req, res);
 	}else{
 		res.redirect('/login');
 	}
@@ -185,9 +183,7 @@ router.post('/membership/addMember', function(req, res, next) {
 
 router.post('/membership/removeMember', function(req, res, next) {
 	if(req.session.profile!=null){
-		group_cont.removeMember(req, function(result){
-			res.send(result);
-		});
+		group_cont.removeMember(req, res);
 	}else{
 		res.redirect('/login');
 	}
@@ -195,9 +191,7 @@ router.post('/membership/removeMember', function(req, res, next) {
 
 router.post('/membership/addAdmin', function(req, res, next) {
 	if(req.session.profile!=null){
-		group_cont.addAdmin(req, function(result){
-			res.send(result);
-		});
+		group_cont.addAdmin(req, res);
 	}else{
 		res.redirect('/login');
 	}
@@ -205,11 +199,21 @@ router.post('/membership/addAdmin', function(req, res, next) {
 
 router.post('/membership/removeAdmin', function(req, res, next) {
 	if(req.session.profile!=null){
-		group_cont.removeAdmin(req, function(result){
+		group_cont.removeAdmin(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+router.post('/searchConnectionsThatIsNotGroupMember', function(req, res, next) {
+	if(req.session.profile!=null){
+		group_cont.searchConnectionsThatIsNotGroupMember(req, function(result){
 			res.send(result);
 		});
 	}else{
 		res.redirect('/login');
 	}
 });
+
+
 module.exports = router;

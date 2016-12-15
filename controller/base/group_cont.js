@@ -239,7 +239,34 @@ module.exports = {
 				})
 				.exec(
 				function(err, results){
+					if(err)
+						console.log(err)
 					callback(results.group_members)
+				});
+		}
+	},
+
+	quickSearchWithinGroupAdmin: function(req, callback){
+		search_term = req.body.search_term;
+		group_id = req.body.group_id;
+
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			Group.object.findById(group_id)
+				.populate({
+					path:'group_admin',
+					select:'name email',
+					match: {'name': new RegExp(search_term, "i")},
+					options: {
+				    	limit: 8
+				    }
+				})
+				.exec(
+				function(err, results){
+					if(err)
+						console.log(err)
+					callback(results.group_admin)
 				});
 		}
 	},
@@ -249,10 +276,12 @@ module.exports = {
 		user_id = req.body.user_id;
 		members_id = req.body.members_id.split(",");
 		Group.object
-			.findById(id)
+			.findById(group_id)
 			.select('group_members group_admin')
 			.exec(function(err, data_group){
 				if (err || data_group == null) {
+					console.log('err '+err)
+					console.log('data_group '+data_group)
 					response.setFailedResponse(res, err);
 				} else {
 					isGroupAdmin = (data_group.group_admin.indexOf(user_id) != -1)
@@ -262,8 +291,18 @@ module.exports = {
 						for (var i = members_id.length - 1; i >= 0; i--) {
 							data_group.group_members.push(members_id[i])
 						}
+
 						data_group.save()
-						response.setSucceededResponse(res, "New member has been added!");
+
+						User.object.find({_id : {$in : members_id }})
+						.select('groups')
+						.exec(function (err,group_members){
+							for (var i = group_members.length - 1; i >= 0; i--) {
+								group_members[i].groups.push(data_group._id);
+								group_members[i].save();
+							}
+							response.setSucceededResponse(res, {'group_id':data_group._id});
+						});
 					}
 				}
 				return ;
@@ -275,7 +314,7 @@ module.exports = {
 		user_id = req.body.user_id;
 		members_id = req.body.members_id.split(",");
 		Group.object
-			.findById(id)
+			.findById(group_id)
 			.select('group_members group_admin')
 			.exec(function(err, data_group){
 				if (err || data_group == null) {
@@ -289,7 +328,19 @@ module.exports = {
 							data_group.group_members = deleteItemInArray(members_id[i], data_group.group_members)
 						}
 						data_group.save()
-						response.setSucceededResponse(res, "The member has been removed!");
+						User.object.find({_id: {$in: members_id}})
+							.select('groups')
+							.exec(function(err, members){
+								if (err) {
+									response.setFailedResponse(res, err);
+								} else {
+									for (var i = members.length - 1; i >= 0; i--) {
+										members[i].groups = deleteItemInArray(data_group._id, members[i].groups);
+										members[i].save();
+									}
+									response.setSucceededResponse(res, {'group_id':data_group._id});
+								}
+							})
 					}
 				}
 				return ;
@@ -301,7 +352,7 @@ module.exports = {
 		user_id = req.body.user_id;
 		members_id = req.body.members_id.split(",");
 		Group.object
-			.findById(id)
+			.findById(group_id)
 			.select('group_members group_admin')
 			.exec(function(err, data_group){
 				if (err || data_group == null) {
@@ -331,7 +382,7 @@ module.exports = {
 			response.setFailedResponse(res, "You cannot remove yourself from admin position!");
 		}else{
 			Group.object
-				.findById(id)
+				.findById(group_id)
 				.select('group_admin')
 				.exec(function(err, data_group){
 					if (err || data_group == null) {
@@ -350,6 +401,44 @@ module.exports = {
 					}
 					return ;
 			})
+		}
+	},
+
+	searchConnectionsThatIsNotGroupMember: function(req, callback){
+		search_term = req.body.search_term;
+		group_id = req.body.group_id;
+
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			Group.object.findById(group_id)
+				.select('group_members')
+				.exec(function(err, data_group){
+					if (err || data_group == null) {
+						console.log(err)
+						callback([]);
+					} else {
+						// console.log("req.session.profile.connections "+ req.session.profile.connections)
+						// console.log(" data_group.group_members"+data_group.group_members )
+						// console.log(" search_term"+search_term )
+						User.object.find({$and: [
+								{_id: {$in: req.session.profile.connections}},
+								{_id: {$nin: data_group.group_members}},
+								{name: new RegExp(search_term, "i")}
+							]
+							})
+							.select('name email')
+							.limit(8)
+							.exec(function (err, connections){
+								if(err || connections == null){
+									console.log(err)
+									callback([])
+								}else{
+									callback(connections)
+								}
+							});
+					}
+				});
 		}
 	},
 }

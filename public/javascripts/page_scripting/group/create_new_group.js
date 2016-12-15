@@ -1,3 +1,9 @@
+/*Initialization*/
+$('#create_group_modal').on('shown.bs.modal', function () {
+  $('textarea#group_name').focus();
+}) 
+
+
 function createNewGroup(){
 	group_name = $('textarea#group_name').val();
 	group_info = $('textarea#group_info').val();
