@@ -157,7 +157,7 @@ router.post('/quickSearchWithinGroupCourse', function(req, res, next) {
 router.get('/members/:group_id/:search_term', function(req, res, next) {
 	// limitPerPage == 0, as indicator that we do not need pagination
 	if(req.session.profile!=null){
-		group_cont.fullSearchWithinGroupMember(req.params.group_id, req.params.search_term, req, res, 0, 15);
+		page_group_cont.showGroupMembersResultSearchPage(req.params.group_id, req.params.search_term, req, res, 0, 15);
 	}else{
 		res.redirect('/login');
 	}
@@ -173,5 +173,43 @@ router.get('/courses/:group_id/:search_term', function(req, res, next) {
 	}
 });
 
+router.post('/membership/addMember', function(req, res, next) {
+	if(req.session.profile!=null){
+		group_cont.addMember(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
 
+router.post('/membership/removeMember', function(req, res, next) {
+	if(req.session.profile!=null){
+		group_cont.removeMember(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+
+router.post('/membership/addAdmin', function(req, res, next) {
+	if(req.session.profile!=null){
+		group_cont.addAdmin(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+
+router.post('/membership/removeAdmin', function(req, res, next) {
+	if(req.session.profile!=null){
+		group_cont.removeAdmin(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
 module.exports = router;

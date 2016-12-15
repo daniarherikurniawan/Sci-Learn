@@ -60,11 +60,13 @@
                                   <a href="/group/<%group._id%>">
                                   <b><%group.group_name%></b></a>
                                   <div  style="margin-top: -31px">
+                                     <%^showSearchMemberResult%>
                                      <a href="/group/members/<%group._id%>" class="btn pull-right btn-default-blue" 
                                      style="margin: 0px 3px 0px 3px;  <%#showGroupMemberDetail%> background-color: #d6e7e8; <%/showGroupMemberDetail%>    padding: 6px 5px;   height: 34px;"
                                      title="Group Members" >
                                      <i class=" fa fa-users  fa-1x " 
                                      style=" font-size: 18px; margin-top: 2px;"> &nbsp<%group.group_members.length%></i></a>
+                                     <%/ showSearchMemberResult%>
 
                                      <a href="/group/Courses/<%group._id%>" class="btn pull-right btn-default-blue" 
                                      style="margin: 0px 3px 0px 3px;   <%#showGroupCourseDetail%> background-color: #d6e7e8; <%/showGroupCourseDetail%>   padding: 6px 5px;   height: 34px;"
@@ -99,7 +101,7 @@
                         </div><!-- show more -->
 
                           <!-- Create Post -->
-                        <%^ showGroupMemberDetail %>
+                        <%# showGroupPost %>
                         <div class="well" style="padding: 15px; margin-bottom: 15px;"> 
                           <form action="/group/addPost" method="post" class="form-horizontal" role="form">
                            <div class="row">
@@ -143,15 +145,15 @@
                         </form>
                       </div>
                       <!-- Create Post -->
-                      <%/ showGroupMemberDetail %>
+                      <%/ showGroupPost %>
 
                       <%# showGroupPost %>
                         <%> post_partial %>
                       <%/ showGroupPost %>
               
-                      <%# showGroupMemberDetail %>
+                      <%^ showGroupPost %>
                         <%> group_member_detail%> 
-                      <%/ showGroupMemberDetail %>
+                      <%/ showGroupPost %>
 
 
                       <%# showGroupPost %>
@@ -173,9 +175,9 @@
               <div id="rightSideBar" class="col-sm-3 rightside" style="overflow:auto; margin-top: 0px" >
                  <%> list_course_in_group%> 
 
-                  <%^ showGroupMemberDetail %>
+                  <%# showGroupPost %>
                     <%> group_member%> 
-                  <%/ showGroupMemberDetail %>
+                  <%/ showGroupPost %>
               </div>
 
               </div><!--/row-->

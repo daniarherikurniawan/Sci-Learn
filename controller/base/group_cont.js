@@ -243,5 +243,114 @@ module.exports = {
 				});
 		}
 	},
+
+	addMember: function(req, res){
+		group_id = req.body.group_id;
+		user_id = req.body.user_id;
+		members_id = req.body.members_id.split(",");
+		Group.object
+			.findById(id)
+			.select('group_members group_admin')
+			.exec(function(err, data_group){
+				if (err || data_group == null) {
+					response.setFailedResponse(res, err);
+				} else {
+					isGroupAdmin = (data_group.group_admin.indexOf(user_id) != -1)
+					if(!isGroupAdmin){
+						response.setFailedResponse(res, "You're not an admin!");
+					}else{
+						for (var i = members_id.length - 1; i >= 0; i--) {
+							data_group.group_members.push(members_id[i])
+						}
+						data_group.save()
+						response.setSucceededResponse(res, "New member has been added!");
+					}
+				}
+				return ;
+		})
+	},
+
+	removeMember: function(req, res){
+		group_id = req.body.group_id;
+		user_id = req.body.user_id;
+		members_id = req.body.members_id.split(",");
+		Group.object
+			.findById(id)
+			.select('group_members group_admin')
+			.exec(function(err, data_group){
+				if (err || data_group == null) {
+					response.setFailedResponse(res, err);
+				} else {
+					isGroupAdmin = (data_group.group_admin.indexOf(user_id) != -1)
+					if(!isGroupAdmin){
+						response.setFailedResponse(res, "You're not an admin!");
+					}else{
+						for (var i = members_id.length - 1; i >= 0; i--) {
+							data_group.group_members = deleteItemInArray(members_id[i], data_group.group_members)
+						}
+						data_group.save()
+						response.setSucceededResponse(res, "The member has been removed!");
+					}
+				}
+				return ;
+		})
+	},
+
+	addAdmin: function(req, res){
+		group_id = req.body.group_id;
+		user_id = req.body.user_id;
+		members_id = req.body.members_id.split(",");
+		Group.object
+			.findById(id)
+			.select('group_members group_admin')
+			.exec(function(err, data_group){
+				if (err || data_group == null) {
+					response.setFailedResponse(res, err);
+				} else {
+					isGroupAdmin = (data_group.group_admin.indexOf(user_id) != -1)
+					if(!isGroupAdmin){
+						response.setFailedResponse(res, "You're not an admin!");
+					}else{
+						for (var i = members_id.length - 1; i >= 0; i--) {
+							if(isInArray(members_id, data_group.group_members))
+								data_group.group_admin.push(members_id[i])
+						}
+						data_group.save()
+						response.setSucceededResponse(res, "New admin has been added!");
+					}
+				}
+				return ;
+		})
+	},
+
+	removeAdmin: function(req, res){
+		group_id = req.body.group_id;
+		user_id = req.body.user_id;
+		members_id = req.body.members_id.split(",");
+		if(isInArray(user_id, members_id)){
+			response.setFailedResponse(res, "You cannot remove yourself from admin position!");
+		}else{
+			Group.object
+				.findById(id)
+				.select('group_admin')
+				.exec(function(err, data_group){
+					if (err || data_group == null) {
+						response.setFailedResponse(res, err);
+					} else {
+						isGroupAdmin = (data_group.group_admin.indexOf(user_id) != -1)
+						if(!isGroupAdmin){
+							response.setFailedResponse(res, "You're not an admin!");
+						}else{
+							for (var i = members_id.length - 1; i >= 0; i--) {
+								data_group.group_admin = deleteItemInArray(members_id[i], data_group.group_admin)
+							}
+							data_group.save()
+							response.setSucceededResponse(res, "The admin has been removed!");
+						}
+					}
+					return ;
+			})
+		}
+	},
 }
 

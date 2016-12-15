@@ -113,6 +113,44 @@ module.exports = {
 			}
 		},
 
+		showGroupMembersResultSearchPage: function(group_id,  search_term, req, res, numOfCurrPage, limit){
+		if(!isInArray(group_id, req.session.profile.groups)){
+			res.redirect('/');
+		}else{
+			Group.object.findById(group_id)
+				.populate({
+					  	path: 'group_members',
+						match: {'name': new RegExp(search_term, "i")},
+					  	select: 'name email img_profile_name'
+					}
+				)
+				.exec( function(err, group_data){
+					if(err || group_data == null){
+						console.log(err);
+						res.send("404");
+					}else{
+						isGroupAdmin = (group_data.group_admin.indexOf(req.session.profile._id) != -1)
+						
+						console.log('isGroupAdmin '+isGroupAdmin)
+						res.render('group', {group: group_data, showSearchMemberResult:true,
+							profile: req.session.profile, isGroupAdmin: isGroupAdmin,
+							numOfPost : 0, numOfLastPage : 0, search_term_for_group_member: search_term,
+							numOfCurrPage : 0, limitPerPage : limit, setting: req.session.setting,
+						partials: {group_info:'partial/group_info', share_modal: 'modal/share_modal', group_member:'partial/group_member',
+							edit_post_template: 'template/edit_post_template', create_group_modal: 'modal/create_group_modal',
+							per_group_member_detail: 'partial/per_group_member_detail',
+							add_group_admin_modal: 'modal/add_group_admin_modal',
+							remove_group_admin_modal: 'modal/remove_group_admin_modal',
+							add_group_member_modal: 'modal/add_group_member_modal',
+							remove_group_member_modal: 'modal/remove_group_member_modal',
+							create_course_modal: 'modal/create_course_modal', group_member_detail: 'partial/group_member_detail',
+							post_partial: 'partial/post_partial', list_group:'partial/list_group', list_course_in_group: 'partial/list_course_in_group',
+							topNavigation:'partial/topNavigation'}});
+					}
+				});
+			}
+		},
+
 		showGroupCoursesPage: function(group_id, req, res, numOfCurrPage, limit){
 		if(!isInArray(group_id, req.session.profile.groups)){
 			res.redirect('/');

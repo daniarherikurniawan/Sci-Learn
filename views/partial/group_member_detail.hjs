@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-11">
-    <input id="search-within-group-members" type="text" autocomplete="off" style="width: 100%; border-color: #d6e7e8; margin: -6px 0 8px 2px;" class="form-control" value="{{search_term}}" placeholder="Find member by name.." name="search_term_for_joined_group" id="search_term_for_joined_group" autofocus>
+    <input id="search-within-group-members" type="text" autocomplete="off" style="width: 100%; border-color: #d6e7e8; margin: -6px 0 8px 2px;" class="form-control" value="{{search_term_for_group_member}}" placeholder="Find member by name.." name="search_term_for_joined_group" id="search_term_for_joined_group" autofocus>
     <div id="search-within-group-members" class="">
       <ul id="search-within-group-members-result" class="dropdown-menu" style="width: 100%; top: -7px;">
       </ul>
@@ -11,6 +11,13 @@
     </div>
 </div>
 
+{{#showSearchMemberResult}}
+<div id="show-all-groups" class="text-center" style="    margin:2px 0px 8px 0px;"> 
+<a href='/group/members/{{group._id}}'>See all members</a>
+</div>
+{{/showSearchMemberResult}}
+
+{{# showGroupMemberDetail }}
 <div class="panel panel-default">
   <div  class="panel-heading">
     {{#isGroupAdmin}}
@@ -65,6 +72,39 @@
 
    </div>
 </div>
+{{/ showGroupMemberDetail }}
+
+{{#showSearchMemberResult}}
+<div class="panel panel-default">
+   <div  class="panel-heading">
+  	
+    {{#isGroupAdmin}}
+    <li class="dropdown pull-right" style="list-style-type: none;">
+    <a title="Edit Group Membership" href="" data-toggle="dropdown" type="button">
+	    <small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit</a>
+
+    <ul class="dropdown-menu" style="left:-121px; top:18px;    min-width: 167px; ">
+      <li><a class="btn "  style="text-align: left" data-toggle="modal" href="#add_group_member_modal"  type="button"><i class="glyphicon glyphicon-plus "></i>&nbsp; Add Member</a></li>
+      <li><a class="btn" style="text-align: left" data-toggle="modal" href="#remove_group_member_modal" type="button" ><i class="glyphicon glyphicon-remove "></i>&nbsp; Remove Member</a></li>
+     </ul>
+   </li>
+    {{/isGroupAdmin}}
+
+     <h4 id="list-group-title" style="    margin: 0px;">Searching Result</h4>
+  
+  </div>
+
+  <div id="show-group-member-list" class="panel-body" style="  padding-right: 0px;  text-align: center;">
+
+
+{{# group.group_members }}
+    {{> per_group_member_detail}}
+{{/ group.group_members }}
+
+   </div>
+</div>
+{{/showSearchMemberResult}}
+
 
 <!-- Modals -->
 {{> add_group_admin_modal}}
