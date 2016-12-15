@@ -130,7 +130,7 @@ function addGroupMember(){
     if(result.status == 1){
         window.location.href= "/group/members/"+result.message.group_id;
     }else{
-      alert("failed create group")
+      alert("failed add group member")
     }
   }
 }

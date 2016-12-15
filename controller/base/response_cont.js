@@ -4,7 +4,6 @@ module.exports = {
             "status": 1,
             "message": data
         };
-        console.log('response '+response)
         response.status(201).send(body);
     },
 

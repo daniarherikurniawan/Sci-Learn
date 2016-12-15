@@ -1,6 +1,3 @@
-<script type="text/javascript">
-  // alert("loli")
-</script>
 <div id="remove_group_member_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
   <div  class="modal-dialog">
     <div  class="modal-content">
@@ -40,7 +37,7 @@
             <div class="col-md-6" style="padding-left: 8px;  width: 41%; margin-right: -12px;">
               <input id="search-member-to-remove-by-admin" type="text" autocomplete="off" style=" border-color: #d6e7e8; " class="form-control" value="" placeholder="Find within group members.." autofocus>
               <div id="search-member-to-remove-by-admin" class="">
-                <ul id="search-member-to-remove-by-admin-result" class="dropdown-menu" style="width: 100%; top: 2px;     background: rgb(243, 249, 249);">
+                <ul id="search-member-to-remove-by-admin-result" class="dropdown-menu" style="width: 100%; top: 2px;  padding: 5px;   background: rgb(243, 249, 249);">
                 </ul>
               </div>
             </div>

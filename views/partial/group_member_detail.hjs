@@ -122,7 +122,6 @@
   	// alert(profile_email)
 </script>
 
-<script src="/javascripts/page_scripting/group/add_group_admin.js"></script>
 <script src="/javascripts/page_scripting/group/remove_group_admin.js"></script>
 <script src="/javascripts/page_scripting/group/group_member_list_detail.js"></script>
 <script src="/javascripts/page_scripting/group/find_within_group_members.js"></script>

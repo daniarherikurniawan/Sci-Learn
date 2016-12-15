@@ -223,7 +223,7 @@ module.exports = {
 	quickSearchWithinGroupMember: function(req, callback){
 		search_term = req.body.search_term;
 		group_id = req.body.group_id;
-		console.log('group_id '+group_id+ " "+search_term)
+		// console.log('group_id '+group_id+ " "+search_term)
 		// callback(search_term)
 		if(search_term == null || search_term == '')
 			callback([]);
@@ -257,7 +257,10 @@ module.exports = {
 				.populate({
 					path:'group_admin',
 					select:'name email',
-					match: {'name': new RegExp(search_term, "i")},
+					match: {$and: [
+						{'name': new RegExp(search_term, "i")},
+						{_id: {$nin: req.session.profile._id}}
+						]},
 					options: {
 				    	limit: 8
 				    }
@@ -267,6 +270,39 @@ module.exports = {
 					if(err)
 						console.log(err)
 					callback(results.group_admin)
+				});
+		}
+	},
+
+	quickSearchWithinGroupMemberNotAdmin: function(req, callback){
+		search_term = req.body.search_term;
+		group_id = req.body.group_id;
+		console.log('group_id '+group_id+ " "+search_term)
+		// callback(search_term)
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			Group.object.findById(group_id)
+				.populate({
+					path:'group_members',
+					select:'name email',
+					match: {'name': new RegExp(search_term, "i")},
+					options: {
+				    	limit: 8
+				    }
+				})
+				.select('group_members group_admin')
+				.exec(
+				function(err, results){
+					// console.log(results.group_admin)
+					if(err)
+						console.log(err)
+					group_members = [];
+					for (var i = results.group_members.length - 1; i >= 0; i--) {
+						if(! isInArray(results.group_members[i]._id, results.group_admin))
+							group_members.push(results.group_members[i])
+					}
+					callback(group_members)
 				});
 		}
 	},
@@ -363,11 +399,11 @@ module.exports = {
 						response.setFailedResponse(res, "You're not an admin!");
 					}else{
 						for (var i = members_id.length - 1; i >= 0; i--) {
-							if(isInArray(members_id, data_group.group_members))
+							if(isInArray(members_id[i], data_group.group_members))
 								data_group.group_admin.push(members_id[i])
 						}
 						data_group.save()
-						response.setSucceededResponse(res, "New admin has been added!");
+						response.setSucceededResponse(res, {'group_id':data_group._id});
 					}
 				}
 				return ;
@@ -396,7 +432,7 @@ module.exports = {
 								data_group.group_admin = deleteItemInArray(members_id[i], data_group.group_admin)
 							}
 							data_group.save()
-							response.setSucceededResponse(res, "The admin has been removed!");
+							response.setSucceededResponse(res, {'group_id':data_group._id});
 						}
 					}
 					return ;

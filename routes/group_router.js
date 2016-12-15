@@ -143,6 +143,27 @@ router.post('/quickSearchWithinGroupMember', function(req, res, next) {
 });
 
 	
+router.post('/quickSearchWithinGroupAdmin', function(req, res, next) {
+	if(req.session.profile!=null){
+		group_cont.quickSearchWithinGroupAdmin(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+
+
+router.post('/quickSearchWithinGroupMemberNotAdmin', function(req, res, next) {
+	if(req.session.profile!=null){
+		group_cont.quickSearchWithinGroupMemberNotAdmin(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+	
 router.post('/quickSearchWithinGroupCourse', function(req, res, next) {
 	if(req.session.profile!=null){
 		group_cont.quickSearchWithinGroupCourse(req, function(result){

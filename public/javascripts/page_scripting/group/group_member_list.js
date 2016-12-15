@@ -1,6 +1,23 @@
 html_input = "";
 admin = "";
 normal_member = "";
+
+
+function isInArray(value, array) {
+  return array.indexOf(value) > -1;
+}
+
+member_to_display = group_admin.slice();
+
+for (var i = group_members.length - 1; i >= 0; i--) {
+	if(!isInArray(group_members[i], group_admin))
+		member_to_display.push(group_members[i])
+}
+
+if(number_of_members > 10){
+	member_to_display.splice(10, member_to_display.length-10 )
+}
+
 // if(group_members.length >)
 var http = new XMLHttpRequest();
 http.open("POST", "/user/getDataUserProfilePicture", true);

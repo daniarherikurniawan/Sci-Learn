@@ -8,13 +8,9 @@
 
 <script type="text/javascript">
 	group_members = '{{group.group_members}}'.split(',');
-	group_admin = '{{group.group_admin}}'.split(',');
-  member_to_display = group_admin.concat(group_members)
   number_of_members = group_members.length;
+	group_admin = '{{group.group_admin}}'.split(',');
   group_id = '{{group._id}}'
-  if(number_of_members > 10){
-    member_to_display.splice(10, member_to_display.length-10 )
-  }
 </script>
 
 <script src="/javascripts/page_scripting/group/group_member_list.js"></script>

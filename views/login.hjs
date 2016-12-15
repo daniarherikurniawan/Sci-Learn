@@ -76,7 +76,7 @@
                           
                           <div class="item active" >
                             <div class=" text-center"> 
-                              <img src="images/logo.jpg" alt="Chania"  height="210">
+                              <img src="welcomeImage/front6.png" alt="Chania"  height="210">
                             </div>
                           </div>
 
@@ -163,7 +163,7 @@
               </h5>
 
               <h5 class="text-center" style="    text-align: -webkit-center; position: relative;  width: 100%;">
-                This platform is deployed for testing [research] purpose. The functionality is 65% done. About the founder:<a href="https://www.linkedin.com/in/daniar-heri-kurniawan-98b6158b" target="ext" >
+                This platform is deployed for testing [research] purpose. The functionality is 75% done. About the founder:<a href="https://www.linkedin.com/in/daniar-heri-kurniawan-98b6158b" target="ext" >
                  <b>Daniar Heri Kurniawan</b></a>
               </h5>
               <h5 class="text-center" style="    text-align: -webkit-center; position: relative; width: 100%;">
