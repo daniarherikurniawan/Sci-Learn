@@ -8,6 +8,9 @@
  </div>
 
 <script type="text/javascript">
-  numberOfCourse = '{{group.courses_id.length}}';
+  // numberOfCourse = '{{group.courses_id.length}}';
+  group_id = '{{group._id}}'
+  user_id = '{{profile._id}}'
+  // alert(numberOfCourse)
 </script>
 <script src="/javascripts/page_scripting/group/list_opened_courses.js"></script>

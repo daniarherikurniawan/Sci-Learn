@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var course_cont = require('../controller/base/course_cont');
+var page_course_cont = require('../controller/base/paging/page_course_cont');
 
 /* POST get list courses. */
 router.post('/getList', function(req, res, next) {
@@ -11,5 +12,26 @@ router.post('/getList', function(req, res, next) {
 		res.redirect('/login');
 	}
 });
+
+/* POST home page. */
+router.post('/createNewCourse', function(req, res, next) {
+	if(req.session.profile!=null){	
+		// console.log(req.body)
+		course_cont.createCourse(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+// /* GET home page. */     
+router.get('/:course_id', function(req, res, next) {
+	// limitPerPage == 0, as indicator that we do not need pagination
+	if(req.session.profile!=null){
+		page_course_cont.showCoursePage(req.params.course_id, req, res, 0, 15);
+	}else{
+		res.redirect('/login');
+	}
+});
+
 
 module.exports = router;

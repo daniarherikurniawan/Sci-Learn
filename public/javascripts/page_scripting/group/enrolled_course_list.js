@@ -15,7 +15,7 @@
         group_list_name = ''
         for (var i = result.length - 1; i >= 0; i--) {
         	if(i < 7)
-	        	group_list_name += "<a href=\"/courses/"+result[i]._id+"\" class=\"list-group-item\">"+result[i].group_name+"</a> ";
+	        	group_list_name += "<a href=\"/course/"+result[i]._id+"\" class=\"list-group-item\">"+result[i].course_name+"</a> ";
         }
         // alert()
         if(result.length  == 8){

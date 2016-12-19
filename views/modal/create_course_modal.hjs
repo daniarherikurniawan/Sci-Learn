@@ -9,7 +9,7 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
           style=" font-size: 28px; padding: 2px 11px 0px 0px;">×</button>
           <h4 style=" color: white; text-align: center;
-        margin: 5px 0px 0px;">Open New Course </h4>
+        margin: 5px 0px 0px;">Create New Course </h4>
         </div>
       </div>
       
@@ -22,42 +22,66 @@
 
                 <div class="row" style="margin-bottom: 4px;" >
                   <div class="col-sm-3" >
-                    <h5>Group Name</h5>
+                    <h5>Course Name</h5>
                   </div>
                   <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
-                    <textarea class="form-control" id="group_name" maxlength="40" style="height: 35px"placeholder="" required></textarea>
+                    <textarea class="form-control" id="course_name" maxlength="40" style="height: 35px"placeholder="" required></textarea>
                   </div>
                 </div>
                 
                 <div class="row" style="margin-bottom: 4px;" >
                   <div class="col-sm-3" >
-                    <h5>Group Info</h5>
+                    <h5>Course Info</h5>
                   </div>
                   <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
-                    <textarea class="form-control" id="group_info" maxlength="300" style="height: 105px"placeholder="" required></textarea>
+                    <textarea class="form-control" id="course_info" maxlength="300" style="height: 105px"placeholder="" required></textarea>
                   </div>
                 </div>
 
                 <div class="row" style="margin-bottom: 10px;" >
                   <div class="row">
                     <div class="col-sm-3" >
-                      <h5>Members</h5>
+                      <h5>Instructors</h5>
                     </div>
-                    <div class="col-sm-9" id="member_list" style=" padding:0px 0px 0px 7px; margin-top: 5px;"> 
+                    <div class="col-sm-9" id="instructor_list" style=" padding:0px 0px 0px 7px; margin-top: 5px;"> 
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-3" >
                     </div>
                     <div class="col-md-6" style="padding-left: 8px; width: 294px;     margin-right: -12px;">
-                      <input id="search-new-member-group" type="text" autocomplete="off" style=" border-color: #d6e7e8; " class="form-control" value="{{search_term}}" placeholder="Find within connections.." name="search_term" id="srch-term" autofocus>
-                      <div id="search-new-member-group" class="">
-                        <ul id="search-new-member-group-result" class="dropdown-menu" style="width: 100%; top: 2px;     background: rgb(243, 249, 249);">
+                      <input id="search-course-instructor" type="text" autocomplete="off" style=" border-color: #d6e7e8; " class="form-control" value="" placeholder="Find within course members.." name="search_term_instructor" id="search_term_instructor" autofocus>
+                      <div id="search-course-instructor" class="">
+                        <ul id="search-course-instructor-result" class="dropdown-menu" style="width: 100%; top: 2px;     background: rgb(243, 249, 249);">
                         </ul>
                       </div>
                     </div>
                     <div class="col-md-3">
-                      <button class="btn btn-primary pull-right modal-button cancel-button" style="width: 107px;" onclick="clearSearchTerm()">Clear Search</button>
+                      <button class="btn btn-primary pull-right modal-button cancel-button" style="width: 107px;" onclick="clearSearchTermInstructor()">Clear Search</button>
+                    </div>
+                  </div>  
+                </div>
+
+                <div class="row" style="margin-bottom: 10px;" >
+                  <div class="row">
+                    <div class="col-sm-3" >
+                      <h5>Students</h5>
+                    </div>
+                    <div class="col-sm-9" id="student_list" style=" padding:0px 0px 0px 7px; margin-top: 5px;"> 
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-3" >
+                    </div>
+                    <div class="col-md-6" style="padding-left: 8px; width: 294px;     margin-right: -12px;">
+                      <input id="search-course-student" type="text" autocomplete="off" style=" border-color: #d6e7e8; " class="form-control" value="" placeholder="Find within course members.." name="search_term_student" id="search_term_student" autofocus>
+                      <div id="search-course-student" class="">
+                        <ul id="search-course-student-result" class="dropdown-menu" style="width: 100%; top: 2px;     background: rgb(243, 249, 249);">
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <button class="btn btn-primary pull-right modal-button cancel-button" style="width: 107px;" onclick="clearSearchTermStudent()">Clear Search</button>
                     </div>
                   </div>  
                 </div>
@@ -67,9 +91,9 @@
                     <h5>Accessibility</h5>
                   </div>
                   <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px; margin-bottom: 5px;">
-                    <select class="form-control" id="group-accessibility">
-                      <option>Private Group</option>
-                      <option>Public Group</option>
+                    <select class="form-control" id="course-accessibility">
+                      <option>Private Course</option>
+                      <option>Public Course</option>
                     </select>
                   </div>
                 </div>
@@ -78,8 +102,8 @@
             </div>
 
              <div class="row col-sm-12" style="padding:0px 0px">
-              <input onclick="createNewGroup()" class="btn btn-primary pull-right modal-button" type="submit" value="Create">
-              <button id="close-modal-create-new-group" class="btn btn-primary pull-right modal-button cancel-button"  data-dismiss="modal" >Cancel</button>
+              <input onclick="createNewCourse()" class="btn btn-primary pull-right modal-button" type="submit" value="Create">
+              <button id="close-modal-create-new-course" class="btn btn-primary pull-right modal-button cancel-button"  data-dismiss="modal" >Cancel</button>
              </div>
       </div>
 
@@ -93,4 +117,8 @@
   var profile_name = '{{profile.name}}';
   var profile_email = '{{profile.email}}';
   var profile_img_profile_name = '{{profile.img_profile_name}}';
+  var group_id = '{{group._id}}'
 </script>
+<script src="/javascripts/page_scripting/course/add_course_student.js"></script>
+<script src="/javascripts/page_scripting/course/add_course_instructor.js"></script>
+<script src="/javascripts/page_scripting/course/create_new_course.js"></script>

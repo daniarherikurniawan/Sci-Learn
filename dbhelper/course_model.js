@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 var CourseSchema = new mongoose.Schema({
   course_name: String,
   course_info: String,
-  course_members: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+  course_students: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+  course_instructors: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   group_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Group' },
   course_materials: { type: [{
     content: String, 
@@ -16,6 +17,9 @@ var CourseSchema = new mongoose.Schema({
     post_index: {type:Number, default: 1},
     date_created: { type: Date, default: Date.now}
   }], default: []},
+
+  img_cover_name: {type: String, default: "course_cover.jpg"},
+  group_accessibility: String,
 
   course_tasks: { type: [{
     content: String, 

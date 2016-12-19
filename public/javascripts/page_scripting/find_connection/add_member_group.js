@@ -27,9 +27,7 @@ function updateListSearch(){
 
 $('input#search-new-member-group').on('keyup', function(e) {
     search_term = $('input#search-new-member-group').val();
-    if (e.which == 13 && ! e.shiftKey) {
-      window.location.href= "/connections/"+profile_id+"/"+search_term+"/0/15";
-    }else{
+
       var http = new XMLHttpRequest();
       http.open("POST", "/connections/quickSearchNewMemberGroup", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -44,7 +42,6 @@ $('input#search-new-member-group').on('keyup', function(e) {
           updateListSearch()
         }
       }
-    }
   });
 
 var list_new_member=[];

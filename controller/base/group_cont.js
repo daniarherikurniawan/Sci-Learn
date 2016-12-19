@@ -231,7 +231,7 @@ module.exports = {
 			Group.object.findById(group_id)
 				.populate({
 					path:'group_members',
-					select:'name email',
+					select:'name email img_profile_name',
 					match: {'name': new RegExp(search_term, "i")},
 					options: {
 				    	limit: 8
@@ -477,5 +477,41 @@ module.exports = {
 				});
 		}
 	},
+
+	getListCoursePerGroup: function(req, res){
+					
+		user_id = req.body.user_id;
+		group_id = req.body.group_id;
+
+		console.log(user_id +"  "+group_id)
+		/*Is it my group?*/
+		if(user_id == req.session.profile._id)
+			group_accessibility = {$in: ["Private Group", "Public Group"]}
+		else
+			group_accessibility = "Public Group"
+
+		Group.object.find({$and:[
+				{_id : group_id},
+				{'group_accessibility' : group_accessibility}
+			]})
+			.select('courses_id')
+			.populate({
+				path:'courses_id',
+				select: 'course_name',
+				options: {
+			    	limit: 8
+			    }
+			})
+			.exec(
+			function(err, results){
+				// console.log('results.courses_id: '+ results);
+				if (err || results == null) {
+					response.setFailedResponse(res, err);
+				} else {
+					response.setSucceededResponse(res, results[0].courses_id);
+				}
+			});
+		
+    },
 }
 

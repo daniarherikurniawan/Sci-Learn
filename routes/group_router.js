@@ -236,5 +236,13 @@ router.post('/searchConnectionsThatIsNotGroupMember', function(req, res, next) {
 	}
 });
 
+/* POST get list courses. */
+router.post('/getListCoursePerGroup', function(req, res, next) {
+	if(req.session.profile!=null){	
+		group_cont.getListCoursePerGroup(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
 
 module.exports = router;
