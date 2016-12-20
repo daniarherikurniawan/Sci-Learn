@@ -42,7 +42,7 @@ isMyOwnGroup = profile_id == current_profile_id;
         		if (isMyOwnGroup)
    					document.getElementById('show-all-groups').innerHTML = "You haven't joined to any group!"  
    				else
-   					document.getElementById('show-all-groups').innerHTML = " There is no public group to display!"  
+   					document.getElementById('show-all-groups').innerHTML = "There is no public group to display!"  
         	}
         }
         document.getElementById('group_list').innerHTML = group_list_name;

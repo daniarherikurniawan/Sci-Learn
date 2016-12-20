@@ -7,7 +7,7 @@ var page_course_cont = require('../controller/base/paging/page_course_cont');
 /* POST get list courses. */
 router.post('/getList', function(req, res, next) {
 	if(req.session.profile!=null){	
-		course_cont.get_list_course(req.body.user_id, res);
+		course_cont.get_list_course(req.body.user_id, (req.body.user_id == req.session.profile._id),  res);
 	}else{
 		res.redirect('/login');
 	}

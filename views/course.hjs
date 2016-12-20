@@ -23,7 +23,7 @@
             <div class="column col-sm-12 col-xs-11" id="main" style="margin-top: 50px; width: 100%; height:95%">
               <!-- top nav -->
               <div class="navbar navbar-blue navbar-static-top">  
-                <%> topNavigation%>
+                <%> topNavigationCourse%>
               </div>
               <!-- /top nav -->
               <div class="padding" style="    padding-top: 15px;">

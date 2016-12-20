@@ -50,8 +50,10 @@ module.exports = {
 									}
 								};
 
+								isGroupAdmin = isInArray(req.session.profile._id, group_data.group_admin)
+
 								res.render('group', {group: group_data, showGroupPost:true,
-									profile: req.session.profile, 
+									profile: req.session.profile, isGroupAdmin: isGroupAdmin,
 									numOfPost : arrayPostId.length,
 									posts: posts, numOfLastPage : 0,
 									numOfCurrPage : 0, limitPerPage : limit, setting: req.session.setting,
@@ -93,6 +95,7 @@ module.exports = {
 							if(group_data.group_admin[i]._id == req.session.profile._id)
 								isGroupAdmin = true;
 						}
+						
 						// console.log('isGroupAdmin '+isGroupAdmin)
 						res.render('group', {group: group_data, showGroupMemberDetail:true,
 							profile: req.session.profile, isGroupAdmin: isGroupAdmin,

@@ -1,15 +1,21 @@
 <div class="panel panel-default">
-  <div class="panel-heading">
-  	<a style=" margin-top: 10px;" class="pull-right" type="button" 
+  <div id="opened_courses_title" class="panel-heading">
+  	<a id="open-new-course" style=" margin-top: 10px;" class="pull-right" type="button" 
      onclick=""  data-toggle="modal" href="#create_course_modal" 
     > <small><span class="glyphicon glyphicon-plus"></span></small> New</a> <h4>Opened Courses</h4>
   </div>
-  <div id="show-opened-courses" style="text-align: center;" class="panel-body"></div>
+  <div  class="panel-body">
+    <div id="opened_courses_list" class="list-group" style="margin-bottom: 0px;">
+    </div>
+    <div id="show-opened-courses" class="text-center" style="    margin-top: 8px;"> </div>
+  </div>
  </div>
 
 <script type="text/javascript">
+  isGroupAdmin = {{isGroupAdmin}};
   // numberOfCourse = '{{group.courses_id.length}}';
   group_id = '{{group._id}}'
+  var current_profile_id = '{{friendProfile._id}}{{^friendProfile}}{{profile._id}}{{/friendProfile}}';
   user_id = '{{profile._id}}'
   // alert(numberOfCourse)
 </script>

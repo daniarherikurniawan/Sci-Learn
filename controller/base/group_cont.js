@@ -497,7 +497,7 @@ module.exports = {
 			.select('courses_id')
 			.populate({
 				path:'courses_id',
-				select: 'course_name',
+				select: 'course_name course_accessibility',
 				options: {
 			    	limit: 8
 			    }

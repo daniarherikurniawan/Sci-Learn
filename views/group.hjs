@@ -38,7 +38,6 @@
                       <!-- main col left --> 
 
                      <div class="col-sm-3 leftside">
-                       <%> group_info%>
                        <%> list_group %>
                      </div>
                      <!-- main col left --> 
@@ -173,7 +172,8 @@
                   </div> <!-- middle display -->                    
 
               <div id="rightSideBar" class="col-sm-3 rightside" style="overflow:auto; margin-top: 0px" >
-                 <%> list_course_in_group%> 
+                  <%> group_info%>
+                  <%> list_course_in_group%> 
 
                   <%# showGroupPost %>
                     <%> group_member%> 

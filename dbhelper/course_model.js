@@ -18,8 +18,9 @@ var CourseSchema = new mongoose.Schema({
     date_created: { type: Date, default: Date.now}
   }], default: []},
 
+  date_created: { type: Date, default: Date.now},
   img_cover_name: {type: String, default: "course_cover.jpg"},
-  group_accessibility: String,
+  course_accessibility: String,
 
   course_tasks: { type: [{
     content: String, 

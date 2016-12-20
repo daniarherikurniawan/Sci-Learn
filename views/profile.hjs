@@ -37,16 +37,9 @@
                     <div class="row">
                      <!-- main col left --> 
                      <div class="col-sm-3 leftside">
-                        <%#showFriends%> <%> leftSide %> <%/showFriends%>
-
-                        <%^showGroups%> 
-                        <%^showFriends%><%^showPerActivity%>  <%> about_user %> <%/showPerActivity%>
-                        <%#showPerActivity%><%> about_user %>  <%/showPerActivity%><%/showFriends%> 
-                         <%/showGroups%> 
-
-                        <%#showGroups%><%> leftSide %> <%/showGroups%> 
-
                         <%> list_group %> 
+                        <%> list_course_enrolled%>
+
                        </div>
                        <!-- main col left --> 
                        <!-- main col right -->
@@ -71,23 +64,25 @@
                                   <b><%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%></b></a>'s  
                                   <%#showFriends%> connections<%/showFriends%>
 
-                                  <%^ showGroups%> <%^showFriends%><%^showPerActivity%> posts<%/showPerActivity%>
-                                  <%#showPerActivity%> activities<%/showPerActivity%><%/showFriends%><%/showGroups%> 
+                                  <%^showCourses%>  <%^ showGroups%> <%^showFriends%><%^showPerActivity%> posts<%/showPerActivity%>
+                                  <%#showPerActivity%> activities<%/showPerActivity%><%/showFriends%><%/showGroups%> <%/showCourses%> 
 
                                   <%#showGroups%> groups<%/showGroups%> 
+                                  <%#showCourses%> courses<%/showCourses%> 
 
 
                                <%^ showFriends %> 
+                               <%^ showCourses%> 
                                <%^ showGroups %>
                                 <a type="button"  id="<%profile._id%>"
                                  href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" 
                                  class="btn btn-default-blue pull-right " 
                                   title="<%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>'s connections" 
-                                  style=" margin-top: -2px;    <%#showFriends%> background-color: #d6e7e8; <%/showFriends%>" ><i  style="" class="fa fa-users">
-                                    <% friendProfile.connections.length %> <%^friendProfile%><%profile.connections.length%><%/friendProfile%> 
-                                  </i>
+                                  style=" margin-top: -2px;    <%#showFriends%> background-color: #d6e7e8; <%/showFriends%>" ><i class=" material-icons" style="font-size: 16px;     margin-top: 1px;">contacts</i> <% friendProfile.connections.length %> <%^friendProfile%><%profile.connections.length%><%/friendProfile%> 
+                                  
                                  </a>
                                 <%/ showGroups %>
+                                <%/showCourses%> 
                                 <%/showFriends%>
 
                                   </h3>
@@ -153,6 +148,7 @@
                      <%/ showFriends %>
                      
                      <%^ showFriends %> 
+                     <%^ showCourses%> 
                      <%^ showGroups %>
                         <div class="col-md-7">
                           <div class="row " style="margin-bottom: 3px;">
@@ -238,6 +234,7 @@
                           
                         </div>
                         <%/ showGroups%>
+                        <%/showCourses%> 
                      <%/ showFriends %>
 
                           <div class="text-center" style="<%# showFriends %>margin-top:151px; <%/ showFriends %> <%^ showFriends %>margin-top:5px; <%/ showFriends %>margin-bottom:1px">
@@ -253,6 +250,8 @@
 
                  <%> list_group_detail %>
 
+                 <%> list_course_detail %>
+
               <div class="text-center">
                 
                 <div class="row" >
@@ -266,12 +265,14 @@
                   <%/showFriends%>
                   
                   <%^showFriends%>
+                  <%^showCourses%> 
                   <%^showGroups%>
                     <%^showPerActivity%>Create your <a href="/"> <button class=" btn btn-md btn-primary" > New Post</button> </a> !<%/showPerActivity%>
                     
                     <%#showPerActivity%> Do some activities in your  <a href="/"> <button class=" btn btn-md btn-primary" >Home</button> </a>!
                     <%/showPerActivity%>
                   <%/showGroups%>
+                  <%/showCourses%> 
                   <%/showFriends%>
 
                   <%/friendProfile%>   
@@ -289,7 +290,13 @@
 
 
               <div id="rightSideBar" class="col-sm-3 rightside" style="overflow:auto" >
-                 <%> rightSide%> 
+                  
+                  <div style="margin-top: 15px"><%> leftSide %> </div>
+
+                  <%^showCourses%>  <%^ showGroups%> <%^showFriends%>
+                    <div style="margin-top: 15px"><%> about_user %> </div>
+                  <%/showFriends%><%/showGroups%> <%/showCourses%> 
+
               </div>
 
               </div><!--/row-->

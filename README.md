@@ -93,3 +93,17 @@ User.model.findById( profile_id)
 
 to know showGroupPost is false or true 
 '{{showGroupPost}}'!=''
+
+
+
+db.courses.remove({"_id" : ObjectId("585715aa350ec0922967113a")})
+
+db.courses.updateMany({},{$set: {"course_accessibility" : "Public Course"}})
+
+db.users.updateMany({},{$set: {"courses" : []}})
+
+db.groups.updateMany({},{$set: {"courses_id" : []}})
+
+db.users.find({'_id': ObjectId('576cf49b3a71b5df0510f209')}).pretty()
+
+

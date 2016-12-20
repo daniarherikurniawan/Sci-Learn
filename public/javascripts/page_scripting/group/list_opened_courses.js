@@ -2,13 +2,19 @@
 // 	document.getElementById('show-opened-courses').innerHTML = "No course available yet!"
 // }
 
-  initiateListCourse(profile_id);
+  if(!isGroupAdmin){
+    $('#open-new-course').remove();
+    $('#opened_courses_title').attr('style', 'text-align: center')
+  }
+
+
+  initiateListCourse(current_profile_id);
 
   function initiateListCourse(profile_id){
     var http = new XMLHttpRequest();
     http.open("POST", "/group/getListCoursePerGroup", true);
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    var params = "user_id=" + user_id+"&group_id=" + group_id;
+    var params = "user_id=" + profile_id+"&group_id=" + group_id;
     http.send((params));
     http.onload = function() {
       result = JSON.parse(http.responseText);
@@ -16,21 +22,30 @@
         alert(http.responseText);
       }else {
         result = result.message;
-        group_list_name = ''
-        for (var i = result.length - 1; i >= 0; i--) {
-        	if(i < 7)
-	        	group_list_name += "<a href=\"/course/"+result[i]._id+"\" class=\"list-group-item\">"+result[i].course_name+"</a> ";
+        course_list_name = ''
+        for (var i = 0; i <= result.length - 1 && i < 8; i++) {
+          if(i < 7){
+            if(result[i].course_accessibility == "Private Course"){
+               icon = "<i style='color: #2d6363; margin-right:3px; font-size: 17px;' title='Private Course' class=\"fa fa-lock\"></i>";
+        }else{
+          icon = "<i style='color: #2d6363; margin-right:3px' title='Public Course' class=\"fa fa-globe\"></i>";
         }
-        document.getElementById('show-opened-courses').innerHTML = group_list_name;
+            course_list_name += "<a href=\"/course/"+result[i]._id+"\" class=\"list-group-item\">"+icon+"   "+result[i].course_name+"</a> ";
+          }
+        }
 
         if(result.length  == 8){
-   			document.getElementById('show-opened-courses').innerHTML = "<a href='/group/courses/"+group_id+"'>See all courses</a>"     	
+        document.getElementById('show-opened-courses').innerHTML = "<a href='/courses/"+profile_id+"'>See all courses</a>"       
         }else{
-        	if(result.length == 0){
-        		// alert("cds")
-   				document.getElementById('show-opened-courses').innerHTML = "There is no available course yet!"  
-        	}
+          $('#show-opened-courses').attr('style', '')
+          
+          if(result.length == 0){
+            document.getElementById('show-opened-courses').innerHTML = "There is no available course yet!"  
+          }
         }
+
+        document.getElementById('opened_courses_list').innerHTML = course_list_name;
       }
     }
   }
+

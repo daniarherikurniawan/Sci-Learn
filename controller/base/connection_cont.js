@@ -165,7 +165,7 @@ module.exports = {
 						 		setting: req.session.setting,
 							 	posts: null,  rec_topic : req.session.rec_topic, page:isLimitedByParameter,
 							 	list_user : friends, myFriend:false, showFriends:true, numOfFriend : numOfFriend,
-							 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+							 	partials: { rightSide:'partial/rightSide',list_course_enrolled: 'partial/list_course_enrolled', list_user:'partial/list_user',
 							 	about_user: 'partial/about_user',leftSide:'partial/leftSide',
 							 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
 							 	topNavigation:'partial/topNavigation'}});
@@ -178,7 +178,7 @@ module.exports = {
 						 		popular_topic: req.session.popular_topic, search_term:'',
 						 		setting: req.session.setting,
 							 	posts: null, list_user : friends, myFriend:true,  showFriends:true,
-							 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+							 	partials: { rightSilist_course_enrolled: 'partial/list_course_enrolled', list_user:'partial/list_user',
 							 	about_user: 'partial/about_user',leftSide:'partial/leftSide',
 							 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
 							 	topNavigation:'partial/topNavigation'}});
@@ -193,7 +193,7 @@ module.exports = {
 						popular_topic: req.session.popular_topic, search_term:'',
 						setting: req.session.setting,
 					 	list_user : friends, rec_topic : req.session.rec_topic, numOfFriend : numOfFriend,
-					 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+					 	partials: { list_course_enrolled: 'partial/list_course_enrolled', list_user:'partial/list_user',
 						about_user: 'partial/about_user',	leftSide:'partial/leftSide',
 					 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
 					 	topNavigation:'partial/topNavigation'}});	
@@ -321,7 +321,7 @@ module.exports = {
 								 		popular_topic: req.session.popular_topic, search_term:search_term,
 									 	posts: null,  rec_topic : req.session.rec_topic, page:isLimitedByParameter,
 									 	list_user : friends, myFriend:false, showFriends:true, numOfFriend : numOfFriend,
-									 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+									 	partials: { list_course_enrolled: 'partial/list_course_enrolled', list_user:'partial/list_user',
 										 	about_user: 'partial/about_user', leftSide:'partial/leftSide',
 										 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
 										 	topNavigation:'partial/topNavigation'}});
@@ -334,7 +334,7 @@ module.exports = {
 										setting: req.session.setting,
 								 		popular_topic: req.session.popular_topic,search_term:search_term,
 									 	posts: null, list_user : friends, myFriend:true,  showFriends:true,
-									 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+									 	partials: { list_course_enrolled: 'partial/list_course_enrolled', list_user:'partial/list_user',
 										 	about_user: 'partial/about_user', leftSide:'partial/leftSide',
 										 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
 										 	topNavigation:'partial/topNavigation'}});
@@ -349,7 +349,7 @@ module.exports = {
 										setting: req.session.setting,
 								popular_topic: req.session.popular_topic,search_term:search_term,
 							 	list_user : friends, rec_topic : req.session.rec_topic, numOfFriend : numOfFriend,
-							 	partials: { rightSide:'partial/rightSide', list_user:'partial/list_user',
+							 	partials: { list_course_enrolled: 'partial/list_course_enrolled', list_user:'partial/list_user',
 									about_user: 'partial/about_user',	 leftSide:'partial/leftSide',
 								 	list_group:'partial/list_group',create_group_modal: 'modal/create_group_modal',
 								 	topNavigation:'partial/topNavigation'}});	

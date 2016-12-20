@@ -1,6 +1,8 @@
 <div class="panel panel-default">
-  <div class="panel-heading text-center"><h4>Group Members</h4></div>
-
+  <div class="panel-heading text-center">
+  	<a href="/group/members/{{group._id}}">
+  		<h4>Group Members</h4></div>
+  	</a>
   <div id="show-group-member-list" class="panel-body" style="    text-align: center;">
    </div>
 </div>

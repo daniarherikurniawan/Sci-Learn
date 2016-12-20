@@ -22,31 +22,31 @@
 
 
        function updateOnlinePanel(id){
-          // alert('need Update (ready)');
-          var http = new XMLHttpRequest();
-          http.open("POST", "/updateOnlineConnection", true);
-          http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-          var params = "id=" + window.encodeURIComponent(id)+ "&type="+window.encodeURIComponent("update");
-          http.send((params));
-          http.onload = function() {
-            if(http.responseText=="404"){
-              //error
-              alert(http.responseText);
-            }else{
-          // alert(http.responseText);
-              var onlineUsers = JSON.parse(http.responseText);
-              // $('#listOnlineConnection').val("lala");
-              var str = "";
-              for (var i = onlineUsers.length - 1; i >= 0; i--) {
-                str = str + "<a  class=\"list-group-item\">"+
-              onlineUsers[i].name +"<i class=\"pull-right fa fa-circle-o-notch fa-spin\" "+
-              "style=\"color:#3b9798\"></i> </a>";
-              };
-//               document.getElementById('numberOnlineUser').innerHTML = onlineUsers.length;
-              document.getElementById('listOnlineConnection').innerHTML = str;
-            }
-            // alert("holaa "+onlineUsers);
-          }
+//           // alert('need Update (ready)');
+//           var http = new XMLHttpRequest();
+//           http.open("POST", "/updateOnlineConnection", true);
+//           http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+//           var params = "id=" + window.encodeURIComponent(id)+ "&type="+window.encodeURIComponent("update");
+//           http.send((params));
+//           http.onload = function() {
+//             if(http.responseText=="404"){
+//               //error
+//               alert(http.responseText);
+//             }else{
+//           // alert(http.responseText);
+//               var onlineUsers = JSON.parse(http.responseText);
+//               // $('#listOnlineConnection').val("lala");
+//               var str = "";
+//               for (var i = onlineUsers.length - 1; i >= 0; i--) {
+//                 str = str + "<a  class=\"list-group-item\">"+
+//               onlineUsers[i].name +"<i class=\"pull-right fa fa-circle-o-notch fa-spin\" "+
+//               "style=\"color:#3b9798\"></i> </a>";
+//               };
+// //               document.getElementById('numberOnlineUser').innerHTML = onlineUsers.length;
+//               document.getElementById('listOnlineConnection').innerHTML = str;
+//             }
+//             // alert("holaa "+onlineUsers);
+//           }
       }
 
 jQuery(function($){

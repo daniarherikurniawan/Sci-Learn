@@ -15,6 +15,7 @@ var page_popular_post_cont = require('../controller/base/paging/page_popular_pos
 var page_post_cont = require('../controller/base/paging/page_post_cont');
 var page_search_cont = require('../controller/base/paging/page_search_cont');
 var page_list_groups_cont = require('../controller/base/paging/page_list_groups_cont');
+var page_list_courses_cont = require('../controller/base/paging/page_list_courses_cont');
 
 // /* GET home page. */     sdsdc
 router.get('/', function(req, res, next) {
@@ -391,6 +392,16 @@ router.get('/groups/:user_id', function(req, res, next) {
 router.get('/groups/:user_id/:search_term', function(req, res, next) {
 	if(req.session.profile != null){
 		page_list_groups_cont.showListGroupsSearchingResult(req.params.user_id, req.params.search_term, req, res);
+	}else{
+		res.redirect('/login');
+  	}
+});
+
+
+/* GET list groups page. */
+router.get('/courses/:user_id', function(req, res, next) {
+	if(req.session.profile != null){
+		page_list_courses_cont.showListCoursesPage(req.params.user_id, req, res);
 	}else{
 		res.redirect('/login');
   	}

@@ -24,19 +24,24 @@ function deleteItemInArray(item, array){
 }
 
 module.exports = {
-    get_list_course: function(user_id, res){
-					console.log(user_id)
+    get_list_course: function(user_id, isMyCourses, res){
+		if(!isMyCourses)
+			match = {'course_accessibility':'Public Course'}
+		else
+			match = {'course_accessibility':{$in: ['Public Course', 'Private Course']}}
+		console.log(user_id)
         User.object.findById(user_id)
             .select('courses')
             .populate({
 					path:'courses',
-					select:'course_name',
+					select:'course_name course_accessibility',
+					match: match,
 					options: {
 				    	limit: 8
 				    }
 				})
             .exec(function(err, user_data){
-            	console.log(user_data)
+            	// console.log(user_data)
 				if (err) {
 					response.setFailedResponse(res, "failed");
 				} else {
