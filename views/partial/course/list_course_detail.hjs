@@ -16,20 +16,20 @@
     <div id="{{_id}}" class=" panel panel-default" >
     <div class="row">
 
-          <div class="col-sm-4 pull-right cover" style="
-          background-repeat:no-repeat;
-          background: linear-gradient(to left, rgba(255,255,255,0),
-            rgba(255,255,255,1)), 
-            url('/groups/{{group_id}}/courses/{{_id}}/about/{{img_cover_name}}');
-            background-size:contain;
-            padding: 0 0 0 0 ; 
-                margin: 10px 10px 10px 0px;
-            width:256px;height:100px;overflow:hidden; ">
-           <img style=" 
+    <div class="col-sm-4 pull-right cover" style="
+    background-repeat:no-repeat;
+    background: linear-gradient(to left, rgba(255,255,255,0),
+      rgba(255,255,255,1)), 
+      url('/groups/{{group_id}}/courses/{{_id}}/about/{{img_cover_name}}');
+      background-size:contain;
+      padding: 0 0 0 0 ; 
+          margin: 10px 10px 10px 0px;
+      width:256px;height:100px;overflow:hidden; ">
+     <img style=" 
 
-            width:256px; position: absolute;left: 25%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  
-            -moz-transform: translateY(-50%) translateX(-50%) ;">
-          </div>
+      width:256px; position: absolute;left: 25%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  
+      -moz-transform: translateY(-50%) translateX(-50%) ;">
+    </div>
 
 
       <div class="col-sm-6" style="height: 120px; padding-left: 0px;">
@@ -68,7 +68,7 @@
             {{# course_instructors}}
                <div style=" display:inline-block;     margin: 0px 1px 1px 0px;">
                 <a  href="/profile/{{email}}"">
-                  <img style="width:35px; margin:1px " title="{{name}}" src="/images/{{email}}/profile/{{img_profile_name}}"> </div>
+                  <img style="width:35px; margin:1px " title="{{name}} (Instructor)" src="/images/{{email}}/profile/{{img_profile_name}}"> </div>
                 </a>
             {{/ course_instructors}}
          </div>

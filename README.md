@@ -95,8 +95,8 @@ to know showGroupPost is false or true
 '{{showGroupPost}}'!=''
 
 
-
-db.courses.remove({"_id" : ObjectId("585715aa350ec0922967113a")})
+585970b6afb0b7bb60126fa4
+db.courses.remove({"_id" : ObjectId("5857ff1fecc671d91543e177")})
 
 db.courses.updateMany({},{$set: {"course_accessibility" : "Public Course"}})
 
@@ -106,4 +106,7 @@ db.groups.updateMany({},{$set: {"courses_id" : []}})
 
 db.users.find({'_id': ObjectId('576cf49b3a71b5df0510f209')}).pretty()
 
+db.groups.update({"group_name": "HMIF ITB 2012"},{$set: {"courses_id" :[ObjectId("585970b6afb0b7bb60126fa4")]}})
+
+db.groups.find({"group_name": "HMIF ITB 2012"}).pretty()
 
