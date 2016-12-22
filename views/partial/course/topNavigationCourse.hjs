@@ -9,7 +9,7 @@
 <nav class="collapse navbar-collapse" role="navigation">
 
 <form action="/search" method="get" class="navbar-form navbar-left" style="padding-top: 2px; margin-right:-30px;">
-  <div class="input-group input-group-sm" style="max-width:500px; width:400px;">
+  <div class="input-group input-group-sm" style="max-width:500px; width:315px;">
     <div>
 
                                   
@@ -25,20 +25,20 @@
   </div>
 </form>
 
-<ul class=" nav navbar-nav">
+<ul class=" nav navbar-nav" style="margin-left: 15px;">
 
   <li>
-    <a href="/groups/{{profile._id}}" style="padding: 12px 10px 13px 9px; font-size:17px;">  <i class=" material-icons" style="position: relative; font-size: 21px;
-    top: 5px;">group</i> Group</a>
+    <a href="/groups/{{profile._id}}" style="padding: 12px 10px 13px 10px; font-size:17px;">  <i class=" material-icons" style="position: relative; font-size: 21px;
+    top: 4px;">group</i> Group</a>
   </li>
   <li>
-    <a href="/courses/{{profile._id}}" style="padding: 16px 10px 13px 10px; font-size:17px;"><i class="glyphicon glyphicon-blackboard"></i> Courses</a>
+    <a href="/courses/{{profile._id}}" style="padding: 16px 10px 13px 10px; font-size:17px;"><i class="glyphicon glyphicon-blackboard" style="top: 2px"></i> Courses</a>
   </li>
   <li>
-    <a href="/bookmarks/{{profile._id}}" style="padding: 17px 15px 12px 15px; font-size:17px;" ><i class="fa fa-bookmark" style=""></i> Bookmarks</a>
+    <a href="/bookmarks/{{profile._id}}" style="padding: 17px 10px 12px 10px; font-size:17px;" ><i class="fa fa-bookmark" style=""></i> Bookmarks</a>
   </li>
   <li>
-    <a href="/badges/{{profile._id}}" style="padding: 17px 15px 12px 15px; font-size:17px;" ><i class="fa fa-trophy"  style="position: relative; font-size: 19px;
+    <a href="/badges/{{profile._id}}" style="padding: 17px 10px 12px 10px; font-size:17px;" ><i class="fa fa-trophy"  style="position: relative; font-size: 19px;
     top: 0px;"></i> Badges</a>
   </li>
 </ul>

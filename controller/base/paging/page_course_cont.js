@@ -55,11 +55,18 @@ module.exports = {
 									profile: req.session.profile, 
 									numOfPost : arrayPostId.length,
 									posts: posts, numOfLastPage : 0,
+									showCourseHome : true,
+									showCourseGrades : false,
+									showCourseDiscussionForum : false,
+									showCourseParticipants : false,
+									showCourseMaterial: false,
 									numOfCurrPage : 0, limitPerPage : limit, setting: req.session.setting,
-								partials: {group_info:'partial/group_info', share_modal: 'modal/share_modal', group_member:'partial/group_member',
+								partials: { 
+									courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
+									courseParticipants:'partial/course/courseParticipants',
+									
 									topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
-									mainViewCourse:'partial/course/mainViewCourse', courseHome:'partial/course/courseHome',
-									courseGrades:'partial/course/courseGrades', courseMaterial:'partial/course/courseMaterial', 
+									mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
 									courseDiscussionForum:'partial/course/courseDiscussionForum'}});
 
 							});

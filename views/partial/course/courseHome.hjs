@@ -1,1 +1,168 @@
-course home
+<div class="panel panel-default" style="margin-top: 0px;">
+	<div class="panel-heading " style="height: 40px; background: #d1f4de;">
+		<a class="pull-right" title="Edit Group Admin" href="" data-toggle="dropdown" type="button">
+	    	<small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit
+	   	</a>
+		<h4 style="padding-top: 0px; margin-top: 0px;">Course Overview </h4>
+	</div>
+
+	<div class="list-group" style="padding: 10px; line-height: 22px; " >
+	  <p>Did you realize that the word "algebra" comes from Arabic (just like "algorithm" and "al jazeera" and "Aladdin")? And what is so great about algebra anyway? This tutorial doesn't explore algebra so much as it introduces the history and ideas that underpin it.</p>
+	</div>
+
+</div>
+
+<div class="panel panel-default" style="margin-top: 0px;">
+	<div class="panel-heading " style="height: 40px; background: #d1f0f4;">
+		<a class="pull-right" title="Edit Group Admin" href="" data-toggle="dropdown" type="button">
+	    	<small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit
+	   	</a>
+		<h4 style="padding-top: 0px; margin-top: 0px;">Course Materials </h4>
+	</div>
+
+	<div class="course-material " style="padding: 10px; line-height: 22px; " >
+	  <p>Did you realize that the word "algebra" comes from Arabic (just like "algorithm" and "al jazeera" and "Aladdin")? And what is so great about algebra anyway? This tutorial doesn't explore algebra so much as it introduces the history and ideas that underpin it.</p>
+
+	  <div class="list-group">
+	  	<h4 style="    background: #d6e7e8;
+		    height: 30px;
+		    padding: 7px;
+		    color: #2d6363;
+		    margin-bottom: 0px;">Week 1
+	   	</h4>
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-bell"></i>   Announcement</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-expand"></i>   Video 1</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-file"></i>   File 1</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-lock"></i>   Kimia Dasar</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-star"></i>   Quiz Bab 1</a> 
+      </div>
+
+        <div class="list-group">
+	  	<h4 style="    background: #d6e7e8;
+		    height: 30px;
+		    padding: 7px;
+		    color: #2d6363;
+		    margin-bottom: 0px;">Week 2
+	   	</h4>
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-bell"></i>   Announcement</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-expand"></i>   Video 1</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-file"></i>   File 1</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-lock"></i>   Kimia Dasar</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-star"></i>   Quiz Bab 1</a> 
+      </div>
+
+      <div class="list-group">
+	  	<h4 style="    background: #d6e7e8;
+		    height: 30px;
+		    padding: 7px;
+		    color: #2d6363;
+		    margin-bottom: 0px;">Week 3
+	   	</h4>
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-bell"></i>   Announcement</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-expand"></i>   Video 1</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-file"></i>   File 1</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-lock"></i>   Kimia Dasar</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-star"></i>   Quiz Bab 1</a> 
+      </div>
+
+      <div class="list-group">
+	  	<h4 style="    background: #d6e7e8;
+		    height: 30px;
+		    padding: 7px;
+		    color: #2d6363;
+		    margin-bottom: 0px;">Week 4
+	   	</h4>
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-bell"></i>   Announcement</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-expand"></i>   Video 1</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-file"></i>   File 1</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-lock"></i>   Kimia Dasar</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-star"></i>   Quiz Bab 1</a> 
+      </div>
+
+      <div class="list-group">
+	  	<h4 style="    background: #d6e7e8;
+		    height: 30px;
+		    padding: 7px;
+		    color: #2d6363;
+		    margin-bottom: 0px;">Week 5
+	   	</h4>
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-bell"></i>   Announcement</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-expand"></i>   Video 1</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-file"></i>   File 1</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-lock"></i>   Kimia Dasar</a> 
+
+	  	<a href="/group/584e87f2d9e167881462f838" class="list-group-item"><i style="color: #2d6363;margin-right: 3px;
+    	font-size: 22px;
+    	top: 4px;" title="Public Group" class="glyphicon glyphicon-star"></i>   Quiz Bab 1</a> 
+      </div>
+
+	 </div>
+
+</div>

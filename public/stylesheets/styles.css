@@ -394,3 +394,67 @@ small.text-muted {
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #f3f9f9 inset;
 }
+
+
+/*leftMenuCourse*/
+
+
+ul.egmenu {
+background: white;
+    padding-left: 0px;
+height: 30px;
+      list-style-type: none;
+width: 100%;
+}
+
+ul.egmenu > li {
+float: left;
+position: relative;
+}
+
+
+ul.egmenu > li a:hover {
+background: #d1f0f4;
+}
+
+ul.egmenu ul {
+      padding-left: 20px;
+      padding-right: 20px;
+      list-style-type: none;
+background: white;
+display: none;
+position: absolute;
+left: 0; top: 100%;
+}
+
+
+ul.egmenu ul a:hover {
+background: #d6e7e8;
+}
+ul.egmenu a {
+cursor: pointer;
+display: block;
+color: black;
+line-height: 30px;
+padding: 0 30px;
+}
+ul.egmenu { height: auto; }
+ul.egmenu > li { float: none; width: 100%; }
+ul.egmenu a { line-height: 40px; }
+ul.egmenu ul { position: relative; }
+
+ul.egmenu li.tap { background: #d1f0f4; }
+ul.egmenu li.tap ul { display: block; }
+
+
+
+/*#3b9798*/
+
+
+
+/*course materials*/
+
+
+.course-material a:hover{
+  background-color: #f3f9f9;
+}

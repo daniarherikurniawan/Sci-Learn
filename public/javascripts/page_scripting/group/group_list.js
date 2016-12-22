@@ -26,7 +26,7 @@ isMyOwnGroup = profile_id == current_profile_id;
         for (var i = 0; i <= result.length - 1 && i < 8; i++) {
         	if(i < 7){
         		if(result[i].group_accessibility == "Private Group"){
-					icon = "<i style='color: #2d6363; margin-right:3px; font-size: 17px;' title='Private Group' class=\"fa fa-lock\"></i>";
+					     icon = "<i style='color: #2d6363; margin-right:3px; font-size: 17px;' title='Private Group' class=\"fa fa-lock\"></i>";
 				}else{
 					icon = "<i style='color: #2d6363; margin-right:3px' title='Public Group' class=\"fa fa-globe\"></i>";
 				}

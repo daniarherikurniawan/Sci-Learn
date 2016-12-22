@@ -1,0 +1,20 @@
+{{# showCourseHome }}
+	{{> courseHome}}
+{{/ showCourseHome }}
+
+{{# showCourseGrades }}
+	{{> coursGrades}}
+{{/ showCourseGrades }}
+
+{{# showCourseDiscussionForum }}
+	{{> courseDiscussionForum}}
+{{/ showCourseDiscussionForum }}
+
+{{# showCourseParticipants }}
+	{{> courseParticipants}}
+{{/ showCourseParticipants }}
+
+{{# showCourseMaterial }}
+	{{> courseMaterial}}
+{{/ showCourseMaterial }}
+
