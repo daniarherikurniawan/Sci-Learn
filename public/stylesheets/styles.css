@@ -355,6 +355,9 @@ small.text-muted {
     display: none; 
   }
 
+ 
+
+
 ::selection {
   background: rgb(199, 229, 231); /* WebKit/Blink Browsers */
 }
@@ -419,7 +422,6 @@ background: #d1f0f4;
 
 ul.egmenu ul {
       padding-left: 20px;
-      padding-right: 20px;
       list-style-type: none;
 background: white;
 display: none;
@@ -428,9 +430,7 @@ left: 0; top: 100%;
 }
 
 
-ul.egmenu ul a:hover {
-background: #d6e7e8;
-}
+ul.egmenu ul a:hover {background: #d1f0f4;}
 ul.egmenu a {
 cursor: pointer;
 display: block;
@@ -446,7 +446,11 @@ ul.egmenu ul { position: relative; }
 ul.egmenu li.tap { background: #d1f0f4; }
 ul.egmenu li.tap ul { display: block; }
 
-
+a.active{
+  border-left: 19px solid #d1f0f4;
+  margin-left: -20px;
+  padding-left: 31px !important;
+}
 
 /*#3b9798*/
 
