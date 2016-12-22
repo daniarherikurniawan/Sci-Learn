@@ -28,7 +28,7 @@
 <ul class=" nav navbar-nav" style="margin-left: 15px;">
 
   <li>
-    <a href="/groups/{{profile._id}}" style="padding: 12px 10px 13px 10px; font-size:17px;">  <i class=" material-icons" style="position: relative; font-size: 21px;
+    <a href="/groups/{{profile._id}}" style="padding: 11px 10px 13px 10px; font-size:17px;">  <i class=" material-icons" style="position: relative; font-size: 21px;
     top: 4px;">group</i> Group</a>
   </li>
   <li>
