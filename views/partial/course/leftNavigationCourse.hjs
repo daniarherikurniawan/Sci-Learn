@@ -4,7 +4,7 @@
 <div style=" display:inline-block; padding: 0px 0px 0px 1px; margin-bottom: 0px;;"> <img style="width:100%; margin:0px " title="Daniar Kurniawan (group admin)" src="/groups/{{course.group_id}}/courses/{{course._id}}/about/{{course.img_cover_name}}"> 
 </div>
 
-  <div style="text-align: center;">
+  <div style="text-align: center; color: #2d6363">
     <h4><b>{{course.course_name}}</b></h4>
   </div>
   <div  class="" style="">
@@ -21,6 +21,7 @@
             <li><a class="menu" id="week_7">Week 7</a></li>
           </ul>
       </li>
+      <li><a>Quizzes</a></li>
       <li><a>Grades</a></li>
       <li class="">
           <a href="#" class="has-sub">Discussion Forums</a>

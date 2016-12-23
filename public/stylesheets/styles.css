@@ -417,7 +417,7 @@ position: relative;
 
 
 ul.egmenu > li a:hover {
-background: #d1f0f4;
+background: #d6e7e8;
 }
 
 ul.egmenu ul {
@@ -430,11 +430,11 @@ left: 0; top: 100%;
 }
 
 
-ul.egmenu ul a:hover {background: #d1f0f4;}
+ul.egmenu ul a:hover {background: #d6e7e8;}
 ul.egmenu a {
 cursor: pointer;
 display: block;
-color: black;
+color: #2d6363;
 line-height: 30px;
 padding: 0 30px;
 }
@@ -443,11 +443,11 @@ ul.egmenu > li { float: none; width: 100%; }
 ul.egmenu a { line-height: 40px; }
 ul.egmenu ul { position: relative; }
 
-ul.egmenu li.tap { background: #d1f0f4; }
+ul.egmenu li.tap {     background: #d6e7e8;}
 ul.egmenu li.tap ul { display: block; }
 
 a.active{
-  border-left: 19px solid #d1f0f4;
+  border-left: 19px solid #d6e7e8;
   margin-left: -20px;
   padding-left: 31px !important;
 }
@@ -461,4 +461,11 @@ a.active{
 
 .course-material a:hover{
   background-color: #f3f9f9;
+}
+
+textarea#editableContentCourse {
+    resize: none;
+    overflow: hidden;
+    min-height: 60px;
+    max-height: 250px;
 }

@@ -4,19 +4,18 @@
         <div class="row" id="{{_id}}row">
 
           <div class="col-sm-2" style=" padding-left: 0px;">
-           <div class="panel-heading" id="{{_id}}theImage">
-            <a href="/profile/{{creator.email}}{{^creator.name}}{{profile.email}}{{/creator.name}}"  class="pull-left">   
-              {{#creator.name}}
-              <div class="col-sm-1"  id="{{creator._id}}editableImage" style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
-                {{/creator.name}}
+             <div class="panel-heading" id="{{_id}}theImage">
+                <a href="/profile/{{creator.email}}{{^creator.name}}{{profile.email}}{{/creator.name}}"  class="pull-left">   
+                  {{#creator.name}}
+                  <div class="col-sm-1"  id="{{creator._id}}editableImage" style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
+                  {{/creator.name}}
 
-              {{^creator.name}}
-              <div class="col-sm-1"  id="{{_id}}editableImage" style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
+                  {{^creator.name}}
+                  <div class="col-sm-1"  id="{{_id}}editableImage" style="padding: 0 0 0 0 ; width:90px;height:90px;overflow:hidden; margin: 3px 10px 0px 0px">
                   {{/creator.name}}
 
                   <img style=" width:90px; position: absolute;left: 50%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%); -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/{{creator.email}}{{^creator.name}}{{profile.email}}{{/creator.name}}/profile/{{creator.img_profile_name}}{{^creator.name}}{{profile.img_profile_name}}{{/creator.name}}">
-                </div>
-
+                  </div>
               </a> 
             </div>
           </div>

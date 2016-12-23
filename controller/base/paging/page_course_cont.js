@@ -50,8 +50,8 @@ module.exports = {
 										posts[i].post_shared.shared = true;
 									}
 								};
-
-								res.render('course', {course: course_data, showGroupPost:true,
+								req.session.course = course_data;
+								res.render('course', {course: req.session.course, showGroupPost:true,
 									profile: req.session.profile, 
 									numOfPost : arrayPostId.length,
 									posts: posts, numOfLastPage : 0,
@@ -64,7 +64,7 @@ module.exports = {
 								partials: { 
 									courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
 									courseParticipants:'partial/course/courseParticipants',
-									
+									edit_single_column_template: 'template/edit_single_column_template',
 									topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
 									mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
 									courseDiscussionForum:'partial/course/courseDiscussionForum'}});

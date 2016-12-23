@@ -19,3 +19,5 @@
 	{{> courseMaterial}}
 {{/ showCourseMaterial }}
 
+
+{{> edit_single_column_template}}

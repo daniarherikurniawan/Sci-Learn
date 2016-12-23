@@ -30,15 +30,15 @@
     top: 4px;">group</i> Group</a>
   </li>
   <li>
-    <a href="/courses/{{profile._id}}" style="padding: 16px 10px 13px 10px; font-size:17px;"><i class="glyphicon glyphicon-blackboard" style="top: 2px"></i> Courses</a>
+    <a href="/courses/{{profile._id}}" style="padding: 15px 10px 13px 10px; font-size:17px;"><i class="glyphicon glyphicon-blackboard" style="top: 2px"></i> Courses</a>
   </li>
   <li>
-    <a href="/connections/{{profile._id}}" style="padding: 15px 10px 13px 10px; font-size:17px;">  <i class=" material-icons" style="    font-size: 17px;
+    <a href="/connections/{{profile._id}}" style="padding: 16px 10px 13px 10px; font-size:17px;">  <i class=" material-icons" style="    font-size: 17px;
     position: relative;
     top: 2px;">contacts</i> Connections</a>
   </li>
   <li>
-    <a href="#" style="padding: 17px 10px 12px 10px; font-size:17px;" ><i class="fa fa-globe" style=""></i> Notifications</a>
+    <a href="#" style="padding: 17px 10px 12px 10px; font-size:16px;" ><i class="fa fa-globe" style=""></i> Notifications</a>
   </li>
 
 </ul>

@@ -32,13 +32,13 @@
     top: 4px;">group</i> Group</a>
   </li>
   <li>
-    <a href="/courses/{{profile._id}}" style="padding: 16px 10px 13px 10px; font-size:17px;"><i class="glyphicon glyphicon-blackboard" style="top: 2px"></i> Courses</a>
+    <a href="/courses/{{profile._id}}" style="padding: 15px 10px 13px 10px; font-size:17px;"><i class="glyphicon glyphicon-blackboard" style="top: 2px"></i> Courses</a>
   </li>
   <li>
     <a href="/bookmarks/{{profile._id}}" style="padding: 17px 10px 12px 10px; font-size:17px;" ><i class="fa fa-bookmark" style=""></i> Bookmarks</a>
   </li>
   <li>
-    <a href="/badges/{{profile._id}}" style="padding: 17px 10px 12px 10px; font-size:17px;" ><i class="fa fa-trophy"  style="position: relative; font-size: 19px;
+    <a href="/badges/{{profile._id}}" style="padding: 16px 10px 12px 10px; font-size:17px;" ><i class="fa fa-trophy"  style="position: relative; font-size: 19px;
     top: 0px;"></i> Badges</a>
   </li>
 </ul>

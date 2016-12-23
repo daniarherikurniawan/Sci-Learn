@@ -20,7 +20,7 @@
         <div class="box">
           <div class="row row-offcanvas row-offcanvas-left">
             <!-- main right col -->
-            <div class="column col-sm-12 col-xs-11" id="main" style="padding-top: 50px; width: 100%; height:95%">
+            <div class="column col-sm-12 col-xs-11" id="main" style="padding-top: 50px; width: 100%; height:100%">
               <!-- top nav -->
               <div class="navbar navbar-blue navbar-static-top">  
                 <%> topNavigationCourse%>
