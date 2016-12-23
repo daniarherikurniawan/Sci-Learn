@@ -1,0 +1,51 @@
+
+<!-- Modal untuk edit single column -->
+<div id="editableTemplate" style="display: none; height: 1px" >
+<form id="needAction" action="#" method="post"  
+   style="  margin-bottom: 45px;">
+      <textarea onkeyup="auto_grow(this)" maxlength="1500"  id = "editableTextArea"  name="data" class="form-control auto-resize" placeholder="Share your knowledge"  required rows="2" style="" ></textarea>
+    
+    <div class="pull-right" style="    padding: 10px 15px 0px 0px; margin-top: 0px;">
+      <a id="cancelButtonId" onclick="cancelEdit()" class="btn btn-md btn-default" type="">Cancel
+      </a> &nbsp;  
+      <button class=" btn btn-md btn-primary" type="submit">Save</button>
+    </div>
+</form>
+</div>
+
+<script type="text/javascript">
+  function auto_grow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight)+"px";
+  }
+
+  // alert(document.getElementById('editableTemplate').innerHTML)
+   var genuine = null;
+   var button_id = null;
+   var source_id = null;
+
+  function edit(source_id_atr, content_id, url_target, button_id_atr){
+    // alert(content_id)
+    if (genuine == null){
+      button_id = button_id_atr;
+      source_id = source_id_atr;
+      $('#needAction').attr('action',url_target);
+      $('#'+button_id).attr('style', 'display :none');
+      var newValue = "cancelEdit('"+source_id+"')";
+      $('#cancelButtonId').attr('onclick', newValue);
+      document.getElementById('editableTextArea').innerHTML = document.getElementById(content_id).textContent;
+      genuine = document.getElementById(source_id).innerHTML;
+      document.getElementById(source_id).innerHTML =   document.getElementById('editableTemplate').innerHTML;
+    }else{
+      window.alert("You should finish your current editing before edit another one! ")
+    }
+  }
+
+  function cancelEdit(){
+    document.getElementById(source_id).innerHTML = genuine  ;
+    $('#'+button_id).attr('style', 'display :inline-block; margin-top: -7px; padding-right: 0px;');
+    genuine = null;
+  }
+
+
+</script>
