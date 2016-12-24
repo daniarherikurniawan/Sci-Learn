@@ -150,22 +150,62 @@ module.exports = {
 			}
 		)
 	},
-	updateWeeklyMaterial: function(req, res){
+	editWeeklyMaterial: function(req, res){
 		course_id = req.session.course._id;
-		data = req.body.data;
+		array_updated_material = req.body.data;
+		material_id = req.body.id;
+		index = -1;
 		Course.object.findById(course_id)
+			.select('weekly_materials')
 			.exec(function (err, data_course){
-				console.log(data_course)
-				if(err || data_course == null){
-					response.setFailedResponse(res, "Course is not found!");
-				}else{
-					// data_course.course_overview = data;
-					// data_course.save();
-					// response.setSucceededResponse(res, "Success update course's overview!" );
-					res.redirect('/course/'+course_id);
+				for (var i = data_course.weekly_materials.length - 1; i >= 0; i--) {
+					if(data_course.weekly_materials[i]._id == material_id){
+						array_materials_id = data_course.weekly_materials[i].materials;
+						index = i;
+					}
 				}
+				Material.object.find({_id: {$in: array_materials_id}})
+					.exec(function (err, data_materials){
+						array_deleted_materials = [];
+						/*delete if not extst in the updated materials list*/
+						data_course.weekly_materials[index].materials = [];
+
+						for (var i = data_materials.length - 1; i >= 0; i--) {
+							found = false;
+							for (var j = array_updated_material.length - 1; j >= 0; j--) {
+								// console.log(i+'  '+j+'  apa sama '+data_materials[i]._id+' dengan  '+array_updated_material[j].id)
+								if(data_materials[i]._id == array_updated_material[j].id){
+									data_materials[i].material_title = array_updated_material[j].material_title;
+									data_materials[i].material_description = array_updated_material[j].material_description;
+									data_materials[i].material_url = array_updated_material[j].material_url;
+									data_materials[i].save();
+									found = true;
+								}
+							}
+
+							if(!found)
+								array_deleted_materials.push(data_materials[i]._id)
+						};
+						Material.object.remove({_id:{$in: array_deleted_materials}}); 
+						
+						/*create new material if not exist before*/
+						for (var i = array_updated_material.length - 1; i >= 0; i--) {
+							if(array_updated_material[i].id == undefined){
+								var MaterialObj = new Material.model(array_updated_material[i]);
+								MaterialObj.save()
+								array_updated_material[i].id = MaterialObj._id;
+								console.log("createeeee")
+							}
+						}
+						for (var i = 0 ; i < array_updated_material.length ; i++) {
+							data_course.weekly_materials[index].materials.push(array_updated_material[i].id)
+						}
+
+						data_course.save();	
+						response.setSucceededResponse(res, "Success add weekly material!" );
+					})
 			}
-		)
+		);
 	},
 	addWeeklyMaterial: function(req, res){
 		course_id = req.session.course._id;
@@ -183,7 +223,7 @@ module.exports = {
 
 						var MaterialObj = new Material.model(data_material[i]);
 						MaterialObj.save()
-						console.log('MaterialObj._id '+MaterialObj._id)
+						// console.log('MaterialObj._id '+MaterialObj._id)
 						materials_id.push(MaterialObj._id)
 					}
 

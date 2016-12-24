@@ -31,6 +31,7 @@
 var data_json_material = null;
 var isAddingNewWeeklyMaterial = false;
 var templateHTML = '';
+var is_id_edited_materials_changed = false;
 
 function getNeededMaterialTemplate(data, id){
   // alert(data+"  "+id)
@@ -63,22 +64,29 @@ function getNeededMaterialTemplate(data, id){
                  template +='PDF File'
                 }
 
+              if(data.material_url == undefined)
+                data.material_url = ''
+              if(data.material_description == undefined)
+                data.material_description = ''
+              if(data.material_title == undefined)
+                data.material_title = ''
+
               template +="</div>"
 
               if(data.is_announcement){
               template += "<div class=\"col-md-8\" style=\"margin-right: -8px; width: 60%;\">"+
                   "<textarea  maxlength=\"50\"  id ='"+id+"_desc'  name=\"material_video_title\" class=\"form-control auto-resize\""+
-                  "placeholder=\"Announcement's note\"  required  style=\"height: 34px; padding: 8px 12px; \" ></textarea>"+
+                  "placeholder=\"Announcement's note\"  required  style=\"height: 34px; padding: 8px 12px; \" >"+data.material_description+"</textarea>"+
               "</div>"+
             "</div>"
               }else{
               template += "<div class=\"col-md-8\" style=\"margin-right: -8px; width: 60%;\">"+
                   "<textarea  maxlength=\"50\"  id ='"+id+"_title'  name=\"material_video_title\" class=\"form-control auto-resize\""+
-                  "placeholder=\"Material's title\"  required  style=\"height: 34px; padding: 8px 12px; \" ></textarea>"+
+                  "placeholder=\"Material's title\"  required  style=\"height: 34px; padding: 8px 12px; \" >"+data.material_title+"</textarea>"+
               "</div>"+
                "<div style=\"text-align: center;\">"+
-                "\n<button class=\" btn btn-md btn-primary\" title=\"Move material up\" onclick=\"moveUpMaterial()\"><i class=\"fa fa-chevron-up\"></i></button>"+
-                "\n<button class=\" btn btn-md btn-primary\" title=\"Move material down\" onclick=\"moveDownMaterial()\"><i class=\"fa fa-chevron-down\"></i></button>"+
+                "\n<button class=\" btn btn-md btn-primary\" title=\"Move material up\" onclick=\"moveUpMaterial("+id+")\"><i class=\"fa fa-chevron-up\"></i></button>"+
+                "\n<button class=\" btn btn-md btn-primary\" title=\"Move material down\" onclick=\"moveDownMaterial("+id+")\"><i class=\"fa fa-chevron-down\"></i></button>"+
                 "\n<button class=\" btn btn-md btn-danger\" title=\"Remove material\" onclick=\"removeMaterial("+id+")\"><i class=\"fa fa-times\"></i></button>"+
               "</div>"+
             "</div>"+
@@ -90,7 +98,7 @@ function getNeededMaterialTemplate(data, id){
                 "</div>"+
                 "<div class=\"col-md-8\"  style=\"width: 60%;\">"+
                   "<textarea  maxlength=\"100\"  id ='"+id+"_url'  name=\"video_url\" class=\"form-control auto-resize\""+
-                  "placeholder=\"Material's URL\"  required style=\"height: 34px; padding: 8px 12px;\" ></textarea>"+
+                  "placeholder=\"Material's URL\"  required style=\"height: 34px; padding: 8px 12px;\" >"+data.material_url+"</textarea>"+
               "</div>"+
           "</div>"+
           "<div class=\"row\" style=\"margin: 5px\">"+
@@ -101,20 +109,95 @@ function getNeededMaterialTemplate(data, id){
                 "<div class=\"col-md-8\" style=\"width: 60%;\">"+
                   "<textarea  maxlength=\"1500\"  id ='"+id+"_desc'  name=\"material_video_desc\" "+
                   "class=\"form-control auto-resize\" placeholder=\"Material's descriptions\"  required style=\"height: 102px;"+
-                  " padding: 8px 12px; overflow: auto;\" ></textarea>"+
+                  " padding: 8px 12px; overflow: auto;\" >"+data.material_description+"</textarea>"+
               "</div>"+
           "</div>"
         }
          template+= "</div>\n\n" 
-         // alert(template)
+
+    /*id per materials is changed (not using id from server)*/
+    if(id_edited_weekly_material != undefined){
+      is_id_edited_materials_changed = true;
+    }
     return template;
 
 }
 
 function removeMaterial(id){
+  console.log(data_json_material)
+  prepareParamsDataJsonMaterial()
   data_json_material.splice(id,1)
-  updateListEditableMaterials();
+  if(id_edited_weekly_material == undefined)
+    updateListEditableMaterials();
+  else
+    updateListEditableMaterials(id_edited_weekly_material);
 }
+
+
+function moveUpMaterial(id){
+  prepareParamsDataJsonMaterial()
+  temp = data_json_material[id - 1];
+  data_json_material[id -1] = data_json_material[id];
+  data_json_material[id] = temp;
+  if(id_edited_weekly_material == undefined)
+    updateListEditableMaterials();
+  else
+    updateListEditableMaterials(id_edited_weekly_material);
+}
+
+
+function moveDownMaterial(id){
+  prepareParamsDataJsonMaterial()
+  temp = data_json_material[id + 1];
+  data_json_material[id +1] = data_json_material[id];
+  data_json_material[id] = temp;
+  if(id_edited_weekly_material == undefined)
+    updateListEditableMaterials();
+  else
+    updateListEditableMaterials(id_edited_weekly_material);
+}
+
+function moveUpEditedMaterial(id_per_material){
+  id = -1;
+  prepareParamsDataJsonMaterial(id_per_material)
+  for (var i = data_json_material.length - 1; i >= 0; i--) {
+    if(data_json_material[i].id == id_per_material){
+      id = i;
+    }
+  }
+  temp = data_json_material[id - 1];
+  data_json_material[id -1] = data_json_material[id];
+  data_json_material[id] = temp;
+  updateListEditableMaterials(id_edited_weekly_material);
+}
+
+
+function moveDownEditedMaterial(id_per_material){
+  id = -1;
+  prepareParamsDataJsonMaterial(id_per_material)
+  for (var i = data_json_material.length - 1; i >= 0; i--) {
+    if(data_json_material[i].id == id_per_material){
+      id = i;
+    }
+  }
+  temp = data_json_material[id + 1];
+  data_json_material[id +1] = data_json_material[id];
+  data_json_material[id] = temp;
+  updateListEditableMaterials(id_edited_weekly_material);
+}
+
+
+function removeEditedMaterial(id_per_material){
+  prepareParamsDataJsonMaterial(id_per_material)
+  for (var i = data_json_material.length - 1; i >= 0; i--) {
+    if(data_json_material[i].id == id_per_material){
+      data_json_material.splice(i,1)
+    }
+  }
+  updateListEditableMaterials(id_edited_weekly_material);
+}
+
+
 
 /*empty add new material template*/
 function templateAddWeeklMaterial(source_id_atr, content_id, button_id_atr, data_json){
@@ -144,11 +227,14 @@ function templateAddWeeklMaterial(source_id_atr, content_id, button_id_atr, data
     }
   }
 
+var id_edited_weekly_material = undefined;
+
 function editWeeklyMaterial(source_id_atr, content_id, button_id_atr, material_id){
     // alert(content_id)
     if (genuine == null){
       button_id = button_id_atr;
       source_id = source_id_atr;
+      id_edited_weekly_material = material_id;
       $('#'+button_id).attr('style', 'display :none');
       var newValue = "cancelEdit('"+source_id+"')";
       $('#cancelButtonId').attr('onclick', newValue);
@@ -156,17 +242,23 @@ function editWeeklyMaterial(source_id_atr, content_id, button_id_atr, material_i
       data_json_material = detail_weekly_materials[material_id];
       templateHTML = '';
       templateHTML = document.getElementById('edit_week_'+material_id).innerHTML;
-      console.log(data_json_material)
+      is_id_edited_materials_changed = false;
+
       document.getElementById(source_id).innerHTML =  templateHTML;
     }else{
       window.alert("You should finish your current editing before edit another one! ")
     }
   }
 
-  function addNewMaterial(){
-    // alert("add")
-    new_material = $('#new_material_needed').val();
-
+  function addNewMaterial(id_weekly_material){
+    new_material = '';
+    if(id_weekly_material == undefined){
+      new_material = $('#new_material_needed').val();
+      prepareParamsDataJsonMaterial()
+    }else{
+      new_material = document.getElementById('new_material_needed_'+id_weekly_material).value;
+      prepareParamsDataJsonMaterial(id_weekly_material)
+    }
     if(new_material == 'Video'){
       data_json_material.push({ is_video:true});
     }else if( new_material == 'Quiz'){
@@ -174,22 +266,32 @@ function editWeeklyMaterial(source_id_atr, content_id, button_id_atr, material_i
     }else if( new_material == 'PDF File'){
       data_json_material.push({ is_file: true});
     }
-    id = data_json_material.length-1;
-    updateListEditableMaterials();
+    if(id_edited_weekly_material == undefined)
+      updateListEditableMaterials();
+    else
+      updateListEditableMaterials(id_edited_weekly_material);
   }
 
-  function updateListEditableMaterials(){
+  function updateListEditableMaterials(weekly_material_id){
     templateHTML = '';
       for (var i = 0; i < data_json_material.length ; i++) {
           templateHTML += getNeededMaterialTemplate(data_json_material[i], i);
       }
-      document.getElementById('list_of_editable_material').innerHTML = templateHTML;
+      if(weekly_material_id == undefined)
+          document.getElementById('list_of_editable_material').innerHTML = templateHTML;
+      else
+          document.getElementById('edit_list_material_per_week_'+weekly_material_id).innerHTML = templateHTML;
   }
   // id_per_material = '585ea389ad2d82fc1f482fd9'
   // alert(document.getElementById(id_per_material +'_desc').value)
 
 
+ /*Will save the current filled field*/
   function prepareParamsDataJsonMaterial(id_per_material){
+    /*id per material is not using _id from mongoDB after updating views*/
+    if(is_id_edited_materials_changed)
+      id_per_material = undefined
+
     for (var i = 0; i < data_json_material.length; i++) {
       if(data_json_material[i].is_announcement){
         material_title = 'Announcement';
@@ -259,9 +361,10 @@ function editWeeklyMaterial(source_id_atr, content_id, button_id_atr, material_i
       }
     }else{
        var http = new XMLHttpRequest();
-      http.open("POST", "/course/material/addWeeklyMaterial", true);
+      http.open("POST", "/course/material/editWeeklyMaterial", true);
       http.setRequestHeader("Content-type","application/json; charset=utf-8");
-      var params = JSON.stringify(data_json_material);
+
+      var params = JSON.stringify({'data': data_json_material, 'id' : id_edited_weekly_material});
       http.send((params));
       http.onload = function() {
         result = JSON.parse(http.responseText);
@@ -271,12 +374,14 @@ function editWeeklyMaterial(source_id_atr, content_id, button_id_atr, material_i
           location.reload();
         }
       }
+      // alert("cdsjcns")
     }
   }
 
 
   function cancelEdit(){
     isAddingNewWeeklyMaterial = false;
+    id_edited_weekly_material = undefined;
     templateHTML = '';
     document.getElementById(source_id).innerHTML = genuine  ;
     $('#'+button_id).attr('style', 'display :inline-block; margin-top: -7px; padding-right: 0px;');

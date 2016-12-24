@@ -56,10 +56,10 @@ router.post('/material/updateMaterialDesc', function(req, res, next) {
 });
 
 /* POST home page. */
-router.post('/material/updateWeeklyMaterial', function(req, res, next) {
+router.post('/material/editWeeklyMaterial', function(req, res, next) {
 	if(req.session.profile!=null){	
 		// console.log(req.body)
-		course_cont.updateWeeklyMaterial(req, res);
+		course_cont.editWeeklyMaterial(req, res);
 	}else{
 		res.redirect('/login');
 	}
