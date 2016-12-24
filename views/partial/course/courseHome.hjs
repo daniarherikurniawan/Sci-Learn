@@ -1,7 +1,45 @@
+<!-- CAN"T BE REMOVED!!! -->
+<script type="text/javascript">
+   var detail_weekly_materials = {};
+   var temp_data_json = [];
+   
+	function setParamsMaterial(_id, is_video, is_announcement, is_file, is_quiz, is_locked, is_done, has_url,
+	    material_title, material_description, material_url){
+	    data = {
+	      id: _id,
+	      is_video: is_video,
+	      is_announcement: is_announcement,
+	      is_file: is_file,
+	      is_locked: is_locked,
+	      is_quiz: is_quiz,
+	      is_done: is_done,
+	      has_url: has_url,
+	      material_title:material_title,
+	      material_description:material_description,
+	      material_url:material_url
+	    }
+	    return data;
+	}
+
+	function initiateDataJson(_id, is_video, is_announcement, is_file, is_quiz, is_locked, is_done, has_url,material_title, material_description, material_url){
+		single_material = setParamsMaterial(_id, is_video, is_announcement, is_file, is_quiz, is_locked, is_done, has_url,material_title, material_description, material_url)
+		temp_data_json.push(single_material)
+		// alert(is_video+" "+ is_announcement+" "+ is_file+" "+ is_quiz+" "+ is_locked+" "+ is_done+" "+ has_url+" "+ material_title+" "+material_description+" "+ material_url+" ")
+	}
+
+	function createNewIndexWeeklyMaterials(id){
+		if(temp_data_json!= []){
+			id = ''+id;
+			detail_weekly_materials[id] = temp_data_json;
+		}
+		temp_data_json = [];
+	}
+</script>
+
 <div class="panel panel-default" style="margin-top: 0px;">
 	<div class="panel-heading " style="height: 40px; background: #d1f4de;">
 		<a id="button_edit_overview_desc" class="btn pull-right" title="Edit Course Overview" 
-			onclick="edit('editable_course_overview','course_overview_desc','/lala', 'button_edit_overview_desc')"
+			onclick="edit('editable_course_overview','course_overview_desc','/course/material/updateCourseOverview', 'button_edit_overview_desc')"
 			type="button"
 			style=" display: inline-block ; margin-top: -7px; padding-right: 0px;" 
 		>
@@ -12,7 +50,7 @@
 
 	<div class="course-material " style="padding: 10px; line-height: 22px; " >
 		<div id="editable_course_overview">
-	  		<span  id="course_overview_desc">{{^course.course_materials.course_overview}}Edit to fill out with overview about this course!{{/ course.course_materials.course_overview}}</span >
+	  		<span  id="course_overview_desc">{{course.course_overview}}</span >
 	  	</div>
 	</div>
 </div>
@@ -20,10 +58,9 @@
 <div class="panel panel-default" style="margin-top: 0px;">
 	<div class="panel-heading " style="height: 40px; background: #d1f0f4;">
 		<a id="button_edit_material_desc" class="btn pull-right" title="Edit Course Materials" 
-			onclick="edit('editable_course_materials','course_material_desc','/lala', 'button_edit_material_desc')"
+			onclick="edit('editable_course_materials','course_material_desc','/course/material/updateMaterialDesc', 'button_edit_material_desc')"
 			type="button"
-			style=" display: inline-block ; margin-top: -7px; padding-right: 0px;" 
-		>
+			style=" display: inline-block ; margin-top: -7px; padding-right: 0px;">
 	    	<small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit
 	   	</a>
 		<h4 style="padding-top: 0px; margin-top: 0px;">Course Materials </h4>
@@ -32,238 +69,114 @@
 	<div class=" " style="padding: 10px; line-height: 22px; " >
 		<div id="editable_course_materials">
 	  		
-	  		<span id="course_material_desc">{{^course.course_materials.course_materials_description}}Edit to fill out with description about this course materials!{{/ course.course_materials.course_materials_description}}</span >
+	  		<span id="course_material_desc">{{course.course_materials_description}}</span >
 	  	</div>
 	  <!-- <embed src="/test/elearning dgn moodle.pdf" width="800px" height="2100px" /> -->
 	  <!-- <iframe width="420" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"></iframe> -->
 <!-- 	  <object data="/test/elearning dgn moodle.pdf" type="application/pdf" width="300" height="200">
 		<a href="data/test.pdf">test.pdf</a>
 		</object> -->
-		{{^course.course_materials.weekly_materials}}
-		<div id="week_1" class="weekly-material" style=" padding-top: 5px; margin-bottom: 0px;">
+		{{^course.weekly_materials}}
+		<div id="" class="weekly-material" style=" padding-top: 5px; margin-bottom: 0px;">
 			<div class="panel-heading" style="height: 40px; background: #d6e7e8; margin-top: 5px; ">
-				<a id="button_edit_weekly_material" class="btn pull-right" title="Edit Weekly Material" 
-					onclick="edit('editable_course_overview','course_overview_desc','/lala', 'button_edit_overview_desc')"
+				<a id="button_edit_weekly_material" class="btn pull-right" title="Add New Weekly Material" 
+					onclick="templateAddWeeklMaterial('list_material_per_week','week_xx_material', 'button_edit_weekly_material')"
 					type="button"
 					style=" display: inline-block ; margin-top: -7px; padding-right: 0px;" >
-			    	<small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit
+			    	<small><span class="fa fa-plus"></span></small>&nbsp;  Add
 			   	</a>
 				<h4 style="padding-top: 0px; margin-top: 0px;">Week 1 </h4>
 			</div>
 			<div id="list_material_per_week" class="list-group course-material" style="margin-bottom: 0px">
-		    	<a href="/group/584e87f2d9e167881462f838" 
-					style="color: #2d6363 !important; ;" class="list-group-item">
-					<span class="">
-					  	<i style="
-				    	font-size: 18px;
-				    	top: 4px;" title="Public Group" class="glyphicon glyphicon-bell"></i>&nbsp; Announcement 
-			    	</span>
-					<span class="pull-right btn" style="padding-top: 1px; text-align: left; padding-right: 0px; width: 80px;"><i style="" class="fa fa-plus"></i>&nbsp; Add</i>
-					</span>
-		    	</a>
-
-		    	<a href="/group/584e87f2d9e167881462f838" 
-					style="color: #2d6363 !important; ;" class="list-group-item">
-					<span class="">
-					  	<i style="
-				    	font-size: 18px;
-				    	top: 4px;" title="Public Group" class="glyphicon glyphicon-play"></i>&nbsp; Video 1 
-			    	</span>
-					<span class="pull-right btn" style="padding-top: 1px; text-align: left; padding-right: 0px; width: 80px;"><i style="" class="fa fa-unlock"></i>&nbsp; Open</i>
-					</span>
-		    	</a>
-
-
-		    	<a href="/group/584e87f2d9e167881462f838" 
-					style="color: #2d6363 !important; ;" class="list-group-item">
-					<span class="">
-					  	<i style="
-				    	font-size: 18px;
-				    	top: 4px;" title="Public Group" class="glyphicon glyphicon-file"></i>&nbsp; File 1 
-			    	</span>
-					<span class="pull-right btn" style="padding-top: 1px; text-align: left; padding-right: 0px; width: 80px;"><i style="" class="fa fa-lock"></i>&nbsp; Locked</i>
-					</span>
-		    	</a>
-
-
-		    	<a href="/group/584e87f2d9e167881462f838" 
-					style="color: #2d6363 !important; ;" class="list-group-item">
-					<span class="">
-					  	<i style="
-				    	font-size: 18px;
-				    	top: 4px;" title="Public Group" class="glyphicon glyphicon-star"></i>&nbsp; Quiz 1 
-			    	</span>
-					<span class="pull-right btn" style="padding-top: 1px; text-align: left; padding-right: 0px; width: 80px;"><i style="" class="fa fa-unlock"></i>&nbsp; Open</i>
-					</span>
-		    	</a>
-
-
-		      </div>
+		    	
+		    </div>
 		</div>
-		{{/ course.course_materials.weekly_materials}}
-		<br>
-		
-		<div id="week_xx" class="weekly-material" style=" padding-top: 5px; margin-bottom: 0px;">
-			<div class="list-group" style="margin-bottom: 0px">
+		{{/ course.weekly_materials}}
 
-			  	<div href="/group/584e87f2d9e167881462f838" class="row" style="border: #d6e7e8 1px solid;">
-			  		<div class="row" style="margin: 5px">
-				  		<div class="col-md-1" style="width: 30px;">
-				  			<i style="color: #2d6363;margin-right: 3px; font-size: 18px; top: 8px;" title="Public Group" class="glyphicon glyphicon-bell"></i>
-				  		</div>
-				  		<div class="col-md-3">
-				  			<select class="form-control" id="course-accessibility">
-		                      <option>Announcement</option>
-		                      <option>Video</option>
-		                      <option>PDF File</option>
-		                      <option>Quiz</option>
-		                    </select>	
-				      	</div>
-				      	<div class="col-md-8">
-					      	<textarea  maxlength="50"  id = ""  name="data" class="form-control auto-resize" placeholder="Announcement's notes"  required style="height: 34px; padding: 8px 12px; " ></textarea>
-					    </div>
-				      	<button class=" btn btn-md btn-danger" onclick="removeMaterial()">X</button>
-					</div>
-		    	</div> 
+		{{# course.weekly_materials}}		
+		<div id="week_{{_id}}" class="weekly-material" style=" padding-top: 5px; margin-bottom: 0px;">
+			<div class="panel-heading" style="height: 40px; background: #d6e7e8; margin-top: 5px; ">
+				<a id="button_edit_weekly_material_{{_id}}" class="btn pull-right" title="Edit Weekly Material" 
+					onclick="editWeeklyMaterial('list_material_per_week_{{_id}}','week_xx_material', 'button_edit_weekly_material_{{_id}}', '{{_id}}')"
+					type="button"
+					style=" display: inline-block ; margin-top: -7px; padding-right: 0px;" >
+			    	<small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit
+			   	</a>
+				<h4 style="padding-top: 0px; margin-top: 0px;">{{periode_name}} </h4>
+			</div>
+			<div id="list_material_per_week_{{_id}}" class="list-group course-material" style="margin-bottom: 0px">
 
+				{{# materials}}
+					<script type="text/javascript">
+						initiateDataJson('{{_id}}',{{is_video}},{{is_announcement}},{{is_file}},{{is_quiz}},{{is_locked}},{{is_done}},{{has_url}},'{{material_title}}','{{material_description}}',' {{material_url}}');
+					</script>
+			    	<a href="/group/584e87f2d9e167881462f838" 
+						style="color: #2d6363 !important; ;" class="list-group-item">
+						<span class="">
+						  	<i style="
+					    	font-size: 18px;
+					    	top: 4px;" title="Public Group" class="
+							{{# is_video}}
+					    	glyphicon glyphicon-play
+							{{/ is_video}}
+							{{# is_announcement}}
+					    	glyphicon glyphicon-bell
+							{{/ is_announcement}}
+							{{# is_file}}
+					    	glyphicon glyphicon-file
+							{{/ is_file}}
+							{{# is_quiz}}
+					    	glyphicon glyphicon-star
+							{{/ is_quiz}}"></i>&nbsp; {{material_title}} 
+				    	</span>
 
-			  	<div href="/group/584e87f2d9e167881462f838" class="row" style="border: #d6e7e8 1px solid;">
-			  		<div class="row" style="margin: 5px">
-				  		<div class="col-md-1" style="width: 30px;">
-				  			<i style="color: #2d6363;margin-right: 3px; font-size: 18px; top: 8px;" title="Public Group" class="glyphicon glyphicon-play"></i>
-				  		</div>
-				  		<div class="col-md-3">
-				  			<select class="form-control" id="course-accessibility">
-		                      <option>Video</option>
-		                      <option>Announcement</option>
-		                      <option>PDF File</option>
-		                      <option>Quiz</option>
-		                    </select>	
-				      	</div>
-				      	<div class="col-md-8">
-					      	<textarea  maxlength="50"  id = ""  name="data" class="form-control auto-resize" placeholder="Material's title"  required  style="height: 34px; padding: 8px 12px; " ></textarea>
-					    </div>
-				      	<button class=" btn btn-md btn-danger" onclick="removeMaterial()">X</button>
-					</div>
-					<div class="row" style="margin: 5px">
-				  		<div class="col-md-1" style="width: 30px;">
-				  		</div>
-				  		<div class="col-md-3">
-				      	</div>
-				      	<div class="col-md-8">
-					      	<textarea  maxlength="100"  id = ""  name="data" class="form-control auto-resize" placeholder="Video's URL"  required style="height: 34px; padding: 8px 12px;" ></textarea>
-					    </div>
-					</div>
-					<div class="row" style="margin: 5px">
-				  		<div class="col-md-1" style="width: 30px;">
-				  		</div>
-				  		<div class="col-md-3">
-				      	</div>
-				      	<div class="col-md-8">
-					      	<textarea  maxlength="1500"  id = ""  name="data" class="form-control auto-resize" placeholder="Descriptions"  required style="height: 102px; padding: 8px 12px; overflow: auto;" ></textarea>
-					    </div>
-					</div>
-		    	</div> 
+				    	{{# is_announcement}}
+						<span class="pull-right btn" style="padding-top: 1px; text-align: left; padding-right: 0px; width: 80px;"><i style="" class="fa fa-plus"></i>&nbsp; Add
+						</span>
+						{{/ is_announcement}}
+				    	{{# is_file}}
+						<span class="pull-right btn" style="padding-top: 1px; text-align: left; padding-right: 0px; width: 80px;"><i style="" class="fa fa-unlock"></i>&nbsp; Open</i>
+						</span>
+						{{/ is_file}}
+				    	{{# is_video}}
+						<span class="pull-right btn" style="padding-top: 1px; text-align: left; padding-right: 0px; width: 80px;"><i style="" class="fa fa-unlock"></i>&nbsp; Open</i>
+						</span>
+						{{/ is_video}}
+				    	{{# is_quiz}}
+						<span class="pull-right btn" style="padding-top: 1px; text-align: left; padding-right: 0px; width: 80px;"><i style="" class="fa fa-lock"></i>&nbsp; Locked</i>
+						</span>
+						{{/ is_quiz}}
+			    	</a>
+				{{/ materials}}
+				<script type="text/javascript">
+					createNewIndexWeeklyMaterials('{{_id}}');
+				</script>
 
-
-		    	<div href="/group/584e87f2d9e167881462f838" class="row" style="border: #d6e7e8 1px solid;">
-			  		<div class="row" style="margin: 5px">
-				  		<div class="col-md-1" style="width: 30px;">
-				  			<i style="color: #2d6363;margin-right: 3px; font-size: 18px; top: 8px;" title="Public Group" class="glyphicon glyphicon-file"></i>
-				  		</div>
-				  		<div class="col-md-3">
-				  			<select class="form-control" id="course-accessibility">
-		                      <option>PDF File</option>
-		                      <option>Video</option>
-		                      <option>Announcement</option>
-		                      <option>Quiz</option>
-		                    </select>	
-				      	</div>
-				      	<div class="col-md-8">
-					      	<textarea  maxlength="50"  id = ""  name="data" class="form-control auto-resize" placeholder="Material's title"  required  style="height: 34px; padding: 8px 12px; " ></textarea>
-					    </div>
-				      	<button class=" btn btn-md btn-danger" onclick="removeMaterial()">X</button>
-					</div>
-					<div class="row" style="margin: 5px">
-				  		<div class="col-md-1" style="width: 30px;">
-				  		</div>
-				  		<div class="col-md-3">
-				      	</div>
-				      	<div class="col-md-8">
-					      	<textarea  maxlength="100"  id = ""  name="data" class="form-control auto-resize" placeholder="File's URL"  required style="height: 34px; padding: 8px 12px;" ></textarea>
-					    </div>
-					</div>
-					<div class="row" style="margin: 5px">
-				  		<div class="col-md-1" style="width: 30px;">
-				  		</div>
-				  		<div class="col-md-3">
-				      	</div>
-				      	<div class="col-md-8">
-					      	<textarea  maxlength="1500"  id = ""  name="data" class="form-control auto-resize" placeholder="Descriptions"  required style="height: 102px; padding: 8px 12px; overflow: auto;" ></textarea>
-					    </div>
-					</div>
-		    	</div> 
+		    </div>
+		</div>
+		{{/ course.weekly_materials}}
 
 
-		    	<div href="/group/584e87f2d9e167881462f838" class="row" style="border: #d6e7e8 1px solid;">
-			  		<div class="row" style="margin: 5px">
-				  		<div class="col-md-1" style="width: 30px;">
-				  			<i style="color: #2d6363;margin-right: 3px; font-size: 18px; top: 8px;" title="Public Group" class="glyphicon glyphicon-star"></i>
-				  		</div>
-				  		<div class="col-md-3">
-				  			<select class="form-control" id="course-accessibility">
-		                      <option>Quiz</option>
-		                      <option>PDF File</option>
-		                      <option>Video</option>
-		                      <option>Announcement</option>
-		                    </select>	
-				      	</div>
-				      	<div class="col-md-8">
-					      	<textarea  maxlength="50"  id = ""  name="data" class="form-control auto-resize" placeholder="Quiz's title"  required  style="height: 34px; padding: 8px 12px; " ></textarea>
-					    </div>
-				      	<button class=" btn btn-md btn-danger" onclick="removeMaterial()">X</button>
-					</div>
-					<div class="row" style="margin: 5px">
-				  		<div class="col-md-1" style="width: 30px;">
-				  		</div>
-				  		<div class="col-md-3">
-				      	</div>
-				      	<div class="col-md-8">
-					      	<textarea  maxlength="100"  id = ""  name="data" class="form-control auto-resize" placeholder="Quiz's URL"  required style="height: 34px; padding: 8px 12px;" ></textarea>
-					    </div>
-					</div>
-					<div class="row" style="margin: 5px">
-				  		<div class="col-md-1" style="width: 30px;">
-				  		</div>
-				  		<div class="col-md-3">
-				      	</div>
-				      	<div class="col-md-8">
-					      	<textarea  maxlength="1500"  id = ""  name="data" class="form-control auto-resize" placeholder="Descriptions"  required style="height: 102px; padding: 8px 12px; overflow: auto;" ></textarea>
-					    </div>
-					</div>
-		    	</div> 
+		{{#isMaterialsExist}}
+		<div id="" class="weekly-material" style=" padding-top: 5px; margin-bottom: 0px;">
+			<div class="panel-heading" style="height: 40px; background: #d6e7e8; margin-top: 5px; ">
+				<a id="button_edit_weekly_material_new" class="btn pull-right" title="Add New Weekly Material" 
+					onclick="templateAddWeeklMaterial('list_material_per_week_new','week_xx_material', 'button_edit_weekly_material_new')"
+					type="button"
+					style=" display: inline-block ; margin-top: -7px; padding-right: 0px;" >
+			    	<small><span class="fa fa-plus"></span></small>&nbsp;  Add
+			   	</a>
+				<h4 style="padding-top: 0px; margin-top: 0px;">Week 
+				<script type="text/javascript">
+					document.write({{course.weekly_materials.length}} + 1);
+				</script></h4>
+			</div>
+			<div id="list_material_per_week_new" class="list-group course-material" style="margin-bottom: 0px">
+		    	
+		    </div>
+		</div>
+		{{/ isMaterialsExist}}
 
-			  	<div class="list-group-item">
-			  		<div class="col-md-4"></div>
-			  		<div class="col-md-3">
-			  			<select class="form-control" id="course-accessibility">
-	                      <option>Quiz</option>
-	                      <option>PDF File</option>
-	                      <option>Video</option>
-	                    </select>	
-			      	</div>
-			      	<button class=" btn btn-md btn-primary" onclick="removeMaterial()">
-			      	<i title="Public Group" class="fa fa-plus"></i>   Add</button>
-			  	</div>
-			    <div class="pull-right" style="    padding: 10px 15px 0px 0px; margin-top: 0px;">
-			      <a id="cancelButtonId" onclick="cancelEdit()" class="btn btn-md btn-default" type="">Cancel
-			      </a> &nbsp;  
-			      <button class=" btn btn-md btn-primary" type="submit">Save</button>
-			    </div>
-	      </div>
 	</div>
-
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	 </div>
-
 </div>
+

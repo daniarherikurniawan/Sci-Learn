@@ -79,62 +79,62 @@ jQuery(function($){
 
       socket.on('user disconnected', function(data){
         // alert("user id : "+data.id+" disconnected!");
-          var http = new XMLHttpRequest();
-          http.open("POST", "/updateOnlineConnection", true);
-          http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-          var params = "id=" + window.encodeURIComponent(data.id)+ "&type="+window.encodeURIComponent("delete");
-          http.send((params));
-          http.onload = function() {
-            if(http.responseText=="404"){
-              //error
-              alert(http.responseText);
-            }else{
-               var onlineUsers = JSON.parse(http.responseText);
-              // $('#listOnlineConnection').val("lala");
-              var str = "";
-              for (var i = onlineUsers.length - 1; i >= 0; i--) {
-                str = str + "<a  class=\"list-group-item\">"+
-              onlineUsers[i].name +"<i class=\"pull-right fa fa-circle-o-notch fa-spin\" "+
-              "style=\"color:#3b9798\"></i> </a>";
-              };
-              document.getElementById('numberOnlineUser').innerHTML = onlineUsers.length;
-              document.getElementById('listOnlineConnection').innerHTML = str;
-            }
-          }
+          // var http = new XMLHttpRequest();
+          // http.open("POST", "/updateOnlineConnection", true);
+          // http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+          // var params = "id=" + window.encodeURIComponent(data.id)+ "&type="+window.encodeURIComponent("delete");
+          // http.send((params));
+          // http.onload = function() {
+          //   if(http.responseText=="404"){
+          //     //error
+          //     alert(http.responseText);
+          //   }else{
+          //      var onlineUsers = JSON.parse(http.responseText);
+          //     // $('#listOnlineConnection').val("lala");
+          //     var str = "";
+          //     for (var i = onlineUsers.length - 1; i >= 0; i--) {
+          //       str = str + "<a  class=\"list-group-item\">"+
+          //     onlineUsers[i].name +"<i class=\"pull-right fa fa-circle-o-notch fa-spin\" "+
+          //     "style=\"color:#3b9798\"></i> </a>";
+          //     };
+          //     document.getElementById('numberOnlineUser').innerHTML = onlineUsers.length;
+          //     document.getElementById('listOnlineConnection').innerHTML = str;
+          //   }
+          // }
       });
 
       socket.on('user online', function(data){
           // alert("someone added you!")
-          var http = new XMLHttpRequest();
-          http.open("POST", "/updateOnlineConnection", true);
-          http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-          var params = "id=" + window.encodeURIComponent(data.id)+ "&type="+window.encodeURIComponent("add");
-          http.send((params));
-          http.onload = function() {
-            if(http.responseText=="404"){
-              //error
-              alert(http.responseText);
-            }else{
-          // alert(http.responseText);
-              var onlineUsers = JSON.parse(http.responseText);
-              // $('#listOnlineConnection').val("lala");
-              var str = "";
-              for (var i = onlineUsers.length - 1; i >= 0; i--) {
-                str = str + "<a  class=\"list-group-item\">"+
-              onlineUsers[i].name +"<i class=\"pull-right fa fa-circle-o-notch fa-spin\" "+
-              "style=\"color:#3b9798\"></i> </a>";
-              };
-//               document.getElementById('numberOnlineUser').innerHTML = onlineUsers.length;
-              document.getElementById('listOnlineConnection').innerHTML = str;
-              socket.emit('update', data.id);
-              // alert("socket.emit('update', data.id);"+data.id);
-            }
-          }
+//           var http = new XMLHttpRequest();
+//           http.open("POST", "/updateOnlineConnection", true);
+//           http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+//           var params = "id=" + window.encodeURIComponent(data.id)+ "&type="+window.encodeURIComponent("add");
+//           http.send((params));
+//           http.onload = function() {
+//             if(http.responseText=="404"){
+//               //error
+//               alert(http.responseText);
+//             }else{
+//           // alert(http.responseText);
+//               var onlineUsers = JSON.parse(http.responseText);
+//               // $('#listOnlineConnection').val("lala");
+//               var str = "";
+//               for (var i = onlineUsers.length - 1; i >= 0; i--) {
+//                 str = str + "<a  class=\"list-group-item\">"+
+//               onlineUsers[i].name +"<i class=\"pull-right fa fa-circle-o-notch fa-spin\" "+
+//               "style=\"color:#3b9798\"></i> </a>";
+//               };
+// //               document.getElementById('numberOnlineUser').innerHTML = onlineUsers.length;
+//               document.getElementById('listOnlineConnection').innerHTML = str;
+//               socket.emit('update', data.id);
+//               // alert("socket.emit('update', data.id);"+data.id);
+//             }
+//           }
       });
 
       socket.on('updateYourOwn', function(id){
         // alert(id+"nih "+"updateOnlinePanel");
-        updateOnlinePanel(id);
+        // updateOnlinePanel(id);
       });
 
 

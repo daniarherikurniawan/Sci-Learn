@@ -34,4 +34,46 @@ router.get('/:course_id', function(req, res, next) {
 });
 
 
+/* POST home page. */
+router.post('/material/updateCourseOverview', function(req, res, next) {
+	if(req.session.profile!=null){	
+		// console.log(req.body)
+		course_cont.updateCourseOverview(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+
+/* POST home page. */
+router.post('/material/updateMaterialDesc', function(req, res, next) {
+	if(req.session.profile!=null){	
+		// console.log(req.body)
+		course_cont.updateMaterialDesc(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+/* POST home page. */
+router.post('/material/updateWeeklyMaterial', function(req, res, next) {
+	if(req.session.profile!=null){	
+		// console.log(req.body)
+		course_cont.updateWeeklyMaterial(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+
+/* POST home page. */
+router.post('/material/addWeeklyMaterial', function(req, res, next) {
+	if(req.session.profile!=null){	
+		// console.log(req.body)
+		course_cont.addWeeklyMaterial(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
 module.exports = router;

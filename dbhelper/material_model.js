@@ -9,8 +9,7 @@ var MaterialSchema = new mongoose.Schema({
     is_quiz: {type: Boolean, default: false},
     is_done: {type: Boolean, default: false},
     has_url: {type: Boolean, default: false},
-    required_material: { type: mongoose.Schema.Types.ObjectId, ref: 'Material' },
-    material_type: {type: String, default: "video"}, /*announcement, video, file, quiz, lock*/ 
+    required_material: {type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Material' }], default: []},
     material_title: {type: String, default: "Fill out with material title!"},
     material_description: {type: String, default: "Fill out with material description!"},
     material_url: {type: String, default: "Fill out with material url!"}

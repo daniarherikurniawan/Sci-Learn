@@ -5,6 +5,7 @@ var Post = require('../../dbhelper/post_model');
 var User = require('../../dbhelper/user_model');
 var Group = require('../../dbhelper/group_model');
 var Course = require('../../dbhelper/course_model');
+var Material = require('../../dbhelper/material_model');
 // var async = require("async");
 
 function getRandomInt(min, max) {
@@ -113,6 +114,102 @@ module.exports = {
 					});
 			}
 		});
+	},
+
+	updateCourseOverview: function(req, res){
+		course_id = req.session.course._id;
+		data = req.body.data;
+		Course.object.findById(course_id)
+			.exec(function (err, data_course){
+				// console.log(data_course)
+				if(err || data_course == null){
+					response.setFailedResponse(res, "Course is not found!");
+				}else{
+					data_course.course_overview = data;
+					data_course.save();
+					// response.setSucceededResponse(res, "Success update course's overview!" );
+					res.redirect('/course/'+course_id);
+				}
+			}
+		)
+	},
+	updateMaterialDesc: function(req, res){
+		course_id = req.session.course._id;
+		data = req.body.data;
+		Course.object.findById(course_id)
+			.exec(function (err, data_course){
+				// console.log(data_course)
+				if(err || data_course == null){
+					response.setFailedResponse(res, "Course is not found!");
+				}else{
+					data_course.course_materials_description = data;
+					data_course.save();
+					// response.setSucceededResponse(res, "Success update course's overview!" );
+					res.redirect('/course/'+course_id);
+				}
+			}
+		)
+	},
+	updateWeeklyMaterial: function(req, res){
+		course_id = req.session.course._id;
+		data = req.body.data;
+		Course.object.findById(course_id)
+			.exec(function (err, data_course){
+				console.log(data_course)
+				if(err || data_course == null){
+					response.setFailedResponse(res, "Course is not found!");
+				}else{
+					// data_course.course_overview = data;
+					// data_course.save();
+					// response.setSucceededResponse(res, "Success update course's overview!" );
+					res.redirect('/course/'+course_id);
+				}
+			}
+		)
+	},
+	addWeeklyMaterial: function(req, res){
+		course_id = req.session.course._id;
+		data_material = req.body;
+		// response.setSucceededResponse(res, req.body );
+		Course.object.findById(course_id)
+			.exec(function (err, data_course){
+				// console.log(data_course)
+				if(err || data_course == null){
+					response.setFailedResponse(res, "Course is not found!");
+				}else{
+					var materials_id = [];
+					for (var i = 0; i < data_material.length;  i++) {
+						// console.log(data_material[i])
+
+						var MaterialObj = new Material.model(data_material[i]);
+						MaterialObj.save()
+						console.log('MaterialObj._id '+MaterialObj._id)
+						materials_id.push(MaterialObj._id)
+					}
+
+					while (materials_id.length != data_material.length){
+						setTimeout(function() {
+						  //your code to be executed after 1 second
+						}, 20);
+					}
+
+					/*materials already inserted all in material table*/
+					per_week_material = {
+						periode_name :'Week '+(data_course.weekly_materials.length+1),
+						materials : []
+					}
+
+					for (var i = 0; i < materials_id.length ; i++) {
+						per_week_material.materials.push(materials_id[i]);
+					}
+					
+					data_course.weekly_materials.push(per_week_material);
+					
+					data_course.save();
+					response.setSucceededResponse(res, "Success add weekly material!" );
+				}
+			}
+		)
 	},
 }
 

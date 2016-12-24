@@ -18,59 +18,33 @@ module.exports = {
 			res.redirect('/');
 		}else{
 			Course.object.findById(course_id)
+				.populate('weekly_materials.materials')
 				.exec( function(err, course_data){
 					if(err || course_data == null){
 						console.log(err);
 						res.send("404");
 					}else{
-						arrayPostId = course_data.course_materials;
-						// console.log("================= "+arrayPostId.length)
-						Post.object
-						.find({'_id': {$in : arrayPostId}})
-						.sort({date_created: 'desc'})
-						.populate({
-							  path: 'creator',
-							  select: 'name email img_profile_name'
-							})
-						.exec(function (err,posts){
-							if(err)
-								console.log(err);
 
-							id = req.session.profile._id;
-							if(posts != null )
-								for (var i = posts.length - 1;  i >= 0; i--) {
+						req.session.course = course_data;
+						res.render('course', {course: req.session.course, 
+							isMaterialsExist: (course_data.weekly_materials.length > 0),
+							profile: req.session.profile, 
+							showCourseHome : true,
+							showCourseGrades : false,
+							showCourseDiscussionForum : false,
+							showCourseParticipants : false,
+							showCourseMaterial: false,
+							setting: req.session.setting,
+						partials: { 
+							courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
+							courseParticipants:'partial/course/courseParticipants',
+							edit_single_column_template: 'template/edit_single_column_template',
+							topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
+							mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
+							courseDiscussionForum:'partial/course/courseDiscussionForum'}});
 
-									if(posts[i].creator._id == req.session.profile._id){
-										 posts[i].creator = null;
-									}
-									if(posts[i].like.indexOf(id) != -1){
-										 posts[i].liked = true;
-									}
-									if((posts[i].creator == null) && (posts[i].post_shared != null)  && (posts[i].post_shared.share.indexOf(id) != -1)){
-										posts[i].post_shared.shared = true;
-									}
-								};
-								req.session.course = course_data;
-								res.render('course', {course: req.session.course, showGroupPost:true,
-									profile: req.session.profile, 
-									numOfPost : arrayPostId.length,
-									posts: posts, numOfLastPage : 0,
-									showCourseHome : true,
-									showCourseGrades : false,
-									showCourseDiscussionForum : false,
-									showCourseParticipants : false,
-									showCourseMaterial: false,
-									numOfCurrPage : 0, limitPerPage : limit, setting: req.session.setting,
-								partials: { 
-									courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
-									courseParticipants:'partial/course/courseParticipants',
-									edit_single_column_template: 'template/edit_single_column_template',
-									topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
-									mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
-									courseDiscussionForum:'partial/course/courseDiscussionForum'}});
-
-							});
 					}
+					
 				});
 			}
 		},

@@ -110,3 +110,23 @@ db.groups.update({"group_name": "HMIF ITB 2012"},{$set: {"courses_id" :[ObjectId
 
 db.groups.find({"group_name": "HMIF ITB 2012"}).pretty()
 
+db.course.updateMany({},{$set: {"course_materials" : null}})
+
+
+
+  function sendRequest(){
+    alert("lolo")
+     var http = new XMLHttpRequest();
+    http.open("POST", "/course/material/addWeeklyMaterial", true);
+    http.setRequestHeader("Content-type","application/json; charset=utf-8");
+    var params = JSON.stringify(data_json_material);
+    http.send((params));
+    http.onload = function() {
+      result = JSON.parse(http.responseText);
+      if(http.responseText=="404" || result.status == 0){
+        alert(http.responseText);
+      }else{
+        alert(result)
+      }
+    }
+  }
