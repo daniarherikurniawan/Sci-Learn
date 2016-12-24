@@ -84,11 +84,25 @@ function getNeededMaterialTemplate(data, id){
                   "<textarea  maxlength=\"50\"  id ='"+id+"_title'  name=\"material_video_title\" class=\"form-control auto-resize\""+
                   "placeholder=\"Material's title\"  required  style=\"height: 34px; padding: 8px 12px; \" >"+data.material_title+"</textarea>"+
               "</div>"+
-               "<div style=\"text-align: center;\">"+
-                "\n<button class=\" btn btn-md btn-primary\" title=\"Move material up\" onclick=\"moveUpMaterial("+id+")\"><i class=\"fa fa-chevron-up\"></i></button>"+
-                "\n<button class=\" btn btn-md btn-primary\" title=\"Move material down\" onclick=\"moveDownMaterial("+id+")\"><i class=\"fa fa-chevron-down\"></i></button>"+
-                "\n<button class=\" btn btn-md btn-danger\" title=\"Remove material\" onclick=\"removeMaterial("+id+")\"><i class=\"fa fa-times\"></i></button>"+
-              "</div>"+
+               "<div style=\"text-align: center;\">"
+                  if(data_json_material.length > 1){
+                    if(id == 1){
+                      template += "\n<button class=\" btn btn-md btn-primary\" title=\"Move material down\" onclick=\"moveDownMaterial("+id+")\"><i class=\"fa fa-chevron-down\"></i></button>"
+                      template += "\n<button class=\" btn btn-md btn-danger\" title=\"Remove material\" onclick=\"removeMaterial("+id+")\"><i class=\"fa fa-times\"></i></button>"
+                    }else if (id == data_json_material.length - 1){
+                      template += "\n<button class=\" btn btn-md btn-primary\" title=\"Move material up\" onclick=\"moveUpMaterial("+id+")\"><i class=\"fa fa-chevron-up\"></i></button>"
+                      template += "\n<button class=\" btn btn-md btn-danger\" title=\"Remove material\" onclick=\"removeMaterial("+id+")\"><i class=\"fa fa-times\"></i></button>"
+                    }else{
+                      template += "\n<button class=\" btn btn-md btn-primary\" title=\"Move material down\" onclick=\"moveDownMaterial("+id+")\"><i class=\"fa fa-chevron-down\"></i></button>"
+                      template += "\n<button class=\" btn btn-md btn-primary\" title=\"Move material up\" onclick=\"moveUpMaterial("+id+")\"><i class=\"fa fa-chevron-up\"></i></button>"
+                      template += "\n<button class=\" btn btn-md btn-danger\" title=\"Remove material\" onclick=\"removeMaterial("+id+")\"><i class=\"fa fa-times\"></i></button>"
+                    }
+                  }else{
+                    if(id == 1){
+                      template += "\n<button class=\" btn btn-md btn-danger\" title=\"Remove material\" onclick=\"removeMaterial("+id+")\"><i class=\"fa fa-times\"></i></button>"
+                    }
+                  }
+              template += "</div>"+
             "</div>"+
             
           "<div class=\"row\" style=\"margin: 5px\">"+

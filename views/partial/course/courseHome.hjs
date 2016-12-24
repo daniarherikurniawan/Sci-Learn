@@ -37,7 +37,7 @@
 </script>
 
 <div class="panel panel-default" style="margin-top: 0px;">
-	<div class="panel-heading " style="height: 40px; background: #d1f4de;">
+	<div class="panel-heading " style="height: 40px; background: #d1f0f4;">
 		<a id="button_edit_overview_desc" class="btn pull-right" title="Edit Course Overview" 
 			onclick="edit('editable_course_overview','course_overview_desc','/course/material/updateCourseOverview', 'button_edit_overview_desc')"
 			type="button"
@@ -94,7 +94,8 @@
 		{{/ course.weekly_materials}}
 
 		{{# course.weekly_materials}}		
-		<div id="week_{{_id}}" class="weekly-material" style=" padding-top: 5px; margin-bottom: 0px;">
+		<!-- <hr> -->
+		<div id="week_{{_id}}" class="weekly-material" style=" padding-top: 5px; margin-bottom: 20px;">
 			<div class="panel-heading" style="height: 40px; background: #d6e7e8; margin-top: 5px; ">
 				<a id="button_edit_weekly_material_{{_id}}" class="btn pull-right" title="Edit Weekly Material" 
 					onclick="editWeeklyMaterial('list_material_per_week_{{_id}}','week_xx_material', 'button_edit_weekly_material_{{_id}}', '{{_id}}')"

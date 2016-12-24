@@ -417,7 +417,7 @@ position: relative;
 
 
 ul.egmenu > li a:hover {
-background: #d6e7e8;
+background: #d1f0f4;
 }
 
 ul.egmenu ul {
@@ -443,7 +443,7 @@ ul.egmenu > li { float: none; width: 100%; }
 ul.egmenu a { line-height: 40px; }
 ul.egmenu ul { position: relative; }
 
-ul.egmenu li.tap {     background: #d6e7e8;}
+ul.egmenu li.tap {     background: #d1f0f4;}
 ul.egmenu li.tap ul { display: block; }
 
 a.active{

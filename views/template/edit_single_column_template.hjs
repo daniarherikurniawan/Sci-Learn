@@ -50,8 +50,14 @@
    <div id="edit_week_{{_id}}" class="weekly-material" style=" padding-top: 5px; margin-bottom: 0px;">
     <div id="" method="post" action="#" style="  margin-bottom: 50px;">
       <div id="edit_list_material_per_week_{{_id}}"  >
-
+      <script type="text/javascript">
+        var counter = 0;
+        length = '{{materials.length}}';
+      </script>
         {{# materials}}
+        <script type="text/javascript">
+          counter++;
+        </script>
         <div id="{{_id}}_per_material" class="row" style="border: #d6e7e8 1px solid;">
             <div class="row" style="margin: 5px">
               <div class="col-md-1" style="width: 30px;">
@@ -95,9 +101,22 @@
               </div>
 
               <div style="text-align: center;">
-                <button class=" btn btn-md btn-primary" title="Move material up" onclick="moveUpEditedMaterial('{{_id}}')"><i class="fa fa-chevron-up"></i></button>
-                <button class=" btn btn-md btn-primary" title="Move material down" onclick="moveDownEditedMaterial('{{_id}}')"><i class="fa fa-chevron-down"></i></button>
-                <button class=" btn btn-md btn-danger" title="Remove material" onclick="removeEditedMaterial('{{_id}}')"><i class="fa fa-times"></i></button>
+              <script type="text/javascript">
+              if(length > 2){
+                if(counter == 2){
+                  document.write("\n<button class=\" btn btn-md btn-primary\" title=\"Move material down\" onclick=\"moveDownEditedMaterial('{{_id}}')\"><i class=\"fa fa-chevron-down\"></i></button>\n<button class=\" btn btn-md btn-danger\" title=\"Remove material\" onclick=\"removeEditedMaterial('{{_id}}')\"><i class=\"fa fa-times\"></i></button>")
+                }else if(counter == length){
+                  document.write("\n<button class=\" btn btn-md btn-primary\" title=\"Move material up\" onclick=\"moveUpEditedMaterial('{{_id}}')\"><i class=\"fa fa-chevron-up\"></i></button>\n<button class=\" btn btn-md btn-danger\" title=\"Remove material\" onclick=\"removeEditedMaterial('{{_id}}')\"><i class=\"fa fa-times\"></i></button>")
+                }else{
+                  document.write("\n<button class=\" btn btn-md btn-primary\" title=\"Move material up\" onclick=\"moveUpEditedMaterial('{{_id}}')\"><i class=\"fa fa-chevron-up\"></i></button>\n<button class=\" btn btn-md btn-primary\" title=\"Move material down\" onclick=\"moveDownEditedMaterial('{{_id}}')\"><i class=\"fa fa-chevron-down\"></i></button>\n<button class=\" btn btn-md btn-danger\" title=\"Remove material\" onclick=\"removeEditedMaterial('{{_id}}')\"><i class=\"fa fa-times\"></i></button>")
+
+                }
+              }else{
+                if (counter == 2){
+                  document.write("\n<button class=\" btn btn-md btn-danger\" title=\"Remove material\" onclick=\"removeEditedMaterial('{{_id}}')\"><i class=\"fa fa-times\"></i></button>")
+                }
+              }
+              </script>
               </div>
           </div>
           <div class="row" style="margin: 5px">
