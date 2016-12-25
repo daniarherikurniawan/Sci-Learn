@@ -61,8 +61,20 @@
         <div id="{{_id}}_per_material" class="row" style="margin-bottom: 8px">
             <div class="row" style="margin: 5px">
               <div class="col-md-1" style="width: 30px;">
-                <i style="color: #2d6363;margin-right: 3px; font-size: 18px; top: 8px;" title="Public Group" class="
-                {{# is_video}}
+                <i style="color: #2d6363;margin-right: 3px; font-size: 18px; top: 8px;" title="
+              {{# is_video}}
+                Video
+              {{/ is_video}}
+              {{# is_announcement}}
+                Announcement
+              {{/ is_announcement}}
+              {{# is_file}}
+                PDF File
+              {{/ is_file}}
+              {{# is_quiz}}
+                Quiz
+              {{/ is_quiz}}" class="
+              {{# is_video}}
                 glyphicon glyphicon-play
               {{/ is_video}}
               {{# is_announcement}}
@@ -152,7 +164,7 @@
                 </select> 
             </div>
             <button class=" btn btn-md btn-primary" onclick="addNewMaterial('{{_id}}')">
-            <i title="Public Group" class="fa fa-plus"></i>   Add</button>
+            <i title="Add new material" class="fa fa-plus"></i>   Add</button>
             
             <div class="pull-right"  style="margin-top: 55px">
               <a id="cancelButtonIdEditWeeklyMaterial" onclick="cancelEdit()" class="btn btn-md btn-default" type="">Cancel

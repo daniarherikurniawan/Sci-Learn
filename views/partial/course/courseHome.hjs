@@ -57,7 +57,7 @@
 
 <div class="panel panel-default" style="margin-top: 0px;">
 	<div class="panel-heading " style="height: 40px; background: #d1f0f4;">
-		<a id="button_edit_material_desc" class="btn pull-right" title="Edit Course Materials" 
+		<a id="button_edit_material_desc" class="btn pull-right" title="Edit Course Materials Description" 
 			onclick="edit('editable_course_materials','course_material_desc','/course/material/updateMaterialDesc', 'button_edit_material_desc')"
 			type="button"
 			style=" display: inline-block ; margin-top: -7px; padding-right: 0px;">
@@ -111,12 +111,25 @@
 					<script type="text/javascript">
 						initiateDataJson('{{_id}}',{{is_video}},{{is_announcement}},{{is_file}},{{is_quiz}},{{is_locked}},{{is_done}},{{has_url}},'{{material_title}}','{{material_description}}',' {{material_url}}');
 					</script>
-			    	<a href="/group/584e87f2d9e167881462f838" 
+			    	<a href="/course/week/{{_id}}" 
 						style="color: #2d6363 !important; ;" class="list-group-item">
 						<span class="">
 						  	<i style="
 					    	font-size: 18px;
-					    	top: 4px;" title="Public Group" class="
+					    	top: 4px;" title="
+					    	 {{# is_video}}
+				                Video
+				              {{/ is_video}}
+				              {{# is_announcement}}
+				                Announcement
+				              {{/ is_announcement}}
+				              {{# is_file}}
+				                PDF File
+				              {{/ is_file}}
+				              {{# is_quiz}}
+				                Quiz
+				              {{/ is_quiz}}
+				              " class="
 							{{# is_video}}
 					    	glyphicon glyphicon-play
 							{{/ is_video}}
