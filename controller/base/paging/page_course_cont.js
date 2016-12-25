@@ -187,7 +187,81 @@ module.exports = {
 					}
 				});
 			}
-		}
+		},
+
+		showWeeklyMaterials: function(req, res){
+			course_id = req.session.course._id;
+			if(!isInArray(course_id, req.session.profile.courses)){
+				res.redirect('/');
+			}else{
+				Course.object.findById(course_id)
+					.populate('weekly_materials.materials')
+					.exec( function(err, course_data){
+						if(err || course_data == null){
+							console.log(err);
+							res.send("404");
+						}else{
+
+							req.session.course = course_data;
+							res.render('course', {course: req.session.course, 
+								isMaterialsExist: (course_data.weekly_materials.length > 0),
+								profile: req.session.profile, 
+								showCourseHome : true,
+								showCourseGrades : false,
+								showCourseDiscussionForum : false,
+								showCourseParticipants : false,
+								showCourseMaterial: false,
+								setting: req.session.setting,
+							partials: { 
+								courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
+								courseParticipants:'partial/course/courseParticipants',
+								edit_single_column_template: 'template/edit_single_column_template',
+								topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
+								mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
+								courseDiscussionForum:'partial/course/courseDiscussionForum'}});
+
+						}
+						
+					});
+				}
+		},
+		
+		showSpecificMaterial: function(req, res){
+			course_id = req.session.course._id;
+			if(!isInArray(course_id, req.session.profile.courses)){
+				res.redirect('/');
+			}else{
+				Course.object.findById(course_id)
+					.populate('weekly_materials.materials')
+					.exec( function(err, course_data){
+						if(err || course_data == null){
+							console.log(err);
+							res.send("404");
+						}else{
+
+							req.session.course = course_data;
+							res.render('course', {course: req.session.course, 
+								isMaterialsExist: (course_data.weekly_materials.length > 0),
+								profile: req.session.profile, 
+								showCourseHome : true,
+								showCourseGrades : false,
+								showCourseDiscussionForum : false,
+								showCourseParticipants : false,
+								showCourseMaterial: false,
+								setting: req.session.setting,
+							partials: { 
+								courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
+								courseParticipants:'partial/course/courseParticipants',
+								edit_single_column_template: 'template/edit_single_column_template',
+								topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
+								mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
+								courseDiscussionForum:'partial/course/courseDiscussionForum'}});
+
+						}
+						
+					});
+				}
+		},
 	
 }
 

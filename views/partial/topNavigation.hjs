@@ -26,14 +26,14 @@
 <ul class=" nav navbar-nav" style="margin-left: 15px;">
 
   <li>
-    <a href="/groups/{{profile._id}}" style="padding: 11px 10px 13px 10px; font-size:17px;">  <i class=" material-icons" style="position: relative; font-size: 21px;
-    top: 4px;">group</i> Group</a>
+    <a href="/groups/{{profile._id}}" style="padding: 11px 10px 13px 10px; font-size:17px; {{#showGroups}} background: #2d6363;{{/showGroups}} ">  <i class=" material-icons" style="position: relative; font-size: 21px;
+    top: 4px;">group</i> Groups</a>
   </li>
   <li>
-    <a href="/courses/{{profile._id}}" style="padding: 15px 10px 13px 10px; font-size:17px;"><i class="glyphicon glyphicon-blackboard" style="top: 2px"></i> Courses</a>
+    <a href="/courses/{{profile._id}}" style="padding: 15px 10px 13px 10px; font-size:17px; {{#showCourses}} background: #2d6363;{{/showCourses}}"><i class="glyphicon glyphicon-blackboard" style="top: 2px"></i> Courses</a>
   </li>
   <li>
-    <a href="/connections/{{profile._id}}" style="padding: 16px 10px 13px 10px; font-size:17px;">  <i class=" material-icons" style="    font-size: 17px;
+    <a href="/connections/{{profile._id}}" style="padding: 16px 10px 13px 10px; font-size:17px; {{#showFriends}} background: #2d6363;{{/showFriends}}">  <i class=" material-icons" style="    font-size: 17px;
     position: relative;
     top: 2px;">contacts</i> Connections</a>
   </li>

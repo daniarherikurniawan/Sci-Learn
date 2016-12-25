@@ -76,4 +76,25 @@ router.post('/material/addWeeklyMaterial', function(req, res, next) {
 	}
 });
 
+// /* GET home page. */     
+router.get('/week/:week_id', function(req, res, next) {
+	// limitPerPage == 0, as indicator that we do not need pagination
+	if(req.session.profile!=null){
+		page_course_cont.showWeeklyMaterials( req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+
+// /* GET home page. */     
+router.get('/week/:week_id/:material_id', function(req, res, next) {
+	// limitPerPage == 0, as indicator that we do not need pagination
+	if(req.session.profile!=null){
+		page_course_cont.showSpecificMaterial(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
 module.exports = router;

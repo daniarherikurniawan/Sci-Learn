@@ -103,16 +103,19 @@
 					style=" display: inline-block ; margin-top: -7px; padding-right: 0px;" >
 			    	<small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit
 			   	</a>
-				<h4 style="padding-top: 0px; margin-top: 0px;">{{periode_name}} </h4>
+				<a href="/course/week/{{_id}}"><h4 style="padding-top: 0px; margin-top: 0px;">{{periode_name}} </h4></a>
 			</div>
 			<div id="list_material_per_week_{{_id}}" class="list-group course-material" style="margin-bottom: 0px">
-
+			<script type="text/javascript">
+				var week_id = '{{_id}}'
+			</script>
 				{{# materials}}
 					<script type="text/javascript">
 						initiateDataJson('{{_id}}',{{is_video}},{{is_announcement}},{{is_file}},{{is_quiz}},{{is_locked}},{{is_done}},{{has_url}},'{{material_title}}','{{material_description}}',' {{material_url}}');
 					</script>
-			    	<a href="/course/week/{{_id}}" 
-						style="color: #2d6363 !important; ;" class="list-group-item">
+					<script type="text/javascript">
+						document.write("<a href=\"/course/week/"+week_id+"/{{_id}}\" style=\"color: #2d6363 !important;\" class=\"list-group-item\">")
+					</script>
 						<span class="">
 						  	<i style="
 					    	font-size: 18px;

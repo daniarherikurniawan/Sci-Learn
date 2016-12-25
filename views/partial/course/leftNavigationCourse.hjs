@@ -5,7 +5,7 @@
 </div>
 
   <div style="text-align: center; color: #2d6363">
-    <h4><b>{{course.course_name}}</b></h4>
+    <a href="/course/{{course._id}}"><h4><b>{{course.course_name}}</b></h4></a>
   </div>
   <div  class="" style="">
      <ul class="egmenu mobile" style="">
