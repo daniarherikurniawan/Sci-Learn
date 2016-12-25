@@ -8,7 +8,7 @@
       });
       $(this).parent().toggleClass('tap');
     }
-    e.preventDefault();
+      e.preventDefault();
   });
 
   $('div#main').ready(function () {
