@@ -54,7 +54,7 @@
 
      </div>
      <div class="row" style="    margin: 10px 0px 0px 0px">
-       <input  id="editableShareFunction" onclick="tryToShare()" class="btn btn-primary pull-right modal-button" style="width: 15%;" value="Share">
+       <input  id="editableShareFunction" onclick="tryToShare()" class="btn btn-primary pull-right" style="width: 15%;" value="Share">
        <input class="btn btn-default pull-right modal-button cancel-button" data-dismiss="modal"  value="Cancel" >
        <!-- <button class=" btn btn-md btn-primary" type="submit">Share</button> -->
 

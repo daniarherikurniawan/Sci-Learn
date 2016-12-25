@@ -36,7 +36,7 @@ var is_id_edited_materials_changed = false;
 function getNeededMaterialTemplate(data, id){
   // alert(data+"  "+id)
   template = ''
-  template = "<div id='"+id+"_per_material' class=\"row\" style=\"border: #d6e7e8 1px solid;\">"+
+  template = "<div id='"+id+"_per_material' class=\"row\" style=\"margin-bottom: 8px\">"+
             "<div class=\"row\" style=\"margin: 5px\">"+
               "<div class=\"col-md-1\" style=\"width: 30px;\">"+
                 "<i style=\"color: #2d6363;margin-right: 3px; font-size: 18px; top: 8px;\" title=\"Public Group\""+
@@ -84,7 +84,7 @@ function getNeededMaterialTemplate(data, id){
                   "<textarea  maxlength=\"50\"  id ='"+id+"_title'  name=\"material_video_title\" class=\"form-control auto-resize\""+
                   "placeholder=\"Material's title\"  required  style=\"height: 34px; padding: 8px 12px; \" >"+data.material_title+"</textarea>"+
               "</div>"+
-               "<div style=\"text-align: center;\">"
+               "<div style=\"text-align: right;\">"
                   if(data_json_material.length > 1){
                     if(id == 1){
                       template += "\n<button class=\" btn btn-md btn-primary\" title=\"Move material down\" onclick=\"moveDownMaterial("+id+")\"><i class=\"fa fa-chevron-down\"></i></button>"

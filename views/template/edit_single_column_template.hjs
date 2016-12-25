@@ -2,7 +2,7 @@
 <!-- Template untuk edit single column -->
 <div id="editableTemplate" style="display: none; height: 1px" >
 <form id="needActionSingleColumnEdit" action="#" method="post"  
-   style="  margin-bottom: 45px;">
+   style="  margin-bottom: 65px;">
       <textarea onkeyup="" maxlength="1500"  id = "editableTextArea"  name="data" class="form-control auto-resize" placeholder="Share your knowledge"  required rows="4" style="overflow-y: auto;" ></textarea>
     
     <div class="pull-right" style="    padding: 10px 15px 0px 0px; margin-top: 0px;">
@@ -16,7 +16,7 @@
 <!-- Template untuk edit weekly material -->
 <div id="editableTemplateWeeklyMaterial" style="display: none; height: 1px" >
 <div id="needActionWeeklyMaterialEdit" method="post"   action="#"
-   style="  margin-bottom: 50px;">
+   style="  margin-bottom: 80px;">
 
           <div id="list_of_editable_material">
             
@@ -48,7 +48,7 @@
 
 {{# course.weekly_materials}}   
    <div id="edit_week_{{_id}}" class="weekly-material" style=" padding-top: 5px; margin-bottom: 0px;">
-    <div id="" method="post" action="#" style="  margin-bottom: 50px;">
+    <div id="" method="post" action="#" style="  margin-bottom: 80px;">
       <div id="edit_list_material_per_week_{{_id}}"  >
       <script type="text/javascript">
         var counter = 0;
@@ -58,7 +58,7 @@
         <script type="text/javascript">
           counter++;
         </script>
-        <div id="{{_id}}_per_material" class="row" style="border: #d6e7e8 1px solid;">
+        <div id="{{_id}}_per_material" class="row" style="margin-bottom: 8px">
             <div class="row" style="margin: 5px">
               <div class="col-md-1" style="width: 30px;">
                 <i style="color: #2d6363;margin-right: 3px; font-size: 18px; top: 8px;" title="Public Group" class="
@@ -100,7 +100,7 @@
                   <textarea  maxlength="50"  id = "{{_id}}_title"   class="form-control auto-resize" placeholder="Material's title"  required  style="height: 34px; padding: 8px 12px; " >{{material_title}}</textarea>
               </div>
 
-              <div style="text-align: center;">
+              <div style="text-align: right;">
               <script type="text/javascript">
               if(length > 2){
                 if(counter == 2){

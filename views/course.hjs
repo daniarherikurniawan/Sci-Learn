@@ -48,12 +48,12 @@
                       <%> mainViewCourse %>
                     </div>                   
 
-<style type="text/css">
-  #courseNav::-webkit-scrollbar { 
-    display: none; 
-  }
-</style>
-                   <div class="col-sm-3 leftside " style=" position: fixed; height: 100%; padding-bottom: 63px;">
+                  <style type="text/css">
+                    #courseNav::-webkit-scrollbar { 
+                      display: none; 
+                    }
+                  </style>
+                   <div class="col-sm-3 leftside " style=" position: fixed; height: 100%; padding-bottom: 48px; margin-top: -16px">
                      <%> leftNavigationCourse%>
                    </div>
 

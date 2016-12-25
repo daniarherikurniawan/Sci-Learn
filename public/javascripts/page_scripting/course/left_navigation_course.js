@@ -21,7 +21,7 @@ function onScroll(event){
         var currLink = $(this);
 
         /*genuine is thecontent of edited item*/
-        if(currLink.attr('id') != '' && currLink.offset().top <= 150 && currLink.offset().top >= 100){
+        if(currLink.attr('id') != '' && currLink.offset().top <= 100 && currLink.offset().top >= 50){
           $('a').each(function(){
             $(this).removeClass('active')
           })
@@ -37,6 +37,6 @@ $('a.menu').on('click', function(){
   var currLink = $(this);
   // alert('div#'+currLink.attr('id')+'.weekly-material')
   var currWeekMaterial = $('div#'+currLink.attr('id')+'.weekly-material');
-  $("div#main").animate({ scrollTop: ( currWeekMaterial.position().top) - 50}, "slow");
+  $("div#main").animate({ scrollTop: ( currWeekMaterial.position().top) - 10}, "slow");
   // $("div#main").animate({ scrollTop: 0 }, "slow");
 })

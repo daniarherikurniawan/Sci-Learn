@@ -48,7 +48,7 @@
               <button id="close-modal-create-new-group" class="btn btn-primary pull-right modal-button cancel-button"  data-dismiss="modal" >Cancel</button>
              </div>
              <div class="col-md-2" style="padding:0px 0px; width: 21%;">
-              <input onclick="removeMemberFromGroupAdmin()" class="btn btn-primary pull-right modal-button" type="submit" value="Remove Admin">
+              <input onclick="removeMemberFromGroupAdmin()" class="btn btn-primary pull-right" type="submit" value="Remove Admin">
              </div>
       </div>
 

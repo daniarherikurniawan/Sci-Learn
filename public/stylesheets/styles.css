@@ -194,6 +194,7 @@ h1,h2,h3 {
 	color:#fffffe;
 }
 .btn-default {
+    border-color: #d6e7e8;
     color: rgb(59, 151, 152);
     text-shadow:0 0 1px rgba(0,0,0,.3);
 }
@@ -329,17 +330,17 @@ small.text-muted {
 }
 
 .cancel-button{
-  background-color:#d6e7e8;
-  color:black;
+  background-color: #ffffff;
+  color: #2d6363;
   width: 80px;
   margin-right:10px;
-  border-color: #d6e7e8;
+  border-color: #2d6363;
 }
 
 .modal-button:hover{
-  background-color:#2d6363;
-  color:white;
-  border-color: #d6e7e8;
+  background-color: rgba(224, 226, 226, 0.61);
+  color: #2d6363;
+  border-color: #2d6363;
 }
 .background_modal{
   padding: 10px 15px; background-color: #f3f9f9; margin-bottom: 0px;
@@ -460,7 +461,8 @@ a.active{
 
 
 .course-material a:hover{
-  background-color: #f3f9f9;
+  background-color: rgba(224, 226, 226, 0.61);
+  color: #2d6363;
 }
 
 textarea#editableContentCourse {
@@ -468,4 +470,8 @@ textarea#editableContentCourse {
     overflow: hidden;
     min-height: 60px;
     max-height: 250px;
+}
+
+a.list-group-item:hover {
+background: #d6e7e8 !important;
 }

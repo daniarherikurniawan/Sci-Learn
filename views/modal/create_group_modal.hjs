@@ -78,7 +78,7 @@
             </div>
 
              <div class="row col-sm-12" style="padding:0px 0px">
-              <input onclick="createNewGroup()" class="btn btn-primary pull-right modal-button" type="submit" value="Create">
+              <input onclick="createNewGroup()" class="btn btn-primary pull-right " type="submit" value="Create">
               <button id="close-modal-create-new-group" class="btn btn-primary pull-right modal-button cancel-button"  data-dismiss="modal" >Cancel</button>
              </div>
       </div>
