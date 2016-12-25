@@ -1,11 +1,14 @@
 
   $('.has-sub').click( function(e) {
-    $('li').each( function(e) {
-      $(this).removeClass('tap');
-    });
-
+    if ($(this).parent().hasClass('tap') ){
+      $(this).parent().removeClass('tap');
+    }else{
+      $('li').each( function(e) {
+        $(this).removeClass('tap');
+      });
+      $(this).parent().toggleClass('tap');
+    }
     e.preventDefault();
-    $(this).parent().toggleClass('tap');
   });
 
   $('div#main').ready(function () {
