@@ -66,7 +66,7 @@
 
                               <div class="row" style="margin-bottom: 0px;" >
                                 <div class="col-sm-4" style="text-align: center; padding-left: 30px">
-                                  <h4>What's New?</h4>
+                                  <h4 style=" color: #3b9798;">What's New?</h4>
                                 </div>
                                 <div class="col-sm-8" style="padding-right: 0px; padding-left: 0px;">
                                   <textarea class="form-control" name="title" maxlength="40" style="height: 35px"placeholder="Title" required></textarea>
