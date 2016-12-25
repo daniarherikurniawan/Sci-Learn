@@ -325,8 +325,9 @@
     <div class="modal-dialog">
       <div class="modal-content" style="width:70%; left:15%">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <b><h4> <%friendProfile.name%><%^friendProfile.name%><%profile.name%><%/friendProfile.name%></h4></b>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-top: 6px;
+            margin-right: 8px; color: white;">×</button>
+          <b><h4 style="color: white; text-align: center;"> <%friendProfile.name%><%^friendProfile.name%><%profile.name%><%/friendProfile.name%></h4></b>
         </div>
         <div class="modal-body">
           <div class="panel panel-default" style="margin-bottom:0px">
@@ -338,13 +339,13 @@
         </div>
 
         <%^ friendProfile.name%>
-        <div class="modal-footer" style="padding-left: 25px; padding-right: 20px; padding-bottom: 0px;">
-          <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true" > <span class="glyphicon glyphicon-trash" ></span>&nbsp;&nbspDelete</button>
-          <button class="btn btn-primary btn-sm" data-dismiss="modal" aria-hidden="true" onClick="triggermyNewProfilePicture()" > <span class="glyphicon glyphicon-folder-open " ></span>&nbsp;&nbspUpload</button>
+        <div class="modal-footer" style="padding-left: 25px; padding-right: 20px; padding-bottom: 0px;     background-color: white">
+          <button class="btn btn-primary btn" data-dismiss="modal" aria-hidden="true" style="margin-top: -10px;"> <span class="glyphicon glyphicon-trash" ></span>&nbsp;&nbspDelete</button>
+          <button class="btn btn-primary btn" data-dismiss="modal" aria-hidden="true" onClick="triggermyNewProfilePicture()" style="margin-top: -10px; margin-right: -14px;"> <span class="glyphicon glyphicon-folder-open " ></span>&nbsp;&nbspUpload</button>
 
           <ul class="pull-left list-inline" ><li>
-            <a href=""><i class="glyphicon glyphicon-thumbs-up" style="color:rgb(45, 99, 99); font-size: 25px;"></i></a></li><li>
-            <a href=""><i class="glyphicon glyphicon-comment" style="color:rgb(45, 99, 99); font-size: 25px;"></i></a></li><li>
+            <a href=""><i class="fa fa-thumbs-up" style="color:#3b9798; font-size: 20px;"></i></a></li><li>
+            <a href=""><i class="fa fa-comment" style="color:#3b9798; font-size: 20px;"></i></a></li><li>
           </ul>
           <ul class="pull-right list-inline"><li>
 
