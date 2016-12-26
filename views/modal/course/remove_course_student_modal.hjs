@@ -59,7 +59,7 @@
 </div>
 
 <script type="text/javascript">
-  group_id = '{{group._id}}'
+  group_id = '{{course.group_id._id}}'
   user_id = '{{profile._id}}'
 </script>
 

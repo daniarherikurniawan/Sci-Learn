@@ -58,6 +58,6 @@
 </div>
 </div>
 <script type="text/javascript">
-  var group_id = '{{course.group_id}}'
+  var group_id = '{{course.group_id._id}}'
 </script>
 <script src="/javascripts/page_scripting/course/add_group_admin.js"></script>

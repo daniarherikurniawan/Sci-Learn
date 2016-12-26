@@ -114,7 +114,7 @@
 
 <!-- Modals end -->
 <script type="text/javascript">
-	var group_id = '{{group._id}}'
+	var group_id = '{{course.group_id._id}}'
   	var profile_id = '{{profile._id}}';
   	var profile_name = '{{profile.name}}';
   	var profile_email = '{{profile.email}}';
