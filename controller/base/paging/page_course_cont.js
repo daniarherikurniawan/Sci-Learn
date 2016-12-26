@@ -18,8 +18,9 @@ function isInArray(value, array) {
 
 function isInstructor(user_id, course_instructors){
 	for (var i = course_instructors.length - 1; i >= 0; i--) {
-		if( course_instructors[i]._id == user_id)
+		if( course_instructors[i]._id == user_id){
 			return true;
+		}
 	}
 	return false;
 }
@@ -50,7 +51,7 @@ module.exports = {
 						res.render('course', {course: req.session.course, 
 							isMaterialsExist: (course_data.weekly_materials.length > 0),
 							profile: req.session.profile, 
-							isInstructor: isInstructor(req.session.profile._id, req.session.course.course_instructors),
+							isInstructor: isInArray(req.session.profile._id, req.session.course.course_instructors),
 							showCourseHome : true,
 							showCourseGrades : false,
 							showCourseDiscussionForum : false,
@@ -167,7 +168,7 @@ module.exports = {
 					res.render('course', {course: course, current_weekly_material: current_weekly_material,
 						isMaterialsExist: found, single_material: single_material,
 						profile: req.session.profile, 
-						isInstructor: isInstructor(req.session.profile._id, req.session.course.course_instructors),
+						isInstructor: isInArray(req.session.profile._id, req.session.course.course_instructors),
 						showCourseMaterial: true,
 						setting: req.session.setting,
 					partials: { 
