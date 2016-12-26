@@ -2,7 +2,8 @@ isMyOwnCourse = profile_id == current_profile_id;
 
   if(!isMyOwnCourse){
     /*not my profile page*/
-    document.getElementById('list-course-title').innerHTML = current_profile_name+"'s Courses";
+    document.getElementById('list-course-title').innerHTML ="<i class=\"glyphicon glyphicon-blackboard\" style=\"top: 2px\"></i> &nbsp; "+
+      current_profile_name+"'s Courses";
     document.getElementById('search-new-course').innerHTML = "";
   $('#list-course-title').attr('style', 'text-align: center'); 
   }

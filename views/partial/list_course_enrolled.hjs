@@ -2,7 +2,8 @@
   <div class="panel-heading">
     <a id="search-new-course"  style=" margin-top: 10px;" class="pull-right" type="button" 
      onclick=""  data-toggle="modal" href="/courses/search/" 
-    > <small><span class="glyphicon glyphicon-search"></span></small> Search</a> <a href="/courses/{{friendProfile._id}}{{^friendProfile}}{{profile._id}}{{/friendProfile}}"><h4  id="list-course-title" >My Courses</h4></a>
+    > <small><span class="glyphicon glyphicon-search"></span></small> Search</a> <a href="/courses/{{friendProfile._id}}{{^friendProfile}}{{profile._id}}{{/friendProfile}}"><h4  id="list-course-title" > 
+    <i class="glyphicon glyphicon-blackboard" style="top: 2px"></i> &nbsp; My Courses</h4></a>
   </div>
   <div  class="panel-body">
     <div id="enrolled_courses_list" class="list-group" style="margin-bottom: 0px;">

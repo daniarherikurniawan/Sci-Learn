@@ -2,7 +2,8 @@
   <div  class="panel-heading">
   	<a id="create-new-group" style=" margin-top: 10px;" class="pull-right" type="button" 
      onclick=""  data-toggle="modal" href="#create_group_modal" 
-    > <small><span class="glyphicon glyphicon-plus"></span></small> New</a> <a href="/groups/{{friendProfile._id}}{{^friendProfile}}{{profile._id}}{{/friendProfile}}"><h4 id="list-group-title" style="">My Groups</h4></a>
+    > <small><span class="glyphicon glyphicon-plus"></span></small> New</a> <a href="/groups/{{friendProfile._id}}{{^friendProfile}}{{profile._id}}{{/friendProfile}}"><h4 id="list-group-title" style=""> <i class=" material-icons" style="position: relative; font-size: 21px;
+    top: 4px;">group</i> &nbsp; My Groups</h4></a>
   </div>
   <div  class="panel-body">
     <div id="group_list" class="list-group" style="margin-bottom: 0px;">

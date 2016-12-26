@@ -2,7 +2,8 @@ isMyOwnGroup = profile_id == current_profile_id;
 
   if(!isMyOwnGroup){
   	/*not my profile page*/
-  	document.getElementById('list-group-title').innerHTML = current_profile_name+"'s Groups";
+  	document.getElementById('list-group-title').innerHTML = "<i class=\" material-icons\" style=\"position: relative; font-size: 21px; "+
+        "top: 4px;\">group</i> &nbsp; "+current_profile_name+"'s Groups";
   	document.getElementById('create-new-group').innerHTML = "";
 	$('#list-group-title').attr('style', 'text-align: center');	
   }
