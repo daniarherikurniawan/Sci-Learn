@@ -64,13 +64,14 @@
                                   <b><%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%></b></a>'s  
                                   <%#showFriends%> connections<%/showFriends%>
 
-                                  <%^showCourses%>  <%^ showGroups%> <%^showFriends%><%^showPerActivity%> posts<%/showPerActivity%>
-                                  <%#showPerActivity%> activities<%/showPerActivity%><%/showFriends%><%/showGroups%> <%/showCourses%> 
+                                  <%^showBookmarks%> <%^showCourses%>  <%^ showGroups%> <%^showFriends%><%^showPerActivity%> posts<%/showPerActivity%> 
+                                  <%#showPerActivity%> activities<%/showPerActivity%><%/showFriends%><%/showGroups%> <%/showCourses%> <%/ showBookmarks%>
 
                                   <%#showGroups%> groups<%/showGroups%> 
                                   <%#showCourses%> courses<%/showCourses%> 
+                                  <%#showBookmarks%> Bookmarks<%/showBookmarks%> 
 
-
+                               <%^ showBookmarks%>
                                <%^ showFriends %> 
                                <%^ showCourses%> 
                                <%^ showGroups %>
@@ -84,6 +85,7 @@
                                 <%/ showGroups %>
                                 <%/showCourses%> 
                                 <%/showFriends%>
+                                <%/ showBookmarks%>
 
                                   </h3>
                                 </div>
@@ -147,6 +149,7 @@
                      <%/ showGroups %>
                      <%/ showFriends %>
                      
+                     <%^ showBookmarks%>
                      <%^ showFriends %> 
                      <%^ showCourses%> 
                      <%^ showGroups %>
@@ -236,6 +239,7 @@
                         <%/ showGroups%>
                         <%/showCourses%> 
                      <%/ showFriends %>
+                     <%/ showBookmarks%>
 
                           <div class="text-center" style="<%# showFriends %>margin-top:151px; <%/ showFriends %> <%^ showFriends %>margin-top:5px; <%/ showFriends %>margin-bottom:1px">
                             <a href="#" class="glyphicon glyphicon-option-horizontal" style="font-size:15px "></a>
@@ -249,6 +253,8 @@
                  <%> list_user %>
 
                  <%> list_group_detail %>
+
+                 <%> list_bookmark_categories %>
 
                  <%> list_course_detail %>
 
@@ -315,6 +321,8 @@
   </div>
   </div>
 
+<!-- bookmark modal -->
+<%> bookmark_modal%>
 <!--share modal-->
 <%> share_modal%>
 <!--edit_post_template-->

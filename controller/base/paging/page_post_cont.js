@@ -6,6 +6,7 @@ module.exports = {
 			.findById(req.params.id)
 			.populate('creator')
 			.populate( 'original_creator')
+			.populate('post_shared')
 			.exec(function (err,dataPost){
 				// console.log(dataPost);
 				if(err){
@@ -29,6 +30,7 @@ module.exports = {
 					res.render('post', {profile: req.session.profile, posts: dataPost, 
 						rec_topic : req.session.rec_topic, 
 					partials: { topNavigation:'partial/topNavigation', post_partial: 'partial/post_partial',
+						bookmark_modal: 'modal/bookmark_modal', 
 						share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 					}});	
 				}else{

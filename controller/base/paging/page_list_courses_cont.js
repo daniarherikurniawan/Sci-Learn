@@ -51,14 +51,14 @@ module.exports = {
 									friendProfile = null;
 									myFriend = true;
 								}
-console.log("list_course_detail "+list_course_detail)
+								
 								res.render('profile', {profile: req.session.profile, numOfPost : 0,
 									posts: [], numOfLastPage : 0, showCourses: true, myFriend: myFriend,
 						 			limitPerPage:100, list_course_detail: list_course_detail,
 									friendProfile: friendProfile , rec_topic : req.session.rec_topic, 
 									popular_topic: req.session.popular_topic, setting: req.session.setting,
 									numOfCurrPage : 0, setting: req.session.setting,
-								partials: {group_info:'partial/group_info', share_modal: 'modal/share_modal',
+								partials: {group_info:'partial/group_info', 
 									create_group_modal: 'modal/create_group_modal', 
 									create_course_modal: 'modal/create_course_modal', leftSide: 'partial/leftSide', 
 									list_course_enrolled:'partial/list_course_enrolled', list_course_detail:'partial/course/list_course_detail',

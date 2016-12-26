@@ -193,6 +193,8 @@
     </div>
   </div>
   </div>
+<!-- bookmark modal -->
+<%> bookmark_modal%>
 <!--share modal-->
 <%> share_modal%>
 <!--edit_post_template-->

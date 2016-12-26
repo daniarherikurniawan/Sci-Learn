@@ -1,0 +1,294 @@
+<!--  Bookmark PersonalPost Modal -->
+
+<div id="bookmarkPersonalPostModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div class="row">
+          <h4 style=" color: white;     text-align: center;
+        margin: 5px 0px 0px;">Notes for Bookmarking Personal Post </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+          style="    font-size: 28px; padding: 2px 11px 0px 0px;position: fixed; top: -4px; float: right; right: -10px;">×</button>
+        </div>
+      </div>
+      
+
+   <div class="well background_modal" > 
+      <div id="personal_post_already_bookmarked" style="display: none">
+          <div class="" id="exist_personal_post_bookmark_notes" 
+          title="Your bookmark notes" 
+          style="padding: 5px;
+              margin: 5px;
+              background: white;
+              min-height: 57px;
+              border: #d6e7e8 1px solid;"> 
+          </div>
+         <div class="row" style="    margin: 10px 0px 0px 0px">
+           <input onclick="openBookmarkPersonalPost()"  id="" class="btn btn-primary pull-right" style="width: 24%;" value="Open Bookmark">
+           <input onclick="removePersonalPostBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
+        </div>
+      </div>
+      <div id="personal_post_ready_to_bookmark"  style="display: none">
+          <textarea maxlength="400" class="form-control auto-resize" placeholder="Give notes for this bookmark" required rows="2" style="height:60px;" id="personal_post_bookmark_notes" ></textarea>
+         <div class="row" style="    margin: 10px 0px 0px 0px">
+           <input  id="" onclick="tryToBookmarkPersonalPost()" class="btn btn-primary pull-right" style="width: 18%;" value="Bookmark">
+           <input class="btn btn-default pull-right modal-button cancel-button" data-dismiss="modal"  value="Cancel" >
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!--  Bookmark Course Material Modal -->
+
+<div id="bookmarkCourseMaterialModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div class="row">
+          <h4 style=" color: white;     text-align: center;
+        margin: 5px 0px 0px;">Notes for Bookmarking Course Material </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+          style="    font-size: 28px; padding: 2px 11px 0px 0px;position: fixed; top: -4px; float: right; right: -10px;">×</button>
+        </div>
+      </div>
+      
+
+   <div class="well background_modal" > 
+      <div id="course_material_already_bookmarked" style="display: none">
+          <div class="" id="exist_course_material_bookmark_notes" 
+          title="Your bookmark notes" 
+          style="padding: 5px;
+              margin: 5px;
+              background: white;
+              min-height: 57px;
+              border: #d6e7e8 1px solid;"> 
+          </div>
+         <div class="row" style="    margin: 10px 0px 0px 0px">
+           <input onclick="openBookmarkCourseMaterial()"  id="" class="btn btn-primary pull-right" style="width: 24%;" value="Open Bookmark">
+           <input onclick="removePersonalCourseMaterial()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
+        </div>
+      </div>
+      <div id="course_material_ready_to_bookmark"  style="display: none">
+          <textarea maxlength="400" class="form-control auto-resize" placeholder="Give notes for this bookmark" required rows="2" style="height:60px;" id="course_material_bookmark_notes" ></textarea>
+         <div class="row" style="    margin: 10px 0px 0px 0px">
+           <input  id="" onclick="tryToBookmarkCourseMaterial()" class="btn btn-primary pull-right" style="width: 18%;" value="Bookmark">
+           <input class="btn btn-default pull-right modal-button cancel-button" data-dismiss="modal"  value="Cancel" >
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- Bookmark Group Post Modal -->
+
+<div id="bookmarkGroupPostModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div class="row">
+          <h4 style=" color: white;     text-align: center;
+        margin: 5px 0px 0px;">Notes for Bookmarking Group Post </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+          style="    font-size: 28px; padding: 2px 11px 0px 0px;position: fixed; top: -4px; float: right; right: -10px;">×</button>
+        </div>
+      </div>
+      
+
+   <div class="well background_modal" > 
+      <div id="group_post_already_bookmarked" style="display: none">
+          <div class="" id="exist_group_post_bookmark_notes" 
+          title="Your bookmark notes" 
+          style="padding: 5px;
+              margin: 5px;
+              background: white;
+              min-height: 57px;
+              border: #d6e7e8 1px solid;"> 
+          </div>
+         <div class="row" style="    margin: 10px 0px 0px 0px">
+           <input onclick="openBookmarkGroupPost()"  id="" class="btn btn-primary pull-right" style="width: 24%;" value="Open Bookmark">
+           <input onclick="removeGroupPostBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
+        </div>
+      </div>
+      <div id="group_post_ready_to_bookmark"  style="display: none">
+          <textarea maxlength="400" class="form-control auto-resize" placeholder="Give notes for this bookmark" required rows="2" style="height:60px;" id="group_post_bookmark_notes" ></textarea>
+         <div class="row" style="    margin: 10px 0px 0px 0px">
+           <input  id="" onclick="tryToBookmarkGroupPost()" class="btn btn-primary pull-right" style="width: 18%;" value="Bookmark">
+           <input class="btn btn-default pull-right modal-button cancel-button" data-dismiss="modal"  value="Cancel" >
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+/*PersonalPost Bookmark*/
+
+var post_id = null;
+var bookmark_data = null;
+
+  $('#bookmarkPersonalPostModal').on('shown.bs.modal', function () {
+      bookmark_data = null;
+      var http = new XMLHttpRequest();
+      http.open("POST", "/bookmark/isInPersonalPostBookmark", true);
+      http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      var params = "post_id=" + post_id;
+      http.send((params));
+      http.onload = function() {
+        var result = JSON.parse(http.responseText);
+        if(result.message.isInArray){
+
+            if(result.message.bookmark_data.notes.length >= 150){
+               notes = result.message.bookmark_data.notes.substring(0, 149)+"...";
+              // document.write("cdsc")
+            }else{
+                notes = result.message.bookmark_data.notes;
+            }
+            bookmark_data = result.message.bookmark_data;
+          $('#personal_post_already_bookmarked').css('display', 'block')
+          $('#exist_personal_post_bookmark_notes').text(notes)
+        }else{
+          $('#personal_post_ready_to_bookmark').css('display', 'block')
+          $('textarea#personal_post_bookmark_notes').focus();
+        }
+      }
+  }) 
+
+  function removePersonalPostBookmark(){
+      var http = new XMLHttpRequest();
+      http.open("POST", "/bookmark/removePersonalPostBookmark", true);
+      http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      var params = "bookmark_id=" + bookmark_data._id;
+      http.send((params));
+      http.onload = function() {
+        var result = JSON.parse(http.responseText);
+        if(result.status == 1){
+            location.reload();
+        }else{
+          alert(result.message)
+        }
+      }
+  }
+
+  function tryToBookmarkPersonalPost(){
+    if(post_id == null){
+      alert("Error, post id is not set yet!")
+    }else{
+      var notes =  $('#personal_post_bookmark_notes').val();
+      if (notes == ''){
+        alert("Notes can't be empty!")
+      }else{
+        var http = new XMLHttpRequest();
+        http.open("POST", "/bookmark/addPersonalPostBookmark", true);
+        http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        var params = "post_id=" + post_id+ "&notes="+notes;
+        http.send((params));
+        http.onload = function() {
+          var result = JSON.parse(http.responseText);
+          if(result.status == 1){
+              location.reload();
+          }else{
+            alert(result.message)
+          }
+        }
+      }
+    }
+  }
+
+  function openBookmarkPersonalPost() {
+    var win = window.open('/bookmarks/'+profile_id+"/personal_post/"+bookmark_data._id, '_blank');
+    win.focus();
+  }
+
+  function setPostId(id_post){
+    post_id = id_post;
+  }
+
+
+/*Group bookmark*/
+
+ $('#bookmarkGroupPostModal').on('shown.bs.modal', function () {
+      bookmark_data = null;
+      var http = new XMLHttpRequest();
+      http.open("POST", "/bookmark/isInGroupPostBookmark", true);
+      http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      var params = "post_id=" + post_id;
+      http.send((params));
+      http.onload = function() {
+        var result = JSON.parse(http.responseText);
+        if(result.message.isInArray){
+
+            if(result.message.bookmark_data.notes.length >= 150){
+               notes = result.message.bookmark_data.notes.substring(0, 149)+"...";
+              // document.write("cdsc")
+            }else{
+                notes = result.message.bookmark_data.notes;
+            }
+            bookmark_data = result.message.bookmark_data;
+          $('#group_post_already_bookmarked').css('display', 'block')
+          $('#exist_group_post_bookmark_notes').text(notes)
+        }else{
+          $('#group_post_ready_to_bookmark').css('display', 'block')
+          $('textarea#group_post_bookmark_notes').focus();
+        }
+      }
+  }) 
+
+ function openBookmarkGroupPost() {
+    var win = window.open('/bookmarks/'+profile_id+"/group_post/"+bookmark_data._id, '_blank');
+    win.focus();
+  }
+
+
+
+   function removeGroupPostBookmark(){
+      var http = new XMLHttpRequest();
+      http.open("POST", "/bookmark/removeGroupPostBookmark", true);
+      http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      var params = "bookmark_id=" + bookmark_data._id;
+      http.send((params));
+      http.onload = function() {
+        var result = JSON.parse(http.responseText);
+        if(result.status == 1){
+            location.reload();
+        }else{
+          alert(result.message)
+        }
+      }
+  }
+
+  function tryToBookmarkGroupPost(){
+    if(post_id == null){
+      alert("Error, post id is not set yet!")
+    }else{
+      var notes =  $('#group_post_bookmark_notes').val();
+      if (notes == ''){
+        alert("Notes can't be empty!")
+      }else{
+        var http = new XMLHttpRequest();
+        http.open("POST", "/bookmark/addGroupPostBookmark", true);
+        http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        var params = "post_id=" + post_id+ "&notes="+notes+ "&group_id="+group_id;
+        http.send((params));
+        http.onload = function() {
+          var result = JSON.parse(http.responseText);
+          if(result.status == 1){
+              location.reload();
+          }else{
+            alert(result.message)
+          }
+        }
+      }
+    }
+  }
+</script>

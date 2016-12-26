@@ -37,7 +37,7 @@
 
                   <li class="dropdown" style="list-style-type: none;">
                     <a href="" data-toggle="dropdown"><i class="glyphicon glyphicon-chevron-down" style="top:-3px"></i></a>
-                    <ul class="dropdown-menu" style="left:-101px; top:13px;    min-width: 120px; ">
+                    <ul class="dropdown-menu" style="left:-111px; top:13px;    min-width: 120px; ">
 
                       {{^creator.name}}
                       <li><a class="btn " style="text-align: left;" type="button" 
@@ -47,12 +47,15 @@
                         "
                         ><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit</a></li>
                       {{/creator.name}}
-                      <li><a class="btn" style="text-align: left;" type="button" href=""><i class="glyphicon glyphicon-bookmark "></i>&nbsp; Keep</a></li>
+                      <li><a class="btn" style="text-align: left;" title="Bookmark This Post" data-toggle="modal" onclick="setPostId('{{_id}}')" href=" {{# showGroupPost}}#bookmarkGroupPostModal{{/ showGroupPost}} 
+                      {{^ showGroupPost}}#bookmarkPersonalPostModal{{/ showGroupPost}} "  type="button" href=""><i class="glyphicon glyphicon-bookmark "></i>&nbsp; Bookmark</a></li>
                       {{^showGroupPost}}
-                      {{#creator.name}}
+                      {{#creator.name}} 
+                       {{#title}}       
                       <li><a class="btn" 
                         type="button" onclick="{{^shared}}initiateSharedThought('{{_id}}','{{creator._id}}'); init('additionalThought',200);{{/shared}}"  data-toggle="modal" href="{{^shared}}#shareModal{{/shared}}" 
                         style="text-align: left;" ><i class="fa fa-share "></i>&nbsp; Share</a></li>
+                       {{/title}}       
                       {{/creator.name}}
                       {{/showGroupPost}}
 
@@ -125,7 +128,9 @@
               <div class="pull-right" style="width: 100%">       
                 {{#creator.name}}
                 {{#original_creator}}
+                 {{#title}}       
                 <a type="button" onclick="{{^post_shared.shared}}initiateSharedThought('{{post_shared._id}}','{{original_creator._id}}'); init('additionalThought',200);{{/post_shared.shared}}"  data-toggle="modal" class="btn btn-default" href="{{^post_shared.shared}}#shareModal{{/post_shared.shared}}"  style="float: right;"><i id="iconShare{{_id}}"  style="{{#post_shared.shared}}color:rgb(45, 99, 99){{/post_shared.shared}}"  class="fa fa-share"></i></a>
+                 {{/title}}       
                 {{/original_creator}}
                 {{/creator.name}}
               </div>
@@ -185,7 +190,6 @@
           <div id="showComment{{_id}}">
     </div>
   </div>
-
   {{/ posts }}
 <script type="text/javascript">
   /*whether the post is in the group or not*/

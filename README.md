@@ -144,3 +144,12 @@ Course.object.findOne({'weekly_materials._id': week_id},  {_id: 0, 'weekly_mater
 						}else{
 							console.log(course_data)
 							req.session.weekly_material = course_data.weekly_materials[0];
+
+
+							
+            if(result[i].group_name.length >= 25){
+               group_list_name += result[i].group_name.substring(0, 24)+"...";
+              // document.write("cdsc")
+            }else{
+                group_list_name += result[i].group_name;
+            }

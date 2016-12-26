@@ -42,6 +42,7 @@ var group = require('./routes/group_router');
 var connection = require('./routes/connection_router');
 var setting = require('./routes/setting_router');
 var course = require('./routes/course_router');
+var bookmark = require('./routes/bookmark_router');
 app.use('/', index);
 app.use('/agent', agent);
 app.use('/group', group);
@@ -51,6 +52,7 @@ app.use('/connections', connection);
 app.use('/user', user);
 app.use('/setting', setting);
 app.use('/course', course);
+app.use('/bookmark', bookmark);
 
 // GLOBAL VARIABLE
 global.response = require('./controller/base/response_cont');

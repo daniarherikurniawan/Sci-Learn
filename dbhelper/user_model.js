@@ -24,7 +24,6 @@ var UserSchema = new mongoose.Schema({
   img_cover_name: {type: String, default: "cover.jpg"},
   chat:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Chat' }],
   id_user_posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }],
-
   id_liked_posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }], 
   id_share_posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }], 
   id_commented_posts: [{ 
@@ -35,7 +34,26 @@ var UserSchema = new mongoose.Schema({
       id: {type: mongoose.Schema.Types.ObjectId, ref: 'Post'},             
       num: {type: Number, default: 1}                                      // 60 posts unique -> ambil 10 yg post_index paling tinggi (default) ->    300 id user unique-> ternyata 250 orang sudah berteman-> tinggal 50-> orang" yg melakukan action terhadap 60 post tsb -> dapat list id user misal 200 user -> ( di sort berdasarkan user activeness) ambil default merekomendasikann 20 orang 
     }], // according to shared / liked / commented posts
-  
+
+  bookmarks_personal_posts:  {type: [{
+      notes:  {type: String, default: ""},
+      date_added: { type: Date, default: Date.now},
+      post:  { type: mongoose.Schema.Types.ObjectId, ref: 'Post' }
+    }], default: []},
+  bookmarks_group_posts:  {type: [{
+      notes:  {type: String, default: ""},
+      date_added: { type: Date, default: Date.now},
+      group: { type: mongoose.Schema.Types.ObjectId, ref: 'Group' },
+      post:  { type: mongoose.Schema.Types.ObjectId, ref: 'Post' }
+    }], default: []},
+  bookmarks_course_materials:  {type: [{
+      notes:  {type: String, default: ""},
+      date_added: { type: Date, default: Date.now},
+      course: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' },
+      weekly_materials_id:  {type: String, default: ""},
+      material: { type: mongoose.Schema.Types.ObjectId, ref: 'Material' }
+    }], default: []},
+
   activeness: {type: Number, default: 1}
 });     
 mongoose.model('User',UserSchema);

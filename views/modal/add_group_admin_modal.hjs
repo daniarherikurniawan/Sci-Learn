@@ -3,10 +3,10 @@
     <div  class="modal-content">
       <div class="modal-header">
         <div class="row">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
-          style=" font-size: 28px; padding: 2px 11px 0px 0px;">×</button>
-          <h4 style=" color: white; text-align: center;
+          <h4 style=" color: white;     text-align: center;
         margin: 5px 0px 0px;">Add Group Admin</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+          style="    font-size: 28px; padding: 2px 11px 0px 0px;position: fixed; top: -4px; float: right; right: -10px;">×</button> 
         </div>
       </div>
       

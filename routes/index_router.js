@@ -16,6 +16,7 @@ var page_post_cont = require('../controller/base/paging/page_post_cont');
 var page_search_cont = require('../controller/base/paging/page_search_cont');
 var page_list_groups_cont = require('../controller/base/paging/page_list_groups_cont');
 var page_list_courses_cont = require('../controller/base/paging/page_list_courses_cont');
+var page_bookmarks_cont = require('../controller/base/paging/page_bookmarks_cont');
 
 // /* GET home page. */     sdsdc
 router.get('/', function(req, res, next) {
@@ -402,6 +403,15 @@ router.get('/groups/:user_id/:search_term', function(req, res, next) {
 router.get('/courses/:user_id', function(req, res, next) {
 	if(req.session.profile != null){
 		page_list_courses_cont.showListCoursesPage(req.params.user_id, req, res);
+	}else{
+		res.redirect('/login');
+  	}
+});
+
+/* GET list groups page. */
+router.get('/bookmarks/:user_id', function(req, res, next) {
+	if(req.session.profile != null){
+		page_bookmarks_cont.showListBookmarkCategories(req.params.user_id, req, res);
 	}else{
 		res.redirect('/login');
   	}

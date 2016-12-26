@@ -61,6 +61,7 @@ module.exports = {
 						 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
 					 			list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
 					 			list_course_enrolled:'partial/list_course_enrolled',
+					 			bookmark_modal: 'modal/bookmark_modal', 
 						 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 						 }});	
 						}else{
@@ -81,6 +82,7 @@ module.exports = {
 							 		post_partial: 'partial/post_partial',about_user: 'partial/about_user',	
 						 			list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
 						 			list_course_enrolled:'partial/list_course_enrolled',
+						 			bookmark_modal: 'modal/bookmark_modal', 
 							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});	
 
@@ -95,6 +97,7 @@ module.exports = {
 							 		post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
 						 			list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
 						 			list_course_enrolled:'partial/list_course_enrolled',
+						 			bookmark_modal: 'modal/bookmark_modal', 
 							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});	
 
@@ -198,6 +201,7 @@ module.exports = {
 						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
 					 				list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
 					 				list_course_enrolled:'partial/list_course_enrolled',
+					 				bookmark_modal: 'modal/bookmark_modal', 
 							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});		
 							}else if (idForProfile.indexOf(""+req.session.dataCurrentProfile._id) != -1){
@@ -212,6 +216,7 @@ module.exports = {
 						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
 					 				list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
 					 				list_course_enrolled:'partial/list_course_enrolled',
+					 				bookmark_modal: 'modal/bookmark_modal', 
 							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});		
 							}else{
@@ -225,6 +230,7 @@ module.exports = {
 						 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
 					 				list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
 					 				list_course_enrolled:'partial/list_course_enrolled',
+					 				bookmark_modal: 'modal/bookmark_modal', 
 							 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
 							 	}});			
 							}
