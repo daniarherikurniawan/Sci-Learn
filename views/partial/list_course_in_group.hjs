@@ -1,8 +1,12 @@
 <div class="panel panel-default">
   <div id="opened_courses_title" class="panel-heading">
   	<a id="open-new-course" style=" margin-top: 10px;" class="pull-right" type="button" 
-     onclick=""  data-toggle="modal" href="#create_course_modal" 
-    > <small><span class="glyphicon glyphicon-plus"></span></small> New</a> <h4>Opened Courses</h4>
+     onclick=""  data-toggle="modal" href="#create_course_modal">
+     <small><span class="glyphicon glyphicon-plus"></span></small> New</a> 
+    
+    <a href="/group/courses/{{group._id}}"><h4  id="list-course-title" > 
+    <i class="glyphicon glyphicon-blackboard" style="top: 2px"></i> &nbsp; Opened Courses</h4></a>
+    <!-- <h4></h4> -->
   </div>
   <div  class="panel-body">
     <div id="opened_courses_list" class="list-group" style="margin-bottom: 0px;">

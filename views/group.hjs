@@ -68,9 +68,9 @@
                                      <%/ showSearchMemberResult%>
 
                                      <a href="/group/Courses/<%group._id%>" class="btn pull-right btn-default-blue" 
-                                     style="margin: 0px 3px 0px 3px;   <%#showGroupCourseDetail%> background-color: #d6e7e8; <%/showGroupCourseDetail%>   padding: 6px 5px;   height: 34px;"
+                                     style="margin: 0px 3px 0px 3px;   <%#showGroupCourse%> background-color: #d6e7e8; <%/showGroupCourse%>   padding: 6px 5px;   height: 34px;"
                                      title="Online Courses" >
-                                     <i class=" glyphicon glyphicon-blackboard fa-3x" style="font-size: 18px;     margin-top: -1px;">&nbsp<%group.courses_id.length%></i></a>
+                                     <i class=" glyphicon glyphicon-blackboard fa-3x" style="font-size: 18px;margin-top: -1px;">&nbsp<%group.courses_id.length%></i></a>
                                   </div>
                                   </h3>
                                 </div>
@@ -154,7 +154,10 @@
                         <%> group_member_detail%> 
                       <%/ showGroupPost %>
 
-
+                      <%# showGroupCourse%>
+                        <%> list_course_detail %>
+                      <%/ showGroupCourse%>
+                      
                       <%# showGroupPost %>
                       <div class="text-center"> <!-- pagination -->
                         <div class="row" >
