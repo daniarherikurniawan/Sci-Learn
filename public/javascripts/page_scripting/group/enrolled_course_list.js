@@ -32,7 +32,16 @@ isMyOwnCourse = profile_id == current_profile_id;
         }else{
           icon = "<i style='color: #2d6363; margin-right:3px' title='Public Course' class=\"fa fa-globe\"></i>";
         }
-            course_list_name += "<a href=\"/course/"+result[i]._id+"\" class=\"list-group-item\">"+icon+"   "+result[i].course_name+"</a> ";
+            course_list_name += "<a href=\"/course/"+result[i]._id+"\" class=\"list-group-item\">"+icon+"   ";
+            
+            if(result[i].course_name.length >= 25){
+               course_list_name += result[i].course_name.substring(0, 24)+"...";
+              // document.write("cdsc")
+            }else{
+                course_list_name += result[i].course_name;
+            }
+
+            course_list_name +="</a> ";
           }
         }
         // alert()

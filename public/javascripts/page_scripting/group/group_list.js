@@ -31,7 +31,16 @@ isMyOwnGroup = profile_id == current_profile_id;
 				}else{
 					icon = "<i style='color: #2d6363; margin-right:3px' title='Public Group' class=\"fa fa-globe\"></i>";
 				}
-	        	group_list_name += "<a href=\"/group/"+result[i]._id+"\" class=\"list-group-item\">"+icon+"   "+result[i].group_name+"</a> ";
+	        	group_list_name += "<a href=\"/group/"+result[i]._id+"\" class=\"list-group-item\">"+icon+"   ";
+
+            if(result[i].group_name.length >= 25){
+               group_list_name += result[i].group_name.substring(0, 24)+"...";
+              // document.write("cdsc")
+            }else{
+                group_list_name += result[i].group_name;
+            }
+
+            group_list_name +="</a> ";
         	}
         }
         // alert()
