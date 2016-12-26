@@ -46,12 +46,12 @@
         </b></a> 
           <div style="margin-top: -24px">
             <a href="/group/members/{{_id}}" class="btn pull-right btn-default-blue" 
-             style="margin: 0px 3px 0px 3px;      padding: 6px 5px;   height: 34px;"
-             title="Group Members" ><i class=" fa fa-users  fa-1x " style="font-size: 18px; margin-top: 2px;"> &nbsp{{numberOfMember}}</i></a>
+             style="margin: 0px 3px 0px 3px;  text-align: center;    padding: 6px 0px;   height: 34px; width: 60px;"
+             title="Group Members" ><i class=" fa fa-users  fa-1x " style="font-size: 18px; margin-top: 2px; "> {{numberOfMember}}</i></a>
 
              <a href="/group/Courses/{{_id}}" class="btn pull-right btn-default-blue" 
-             style="margin: 0px 3px 0px 3px;      padding: 6px 5px;   height: 34px;"
-             title="Online Courses" ><i class=" glyphicon glyphicon-blackboard fa-3x" style="font-size: 18px;     margin-top: -1px;">&nbsp{{courses_id.length}}</i></a>
+             style="margin: 0px 3px 0px 3px;   text-align: center;    padding: 6px 0px;   height: 34px; width: 60px;"
+             title="Online Courses" ><i class=" glyphicon glyphicon-blackboard fa-3x" style="font-size: 19px;   position: relative; top: 1px;"></i><span  style="font-size: 18px;position: relative; top: -2px; "> {{courses_id.length}}</span></a>
           </div>
         </h4>
          <div style="margin-top: 28px">

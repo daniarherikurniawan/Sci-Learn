@@ -60,17 +60,18 @@
                                   <b><%group.group_name%></b></a>
                                   <div  style="margin-top: -31px">
                                      <%^showSearchMemberResult%>
-                                     <a href="/group/members/<%group._id%>" class="btn pull-right btn-default-blue" 
-                                     style="margin: 0px 3px 0px 3px;  <%#showGroupMemberDetail%> background-color: #d6e7e8; <%/showGroupMemberDetail%>    padding: 6px 5px;   height: 34px;"
-                                     title="Group Members" >
-                                     <i class=" fa fa-users  fa-1x " 
-                                     style=" font-size: 18px; margin-top: 2px;"> &nbsp<%group.group_members.length%></i></a>
+                                  <a href="/group/members/<%group._id%>" class="btn pull-right btn-default-blue" 
+                                   style="margin: 0px 3px 0px 3px;  text-align: center;  <%#showGroupMemberDetail%> background-color: #d6e7e8; <%/showGroupMemberDetail%>    padding: 6px 0px;   height: 34px; width: 60px;"
+                                   title="Group Members" ><i class=" fa fa-users  fa-1x " style="font-size: 18px; margin-top: 2px; "> <%group.group_members.length%></i></a>
+
                                      <%/ showSearchMemberResult%>
 
-                                     <a href="/group/Courses/<%group._id%>" class="btn pull-right btn-default-blue" 
-                                     style="margin: 0px 3px 0px 3px;   <%#showGroupCourse%> background-color: #d6e7e8; <%/showGroupCourse%>   padding: 6px 5px;   height: 34px;"
-                                     title="Online Courses" >
-                                     <i class=" glyphicon glyphicon-blackboard fa-3x" style="font-size: 18px;margin-top: -1px;">&nbsp<%group.courses_id.length%></i></a>
+
+
+                                   <a href="/group/Courses/<%group._id%>" class="btn pull-right btn-default-blue" 
+                                   style="margin: 0px 3px 0px 3px;   text-align: center; <%#showGroupCourse%> background-color: #d6e7e8; <%/showGroupCourse%>    padding: 6px 0px;   height: 34px; width: 60px;"
+                                   title="Online Courses" ><i class=" glyphicon glyphicon-blackboard fa-3x" style="font-size: 19px;   position: relative; top: 1px;"></i><span  style="font-size: 18px;position: relative; top: -2px; "> <%group.courses_id.length%></span></a>
+
                                   </div>
                                   </h3>
                                 </div>

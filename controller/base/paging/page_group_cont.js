@@ -205,10 +205,10 @@ module.exports = {
 								friendProfile = req.session.dataCurrentProfile
 
 								// my profile
-								if ((user_id == req.session.profile._id)){
-									friendProfile = null;
-									myFriend = true;
-								}
+								// if ((user_id == req.session.profile._id)){
+								// 	friendProfile = null;
+								// 	myFriend = true;
+								// }
 							
 
 								res.render('group', {group: data_group, showGroupCourse:true,
