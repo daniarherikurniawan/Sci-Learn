@@ -1,1 +1,50 @@
-<div>course materials</div>
+<div class="panel panel-default" style="margin-top: 0px;">
+	<div class="panel-heading " style="height: 40px; background: #d1f0f4;">
+		<h4 style="padding-top: 0px; margin-top: 0px;">{{single_material.material_title}} </h4>
+	</div>
+
+	<div class="course-material " style="padding: 10px; line-height: 22px; " >
+	  	<div>
+	  	
+	  	{{# single_material.is_announcement}}
+	  		is_announcement
+		{{/ single_material.is_announcement}}
+
+
+		{{# single_material.is_file}}
+
+			<div id="editable_course_overview">
+		  		<span  id="course_overview_desc">{{single_material.material_description}}</span >
+		  	</div>
+		  	<hr> <!-- /test/elearning dgn moodle.pdf -->
+		  	<!-- https://docs.google.com/viewerng/viewer?url=http://infolab.stanford.edu/pub/papers/google.pdf -->
+		  	<!-- https://docs.google.com/document/d/1n6Br1H5ZTt5JdHrgkTD_4QwaGi3JwElsgS9G1aG9PnQ/edit -->
+		  	<iframe id="iframe_pdf" style="height: auto; width: 100%" src= "{{single_material.material_url}}" ></iframe>
+			<script type="text/javascript">
+				height = window.innerHeight - 40;
+				// alert(height)
+				$('#iframe_pdf').css('height',height)
+			</script>
+		{{/ single_material.is_file}}
+    	
+    	{{# single_material.is_video}}
+	  		<iframe width="100%" height="600px" src="{{single_material.material_url}}?rel=0" frameborder="0" allowfullscreen></iframe>
+
+	  		<hr>
+
+			<div id="editable_course_overview">
+		  		<span  id="course_overview_desc">{{single_material.material_description}}</span >
+		  	</div>
+		{{/ single_material.is_video}}
+    	
+
+    	{{# single_material.is_quiz}}
+    		is_quiz
+		{{/ single_material.is_quiz}}
+	  	</div>
+
+
+	</div>
+</div>
+
+    	

@@ -24,7 +24,11 @@ module.exports = {
 						console.log(err);
 						res.send("404");
 					}else{
-
+						previous_opened_week = null;
+						if (req.session.specific_week_id != null){
+							previous_opened_week = req.session.specific_week_id ;
+							req.session.specific_week_id = null;
+						}
 						req.session.course = course_data;
 						res.render('course', {course: req.session.course, 
 							isMaterialsExist: (course_data.weekly_materials.length > 0),
@@ -35,6 +39,7 @@ module.exports = {
 							showCourseParticipants : false,
 							showCourseMaterial: false,
 							setting: req.session.setting,
+							 previous_opened_week: previous_opened_week,
 						partials: { 
 							courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
 							courseParticipants:'partial/course/courseParticipants',
@@ -132,94 +137,27 @@ module.exports = {
 			}
 		},
 
-		showGroupCoursesPage: function(group_id, req, res, numOfCurrPage, limit){
-		if(!isInArray(group_id, req.session.profile.groups)){
-			res.redirect('/');
-		}else{
-			Group.object.findById(group_id)
-				.exec( function(err, group_data){
-					if(err || group_data == null){
-						console.log(err);
-						res.send("404");
-					}else{
-						arrayPostId = group_data.group_posts;
-						// console.log("================= "+arrayPostId.length)
-						Post.object
-						.find({'_id': {$in : arrayPostId}})
-						.sort({date_created: 'desc'})
-						.populate({
-							  path: 'creator',
-							  select: 'name email img_profile_name'
-							})
-						.exec(function (err,posts){
-							if(err)
-								console.log(err);
-
-							id = req.session.profile._id;
-							if(posts != null )
-								for (var i = posts.length - 1;  i >= 0; i--) {
-
-									if(posts[i].creator._id == req.session.profile._id){
-										 posts[i].creator = null;
-									}
-									if(posts[i].like.indexOf(id) != -1){
-										 posts[i].liked = true;
-									}
-									if((posts[i].creator == null) && (posts[i].post_shared != null)  && (posts[i].post_shared.share.indexOf(id) != -1)){
-										posts[i].post_shared.shared = true;
-									}
-								};
-
-
-								res.render('group', {group: group_data, showGroupCourse:true,
-									profile: req.session.profile, 
-									numOfPost : 0,
-									courses: [], numOfLastPage : 0,
-									numOfCurrPage : 0, limitPerPage : limit, setting: req.session.setting,
-								partials: {group_info:'partial/group_info', share_modal: 'modal/share_modal', group_member:'partial/group_member',
-									edit_post_template: 'template/edit_post_template', create_group_modal: 'modal/create_group_modal',
-									create_course_modal: 'modal/create_course_modal', 
-									post_partial: 'partial/post_partial', list_group:'partial/list_group', list_course_in_group: 'partial/list_course_in_group',
-									topNavigation:'partial/topNavigation'}});
-
-							});
-
-					}
-				});
-			}
-		},
 
 		showWeeklyMaterials: function(req, res){
 			course_id = req.session.course._id;
 			if(!isInArray(course_id, req.session.profile.courses)){
 				res.redirect('/');
 			}else{
-				Course.object.findById(course_id)
-					.populate('weekly_materials.materials')
-					.exec( function(err, course_data){
-						if(err || course_data == null){
-							console.log(err);
-							res.send("404");
-						}else{
-
-							req.session.course = course_data;
-							res.render('course', {course: req.session.course, 
-								isMaterialsExist: (course_data.weekly_materials.length > 0),
-								profile: req.session.profile, 
-								showCourseMaterial: true,
-								setting: req.session.setting,
-							partials: { 
-								courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
-								courseParticipants:'partial/course/courseParticipants',
-								edit_single_column_template: 'template/edit_single_column_template',
-								topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
-								mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
-								courseDiscussionForum:'partial/course/courseDiscussionForum'}});
-
-						}
-						
-					});
+				course = req.session.course;
+				week_id = req.params.week_id;
+				found = false;
+				for (var i = course.weekly_materials.length - 1; !found && i >= 0; i--) {
+					if( course.weekly_materials[i]._id == week_id){
+						found = true;
+						current_weekly_material = course.weekly_materials[i]
+					}
 				}
+				if(!found){
+					response.setFailedResponse(res, "Weekly course materials are not found!");
+				}else{
+					res.redirect('/course/week/'+week_id+'/'+current_weekly_material.materials[0]._id);	
+				}
+			}
 		},
 		
 		showSpecificMaterial: function(req, res){
@@ -227,32 +165,45 @@ module.exports = {
 			if(!isInArray(course_id, req.session.profile.courses)){
 				res.redirect('/');
 			}else{
-				Course.object.findById(course_id)
-					.populate('weekly_materials.materials')
-					.exec( function(err, course_data){
-						if(err || course_data == null){
-							console.log(err);
-							res.send("404");
-						}else{
-
-							req.session.course = course_data;
-							res.render('course', {course: req.session.course, 
-								isMaterialsExist: (course_data.weekly_materials.length > 0),
-								profile: req.session.profile, 
-								showCourseMaterial: true,
-								setting: req.session.setting,
-							partials: { 
-								courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
-								courseParticipants:'partial/course/courseParticipants',
-								edit_single_column_template: 'template/edit_single_column_template',
-								topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
-								mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
-								courseDiscussionForum:'partial/course/courseDiscussionForum'}});
-
+				course = req.session.course;
+				week_id = req.params.week_id;
+				material_id = req.params.material_id;
+				found = false;
+				for (var i = course.weekly_materials.length - 1; !found && i >= 0; i--) {
+					if( course.weekly_materials[i]._id == week_id){
+						found = true;
+						current_weekly_material = course.weekly_materials[i]
+						req.session.specific_week_id = current_weekly_material._id;
+						material_exist = false;
+						for (var j = current_weekly_material.materials.length - 1; j >= 0; j--) {
+							if( current_weekly_material.materials[j]._id == material_id){
+								current_weekly_material.materials[j].active = true;
+								single_material = current_weekly_material.materials[j];
+								material_exist = true;
+							}else{
+								current_weekly_material.materials[j].active = false;
+							}
 						}
-						
-					});
+					}
 				}
+
+				if(!found || !material_exist){
+					response.setFailedResponse(res, "Weekly course materials are not found!");
+				}else{
+					res.render('course', {course: course, current_weekly_material: current_weekly_material,
+						isMaterialsExist: found, single_material: single_material,
+						profile: req.session.profile, 
+						showCourseMaterial: true,
+						setting: req.session.setting,
+					partials: { 
+						courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
+						courseParticipants:'partial/course/courseParticipants',
+						edit_single_column_template: 'template/edit_single_column_template',
+						topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
+						mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
+						courseDiscussionForum:'partial/course/courseDiscussionForum'}});
+				}
+			}	
 		},
 
 		showCourseParticipants: function(req, res){

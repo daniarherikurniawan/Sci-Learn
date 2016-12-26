@@ -74,8 +74,6 @@
 <script type="text/javascript">
   var id_creator = '<%profile._id%>';
   var myEmail = '<%profile.email%>';
-  // tryToDelete('585071f8220d7af90d35b2ff', '576cf49b3a71b5df0510f209')
-  /*group variable*/
   course_accessibility = '<%course.course_accessibility%>';
 </script>
 <!-- script references -->

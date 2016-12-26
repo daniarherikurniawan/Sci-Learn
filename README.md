@@ -130,3 +130,17 @@ db.course.updateMany({},{$set: {"course_materials" : null}})
       }
     }
   }
+
+
+db.users.find({awards: {$elemMatch: {award:'National Medal', year:1975}}})
+
+
+Course.object.findOne({'weekly_materials._id': week_id},  {_id: 0, 'weekly_materials.$': 1})
+					.populate('weekly_materials.materials')
+					.exec( function(err, course_data){
+						if(err || course_data == null){
+							console.log(err);
+							res.send("404");
+						}else{
+							console.log(course_data)
+							req.session.weekly_material = course_data.weekly_materials[0];

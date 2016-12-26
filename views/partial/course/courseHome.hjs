@@ -71,11 +71,6 @@
 	  		
 	  		<span id="course_material_desc">{{course.course_materials_description}}</span >
 	  	</div>
-	  <!-- <embed src="/test/elearning dgn moodle.pdf" width="800px" height="2100px" /> -->
-	  <!-- <iframe width="420" height="345" src="https://www.youtube.com/embed/XGSy3_Czz8k"></iframe> -->
-<!-- 	  <object data="/test/elearning dgn moodle.pdf" type="application/pdf" width="300" height="200">
-		<a href="data/test.pdf">test.pdf</a>
-		</object> -->
 		{{^course.weekly_materials}}
 		<div id="" class="weekly-material" style=" padding-top: 5px; margin-bottom: 0px;">
 			<div class="panel-heading" style="height: 40px; background: #d6e7e8; margin-top: 5px; ">

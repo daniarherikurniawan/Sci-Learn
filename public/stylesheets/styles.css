@@ -360,7 +360,7 @@ small.text-muted {
 
 
 ::selection {
-  background: rgb(199, 229, 231); /* WebKit/Blink Browsers */
+  /* background: rgb(59, 151, 152); */ /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
   background: rgb(199, 229, 231); /* Gecko Browsers */
@@ -417,9 +417,7 @@ position: relative;
 }
 
 
-ul.egmenu > li a:hover {
-background: #d1f0f4;
-}
+ul.egmenu > li a:hover {/* background: #d1f0f4; */background: #d6e7e8;color: #2d6363;}
 
 ul.egmenu ul {
       padding-left: 20px;
@@ -431,22 +429,18 @@ left: 0; top: 100%;
 }
 
 
-ul.egmenu ul a:hover {background: #d6e7e8;}
-ul.egmenu a {
-cursor: pointer;
-display: block;
-color: #2d6363;
-line-height: 30px;
-padding: 0 30px;
-}
+ul.egmenu ul a:hover {background: none;color: #2d6363;}
+ul.egmenu a {cursor: pointer;display: block;color: #3b9798;line-height: 30px;padding: 0 30px;}
 ul.egmenu { height: auto; }
 ul.egmenu > li { float: none; width: 100%; }
-ul.egmenu a { line-height: 40px; }
+ul.egmenu a {line-height: 40px;/* background: #d6e7e8; */}
 ul.egmenu ul { position: relative; }
 
-ul.egmenu li.tap {     background: #d1f0f4;}
+ul.egmenu li.tap {  background: #d6e7e8; }
 ul.egmenu li.tap ul { display: block; }
-
+ul.egmenu > li.tap a.has-sub {
+  color: #2d6363 !important;
+}
 a.active{
   border-left: 19px solid #d6e7e8;
   margin-left: -20px;

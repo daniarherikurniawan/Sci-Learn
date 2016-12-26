@@ -1,14 +1,29 @@
+  function showCourseInfo(){
+    $('#course_name').css('display', 'block')
+    $('#course_img_cover').css('display', 'inline-block')
+    $('#show_course_info').css('display', 'none')
+    $('#hide_course_info').css('display', 'inline')
+  }
 
+  function hideCourseInfo(){
+    $('#course_name').css('display', 'none')
+    $('#course_img_cover').css('display', 'none')
+    $('#show_course_info').css('display', 'inline')
+    $('#hide_course_info').css('display', 'none')
+  }
+  
   $('.has-sub').click( function(e) {
-    if ($(this).parent().hasClass('tap') ){
-      $(this).parent().removeClass('tap');
-    }else{
-      $('li').each( function(e) {
-        $(this).removeClass('tap');
-      });
-      $(this).parent().toggleClass('tap');
-    }
+    if(showCourseHome){
+      if ($(this).parent().hasClass('tap') ){
+        $(this).parent().removeClass('tap');
+      }else{
+        $('li').each( function(e) {
+          $(this).removeClass('tap');
+        });
+        $(this).parent().toggleClass('tap');
+      }
       e.preventDefault();
+    }
   });
 
   $('div#main').ready(function () {
@@ -43,3 +58,9 @@ $('a.menu').on('click', function(){
   $("div#main").animate({ scrollTop: ( currWeekMaterial.position().top) - 10}, "slow");
   // $("div#main").animate({ scrollTop: 0 }, "slow");
 })
+
+if (previous_opened_week != null) {
+  $("a#week_"+previous_opened_week+"").click();
+  // alert('cdsc')
+  previous_opened_week = null;
+}

@@ -3,7 +3,7 @@
 <div id="editableTemplate" style="display: none; height: 1px" >
 <form id="needActionSingleColumnEdit" action="#" method="post"  
    style="  margin-bottom: 65px;">
-      <textarea onkeyup="" maxlength="1500"  id = "editableTextArea"  name="data" class="form-control auto-resize" placeholder="Share your knowledge"  required rows="4" style="overflow-y: auto;" ></textarea>
+      <textarea onkeyup="" maxlength="5000"  id = "editableTextArea"  name="data" class="form-control auto-resize" placeholder="Share your knowledge"  required rows="4" style="overflow-y: auto;" ></textarea>
     
     <div class="pull-right" style="    padding: 10px 15px 0px 0px; margin-top: 0px;">
       <a id="cancelButtonId" onclick="cancelEdit()" class="btn btn-md btn-default" type="">Cancel
@@ -103,13 +103,13 @@
               </div>
               {{# is_announcement}}
               <div class="col-md-8" style="margin-right: -8px;width: 60%;">
-                  <textarea  maxlength="50"  id = "{{_id}}_desc"   class="form-control auto-resize" placeholder="Quiz's title"  required  style="height: 34px; padding: 8px 12px; " >{{material_description}}</textarea>
+                  <textarea  maxlength="250"  id = "{{_id}}_desc"   class="form-control auto-resize" placeholder="Quiz's title"  required  style="height: 68px; padding: 8px 12px; " >{{material_description}}</textarea>
               </div>
             </div>
               {{/ is_announcement}}
               {{^ is_announcement}}
               <div class="col-md-8" style="margin-right: -8px;width: 60%;">
-                  <textarea  maxlength="50"  id = "{{_id}}_title"   class="form-control auto-resize" placeholder="Material's title"  required  style="height: 34px; padding: 8px 12px; " >{{material_title}}</textarea>
+                  <textarea  maxlength="80"  id = "{{_id}}_title"   class="form-control auto-resize" placeholder="Material's title"  required  style="height: 34px; padding: 8px 12px; " >{{material_title}}</textarea>
               </div>
 
               <div style="text-align: right;">
@@ -146,7 +146,7 @@
               <div class="col-md-2">
                 </div>
                 <div class="col-md-8" style="width: 60%;">
-                  <textarea  maxlength="1500"  id = "{{_id}}_desc"   class="form-control auto-resize" placeholder="Material's descriptions"  required style="height: 102px; padding: 8px 12px; overflow: auto;" >{{material_description}}</textarea>
+                  <textarea  maxlength="5000"  id = "{{_id}}_desc"   class="form-control auto-resize" placeholder="Material's descriptions"  required style="height: 102px; padding: 8px 12px; overflow: auto;" >{{material_description}}</textarea>
               </div>
           </div>
           {{/ is_announcement}}
