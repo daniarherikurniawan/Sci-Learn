@@ -107,4 +107,81 @@ router.get('/:course_id/participants', function(req, res, next) {
 	}
 });
 
+
+
+router.post('/quickSearchWithinGroupMemberNotInstructor', function(req, res, next) {
+	if(req.session.profile!=null){
+		course_cont.quickSearchWithinGroupMemberNotInstructor(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+
+router.post('/quickSearchWithinGroupMemberNotParticipants', function(req, res, next) {
+	if(req.session.profile!=null){
+		course_cont.quickSearchWithinGroupMemberNotParticipants(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+
+
+router.post('/quickSearchWithinCourseInstructor', function(req, res, next) {
+	if(req.session.profile!=null){
+		course_cont.quickSearchWithinCourseInstructor(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+
+
+router.post('/quickSearchWithinCourseStudents', function(req, res, next) {
+	if(req.session.profile!=null){
+		course_cont.quickSearchWithinCourseStudents(req, function(result){
+			res.send(result);
+		});
+	}else{
+		res.redirect('/login');
+	}
+});
+
+router.post('/membership/addStudent', function(req, res, next) {
+	if(req.session.profile!=null){
+		course_cont.addStudent(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+router.post('/membership/removeStudent', function(req, res, next) {
+	if(req.session.profile!=null){
+		course_cont.removeStudent(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+router.post('/membership/addInstructor', function(req, res, next) {
+	if(req.session.profile!=null){
+		course_cont.addInstructor(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+router.post('/membership/removeInstructor', function(req, res, next) {
+	if(req.session.profile!=null){
+		course_cont.removeInstructor(req, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
+
 module.exports = router;

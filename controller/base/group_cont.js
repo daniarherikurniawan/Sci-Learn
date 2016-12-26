@@ -12,7 +12,12 @@ function getRandomInt(min, max) {
 }
 
 function isInArray(value, array) {
-  return array.indexOf(value) > -1;
+	for (var i = array.length - 1; i >= 0; i--) {
+		if( array[i] == value){
+			return true;
+		}
+	}
+	return false;
 }
 
 function deleteItemInArray(item, array){

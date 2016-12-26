@@ -7,7 +7,12 @@ var User = require('../../../dbhelper/user_model');
 // var page_home_func = require('../../../controller/common/paging/page_home_func');
 
 function isInArray(value, array) {
-  return array.indexOf(value) > -1;
+	for (var i = array.length - 1; i >= 0; i--) {
+		if( array[i] == value){
+			return true;
+		}
+	}
+	return false;
 }
 
 

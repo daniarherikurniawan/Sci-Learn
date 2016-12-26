@@ -121,5 +121,3 @@
   	var profile_img_profile_name = '{{profile.img_profile_name}}';
   	// alert(profile_email)
 </script>
-
-<script src="/javascripts/page_scripting/course/find_within_group_members.js"></script>

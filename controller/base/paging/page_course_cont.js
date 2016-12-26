@@ -8,7 +8,12 @@ var User = require('../../../dbhelper/user_model');
 // var page_home_func = require('../../../controller/common/paging/page_home_func');
 
 function isInArray(value, array) {
-  return array.indexOf(value) > -1;
+	for (var i = array.length - 1; i >= 0; i--) {
+		if( array[i] == value){
+			return true;
+		}
+	}
+	return false;
 }
 
 function isInstructor(user_id, course_instructors){
@@ -27,6 +32,10 @@ module.exports = {
 		}else{
 			Course.object.findById(course_id)
 				.populate('weekly_materials.materials')
+				.populate({
+					path: 'group_id',
+					select: 'group_name _id'
+				})
 				.exec( function(err, course_data){
 					if(err || course_data == null){
 						console.log(err);
@@ -180,16 +189,20 @@ module.exports = {
 			}else{
 				Course.object.findById(course_id)
 					.populate('course_students course_instructors')
+					.populate({
+						path: 'group_id',
+						select: 'group_name _id'
+					})
 					.exec( function(err, course_data){
 						if(err || course_data == null){
 							console.log(err);
 							res.send("404");
 						}else{
-							req.session.course = course_data;
-							res.render('course', {course: req.session.course,
+							// req.session.course = course_data;
+							res.render('course', {course: course_data,
 								profile: req.session.profile, 
 								showCourseParticipants : true,
-								isInstructor: isInstructor(req.session.profile._id, req.session.course.course_instructors),
+								isInstructor: isInstructor(req.session.profile._id, course_data.course_instructors),
 								setting: req.session.setting,
 							partials: { 
 								courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',

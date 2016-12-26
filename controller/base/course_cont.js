@@ -13,7 +13,12 @@ function getRandomInt(min, max) {
 }
 
 function isInArray(value, array) {
-  return array.indexOf(value) > -1;
+	for (var i = array.length - 1; i >= 0; i--) {
+		if( array[i] == value){
+			return true;
+		}
+	}
+	return false;
 }
 
 function deleteItemInArray(item, array){
@@ -207,6 +212,7 @@ module.exports = {
 			}
 		);
 	},
+
 	addWeeklyMaterial: function(req, res){
 		course_id = req.session.course._id;
 		data_material = req.body;
@@ -251,5 +257,283 @@ module.exports = {
 			}
 		)
 	},
+
+
+	quickSearchWithinGroupMemberNotInstructor : function(req, callback){
+		search_term = req.body.search_term;
+		group_id = req.session.course.group_id;
+		console.log('course_id '+group_id+ " "+search_term)
+		// callback(search_term)
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			Group.object.findById(group_id)
+				.populate({
+					path:'group_members',
+					select:'name email',
+					match: {'name': new RegExp(search_term, "i")},
+					options: {
+				    	limit: 8
+				    }
+				})
+				.select('group_members')
+				.exec(
+				function(err, results){
+					if(err)
+						console.log(err)
+					group_members = [];
+					for (var i = results.group_members.length - 1; i >= 0; i--) {
+						if(! isInArray(results.group_members[i]._id, req.session.course.course_instructors)){
+							group_members.push(results.group_members[i])
+						}
+					}
+					callback(group_members)
+				});
+		}
+
+	},
+
+
+	quickSearchWithinGroupMemberNotParticipants : function(req, callback){
+		search_term = req.body.search_term;
+		group_id = req.session.course.group_id;
+		console.log('course_id '+group_id+ " "+search_term)
+		// callback(search_term)
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			Group.object.findById(group_id)
+				.populate({
+					path:'group_members',
+					select:'name email',
+					match: {'name': new RegExp(search_term, "i")},
+					options: {
+				    	limit: 8
+				    }
+				})
+				.select('group_members')
+				.exec(
+				function(err, results){
+					if(err)
+						console.log(err)
+					group_members = [];
+					// console.log(results.group_members)
+					for (var i = results.group_members.length - 1; i >= 0; i--) {
+						if(! isInArray(results.group_members[i]._id, req.session.course.course_instructors) &&
+							! isInArray(results.group_members[i]._id, req.session.course.course_students)){
+							group_members.push(results.group_members[i])
+						}
+					}
+					callback(group_members)
+				});
+		}
+
+	},
+
+	/*cannot search himself, cannot remove himself as admin*/
+	quickSearchWithinCourseInstructor : function(req, callback){
+		search_term = req.body.search_term;
+		course_id = req.body.course_id;
+		console.log('course_id '+course_id+ " "+search_term)
+		// callback(search_term)
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			Course.object.findById(course_id)
+				.populate({
+					path:'course_instructors',
+					select:'name email',
+					match: {$and: [
+						{'name': new RegExp(search_term, "i")},
+						{'_id' : {$nin: [req.session.profile._id]}}
+					]},
+					options: {
+				    	limit: 8
+				    }
+				})
+				.select('course_instructors')
+				.exec(
+				function(err, results){
+					if(err)
+						console.log(err)
+					callback(results.course_instructors)
+				});
+		}
+
+	},
+
+
+	quickSearchWithinCourseStudents : function(req, callback){
+		search_term = req.body.search_term;
+		course_id = req.body.course_id;
+		console.log('course_id '+course_id+ " "+search_term)
+		// callback(search_term)
+		if(search_term == null || search_term == '')
+			callback([]);
+		else{
+			Course.object.findById(course_id)
+				.populate({
+					path:'course_students',
+					select:'name email',
+					match: {'name': new RegExp(search_term, "i")},
+					options: {
+				    	limit: 8
+				    }
+				})
+				.select('course_students')
+				.exec(
+				function(err, results){
+					if(err)
+						console.log(err)
+					callback(results.course_students)
+				});
+		}
+
+	},
+
+	addStudent : function(req, res){
+		course_id = req.body.course_id;
+		user_id = req.body.user_id;
+		members_id = req.body.members_id.split(",");
+		Course.object
+			.findById(course_id)
+			.select('course_students course_instructors')
+			.exec(function(err, data_course){
+				if (err || data_course == null) {
+					response.setFailedResponse(res, err);
+				} else {
+					isGroupAdmin = isInArray(user_id, data_course.course_instructors)
+					if(!isGroupAdmin){
+						response.setFailedResponse(res, "You're not an instructor!");
+					}else{
+						for (var i = members_id.length - 1; i >= 0; i--) {
+							data_course.course_students.push(members_id[i])
+						}
+						data_course.save()
+
+						User.object.find({_id : {$in : members_id }})
+								.select('courses')
+								.exec(function (err,members_id){
+									for (var i = members_id.length - 1; i >= 0; i--) {
+											members_id[i].courses.push(data_course._id);
+											members_id[i].save();
+									}
+									response.setSucceededResponse(res, {'course_id':data_course._id});
+								});
+					}
+				}
+		})
+	},
+
+
+	removeStudent : function(req, res){
+		course_id = req.body.course_id;
+		user_id = req.body.user_id;
+		members_id = req.body.members_id.split(",");
+		Course.object
+			.findById(course_id)
+			.select('course_students course_instructors')
+			.exec(function(err, data_course){
+				if (err || data_course == null) {
+					response.setFailedResponse(res, err);
+				} else {
+					isGroupAdmin = isInArray(user_id, data_course.course_instructors)
+					if(!isGroupAdmin){
+						response.setFailedResponse(res, "You're not an instructor!");
+					}else{
+						for (var i = members_id.length - 1; i >= 0; i--) {
+							data_course.course_students = deleteItemInArray(members_id[i], data_course.course_students)
+						}
+						data_course.save();
+						User.object.find({_id : {$in : members_id }})
+							.select('courses')
+							.exec(function (err,members_id){
+								for (var i = members_id.length - 1; i >= 0; i--) {
+									members_id[i].courses = deleteItemInArray(data_course._id, members_id[i].courses)
+									members_id[i].save();
+								}
+								response.setSucceededResponse(res, {'course_id':data_course._id});
+							});
+					}
+				}
+		})
+	},
+
+
+	addInstructor : function(req, res){
+		course_id = req.body.course_id;
+		user_id = req.body.user_id;
+		members_id = req.body.members_id.split(",");
+		Course.object
+			.findById(course_id)
+			.select('course_students course_instructors')
+			.exec(function(err, data_course){
+				if (err || data_course == null) {
+					response.setFailedResponse(res, err);
+				} else {
+					isGroupAdmin = isInArray(user_id, data_course.course_instructors)
+					if(!isGroupAdmin){
+						response.setFailedResponse(res, "You're not an instructor!");
+					}else{
+						for (var i = members_id.length - 1; i >= 0; i--) {
+							data_course.course_instructors.push(members_id[i])
+
+							/*remove if previously in the students membership*/
+							data_course.course_students = deleteItemInArray(members_id[i], data_course.course_students)
+						}
+						data_course.save()
+
+						User.object.find({_id : {$in : members_id }})
+								.select('courses')
+								.exec(function (err,members_id){
+									for (var i = members_id.length - 1; i >= 0; i--) {
+										if(!isInArray(data_course._id, members_id[i].courses)){
+											members_id[i].courses.push(data_course._id);
+											members_id[i].save();
+										}
+									}
+									response.setSucceededResponse(res, {'course_id':data_course._id});
+								});
+
+					}
+				}
+		})
+	},
+
+
+	removeInstructor : function(req, res){
+		course_id = req.body.course_id;
+		user_id = req.body.user_id;
+		members_id = req.body.members_id.split(",");
+		Course.object
+			.findById(course_id)
+			.select('course_students course_instructors')
+			.exec(function(err, data_course){
+				if (err || data_course == null) {
+					response.setFailedResponse(res, err);
+				} else {
+					isGroupAdmin = isInArray(user_id, data_course.course_instructors)
+					if(!isGroupAdmin){
+						response.setFailedResponse(res, "You're not an instructor!");
+					}else{
+						for (var i = members_id.length - 1; i >= 0; i--) {
+							data_course.course_instructors = deleteItemInArray(members_id[i], data_course.course_instructors)
+						}
+						data_course.save();
+						User.object.find({_id : {$in : members_id }})
+							.select('courses')
+							.exec(function (err,members_id){
+								for (var i = members_id.length - 1; i >= 0; i--) {
+									members_id[i].courses = deleteItemInArray(data_course._id, members_id[i].courses)
+									members_id[i].save();
+								}
+								response.setSucceededResponse(res, {'course_id':data_course._id});
+							});
+					}
+				}
+		})
+	},
+
+
 }
 

@@ -4,7 +4,12 @@ normal_member = "";
 
 
 function isInArray(value, array) {
-  return array.indexOf(value) > -1;
+	for (var i = array.length - 1; i >= 0; i--) {
+		if( array[i] == value){
+			return true;
+		}
+	}
+	return false;
 }
 
 member_to_display = group_admin.slice();
@@ -56,8 +61,4 @@ http.onload = function() {
 
  		 document.getElementById('show-group-member-list').innerHTML = string_html
 	}
-}
-
-function isInArray(value, array) {
-  return array.indexOf(value) > -1;
 }

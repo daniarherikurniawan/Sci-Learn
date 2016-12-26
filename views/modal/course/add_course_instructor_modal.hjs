@@ -57,10 +57,7 @@
   </div>
 </div>
 </div>
-
 <script type="text/javascript">
-  group_id = '{{group._id}}'
-  user_id = '{{profile._id}}'
+  var group_id = '{{course.group_id}}'
 </script>
-
 <script src="/javascripts/page_scripting/course/add_group_admin.js"></script>

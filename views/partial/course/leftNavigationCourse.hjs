@@ -1,13 +1,16 @@
  <div id="courseNav" class="panel panel-default " style=" overflow-y: scroll;  height: 100%; margin-right: 30px">
 
-  <div id="course_img_cover" style="display: {{^ showCourseMaterial}} inline-block  {{/ showCourseMaterial}} {{# showCourseMaterial}} none  {{/ showCourseMaterial}}; padding: 0px 0px 0px 1px; margin-bottom: 0px;;"> <img style="width:100%; margin:0px " title="Daniar Kurniawan (group admin)" src="/groups/{{course.group_id}}/courses/{{course._id}}/about/{{course.img_cover_name}}"> 
+  <div id="course_img_cover" style="display: {{^ showCourseMaterial}} inline-block  {{/ showCourseMaterial}} {{# showCourseMaterial}} none  {{/ showCourseMaterial}}; padding: 0px 0px 0px 1px; margin-bottom: 0px;;"> <img style="width:100%; margin:0px " title="" src="/groups/{{course.group_id._id}}/courses/{{course._id}}/about/{{course.img_cover_name}}"> 
   </div>
 
 
   <div style="text-align: center; color: #2d6363">
-     
-        <a  href="/course/{{course._id}}"><h4 id="course_name" style=" display: {{^ showCourseMaterial}} inline-block  {{/ showCourseMaterial}} {{# showCourseMaterial}} none  {{/ showCourseMaterial}};  margin-top: 18px;"><b>{{course.course_name}}</b></h4></a>
-
+      <div id="course_name" style="display: {{^ showCourseMaterial}} inline-block  {{/ showCourseMaterial}} {{# showCourseMaterial}} none  {{/ showCourseMaterial}};">
+        <a  href="/group/{{course.group_id._id}}" title="Group Courses ({{course.group_id.group_name}})" ><h4 style=" display: inline-block ;  margin-top: 18px; ">
+        <i class=" material-icons" style="position: relative; font-size: 21px; top: 4px;">group</i> &nbsp;  <i class="fa fa-angle-left"></i> &nbsp;  
+        </h4></a>
+        <a  href="/course/{{course._id}}" title="Course Name"><h4 style=" display: inline-block  ;  margin-top: 18px;"><b>{{course.course_name}}</b></h4></a>
+      </div>
     {{# showCourseMaterial}}
       <div class="row">
         <div class="col-md-10">
@@ -113,6 +116,7 @@
     previous_opened_week  = '{{previous_opened_week}}'
   }
 
+  var course_id = '{{course._id}}'
 
 </script>
 <script src="/javascripts/page_scripting/course/left_navigation_course.js"></script>
