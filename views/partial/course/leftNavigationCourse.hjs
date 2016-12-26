@@ -1,12 +1,12 @@
  <div id="courseNav" class="panel panel-default " style=" overflow-y: scroll;  height: 100%; margin-right: 30px">
 
-  <div id="course_img_cover" style="display: {{# showCourseHome}} inline-block  {{/ showCourseHome}} {{^ showCourseHome}} none  {{/ showCourseHome}}; padding: 0px 0px 0px 1px; margin-bottom: 0px;;"> <img style="width:100%; margin:0px " title="Daniar Kurniawan (group admin)" src="/groups/{{course.group_id}}/courses/{{course._id}}/about/{{course.img_cover_name}}"> 
+  <div id="course_img_cover" style="display: {{^ showCourseMaterial}} inline-block  {{/ showCourseMaterial}} {{# showCourseMaterial}} none  {{/ showCourseMaterial}}; padding: 0px 0px 0px 1px; margin-bottom: 0px;;"> <img style="width:100%; margin:0px " title="Daniar Kurniawan (group admin)" src="/groups/{{course.group_id}}/courses/{{course._id}}/about/{{course.img_cover_name}}"> 
   </div>
 
 
   <div style="text-align: center; color: #2d6363">
      
-        <a  href="/course/{{course._id}}"><h4 id="course_name" style=" display: {{# showCourseHome}} block  {{/ showCourseHome}} {{^ showCourseHome}} none  {{/ showCourseHome}};   margin-top: 18px;"><b>{{course.course_name}}</b></h4></a>
+        <a  href="/course/{{course._id}}"><h4 id="course_name" style=" display: {{^ showCourseMaterial}} inline-block  {{/ showCourseMaterial}} {{# showCourseMaterial}} none  {{/ showCourseMaterial}};  margin-top: 18px;"><b>{{course.course_name}}</b></h4></a>
 
     {{# showCourseMaterial}}
       <div class="row">
@@ -70,7 +70,7 @@
         </li>
      {{/ showCourseMaterial}}
 
-     {{# showCourseHome}}
+     {{^ showCourseMaterial}}
      <ul class="egmenu mobile" style="">
       <li class="{{# showCourseHome }}tap{{/ showCourseHome }}">
           <a href="/course/{{course._id}}" class="has-sub">Course Home</a>
@@ -81,6 +81,7 @@
           </ul>
       </li>
       <li><a>Quizzes</a></li>
+      <li><a>Resources</a></li>
       <li><a>Grades</a></li>
       <li class="">
           <a href="#" class="has-sub">Discussion Forums</a>
@@ -96,7 +97,7 @@
           </ul>
       </li>
       <li class="{{# showCourseParticipants }}tap{{/ showCourseParticipants }}"><a href="/course/{{course._id}}/participants">Participants</a></li>
-      {{/ showCourseHome}}
+      {{/ showCourseMaterial}}
     </ul>
    
   </div>

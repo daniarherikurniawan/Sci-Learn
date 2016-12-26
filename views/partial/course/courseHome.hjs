@@ -1,4 +1,6 @@
 <!-- CAN"T BE REMOVED!!! -->
+
+
 <script type="text/javascript">
    var detail_weekly_materials = {};
    var temp_data_json = [];
@@ -38,6 +40,7 @@
 
 <div class="panel panel-default" style="margin-top: 0px;">
 	<div class="panel-heading " style="height: 40px; background: #d1f0f4;">
+		{{# isInstructor}}
 		<a id="button_edit_overview_desc" class="btn pull-right" title="Edit Course Overview" 
 			onclick="edit('editable_course_overview','course_overview_desc','/course/material/updateCourseOverview', 'button_edit_overview_desc')"
 			type="button"
@@ -45,6 +48,7 @@
 		>
 	    	<small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit
 	   	</a>
+		{{/ isInstructor}}
 		<h4 style="padding-top: 0px; margin-top: 0px;">Course Overview </h4>
 	</div>
 
@@ -57,12 +61,14 @@
 
 <div class="panel panel-default" style="margin-top: 0px;">
 	<div class="panel-heading " style="height: 40px; background: #d1f0f4;">
+		{{# isInstructor}}
 		<a id="button_edit_material_desc" class="btn pull-right" title="Edit Course Materials Description" 
 			onclick="edit('editable_course_materials','course_material_desc','/course/material/updateMaterialDesc', 'button_edit_material_desc')"
 			type="button"
 			style=" display: inline-block ; margin-top: -7px; padding-right: 0px;">
 	    	<small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit
 	   	</a>
+		{{/ isInstructor}}
 		<h4 style="padding-top: 0px; margin-top: 0px;">Course Materials </h4>
 	</div>
 
@@ -74,12 +80,14 @@
 		{{^course.weekly_materials}}
 		<div id="" class="weekly-material" style=" padding-top: 5px; margin-bottom: 0px;">
 			<div class="panel-heading" style="height: 40px; background: #d6e7e8; margin-top: 5px; ">
+				{{# isInstructor}}
 				<a id="button_edit_weekly_material" class="btn pull-right" title="Add New Weekly Material" 
 					onclick="templateAddWeeklMaterial('list_material_per_week','week_xx_material', 'button_edit_weekly_material')"
 					type="button"
 					style=" display: inline-block ; margin-top: -7px; padding-right: 0px;" >
 			    	<small><span class="fa fa-plus"></span></small>&nbsp;  Add
 			   	</a>
+				{{/ isInstructor}}
 				<h4 style="padding-top: 0px; margin-top: 0px;">Week 1 </h4>
 			</div>
 			<div id="list_material_per_week" class="list-group course-material" style="margin-bottom: 0px">
@@ -92,12 +100,14 @@
 		<hr style="margin-bottom: 0px">
 		<div id="week_{{_id}}" class="weekly-material" style=" padding-top: 5px; margin-bottom: 30px;">
 			<div class="panel-heading" style="height: 40px; ">
+				{{# isInstructor}}
 				<a id="button_edit_weekly_material_{{_id}}" class="btn pull-right" title="Edit Weekly Material" 
 					onclick="editWeeklyMaterial('list_material_per_week_{{_id}}','week_xx_material', 'button_edit_weekly_material_{{_id}}', '{{_id}}')"
 					type="button"
 					style=" display: inline-block ; margin-top: -7px; padding-right: 0px;" >
 			    	<small><span class="glyphicon glyphicon-pencil"></span></small>&nbsp;  Edit
 			   	</a>
+				{{/ isInstructor}}
 				<a href="/course/week/{{_id}}"><h4 style="padding-top: 0px; margin-top: 0px;">{{periode_name}} </h4></a>
 			</div>
 			<div id="list_material_per_week_{{_id}}" class="list-group course-material" style="margin-bottom: 0px">
@@ -143,8 +153,10 @@
 				    	</span>
 
 				    	{{# is_announcement}}
+						{{# isInstructor}}
 						<span class="pull-right btn" style="padding-top: 1px; text-align: left; padding-right: 0px; width: 80px;"><i style="" class="fa fa-plus"></i>&nbsp; Add
 						</span>
+						{{/ isInstructor}}
 						{{/ is_announcement}}
 				    	{{# is_file}}
 						<span class="pull-right btn" style="padding-top: 1px; text-align: left; padding-right: 0px; width: 80px;"><i style="" class="fa fa-unlock"></i>&nbsp; Open</i>

@@ -11,6 +11,14 @@ function isInArray(value, array) {
   return array.indexOf(value) > -1;
 }
 
+function isInstructor(user_id, course_instructors){
+	for (var i = course_instructors.length - 1; i >= 0; i--) {
+		if( course_instructors[i]._id == user_id)
+			return true;
+	}
+	return false;
+}
+
 
 module.exports = { 
 	showCoursePage: function(course_id, req, res, numOfCurrPage, limit){
@@ -33,6 +41,7 @@ module.exports = {
 						res.render('course', {course: req.session.course, 
 							isMaterialsExist: (course_data.weekly_materials.length > 0),
 							profile: req.session.profile, 
+							isInstructor: isInstructor(req.session.profile._id, req.session.course.course_instructors),
 							showCourseHome : true,
 							showCourseGrades : false,
 							showCourseDiscussionForum : false,
@@ -54,51 +63,7 @@ module.exports = {
 			}
 		},
 
-		showGroupMembersPage: function(group_id, req, res, numOfCurrPage, limit){
-		if(!isInArray(group_id, req.session.profile.groups)){
-			res.redirect('/');
-		}else{
-			Group.object.findById(group_id)
-				.populate({
-					  path: 'group_members',
-					  select: 'name email img_profile_name'
-					}
-				)
-				.populate({
-					  path: 'group_admin',
-					  select: 'name email img_profile_name'
-					}
-				)
-				.exec( function(err, group_data){
-					if(err || group_data == null){
-						console.log(err);
-						res.send("404");
-					}else{
-						isGroupAdmin = false;
-						for (var i = group_data.group_admin.length - 1; i >= 0; i--) {
-							if(group_data.group_admin[i]._id == req.session.profile._id)
-								isGroupAdmin = true;
-						}
-						// console.log('isGroupAdmin '+isGroupAdmin)
-						res.render('group', {group: group_data, showGroupMemberDetail:true,
-							profile: req.session.profile, isGroupAdmin: isGroupAdmin,
-							numOfPost : 0, numOfLastPage : 0,
-							numOfCurrPage : 0, limitPerPage : limit, setting: req.session.setting,
-						partials: {group_info:'partial/group_info', share_modal: 'modal/share_modal', group_member:'partial/group_member',
-							edit_post_template: 'template/edit_post_template', create_group_modal: 'modal/create_group_modal',
-							per_group_member_detail: 'partial/per_group_member_detail',
-							add_group_admin_modal: 'modal/add_group_admin_modal',
-							remove_group_admin_modal: 'modal/remove_group_admin_modal',
-							add_group_member_modal: 'modal/add_group_member_modal',
-							remove_group_member_modal: 'modal/remove_group_member_modal',
-							create_course_modal: 'modal/create_course_modal', group_member_detail: 'partial/group_member_detail',
-							post_partial: 'partial/post_partial', list_group:'partial/list_group', list_course_in_group: 'partial/list_course_in_group',
-							topNavigation:'partial/topNavigation'}});
-					}
-				});
-			}
-		},
-
+		
 		showGroupMembersResultSearchPage: function(group_id,  search_term, req, res, numOfCurrPage, limit){
 		if(!isInArray(group_id, req.session.profile.groups)){
 			res.redirect('/');
@@ -193,6 +158,7 @@ module.exports = {
 					res.render('course', {course: course, current_weekly_material: current_weekly_material,
 						isMaterialsExist: found, single_material: single_material,
 						profile: req.session.profile, 
+						isInstructor: isInstructor(req.session.profile._id, req.session.course.course_instructors),
 						showCourseMaterial: true,
 						setting: req.session.setting,
 					partials: { 
@@ -213,22 +179,26 @@ module.exports = {
 				res.redirect('/');
 			}else{
 				Course.object.findById(course_id)
-					.populate('weekly_materials.materials')
+					.populate('course_students course_instructors')
 					.exec( function(err, course_data){
 						if(err || course_data == null){
 							console.log(err);
 							res.send("404");
 						}else{
-
 							req.session.course = course_data;
-							res.render('course', {course: req.session.course, 
-								isMaterialsExist: (course_data.weekly_materials.length > 0),
+							res.render('course', {course: req.session.course,
 								profile: req.session.profile, 
 								showCourseParticipants : true,
+								isInstructor: isInstructor(req.session.profile._id, req.session.course.course_instructors),
 								setting: req.session.setting,
 							partials: { 
 								courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
 								courseParticipants:'partial/course/courseParticipants',
+								per_course_participants_detail: 'partial/course/per_course_participants_detail',
+								add_course_instructor_modal: 'modal/course/add_course_instructor_modal',
+								remove_course_instructor_modal: 'modal/course/remove_course_instructor_modal',
+								add_course_student_modal: 'modal/course/add_course_student_modal',
+								remove_course_student_modal: 'modal/course/remove_course_student_modal',
 								edit_single_column_template: 'template/edit_single_column_template',
 								topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
 								mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
@@ -239,6 +209,52 @@ module.exports = {
 					});
 				}
 		},
+
+		showGroupMembersPage: function(group_id, req, res, numOfCurrPage, limit){
+		if(!isInArray(group_id, req.session.profile.groups)){
+			res.redirect('/');
+		}else{
+			Group.object.findById(group_id)
+				.populate({
+					  path: 'group_members',
+					  select: 'name email img_profile_name'
+					}
+				)
+				.populate({
+					  path: 'group_admin',
+					  select: 'name email img_profile_name'
+					}
+				)
+				.exec( function(err, group_data){
+					if(err || group_data == null){
+						console.log(err);
+						res.send("404");
+					}else{
+						isGroupAdmin = false;
+						for (var i = group_data.group_admin.length - 1; i >= 0; i--) {
+							if(group_data.group_admin[i]._id == req.session.profile._id)
+								isGroupAdmin = true;
+						}
+						// console.log('isGroupAdmin '+isGroupAdmin)
+						res.render('group', {group: group_data, showGroupMemberDetail:true,
+							profile: req.session.profile, isGroupAdmin: isGroupAdmin,
+							numOfPost : 0, numOfLastPage : 0,
+							numOfCurrPage : 0, limitPerPage : limit, setting: req.session.setting,
+						partials: {group_info:'partial/group_info', share_modal: 'modal/share_modal', group_member:'partial/group_member',
+							edit_post_template: 'template/edit_post_template', create_group_modal: 'modal/create_group_modal',
+							per_group_member_detail: 'partial/per_group_member_detail',
+							add_group_admin_modal: 'modal/add_group_admin_modal',
+							remove_group_admin_modal: 'modal/remove_group_admin_modal',
+							add_group_member_modal: 'modal/add_group_member_modal',
+							remove_group_member_modal: 'modal/remove_group_member_modal',
+							create_course_modal: 'modal/create_course_modal', group_member_detail: 'partial/group_member_detail',
+							post_partial: 'partial/post_partial', list_group:'partial/list_group', list_course_in_group: 'partial/list_course_in_group',
+							topNavigation:'partial/topNavigation'}});
+					}
+				});
+			}
+		},
+
 	
 }
 
