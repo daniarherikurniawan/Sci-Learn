@@ -17,6 +17,7 @@ var UserSchema = new mongoose.Schema({
       name: { type: String, default: "facebook"}, 
       url: { type: String, default: "https://www.facebook.com/daniar.h.kurniawan" }
     }],
+  badges:{type: [{ type: String }], default: []},
   connections:{type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }], default: []},
   groups:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'Group' }],
   courses:  [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }],

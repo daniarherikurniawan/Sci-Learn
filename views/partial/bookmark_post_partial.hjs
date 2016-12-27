@@ -1,19 +1,57 @@
  {{# data_bookmarks}}
-  {{# post }}
-    {{#showGroupPostBookmarks}}
-    <a href="/group/584e86c9cfa2ecac122c0ba6" style="background: #eceded;" title="Posted on group: {{group.group_name}}" class="list-group-item">
-    <script type="text/javascript">
-        if('{{group.group_accessibility}}' == "Private Group"){
-               document.write("<i style='color: #2d6363; margin-right:3px; font-size: 17px;' title='Private Group' class=\"fa fa-lock\"></i>")
-        }else{
-          document.write("<i style='color: #2d6363; margin-right:3px' title='Public Group' class=\"fa fa-globe\"></i>")
-        }
-    </script>
-       {{group.group_name}}</a> 
-    {{/ showGroupPostBookmarks}}
 
-      {{> post_partial_content}}
-  {{/ post }}
+  {{# showCourseMaterialBookmarks}}
+      <div class="panel panel-default">
+       <a href="/course/bookmark/{{course._id}}/{{weekly_materials_id}}/{{material._id}}" style="background: #eceded;" title="Course material at: {{course.course_name}}" class="list-group-item">
+          <script type="text/javascript">
+              if('{{course.course_accessibility}}' == "Private Course"){
+                     document.write("<i style='color: #2d6363; margin-right:3px; font-size: 17px;' title='Private Course' class=\"fa fa-lock\"></i>")
+              }else{
+                document.write("<i style='color: #2d6363; margin-right:3px' title='Public Course' class=\"fa fa-globe\"></i>")
+              }
+          </script>
+             {{course.course_name}}</a> 
+
+        <div class="panel-body" style="padding:10px 15px 15px 15px">
+          {{# material.is_video}}
+          <iframe width="100%" height="400px" src="{{material.material_url}}?rel=0" frameborder="0" allowfullscreen></iframe>
+          <hr>
+            <div id="">
+                <span  id="">{{material.material_description}}</span >
+              </div>
+
+          {{/ material.is_video}}
+
+          {{# material.is_file}}
+            display for file is not done yet!
+          {{/ material.is_file}}
+
+
+          {{# material.is_quiz}}
+            display for quiz is not done yet!
+          {{/ material.is_quiz}}
+        </div>
+      </div>
+  {{/ showCourseMaterialBookmarks}}
+
+
+  {{^ showCourseMaterialBookmarks}}
+    {{# post }}
+      {{#showGroupPostBookmarks}}
+      <a href="/group/{{group._id}}" style="background: #eceded;" title="Posted on group: {{group.group_name}}" class="list-group-item">
+      <script type="text/javascript">
+          if('{{group.group_accessibility}}' == "Private Group"){
+                 document.write("<i style='color: #2d6363; margin-right:3px; font-size: 17px;' title='Private Group' class=\"fa fa-lock\"></i>")
+          }else{
+            document.write("<i style='color: #2d6363; margin-right:3px' title='Public Group' class=\"fa fa-globe\"></i>")
+          }
+      </script>
+         {{group.group_name}}</a> 
+      {{/ showGroupPostBookmarks}}
+
+        {{> post_partial_content}}
+    {{/ post }}
+  {{/ showCourseMaterialBookmarks}}
  {{/ data_bookmarks}}
 
 

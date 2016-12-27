@@ -17,6 +17,7 @@ var page_search_cont = require('../controller/base/paging/page_search_cont');
 var page_list_groups_cont = require('../controller/base/paging/page_list_groups_cont');
 var page_list_courses_cont = require('../controller/base/paging/page_list_courses_cont');
 var page_bookmarks_cont = require('../controller/base/paging/page_bookmarks_cont');
+var page_badges_cont = require('../controller/base/paging/page_badges_cont');
 
 // /* GET home page. */     sdsdc
 router.get('/', function(req, res, next) {
@@ -417,10 +418,32 @@ router.get('/bookmarks/:user_id', function(req, res, next) {
   	}
 });
 
+
+
 /* GET list groups page. */
 router.get('/bookmarks/group_post/:user_id', function(req, res, next) {
 	if(req.session.profile != null){
 		page_bookmarks_cont.showListGroupPostBookmarks(req.params.user_id, req, res);
+	}else{
+		res.redirect('/login');
+  	}
+});
+
+
+/* GET list groups page. */
+router.get('/bookmarks/course_material/:user_id', function(req, res, next) {
+	if(req.session.profile != null){
+		page_bookmarks_cont.showListCourseMaterialBookmarks(req.params.user_id, req, res);
+	}else{
+		res.redirect('/login');
+  	}
+});
+
+
+/* GET list groups page. */
+router.get('/badges/:user_id', function(req, res, next) {
+	if(req.session.profile != null){
+		page_badges_cont.showListBadges(req.params.user_id, req, res);
 	}else{
 		res.redirect('/login');
   	}

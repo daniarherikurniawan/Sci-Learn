@@ -7,7 +7,7 @@
       <div class="modal-header">
         <div class="row">
           <h4 style=" color: white;     text-align: center;
-        margin: 5px 0px 0px;">Notes for Bookmarking Personal Post </h4>
+        margin: 5px 0px 0px;">Bookmark's Notes</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
           style="    font-size: 28px; padding: 2px 11px 0px 0px;position: fixed; top: -4px; float: right; right: -10px;">×</button>
         </div>
@@ -16,14 +16,9 @@
 
    <div class="well background_modal" > 
       <div id="personal_post_already_bookmarked" style="display: none">
-          <div class="" id="exist_personal_post_bookmark_notes" 
-          title="Your bookmark notes" 
-          style="padding: 5px;
-              margin: 5px;
-              background: white;
-              min-height: 57px;
-              border: #d6e7e8 1px solid;"> 
-          </div>
+        <div title="Your bookmark's notes"  class="panel-body" style="padding: 5px;  margin: 5px;">
+           <span id="exist_personal_post_bookmark_notes" style="word-wrap: break-word;    white-space: normal; "></span>
+        </div>
          <div class="row" style="    margin: 10px 0px 0px 0px">
            <input onclick="openBookmarkPersonalPost()"  id="" class="btn btn-primary pull-right" style="width: 24%;" value="Open Bookmark">
            <input onclick="removePersonalPostBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
@@ -51,7 +46,7 @@
       <div class="modal-header">
         <div class="row">
           <h4 style=" color: white;     text-align: center;
-        margin: 5px 0px 0px;">Notes for Bookmarking Course Material </h4>
+        margin: 5px 0px 0px;">Bookmark's Notes</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
           style="    font-size: 28px; padding: 2px 11px 0px 0px;position: fixed; top: -4px; float: right; right: -10px;">×</button>
         </div>
@@ -60,14 +55,9 @@
 
    <div class="well background_modal" > 
       <div id="course_material_already_bookmarked" style="display: none">
-          <div class="" id="exist_course_material_bookmark_notes" 
-          title="Your bookmark notes" 
-          style="padding: 5px;
-              margin: 5px;
-              background: white;
-              min-height: 57px;
-              border: #d6e7e8 1px solid;"> 
-          </div>
+        <div title="Your bookmark's notes"  class="panel-body" style="padding: 5px;  margin: 5px;">
+           <span id="exist_course_material_bookmark_notes" style="word-wrap: break-word;    white-space: normal; "></span>
+        </div>
          <div class="row" style="    margin: 10px 0px 0px 0px">
            <input onclick="openBookmarkCourseMaterial()"  id="" class="btn btn-primary pull-right" style="width: 24%;" value="Open Bookmark">
            <input onclick="removeCourseMaterialBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
@@ -95,7 +85,7 @@
       <div class="modal-header">
         <div class="row">
           <h4 style=" color: white;     text-align: center;
-        margin: 5px 0px 0px;">Notes for Bookmarking Group Post </h4>
+        margin: 5px 0px 0px;">Bookmark's Notes</h4>
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
           style="    font-size: 28px; padding: 2px 11px 0px 0px;position: fixed; top: -4px; float: right; right: -10px;">×</button>
         </div>
@@ -104,14 +94,9 @@
 
    <div class="well background_modal" > 
       <div id="group_post_already_bookmarked" style="display: none">
-          <div class="" id="exist_group_post_bookmark_notes" 
-          title="Your bookmark notes" 
-          style="padding: 5px;
-              margin: 5px;
-              background: white;
-              min-height: 57px;
-              border: #d6e7e8 1px solid;"> 
-          </div>
+        <div title="Your bookmark's notes"  class="panel-body" style="padding: 5px;  margin: 5px;">
+           <span id="exist_group_post_bookmark_notes" style="word-wrap: break-word;    white-space: normal; "></span>
+        </div>
          <div class="row" style="    margin: 10px 0px 0px 0px">
            <input onclick="openBookmarkGroupPost()"  id="" class="btn btn-primary pull-right" style="width: 24%;" value="Open Bookmark">
            <input onclick="removeGroupPostBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
@@ -137,6 +122,9 @@
 var post_id = null;
 var bookmark_data = null;
 
+$('#bookmarkPersonalPostModal').on('hidden.bs.modal', function () {
+  $('#exist_personal_post_bookmark_notes').text('');
+})
   $('#bookmarkPersonalPostModal').on('shown.bs.modal', function () {
       hideAllBookmarkModal();
       bookmark_data = null;
@@ -148,16 +136,9 @@ var bookmark_data = null;
       http.onload = function() {
         var result = JSON.parse(http.responseText);
         if(result.message.isInArray){
-
-            if(result.message.bookmark_data.notes.length >= 150){
-               notes = result.message.bookmark_data.notes.substring(0, 149)+"...";
-              // document.write("cdsc")
-            }else{
-                notes = result.message.bookmark_data.notes;
-            }
             bookmark_data = result.message.bookmark_data;
           $('#personal_post_already_bookmarked').css('display', 'block')
-          $('#exist_personal_post_bookmark_notes').text(notes)
+          $('#exist_personal_post_bookmark_notes').text(result.message.bookmark_data.notes)
         }else{
           $('#personal_post_ready_to_bookmark').css('display', 'block')
           $('textarea#personal_post_bookmark_notes').focus();
@@ -226,6 +207,9 @@ var bookmark_data = null;
 
 
 /*Group bookmark*/
+$('#bookmarkGroupPostModal').on('hidden.bs.modal', function () {
+  $('#exist_group_post_bookmark_notes').text('');
+})
 
  $('#bookmarkGroupPostModal').on('shown.bs.modal', function () {
       hideAllBookmarkModal();
@@ -238,15 +222,9 @@ var bookmark_data = null;
       http.onload = function() {
         var result = JSON.parse(http.responseText);
         if(result.message.isInArray){
-            if(result.message.bookmark_data.notes.length >= 150){
-               notes = result.message.bookmark_data.notes.substring(0, 149)+"...";
-              // document.write("cdsc")
-            }else{
-                notes = result.message.bookmark_data.notes;
-            }
             bookmark_data = result.message.bookmark_data;
           $('#group_post_already_bookmarked').css('display', 'block')
-          $('#exist_group_post_bookmark_notes').text(notes)
+          $('#exist_group_post_bookmark_notes').text(result.message.bookmark_data.notes)
         }else{
           $('#group_post_ready_to_bookmark').css('display', 'block')
           $('textarea#group_post_bookmark_notes').focus();
@@ -304,6 +282,9 @@ var bookmark_data = null;
 
 /*Course Material Bookmark*/
 
+$('#bookmarkCourseMaterialModal').on('hidden.bs.modal', function () {
+  $('#exist_course_material_bookmark_notes').text('');
+})
  $('#bookmarkCourseMaterialModal').on('shown.bs.modal', function () {
       hideAllBookmarkModal();
       bookmark_data = null;
@@ -315,16 +296,9 @@ var bookmark_data = null;
       http.onload = function() {
         var result = JSON.parse(http.responseText);
         if(result.message.isInArray){
-
-            if(result.message.bookmark_data.notes.length >= 150){
-               notes = result.message.bookmark_data.notes.substring(0, 149)+"...";
-              // document.write("cdsc")
-            }else{
-                notes = result.message.bookmark_data.notes;
-            }
             bookmark_data = result.message.bookmark_data;
           $('#course_material_already_bookmarked').css('display', 'block')
-          $('#exist_course_material_bookmark_notes').text(notes)
+          $('#exist_course_material_bookmark_notes').text(result.message.bookmark_data.notes)
         }else{
           $('#course_material_ready_to_bookmark').css('display', 'block')
           $('textarea#course_material_bookmark_notes').focus();
@@ -341,6 +315,7 @@ var bookmark_data = null;
 
    function removeCourseMaterialBookmark(){
       var http = new XMLHttpRequest();
+      // bookmark_data._id = '5861a88f1e491c3f1c366e4b'
       http.open("POST", "/bookmark/removeCourseMaterialBookmark", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
       var params = "bookmark_id=" + bookmark_data._id;

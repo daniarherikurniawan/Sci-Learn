@@ -33,6 +33,17 @@ router.get('/:course_id', function(req, res, next) {
 	}
 });
 
+// /* GET home page. */     
+router.get('/bookmark/:course_id/:week_id/:material_id', function(req, res, next) {
+	// limitPerPage == 0, as indicator that we do not need pagination
+	if(req.session.profile!=null){
+		page_course_cont.showCourseMaterialBookmarkPage(req.params.course_id, req, res, 
+			req.params.week_id, req.params.material_id);
+	}else{
+		res.redirect('/login');
+	}
+});
+
 
 /* POST home page. */
 router.post('/material/updateCourseOverview', function(req, res, next) {

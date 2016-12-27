@@ -7,7 +7,7 @@
     <a class="list-group-item  {{# showGroupPostBookmarks}} select {{/ showGroupPostBookmarks}}" href="/bookmarks/group_post/{{profile._id}}" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-newspaper-o" style=""> {{profile.bookmarks_group_posts.length}}</i>&nbsp;Group Posts</a>
   </li>
   <li >
-    <a class="list-group-item  {{# showCourseMaterialBookmarks}} select {{/ showCourseMaterialBookmarks}}" href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-files-o" style=""> {{profile.bookmarks_course_materials.length}}</i>&nbsp;Materials</a>
+    <a class="list-group-item  {{# showCourseMaterialBookmarks}} select {{/ showCourseMaterialBookmarks}}" href="/bookmarks/course_material/{{profile._id}}" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-files-o" style=""> {{profile.bookmarks_course_materials.length}}</i>&nbsp;Materials</a>
   </li>
   <li >
     <a class="list-group-item {{# showCourseResourceBookmarks}} select {{/ showCourseResourceBookmarks}} " href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-files-o" style=""> {{profile.bookmarks_course_resources.length}}</i>&nbsp;Resources</a>

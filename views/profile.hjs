@@ -62,15 +62,17 @@
 
                                   <a href="/profile/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>" > 
                                   <b><%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%></b></a>'s  
-                                  <%#showFriends%> connections<%/showFriends%>
+                                  <%#showFriends%> Connections<%/showFriends%>
 
-                                  <%^showBookmarks%> <%^showCourses%>  <%^ showGroups%> <%^showFriends%><%^showPerActivity%> posts<%/showPerActivity%> 
-                                  <%#showPerActivity%> activities<%/showPerActivity%><%/showFriends%><%/showGroups%> <%/showCourses%> <%/ showBookmarks%>
+                                  <%^showBadges%> <%^showBookmarks%> <%^showCourses%>  <%^ showGroups%> <%^showFriends%><%^showPerActivity%> Posts<%/showPerActivity%> 
+                                  <%#showPerActivity%> Activities<%/showPerActivity%><%/showFriends%><%/showGroups%> <%/showCourses%> <%/ showBookmarks%> <%/ showBadges%>
 
-                                  <%#showGroups%> groups<%/showGroups%> 
-                                  <%#showCourses%> courses<%/showCourses%> 
+                                  <%#showBadges%> Badges <%/ showBadges%>
+                                  <%#showGroups%> Groups<%/showGroups%> 
+                                  <%#showCourses%> Courses<%/showCourses%> 
                                   <%#showBookmarks%> Bookmarks<%/showBookmarks%> 
 
+                               <%^showBadges%>
                                <%^ showBookmarks%>
                                <%^ showFriends %> 
                                <%^ showCourses%> 
@@ -86,6 +88,7 @@
                                 <%/showCourses%> 
                                 <%/showFriends%>
                                 <%/ showBookmarks%>
+                                <%/ showBadges%>
 
                                   </h3>
                                 </div>
@@ -148,7 +151,8 @@
                       &nbsp;</div>
                      <%/ showGroups %>
                      <%/ showFriends %>
-                     
+
+                     <%^showBadges%>
                      <%^ showBookmarks%>
                      <%^ showFriends %> 
                      <%^ showCourses%> 
@@ -240,6 +244,7 @@
                         <%/showCourses%> 
                      <%/ showFriends %>
                      <%/ showBookmarks%>
+                     <%/ showBadges%>
 
                           <div class="text-center" style="<%# showFriends %>margin-top:151px; <%/ showFriends %> <%^ showFriends %>margin-top:5px; <%/ showFriends %>margin-bottom:1px">
                             <a href="#" class="glyphicon glyphicon-option-horizontal" style="font-size:15px "></a>
@@ -251,6 +256,8 @@
                  <%^ showBookmarks%>
                     <%> post_partial %>                     
                  <%/ showBookmarks%>
+
+                 <%> list_badges %>
 
                  <%> list_user %>
 
@@ -271,7 +278,8 @@
                   <%#showFriends%> 
                     Let's   <a href="/search"> <button class=" btn btn-md btn-primary" >Find</button> </a> a new connections !
                   <%/showFriends%>
-                  
+                
+                 <%^showBadges%>
                  <%^ showBookmarks%>
                   <%^showFriends%>
                   <%^showCourses%> 
@@ -284,6 +292,7 @@
                   <%/showCourses%> 
                   <%/showFriends%>
                  <%/ showBookmarks%>
+                 <%/ showBadges%>
 
                   <%/friendProfile%>   
                 </div>
