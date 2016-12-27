@@ -133,6 +133,8 @@ module.exports = {
 									edit_post_template: 'template/edit_post_template', create_group_modal: 'modal/create_group_modal',
 									create_course_modal: 'modal/create_course_modal', list_course_in_group:'partial/list_course_in_group',
 									leftSide: 'partial/leftSide', rightSide:'partial/rightSide', list_group_detail:'partial/list_group_detail',
+									
+									post_partial_content: 'partial/post_partial_content',
 									post_partial: 'partial/post_partial', list_group:'partial/list_group', list_course_in_group: 'partial/list_course_in_group',
 									 topNavigation:'partial/topNavigation'}});
 							}

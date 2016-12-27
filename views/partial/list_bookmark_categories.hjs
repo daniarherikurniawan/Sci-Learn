@@ -1,16 +1,16 @@
-<div class=" panel panel-default text-center" style="margin: 13px 0px; height: 52px;">
+<div class=" panel panel-default text-center" style="margin: -15px 0px 13px 0px; height: 52px;">
 <ul class=" nav navbar-nav buttons" >
   <li >
-    <a class="bookmark-menu  select" href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-newspaper-o" style=""> {{profile.bookmarks_personal_posts.length}}</i>&nbsp;Personal Posts</a>
+    <a class="bookmark-menu  {{# showPersonalPostBookmarks}} select {{/ showPersonalPostBookmarks}} " href="/bookmarks/{{profile._id}}" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-newspaper-o" style=""> {{profile.bookmarks_personal_posts.length}}</i>&nbsp;Personal Posts</a>
   </li>
   <li >
-    <a class="bookmark-menu  " href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-newspaper-o" style=""> {{profile.bookmarks_group_posts.length}}</i>&nbsp;Group Posts</a>
+    <a class="bookmark-menu  {{# showGroupPostBookmarks}} select {{/ showGroupPostBookmarks}}" href="/bookmarks/group_post/{{profile._id}}" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-newspaper-o" style=""> {{profile.bookmarks_group_posts.length}}</i>&nbsp;Group Posts</a>
   </li>
   <li >
-    <a class="bookmark-menu  " href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-files-o" style=""> {{profile.bookmarks_course_materials.length}}</i>&nbsp;Materials</a>
+    <a class="bookmark-menu  {{# showCourseMaterialBookmarks}} select {{/ showCourseMaterialBookmarks}}" href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-files-o" style=""> {{profile.bookmarks_course_materials.length}}</i>&nbsp;Materials</a>
   </li>
   <li >
-    <a class="bookmark-menu  " href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-files-o" style=""> {{profile.bookmarks_course_resources.length}}</i>&nbsp;Resources</a>
+    <a class="bookmark-menu {{# showCourseResourceBookmarks}} select {{/ showCourseResourceBookmarks}} " href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-files-o" style=""> {{profile.bookmarks_course_resources.length}}</i>&nbsp;Resources</a>
   </li>
 
 </ul>
@@ -18,9 +18,7 @@
 </div>
 
 
-{{> bookmark_post_partial }}
-
-
+{{> bookmark_post_partial}}
 
 
 <style type="text/css">
@@ -38,8 +36,8 @@
 
 a.bookmark-menu.select {
       background: #eee;
-    border-bottom: #3b9798 4px solid;
     color: #2d6363;
+    border-bottom: #3b9798 6px solid;
 }
 
 </style>

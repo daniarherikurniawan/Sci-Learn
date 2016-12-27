@@ -105,6 +105,7 @@ module.exports = {
 							add_group_member_modal: 'modal/add_group_member_modal',
 							remove_group_member_modal: 'modal/remove_group_member_modal',
 							create_course_modal: 'modal/create_course_modal', group_member_detail: 'partial/group_member_detail',
+							post_partial_content: 'partial/post_partial_content',
 							post_partial: 'partial/post_partial', list_group:'partial/list_group', list_course_in_group: 'partial/list_course_in_group',
 							topNavigation:'partial/topNavigation'}});
 					}
@@ -263,6 +264,7 @@ module.exports = {
 							add_group_member_modal: 'modal/add_group_member_modal',
 							remove_group_member_modal: 'modal/remove_group_member_modal',
 							create_course_modal: 'modal/create_course_modal', group_member_detail: 'partial/group_member_detail',
+							post_partial_content: 'partial/post_partial_content',
 							post_partial: 'partial/post_partial', list_group:'partial/list_group', list_course_in_group: 'partial/list_course_in_group',
 							topNavigation:'partial/topNavigation'}});
 					}

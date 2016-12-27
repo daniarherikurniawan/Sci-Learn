@@ -40,6 +40,7 @@ module.exports = {
 				partials: {leftSide:'partial/leftSide',
 					bookmark_modal: 'modal/bookmark_modal', 
 					share_modal: 'modal/share_modal', 
+					post_partial_content: 'partial/post_partial_content',
 					post_partial: 'partial/post_partial', list_group:'partial/list_group', 
 					create_group_modal: 'modal/create_group_modal', list_course_enrolled:'partial/list_course_enrolled', 
 					rightSide:'partial/rightSide', topNavigation:'partial/topNavigation'}});		

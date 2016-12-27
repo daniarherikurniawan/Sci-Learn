@@ -93,10 +93,11 @@ module.exports = {
 										posts: posts, popular_topic: popular_topic, rec_topic: rec_topic, numOfLastPage : numOfLastPage,
 										numOfCurrPage : numOfCurrPage,limitPerPage : limit,  setting: req.session.setting,
 									partials: {list_course_enrolled:'partial/list_course_enrolled', list_group:'partial/list_group', 
-									bookmark_modal: 'modal/bookmark_modal', 
-									share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template',
-									post_partial: 'partial/post_partial', create_group_modal: 'modal/create_group_modal',
-									rightSide:'partial/rightSide', topNavigation:'partial/topNavigation'}});	
+										bookmark_modal: 'modal/bookmark_modal', 
+										share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template',
+										post_partial_content: 'partial/post_partial_content',
+										post_partial: 'partial/post_partial', create_group_modal: 'modal/create_group_modal',
+										rightSide:'partial/rightSide', topNavigation:'partial/topNavigation'}});	
 								});
 							});
 						}else{
@@ -107,6 +108,7 @@ module.exports = {
 							partials: {list_course_enrolled:'partial/list_course_enrolled', 
 							bookmark_modal: 'modal/bookmark_modal', 
 							share_modal: 'modal/share_modal', 
+							post_partial_content: 'partial/post_partial_content',
 							edit_post_template: 'template/edit_post_template', create_group_modal: 'modal/create_group_modal',
 							post_partial: 'partial/post_partial', list_group:'partial/list_group',
 							rightSide:'partial/rightSide', topNavigation:'partial/topNavigation'}});

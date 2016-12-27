@@ -66,6 +66,7 @@ module.exports = {
 								partials: {group_info:'partial/group_info', bookmark_modal: 'modal/bookmark_modal', group_member:'partial/group_member',
 									edit_post_template: 'template/edit_post_template', create_group_modal: 'modal/create_group_modal',
 									create_course_modal: 'modal/create_course_modal', 
+									post_partial_content: 'partial/post_partial_content',
 									post_partial: 'partial/post_partial', list_group:'partial/list_group', list_course_in_group: 'partial/list_course_in_group',
 									topNavigation:'partial/topNavigation'}});
 
@@ -114,6 +115,7 @@ module.exports = {
 							remove_group_admin_modal: 'modal/remove_group_admin_modal',
 							add_group_member_modal: 'modal/add_group_member_modal',
 							remove_group_member_modal: 'modal/remove_group_member_modal',
+							post_partial_content: 'partial/post_partial_content',
 							create_course_modal: 'modal/create_course_modal', group_member_detail: 'partial/group_member_detail',
 							post_partial: 'partial/post_partial', list_group:'partial/list_group', list_course_in_group: 'partial/list_course_in_group',
 							topNavigation:'partial/topNavigation'}});
@@ -152,6 +154,7 @@ module.exports = {
 							remove_group_admin_modal: 'modal/remove_group_admin_modal',
 							add_group_member_modal: 'modal/add_group_member_modal',
 							remove_group_member_modal: 'modal/remove_group_member_modal',
+							post_partial_content: 'partial/post_partial_content',
 							create_course_modal: 'modal/create_course_modal', group_member_detail: 'partial/group_member_detail',
 							post_partial: 'partial/post_partial', list_group:'partial/list_group', list_course_in_group: 'partial/list_course_in_group',
 							topNavigation:'partial/topNavigation'}});

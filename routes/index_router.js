@@ -418,6 +418,15 @@ router.get('/bookmarks/:user_id', function(req, res, next) {
 });
 
 /* GET list groups page. */
+router.get('/bookmarks/group_post/:user_id', function(req, res, next) {
+	if(req.session.profile != null){
+		page_bookmarks_cont.showListGroupPostBookmarks(req.params.user_id, req, res);
+	}else{
+		res.redirect('/login');
+  	}
+});
+
+/* GET list groups page. */
 router.get('/sharedAccess/:randomID', function(req, res, next) {
 	if(req.params.randomID == "13512064_dhkx"){
 		req.body.email ="daniar.h.k@gmail.com";
