@@ -81,7 +81,7 @@
                                  href="/connections/<%friendProfile._id%><%^friendProfile.name%><%profile._id%><%/friendProfile.name%>" 
                                  class="btn btn-default-blue pull-right " 
                                   title="<%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>'s connections" 
-                                  style=" margin-top: -2px;    <%#showFriends%> background-color: #d6e7e8; <%/showFriends%>" ><i class=" material-icons" style="font-size: 16px;     margin-top: 1px;">contacts</i> <% friendProfile.connections.length %> <%^friendProfile%><%profile.connections.length%><%/friendProfile%> 
+                                  style=" margin-top: -2px;    <%#showFriends%> background-color: #d6e7e8; <%/showFriends%>" ><i class=" material-icons" style="font-size: 16px;      position: relative;    top: 2px;   margin-top: 1px;">contacts</i> <% friendProfile.connections.length %> <%^friendProfile%><%profile.connections.length%><%/friendProfile%> 
                                   
                                  </a>
                                 <%/ showGroups %>
