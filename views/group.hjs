@@ -92,7 +92,7 @@
                            </div>
                         </div> <!-- cover image -->
 
-                       <div class="panel panel-default" id="<%_id%>" > <!-- show more -->
+                       <div class="panel panel-default" style="margin-top: 81px;" id="<%_id%>" > <!-- show more -->
                           <div class="row">
                           <div class="text-center" style="<%# showFriends %>margin-top:-13px; <%/ showFriends %> <%^ showFriends %>margin-top:5px; <%/ showFriends %>margin-bottom:1px">
                             <a href="#" class="glyphicon glyphicon-option-horizontal" style="font-size:15px "></a>

@@ -143,7 +143,7 @@
                             
 
               <%friends.name%>
-                  <div class="panel panel-default" id="<%_id%>" >
+                  <div class="panel panel-default" style=" margin-top: 81px;" id="<%_id%>" >
                        <div class="row">
                      <%# showFriends %>
                      <%# showGroups %>
@@ -246,7 +246,7 @@
                      <%/ showBookmarks%>
                      <%/ showBadges%>
 
-                          <div class="text-center" style="<%# showFriends %>margin-top:151px; <%/ showFriends %> <%^ showFriends %>margin-top:5px; <%/ showFriends %>margin-bottom:1px">
+                          <div class="text-center" style="<%# showFriends %> <%/ showFriends %> <%^ showFriends %>margin-top:5px; <%/ showFriends %>margin-bottom:1px">
                             <a href="#" class="glyphicon glyphicon-option-horizontal" style="font-size:15px "></a>
                           </div>
                           </div>
