@@ -247,8 +247,10 @@
                           </div>
             </div>
 
-                   
-                 <%> post_partial %>
+                
+                 <%^ showBookmarks%>
+                    <%> post_partial %>                     
+                 <%/ showBookmarks%>
 
                  <%> list_user %>
 
@@ -270,6 +272,7 @@
                     Let's   <a href="/search"> <button class=" btn btn-md btn-primary" >Find</button> </a> a new connections !
                   <%/showFriends%>
                   
+                 <%^ showBookmarks%>
                   <%^showFriends%>
                   <%^showCourses%> 
                   <%^showGroups%>
@@ -280,6 +283,7 @@
                   <%/showGroups%>
                   <%/showCourses%> 
                   <%/showFriends%>
+                 <%/ showBookmarks%>
 
                   <%/friendProfile%>   
                 </div>

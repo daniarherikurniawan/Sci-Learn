@@ -54,6 +54,12 @@ var UserSchema = new mongoose.Schema({
       material: { type: mongoose.Schema.Types.ObjectId, ref: 'Material' }
     }], default: []},
 
+  bookmarks_course_resources:  {type: [{
+      notes:  {type: String, default: ""},
+      date_added: { type: Date, default: Date.now},
+      resource_id:  { type: mongoose.Schema.Types.ObjectId, ref: 'Resource' }
+    }], default: []},
+
   activeness: {type: Number, default: 1}
 });     
 mongoose.model('User',UserSchema);

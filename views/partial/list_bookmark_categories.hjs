@@ -1,85 +1,45 @@
-update on progress!!!
-{{# list_group_detail }}
+<div class=" panel panel-default text-center" style="margin: 13px 0px; height: 52px;">
+<ul class=" nav navbar-nav buttons" >
+  <li >
+    <a class="bookmark-menu  select" href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-newspaper-o" style=""> {{profile.bookmarks_personal_posts.length}}</i>&nbsp;Personal Posts</a>
+  </li>
+  <li >
+    <a class="bookmark-menu  " href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-newspaper-o" style=""> {{profile.bookmarks_group_posts.length}}</i>&nbsp;Group Posts</a>
+  </li>
+  <li >
+    <a class="bookmark-menu  " href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-files-o" style=""> {{profile.bookmarks_course_materials.length}}</i>&nbsp;Materials</a>
+  </li>
+  <li >
+    <a class="bookmark-menu  " href="#" style="padding: 17px 10px 12px 10px; display:inline-block; font-size:17px;" ><i class="fa fa-files-o" style=""> {{profile.bookmarks_course_resources.length}}</i>&nbsp;Resources</a>
+  </li>
 
-    <div id="{{_id}}" class=" panel panel-default" >
-    <div class="row">
+</ul>
 
-          <div class="col-sm-4 pull-right cover" style="
-          background-repeat:no-repeat;
-          background: linear-gradient(to left, rgba(255,255,255,0),
-            rgba(255,255,255,1)), 
-            url('/groups/{{_id}}/about/{{img_cover_name}}');
-            background-size:contain;
-            padding: 0 0 0 0 ; 
-                margin: 10px 10px 10px 0px;
-            width:256px;height:100px;overflow:hidden; ">
-           <img style=" 
-
-            width:256px; position: absolute;left: 25%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  
-            -moz-transform: translateY(-50%) translateX(-50%) ;">
-          </div>
+</div>
 
 
-      <div class="col-sm-6" style="height: 120px; padding-left: 0px;">
-       <div class="panel-heading" style="    width: 128%;">
-        <h4> <a href="/group/{{_id}}"> <b>
-        <script type="text/javascript">
-          if('{{group_name}}'.length >= 21){
-              document.write('{{group_name}}'.substring(0, 20)+"...");
-            // document.write("cdsc")
-          }else{
-              document.write('{{group_name}}');
-          }
-        </script>
-        </b></a> 
-          <div style="margin-top: -24px">
-            <a href="/group/members/{{_id}}" class="btn pull-right btn-default-blue" 
-             style="margin: 0px 3px 0px 3px;  text-align: center;    padding: 6px 0px;   height: 34px; width: 60px;"
-             title="Group Members" ><i class=" fa fa-users  fa-1x " style="font-size: 18px; margin-top: 2px; "> {{numberOfMember}}</i></a>
+{{> bookmark_post_partial }}
 
-             <a href="/group/Courses/{{_id}}" class="btn pull-right btn-default-blue" 
-             style="margin: 0px 3px 0px 3px;   text-align: center;    padding: 6px 0px;   height: 34px; width: 60px;"
-             title="Online Courses" ><i class=" glyphicon glyphicon-blackboard fa-3x" style="font-size: 19px;   position: relative; top: 1px;"></i><span  style="font-size: 18px;position: relative; top: -2px; "> {{courses_id.length}}</span></a>
-          </div>
-        </h4>
-         <div style="margin-top: 28px">
-            <span style="font-size: 14px">
-            <script type="text/javascript">
-              if('{{group_accessibility}}'=="Private Group")
-                document.write("<i style='color: #2d6363; margin-right:3px; font-size: 17px;' title='Private Group' class=\"fa fa-lock\"></i>")
-              else
-                document.write("<i style='color: #2d6363; margin-right:3px' title='Public Group' class=\"fa fa-globe\"></i>")
-              
-            </script> 
-            <span title="Date created" style="cursor: default;">
-              <script type="text/javascript">
-                var date_created = '{{date_created}}'.split(' ')
-                document.write(date_created[0]+", "+date_created[1]+" "+ date_created[2]+" "+ date_created[3] )
-              </script>
-            </span>
-            </span>
-            <hr style="margin:2px 0px 5px 0px">
-            {{# group_members}}
-               <div style=" display:inline-block;     margin: 0px 1px 1px 0px;">
-                <a  href="/profile/{{email}}"">
-                  <img style="width:35px; margin:1px " title="{{name}}" src="/images/{{email}}/profile/{{img_profile_name}}"> </div>
-                </a>
-            {{/ group_members}}
-            <script type="text/javascript">
-              if('{{numberOfMember}}' > 7){
-                document.write(   
-            "<div style=\" display:inline-block;     margin: 0px 1px 1px 0px;\">"+
-               "<a href=\"/group/members/{{_id}}\" class=\"glyphicon glyphicon-option-horizontal btn btn-default-blue\" style=\"font-size:12px ; padding: 8px;\"></a>"+
-            "</div>"
-                  )
-              }
-            </script>
-         </div>
-      </div>
-      </div>
 
-    </div> <!-- row -->
-    </div>
-{{/ list_group_detail }}
-<script src="/javascripts/page_scripting/group/list_group_detail.js"></script>
-<script src="/javascripts/page_scripting/group/find_within_own_group.js"></script>
+
+
+<style type="text/css">
+.buttons{
+    float:right;
+    position:relative;
+    left:-50%;
+    text-align:left;
+}
+.buttons li{
+    list-style:none;
+    position:relative;
+    left:50%;
+}
+
+a.bookmark-menu.select {
+      background: #eee;
+    border-bottom: #3b9798 4px solid;
+    color: #2d6363;
+}
+
+</style>
