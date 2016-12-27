@@ -128,6 +128,10 @@ module.exports = {
 
  		User.object.findById(user_id)
  			.populate('bookmarks_group_posts.post')
+ 			.populate({
+ 				path: 'bookmarks_group_posts.group',
+ 				select: 'group_name img_cover_name group_accessibility'
+ 				})
  			.select('bookmarks_group_posts')
  			.exec(function(err, data_user){
 
@@ -190,7 +194,7 @@ module.exports = {
 									data_bookmarks : final_data.bookmarks_group_posts,
 									showBookmarks: true, showGroupPostBookmarks : true,
 									numOfLastPage : 0, showGroups: false, myFriend: myFriend,
-						 			limitPerPage:100,
+						 			limitPerPage:100, showGroupPost: true,
 									friendProfile: friendProfile , rec_topic : req.session.rec_topic, 
 									popular_topic: req.session.popular_topic, setting: req.session.setting,
 									numOfCurrPage : 0, setting: req.session.setting,

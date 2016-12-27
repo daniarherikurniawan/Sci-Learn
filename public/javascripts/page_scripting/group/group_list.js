@@ -28,9 +28,9 @@ isMyOwnGroup = profile_id == current_profile_id;
         	if(i < 7){
         		if(result[i].group_accessibility == "Private Group"){
 					     icon = "<i style='color: #2d6363; margin-right:3px; font-size: 17px;' title='Private Group' class=\"fa fa-lock\"></i>";
-				}else{
-					icon = "<i style='color: #2d6363; margin-right:3px' title='Public Group' class=\"fa fa-globe\"></i>";
-				}
+    				}else{
+    					icon = "<i style='color: #2d6363; margin-right:3px' title='Public Group' class=\"fa fa-globe\"></i>";
+    				}
 	        	group_list_name += "<a href=\"/group/"+result[i]._id+"\" class=\"list-group-item\">"+icon+"   ";
 
             if(result[i].group_name.length >= 25){

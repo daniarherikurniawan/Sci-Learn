@@ -117,7 +117,7 @@
            <input onclick="removeGroupPostBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
         </div>
       </div>
-      <div id="group_post_ready_to_bookmark"  style="display: none">
+      <div id="group_post_ready_to_bookmark"  style="display: none !important">
           <textarea maxlength="400" class="form-control auto-resize" placeholder="Give notes for this bookmark" required rows="2" style="height:60px;" id="group_post_bookmark_notes" ></textarea>
          <div class="row" style="    margin: 10px 0px 0px 0px">
            <input  id="" onclick="tryToBookmarkGroupPost()" class="btn btn-primary pull-right" style="width: 18%;" value="Bookmark">
@@ -138,6 +138,7 @@ var post_id = null;
 var bookmark_data = null;
 
   $('#bookmarkPersonalPostModal').on('shown.bs.modal', function () {
+      hideAllBookmarkModal();
       bookmark_data = null;
       var http = new XMLHttpRequest();
       http.open("POST", "/bookmark/isInPersonalPostBookmark", true);
@@ -163,6 +164,15 @@ var bookmark_data = null;
         }
       }
   }) 
+
+  function hideAllBookmarkModal(){
+    $('#personal_post_already_bookmarked').css('display', 'none')
+    $('#personal_post_ready_to_bookmark').css('display', 'none')
+    $('#group_post_already_bookmarked').css('display', 'none')
+    $('#group_post_ready_to_bookmark').css('display', 'none')
+    $('#course_material_already_bookmarked').css('display', 'none')
+    $('#course_material_ready_to_bookmark').css('display', 'none')
+  }
 
   function removePersonalPostBookmark(){
       var http = new XMLHttpRequest();
@@ -218,6 +228,7 @@ var bookmark_data = null;
 /*Group bookmark*/
 
  $('#bookmarkGroupPostModal').on('shown.bs.modal', function () {
+      hideAllBookmarkModal();
       bookmark_data = null;
       var http = new XMLHttpRequest();
       http.open("POST", "/bookmark/isInGroupPostBookmark", true);
@@ -227,7 +238,6 @@ var bookmark_data = null;
       http.onload = function() {
         var result = JSON.parse(http.responseText);
         if(result.message.isInArray){
-
             if(result.message.bookmark_data.notes.length >= 150){
                notes = result.message.bookmark_data.notes.substring(0, 149)+"...";
               // document.write("cdsc")
@@ -295,6 +305,7 @@ var bookmark_data = null;
 /*Course Material Bookmark*/
 
  $('#bookmarkCourseMaterialModal').on('shown.bs.modal', function () {
+      hideAllBookmarkModal();
       bookmark_data = null;
       var http = new XMLHttpRequest();
       http.open("POST", "/bookmark/isInCourseMaterialBookmark", true);

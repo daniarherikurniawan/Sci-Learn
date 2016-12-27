@@ -300,34 +300,28 @@ module.exports = {
 	},
 
 	updatePost: function(req, res){
-		if(req.params.creator == req.session.profile._id && 
-			general_func.isExistAtUniqueObj(req.params.id, req.session.profile.id_unique_posts)){
-			var title = req.body.title;
-			var keywords = req.body.keywords;
-			var content = req.body.content;
-			Post.object.findOneAndUpdate({_id: req.params.id},
-				{title: title , keywords:keywords , content: content}, 
-				{upsert:true}, function(err, post){
-				if(err) console.log(err);
-		  		res.redirect('back');
-		  	});
-		}else{
-		 	res.send('/');
-		}
+		var title = req.body.title;
+		var keywords = req.body.keywords;
+		var content = req.body.content;
+		Post.object.findOneAndUpdate({ $and: [
+				{_id: req.params.id},
+				{creator: req.session.profile._id}]},
+			{title: title , keywords:keywords , content: content}, 
+			{upsert:true}, function(err, post){
+			if(err) console.log(err);
+	  		res.redirect('back');
+	  	});
 	},
 	updateSharePost: function(req, res){
-		if(req.params.creator == req.session.profile._id && 
-			general_func.isExistAtUniqueObj(req.params.id, req.session.profile.id_unique_posts)){
-			var content = req.body.content;
-			Post.object.findOneAndUpdate({_id: req.params.id},
-				{content: content}, 
-				{upsert:true}, function(err, post){
-				if(err) console.log(err);
-		  		res.redirect('back');
-		  	});
-		}else{
-		 	res.send('/');
-		}
+		var content = req.body.content;
+		Post.object.findOneAndUpdate({ $and: [
+				{_id: req.params.id},
+				{creator: req.session.profile._id}]},
+			{content: content}, 
+			{upsert:true}, function(err, post){
+			if(err) console.log(err);
+	  		res.redirect('back');
+	  	});
 	}
 }
 

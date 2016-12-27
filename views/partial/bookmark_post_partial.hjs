@@ -1,8 +1,22 @@
  {{# data_bookmarks}}
   {{# post }}
+    {{#showGroupPostBookmarks}}
+    <a href="/group/584e86c9cfa2ecac122c0ba6" style="background: #eceded;" title="Posted on group: {{group.group_name}}" class="list-group-item">
+    <script type="text/javascript">
+        if('{{group.group_accessibility}}' == "Private Group"){
+               document.write("<i style='color: #2d6363; margin-right:3px; font-size: 17px;' title='Private Group' class=\"fa fa-lock\"></i>")
+        }else{
+          document.write("<i style='color: #2d6363; margin-right:3px' title='Public Group' class=\"fa fa-globe\"></i>")
+        }
+    </script>
+       {{group.group_name}}</a> 
+    {{/ showGroupPostBookmarks}}
+
       {{> post_partial_content}}
   {{/ post }}
  {{/ data_bookmarks}}
+
+
 <script type="text/javascript">
   /*whether the post is in the group or not*/
   showGroupPost = ('{{showGroupPost}}'!='')
