@@ -70,7 +70,7 @@
           </div>
          <div class="row" style="    margin: 10px 0px 0px 0px">
            <input onclick="openBookmarkCourseMaterial()"  id="" class="btn btn-primary pull-right" style="width: 24%;" value="Open Bookmark">
-           <input onclick="removePersonalCourseMaterial()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
+           <input onclick="removeCourseMaterialBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
         </div>
       </div>
       <div id="course_material_ready_to_bookmark"  style="display: none">
@@ -291,4 +291,88 @@ var bookmark_data = null;
       }
     }
   }
+
+/*Course Material Bookmark*/
+
+ $('#bookmarkCourseMaterialModal').on('shown.bs.modal', function () {
+      bookmark_data = null;
+      var http = new XMLHttpRequest();
+      http.open("POST", "/bookmark/isInCourseMaterialBookmark", true);
+      http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      var params = "material_id=" + material_id;
+      http.send((params));
+      http.onload = function() {
+        var result = JSON.parse(http.responseText);
+        if(result.message.isInArray){
+
+            if(result.message.bookmark_data.notes.length >= 150){
+               notes = result.message.bookmark_data.notes.substring(0, 149)+"...";
+              // document.write("cdsc")
+            }else{
+                notes = result.message.bookmark_data.notes;
+            }
+            bookmark_data = result.message.bookmark_data;
+          $('#course_material_already_bookmarked').css('display', 'block')
+          $('#exist_course_material_bookmark_notes').text(notes)
+        }else{
+          $('#course_material_ready_to_bookmark').css('display', 'block')
+          $('textarea#course_material_bookmark_notes').focus();
+        }
+      }
+  }) 
+
+ function openBookmarkCourseMaterial() {
+    var win = window.open('/bookmarks/'+profile_id+"/course_material/"+bookmark_data._id, '_blank');
+    win.focus();
+  }
+
+
+
+   function removeCourseMaterialBookmark(){
+      var http = new XMLHttpRequest();
+      http.open("POST", "/bookmark/removeCourseMaterialBookmark", true);
+      http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      var params = "bookmark_id=" + bookmark_data._id;
+      http.send((params));
+      http.onload = function() {
+        var result = JSON.parse(http.responseText);
+        if(result.status == 1){
+            location.reload();
+        }else{
+          alert(result.message)
+        }
+      }
+  }
+
+  function tryToBookmarkCourseMaterial(){
+    if(material_id == null || material_id == ''){
+      alert("Error, material id is not set yet!")
+    }else{
+      var notes =  $('#course_material_bookmark_notes').val();
+      if (notes == ''){
+        alert("Notes can't be empty!")
+      }else{
+        var http = new XMLHttpRequest();
+        http.open("POST", "/bookmark/addCourseMaterialBookmark", true);
+        http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        var params = "material_id=" + material_id+ "&notes="+notes+ "&course_id="+course_id+ "&weekly_materials_id="+weekly_materials_id;
+
+        http.send((params));
+        http.onload = function() {
+          var result = JSON.parse(http.responseText);
+          if(result.status == 1){
+              location.reload();
+          }else{
+            alert(result.message)
+          }
+        }
+      }
+    }
+  }
+
+  function setMaterialId(id_material){
+    material_id = id_material;
+  }
+
+
 </script>

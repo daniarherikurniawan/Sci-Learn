@@ -5,7 +5,7 @@
 				<h4 style="padding-top: 0px; margin-top: 0px;">{{single_material.material_title}} </h4>
     		</div>
 			<div class="col-md-1">
-            	<a class="btn" title="Bookmark This Course Material" style="    position: relative;  top: -11px;    right: -13px;    font-size: 18px;"  data-toggle="modal" onclick="setPostId('{{_id}}')" href="#bookmarkCourseMaterialModal"  type="button" href=""><i class="glyphicon glyphicon-bookmark "></i></a>
+            	<a class="btn" title="Bookmark This Course Material" style="    position: relative;  top: -11px;    right: -13px;    font-size: 18px;"  data-toggle="modal" onclick="setMaterialId('{{single_material._id}}')" href="#bookmarkCourseMaterialModal"  type="button" href=""><i class="glyphicon glyphicon-bookmark "></i></a>
         	</div>
         </div>
 	</div>

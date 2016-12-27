@@ -136,13 +136,15 @@ module.exports = {
 			if(err ||  data == null ) {
 				response.setFailedResponse(res, err);
 	        } else {
+	        	// console.log(req.body)
 	        	data.bookmarks_course_materials.push({
 	        		notes : req.body.notes,
 					course : req.body.course_id,
 					weekly_materials_id : req.body.weekly_materials_id,
-					material : req.body.material
+					material : req.body.material_id
 	        	})
 	        	req.session.profile.bookmarks_course_materials = data.bookmarks_course_materials;
+	        	// console.log(req.session.profile.bookmarks_course_materials)
 	        	data.save();
 				response.setSucceededResponse(res, "Succesfully bookmarking a personal post!");
 		    }

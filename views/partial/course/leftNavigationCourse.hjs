@@ -115,8 +115,8 @@
   if('{{previous_opened_week}}'!=''){
     previous_opened_week  = '{{previous_opened_week}}'
   }
-
+  var profile_id = '{{profile._id}}'
   var course_id = '{{course._id}}'
-
+  var weekly_materials_id = '{{current_weekly_material._id}}'
 </script>
 <script src="/javascripts/page_scripting/course/left_navigation_course.js"></script>

@@ -1,3 +1,4 @@
+update on progress!!!
 {{# list_group_detail }}
 
     <div id="{{_id}}" class=" panel panel-default" >
