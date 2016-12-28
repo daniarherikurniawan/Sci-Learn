@@ -371,10 +371,34 @@ function editWeeklyMaterial(source_id_atr, content_id, button_id_atr, material_i
     sendRequest(true, weekly_material_id);
   }
 
+  function isThereIsEmptyData(){
+    for (var i = data_json_material.length - 1; i >= 0; i--) {
+      if (data_json_material[i].is_announcement){
+        if(
+            data_json_material[i].material_title == '' ||
+            data_json_material[i].material_description == ''){
+          return true
+        }
+      }else{
+
+          if(
+            data_json_material[i].material_title == '' ||
+            data_json_material[i].material_description == '' ||
+            data_json_material[i].material_url == ''
+            ){
+            return true;
+          }
+      }
+    }
+
+    return false;
+  }
 
   function sendRequest(isNewMaterial, material_id){
     // alert("lolo")
-    if(isNewMaterial){
+    if (isThereIsEmptyData()){
+      alert('You must fill all the empty field!')
+    }else if(isNewMaterial){
        var http = new XMLHttpRequest();
       http.open("POST", "/course/material/addWeeklyMaterial", true);
       http.setRequestHeader("Content-type","application/json; charset=utf-8");
