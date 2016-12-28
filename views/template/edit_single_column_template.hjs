@@ -103,7 +103,7 @@
               </div>
               {{# is_announcement}}
               <div class="col-md-8" style="margin-right: -8px;width: 60%;">
-                  <textarea  maxlength="250"  id = "{{_id}}_desc"   class="form-control auto-resize" placeholder="Quiz's title"  required  style="height: 68px; padding: 8px 12px; " >{{material_description}}</textarea>
+                  <textarea  maxlength="250"  id = "{{_id}}_desc"   class="form-control auto-resize" placeholder="Announcements's note"  required  style="height: 68px; padding: 8px 12px; " >{{material_description}}</textarea>
               </div>
             </div>
               {{/ is_announcement}}
