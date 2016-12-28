@@ -319,11 +319,26 @@ function editWeeklyMaterial(source_id_atr, content_id, button_id_atr, material_i
       }else{
         if(id_per_material == undefined){
           material_title = document.getElementById(i +'_title').value;
-          material_url = document.getElementById(i +'_url').value;
+          url= document.getElementById(i +'_url').value;
+          if(data_json_material[i].is_video){
+            base_url = 'https://www.youtube.com/embed/';
+            index = url.indexOf("v=");
+            if(index != -1)
+              url = base_url+url.substr(index+2,11);
+          }
+          material_url = url;
           material_description =document.getElementById(i +'_desc').value;
         }else{
           material_title = document.getElementById(data_json_material[i].id +'_title').value;
-          material_url = document.getElementById(data_json_material[i].id +'_url').value;
+
+          url= document.getElementById(data_json_material[i].id +'_url').value;
+          if(data_json_material[i].is_video){
+            base_url = 'https://www.youtube.com/embed/';
+            index = url.indexOf("v=");
+            if(index != -1)
+              url = base_url+url.substr(index+2,11);
+          }
+          material_url = url;
           material_description =document.getElementById(data_json_material[i].id +'_desc').value;
         }
 
