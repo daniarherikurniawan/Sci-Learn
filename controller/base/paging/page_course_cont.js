@@ -42,13 +42,13 @@ module.exports = {
 						console.log(err);
 						res.send("404");
 					}else{
-						console.log('req.session.specific_week_id '+req.session.specific_week_id)
+						// console.log('req.session.specific_week_id '+req.session.specific_week_id)
 						previous_opened_week = null;
 						if (req.session.specific_week_id != null){
 							previous_opened_week = req.session.specific_week_id ;
 							req.session.specific_week_id = null;
 						}
-						console.log('previous_opened_week '+previous_opened_week)
+						// console.log('previous_opened_week '+previous_opened_week)
 						req.session.course = course_data;
 						res.render('course', {course: req.session.course, 
 							isMaterialsExist: (course_data.weekly_materials.length > 0),
@@ -111,7 +111,7 @@ module.exports = {
 						found = true;
 						current_weekly_material = course.weekly_materials[i]
 						req.session.specific_week_id = current_weekly_material._id;
-						console.log('req.session.specific_week_id '+req.session.specific_week_id)
+						// console.log('req.session.specific_week_id '+req.session.specific_week_id)
 						material_exist = false;
 						for (var j = current_weekly_material.materials.length - 1; j >= 0; j--) {
 							if( current_weekly_material.materials[j]._id == material_id){

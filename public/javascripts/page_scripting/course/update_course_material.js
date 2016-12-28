@@ -112,7 +112,7 @@ function getNeededMaterialTemplate(data, id){
                 "</div>"+
                 "<div class=\"col-md-8\"  style=\"width: 60%;\">"+
                   "<textarea  maxlength=\"100\"  id ='"+id+"_url'  name=\"video_url\" class=\"form-control auto-resize\""+
-                  "placeholder=\"Material's URL\"  required style=\"height: 34px; padding: 8px 12px;\" >"+data.material_url+"</textarea>"+
+                  "placeholder=\"Material's URL (Youtube link / any other shared file url)\"  required style=\"height: 34px; padding: 8px 12px;\" >"+data.material_url+"</textarea>"+
               "</div>"+
           "</div>"+
           "<div class=\"row\" style=\"margin: 5px\">"+
@@ -274,11 +274,11 @@ function editWeeklyMaterial(source_id_atr, content_id, button_id_atr, material_i
       prepareParamsDataJsonMaterial(id_weekly_material)
     }
     if(new_material == 'Video'){
-      data_json_material.push({ is_video:true, material_url:"https://www.youtube.com/embed/lZ3bPUKo5zc"});
+      data_json_material.push({ is_video:true, material_url:"https://www.youtube.com/embed/lZ3bPUKo5zc [sample]"});
     }else if( new_material == 'Quiz'){
       data_json_material.push({ is_quiz: true});
     }else if( new_material == 'PDF File'){
-      data_json_material.push({ is_file: true, material_url:"http://infolab.stanford.edu/pub/papers/google.pdf"});
+      data_json_material.push({ is_file: true, material_url:"http://infolab.stanford.edu/pub/papers/google.pdf [sample]"});
     }
     if(id_edited_weekly_material == undefined)
       updateListEditableMaterials();

@@ -35,7 +35,7 @@ module.exports = {
 			match = {'course_accessibility':'Public Course'}
 		else
 			match = {'course_accessibility':{$in: ['Public Course', 'Private Course']}}
-		console.log(user_id)
+		// console.log(user_id)
         User.object.findById(user_id)
             .select('courses')
             .populate({
@@ -262,7 +262,7 @@ module.exports = {
 	quickSearchWithinGroupMemberNotInstructor : function(req, callback){
 		search_term = req.body.search_term;
 		group_id = req.session.course.group_id;
-		console.log('course_id '+group_id+ " "+search_term)
+		// console.log('course_id '+group_id+ " "+search_term)
 		// callback(search_term)
 		if(search_term == null || search_term == '')
 			callback([]);
@@ -297,7 +297,7 @@ module.exports = {
 	quickSearchWithinGroupMemberNotParticipants : function(req, callback){
 		search_term = req.body.search_term;
 		group_id = req.session.course.group_id;
-		console.log('course_id '+group_id+ " "+search_term)
+		// console.log('course_id '+group_id+ " "+search_term)
 		// callback(search_term)
 		if(search_term == null || search_term == '')
 			callback([]);
@@ -334,7 +334,7 @@ module.exports = {
 	quickSearchWithinCourseInstructor : function(req, callback){
 		search_term = req.body.search_term;
 		course_id = req.body.course_id;
-		console.log('course_id '+course_id+ " "+search_term)
+		// console.log('course_id '+course_id+ " "+search_term)
 		// callback(search_term)
 		if(search_term == null || search_term == '')
 			callback([]);
@@ -366,7 +366,7 @@ module.exports = {
 	quickSearchWithinCourseStudents : function(req, callback){
 		search_term = req.body.search_term;
 		course_id = req.body.course_id;
-		console.log('course_id '+course_id+ " "+search_term)
+		// console.log('course_id '+course_id+ " "+search_term)
 		// callback(search_term)
 		if(search_term == null || search_term == '')
 			callback([]);
