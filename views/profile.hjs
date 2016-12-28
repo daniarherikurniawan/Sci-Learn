@@ -122,7 +122,7 @@
 
 
                               <%^friendProfile%>
-                                <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: -144px;left: 121px; padding: 0 0 0 0 ; width:285px;height:96px;overflow:hidden">
+                                <div id="<%friendProfile._id%>" class="col-sm-1" style=" top: -144px;left: 121px; padding: 0 0 0 0 ; width:285px;height:99px;overflow:hidden">
 
                                   <div class="col-sm-1 " style="margin-top: 0px;padding-right: 0px;padding-left: 27px;">
 
@@ -130,7 +130,7 @@
                                     <a href="" data-toggle="dropdown"><i class="btn btn-default-blue btn-primary glyphicon glyphicon-user" style=""></i></a>
                                     <ul class="dropdown-menu" style="left:46px; top:-2px;    min-width: 120px; ">
 
-                                      <li><a style="text-align: left;" class="btn " type="button" onclick="editPostt('<%_id%>','<%profile._id%>')"><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit profile</a></li>
+                                      <li><a style="text-align: left;" class="btn " type="button" href="/profile/edit"><i class="glyphicon glyphicon-pencil "></i>&nbsp; Edit profile</a></li>
                                       <li><a style="text-align: left;" class="btn" type="button" href=""><i class="glyphicon glyphicon-remove "></i>&nbsp; Delete account</a></li>
                                       <li ><a style="text-align: left;" class="btn" onclick="tryToGetToken()"  type="button"><i class="fa fa-shield " style="   margin: 0px 2px 0 2px;"></i>&nbsp; Get Token</a></li>
                                      </ul>

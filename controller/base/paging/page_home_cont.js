@@ -45,6 +45,7 @@ module.exports = {
 				// console
 				User.object
 					.findById(req.session.profile._id)
+					.select('-password')
 					.populate ('online_connection' )
 					.exec (function (err,user){
 					if(err){

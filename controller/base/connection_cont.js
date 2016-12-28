@@ -6,8 +6,9 @@ var connection_func = require('../../controller/common/connection_func');
 module.exports = { 
 	updateOnlineConnection: function(req, res){
 		User.object
-			.find({_id : {$in : [req.session.profile._id, req.body.id] } }, 
-				function(err, user){
+			.find({_id : {$in : [req.session.profile._id, req.body.id] } })
+			.select('-password')
+			.exec(function(err, user){
 		if(err){
 			console.log(err);
 			res.send("404");

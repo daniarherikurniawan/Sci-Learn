@@ -116,7 +116,9 @@ module.exports = {
 
 
  	showPostsByActivity: function(req, res, userId, page, limit, typeActivity ){
-			User.model.findById(userId, function(err, user){
+			User.model.findById(userId)
+					.select('-password')
+					.exec(function(err, user){
 				// console.log(req.session.profile)
 				showPost = false;
 				showComment = false;
@@ -244,6 +246,18 @@ module.exports = {
 					});
 				}
 			});			
+	},
+
+	showEditProfilePage: function(req, res){
+		res.render('edit_profile', {profile: req.session.profile,
+ 		partials: { list_course_in_group: 'partial/list_course_in_group', topNavigation:'partial/topNavigation',
+ 			post_partial: 'partial/post_partial', about_user: 'partial/about_user',	
+			post_partial_content: 'partial/post_partial_content',
+				list_group:'partial/list_group', create_group_modal: 'modal/create_group_modal',
+				list_course_enrolled:'partial/list_course_enrolled',
+				bookmark_modal: 'modal/bookmark_modal', 
+	 		share_modal: 'modal/share_modal', edit_post_template: 'template/edit_post_template'
+	 	}});		
 	}
 
 }

@@ -14,7 +14,7 @@ $('input#search-within-connection').on('keyup', function(e) {
       var http = new XMLHttpRequest();
       http.open("POST", "/connections/quickSearchWithinConnection", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-      var params = "search_term=" + search_term+"&profile_id=" + profile_id;
+      var params = "search_term=" + window.encodeURIComponent(search_term)+"&profile_id=" + window.encodeURIComponent(profile_id);
       http.send((params));
       http.onload = function() {
         var search_result = JSON.parse(http.responseText);

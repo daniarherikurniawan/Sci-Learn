@@ -14,7 +14,7 @@ $('input#search-within-group-members').on('keyup', function(e) {
       var http = new XMLHttpRequest();
       http.open("POST", "/group/quickSearchWithinGroupMember", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-      var params = "search_term=" + search_term+"&group_id=" + group_id;
+      var params = "search_term=" + window.encodeURIComponent(search_term)+"&group_id=" + window.encodeURIComponent(group_id);
       http.send((params));
       http.onload = function() {
         var search_result = JSON.parse(http.responseText);

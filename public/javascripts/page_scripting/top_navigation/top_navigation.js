@@ -9,7 +9,7 @@ $('input#search-connection').on('keyup', function(e) {
     http.open("POST", "/connections/searchNewConnection", true);
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     search_term = $('input#search-connection').val();
-    var params = "search_term=" + search_term;
+    var params = "search_term=" + window.encodeURIComponent(search_term);
     http.send((params));
     http.onload = function() {
     	var search_result = JSON.parse(http.responseText);

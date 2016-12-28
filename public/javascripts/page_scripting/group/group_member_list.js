@@ -27,7 +27,7 @@ if(number_of_members > 10){
 var http = new XMLHttpRequest();
 http.open("POST", "/user/getDataUserProfilePicture", true);
 http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-var params = "idUsers=" + member_to_display;
+var params = "idUsers=" + window.encodeURIComponent(member_to_display);
 http.send((params));
 http.onload = function() {
 	var data_members = JSON.parse(http.responseText);

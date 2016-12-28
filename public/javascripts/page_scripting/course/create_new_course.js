@@ -25,9 +25,9 @@ function createNewCourse(){
     var http = new XMLHttpRequest();
     http.open("POST", "/course/createNewCourse", true);
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    var params = "course_name=" + course_name+"&group_id=" + group_id+
-    "&course_info=" + course_info+"&course_students="+course_students+
-    "&course_instructors="+course_instructors+"&course_accessibility="+course_accessibility;
+    var params = "course_name=" + window.encodeURIComponent(course_name)+"&group_id=" + window.encodeURIComponent(group_id)+
+    "&course_info=" + window.encodeURIComponent(course_info)+"&course_students="+window.encodeURIComponent(course_students)+
+    "&course_instructors="+window.encodeURIComponent(course_instructors)+"&course_accessibility="+window.encodeURIComponent(course_accessibility);
     // alert(params)
     http.send(params);
     http.onload = function() {

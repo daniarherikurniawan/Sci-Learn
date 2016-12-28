@@ -28,7 +28,7 @@ $('input#search-admin-to-be-removed').on('keyup', function(e) {
     var http = new XMLHttpRequest();
     http.open("POST", "/course/quickSearchWithinCourseInstructor", true);
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    var params = "search_term=" + search_term+"&course_id=" + course_id;
+    var params = "search_term=" + window.encodeURIComponent(search_term)+"&course_id=" + window.encodeURIComponent(course_id);
     http.send((params));
     http.onload = function() {
       search_result_remove_group_admin_modal = JSON.parse(http.responseText);
@@ -121,8 +121,8 @@ function removeMemberFromGroupAdmin(){
   var http = new XMLHttpRequest();
   http.open("POST", "/course/membership/removeInstructor", true);
   http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-  var params = "course_id=" + course_id+"&user_id=" + user_id+
-  "&members_id="+members_id;
+  var params = "course_id=" + window.encodeURIComponent(course_id)+"&user_id=" + window.encodeURIComponent(user_id)+
+  "&members_id="+window.encodeURIComponent(members_id);
   // alert()
   http.send(params);
   http.onload = function() {

@@ -12,7 +12,9 @@ module.exports = {
 			response.setFailedResponse(res, "Sorry, that is not your group!");
 		}else{
 			group_post_func.givePostWithCallback(req.body.group_id, req.session.profile._id, req.body.content, req.body.title, req.body.keywords, function(){
-				User.object.findById(req.session.profile._id, function(err, user){
+				User.object.findById(req.session.profile._id)
+					.select('-password')
+					.exec(function(err, user){
 					req.session.profile = user;	 
 				  	res.redirect('back');
 			  	});
@@ -32,6 +34,7 @@ module.exports = {
 					group_post_func.removeLike(req.session.profile._id, req.body.id);
 
 					User.object.findById(req.session.profile._id)
+					.select('-password')
 					.exec(function(err, user){
 						req.session.profile = user;
 						res.send("dislike");
@@ -40,6 +43,7 @@ module.exports = {
 					group_post_func.giveLike(req.session.profile._id, req.body.id);
 					
 					User.object.findById(req.session.profile._id)
+					.select('-password')
 					.exec(function(err, user){
 						req.session.profile = user;
 						res.send("like");
@@ -54,6 +58,7 @@ module.exports = {
 		group_post_func.giveComment(req.body.creator, req.body.id, req.body.content);
 
 		User.object.findById(req.body.creator)
+		.select('-password')
 		.exec(function(err, user){
 			req.session.profile = user;
 			res.send("success!");
@@ -82,7 +87,9 @@ module.exports = {
 
 			        	post.remove();
 
-						User.object.findById(req.session.profile._id, function(err, user){
+						User.object.findById(req.session.profile._id)
+							.select('-password')
+							.exec(function(err, user){
 							req.session.profile = user;	
 								res.send(req.body.id);
 					  	});
@@ -110,6 +117,7 @@ module.exports = {
 		});
 
 		User.object.findById(req.session.profile._id)
+		.select('password')
 		.exec(function(err, user){
 			req.session.profile = user;
 			res.send("success");

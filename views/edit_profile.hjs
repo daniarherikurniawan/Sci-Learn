@@ -1,0 +1,188 @@
+  <!DOCTYPE html>
+  <html lang="en" style="overflow: hidden;">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Sci-Learn</title>
+    <meta name="generator" content="Bootply" />
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet"> 
+    <link href="/stylesheets/font-awesome.min.css" rel="stylesheet"> 
+        <script src="/javascripts/jquery/jquery.min.js"></script>
+        <script src="/javascripts/socket.io/socket.io.js"></script>
+        <script src="/javascripts/socket.io/update_socket.js"></script>
+        <script src="/javascripts/bootstrap/bootstrap.min.js"></script>
+        <script src="/javascripts/common/common.js"></script>
+        <link href="/stylesheets/styles.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="/images/logo.jpg"/>
+      </head>
+      <body onload="updateOnlinePanel('<%profile._id%>')">
+        <div class="wrapper">
+          <div class="box">
+            <div class="row row-offcanvas row-offcanvas-left">
+              <!-- main right col -->
+              <div class="column col-sm-12 col-xs-11" id="main" style="margin-top: 50px; width: 100%; height:95%">
+                <!-- top nav -->
+                <div class="navbar navbar-blue navbar-static-top">  
+                  <%> topNavigation%>
+                </div>
+                <!-- /top nav -->
+                <div class="padding" style="  padding-top: 15px;">
+                <div class="row" style="
+                    align-content: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                    ">
+                  <div  class="full col-sm-9" style="padding-top:0px;">
+                    <!-- content -->                      
+                    <div class="row">
+                     <!-- main col left --> 
+                     <div class="col-sm-3 leftside">
+                      
+                       </div>
+
+                       <div id="middle-display" class="col-sm-6 middle_display" style="padding-left:0px; padding-right:0px;">
+                       <div class="row" style="margin-bottom:-140px; background-size:100%;">
+                            
+                          <div class="col-sm-12" style="left: 1px; padding: 0 0 0 0 ; ;height:282px;overflow:hidden">
+                             <img style=" top:115px;    width: inherit   ; max-width:100%; max-height:100%;  position: absolute; left: 49.7%;
+                             -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>/cover/<%friendProfile.img_cover_name%><%^friendProfile.name%><%profile.img_cover_name%><%/friendProfile.name%>">
+
+                              <div class="col-sm-1" style=" top: 155px;left: 18px; padding: 0 0 0 0 ; width:120px;height:120px;overflow:hidden"> <a  href="#photoModal" role="button" data-toggle="modal" > <img style="width:120px;  position: relative; left: 50%; top: 50%; 
+                             -webkit-transform: translateY(-50%) translateX(-50%);  -moz-transform: translateY(-50%) translateX(-50%) ;"src="/images/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>/profile/<%friendProfile.img_profile_name%><%^friendProfile.name%><%profile.img_profile_name%><%/friendProfile.name%>">
+                             </a>
+                             </div>
+                           </div>
+                        </div>  <!-- cover image -->
+                            
+
+                  <div class="panel panel-default" style="border-color: #f3f9f9">
+
+<div  class="well row background_modal"> 
+
+         <div   method="" class="form-horizontal" role="form">
+          
+            <div class="row col-sm-12" style="padding:0px 0px">
+              <div class="row" style=" margin-top: 0px;">
+
+                <div class="row" style="margin-bottom: 4px;" >
+                  <div class="col-sm-3" >
+                    <h5>Name</h5>
+                  </div>
+                  <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
+                    <textarea maxlength="25" class="form-control" id="new_name" style="height: 35px" placeholder="" required><% profile.name%></textarea>
+                  </div>
+                </div>
+                
+                <div class="row" style="margin-bottom: 4px;" >
+                  <div class="col-sm-3" >
+                    <h5>Secondary Email</h5>
+                  </div>
+                  <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
+                    <textarea maxlength="25" class="form-control" id="new_email" style="height: 35px" placeholder="Enter your secondary email" required><% profile.secondary_email%></textarea>
+                  </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 4px;" >
+                  <div class="col-sm-3" >
+                    <h5>New Password</h5>
+                  </div>
+                  <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
+                    <textarea maxlength="25" class="form-control" id="new_password" style="height: 35px" placeholder="Minimum 8 characters"></textarea>
+                  </div>
+                </div>
+                
+                <div class="row" style="margin-bottom: 4px;" >
+                  <div class="col-sm-3" >
+                    <h5>Education</h5>
+                  </div>
+                  <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
+                    <textarea maxlength="25" class="form-control" id="new_education" style="height: 35px" placeholder="" required><% profile.education%></textarea>
+                  </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 4px;" >
+                  <div class="col-sm-3" >
+                    <h5>Occupation</h5>
+                  </div>
+                  <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
+                    <textarea maxlength="25" class="form-control" id="new_occupation" style="height: 35px" placeholder="" required><% profile.occupation%></textarea>
+                  </div>
+                </div>
+                
+
+                <div class="row" style="margin-bottom: 4px;" >
+                  <div class="col-sm-3" >
+                    <h5>About</h5>
+                  </div>
+                  <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
+                    <textarea class="form-control" id="new_about" maxlength="300" style="height: 105px" placeholder="" required><% profile.about%></textarea>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+             <div class="row col-sm-12" style="margin-top: 10px; padding:0px 0px">
+              <input onclick="saveNewProfileData()" class="btn btn-primary pull-right " type="submit" value="Save">
+             </div>
+      </div>
+
+    </div>
+              <div>
+
+              </div>
+
+
+              </div>
+
+
+              <style type="text/css">
+                #rightSideBar::-webkit-scrollbar { 
+                  display: none; 
+              };
+              </style>
+
+
+              <div id="rightSideBar" class="col-sm-3 rightside" style="overflow:auto" >
+               
+              </div>
+
+              </div><!--/row-->
+
+            </div>
+
+
+          </div><!-- /col-9 -->
+
+
+        </div><!-- /padding -->
+      </div>
+      <!-- /main -->
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+	function saveNewProfileData(){
+		var http = new XMLHttpRequest();
+		http.open("POST", "/profile/updateProfile", true);
+		http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		var params = "name=" + window.encodeURIComponent($('#new_name').val())+ "&email=" + window.encodeURIComponent($('#new_email').val())+ "&password=" + 
+			window.encodeURIComponent($('#new_password').val())+"&education=" + window.encodeURIComponent($('#new_education').val())+"&about=" + window.encodeURIComponent($('#new_about').val())+"&occupation=" + window.encodeURIComponent($('#new_occupation').val());
+		http.send((params));
+	      		// window.location.href= "/profile/<%profile.email%>";
+		http.onload = function() {
+			var result = JSON.parse(http.responseText);
+			if(result.status == 0){
+				alert(result)
+			}else{
+	      		window.location.href= "/profile/<%profile.email%>";
+			}
+		}
+	}
+</script>

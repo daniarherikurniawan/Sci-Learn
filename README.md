@@ -112,7 +112,8 @@ db.groups.find({"group_name": "HMIF ITB 2012"}).pretty()
 
 db.course.updateMany({},{$set: {"course_materials" : null}})
 
-
+window.encodeURIComponent(
+)
 
   function sendRequest(){
     alert("lolo")

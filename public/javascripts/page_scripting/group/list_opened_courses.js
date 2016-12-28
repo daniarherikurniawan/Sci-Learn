@@ -14,7 +14,7 @@
     var http = new XMLHttpRequest();
     http.open("POST", "/group/getListCoursePerGroup", true);
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    var params = "user_id=" + profile_id+"&group_id=" + group_id;
+    var params = "user_id=" + window.encodeURIComponent(profile_id)+"&group_id=" + window.encodeURIComponent(group_id);
     http.send((params));
     http.onload = function() {
       result = JSON.parse(http.responseText);

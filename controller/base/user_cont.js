@@ -23,7 +23,9 @@ module.exports = {
 		var password = req.body.password;
 		password = hash.sha256_digest(password);
 		User.object
-			.findOne({email: email, password: password},function(err, data){
+			.findOne({email: email, password: password})
+			.select('-password')
+			.exec( function(err, data){
 			if( data == null ) {
 				callback({
 					status : "not exist",
@@ -82,7 +84,9 @@ module.exports = {
 					password = hash.sha256_digest(password);
 		        	var userObj = new User.model({token: token, name: name, email: email, password: password});
 		        	userObj.save();
-		        	req.session.profile = userObj;
+
+					req.session.profile = JSON.parse(JSON.stringify(userObj));;
+		        	req.session.profile.password = undefined;
         			initiateSession(req);
 					callback({
 						status : "success",
@@ -159,7 +163,9 @@ module.exports = {
 	},
 
 	generateToken: function(req, res){
-		User.object.findById(req.session.profile._id, function(err, user){
+		User.object.findById(req.session.profile._id)
+			.select('-password')
+			.exec(function(err, user){
 			user.token = general_func.createToken();
 			user.save();
 			req.session.profile = user;
@@ -188,6 +194,35 @@ module.exports = {
 					response.setSucceededResponse(res, users);
 				}
 			})
+	},
+
+	updateProfile: function(req, res){
+		User.object.findById(req.session.profile._id)
+			.exec(function(err, user_data){
+				if (err || user_data == null) {
+					response.setFailedResponse(res, err);
+				}else{
+					user_data.name = req.body.name; 
+					user_data.secondary_email = req.body.email; 
+					
+					user_data.education = req.body.education; 
+					user_data.about = req.body.about; 
+					user_data.occupation = req.body.occupation; 
+
+					req.session.profile = JSON.parse(JSON.stringify(user_data));;
+					if(req.body.password.length >= 8){
+						user_data.password = hash.sha256_digest(req.body.password);
+					} 
+
+					user_data.save();
+
+					req.session.profile.password = undefined;
+					response.setSucceededResponse(res, "success edit profile!");
+				}
+
+			})
 	}
+
+
 }
 

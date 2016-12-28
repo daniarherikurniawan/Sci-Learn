@@ -83,7 +83,7 @@ function tryToConnect(id, name) {
     var http = new XMLHttpRequest();
     http.open("POST", "/addConnection", true);
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    var params = "id=" + id+""; // probably use document.getElementById(...).value
+    var params = "id=" + window.encodeURIComponent(id)+""; // probably use document.getElementById(...).value
     http.send(params);
     http.onload = function() {
       if(http.responseText==404){

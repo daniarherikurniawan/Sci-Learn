@@ -27,7 +27,7 @@ $('input#search-new-member-group-by-admin').on('keyup', function(e) {
     var http = new XMLHttpRequest();
     http.open("POST", "/course/quickSearchWithinGroupMemberNotParticipants", true);
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    var params = "search_term=" + search_term+"&group_id=" + group_id;
+    var params = "search_term=" + window.encodeURIComponent(search_term)+"&group_id=" + window.encodeURIComponent(group_id);
     http.send((params));
     http.onload = function() {
       search_result_add_member_modal = JSON.parse(http.responseText);
@@ -120,8 +120,8 @@ function addGroupMember(){
   var http = new XMLHttpRequest();
   http.open("POST", "/course/membership/addStudent", true);
   http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-  var params = "course_id=" + course_id+"&user_id=" + user_id+
-  "&members_id="+members_id;
+  var params = "course_id=" + window.encodeURIComponent(course_id)+"&user_id=" + window.encodeURIComponent(user_id)+
+  "&members_id="+window.encodeURIComponent(members_id);
   // alert()
   http.send(params);
   http.onload = function() {

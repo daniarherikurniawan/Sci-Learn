@@ -9,7 +9,7 @@ function deleteGroup(group_id) {
 	var http = new XMLHttpRequest();
 	http.open("POST", "/group/deleteGroup", true);
 	http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	var params = "group_id=" + group_id;
+	var params = "group_id=" + window.encodeURIComponent(group_id);
 	http.send((params));
 	http.onload = function() {
 		var result = JSON.parse(http.responseText);

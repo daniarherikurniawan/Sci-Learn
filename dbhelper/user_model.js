@@ -8,6 +8,7 @@ var UserSchema = new mongoose.Schema({
   name: String,
   date_created: { type: Date, default: Date.now},
   email: String,
+  secondary_email: String,
   online_connection: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   password: String,
   education:  { type: String, default: "Institut Teknologi Bandung"},

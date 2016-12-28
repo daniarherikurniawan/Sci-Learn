@@ -20,8 +20,9 @@ function createNewGroup(){
     var http = new XMLHttpRequest();
     http.open("POST", "/group/createNewGroup", true);
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    var params = "group_name=" + group_name+"&group_info=" + group_info+"&group_admin="+group_admin+
-    "&group_members="+group_members+"&group_accessibility="+group_accessibility;
+    var params = "group_name=" + window.encodeURIComponent(group_name)+"&group_info=" + window.encodeURIComponent(group_info)+
+    "&group_admin="+window.encodeURIComponent(group_admin)+
+    "&group_members="+window.encodeURIComponent(group_members)+"&group_accessibility="+window.encodeURIComponent(group_accessibility);
     // alert()
     http.send(params);
     http.onload = function() {

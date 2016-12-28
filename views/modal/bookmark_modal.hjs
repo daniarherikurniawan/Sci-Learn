@@ -131,7 +131,7 @@ $('#bookmarkPersonalPostModal').on('hidden.bs.modal', function () {
       var http = new XMLHttpRequest();
       http.open("POST", "/bookmark/isInPersonalPostBookmark", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-      var params = "post_id=" + post_id;
+      var params = "post_id=" + window.encodeURIComponent(post_id);
       http.send((params));
       http.onload = function() {
         var result = JSON.parse(http.responseText);
@@ -159,7 +159,7 @@ $('#bookmarkPersonalPostModal').on('hidden.bs.modal', function () {
       var http = new XMLHttpRequest();
       http.open("POST", "/bookmark/removePersonalPostBookmark", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-      var params = "bookmark_id=" + bookmark_data._id;
+      var params = "bookmark_id=" + window.encodeURIComponent(bookmark_data._id);
       http.send((params));
       http.onload = function() {
         var result = JSON.parse(http.responseText);
@@ -182,7 +182,7 @@ $('#bookmarkPersonalPostModal').on('hidden.bs.modal', function () {
         var http = new XMLHttpRequest();
         http.open("POST", "/bookmark/addPersonalPostBookmark", true);
         http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        var params = "post_id=" + post_id+ "&notes="+notes;
+        var params = "post_id=" + window.encodeURIComponent(post_id)+ "&notes="+window.encodeURIComponent(notes);
         http.send((params));
         http.onload = function() {
           var result = JSON.parse(http.responseText);
@@ -217,7 +217,7 @@ $('#bookmarkGroupPostModal').on('hidden.bs.modal', function () {
       var http = new XMLHttpRequest();
       http.open("POST", "/bookmark/isInGroupPostBookmark", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-      var params = "post_id=" + post_id;
+      var params = "post_id=" + window.encodeURIComponent(post_id);
       http.send((params));
       http.onload = function() {
         var result = JSON.parse(http.responseText);
@@ -243,7 +243,7 @@ $('#bookmarkGroupPostModal').on('hidden.bs.modal', function () {
       var http = new XMLHttpRequest();
       http.open("POST", "/bookmark/removeGroupPostBookmark", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-      var params = "bookmark_id=" + bookmark_data._id;
+      var params = "bookmark_id=" + window.encodeURIComponent(bookmark_data._id);
       http.send((params));
       http.onload = function() {
         var result = JSON.parse(http.responseText);
@@ -266,7 +266,7 @@ $('#bookmarkGroupPostModal').on('hidden.bs.modal', function () {
         var http = new XMLHttpRequest();
         http.open("POST", "/bookmark/addGroupPostBookmark", true);
         http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        var params = "post_id=" + post_id+ "&notes="+notes+ "&group_id="+group_id;
+        var params = "post_id=" + window.encodeURIComponent(post_id)+ "&notes="+window.encodeURIComponent(notes)+ "&group_id="+window.encodeURIComponent(group_id);
         http.send((params));
         http.onload = function() {
           var result = JSON.parse(http.responseText);
@@ -291,7 +291,7 @@ $('#bookmarkCourseMaterialModal').on('hidden.bs.modal', function () {
       var http = new XMLHttpRequest();
       http.open("POST", "/bookmark/isInCourseMaterialBookmark", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-      var params = "material_id=" + material_id;
+      var params = "material_id=" + window.encodeURIComponent(material_id);
       http.send((params));
       http.onload = function() {
         var result = JSON.parse(http.responseText);
@@ -318,7 +318,7 @@ $('#bookmarkCourseMaterialModal').on('hidden.bs.modal', function () {
       // bookmark_data._id = '5861a88f1e491c3f1c366e4b'
       http.open("POST", "/bookmark/removeCourseMaterialBookmark", true);
       http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-      var params = "bookmark_id=" + bookmark_data._id;
+      var params = "bookmark_id=" + window.encodeURIComponent(bookmark_data._id);
       http.send((params));
       http.onload = function() {
         var result = JSON.parse(http.responseText);
@@ -341,7 +341,7 @@ $('#bookmarkCourseMaterialModal').on('hidden.bs.modal', function () {
         var http = new XMLHttpRequest();
         http.open("POST", "/bookmark/addCourseMaterialBookmark", true);
         http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        var params = "material_id=" + material_id+ "&notes="+notes+ "&course_id="+course_id+ "&weekly_materials_id="+weekly_materials_id;
+        var params = "material_id=" + window.encodeURIComponent(material_id)+ "&notes="+window.encodeURIComponent(notes)+ "&course_id="+window.encodeURIComponent(course_id)+ "&weekly_materials_id="+window.encodeURIComponent(weekly_materials_id);
 
         http.send((params));
         http.onload = function() {

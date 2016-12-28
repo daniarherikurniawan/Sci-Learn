@@ -104,6 +104,7 @@ module.exports = {
 					post_func.removeLike(req.session.profile._id, req.body.id);
 
 					User.object.findById(req.session.profile._id)
+					.select('-password')
 					.exec(function(err, user){
 						req.session.profile = user;
 						res.send("dislike");
@@ -112,6 +113,7 @@ module.exports = {
 					post_func.giveLike(req.session.profile._id, req.body.id);
 					
 					User.object.findById(req.session.profile._id)
+					.select('-password')
 					.exec(function(err, user){
 						req.session.profile = user;
 						res.send("like");
@@ -126,6 +128,7 @@ module.exports = {
 		post_func.giveComment(req.body.creator, req.body.id, req.body.content);
 
 		User.object.findById(req.body.creator)
+		.select('-password')
 		.exec(function(err, user){
 			req.session.profile = user;
 			res.send("success!");
@@ -162,6 +165,7 @@ module.exports = {
 		});
 
 		User.object.findById(req.session.profile._id)
+		.select('-password')
 		.exec(function(err, user){
 			req.session.profile = user;
 			res.send("success");
@@ -171,6 +175,7 @@ module.exports = {
 	addShare: function(req, res){
 		post_func.giveShareWithCallback(req.session.profile._id, req.body.id_post, req.body.original_creator, req.body.content, function(){
 			User.object.findById(req.session.profile._id)
+			.select('-password')
 			.exec(function(err, user){
 				req.session.profile = user;
 		  		res.redirect('back');
@@ -180,7 +185,9 @@ module.exports = {
 
 	addPost: function(req, res){
 		post_func.givePostWithCallback(req.session.profile._id, req.body.content, req.body.title, req.body.keywords, function(){
-			User.object.findById(req.session.profile._id, function(err, user){
+			User.object.findById(req.session.profile._id)
+					.select('-password')
+					.exec(function(err, user){
 				req.session.profile = user;	 
 			  	res.redirect('back');
 		  	});
@@ -290,7 +297,9 @@ module.exports = {
 		});
 		
 
-		User.object.findById(req.session.profile._id, function(err, user){
+		User.object.findById(req.session.profile._id)
+					.select('-password')
+					.exec(function(err, user){
 			req.session.profile = user;	
 			if(shared_post)
 				res.send("shared_post");
