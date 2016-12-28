@@ -65,7 +65,7 @@ module.exports = {
 							courseHome:'partial/course/courseHome', courseGrades:'partial/course/courseGrades',
 							courseParticipants:'partial/course/courseParticipants',
 							edit_single_column_template: 'template/edit_single_column_template',
-							topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
+							topNavigation:'partial/topNavigation', leftNavigationCourse:'partial/course/leftNavigationCourse',
 							mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
 							courseDiscussionForum:'partial/course/courseDiscussionForum'}});
 
@@ -139,7 +139,7 @@ module.exports = {
 						courseParticipants:'partial/course/courseParticipants',
 			 			bookmark_modal: 'modal/bookmark_modal', 
 						edit_single_column_template: 'template/edit_single_column_template',
-						topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
+						topNavigation:'partial/topNavigation', leftNavigationCourse:'partial/course/leftNavigationCourse',
 						mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
 						courseDiscussionForum:'partial/course/courseDiscussionForum'}});
 				}
@@ -178,7 +178,7 @@ module.exports = {
 								add_course_student_modal: 'modal/course/add_course_student_modal',
 								remove_course_student_modal: 'modal/course/remove_course_student_modal',
 								edit_single_column_template: 'template/edit_single_column_template',
-								topNavigationCourse:'partial/course/topNavigationCourse', leftNavigationCourse:'partial/course/leftNavigationCourse',
+								topNavigation:'partial/topNavigation', leftNavigationCourse:'partial/course/leftNavigationCourse',
 								mainViewCourse:'partial/course/mainViewCourse', courseMaterial:'partial/course/courseMaterial', 
 								courseDiscussionForum:'partial/course/courseDiscussionForum'}});
 

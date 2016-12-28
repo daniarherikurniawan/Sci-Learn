@@ -124,6 +124,7 @@
             </div>
              <div class="row col-sm-12" style="margin-top: 10px; padding:0px 0px">
               <input onclick="saveNewProfileData()" class="btn btn-primary pull-right " type="submit" value="Save">
+             <a href="/profile/<%profile.email%>"><button id="close-modal-create-new-course" class="btn btn-primary pull-right modal-button cancel-button"  >Cancel</button></a>
              </div>
       </div>
 
