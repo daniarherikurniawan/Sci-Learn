@@ -159,16 +159,30 @@
                   </div><!-- main cil right -->
                 </div>
               <h5 class="text-center" style="    text-align: -webkit-center; position: relative;  width: 100%;">
-              <p><b>[Available only for desktop]</b></p>
+              <p><b>This e-Learning platform is available for desktop only!</b></p>
               </h5>
 
               <h5 class="text-center" style="    text-align: -webkit-center; position: relative;  width: 100%;">
                 This platform is deployed for testing [research] purpose. The functionality is 90% done. About the founder:<a href="https://www.linkedin.com/in/daniar-heri-kurniawan-98b6158b" target="ext" >
                  <b>Daniar Heri Kurniawan</b></a>
               </h5>
+
+              <style type="text/css">
+                .heart {
+                  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png);
+                  background-size: 100%;
+                  background-repeat: no-repeat;
+                  display: inline-block;
+                  position: relative;
+                  height: 10px;
+                  width: 10px;
+              }
+              </style>
+              
+              <h5 class="text-center" style="    text-align: -webkit-center; position: relative;  width: 100%;">Crafted with <span class="heart"></span> <span class="heart"></span> <span class="heart"></span></h5>
               <h5 class="text-center" style="    text-align: -webkit-center; position: relative; width: 100%;">
                 <a href="http://www.sci-learn.com" target="ext" >
-                Copyrights © 2016 Sci-Learn All rights reserved.</a>
+                Copyrights © 2017 Sci-Learn All rights reserved.</a>
               </h5>
               </div><!--/row-->              
             </div><!-- /col-9 -->
@@ -180,6 +194,5 @@
   </div>
 </body>
 </html>
-
 <!-- script references -->
 <script src="/javascripts/page_scripting/login/login_script.js"></script>

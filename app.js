@@ -12,7 +12,7 @@ var mongo = require('./dbconfig/mongo_config');
 mongo.connect();
 
 var app = express();
-app.version = "[v_0.9]";
+app.version = "[ v_0.9.5 ]";
 // App setup
 app.set('views', path.join(__dirname, 'views'));
 app.locals.delimiters = '<% %>';
