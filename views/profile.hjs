@@ -61,16 +61,16 @@
                                   <h4 style="margin: 0px 0px 0px 0px; font-size: 21px; ">
 
                                   <a href="/profile/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>" > 
-                                  <b><%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%></b></a>'s  
-                                  <%#showFriends%> Connections<%/showFriends%>
+                                  <b><%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%></b></a>  
+                                  <%#showFriends%>'s Connections<%/showFriends%>
 
-                                  <%^showBadges%> <%^showBookmarks%> <%^showCourses%>  <%^ showGroups%> <%^showFriends%><%^showPerActivity%> Posts<%/showPerActivity%> 
-                                  <%#showPerActivity%> Activities<%/showPerActivity%><%/showFriends%><%/showGroups%> <%/showCourses%> <%/ showBookmarks%> <%/ showBadges%>
+                                  <%^showBadges%> <%^showBookmarks%> <%^showCourses%>  <%^ showGroups%> <%^showFriends%><%^showPerActivity%> <!-- Posts --><%/showPerActivity%> 
+                                  <%#showPerActivity%> <!-- Activities --><%/showPerActivity%><%/showFriends%><%/showGroups%> <%/showCourses%> <%/ showBookmarks%> <%/ showBadges%>
 
-                                  <%#showBadges%> Badges <%/ showBadges%>
-                                  <%#showGroups%> Groups<%/showGroups%> 
-                                  <%#showCourses%> Courses<%/showCourses%> 
-                                  <%#showBookmarks%> Bookmarks<%/showBookmarks%> 
+                                  <%#showBadges%>'s Badges <%/ showBadges%>
+                                  <%#showGroups%>'s Groups<%/showGroups%> 
+                                  <%#showCourses%>'s Courses<%/showCourses%> 
+                                  <%#showBookmarks%>'s Bookmarks<%/showBookmarks%> 
 
                                <%^showBadges%>
                                <%^ showBookmarks%>
@@ -194,7 +194,7 @@
                           </div>
                          </div>
                          <div class="row" >
-                            <div class="col-sm-12" style="padding: 0px 0px 0px 0px; margin-bottom:5px;     margin-top: -5px; border: #d6e7e8 1px solid;">
+                            <div class="col-sm-12" style="padding: 0px 0px 0px 0px; margin-bottom:5px;     margin-top: -3px; border: #d6e7e8 1px solid;">
                                <p style="height: 89px; padding: 5px;"  class="text-center list-group-item">
                                <b><span  style = "font-size:30px"><%friendProfile.activeness%><%^friendProfile.name%><%profile.activeness%><%/friendProfile.name%></span></b>
                                <br>
