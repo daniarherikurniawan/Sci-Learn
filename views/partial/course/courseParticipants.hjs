@@ -19,7 +19,13 @@
 
 {{# showCourseParticipants }}
 <div class="panel panel-default">
-  <div  class="panel-heading">
+  <div  class="panel-heading" 
+  style="height: 40px; color: white; background: rgb(59, 151, 152);
+    background: -webkit-linear-gradient(left, rgb(59, 151, 152) , rgb(214, 231, 232)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgb(59, 151, 152), rgb(214, 231, 232)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgb(59, 151, 152), rgb(214, 231, 232)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgb(59, 151, 152) , rgb(214, 231, 232)); /* Standard syntax (must be last) */
+    ">
     {{#isInstructor}}
     <li class="dropdown pull-right" style="list-style-type: none;">
     <a title="Edit Group Admin" href="" data-toggle="dropdown" type="button">
@@ -45,7 +51,13 @@
 
 
 <div class="panel panel-default">
-   <div  class="panel-heading">
+   <div  class="panel-heading"
+  style="height: 40px; color: white; background: rgb(59, 151, 152);
+    background: -webkit-linear-gradient(left, rgb(59, 151, 152) , rgb(214, 231, 232)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgb(59, 151, 152), rgb(214, 231, 232)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgb(59, 151, 152), rgb(214, 231, 232)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgb(59, 151, 152) , rgb(214, 231, 232)); /* Standard syntax (must be last) */
+    ">
   	
     {{#isInstructor}}
     <li class="dropdown pull-right" style="list-style-type: none;">
