@@ -194,7 +194,7 @@
                           </div>
                          </div>
                          <div class="row" >
-                            <div class="col-sm-12" style="padding: 0px 0px 0px 0px; margin-bottom:5px">
+                            <div class="col-sm-12" style="padding: 0px 0px 0px 0px; margin-bottom:5px;     margin-top: -5px; border: #d6e7e8 1px solid;">
                                <p style="height: 89px; padding: 5px;"  class="text-center list-group-item">
                                <b><span  style = "font-size:30px"><%friendProfile.activeness%><%^friendProfile.name%><%profile.activeness%><%/friendProfile.name%></span></b>
                                <br>
