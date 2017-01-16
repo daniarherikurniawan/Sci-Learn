@@ -136,8 +136,8 @@
                           <div  class="text-center text-warning" style="color:white"><%Message%></div>
                           <span class="logo" style="background-color:inherit; width: auto;     color: white; font-size:24px">Sci-Learn</span> 
                           <br>
-                            <input style="margin-bottom:10px" type="email" name="email"class="form-control input-lg" placeholder="Enter your email address" required>
-                            <input style="margin-bottom:5px" type="password" name="password" class="form-control input-lg" placeholder="Enter your password" maxlength="16" minlength="8" required>
+                            <input style="margin-bottom:10px" type="email" maxlength="45" name="email"class="form-control input-lg" placeholder="Enter your email address" required>
+                            <input style="margin-bottom:5px" type="password" name="password" class="form-control input-lg" placeholder="Enter your password" maxlength="25" minlength="8" required>
                             
                           </div>
                           <div class="text-center">

@@ -78,7 +78,7 @@
                     <h5>Secondary Email</h5>
                   </div>
                   <div class="col-sm-9" style="padding-right: 0px; padding-left: 0px;">
-                    <textarea maxlength="25" class="form-control" id="new_email" style="height: 35px" placeholder="Enter your secondary email" required><% profile.secondary_email%></textarea>
+                    <textarea maxlength="45" class="form-control" id="new_email" style="height: 35px" placeholder="Enter your secondary email" required><% profile.secondary_email%></textarea>
                   </div>
                 </div>
 
