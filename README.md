@@ -44,6 +44,7 @@ pm2 logs www
 ss -nlp | grep 8000
 sudo kill -9 27252
 
+test
 
 finally:
 pm2 start bin/www 
