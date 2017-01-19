@@ -21,6 +21,7 @@
     "multiparty": "^4.1.2",
     "node-rest-client": "^1.8.0",
     "nodemon": "^1.8.1",
+    "passport-facebook": "^2.1.1",
     "requestify": "^0.1.17",
     "rimraf": "^2.5.1",
     "serve-favicon": "~2.3.0",
