@@ -50,6 +50,17 @@ pm2 start bin/www
 
 migrate database using dumb instead
 
+nginx config file on: /etc/nginx/conf.d/node-app.conf
+service nginx reload
+
+
+jenkins config file on: /etc/sysconfig/jenkins (to edit JENKINS_ARGS if needed )
+/etc/init.d/jenkins restart
+link jenkins on http://www.sci-learn.com:8080/
+/var/lib/jenkins/secrets/initialAdminPassword
+
+
+
 ###Coloring
 time: #618b8b
 
