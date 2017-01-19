@@ -27,6 +27,12 @@ note:
 update server:
 - git clean -f -n
 
+###MOngo
+service mongod start
+config at /etc/mongod.conf
+sudo rm /var/lib/mongo/mongod.lock
+du -hsc *
+mongod --smallfiles
 
 for Daniar:
 - server directory : cd /usr/share/Sci-Learn/
@@ -52,6 +58,7 @@ pm2 start bin/www
 
 migrate database using dumb instead
 
+###NGINX
 nginx config file on: /etc/nginx/conf.d/node-app.conf
 service nginx reload
 
