@@ -82,8 +82,8 @@
       <li><a class="custom-dropdown" href="/profile/edit"> <i class="glyphicon glyphicon-pencil" style=""></i> &nbsp;Edit Profile</a></li>
       <li><a class="custom-dropdown" style="padding-top: 0px"  href="/groups/{{profile._id}}"><i class=" material-icons" style="position: relative; font-size: 18px; top: 4px; left: -2px; ">group</i>&nbsp;My Groups</a></li>
       <li><a class="custom-dropdown" style="    position: relative;
-    left: -2px;" href="/courses/{{profile._id}}"><i class="glyphicon glyphicon-blackboard" style="font-size: 16px;    left: 1px;"></i> &nbsp;My Courses</a></li>
-      <li><a class="custom-dropdown" onclick="iAmOffline()" href="/logout"><i class="fa fa-sign-out" style="font-size: 17px"></i> &nbsp;Logout</a></li>
+    left: -2px;" href="/courses/{{profile._id}}"><i class="glyphicon glyphicon-blackboard" style="font-size: 16px;    left: 1px;"></i> &nbsp;<span style="position: relative; top: -1.7px;">My Courses</span></a></li>
+      <li><a class="custom-dropdown" onclick="iAmOffline()" href="/logout"><i class="fa fa-sign-out" style="font-size: 17px"></i> &nbsp;<span style="position: relative; top: -1.5px;">Logout</span></a></li>
     </ul>
   </li>
 </ul>
