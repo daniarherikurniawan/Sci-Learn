@@ -45,7 +45,7 @@ ss -nlp | grep 8000
 sudo kill -9 27252
 
 test
-
+```
 finally:
 pm2 start bin/www 
 
@@ -61,7 +61,7 @@ jenkins config file on: /etc/sysconfig/jenkins (to edit JENKINS_ARGS if needed )
 link jenkins on http://www.sci-learn.com:8080/
 /var/lib/jenkins/secrets/initialAdminPassword  admin :pass: 7d5a3b9f3d184582bb7c26eab08f33ad
 /var/lib/jenkins/workspace/Pull_from_github/
-
+```
 
 ###Coloring
 time: #618b8b
