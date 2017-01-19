@@ -36,6 +36,7 @@ for Daniar:
 
 If error:
 
+pm2 start bin/www in the folder sci-learn
 pm2 restart www
 pm2 show www
 pm2 logs www
@@ -58,7 +59,7 @@ jenkins config file on: /etc/sysconfig/jenkins (to edit JENKINS_ARGS if needed )
 /etc/init.d/jenkins restart
 link jenkins on http://www.sci-learn.com:8080/
 /var/lib/jenkins/secrets/initialAdminPassword
-
+/var/lib/jenkins/workspace/Pull_from_github/
 
 
 ###Coloring
