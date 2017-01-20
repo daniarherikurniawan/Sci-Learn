@@ -4,7 +4,9 @@
 <div class="row" style="
     margin: auto;">
 <div class="navbar-header custom_navbar_left" style="padding-left:50px ; padding-top: 2px;">
-<a href="/" class="navbar-brand logo" style="padding-top: 4px;">S</a>
+<a href="/" class="navbar-brand logo" style="padding-top: 4px;     font-family: serif;
+    font-weight: 900;
+    font-size: 21px;">S</a>
 </div>
 <nav class="collapse navbar-collapse" role="navigation">
 
