@@ -24,7 +24,9 @@
               <!-- top nav -->
               <div class="navbar navbar-blue navbar-static-top">  
                 <div class="navbar-header" style="padding-left:50px ; padding-top: 2px;">
-                <a href="/" class="navbar-brand logo" style="padding-top: 4px;">S</a>
+                <a href="/" class="navbar-brand logo" style="padding-top: 4px;     font-family: serif;
+    font-weight: 900;
+    font-size: 21px;">S</a>
                 </div>
                 <nav class="collapse navbar-collapse" role="navigation">
 
@@ -134,7 +136,7 @@
                       <form class="form" action="/login" method="post">
                         <div class="well" style="background: #3b9798; border-radius: 8px; padding: 12px"> 
                           <div  class="text-center text-warning" style="color:white"><%Message%></div>
-                          <span class="logo" style="background-color:inherit; width: auto;     color: white; font-size:24px">Sci-Learn</span> 
+                          <span class="logo" style="background-color:inherit; width: auto;     color: white; font-size:24px;font-family: serif">Sci-Learn</span> 
                           <br>
                             <input style="margin-bottom:10px" type="email" maxlength="45" name="email"class="form-control input-lg" placeholder="Enter your email address" required>
                             <input style="margin-bottom:5px" type="password" name="password" class="form-control input-lg" placeholder="Enter your password" maxlength="25" minlength="8" required>
