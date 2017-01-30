@@ -192,3 +192,11 @@ Course.object.findOne({'weekly_materials._id': week_id},  {_id: 0, 'weekly_mater
 ### DB
 mongorestore --db scilearndb Documents/Project/Sci-Learn/dbdump/scilearndb/
 mongodump --db scilearndb 
+
+
+### lwip
+npm rebuild lwip
+
+
+###npm
+npm install 
