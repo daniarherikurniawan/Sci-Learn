@@ -33,7 +33,7 @@
 
 
       <div class="col-sm-6" style="height: 120px; padding-left: 0px;">
-       <div class="panel-heading" style="    width: 128%;">
+       <div class="panel-heading" style="    width: 135%;">
         <h4> <a href="/course/{{_id}}"> <b>
         <script type="text/javascript">
           if('{{course_name}}'.length >= 25){

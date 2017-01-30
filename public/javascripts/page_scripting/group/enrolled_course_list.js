@@ -34,8 +34,8 @@ isMyOwnCourse = profile_id == current_profile_id;
         }
             course_list_name += "<a href=\"/course/"+result[i]._id+"\" class=\"list-group-item\">"+icon+"   ";
             
-            if(result[i].course_name.length >= 25){
-               course_list_name += result[i].course_name.substring(0, 24)+"...";
+            if(result[i].course_name.length >= 20){
+               course_list_name += result[i].course_name.substring(0, 19)+"...";
               // document.write("cdsc")
             }else{
                 course_list_name += result[i].course_name;

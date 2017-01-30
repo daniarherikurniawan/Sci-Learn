@@ -9,7 +9,17 @@
         <a  href="/group/{{course.group_id._id}}" title="Group Courses ({{course.group_id.group_name}})" ><h4 style=" display: inline-block ;  margin-top: 18px; ">
         <i class=" material-icons" style="position: relative; font-size: 21px; top: 4px;">group</i> &nbsp;  <i class="fa fa-angle-left"></i> &nbsp;  
         </h4></a>
-        <a  href="/course/{{course._id}}" title="Course Name"><h4 style=" display: inline-block  ;  margin-top: 18px;"><b>{{course.course_name}}</b></h4></a>
+        <a  href="/course/{{course._id}}" title="{{course.course_name}}"><h4 style=" display: inline-block  ;  margin-top: 18px;"><b>
+        <script type="text/javascript">
+          var course_name = "{{course.course_name}}";
+            if(course_name.length >= 15){
+               document.write(course_name.substring(0, 14)+"...");
+              // ("cdsc")
+            }else{
+                document.write(course_name)
+            }
+        </script>
+        </b></h4></a>
       </div>
     {{# showCourseMaterial}}
       <div class="row">

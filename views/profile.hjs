@@ -1,3 +1,4 @@
+
   <!DOCTYPE html>
   <html lang="en" style="overflow: hidden;">
   <head>
@@ -15,6 +16,11 @@
         <link href="/stylesheets/styles.css" rel="stylesheet">
         <link rel="shortcut icon" type="image/png" href="/images/logo.jpg"/>
       </head>
+
+   <script type="text/javascript">
+     var user_name = "<%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>";
+     user_name = user_name.split(' ')
+   </script>   
       <body onload="updateOnlinePanel('<%profile._id%>')">
         <div class="wrapper">
           <div class="box">
@@ -61,17 +67,48 @@
                                   <h4 style="margin: 0px 0px 0px 0px; font-size: 21px; ">
 
                                   <a href="/profile/<%friendProfile.email%><%^friendProfile.name%><%profile.email%><%/friendProfile.name%>" > 
-                                  <b><%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%></b></a>  
-                                  <%#showFriends%>'s Connections<%/showFriends%>
+                                  
+                                    <b>
 
-                                  <%^showBadges%> <%^showBookmarks%> <%^showCourses%>  <%^ showGroups%> <%^showFriends%><%^showPerActivity%> <!-- Posts --><%/showPerActivity%> 
-                                  <%#showPerActivity%> <!-- Activities --><%/showPerActivity%><%/showFriends%><%/showGroups%> <%/showCourses%> <%/ showBookmarks%> <%/ showBadges%>
+                                    <%^showBadges%> <%^showBookmarks%> <%^showCourses%>  <%^ showGroups%> <%^showFriends%><%^showPerActivity%> 
+                                      <%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>
+                                      </b> 
+                                    <%/showPerActivity%> 
+                                  <%#showPerActivity%> 
+                                      <script type="text/javascript">
+                                        document.write(user_name[0]+"</b>'s Activities")
+                                      </script>
+                                  <%/showPerActivity%><%/showFriends%><%/showGroups%> <%/showCourses%> <%/ showBookmarks%> <%/ showBadges%>
+                                  
 
-                                  <%#showBadges%>'s Badges <%/ showBadges%>
-                                  <%#showGroups%>'s Groups<%/showGroups%> 
-                                  <%#showCourses%>'s Courses<%/showCourses%> 
-                                  <%#showBookmarks%>'s Bookmarks<%/showBookmarks%> 
+                                  <%#showFriends%>
+                                      <script type="text/javascript">
+                                        document.write(user_name[0]+"</b>'s Connections")
+                                      </script>
+                                  <%/showFriends%>
 
+                                  <%#showBadges%>
+                                      <script type="text/javascript">
+                                        document.write(user_name[0]+"</b>'s Badges")
+                                      </script>
+                                  <%/ showBadges%>
+                                  <%#showGroups%>
+                                      <script type="text/javascript">
+                                        document.write(user_name[0]+"</b>'s Groups")
+                                      </script>
+                                  <%/showGroups%> 
+                                  <%#showCourses%>
+                                      <script type="text/javascript">
+                                        document.write(user_name[0]+"</b>'s Courses")
+                                      </script>
+                                  <%/showCourses%> 
+                                  <%#showBookmarks%>
+                                      <script type="text/javascript">
+                                        document.write(user_name[0]+"</b>'s Bookmarks")
+                                      </script>
+                                  <%/showBookmarks%> 
+
+                                  </a> 
                                <%^showBadges%>
                                <%^ showBookmarks%>
                                <%^ showFriends %> 
