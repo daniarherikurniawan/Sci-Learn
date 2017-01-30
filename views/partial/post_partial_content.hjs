@@ -165,7 +165,7 @@
               </div>
 
               <div class="col-md-9 pull-right" style="width: 75%; padding: 0px">
-                <input type="text" name="{{_id}}" id="comment" style=" width: 80%;   margin: 1px 0px 0px 2px; float: right;margin-left:0px;"  class="form-control comment" placeholder="Give a quick comment.. (Press 'enter' when finished)">
+                <input type="text" name="{{_id}}" id="comment" style=" width: 70%;   margin: 1px 0px 0px 2px; float: right;margin-left:0px;"  class="form-control comment" placeholder="Leave a comment">
 
                 <a type="button" id ="iconLike{{_id}}" class="btn btn-default" 
                 title="{{#liked}}This post is already liked{{/liked}}{{^liked}}Like this post{{/liked}}" 

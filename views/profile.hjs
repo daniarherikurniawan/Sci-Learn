@@ -195,46 +195,52 @@
                          </div>
                          <div class="row" >
                             <div class="col-sm-12" style="padding: 0px 0px 0px 0px; margin-bottom:5px;     margin-top: -3px; border: #d6e7e8 1px solid;">
-                               <p style="height: 89px; padding: 5px;"  class="text-center list-group-item">
-                               <b><span  style = "font-size:30px"><%friendProfile.activeness%><%^friendProfile.name%><%profile.activeness%><%/friendProfile.name%></span></b>
-                               <br>
+                                <div class="row">
+                                   <p style=" padding: 5px;"  class="text-center list-group-item">
+                                   <b><span  style = "font-size:30px"><%friendProfile.activeness%><%^friendProfile.name%><%profile.activeness%><%/friendProfile.name%></span></b>
+                                </div>
 
+                                <div style="text-align:center;">
                                  <a type="button"  id="<%profile._id%>"
                                 href="/user/comment" 
-                                 class="btn btn-default-grey-border pull-right " 
+                                 class="btn btn-default-grey-border  " 
                                   title="Posts commented by <%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>" 
-                                  style="  <%#showComment%> background-color: #d6e7e8; <%/showComment%>" ><i  style="" class="fa fa-comments-o">
+                                  style="margin: 0px;  <%#showComment%> background-color: #d6e7e8; <%/showComment%>; 
+                                  width: 21%;" ><i  style="" class="fa fa-comments-o">
                                    <%friendProfile.id_commented_posts.length%><%^friendProfile.name%><%profile.id_commented_posts.length%><%/friendProfile.name%>  
                                   </i>
                                  </a>
 
                                  <a type="button"  id="<%profile._id%>"
                                 href="/user/like" 
-                                 class="btn btn-default-grey-border pull-right " 
+                                 class="btn btn-default-grey-border  " 
                                  title="Posts liked by <%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>" 
-                                  style="  <%#showLike%> background-color: #d6e7e8; <%/showLike%>" ><i  style="" class="fa fa-thumbs-up">
+                                  style="margin: 0px;  <%#showLike%> background-color: #d6e7e8; <%/showLike%>; 
+                                  width: 21%;" ><i  style="" class="fa fa-thumbs-up">
                                    <%friendProfile.id_liked_posts.length%><%^friendProfile.name%><%profile.id_liked_posts.length%><%/friendProfile.name%>
                                   </i>
                                  </a>
 
                                 <a type="button"  id="<%profile._id%>"
                                 href="/user/share" 
-                                 class="btn btn-default-grey-border pull-right " 
+                                 class="btn btn-default-grey-border  " 
                                   title="Posts shared by <%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>" 
-                                  style="  <%#showShare%> background-color: #d6e7e8; <%/showShare%>" ><i  style="" class="fa fa-share">
+                                  style="margin: 0px;  <%#showShare%> background-color: #d6e7e8; <%/showShare%>; 
+                                  width: 21%;" ><i  style="" class="fa fa-share">
                                    <%friendProfile.id_share_posts.length%><%^friendProfile.name%><%profile.id_share_posts.length%><%/friendProfile.name%>
                                   </i>
                                  </a>
 
                                  <a type="button"  id="<%profile._id%>"
                                  href="/user/post"
-                                 class="btn btn-default-grey-border pull-right " 
+                                 class="btn btn-default-grey-border  " 
                                   title="<%friendProfile.name%><%^friendProfile%><%profile.name%><%/friendProfile%>'s original posts" 
-                                  style="   <%#showPost%> background-color: #d6e7e8; <%/showPost%>" ><i  style="" class="fa fa-newspaper-o">
+                                  style="margin: 0px;   <%#showPost%> background-color: #d6e7e8; <%/showPost%>; 
+                                  width: 21%;" ><i  style="" class="fa fa-newspaper-o">
                                     <%friendProfile.id_user_posts.length%><%^friendProfile.name%><%profile.id_user_posts.length%><%/friendProfile.name%> 
                                   </i>
                                  </a>
-
+                                 </div>
                               </p>
                             </div>
                         </div>

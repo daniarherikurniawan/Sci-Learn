@@ -67,6 +67,29 @@ Promise.prototype = Object.create(MPromise.prototype, {
 });
 
 /*!
+ * ignore
+ */
+
+Promise.prototype.then = util.deprecate(Promise.prototype.then,
+  'Mongoose: mpromise (mongoose\'s default promise library) is deprecated, ' +
+  'plug in your own promise library instead: ' +
+  'http://mongoosejs.com/docs/promises.html');
+
+/**
+ * ES6-style `.catch()` shorthand
+ *
+ * @method catch
+ * @memberOf Promise
+ * @param {Function} onReject
+ * @return {Promise}
+ * @api public
+ */
+
+Promise.prototype.catch = function(onReject) {
+  return this.then(null, onReject);
+};
+
+/*!
  * Override event names for backward compatibility.
  */
 
@@ -235,7 +258,7 @@ Promise.prototype.addErrback = Promise.prototype.onReject;
  *       var ids = meetups.map(function (m) {
  *         return m._id;
  *       });
- *       return People.find({ meetups: { $in: ids }).exec();
+ *       return People.find({ meetups: { $in: ids } }).exec();
  *     }).then(function (people) {
  *       if (people.length < 10000) {
  *         throw new Error('Too few people!!!');

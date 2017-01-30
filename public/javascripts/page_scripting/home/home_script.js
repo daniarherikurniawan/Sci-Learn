@@ -6,6 +6,17 @@ $(function(){
   }
 });
 
+var is_OSX = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
+var is_iOS = navigator.platform.match(/(iPhone|iPod|iPad)/i) ? true : false;
+var is_Mac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+var is_iPhone = navigator.platform == "iPhone";
+var is_iPod = navigator.platform == "iPod";
+var is_iPad = navigator.platform == "iPad";
+
+if(is_Mac){
+    $('div#middle-display').attr('style', 'padding-right: 11px; padding-left:0px;');
+}
+
 (function($) {
     $.fn.hasScrollBar = function() {
         return this.get(0).scrollHeight > this.height();

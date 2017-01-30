@@ -61,9 +61,18 @@ isMyOwnGroup = profile_id == current_profile_id;
 		$(function(){
  			 // alert($('div#main').hasScrollBar())
 		  if(!$('div#main').hasScrollBar()){
-
 		    $('div#middle-display').attr('style', 'padding-right: 11px; padding-left:0px;');
 		  }
+      var is_OSX = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
+      var is_iOS = navigator.platform.match(/(iPhone|iPod|iPad)/i) ? true : false;
+      var is_Mac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+      var is_iPhone = navigator.platform == "iPhone";
+      var is_iPod = navigator.platform == "iPod";
+      var is_iPad = navigator.platform == "iPad";
+
+      if(is_Mac){
+          $('div#middle-display').attr('style', 'padding-right: 11px; padding-left:0px;');
+      }
 		});
 
       }

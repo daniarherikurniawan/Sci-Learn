@@ -56,7 +56,7 @@
                       <b>Popular Posts</b>
                      </div>
                      <%/isPopularPostPage%>
-
+                     
                      <%^isReccPostPage%>
                       <%^isPopularPostPage%>
                        <form action="/addPost" method="post" class="form-horizontal" role="form">

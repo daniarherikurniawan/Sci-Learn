@@ -143,6 +143,7 @@ module.exports = {
 					if (err){
 						return res.send(500, { error: err });
 					}else{
+
 						im.crop({
 						  srcPath: img.path,
 						  dstPath: 'public/images/'+req.session.profile.email+"/profile/"+img.originalFilename,
