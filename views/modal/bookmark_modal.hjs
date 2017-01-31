@@ -20,8 +20,8 @@
            <span id="exist_personal_post_bookmark_notes" style="word-wrap: break-word;    white-space: normal; "></span>
         </div>
          <div class="row" style="    margin: 10px 0px 0px 0px">
-           <input onclick="openBookmarkPersonalPost()"  id="" class="btn btn-primary pull-right" style="width: 24%;" value="Open Bookmark">
-           <input onclick="removePersonalPostBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
+           <input onclick="openBookmarkPersonalPost()"  id="" class="btn btn-primary pull-right" style="width: 31%;" value="Open Bookmark">
+           <input onclick="removePersonalPostBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 31%;" value="Remove Bookmark" >
         </div>
       </div>
       <div id="personal_post_ready_to_bookmark"  style="display: none">
@@ -59,8 +59,8 @@
            <span id="exist_course_material_bookmark_notes" style="word-wrap: break-word;    white-space: normal; "></span>
         </div>
          <div class="row" style="    margin: 10px 0px 0px 0px">
-           <input onclick="openBookmarkCourseMaterial()"  id="" class="btn btn-primary pull-right" style="width: 24%;" value="Open Bookmark">
-           <input onclick="removeCourseMaterialBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
+           <input onclick="openBookmarkCourseMaterial()"  id="" class="btn btn-primary pull-right" style="width: 31%;" value="Open Bookmark">
+           <input onclick="removeCourseMaterialBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 31%;" value="Remove Bookmark" >
         </div>
       </div>
       <div id="course_material_ready_to_bookmark"  style="display: none">
@@ -98,8 +98,8 @@
            <span id="exist_group_post_bookmark_notes" style="word-wrap: break-word;    white-space: normal; "></span>
         </div>
          <div class="row" style="    margin: 10px 0px 0px 0px">
-           <input onclick="openBookmarkGroupPost()"  id="" class="btn btn-primary pull-right" style="width: 24%;" value="Open Bookmark">
-           <input onclick="removeGroupPostBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 27%;" value="Remove Bookmark" >
+           <input onclick="openBookmarkGroupPost()"  id="" class="btn btn-primary pull-right" style="width: 31%;" value="Open Bookmark">
+           <input onclick="removeGroupPostBookmark()" class="btn btn-default pull-right modal-button cancel-button" style="width: 31%;" value="Remove Bookmark" >
         </div>
       </div>
       <div id="group_post_ready_to_bookmark"  style="display: none !important">
