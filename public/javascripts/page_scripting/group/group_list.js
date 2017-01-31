@@ -71,7 +71,7 @@ isMyOwnGroup = profile_id == current_profile_id;
       var is_iPad = navigator.platform == "iPad";
 
       if(is_Mac){
-          $('div#middle-display').attr('style', 'padding-right: 11px; padding-left:0px;');
+          $('div#middle-display').attr('style', 'padding-right: 10px; padding-left:0px;');
       }
 		});
 
