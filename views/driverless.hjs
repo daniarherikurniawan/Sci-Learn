@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<style type="text/css">
+	.dot{
+    position:absolute;
+    top:0;
+    left:0;
+    width:50px;
+    height:50px;
+    background:red;
+    border-radius:50%;
+}
+.sun{
+    width:200px;
+    height:200px;
+    position:absolute;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-name:orbit;
+    -webkit-animation-duration:5s;
+    top:100px;
+    left:50px;
+}
+
+@-webkit-keyframes orbit { 
+from { -webkit-transform:rotate(0deg) } 
+to { -webkit-transform:rotate(360deg) } }
+
+</style>
+<script type="text/javascript">
+	var street = '<%street%>';
+	var speed = '<%speed%>';
+</script>
+<html lang="en" style="overflow: hidden;">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Driverless UI</title>
+  <meta name="generator" content="Bootply" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet"> 
+      <script src="/javascripts/others/two.js"></script>
+      <script src="/javascripts/jquery/jquery.min.js"></script>
+      <script src="/javascripts/bootstrap/bootstrap.min.js"></script>
+      <script src="/javascripts/socket.io/socket.io.js"></script>
+      <script src="/javascripts/common/common.js"></script>
+      <link href="/stylesheets/styles.css" rel="stylesheet">
+      <link rel="shortcut icon" type="image/png" href="/images/logo.jpg"/>
+    </head>
+    <body>
+    	<br>
+    	<div style="text-align: center;">
+			<!-- <h4><% title %></h4> -->
+			<br>
+		</div>
+		<br>
+        <div class="row col-sm-3" style="padding:0px 0px"></div>
+
+        <div class="row col-sm-6" style="padding:0px 0px">
+        	<div class="row col-sm-12" id="track" style="height: 400px;">
+				<canvas id="c" width="960" height="502" style="    margin-left: -13px;" />
+			</div>
+        	<br>
+	         <div   method="" class="col-sm-12">
+			      <br>
+			      <div class="col-sm-2" ></div>
+		          <div class="col-sm-9" >
+		              <div class="row" style=" margin-top: 0px;">
+						<div class="row" style="margin-bottom: 4px;" >
+				          <div class="col-sm-3" >
+				            <h5>Jenis Jalan</h5>
+				          </div>
+				          <div class="col-sm-3" style="padding-right: 0px; padding-left: 0px;">
+		                    <select class="form-control" id="streetMenu">
+		                    	<script type="text/javascript">
+		                    		if(street == 'a'){
+		                      			document.write("<option id=\"a\" selected=\"selected\">Berpasir</option>");
+		                      			document.write("<option id=\"b\" >Beraspal</option>");
+		                    		}else if(street == 'b'){
+		                      			document.write("<option id=\"a\" >Berpasir</option>");
+		                      			document.write("<option id=\"b\"  selected=\"selected\">Beraspal</option>");
+		                    		}
+		                    	</script>
+		                    </select>
+				          </div>
+				          <div class="col-sm-1"></div>
+				          <div class="col-sm-2" >
+				            <h5>Torsi</h5>
+				          </div>
+				          <div class="col-sm-2" style="padding-right: 0px; padding-left: 0px;">
+				            <h5>23</h5>
+				          </div>
+				        </div>
+				        
+				        <div class="row" style="margin-bottom: 4px;" >
+				          <div class="col-sm-3" >
+				            <h5>Kecepatan</h5>
+				          </div>
+				          <div class="col-sm-3" style="padding-right: 0px; padding-left: 0px;">
+		                    <select class="form-control" id="speedMenu">
+		                    	<script type="text/javascript">
+		                    		if(speed == 1){
+		                      			document.write("<option id=\"1\"  selected=\"selected\">0 kmph</option>");
+		                      			document.write("<option id=\"2\" >10 kmph</option>");
+		                      			document.write("<option id=\"3\" >20 kmph</option>");
+		                      			document.write("<option id=\"4\" >30 kmph</option>");
+		                      			document.write("<option id=\"5\" >40 kmph</option>");
+		                    		}else if(speed == 2){
+		                      			document.write("<option id=\"1\" >1. 0 kmph</option>");
+		                      			document.write("<option id=\"2\"  selected=\"selected\">10 kmph</option>");
+		                      			document.write("<option id=\"3\" >20 kmph</option>");
+		                      			document.write("<option id=\"4\" >30 kmph</option>");
+		                      			document.write("<option id=\"5\" >40 kmph</option>");
+		                    		}else if(speed == '3'){
+		                      			document.write("<option id=\"1\" >0 kmph</option>");
+		                      			document.write("<option id=\"2\" >10 kmph</option>");
+		                      			document.write("<option id=\"3\"  selected=\"selected\">20 kmph</option>");
+		                      			document.write("<option id=\"4\" >30 kmph</option>");
+		                      			document.write("<option id=\"5\" >40 kmph</option>");
+		                    		}else if(speed == '4'){
+		                      			document.write("<option id=\"1\" >0 kmph</option>");
+		                      			document.write("<option id=\"2\" >10 kmph</option>");
+		                      			document.write("<option id=\"3\" >20 kmph</option>");
+		                      			document.write("<option id=\"4\"  selected=\"selected\">30 kmph</option>");
+		                      			document.write("<option id=\"5\" >40 kmph</option>");
+		                    		}else if(speed == '5'){
+		                      			document.write("<option id=\"1\" >0 kmph</option>");
+		                      			document.write("<option id=\"2\" >10 kmph</option>");
+		                      			document.write("<option id=\"3\" >20 kmph</option>");
+		                      			document.write("<option id=\"4\" >30 kmph</option>");
+		                      			document.write("<option id=\"5\"  selected=\"selected\">40 kmph</option>");
+		                    		}
+
+		                    	</script>
+		                    </select>
+				          </div>
+				          <div class="col-sm-1"></div>
+				          <div class="col-sm-2" >
+				            <h5>Arus</h5>
+				          </div>
+				          <div class="col-sm-2" style="padding-right: 0px; padding-left: 0px;">
+				            <h5>23</h5>
+				          </div>
+				        </div>
+				       </div>
+				       <br>
+				       <div class="col-sm-12" style="text-align: center">
+							<button class="btn btn-primary" onclick="apply()">Apply</button>	
+							<button class="btn btn-success" onclick="play()">Start</button>
+						<button class="btn btn-warning" onclick="location.reload()">Stop</button>
+				       </div>
+				  </div>
+			</div>
+
+		</div>
+        <div class="row col-sm-3" style="padding:0px 0px"></div>
+ 	</body>
+
+</html>
+
+<script type="text/javascript">
+function sendSpeedToArduino(){
+	var i = 1; 
+	while(true){
+		if(time.now(minute)%2 == 0){
+			changeSpeed(i*10);
+			i++;
+		}
+		if(i == 4)
+			i = 1;
+		//generate grafik kecpatam
+	}
+}
+
+function changeSpeed(speed){
+	var http = new XMLHttpRequest();
+  	http.open("POST", "/driverless/setSpeed", true);
+ // alert()
+    http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    var params = "speed=" + window.encodeURIComponent(speed);
+    http.send((params));
+    http.onload = function() {
+      if(http.responseText=="404"){
+        //error
+        // alert(http.responseText);
+      }else{
+        // alert(http.responseText);
+      }
+    }
+    return false;
+}
+//======================================================================================
+
+
+var c2 = document.getElementById('c').getContext('2d');
+c2.beginPath();
+c2.arc(802, 322, 50, 1.5*Math.PI, 0.5*Math.PI);
+c2.lineTo(160, 372);
+c2.arc(160, 322, 50, 0.5*Math.PI, 1*Math.PI);
+c2.lineTo(110, 122);
+c2.arc(160, 122, 50, 1*Math.PI, 1.5*Math.PI);
+c2.lineTo(802, 72);
+c2.arc(802, 122, 50, 1.5*Math.PI, 0.5*Math.PI);
+c2.arc(248, 222, 50, 1.5*Math.PI, 0.5*Math.PI, true);
+c2.lineTo(802, 272);
+c2.lineWidth = 5;
+c2.strokeStyle = '#550000';
+c2.stroke();
+
+
+
+	var el = document.getElementById("track"),
+    two = new Two({ 
+        fullscreen: true
+    });
+ 
+	two.appendTo(el);
+
+	var earthAngle = -90,
+	    moonAngle  = 0,
+	    distance   = 30,
+	    radius     = 15,
+	    padding    = 100,
+	    orbit      = 50,
+	    offset     = orbit + padding,
+	    orbits     = two.makeGroup();
+
+
+	function getPositions(angle, orbit) {
+	    return {
+	        x: Math.cos(angle * Math.PI / 180) * orbit,
+	        y: Math.sin(angle * Math.PI / 180) * orbit
+	    };
+	}
+	var pos = getPositions(earthAngle++, orbit),
+	earth = two.makeCircle(pos.x + offset + 1130, pos.y + offset + 230, radius);
+	turnClock = true;
+	earth.stroke = "#123456";
+	earth.linewidth = 4;
+	earth.fill = "#194878";
+	var periode = 0;
+	var lap = 0;
+	var maxLap = 2;
+
+	// two.makeRectangle(pos.x + offset + 1130, pos.y + offset + 230, 40, 20);
+	two.update();
+	updateLap = false;
+	// speed --;
+two.bind("update", function (frameCount) {
+	if(lap <= maxLap){
+		periode = (frameCount% (3304/speed));
+
+		if(periode < 100 && !updateLap){
+			// alert('cdccd')
+			lap++;
+			updateLap = true;
+		}
+
+    	if(periode <= 180/speed){
+    		for (var i = 1; i < speed; i++) {
+    			earthAngle++;
+    		}
+    		var pos = getPositions(earthAngle++, orbit);
+	    	earth.translation.x = pos.x + offset + 1130	;
+	    	earth.translation.y = pos.y + offset + 230;
+	    	if (periode <= 180/speed/2){
+	    		console.log('r')
+	    		TurnRight()
+	    	}else{
+	    		console.log('l')
+	    		TurnLeft()
+	    	}
+    	}else if (periode <= 820/speed){
+    		for (var i = 1; i < speed; i++) {
+	    		earth.translation.x--;
+    		}
+	    	earth.translation.x--;
+    	}else if (periode <= 910/speed){
+    		for (var i = 1; i < speed; i++) {
+    			earthAngle++;
+    		}
+    		var pos = getPositions(earthAngle++, orbit);
+	    	earth.translation.x = pos.x + offset + 491;
+	    	earth.translation.y = pos.y + offset + 230;
+	    	if (periode <= (910-45)/speed){
+	    		console.log('r')
+	    		TurnRight()
+	    	}else{
+	    		console.log('l')
+	    		TurnLeft()
+	    	}
+    	} else if (periode <= (1108) / speed){
+    		for (var i = 1; i < speed; i++) {
+	    		earth.translation.y--;
+    		}
+	    	earth.translation.y--;
+    	} else if (periode <= (1198 )/ speed){
+    		for (var i = 1; i < speed; i++) {
+    			earthAngle++;
+    		}
+    		var pos = getPositions(earthAngle++, orbit);
+	    	earth.translation.x = pos.x + offset + 491;
+	    	earth.translation.y = pos.y + offset + 33;
+	    	if (periode <= (1198-45)/speed){
+	    		console.log('r')
+	    		TurnRight()
+	    	}else{
+	    		console.log('l')
+	    		TurnLeft()
+	    	}
+    	} else if (periode <= (1838)/speed){
+    		for (var i = 1; i < speed; i++) {
+	    		earth.translation.x++;
+    		}
+	    	earth.translation.x++;
+    	} else if (periode <= (2018)/speed){
+    		for (var i = 1; i < speed; i++) {
+    			earthAngle++;
+    		}
+    		var pos = getPositions(earthAngle++, orbit);
+	    	earth.translation.x = pos.x + offset + 1130;
+	    	earth.translation.y = pos.y + offset + 33;
+	    	if (periode <= (2018-90)/speed){
+	    		console.log('r')
+	    		TurnRight()
+	    	}else{
+	    		console.log('l')
+	    		TurnLeft()
+	    	}
+    	} else if (periode <= (2570) / speed ){
+    		for (var i = 1; i < speed; i++) {
+	    		earth.translation.x--;
+    		}
+	    	earth.translation.x--;
+    	} else if (periode <= (2750 ) / speed) {
+    		if (turnClock) {
+				earthAngle -= 180;
+				turnClock = false;
+    		}
+    		for (var i = 1; i < speed; i++) {
+    			earthAngle--;
+    		}
+    		var pos = getPositions(earthAngle--, orbit);
+	    	earth.translation.x = pos.x + offset + 579;
+	    	earth.translation.y = pos.y + offset + 133;
+	    	if (periode <= (2750-90)/speed){
+	    		console.log('l')
+	    		TurnLeft()
+	    	}else{
+	    		console.log('r')
+	    		TurnRight()
+	    	}
+    	} else if (periode < (3224 +80)/speed){
+    		for (var i = 1; i < speed; i++) {
+	    		earth.translation.x++;
+    		}
+	    	earth.translation.x++;
+
+    		if (turnClock == false) {
+				earthAngle -= 180;
+				turnClock = true;
+				updateLap = false;
+    		}
+    	} 
+    }else{
+    	location.reload();
+    }
+});
+		// two.play();
+
+	function play(){
+		if(speed == '1')
+			alert('Mobil tidak memiliki kecepatan!')
+		else
+			two.play();
+	}
+
+	function apply(){
+		var selectedStreet = $('#streetMenu').find(":selected").attr("id");
+		var selectedSpeed = $('#speedMenu').find(":selected").attr("id");
+		window.location.href = ('http://localhost:8000/driverless/'+selectedStreet+'/'+selectedSpeed)
+	}
+	function TurnLeft(){
+	    var http = new XMLHttpRequest();
+      	http.open("POST", "/driverless/TurnLeft", true);
+     // alert()
+	    http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	    var params = "port=" + window.encodeURIComponent($('#port').val());
+	    http.send((params));
+	    http.onload = function() {
+	      if(http.responseText=="404"){
+	        //error
+	        // alert(http.responseText);
+	      }else{
+	        // alert(http.responseText);
+	      }
+	    }
+	    return false;
+	}
+
+	function setSpeed(){
+	    var http = new XMLHttpRequest();
+      	http.open("POST", "/driverless/setSpeed", true);
+     // alert()
+	    http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	    var params = "port=" + window.encodeURIComponent($('#port').val());
+	    http.send((params));
+	    http.onload = function() {
+	      if(http.responseText=="404"){
+	        //error
+	        // alert(http.responseText);
+	      }else{
+	        // alert(http.responseText);
+	      }
+	    }
+	    return false;
+	}
+
+	function TurnRight(){
+	    var http = new XMLHttpRequest();
+      	http.open("POST", "/driverless/TurnRight", true);
+
+	    http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	    var params = "port=" + window.encodeURIComponent($('#port').val());
+	    http.send((params));
+	    http.onload = function() {
+	      if(http.responseText=="404"){
+	        //error
+	        // alert(http.responseText);
+	      }else{
+	        // alert(http.responseText);
+	      }
+	    }
+	    return false;
+	}
+
+
+
+</script>
