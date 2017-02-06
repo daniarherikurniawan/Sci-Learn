@@ -43,19 +43,24 @@ isMyOwnGroup = profile_id == current_profile_id;
             group_list_name +="</a> ";
         	}
         }
-        // alert()
+        // Search Group
+        document.getElementById('group_list').innerHTML = " <input id=\"search-public-group\" type=\"text\" autocomplete=\"off\" style=\"width: 100% ;"+
+            "height: 30px; margin-bottom:10px\" class=\"form-control\" placeholder=\"Find any public group..\" name=\"search_term_public_group\" id=\"srch-term-public-group\">";
+
+
+
         if(result.length  == 8){
    			document.getElementById('show-all-groups').innerHTML = "<a href='/groups/"+profile_id+"'>See all groups</a>"     	
         }else{
         	$('#show-all-groups').attr('style', '')
         	if(result.length == 0){
         		if (isMyOwnGroup)
-   					document.getElementById('show-all-groups').innerHTML = "You haven't joined to any group!"  
+   					document.getElementById('show-all-groups').innerHTML += "You haven't joined to any group!"  
    				else
-   					document.getElementById('show-all-groups').innerHTML = "There is no public group to display!"  
+   					document.getElementById('show-all-groups').innerHTML += "There is no public group to display!"  
         	}
         }
-        document.getElementById('group_list').innerHTML = group_list_name;
+        document.getElementById('group_list').innerHTML += group_list_name;
 
 
 		$(function(){
@@ -76,6 +81,17 @@ isMyOwnGroup = profile_id == current_profile_id;
 		});
 
       }
+
+    $('input#search-public-group').on('keyup', function(e) {
+        if (e.which == 13 && ! e.shiftKey) {
+          var id = this.name;
+          var search_term = $(this).val();
+          if (search_term.length > 0){
+            window.location.href= "/group/search/"+search_term;
+          }
+        }
+      });
+
     }
   }
 

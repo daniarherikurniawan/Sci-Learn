@@ -44,7 +44,12 @@ isMyOwnCourse = profile_id == current_profile_id;
             course_list_name +="</a> ";
           }
         }
-        // alert()
+
+        // Search Course
+        // alert("cdsc")
+        document.getElementById('enrolled_courses_list').innerHTML = " <input id=\"search-public-course\" type=\"text\" autocomplete=\"off\" style=\"width: 100% ;"+
+            "height: 30px; margin-bottom:10px\" class=\"form-control\" placeholder=\"Find any public course..\" name=\"search_term_public_course\" id=\"srch-term-public-course\">";
+
         if(result.length  == 8){
    			document.getElementById('show-all-courses').innerHTML = "<a href='/courses/"+profile_id+"'>See all courses</a>"     	
         }else{
@@ -58,8 +63,20 @@ isMyOwnCourse = profile_id == current_profile_id;
               document.getElementById('show-all-courses').innerHTML = "There is no public course to display!"  
         	}
         }
-        document.getElementById('enrolled_courses_list').innerHTML = course_list_name;
+        document.getElementById('enrolled_courses_list').innerHTML += course_list_name;
 
       }
+
+
+    $('input#search-public-course').on('keyup', function(e) {
+        if (e.which == 13 && ! e.shiftKey) {
+          var id = this.name;
+          var search_term = $(this).val();
+          if (search_term.length > 0){
+            window.location.href= "/course/search/"+search_term;
+          }
+        }
+      });
+
     }
   }

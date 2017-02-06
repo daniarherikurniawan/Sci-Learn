@@ -30,6 +30,83 @@ function deleteItemInArray(item, array){
 }
 
 module.exports = {
+	join: function (req, course_id, res){
+		var idForSearch = req.session.profile.courses.slice();
+		Course.object.findOne({
+				$and: [
+					{_id: course_id},
+					{ course_accessibility: 'Public Course'},
+					{_id: {$nin : idForSearch}}
+				]
+			})
+			.select('group_id course_students')
+			.exec( function(err, data_course){
+				// console.log(data_course)
+				if(err || data_course == null){
+					console.log(err)
+					response.setFailedResponse(res, "failed");
+				}else{
+					data_course.course_students.push(req.session.profile._id)
+					data_course.save()
+
+					User.object.findById(req.session.profile._id)
+						.select('courses groups')
+						.exec(function (err,data_user){
+							data_user.courses.push(data_course._id);
+							data_user.groups.push(data_course.group_id);
+							data_user.save();
+							req.session.profile.courses = data_user.courses;
+							response.setSucceededResponse(res, {'course_id':data_course._id});
+						});
+				}
+			});
+	},
+
+	searchPublicCourse: function(req, res){
+		search_term = req.params.search_term;
+			limit = 8;
+
+			var idForSearch = req.session.profile.courses.slice();
+
+			Course.object.find({
+					$and: [
+						{ course_name: new RegExp(search_term, "i")},
+						{ course_accessibility: 'Public Course'},
+						{_id: {$nin : idForSearch}}
+					]
+				})
+				.select('group_id course_name course_info img_cover_name course_accessibility course_students course_instructors date_created')
+				.populate({
+					path:'course_instructors',
+					select:'name email img_profile_name',
+					options: {
+				    	// limit: 7
+				    }
+				})
+				.exec( function(err, list_course_detail){
+					if(err){
+						console.log(err);
+						res.send("404");
+					}else{
+						for (var i = list_course_detail.length - 1; i >= 0; i--) {
+							if(list_course_detail[i].course_instructors.length > 7){
+								list_course_detail[i].course_instructors.splice(7, list_course_detail[i].course_instructors.length-7)
+							}
+						}
+
+						res.render('search', {profile: req.session.profile, numOfPost : 0,
+							posts: [], numOfLastPage : 0, search_public_course : true,
+				 			limitPerPage:100, list_course_detail: list_course_detail,
+							rec_topic : req.session.rec_topic, search_term: search_term,
+							popular_topic: req.session.popular_topic, setting: req.session.setting,
+							numOfCurrPage : 0, setting: req.session.setting,
+						partials: {list_course_enrolled:'partial/list_course_enrolled', rightSide:'partial/rightSide', list_user:'partial/list_user',
+						create_group_modal: 'modal/create_group_modal', list_course_detail:'partial/course/list_course_detail',
+						list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});
+					}
+				});
+	},
+
     get_list_course: function(user_id, isMyCourses, res){
 		if(!isMyCourses)
 			match = {'course_accessibility':'Public Course'}

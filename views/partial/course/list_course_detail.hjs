@@ -1,3 +1,4 @@
+{{^ search_public_course }}
 <div class="row">
   <div class="col-md-11">
     <input id="search-within-own-course" type="text" autocomplete="off" style="width: 100%; border-color: #d6e7e8; margin: -6px 0 8px 2px;" class="form-control" value="{{search_term_for_course}}" placeholder="Find course by name.." name="search_term_for_joined_group" id="search_term_for_joined_group" autofocus>
@@ -10,6 +11,7 @@
     <button id="search-within-own-course" class="btn btn-default" style=" border-color: #d6e7e8;   margin: -6px;" ><i class="glyphicon glyphicon-search"></i></button>
   </div>
 </div>
+{{/ search_public_course }}
 
 {{# list_course_detail }}
 
@@ -29,6 +31,12 @@
 
       width:256px; position: absolute;left: 25%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  
       -moz-transform: translateY(-50%) translateX(-50%) ;">
+        {{# search_public_course }}
+            <button class="btn btn-default-blue pull-right" 
+            style="position: absolute; bottom: 10px; right: 10px;" 
+            title ="Click to join this course!"
+            onclick="joinCourse('{{_id}}')"><i style="" class="glyphicon glyphicon-plus "></i>&nbspJoin</button> 
+        {{/ search_public_course }}
     </div>
 
 
@@ -68,15 +76,40 @@
             {{# course_instructors}}
                <div style=" display:inline-block;     margin: 0px 1px 1px 0px;">
                 <a  href="/profile/{{email}}"">
-                  <img style="width:35px; margin:1px " title="{{name}} (Instructor)" src="/images/{{email}}/profile/{{img_profile_name}}"> </div>
+                  <img style="width:35px; margin:1px " title="{{name}} (Instructor)" src="/images/{{email}}/profile/{{img_profile_name}}"> 
                 </a>
+                </div>
             {{/ course_instructors}}
          </div>
       </div>
       </div>
+
+      <!-- <div class="col-sm-2"> -->
+      <!-- </div> -->
 
     </div> <!-- row -->
     </div>
 {{/ list_course_detail }}
 <script src="/javascripts/page_scripting/course/list_course_detail.js"></script>
 <script src="/javascripts/page_scripting/course/find_within_own_course.js"></script>
+
+<script type="text/javascript">
+  function joinCourse(course_id){
+    var http = new XMLHttpRequest();
+    http.open("POST", "/course/join", true);
+    http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    var params = "course_id=" + window.encodeURIComponent(course_id);
+    http.send((params));
+
+    http.onload = function() {
+      result = JSON.parse(http.responseText);
+      if(http.responseText=="404" || result.status == 0){
+        alert(http.responseText);
+      }else {
+        location.reload();
+        // alert(http.responseText);
+      }
+    }
+  }
+        // location.reload();
+</script>

@@ -18,6 +18,7 @@ var page_list_groups_cont = require('../controller/base/paging/page_list_groups_
 var page_list_courses_cont = require('../controller/base/paging/page_list_courses_cont');
 var page_bookmarks_cont = require('../controller/base/paging/page_bookmarks_cont');
 var page_badges_cont = require('../controller/base/paging/page_badges_cont');
+var driverless_cont = require('../controller/test/driverless_cont');
 
 // /* GET home page. */     sdsdc
 router.get('/', function(req, res, next) {
@@ -27,6 +28,45 @@ router.get('/', function(req, res, next) {
 		res.redirect('/login');
 	}
 });
+
+//==================================================================
+// /* GET home page. */     sdsdc
+router.get('/driverless', function(req, res, next) {
+	// driverless_cont.setStreet('b')
+	// driverless_cont.setSpeed(3)
+	res.render('driverless');
+});
+
+// /* POST home page. */     used
+router.post('/driverless/setSpeed', function(req, res, next) {
+	driverless_cont.setSpeed(req.params.speed);
+	// res.send('success')
+});
+//==================================================================
+
+// /* GET home page. */     sdsdc
+router.get('/driverless/:street/:speed', function(req, res, next) {
+	driverless_cont.setStreet(req.params.street)
+	driverless_cont.setSpeed(req.params.speed)
+	res.render('driverless', {title: "Driverless UI", street: req.params.street, speed: req.params.speed});
+});
+
+// /* POST home page. */     sdsdc
+router.post('/driverless/getUpdate', function(req, res, next) {
+	driverless_cont.getUpdate(res);
+});
+
+// /* POST home page. */     sdsdc
+router.post('/driverless/TurnLeft', function(req, res, next) {
+	driverless_cont.turnLeft(req, res);
+});
+
+
+// /* POST home page. */     sdsdc
+router.post('/driverless/TurnRight', function(req, res, next) {
+	driverless_cont.turnRight(req, res);
+});
+
 
 /* GET login page. */
 router.get('/login', function(req, res, next) {

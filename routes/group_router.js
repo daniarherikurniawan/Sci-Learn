@@ -15,6 +15,24 @@ router.post('/createNewGroup', function(req, res, next) {
 	}
 });
 
+/* POST saving post. */
+router.get('/search/:search_term', function(req, res) {
+	if(req.session.profile != null){
+		group_cont.searchPublicGroup(req, res);
+	}else{
+		res.send('Sorry, you cannot search any group!');
+	}
+});
+
+/* POST home page. */
+router.post('/join', function(req, res, next) {
+	if(req.session.profile!=null){	
+		group_cont.join(req, req.body.group_id, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
 /* POST home page. */
 router.post('/getList', function(req, res, next) {
 	if(req.session.profile!=null){	

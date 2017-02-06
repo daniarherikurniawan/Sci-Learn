@@ -5,6 +5,7 @@ $('input#search-connection').on('focusout', function(e) {
 	}, delay);
 });
 $('input#search-connection').on('keyup', function(e) {
+	// alert('cdsc')
     var http = new XMLHttpRequest();
     http.open("POST", "/connections/searchNewConnection", true);
     http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -31,6 +32,5 @@ $('input#search-connection').on('keyup', function(e) {
 	        document.getElementById('search-connection-result').innerHTML =html_search_result;
     	}
     }
-    
   });
 

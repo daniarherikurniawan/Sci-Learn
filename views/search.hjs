@@ -49,25 +49,50 @@
                    <div class="col-sm-6 middle_display" style="padding-left:0px; padding-right:0px;">
 
                      <!-- <div class="well" style="padding: 15px; margin-bottom: 15px;">  -->
+
+                <%^ search_public_course %>
+                <%^ search_public_group %>
                      <div class="panel panel-default">
                       <div  class="panel-heading">
                         <b id="messageStatus" >   </b>
                       </div>
                      </div>
-                      
-                 <%> list_user %>
-
-              <div class="text-center">
+                    <%> list_user %>
+                    <div class="text-center">
                 
-                <div class="row" >
-                  <ul class="pagination" id="pagination">
-                  </ul>
-                </div>
-                <div id="statePage">
-                  No Result!
-                </div>
-                <!-- <hr> -->
-              </div>
+                    <div class="row" >
+                      <ul class="pagination" id="pagination">
+                      </ul>
+                    </div>
+                    <div id="statePage">
+                      No Result!
+                    </div>
+                    <!-- <hr> -->
+                  </div>
+                <%/ search_public_group %>
+                <%/ search_public_course %>
+
+                <%# search_public_group %>
+
+                 <div class="panel panel-default">
+                  <div  class="panel-heading">
+                    <b> Found <% list_group_detail.length %> public groups using keyword: "<% search_term %>" </b>
+                  </div>
+                 </div>
+                 <%> list_group_detail %>
+                <%/ search_public_group %>
+              
+
+                <%# search_public_course %>
+
+                 <div class="panel panel-default">
+                  <div  class="panel-heading">
+                    <b> Found <% list_course_detail.length %> public courses using keyword: "<% search_term %>" </b>
+                  </div>
+                 </div>
+                 <%> list_course_detail %>
+                <%/ search_public_course %>
+
 
             </div>
             <div id="rightSideBar" class="col-sm-3 rightside " style="overflow:auto">

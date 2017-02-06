@@ -42,8 +42,12 @@ module.exports = {
 								}
 								if(req.session.dataCurrentProfile == undefined)
 									req.session.dataCurrentProfile = req.session.profile;
+								
+								if(req.session.profile.connections != undefined)
+									myFriend = (req.session.profile.connections.slice().indexOf(""+req.session.dataCurrentProfile._id) != -1);
+								else
+									myFriend = false;
 
-								myFriend = (req.session.profile.connections.slice().indexOf(""+req.session.dataCurrentProfile._id) != -1);
 								friendProfile = req.session.dataCurrentProfile
 
 								// my profile

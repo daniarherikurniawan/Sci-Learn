@@ -29,6 +29,83 @@ function deleteItemInArray(item, array){
 }
 
 module.exports = {
+	join: function (req, group_id, res){
+		var idForSearch = req.session.profile.groups.slice();
+		Group.object.findOne({
+				$and: [
+					{_id: group_id},
+					{ group_accessibility: 'Public Group'},
+					{_id: {$nin : idForSearch}}
+				]
+			})
+			.select('group_members')
+			.exec( function(err, data_group){
+				// console.log(data_course)
+				if(err || data_group == null){
+					console.log(err)
+					response.setFailedResponse(res, "failed");
+				}else{
+					data_group.group_members.push(req.session.profile._id)
+					data_group.save()
+
+					User.object.findById(req.session.profile._id)
+						.select('groups')
+						.exec(function (err,data_user){
+							data_user.groups.push(data_group._id);
+							data_user.save();
+							req.session.profile.groups = data_user.groups;
+							response.setSucceededResponse(res, {'group_id':data_group._id});
+						});
+				}
+			});
+	},
+
+	searchPublicGroup: function(req, res){
+		search_term = req.params.search_term;
+		
+			limit = 8;
+
+			var idForSearch = req.session.profile.groups.slice();
+
+			Group.object.find({
+					$and: [
+						{ group_name: new RegExp(search_term, "i")},
+						{ group_accessibility: 'Public Group'},
+						{_id: {$nin : idForSearch}}
+					]
+				})
+				.select('-group_posts')
+				.populate({
+					path:'group_members',
+					select:'name email img_profile_name',
+					options: {
+				    	// limit: 7
+				    }
+				})
+				.exec( function(err, list_group_detail){
+					if(err){
+						console.log(err);
+						res.send("404");
+					}else{
+						for (var i = list_group_detail.length - 1; i >= 0; i--) {
+							list_group_detail[i].numberOfMember = list_group_detail[i].group_members.length;
+							if(list_group_detail[i].group_members.length > 7){
+								list_group_detail[i].group_members.splice(7, list_group_detail[i].group_members.length-7)
+							}
+						}
+
+						res.render('search', {profile: req.session.profile, numOfPost : 0,
+							posts: [], numOfLastPage : 0, search_public_group : true,
+				 			limitPerPage:100, list_group_detail: list_group_detail,
+							rec_topic : req.session.rec_topic, search_term: search_term,
+							popular_topic: req.session.popular_topic, setting: req.session.setting,
+							numOfCurrPage : 0, setting: req.session.setting,
+						partials: {list_course_enrolled:'partial/list_course_enrolled', rightSide:'partial/rightSide', list_user:'partial/list_user',
+						create_group_modal: 'modal/create_group_modal', list_group_detail:'partial/list_group_detail',
+						list_group:'partial/list_group', topNavigation:'partial/topNavigation'}});
+					}
+				});
+	},
 
 	get_by_id: function(id, res){
 		Group.object

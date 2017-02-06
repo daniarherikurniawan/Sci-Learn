@@ -1,3 +1,4 @@
+{{^ search_public_group }}
 <div class="row">
   <div class="col-md-11">
     <input id="search-within-own-group" type="text" autocomplete="off" style="width: 100%; border-color: #d6e7e8; margin: -6px 0 8px 2px;" class="form-control" value="{{search_term_for_group}}" placeholder="Find group by name.." name="search_term_for_joined_group" id="search_term_for_joined_group" autofocus>
@@ -10,6 +11,7 @@
     <button id="search-within-own-group" class="btn btn-default" style=" border-color: #d6e7e8;   margin: -6px;" ><i class="glyphicon glyphicon-search"></i></button>
   </div>
 </div>
+{{/ search_public_group }}
 
 {{# list_group_detail }}
 
@@ -29,6 +31,13 @@
 
             width:256px; position: absolute;left: 25%; top: 50%; -webkit-transform: translateY(-50%) translateX(-50%);  
             -moz-transform: translateY(-50%) translateX(-50%) ;">
+            
+            {{# search_public_group }}
+              <button class="btn btn-default-blue pull-right" 
+              style="position: absolute; bottom: 10px; right: 10px;" 
+              title ="Click to join this group!"
+              onclick="joinGroup('{{_id}}')"><i style="" class="glyphicon glyphicon-plus "></i>&nbspJoin</button> 
+            {{/ search_public_group }}            
           </div>
 
 
@@ -95,3 +104,22 @@
 {{/ list_group_detail }}
 <script src="/javascripts/page_scripting/group/list_group_detail.js"></script>
 <script src="/javascripts/page_scripting/group/find_within_own_group.js"></script>
+
+<script type="text/javascript">
+  function joinGroup(group_id){
+    var http = new XMLHttpRequest();
+    http.open("POST", "/group/join", true);
+    http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    var params = "group_id=" + window.encodeURIComponent(group_id);
+    http.send((params));
+
+    http.onload = function() {
+      result = JSON.parse(http.responseText);
+      if(http.responseText=="404" || result.status == 0){
+        alert(http.responseText);
+      }else {
+        location.reload();
+      }
+    }
+  }
+</script>

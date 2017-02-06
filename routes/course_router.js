@@ -4,6 +4,24 @@ var router = express.Router();
 var course_cont = require('../controller/base/course_cont');
 var page_course_cont = require('../controller/base/paging/page_course_cont');
 
+/* POST saving post. */
+router.get('/search/:search_term', function(req, res) {
+	if(req.session.profile != null){
+		course_cont.searchPublicCourse(req, res);
+	}else{
+		res.send('Sorry, you cannot search any group!');
+	}
+});
+
+/* POST home page. */
+router.post('/join', function(req, res, next) {
+	if(req.session.profile!=null){	
+		course_cont.join(req, req.body.course_id, res);
+	}else{
+		res.redirect('/login');
+	}
+});
+
 /* POST get list courses. */
 router.post('/getList', function(req, res, next) {
 	if(req.session.profile!=null){	

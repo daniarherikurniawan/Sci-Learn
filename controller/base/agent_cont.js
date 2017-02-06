@@ -112,8 +112,11 @@ function asyncExecuteOneAction(iteration, req, userProfile, indexAction, action,
 			if(req.session.idPeopleDoingAddFriend == null){
 				req.session.idPeopleDoingAddFriend = userProfile.email ;
 		        // console.log("	AddFriend "+userProfile.email);
-		        idForSearch = userProfile.connections.slice();
-		        idForSearch.push(userProfile._id);
+		        if(userProfile.connections != undefined)
+			        idForSearch = userProfile.connections.slice();
+				else
+					idForSearch = [];
+			    idForSearch.push(userProfile._id);
 		        requestify.post(host+'/API/getListPeople', {
 			        limit: 10,
 			        idForSearch: idForSearch
