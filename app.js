@@ -70,6 +70,13 @@ var bot = LINEBot.create({
 
 app.use(bot.webhook('/webhook'));
 
+bot.on(LINEBot.Events.MESSAGE, function(replyToken, message) {
+  console.log("Masukkk!")
+  var textMessageBuilder = new LINEBot.TextMessageBuilder('hello');
+  bot.replyMessage(replyToken, textMessageBuilder);
+});
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
