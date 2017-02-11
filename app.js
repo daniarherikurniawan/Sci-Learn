@@ -68,15 +68,19 @@ var bot = linebot({
 });
 
 linebotParser = bot.parser();
-app.post('/linewebhook', linebotParser);
+app.post('/linewebhook',  function(req, res, next) {
 
-bot.on('message',  function (event) { 
-  console.log("masukk")
-  event.reply({
-      type: 'sticker',
-      packageId: '1',
-      stickerId: '1'
+  console.log(req)
+  bot.on('message',  function (event) { 
+    console.log("masukk")
+    event.reply({
+        type: 'sticker',
+        packageId: '1',
+        stickerId: '1'
+    });
   });
+
+  res.send("holla");
 });
 
 bot.on('follow',   function (event) { });
