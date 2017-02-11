@@ -11,6 +11,7 @@ var bot = LINEBot.create({
 });
 
 bot.on(LINEBot.Events.MESSAGE, function(replyToken, message) {
+	console.log("Masukkk!")
   var textMessageBuilder = new LINEBot.TextMessageBuilder('hello');
 	bot.replyMessage(replyToken, textMessageBuilder);
 });
