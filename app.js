@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session')
-var LINEBot = require('line-messaging');
+var linebot = require('linebot');
 
 /*databases connection*/
 var mongo = require('./dbconfig/mongo_config');
@@ -61,20 +61,30 @@ app.use('/line', line);
 // GLOBAL VARIABLE
 global.response = require('./controller/base/response_cont');
 
-
-var bot = LINEBot.create({
-  channelID: '1500779989',
+var bot = linebot({
+  channelId: '1500779989',
   channelSecret: 'c2cf5267acf1cc3787f7fc419ba06443',
-  channelToken: 'daEj9pdmGLClOfUiNZxH1reqtFK8L+VPte6nSiHvvtnXYe8d+Ahgb0bF2tcWH9IqMed76syeXci21xFPJHf/Ud+0lswj9Ec2xliXIoA2JoHXfsa1nfpAVaYoxHKYAEWjVfHWkM2P7u0f8UfGv23f+AdB04t89/1O/w1cDnyilFU='
+  channelAccessToken: 'daEj9pdmGLClOfUiNZxH1reqtFK8L+VPte6nSiHvvtnXYe8d+Ahgb0bF2tcWH9IqMed76syeXci21xFPJHf/Ud+0lswj9Ec2xliXIoA2JoHXfsa1nfpAVaYoxHKYAEWjVfHWkM2P7u0f8UfGv23f+AdB04t89/1O/w1cDnyilFU='
 });
 
-app.use(bot.webhook('/webhook'));
+linebotParser = bot.parser();
+app.post('/linewebhook', linebotParser);
 
-bot.on(LINEBot.Events.MESSAGE, function(replyToken, message) {
-  console.log("Masukkk!")
-  var textMessageBuilder = new LINEBot.TextMessageBuilder('hello');
-  bot.replyMessage(replyToken, textMessageBuilder);
+bot.on('message',  function (event) { 
+  console.log("masukk")
+  event.reply({
+      type: 'sticker',
+      packageId: '1',
+      stickerId: '1'
+  });
 });
+
+bot.on('follow',   function (event) { });
+bot.on('unfollow', function (event) { });
+bot.on('join',     function (event) { });
+bot.on('leave',    function (event) { });
+bot.on('postback', function (event) { });
+bot.on('beacon',   function (event) { });
 
 
 // catch 404 and forward to error handler
