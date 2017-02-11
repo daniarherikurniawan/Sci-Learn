@@ -66,30 +66,17 @@ var bot = linebot({
   channelSecret: 'c2cf5267acf1cc3787f7fc419ba06443',
   channelAccessToken: 'daEj9pdmGLClOfUiNZxH1reqtFK8L+VPte6nSiHvvtnXYe8d+Ahgb0bF2tcWH9IqMed76syeXci21xFPJHf/Ud+0lswj9Ec2xliXIoA2JoHXfsa1nfpAVaYoxHKYAEWjVfHWkM2P7u0f8UfGv23f+AdB04t89/1O/w1cDnyilFU='
 });
+const linebotParser = bot.parser();
 
-linebotParser = bot.parser();
-app.post('/linewebhook',  function(req, res, next) {
+app.post('/linewebhook', linebotParser);
 
-  console.log(req)
-  bot.on('message',  function (event) { 
-    console.log("masukk")
-    event.reply({
-        type: 'sticker',
-        packageId: '1',
-        stickerId: '1'
-    });
+bot.on('message', function (event) {
+  event.reply(event.message.text).then(function (data) {
+    console.log('Success', data);
+  }).catch(function (error) {
+    console.log('Error', error);
   });
-
-  res.send("holla");
 });
-
-bot.on('follow',   function (event) { });
-bot.on('unfollow', function (event) { });
-bot.on('join',     function (event) { });
-bot.on('leave',    function (event) { });
-bot.on('postback', function (event) { });
-bot.on('beacon',   function (event) { });
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
