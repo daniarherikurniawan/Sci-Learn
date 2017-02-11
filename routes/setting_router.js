@@ -6,7 +6,7 @@ var setting_cont = require('../controller/base/setting_cont');
 /* POST Change UI */
 router.post('/setAppearancePopularPost', function(req, res, next) {
 	if(req.session.setting.show_popular_post!=null){	// res.send("post")
-		console.log("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT")
+		// console.log("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT")
 		if(req.session.setting.show_popular_post){
 			req.session.setting.show_popular_post = false;
 			res.send({'show_popular_post': false});
@@ -22,7 +22,7 @@ router.post('/setAppearancePopularPost', function(req, res, next) {
 
 /* POST Change UI */
 router.post('/setAppearanceReccPost', function(req, res, next) {
-		console.log("RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR")
+		// console.log("RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR")
 	if(req.session.setting.show_recc_post!=null){	// res.send("post")
 		if(req.session.setting.show_recc_post){
 			req.session.setting.show_recc_post = false;

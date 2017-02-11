@@ -200,3 +200,18 @@ npm rebuild lwip
 
 ###npm
 npm install 
+
+
+### NVM
+You can switch between them by typing:
+
+nvm use v0.10.30
+Now using node v0.10.30
+To set this version as the default, type:
+
+nvm alias default v0.10.30
+default -> v0.10.30
+
+
+###Nodemon
+don't use it in server!!
