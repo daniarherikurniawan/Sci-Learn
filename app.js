@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session')
+var LINEBot = require('line-messaging');
 
 /*databases connection*/
 var mongo = require('./dbconfig/mongo_config');
@@ -61,6 +62,14 @@ app.use('/line', line);
 global.response = require('./controller/base/response_cont');
 
 
+var bot = LINEBot.create({
+  channelID: '1500779989',
+  channelSecret: 'c2cf5267acf1cc3787f7fc419ba06443',
+  channelToken: 'daEj9pdmGLClOfUiNZxH1reqtFK8L+VPte6nSiHvvtnXYe8d+Ahgb0bF2tcWH9IqMed76syeXci21xFPJHf/Ud+0lswj9Ec2xliXIoA2JoHXfsa1nfpAVaYoxHKYAEWjVfHWkM2P7u0f8UfGv23f+AdB04t89/1O/w1cDnyilFU='
+});
+
+app.use(bot.webhook('/webhook'));
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -89,12 +98,14 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(
+  function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
     error: {}
   });
-});
+}
+);
 
 module.exports = app;

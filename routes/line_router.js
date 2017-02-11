@@ -10,17 +10,15 @@ var bot = LINEBot.create({
   channelToken: 'daEj9pdmGLClOfUiNZxH1reqtFK8L+VPte6nSiHvvtnXYe8d+Ahgb0bF2tcWH9IqMed76syeXci21xFPJHf/Ud+0lswj9Ec2xliXIoA2JoHXfsa1nfpAVaYoxHKYAEWjVfHWkM2P7u0f8UfGv23f+AdB04t89/1O/w1cDnyilFU='
 });
 
+bot.on(LINEBot.Events.MESSAGE, function(replyToken, message) {
+  var textMessageBuilder = new LINEBot.TextMessageBuilder('hello');
+	bot.replyMessage(replyToken, textMessageBuilder);
+});
+
 /* POST Change UI */
 router.get('/', function(req, res, next) {
 	res.send("holla");
 });
 /* POST Change UI */
-router.post('/webhook', function(req, res, next) {
-	bot.on(LINEBot.Events.MESSAGE, function(replyToken, message) {
-	  var textMessageBuilder = new LINEBot.TextMessageBuilder('hello');
-		bot.replyMessage(replyToken, textMessageBuilder);
-	});
-	console.log(req)
-});
 
 module.exports = router;
