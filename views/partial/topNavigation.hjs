@@ -1,5 +1,5 @@
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/stylesheets/icon.css" rel="stylesheet"> 
 
 <div class="row" style="
     margin: auto;">
