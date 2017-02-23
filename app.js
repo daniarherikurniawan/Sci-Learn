@@ -57,6 +57,7 @@ app.use('/user', user);
 app.use('/setting', setting);
 app.use('/course', course);
 app.use('/line', line);
+app.use('/bookmark', bookmark);
 
 // GLOBAL VARIABLE
 global.response = require('./controller/base/response_cont');
