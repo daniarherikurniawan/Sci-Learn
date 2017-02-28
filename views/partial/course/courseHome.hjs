@@ -60,7 +60,7 @@
 
 	<div class="course-material " style="padding: 10px; line-height: 22px; " >
 		<div id="editable_course_overview">
-	  		<span  id="course_overview_desc">{{course.course_overview}}</span >
+	  		<span  id="course_overview_desc" style="white-space: pre-wrap;">{{course.course_overview}}</span >
 	  	</div>
 	</div>
 </div>
@@ -87,7 +87,8 @@
 	<div class=" " style="padding: 10px; line-height: 22px; " >
 		<div id="editable_course_materials">
 	  		
-	  		<span id="course_material_desc">{{course.course_materials_description}}</span >
+	  		<span id="course_material_desc" style="white-space: pre-wrap;"
+    >{{course.course_materials_description}}</span >
 	  	</div>
 		{{^course.weekly_materials}}
 		<div id="" class="weekly-material" style=" padding-top: 5px; margin-bottom: 0px;">
