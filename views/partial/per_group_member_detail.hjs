@@ -12,6 +12,6 @@
     </div>
     <div class="col-md-9" style=" text-align: left;     padding-left: 0px; ">
         <h5> <a href="/profile/{{email}}"> <b>{{name}}</b></a></h5>
-        <h6 style="    margin-bottom: 0px;">{{email}}</h6>
+        <h6 style="   white-space:nowrap;  margin-bottom: 0px;">{{email}}</h6>
     </div>
 </div>
